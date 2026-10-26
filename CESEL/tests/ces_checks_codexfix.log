@@ -1,0 +1,22 @@
+[PASS] config loading of every arm (ffpp + ff2, 9 arms each; terms, control flags, data paths)
+[PASS] shapes: score (N,), cues (N,4,d), s_k (N,4); additive head s = sum_k s_k + b  (grid 8, core 8 ring 14 cells, freq canvas 64)
+[PASS] additive head: sum_k u_k = full-replacement utility (linear margin); closed form = head re-evaluation  (max err 4.8e-07, 4.8e-07, asinh logit-drop sum 4.8e-07)
+[PASS] utility of a cue replaced by itself = 0 (additive closed form + general; mlp head)  (max |u| 1.2e-07)
+[PASS] gradients reach every branch, the head and the backbone adapters (full arm loss)  (backbone_adapter=8.16e+01 branch_tex=2.54e+02 branch_freq=8.19e+02 branch_bound=4.13e+02 branch_sem=4.59e+02 head=7.37e+01 | terms ['det', 'floor', 'inv', 'pair_det', 'sens_ces', 'strat_det'] inv_items 25)
+[PASS] each CES term alone is non-zero and back-propagates into the branches  (sens_ces: L=2.01 |g|=1.78e+01 inv: L=0.000958 |g|=3.00e+00 floor: L=72 |g|=1.69e+03)
+[PASS] L_floor = 0 when groups are equal; > 0 (= K (0.75 - delta)^2) for one deficient group, gradient only raises it  (L_equal 0, L_deficient 1.6900 (expected 1.6900))
+[PASS] shuffled-group floor control runs and changes the floor  (0.1000)
+[PASS] demographic swap moves the probe to the partner's group on planted group directions  (probe acc clean 1.00, swapped->target 1.00, validity 1.00, projection err 2.4e-06, complement err 2.5e-06, |P_est - P_true| 0.026; no-signal validity 0.48)
+[PASS] controls run (random-cue, shuffled-group floor, no-validity inv) and differ from full; B0 and B0+CFES-D run  (full: {'det': 1.6728, 'pair_det': 1.6635, 'strat_det': 1.6325, 'sens_ces': 2.0105, 'floor': 15.0577, 'inv': 0.0007}; C_randcue: {'det': 1.6728, 'pair_det': 1.6635, 'strat_det': 1.6325, 'sens_ces': 2.0007, 'floor': 15.0881, 'inv': 0.0007}; C_shufgroup: {'det': 1.6728, 'pair_det': 1.6635, 'strat_det': 1.6325, 'sens_ces': 2.0105, 'floor': 14.9735, 'inv': 0.0007}; C_novalid: {'det': 1.6728, 'pair_det': 1.6635, 'strat_det': 1.6325, 'sens_ces': 2.0105, 'floor': 15.0577, 'inv': 0.0007}; B0: {'det': 1.6728, 'pair_det': 1.6635, 'strat_det': 1.6325}; B0_cfesD: {'det': 1.6728, 'pair_det': 1.6534, 'strat_det': 1.6325, 'stab': 0.001, 'sens': 2.178, 'risk': 1.0054})
+[PASS] unpaired-fake removal baseline = detached same-group real-cue EMA mean (class-mean fallback); reals = fake class mean; pair fake = its source; trainer wiring  (max errs 0.0e+00; L_sens group 2.0105 vs class 2.0073)
+[PASS] per-family cue validation (FF2 flag): family masks, small-family global fallback, per-image L_sens = (K,) form for equal rows, trainer wiring; FF++ flag off  (sources {'a': 'family', 'b': 'family', 'c': 'global_fallback'}; fam b bound valid=False; L_sens all-valid 2.0105 vs fam-2-off 1.5827)
+[PASS] validated-cue rule (bootstrap CI > 0, median target clamp) and JSON round trip; default = all valid, 0.5  ({"tex": true, "freq": false, "bound": true, "sem": false})
+[PASS] stub step timing (176 images at 64 px, full arm, CPU)  (0.05 s/step; params {'total': 18427, 'trainable': 18427, 'backbone_trainable': 8288, 'head': 65, 'branch_tex': 1713, 'branch_freq': 4968, 'branch_bound': 1713, 'branch_sem': 1680})
+[PASS] full-size cue branches (D=1024, G=16, d=128): frequency CNN < 1 M parameters  ({'tex': 298625, 'freq': 131200, 'bound': 298625, 'sem': 297600}, head 513, geometry core 46 ring 44)
+[PASS] trainer + validation-pass scripts run end to end on CPU (stub, synthetic images, B0 -> json -> full arm)  (full-arm last step: det=0.7075, sens_ces=0.0000, inv=0.0091, floor=0.0000; validated {'tex': False, 'freq': False, 'bound': False, 'sem': False})
+/home/sachin.chaudhary/.conda/envs/pulid/lib/python3.10/site-packages/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+[PASS] real CLIP ViT-L/14: forward/backward on 2 FF++ images; grads reach the rank-1 adapters  (load 20s fwd 0.9s bwd 1.0s (CPU, 2 imgs); adapters with grad 1.00; scores [1.9137423038482666, 0.8196524381637573]; params {'total': 204427875, 'trainable': 1223267, 'backbone_trainable': 196704, 'head': 513, 'branch_tex': 298625, 'branch_freq': 131200, 'branch_bound': 298625, 'branch_sem': 297600})
+17/17 checks passed
+ALL_PASS
+rc=0

@@ -1,0 +1,2 @@
+# floor arm on ff2 (dataset: ../ces_ff2.yaml, arm: ../arms/floor.yaml)
+_base_: [../ces_ff2.yaml, ../arms/floor.yaml]

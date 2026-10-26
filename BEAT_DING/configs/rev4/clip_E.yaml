@@ -1,0 +1,8 @@
+# Arm E (pre-registration decisions/2026-10-22-1920 B): D (risk weight 0.3) + soft group-FPR-gap penalty on real images and
+# their nuisance views (cfes/losses.py fpr_gap_loss): thr = running 90th percentile of the last `window` real scores (no
+# gradient), soft FPR_g = mean sigmoid((s - thr) / tau), tau 0.5, loss = sum_g |FPR_g - FPR_pooled| over groups with >= 2 reals.
+# Weight grid {1, 3, 10} via --set loss.fprgap.weight=<w> (run/rev4_arm2.sh E <seed> <w>).
+_base_: clip_D.yaml
+loss:
+  risk: {weight: 0.3}
+  fprgap: {weight: 1.0, q: 0.9, tau: 0.5, n_min: 2, include_views: true, window: 4096}

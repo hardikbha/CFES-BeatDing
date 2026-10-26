@@ -1,0 +1,178 @@
+# FF2-PUBLIC phase 1 (Codex review F5 fix, Amendment 4; NOT launched): CFES-CLIP plain detection on the FROZEN public
+# TRAIN (release_ff2_public/FREEZE.md; data_ding_schema/fairforge2_public), selection on public SELECT (realval +
+# fakeval). = the resolved FF2-full phase-1 recipe (agents/CFES/runs_ff2full/clip_s7_p1/config.yaml = CFES
+# configs/ff2_full/clip_p1.yaml: AdamW 1e-3 cosine, warmup 200, batch 64, 50 epochs x 1866 steps, no counterfactual
+# losses, val_auc selection) with ONLY the data paths switched from fairforge2_full to fairforge2_public.
+# guard (cfes/public_guard.py): refuses to start unless data.train.csv is the frozen public TRAIN (sha256 below) and no
+# init checkpoint is given; writes <out>/PUBLIC_P1 (sha256 of last.pt / best.pt) when finished. Phase-2 FF2-public
+# configs (cfesd_ff2_public.yaml, ces_ff2_public.yaml and configs/ff2_public/*) refuse to start without it.
+# Run with the CESEL copy of the CFES trainer (identical engine/model/losses; the guard lives here, not in agents/CFES):
+#   cd agents/CESEL_MA && CUDA_VISIBLE_DEVICES=<i> ~/.conda/envs/pulid/bin/python scripts/train.py \
+#       --config configs/ff2_public_p1.yaml --out runs_ff2public/clip_s7_p1 --set seed=7
+# (other seeds: --set seed=<s> and --out runs_ff2public/clip_s<s>_p1)
+paths:
+  fairrel_repo: /home/sachin.chaudhary/ICLR_2027/related_work/FairReL
+seed: 7
+log_every: 20
+model:
+  backbone: ViT-L-14
+  pretrained: openai
+  rank: 1
+  pooling: cls
+  patch_head:
+    enabled: true
+    hidden: 256
+  score_path: fused
+  topk: 8
+  alpha_init: 0.0
+  alpha_param: raw
+  init_from: null
+data:
+  input_size: 224
+  batch_size: 64
+  num_workers: 4
+  demographics_reliable: true
+  pairing: ff2
+  train:
+    csv: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/data_ding_schema/fairforge2_public/train.csv
+    scheme: eight
+    meta: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/data_ding_schema/fairforge2_public/provenance.csv
+  val:
+    csv:
+    - /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/data_ding_schema/fairforge2_public/realval.csv
+    - /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/data_ding_schema/fairforge2_public/fakeval.csv
+    scheme: eight
+    meta: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/data_ding_schema/fairforge2_public/provenance.csv
+  steps_per_epoch: 1866
+cf:
+  enabled: false
+  interventions:
+  - bg_blur
+  - bg_swap
+  - photometric
+  probs:
+    bg_blur: 0.6
+    bg_swap: 0.0
+    photometric: 0.4
+  bg_blur_sigma:
+  - 2.0
+  - 6.0
+  photometric:
+    brightness: 0.08
+    contrast: 0.1
+    saturation: 0.1
+    gamma:
+    - 0.9
+    - 1.1
+  face_mask:
+    cx: 0.5
+    cy: 0.578
+    ax: 0.3125
+    ay: 0.4297
+    dilate: 1.15
+pairs:
+  enabled: false
+  csv: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CESEL/data/pairs_ff2public_train_cfesformat.csv
+  per_step: 8
+  shared_intervention: true
+  diff_tau: 0.0314
+  align_tau: 0.015
+loss:
+  det:
+    weight: 1.0
+    mode: balanced
+  stab:
+    weight: 0.0
+    huber_delta: 1.0
+    map_weight: 1.0
+    bg_evidence_weight: 0.5
+  sens:
+    weight: 0.0
+    margin: 2.0
+    map_margin: 1.0
+    map_weight: 1.0
+    unchanged_weight: 0.5
+    changed_thr: 0.25
+    map_terms: true
+  loc:
+    weight: 0.0
+  align:
+    weight: 0.0
+    temperature: 1.0
+    n_min: 2
+    require_strat: false
+  orth:
+    weight: 0.1
+  scale:
+    weight: 0.0
+    cap: 4.0
+  mfer_margin:
+    weight: 0.0
+    margin: 2.0
+  mfer_cons:
+    weight: 0.0
+  mfer_det:
+    weight: 0.0
+  pair_det:
+    weight: 0.0
+  strat_det:
+    weight: 0.0
+mfer:
+  enabled: false
+  csv: null
+  validated: false
+  min_groups: 2
+  max_groups: 8
+  oversize: error
+  smoke: false
+  sets_per_step: 4
+optim:
+  lr: 0.001
+  weight_decay: 0.004
+  epochs: 50
+  warmup_steps: 200
+  schedule: cosine
+  grad_clip: 1.0
+  amp: true
+  name: adamw
+strat:
+  enabled: false
+  per_cell: 2
+select:
+  include_init: false
+  metric: val_auc
+ckpt:
+  full: true
+eval:
+  batch_size: 128
+  val_tpr: 0.9
+  test_sets:
+    ff2_test:
+      csv: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/data_ding_schema/fairforge2_public/test.csv
+      scheme: eight
+      meta: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/data_ding_schema/fairforge2_public/provenance.csv
+    ffpp_test:
+      csv: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/ff++/test.csv
+      scheme: eight
+    dfdc:
+      csv: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/dfdc/test.csv
+      scheme: eight
+    celebdf:
+      csv: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/celebdf/test.csv
+      scheme: six
+    dfd:
+      csv: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/dfd/test.csv
+      scheme: six
+debug:
+  max_train_items: null
+  max_steps_per_epoch: null
+  max_eval_items: null
+  max_pairs: null
+  stop_after_epochs: null
+  save_val_probs: false
+  term_grad_norms: false
+guard:
+  public_only: true
+  role: phase1
+  public_train_csv: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/data_ding_schema/fairforge2_public/train.csv
+  frozen_sha256: e93a5f3adabeb728154a909e4431e04a4ab92e3e57d60ba5f477a800d2ebbc36

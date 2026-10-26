@@ -1,0 +1,33 @@
+model,seed,t05_logit,A1_logit,a1_src,val_FPR@A1,val_TPR@A1,val_i_F_FPR@A1
+CFES-D,7,-61.569,-46.946,stored,3.6657,80.008,18.548
+CFES-D,17,-60.389,-55.755,stored,6.4027,80.21,22.726
+CFES-D,27,-52.683,4.5203,stored,1.6862,80.098,10.758
+arm C,7,-0,20.977,rule re-run on saved val logits (Xu labels),2.3949,80.112,20.063
+arm C,17,-0,-14.897,rule re-run on saved val logits (Xu labels),3.739,82.493,20.191
+arm C,27,-0,0.72287,rule re-run on saved val logits (Xu labels),2.6149,80.013,20.656
+arm E w1,7,-0,14.01,rule re-run on saved val logits (Xu labels),2.1994,81.845,16.714
+arm E w3,7,-0,3.9894,rule re-run on saved val logits (Xu labels),1.8328,80.023,17.575
+arm E w10,7,-0,-30.057,rule re-run on saved val logits (Xu labels),1.7107,80.018,14.865
+control (det-only),7,-0,3.5373,rule re-run on saved val logits (Xu labels),10.85,80.182,49.104
+control (det-only),17,-0,10.404,rule re-run on saved val logits (Xu labels),6.5494,80.295,27.641
+control (det-only),27,-0,7.0898,rule re-run on saved val logits (Xu labels),13.025,80.116,62.094
+CFES-ResNet,7,-0,4.1537,rule re-run on saved val logits (Xu labels),6.8915,80.107,21.833
+CFES-ResNet,17,-0,0.65005,rule re-run on saved val logits (Xu labels),11.046,80.079,73.356
+CFES-ResNet,27,-0,1.9492,rule re-run on saved val logits (Xu labels),10.068,80.783,47.324
+CFES A (rev4),7,-0,17.68,rule re-run on saved val logits (Xu labels),7.0626,80.013,26.07
+CFES A (rev4),17,-0,10.404,rule re-run on saved val logits (Xu labels),6.5494,80.295,27.641
+CFES A (rev4),27,-0,5.1004,rule re-run on saved val logits (Xu labels),14.052,84.216,46.224
+Ding repro (SFD+GDA),7,-0,4.2045,stored,2.0283,83.423,15.545
+Ding Ori repro (SFD),7,-0,5.1848,rule re-run on saved val logits (Xu labels),17.571,87.832,33.168
+Ding Ori repro (SFD),17,-0,2.3477,rule re-run on saved val logits (Xu labels),2.4682,80.224,26.077
+Ding Ori repro (SFD),27,-0,5.0277,rule re-run on saved val logits (Xu labels),1.784,80.628,13.82
+CESel B0,7,-0,6.5896,stored,5.4008,80.248,31.466
+CESel p1 full,7,-0,731.61,stored,5.8407,80.126,28.634
+CESel p1 inv,7,-0,5.0679,stored,5.4741,80.008,28.171
+CESel p1 sens,7,-0,2.0469,stored,5.2053,80.027,32.527
+FF2-trained phase 1,7,-0,,none (no FF++ val scores),,,
+FF2-trained phase 1,17,-0,,none (no FF++ val scores),,,
+FF2-trained phase 1,27,-0,,none (no FF++ val scores),,,
+FF2-trained control,7,-0,,none (no FF++ val scores),,,
+FF2-trained control,17,-0,,none (no FF++ val scores),,,
+FF2-trained CFES,7,-0,,none (no FF++ val scores),,,

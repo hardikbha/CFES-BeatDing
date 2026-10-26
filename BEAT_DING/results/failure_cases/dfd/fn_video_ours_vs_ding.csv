@@ -1,0 +1,216 @@
+video,n,fn,fn_rate,ding_fn,ding_fn_rate,group,cl_gender,cl_race,age_vid_if,ita4,id_a,id_b,scene,med_logit,ding_med_logit,ours_minus_ding_fn
+0_17_08__podium_speech_happy__ISS1V0B1,30,30,100.0,0,0.0,M-Black,male,black,25.0,Q1 darkest,17,08,podium_speech_happy,-93.53,5.38,30
+0_01_27__outside_talking_still_laughing__ZYCZ30C0,30,27,90.0,3,10.0,F-White,nonmale,white,25.0,Q1 darkest,01,27,outside_talking_still_laughing,-82.77,4.9,24
+0_17_08__podium_speech_happy__ZCEYWYTC,30,25,83.33,6,20.0,M-Black,male,black,26.5,Q1 darkest,17,08,podium_speech_happy,-85.66,3.05,19
+0_01_27__outside_talking_still_laughing__S2YCUY48,30,22,73.33,5,16.67,F-White,nonmale,white,25.0,Q1 darkest,01,27,outside_talking_still_laughing,-79.47,4.38,17
+0_22_10__walking_and_outside_surprised__G48B2EQ2,30,25,83.33,11,36.67,M-White,nonmale,white,23.5,Q4 lightest,22,10,walking_and_outside_surprised,-83.85,1.42,14
+0_22_10__walking_and_outside_surprised__8YQ2EUQP,30,22,73.33,8,26.67,M-White,nonmale,white,24.0,Q4 lightest,22,10,walking_and_outside_surprised,-84.89,3.19,14
+0_23_19__walking_down_indoor_hall_disgust__H4SUVFTL,30,17,56.67,4,13.33,M-White,male,white,29.5,Q2,23,19,walking_down_indoor_hall_disgust,-80.3,4.56,13
+0_17_08__walk_down_hall_angry__ISS1V0B1,14,14,100.0,1,7.14,M-Black,male,black,27.0,Q1 darkest,17,08,walk_down_hall_angry,-93.95,5.27,13
+0_22_23__walking_and_outside_surprised__NUTQ0HJ5,30,26,86.67,14,46.67,F-White,nonmale,white,24.0,Q4 lightest,22,23,walking_and_outside_surprised,-86.04,0.28,12
+0_22_23__walking_and_outside_surprised__J671JKCH,30,21,70.0,10,33.33,F-White,nonmale,white,24.0,Q4 lightest,22,23,walking_and_outside_surprised,-83.94,2.63,11
+0_22_10__walking_and_outside_surprised__C1U7OY5M,30,19,63.33,8,26.67,M-White,nonmale,white,25.0,Q4 lightest,22,10,walking_and_outside_surprised,-86.79,2.07,11
+0_22_23__walking_and_outside_surprised__TU7RHG0S,30,23,76.67,13,43.33,F-White,nonmale,white,24.0,Q4 lightest,22,23,walking_and_outside_surprised,-84.26,1.13,10
+0_23_22__walking_down_indoor_hall_disgust__TU7RHG0S,30,11,36.67,2,6.67,M-White,nonmale,white,27.5,Q2,23,22,walking_down_indoor_hall_disgust,39.16,5.27,9
+0_28_16__walk_down_hall_angry__X5FNCYON,30,9,30.0,0,0.0,F-White,nonmale,white,25.0,Q1 darkest,28,16,walk_down_hall_angry,-54.75,5.15,9
+0_01_27__outside_talking_pan_laughing__S2YCUY48,30,10,33.33,3,10.0,F-White,nonmale,white,26.0,Q1 darkest,01,27,outside_talking_pan_laughing,-69.8,4.73,7
+0_23_10__walking_down_indoor_hall_disgust__GYY4VANY,30,10,33.33,3,10.0,M-White,nonmale,white,25.0,Q3,23,10,walking_down_indoor_hall_disgust,38.74,5.3,7
+0_28_16__secret_conversation__R1QD0XDQ,30,8,26.67,1,3.33,F-White,nonmale,white,25.0,Q1 darkest,28,16,secret_conversation,-66.1,4.07,7
+0_22_10__walk_down_hall_angry__FY7YI0AJ,30,6,20.0,0,0.0,M-White,male,white,33.0,Q1 darkest,22,10,walk_down_hall_angry,8.4,5.12,6
+0_22_10__walk_down_hall_angry__G48B2EQ2,30,6,20.0,0,0.0,M-White,male,white,39.5,Q1 darkest,22,10,walk_down_hall_angry,15.68,5.02,6
+0_28_08__secret_conversation__5DCAESDA,30,6,20.0,0,0.0,F-White,nonmale,white,27.0,Q1 darkest,28,08,secret_conversation,-35.54,4.02,6
+0_22_19__walking_and_outside_surprised__VK6BF5NV,30,20,66.67,14,46.67,F-White,nonmale,white,24.0,Q4 lightest,22,19,walking_and_outside_surprised,-85.9,2.15,6
+0_22_19__walking_down_indoor_hall_disgust__VK6BF5NV,30,9,30.0,4,13.33,F-White,nonmale,white,22.0,Q2,22,19,walking_down_indoor_hall_disgust,-42.63,3.91,5
+0_23_22__secret_conversation__10R2HRAU,30,7,23.33,2,6.67,M-White,nonmale,black,28.0,Q1 darkest,23,22,secret_conversation,-68.54,2.99,5
+0_08_17__exit_phone_room__CFIY1YEQ,30,5,16.67,0,0.0,M-Black,male,black,26.0,Q2,08,17,exit_phone_room,-26.83,4.92,5
+0_28_16__exit_phone_room__OANAQYD5,30,5,16.67,0,0.0,F-White,nonmale,white,24.0,Q2,28,16,exit_phone_room,-30.24,5.04,5
+0_23_10__secret_conversation__CU6SNBFZ,30,4,13.33,0,0.0,M-White,nonmale,black,27.0,Q1 darkest,23,10,secret_conversation,-67.94,2.99,4
+0_22_23__exit_phone_room__X2ZN5Q31,30,5,16.67,2,6.67,M-White,male,white,25.5,Q1 darkest,22,23,exit_phone_room,-22.38,5.3,3
+0_22_10__walk_down_hall_angry__PUJR4HJ1,30,5,16.67,2,6.67,M-White,male,white,34.5,Q1 darkest,22,10,walk_down_hall_angry,23.86,5.35,3
+0_22_10__walking_down_indoor_hall_disgust__8YQ2EUQP,30,8,26.67,5,16.67,F-White,nonmale,white,21.0,Q2,22,10,walking_down_indoor_hall_disgust,10.79,4.1,3
+0_23_22__walk_down_hall_angry__J671JKCH,30,3,10.0,0,0.0,M-White,male,white,27.0,Q1 darkest,23,22,walk_down_hall_angry,23.42,5.28,3
+0_23_22__secret_conversation__AKZRL2QD,30,3,10.0,0,0.0,M-White,nonmale,black,29.0,Q1 darkest,23,22,secret_conversation,-66.19,3.25,3
+0_01_27__meeting_serious__ZYCZ30C0,30,2,6.67,0,0.0,F-White,nonmale,white,24.0,Q2,01,27,meeting_serious,-54.88,5.22,2
+0_23_22__walking_outside_cafe_disgusted__TU7RHG0S,30,3,10.0,1,3.33,M-White,nonmale,white,26.0,Q4 lightest,23,22,walking_outside_cafe_disgusted,-38.04,4.82,2
+0_23_19__walking_outside_cafe_disgusted__H4SUVFTL,30,2,6.67,0,0.0,F-Others,nonmale,white,25.0,Q4 lightest,23,19,walking_outside_cafe_disgusted,51.22,5.27,2
+0_28_08__exit_phone_room__5DCAESDA,30,2,6.67,0,0.0,F-White,nonmale,white,25.0,Q2,28,08,exit_phone_room,22.5,5.02,2
+0_27_01__walking_and_outside_surprised__S2YCUY48,30,4,13.33,2,6.67,F-White,nonmale,white,25.0,Q4 lightest,27,01,walking_and_outside_surprised,5.68,4.98,2
+0_01_27__hugging_happy__ZYCZ30C0,30,21,70.0,19,63.33,F-White,nonmale,white,26.0,Q1 darkest,01,27,hugging_happy,-79.85,-2.6,2
+0_17_08__podium_speech_happy__JZYRLJ8T,30,10,33.33,8,26.67,M-Black,male,black,25.0,Q1 darkest,17,08,podium_speech_happy,-67.67,2.85,2
+0_28_16__secret_conversation__X5FNCYON,5,2,40.0,1,20.0,F-White,nonmale,white,23.0,Q1 darkest,28,16,secret_conversation,-67.37,4.7,1
+0_23_19__secret_conversation__H4SUVFTL,30,1,3.33,0,0.0,F-Others,nonmale,black,28.0,Q1 darkest,23,19,secret_conversation,-64.29,3.27,1
+0_28_16__walking_down_street_outside_angry__6DWLCU6T,30,1,3.33,0,0.0,F-White,nonmale,white,28.0,Q1 darkest,28,16,walking_down_street_outside_angry,56.93,5.32,1
+0_10_22__walking_outside_cafe_disgusted__C1U7OY5M,30,7,23.33,6,20.0,M-White,male,white,33.0,Q4 lightest,10,22,walking_outside_cafe_disgusted,-66.95,2.87,1
+0_23_19__walking_outside_cafe_disgusted__D1K19NUP,30,1,3.33,0,0.0,F-Others,nonmale,white,25.0,Q4 lightest,23,19,walking_outside_cafe_disgusted,46.56,5.31,1
+0_22_10__outside_talking_pan_laughing__8YQ2EUQP,30,1,3.33,0,0.0,M-White,male,white,29.5,Q4 lightest,22,10,outside_talking_pan_laughing,16.6,5.29,1
+0_08_28__walk_down_hall_angry__GGCUYQA4,30,1,3.33,1,3.33,F-White,male,white,21.0,Q1 darkest,08,28,walk_down_hall_angry,32.2,5.39,0
+0_23_10__walking_down_street_outside_angry__W02WYPCX,30,1,3.33,1,3.33,M-White,nonmale,white,24.0,Q4 lightest,23,10,walking_down_street_outside_angry,18.44,5.3,0
+0_23_10__walk_down_hall_angry__GYY4VANY,30,2,6.67,2,6.67,M-White,nonmale,white,23.0,Q2,23,10,walk_down_hall_angry,-18.95,2.77,0
+0_22_10__walking_down_street_outside_angry__1TXK09OY,30,1,3.33,1,3.33,M-White,male,white,26.0,Q1 darkest,22,10,walking_down_street_outside_angry,48.16,5.23,0
+0_01_27__talking_against_wall__ZYCZ30C0,30,0,0.0,0,0.0,F-White,nonmale,white,26.0,Q1 darkest,01,27,talking_against_wall,23.88,4.9,0
+0_23_19__walking_and_outside_surprised__H4SUVFTL,30,0,0.0,0,0.0,M-White,nonmale,white,23.0,Q4 lightest,23,19,walking_and_outside_surprised,41.76,5.27,0
+0_23_22__walking_and_outside_surprised__J671JKCH,30,0,0.0,0,0.0,M-White,nonmale,white,31.5,Q4 lightest,23,22,walking_and_outside_surprised,26.02,5.24,0
+0_23_22__talking_against_wall__AKZRL2QD,30,0,0.0,0,0.0,M-White,male,white,27.0,Q3,23,22,talking_against_wall,42.94,5.2,0
+0_19_22__kitchen_still__VK6BF5NV,30,0,0.0,0,0.0,M-White,nonmale,white,27.0,Q1 darkest,19,22,kitchen_still,48.09,5.27,0
+0_22_10__exit_phone_room__8YQ2EUQP,30,0,0.0,0,0.0,M-White,male,white,28.5,Q2,22,10,exit_phone_room,28.95,5.28,0
+0_19_10__talking_against_wall__O2IKR6YM,30,0,0.0,0,0.0,M-White,male,white,24.0,Q2,19,10,talking_against_wall,41.88,5.24,0
+0_10_23__walk_down_hall_angry__GYY4VANY,30,0,0.0,0,0.0,F-White,nonmale,white,27.0,Q1 darkest,10,23,walk_down_hall_angry,29.1,5.29,0
+0_10_23__walk_down_hall_angry__ZHJO34DY,30,0,0.0,0,0.0,F-White,nonmale,white,24.0,Q1 darkest,10,23,walk_down_hall_angry,30.45,5.14,0
+0_16_08__podium_speech_happy__8Q7JCS95,30,0,0.0,0,0.0,F-Others,nonmale,white,29.0,Q3,16,08,podium_speech_happy,47.2,5.25,0
+0_16_28__kitchen_still__NAZP864W,30,0,0.0,0,0.0,F-White,nonmale,white,24.0,Q1 darkest,16,28,kitchen_still,59.85,5.2,0
+0_16_28__kitchen_pan__6DWLCU6T,29,0,0.0,0,0.0,F-White,nonmale,white,25.0,Q1 darkest,16,28,kitchen_pan,47.98,5.25,0
+0_17_08__talking_against_wall__ISS1V0B1,30,0,0.0,0,0.0,M-Black,male,black,23.0,Q1 darkest,17,08,talking_against_wall,-23.2,5.24,0
+0_16_28__podium_speech_happy__6DWLCU6T,30,0,0.0,0,0.0,F-White,nonmale,white,25.0,Q3,16,28,podium_speech_happy,49.32,5.24,0
+0_16_28__kitchen_still__U757192N,30,0,0.0,0,0.0,F-White,nonmale,white,24.0,Q1 darkest,16,28,kitchen_still,44.27,5.25,0
+0_17_08__talking_against_wall__QOX5NWIJ,30,0,0.0,0,0.0,M-Black,male,black,24.0,Q1 darkest,17,08,talking_against_wall,-3.0,5.23,0
+0_17_08__talking_angry_couch__05AN86QA,30,0,0.0,0,0.0,M-Black,male,black,27.0,Q1 darkest,17,08,talking_angry_couch,12.76,5.3,0
+0_17_08__kitchen_still__ZCEYWYTC,30,0,0.0,0,0.0,M-Black,male,black,28.0,Q1 darkest,17,08,kitchen_still,15.56,5.44,0
+0_19_23__walking_outside_cafe_disgusted__WHQ1229T,30,0,0.0,0,0.0,F-White,nonmale,white,18.0,Q4 lightest,19,23,walking_outside_cafe_disgusted,8.28,5.27,0
+0_19_22__talking_against_wall__VK6BF5NV,30,0,0.0,0,0.0,M-White,nonmale,white,25.0,Q1 darkest,19,22,talking_against_wall,37.82,5.25,0
+0_10_23__exit_phone_room__W4BDINQ5,29,0,0.0,0,0.0,F-White,nonmale,white,24.0,Q4 lightest,10,23,exit_phone_room,19.39,5.1,0
+0_10_22__kitchen_still__EHARPYBT,30,0,0.0,0,0.0,M-White,male,white,26.0,Q1 darkest,10,22,kitchen_still,20.17,5.12,0
+0_10_23__talking_against_wall__W4BDINQ5,30,0,0.0,0,0.0,F-White,nonmale,white,25.0,Q1 darkest,10,23,talking_against_wall,40.58,5.11,0
+0_10_19__exit_phone_room__BVVPN5D5,27,0,0.0,0,0.0,M-White,male,white,26.0,Q4 lightest,10,19,exit_phone_room,-14.29,4.23,0
+0_10_19__exit_phone_room__O2IKR6YM,29,0,0.0,0,0.0,M-Others,male,white,26.0,Q4 lightest,10,19,exit_phone_room,24.56,4.88,0
+0_10_19__kitchen_still__IDX76N5R,30,0,0.0,0,0.0,M-Others,male,white,27.0,Q1 darkest,10,19,kitchen_still,37.36,5.19,0
+0_10_19__podium_speech_happy__FFXB67PI,30,0,0.0,0,0.0,M-Others,male,white,23.0,Q2,10,19,podium_speech_happy,32.56,5.09,0
+0_10_22__exit_phone_room__8YQ2EUQP,27,0,0.0,0,0.0,M-White,male,white,28.0,Q4 lightest,10,22,exit_phone_room,20.35,5.09,0
+0_10_23__talking_against_wall__W02WYPCX,30,0,0.0,0,0.0,F-White,nonmale,white,26.0,Q2,10,23,talking_against_wall,42.26,5.13,0
+0_08_28__podium_speech_happy__GGCUYQA4,30,0,0.0,0,0.0,F-White,male,others,23.0,Q1 darkest,08,28,podium_speech_happy,55.24,5.28,0
+0_08_28__podium_speech_happy__KXO8S7OP,30,0,0.0,0,0.0,F-White,male,others,24.0,Q2,08,28,podium_speech_happy,37.97,5.14,0
+0_08_28__kitchen_pan__6HFK6PB4,29,0,0.0,0,0.0,M-White,male,others,22.0,Q1 darkest,08,28,kitchen_pan,33.46,5.4,0
+0_08_28__kitchen_pan__LVT0XNQG,29,0,0.0,0,0.0,M-White,male,others,22.0,Q1 darkest,08,28,kitchen_pan,35.84,5.31,0
+0_08_28__podium_speech_happy__HIOU8Z8I,30,0,0.0,0,0.0,F-White,male,others,23.0,Q1 darkest,08,28,podium_speech_happy,47.66,5.27,0
+0_08_17__kitchen_still__ZCEYWYTC,30,0,0.0,0,0.0,M-Black,male,black,27.0,Q1 darkest,08,17,kitchen_still,5.31,5.0,0
+0_08_17__kitchen_still__JZYRLJ8T,30,0,0.0,0,0.0,M-Black,male,black,27.0,Q1 darkest,08,17,kitchen_still,21.92,5.24,0
+0_08_16__kitchen_still__8Q7JCS95,30,0,0.0,0,0.0,F-Others,male,others,22.0,Q1 darkest,08,16,kitchen_still,39.93,5.31,0
+0_08_16__kitchen_pan__8Q7JCS95,29,0,0.0,0,0.0,F-Others,male,others,21.0,Q1 darkest,08,16,kitchen_pan,39.9,5.37,0
+0_01_27__walking_outside_cafe_disgusted__ZYCZ30C0,23,0,0.0,0,0.0,F-White,nonmale,white,31.0,Q4 lightest,01,27,walking_outside_cafe_disgusted,-41.22,5.21,0
+0_28_16__exit_phone_room__U757192N,30,0,0.0,0,0.0,F-White,nonmale,white,25.0,Q1 darkest,28,16,exit_phone_room,59.9,5.43,0
+0_28_16__kitchen_pan__X5FNCYON,29,0,0.0,0,0.0,F-White,nonmale,white,24.0,Q1 darkest,28,16,kitchen_pan,34.75,5.28,0
+0_28_16__kitchen_still__U757192N,30,0,0.0,0,0.0,F-White,nonmale,white,23.0,Q1 darkest,28,16,kitchen_still,59.48,5.4,0
+0_28_16__podium_speech_happy__ZA8XJIE9,30,0,0.0,0,0.0,F-White,nonmale,white,25.0,Q2,28,16,podium_speech_happy,48.84,5.3,0
+0_28_16__walking_down_street_outside_angry__ZA8XJIE9,30,0,0.0,0,0.0,F-White,nonmale,white,25.0,Q1 darkest,28,16,walking_down_street_outside_angry,69.22,5.33,0
+0_23_22__walking_outside_cafe_disgusted__X2ZN5Q31,30,0,0.0,0,0.0,M-White,nonmale,white,28.0,Q4 lightest,23,22,walking_outside_cafe_disgusted,42.61,5.31,0
+0_28_08__kitchen_pan__GQN9WHLD,30,0,0.0,0,0.0,F-White,nonmale,white,25.0,Q1 darkest,28,08,kitchen_pan,12.31,5.24,0
+0_28_08__kitchen_still__8BC35RFU,30,0,0.0,0,0.0,F-Black,male,others,24.0,Q1 darkest,28,08,kitchen_still,0.43,5.07,0
+0_28_08__walking_outside_cafe_disgusted__6HFK6PB4,30,0,0.0,0,0.0,F-White,nonmale,white,28.5,Q4 lightest,28,08,walking_outside_cafe_disgusted,43.59,5.14,0
+0_28_08__talking_angry_couch__KXO8S7OP,30,0,0.0,0,0.0,F-Black,nonmale,others,28.0,Q4 lightest,28,08,talking_angry_couch,22.64,4.74,0
+0_23_22__kitchen_still__J8JK3NBV,30,0,0.0,0,0.0,M-White,nonmale,white,34.5,Q3,23,22,kitchen_still,35.77,5.11,0
+0_23_22__kitchen_pan__W9MT3Q5K,30,0,0.0,0,0.0,M-White,nonmale,white,30.0,Q2,23,22,kitchen_pan,37.59,5.02,0
+0_23_22__talking_against_wall__X2ZN5Q31,30,0,0.0,0,0.0,F-White,nonmale,white,26.0,Q4 lightest,23,22,talking_against_wall,4.69,5.07,0
+0_23_19__talking_against_wall__H4SUVFTL,30,0,0.0,0,0.0,F-Others,nonmale,white,24.5,Q3,23,19,talking_against_wall,37.64,5.22,0
+0_23_19__podium_speech_happy__D1K19NUP,30,0,0.0,0,0.0,F-Others,nonmale,white,25.5,Q4 lightest,23,19,podium_speech_happy,55.87,5.3,0
+0_23_19__talking_angry_couch__F7U8UY7V,30,0,0.0,0,0.0,F-Others,nonmale,white,24.0,Q4 lightest,23,19,talking_angry_couch,46.13,5.15,0
+0_23_10__talking_against_wall__W4BDINQ5,29,0,0.0,0,0.0,M-White,male,white,24.0,Q4 lightest,23,10,talking_against_wall,40.46,5.26,0
+0_23_10__walk_down_hall_angry__ZHJO34DY,30,0,0.0,0,0.0,M-White,nonmale,white,26.0,Q1 darkest,23,10,walk_down_hall_angry,44.83,5.32,0
+0_23_19__hugging_happy__H4SUVFTL,30,0,0.0,0,0.0,F-Others,nonmale,white,27.0,Q4 lightest,23,19,hugging_happy,12.46,5.17,0
+0_23_19__hugging_happy__WHQ1229T,30,0,0.0,0,0.0,F-Others,nonmale,white,29.0,Q4 lightest,23,19,hugging_happy,7.98,4.87,0
+0_22_23__secret_conversation__J8JK3NBV,30,0,0.0,0,0.0,F-White,male,white,24.0,Q1 darkest,22,23,secret_conversation,39.07,5.13,0
+0_22_23__kitchen_pan__W9MT3Q5K,29,0,0.0,0,0.0,F-White,male,white,25.0,Q1 darkest,22,23,kitchen_pan,33.1,5.41,0
+0_22_23__walking_outside_cafe_disgusted__J8JK3NBV,30,0,0.0,0,0.0,F-White,male,white,23.0,Q3,22,23,walking_outside_cafe_disgusted,37.39,5.26,0
+0_23_10__talking_against_wall__W02WYPCX,30,0,0.0,0,0.0,M-White,male,white,26.0,Q4 lightest,23,10,talking_against_wall,33.13,5.2,0
+0_22_10__talking_against_wall__X803B18R,30,0,0.0,0,0.0,M-White,male,white,33.0,Q2,22,10,talking_against_wall,33.48,5.16,0
+0_22_23__kitchen_pan__TU7RHG0S,30,0,0.0,0,0.0,F-White,male,white,28.0,Q1 darkest,22,23,kitchen_pan,26.54,5.22,0
+0_22_10__secret_conversation__PUJR4HJ1,3,0,0.0,0,0.0,M-White,male,white,33.0,Q1 darkest,22,10,secret_conversation,32.39,5.0,0
+0_22_10__outside_talking_pan_laughing__PUJR4HJ1,30,0,0.0,0,0.0,M-White,male,white,27.0,Q4 lightest,22,10,outside_talking_pan_laughing,32.96,5.36,0
+0_22_10__kitchen_still__J2HR5HKH,30,0,0.0,0,0.0,M-White,male,white,26.5,Q1 darkest,22,10,kitchen_still,40.64,5.34,0
+0_22_10__kitchen_still__8YQ2EUQP,30,0,0.0,0,0.0,M-White,male,white,25.0,Q1 darkest,22,10,kitchen_still,38.93,5.27,0
+0_22_10__kitchen_still__1TXK09OY,30,0,0.0,0,0.0,M-White,male,white,30.0,Q1 darkest,22,10,kitchen_still,46.36,5.33,0
+0_22_10__kitchen_pan__EHARPYBT,29,0,0.0,0,0.0,M-White,male,white,27.0,Q1 darkest,22,10,kitchen_pan,2.14,5.32,0
+0_23_19__outside_talking_still_laughing__D1K19NUP,30,0,0.0,0,0.0,F-Others,nonmale,white,24.5,Q4 lightest,23,19,outside_talking_still_laughing,22.99,5.32,0
+0_23_19__kitchen_still__WHQ1229T,30,0,0.0,0,0.0,F-Others,nonmale,white,26.5,Q3,23,19,kitchen_still,38.28,5.13,0
+0_23_19__kitchen_pan__H4SUVFTL,29,0,0.0,0,0.0,F-Others,nonmale,white,24.0,Q2,23,19,kitchen_pan,51.49,5.14,0
+0_23_19__kitchen_pan__WHQ1229T,29,0,0.0,0,0.0,F-Others,nonmale,white,27.0,Q3,23,19,kitchen_pan,41.21,5.14,0
+0_23_19__talking_angry_couch__D1K19NUP,30,0,0.0,0,0.0,F-Others,nonmale,white,15.5,Q4 lightest,23,19,talking_angry_couch,42.39,5.1,0
+0_23_19__walking_and_outside_surprised__F7U8UY7V,30,0,0.0,0,0.0,M-White,nonmale,white,24.0,Q4 lightest,23,19,walking_and_outside_surprised,40.43,5.32,0
+0_23_19__talking_angry_couch__WHQ1229T,30,0,0.0,0,0.0,F-Black,nonmale,white,17.5,Q4 lightest,23,19,talking_angry_couch,44.49,5.09,0
+0_08_28__exit_phone_room__LVT0XNQG,30,1,3.33,2,6.67,F-White,male,others,22.0,Q2,08,28,exit_phone_room,16.63,5.0,-1
+0_19_10__walking_down_street_outside_angry__O2IKR6YM,30,0,0.0,1,3.33,M-White,nonmale,others,30.0,Q2,19,10,walking_down_street_outside_angry,43.75,3.02,-1
+0_17_16__walk_down_hall_angry__EWJJTZHY,12,0,0.0,1,8.33,F-White,male,others,26.0,Q1 darkest,17,16,walk_down_hall_angry,22.7,4.8,-1
+0_19_23__walking_outside_cafe_disgusted__D1K19NUP,30,0,0.0,1,3.33,F-White,nonmale,others,23.5,Q4 lightest,19,23,walking_outside_cafe_disgusted,-18.93,5.19,-1
+0_10_22__kitchen_still__8YQ2EUQP,30,0,0.0,1,3.33,M-White,male,white,24.0,Q1 darkest,10,22,kitchen_still,43.91,4.99,-1
+0_19_23__walking_outside_cafe_disgusted__F7U8UY7V,30,0,0.0,1,3.33,F-White,nonmale,white,21.0,Q4 lightest,19,23,walking_outside_cafe_disgusted,28.48,5.21,-1
+0_22_10__outside_talking_still_laughing__J2HR5HKH,30,0,0.0,1,3.33,M-White,male,white,30.0,Q4 lightest,22,10,outside_talking_still_laughing,20.96,5.3,-1
+0_28_08__walking_outside_cafe_disgusted__8BC35RFU,30,0,0.0,1,3.33,F-White,nonmale,white,29.5,Q4 lightest,28,08,walking_outside_cafe_disgusted,49.13,5.14,-1
+0_22_10__outside_talking_pan_laughing__1TXK09OY,30,0,0.0,1,3.33,M-White,male,white,27.5,Q4 lightest,22,10,outside_talking_pan_laughing,15.17,4.56,-1
+0_22_23__secret_conversation__10R2HRAU,3,0,0.0,1,33.33,F-White,male,white,26.0,Q1 darkest,22,23,secret_conversation,0.42,1.34,-1
+0_27_01__walking_outside_cafe_disgusted__S2YCUY48,26,0,0.0,1,3.85,F-White,nonmale,white,26.0,Q4 lightest,27,01,walking_outside_cafe_disgusted,-9.97,4.87,-1
+0_27_01__walking_outside_cafe_disgusted__ZYCZ30C0,26,0,0.0,1,3.85,F-White,nonmale,white,29.5,Q4 lightest,27,01,walking_outside_cafe_disgusted,-49.23,4.81,-1
+0_22_23__walk_down_hall_angry__J671JKCH,30,1,3.33,3,10.0,F-White,male,white,23.0,Q1 darkest,22,23,walk_down_hall_angry,19.21,3.29,-2
+0_10_22__kitchen_pan__EHARPYBT,30,1,3.33,3,10.0,M-White,male,white,30.0,Q1 darkest,10,22,kitchen_pan,-7.91,3.58,-2
+0_27_01__hugging_happy__ZYCZ30C0,30,1,3.33,3,10.0,F-White,nonmale,white,27.5,Q1 darkest,27,01,hugging_happy,-52.15,4.8,-2
+0_22_10__podium_speech_happy__FY7YI0AJ,30,8,26.67,10,33.33,M-White,male,white,31.0,Q3,22,10,podium_speech_happy,-65.92,1.85,-2
+0_22_23__walk_down_hall_angry__NUTQ0HJ5,30,3,10.0,5,16.67,F-White,male,white,26.0,Q1 darkest,22,23,walk_down_hall_angry,-38.66,3.99,-2
+0_28_16__podium_speech_happy__6DWLCU6T,30,0,0.0,2,6.67,F-White,nonmale,white,23.5,Q2,28,16,podium_speech_happy,24.79,4.88,-2
+0_28_16__walking_down_street_outside_angry__U757192N,30,0,0.0,2,6.67,F-White,nonmale,white,24.0,Q1 darkest,28,16,walking_down_street_outside_angry,61.66,5.32,-2
+0_16_17__walk_down_hall_angry__EWJJTZHY,30,0,0.0,2,6.67,M-Black,nonmale,black,25.0,Q1 darkest,16,17,walk_down_hall_angry,40.55,5.43,-2
+0_16_08__exit_phone_room__8Q7JCS95,30,0,0.0,2,6.67,M-Black,nonmale,others,22.0,Q1 darkest,16,08,exit_phone_room,29.26,3.69,-2
+0_08_17__podium_speech_happy__ZCEYWYTC,30,0,0.0,2,6.67,M-Black,male,black,24.0,Q2,08,17,podium_speech_happy,14.54,4.75,-2
+0_08_17__outside_talking_still_laughing__JZYRLJ8T,30,0,0.0,2,6.67,M-Black,male,black,27.5,Q4 lightest,08,17,outside_talking_still_laughing,19.5,4.92,-2
+0_10_22__walking_down_street_outside_angry__1TXK09OY,30,0,0.0,2,6.67,M-White,male,white,32.0,Q4 lightest,10,22,walking_down_street_outside_angry,27.77,4.99,-2
+0_08_28__walking_outside_cafe_disgusted__GQN9WHLD,30,0,0.0,2,6.67,M-White,male,others,28.5,Q3,08,28,walking_outside_cafe_disgusted,24.18,5.3,-2
+0_27_01__talking_against_wall__ZYCZ30C0,30,0,0.0,2,6.67,F-White,nonmale,white,27.0,Q1 darkest,27,01,talking_against_wall,23.32,4.93,-2
+0_28_08__podium_speech_happy__5DCAESDA,30,0,0.0,2,6.67,F-White,nonmale,white,25.0,Q2,28,08,podium_speech_happy,24.86,5.12,-2
+0_28_08__outside_talking_pan_laughing__GGCUYQA4,30,0,0.0,2,6.67,F-Black,nonmale,white,25.5,Q4 lightest,28,08,outside_talking_pan_laughing,22.85,5.24,-2
+0_28_08__outside_talking_pan_laughing__8BC35RFU,30,0,0.0,2,6.67,F-White,nonmale,white,28.0,Q4 lightest,28,08,outside_talking_pan_laughing,-13.79,4.97,-2
+0_08_16__podium_speech_happy__8Q7JCS95,30,0,0.0,3,10.0,F-Others,male,others,23.0,Q1 darkest,08,16,podium_speech_happy,1.81,4.73,-3
+0_19_10__kitchen_still__IDX76N5R,30,0,0.0,3,10.0,M-White,nonmale,others,27.0,Q1 darkest,19,10,kitchen_still,26.13,4.33,-3
+0_27_01__podium_speech_happy__S2YCUY48,30,0,0.0,3,10.0,F-White,nonmale,white,27.0,Q3,27,01,podium_speech_happy,48.73,4.79,-3
+0_28_08__kitchen_pan__6HFK6PB4,29,0,0.0,3,10.34,F-Black,nonmale,others,24.0,Q1 darkest,28,08,kitchen_pan,2.8,3.61,-3
+0_19_22__walk_down_hall_angry__VK6BF5NV,30,0,0.0,3,10.0,M-White,nonmale,others,28.0,Q1 darkest,19,22,walk_down_hall_angry,45.03,5.48,-3
+0_28_16__walking_outside_cafe_disgusted__NAZP864W,30,1,3.33,4,13.33,F-White,nonmale,white,29.0,Q4 lightest,28,16,walking_outside_cafe_disgusted,-35.61,5.04,-3
+0_22_10__walking_down_street_outside_angry__8YQ2EUQP,30,4,13.33,7,23.33,M-White,male,white,23.0,Q2,22,10,walking_down_street_outside_angry,8.92,5.23,-3
+0_10_22__outside_talking_pan_laughing__G48B2EQ2,30,8,26.67,11,36.67,M-White,male,white,33.0,Q4 lightest,10,22,outside_talking_pan_laughing,-68.62,2.36,-3
+0_22_23__outside_talking_still_laughing__W9MT3Q5K,30,1,3.33,4,13.33,F-White,male,white,24.0,Q4 lightest,22,23,outside_talking_still_laughing,5.17,3.99,-3
+0_28_08__kitchen_still__HIOU8Z8I,30,0,0.0,4,13.33,F-Black,nonmale,others,23.0,Q1 darkest,28,08,kitchen_still,7.85,5.12,-4
+0_19_23__walking_outside_cafe_disgusted__H4SUVFTL,30,0,0.0,4,13.33,F-White,nonmale,others,20.5,Q4 lightest,19,23,walking_outside_cafe_disgusted,26.32,5.01,-4
+0_23_10__exit_phone_room__W4BDINQ5,30,0,0.0,4,13.33,M-White,nonmale,white,24.0,Q4 lightest,23,10,exit_phone_room,16.18,4.06,-4
+0_10_19__walking_outside_cafe_disgusted__BVVPN5D5,30,0,0.0,4,13.33,M-White,male,white,25.0,Q4 lightest,10,19,walking_outside_cafe_disgusted,9.51,3.62,-4
+0_10_22__outside_talking_pan_laughing__1TXK09OY,30,1,3.33,5,16.67,M-White,male,white,32.5,Q4 lightest,10,22,outside_talking_pan_laughing,-28.18,4.02,-4
+0_23_22__outside_talking_pan_laughing__J671JKCH,29,20,68.97,25,86.21,M-White,nonmale,white,31.0,Q4 lightest,23,22,outside_talking_pan_laughing,-86.44,-5.3,-5
+0_08_28__exit_phone_room__KXO8S7OP,30,1,3.33,6,20.0,F-White,male,others,21.5,Q2,08,28,exit_phone_room,19.55,2.01,-5
+0_28_08__outside_talking_still_laughing__GQN9WHLD,30,0,0.0,5,16.67,F-White,nonmale,white,30.0,Q3,28,08,outside_talking_still_laughing,8.46,4.35,-5
+0_10_22__kitchen_pan__X803B18R,30,0,0.0,5,16.67,M-White,male,white,32.0,Q1 darkest,10,22,kitchen_pan,-6.7,2.72,-5
+0_10_23__outside_talking_pan_laughing__ZHJO34DY,29,0,0.0,5,17.24,F-White,nonmale,white,25.0,Q4 lightest,10,23,outside_talking_pan_laughing,-42.52,4.4,-5
+0_08_16__exit_phone_room__8Q7JCS95,30,0,0.0,5,16.67,F-Others,male,asian,21.0,Q2,08,16,exit_phone_room,34.0,3.83,-5
+0_23_22__outside_talking_still_laughing__W9MT3Q5K,30,8,26.67,13,43.33,F-White,nonmale,white,27.0,Q3,23,22,outside_talking_still_laughing,-32.28,1.2,-5
+0_23_22__walking_down_street_outside_angry__AKZRL2QD,30,0,0.0,6,20.0,M-White,nonmale,white,28.5,Q4 lightest,23,22,walking_down_street_outside_angry,38.74,5.31,-6
+0_23_22__kitchen_still__X2ZN5Q31,30,0,0.0,6,20.0,F-White,nonmale,white,28.0,Q3,23,22,kitchen_still,29.87,4.21,-6
+0_23_19__walking_outside_cafe_disgusted__F7U8UY7V,30,3,10.0,9,30.0,F-Others,nonmale,white,24.0,Q4 lightest,23,19,walking_outside_cafe_disgusted,-15.57,1.6,-6
+0_19_10__walking_down_street_outside_angry__QNZIMEJH,30,0,0.0,7,23.33,M-White,nonmale,others,31.5,Q2,19,10,walking_down_street_outside_angry,50.57,2.14,-7
+0_23_10__walking_and_outside_surprised__W4BDINQ5,30,0,0.0,7,23.33,M-White,nonmale,white,25.0,Q4 lightest,23,10,walking_and_outside_surprised,6.7,2.63,-7
+0_10_22__outside_talking_pan_laughing__8YQ2EUQP,30,4,13.33,11,36.67,M-White,male,white,33.0,Q4 lightest,10,22,outside_talking_pan_laughing,0.07,3.74,-7
+0_10_23__outside_talking_pan_laughing__CU6SNBFZ,29,0,0.0,7,24.14,F-White,nonmale,white,25.0,Q4 lightest,10,23,outside_talking_pan_laughing,-47.65,4.58,-7
+0_19_23__podium_speech_happy__D1K19NUP,30,0,0.0,7,23.33,F-Others,nonmale,others,20.0,Q3,19,23,podium_speech_happy,38.74,4.61,-7
+0_23_22__exit_phone_room__10R2HRAU,30,9,30.0,17,56.67,M-White,nonmale,white,25.0,Q4 lightest,23,22,exit_phone_room,-64.52,-1.75,-8
+0_10_23__outside_talking_still_laughing__CU6SNBFZ,30,0,0.0,8,26.67,F-White,nonmale,white,26.5,Q4 lightest,10,23,outside_talking_still_laughing,-54.49,3.43,-8
+0_08_28__outside_talking_pan_laughing__8BC35RFU,30,0,0.0,8,26.67,F-White,male,others,26.0,Q3,08,28,outside_talking_pan_laughing,16.94,2.02,-8
+0_08_28__outside_talking_still_laughing__8BC35RFU,30,3,10.0,12,40.0,F-White,male,others,26.5,Q4 lightest,08,28,outside_talking_still_laughing,-0.9,0.63,-9
+0_19_10__podium_speech_happy__FFXB67PI,30,0,0.0,10,33.33,F-Others,nonmale,others,13.0,Q3,19,10,podium_speech_happy,30.1,3.62,-10
+0_23_10__outside_talking_pan_laughing__ZHJO34DY,29,15,51.72,25,86.21,F-White,nonmale,white,28.0,Q4 lightest,23,10,outside_talking_pan_laughing,-75.07,-3.73,-10
+0_22_23__outside_talking_still_laughing__10R2HRAU,30,20,66.67,30,100.0,F-White,male,white,25.0,Q4 lightest,22,23,outside_talking_still_laughing,-78.21,-5.13,-10
+0_23_22__kitchen_still__10R2HRAU,30,0,0.0,11,36.67,M-White,nonmale,white,25.0,Q3,23,22,kitchen_still,17.39,2.06,-11
+0_10_23__outside_talking_still_laughing__GYY4VANY,30,3,10.0,14,46.67,F-White,nonmale,white,27.0,Q4 lightest,10,23,outside_talking_still_laughing,-63.25,0.24,-11
+0_19_23__outside_talking_pan_laughing__H4SUVFTL,29,8,27.59,20,68.97,F-Black,nonmale,asian,29.0,Q2,19,23,outside_talking_pan_laughing,-45.25,-2.45,-12
+0_08_28__outside_talking_pan_laughing__HIOU8Z8I,30,1,3.33,13,43.33,F-White,male,others,27.0,Q4 lightest,08,28,outside_talking_pan_laughing,20.45,0.43,-12
+0_23_10__outside_talking_still_laughing__CU6SNBFZ,30,13,43.33,26,86.67,F-White,nonmale,white,24.0,Q4 lightest,23,10,outside_talking_still_laughing,-71.43,-2.46,-13
+0_22_23__outside_talking_pan_laughing__TU7RHG0S,30,3,10.0,17,56.67,F-White,male,white,23.0,Q4 lightest,22,23,outside_talking_pan_laughing,-29.21,-1.13,-14
+0_27_01__meeting_serious__ZYCZ30C0,30,8,26.67,23,76.67,F-White,nonmale,white,23.0,Q4 lightest,27,01,meeting_serious,-66.1,-2.76,-15
+0_16_17__outside_talking_pan_laughing__S7UMSIQV,30,0,0.0,15,50.0,F-Others,nonmale,white,27.0,Q1 darkest,16,17,outside_talking_pan_laughing,25.35,-0.1,-15
+0_19_10__exit_phone_room__IDX76N5R,30,0,0.0,15,50.0,M-White,nonmale,white,26.0,Q3,19,10,exit_phone_room,1.07,0.08,-15
+0_28_08__kitchen_pan__8BC35RFU,29,0,0.0,16,55.17,F-Black,male,others,24.0,Q1 darkest,28,08,kitchen_pan,-5.37,-1.25,-16
+0_10_22__podium_speech_happy__EHARPYBT,30,12,40.0,28,93.33,M-White,male,white,31.0,Q1 darkest,10,22,podium_speech_happy,-44.53,-5.67,-16
+0_22_23__outside_talking_pan_laughing__J671JKCH,30,8,26.67,24,80.0,F-White,male,white,24.0,Q4 lightest,22,23,outside_talking_pan_laughing,-50.74,-3.78,-16
+0_16_28__outside_talking_pan_laughing__OANAQYD5,30,0,0.0,17,56.67,F-White,nonmale,white,26.0,Q1 darkest,16,28,outside_talking_pan_laughing,-19.22,-1.73,-17
+0_01_27__talking_angry_couch__ZYCZ30C0,30,11,36.67,28,93.33,F-White,nonmale,white,27.0,Q2,01,27,talking_angry_couch,-68.33,-3.7,-17
+0_27_01__outside_talking_still_laughing__ZYCZ30C0,30,10,33.33,28,93.33,F-White,nonmale,white,27.0,Q4 lightest,27,01,outside_talking_still_laughing,-68.49,-4.33,-18
+0_16_28__outside_talking_pan_laughing__U757192N,30,0,0.0,19,63.33,F-White,nonmale,white,27.0,Q1 darkest,16,28,outside_talking_pan_laughing,-14.58,-2.18,-19
+0_08_17__podium_speech_happy__QOX5NWIJ,30,6,20.0,27,90.0,M-Black,male,black,25.0,Q1 darkest,08,17,podium_speech_happy,-62.01,-4.42,-21
+0_23_19__outside_talking_pan_laughing__H4SUVFTL,28,1,3.57,23,82.14,F-Others,nonmale,white,26.0,Q4 lightest,23,19,outside_talking_pan_laughing,-26.47,-3.74,-22
+0_22_19__walking_outside_cafe_disgusted__VK6BF5NV,30,1,3.33,23,76.67,M-White,male,white,25.0,Q4 lightest,22,19,walking_outside_cafe_disgusted,-45.73,-4.22,-22
+0_08_17__talking_against_wall__ISS1V0B1,30,2,6.67,24,80.0,M-Black,male,black,24.5,Q1 darkest,08,17,talking_against_wall,-21.9,-3.59,-22
+0_19_22__outside_talking_pan_laughing__VK6BF5NV,29,1,3.45,24,82.76,F-Black,nonmale,others,41.0,Q3,19,22,outside_talking_pan_laughing,0.98,-2.87,-23
+0_23_22__talking_against_wall__NUTQ0HJ5,29,1,3.45,24,82.76,M-White,nonmale,white,27.0,Q3,23,22,talking_against_wall,12.88,-3.13,-23
+0_16_28__outside_talking_pan_laughing__X5FNCYON,30,2,6.67,25,83.33,F-White,nonmale,white,26.0,Q1 darkest,16,28,outside_talking_pan_laughing,-57.79,-4.68,-23
+0_10_22__podium_speech_happy__X803B18R,30,5,16.67,30,100.0,M-White,male,white,31.0,Q1 darkest,10,22,podium_speech_happy,-53.12,-5.74,-25

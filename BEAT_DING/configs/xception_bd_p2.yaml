@@ -1,0 +1,17 @@
+# Beat-Ding Xception, phase 2 (design 3.3-3.5): Ding's phase-2 scope (GDA trains last_linear only) + the BD heads;
+# from Ding's phase-1 checkpoint (model.xception.init_from, set by run/bd_run.sh; D1 = X0).
+#  - step 0: bn_recal = one-shot cumulative re-estimation of every BatchNorm on K = 200 clean 32 real + 32 fake FF++ train
+#    batches (sampler seed = run seed + 999, own generator), weights untouched, saved as recal.pt (= the X-recal control);
+#  - then EVERY BN statistic is frozen (freeze_all_bn_stats) and the trunk + adjust_channel (incl. BN affine) are frozen
+#    (trainable: head): no trainable layer feeds a frozen-statistics BN (fixes the 16 Oct BROKEN / DIVERGED / STOPPED runs);
+#  - patch_zero_init: the patch head's last Linear starts at 0 -> every starting score equals Ding's s_cls exactly;
+#  - abort rule: stop (ABORTED.json, reported as a failure, never retuned) if mean |s_cls| on the clean batch > 200 or a
+#    loss is non-finite.
+# Ding's phase-2 batch: 32 real + 32 fake, 1976 steps per epoch.
+_base_: ffpp_ding_xception_bd.yaml
+model: {xception: {trainable: head, freeze_all_bn_stats: true, bn_recal: {batches: 200}, patch_zero_init: true}}
+data: {steps_per_epoch: 1976}
+cf: {enabled: true}
+pairs: {enabled: true, per_step: 8}
+loss: {stab: {weight: 0.5}, sens: {weight: 0.5}}
+train: {abort_abs_s_cls: 200.0}

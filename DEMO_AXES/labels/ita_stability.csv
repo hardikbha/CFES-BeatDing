@@ -1,0 +1,7 @@
+set,videos,videos_with_valid_ita,frames_valid_frac,median_frames_per_video,within_video_sd_median,within_video_iqr_median,between_video_sd,icc1,videos_frames_span_gt1_bin,videos_frame_majority_bin_eq_median_bin
+ffpp_train,2722,2670,0.968,30,3.15,3.677,29.01,0.955,0.4824,0.9858
+ffpp_val,963,948,0.9651,30,3.614,3.701,29.49,0.9499,0.48,0.9842
+ffpp_test,965,948,0.962,30,3.486,3.678,30.74,0.9179,0.4926,0.9916
+dfdc,757,715,0.8901,30,7.082,7.041,51.51,0.8746,0.3566,0.9594
+celebdf,956,952,0.9855,30,6.093,7.265,39.2,0.9402,0.5452,0.9611
+dfd,319,319,0.9691,30,10.56,9.922,40.09,0.7718,0.6928,0.9248

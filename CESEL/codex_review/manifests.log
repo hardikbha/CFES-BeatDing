@@ -1,0 +1,6 @@
+ffpp train 76139 val 25386 path_overlap 0 cluster_overlap 163
+fake_methods ['Deepfakes', 'Face2Face', 'FaceShifter', 'FaceSwap', 'NeuralTextures'] unmapped_fake_count 0
+pairs_in_train 50409 wrong_fake_label 0 wrong_real_label 0
+ff2_public train 218266 val 31107 path_overlap 0 cluster_overlap 6
+fake_methods ['arc2face', 'blendface', 'codeformer', 'difface', 'eg3d', 'flux', 'gfpgan', 'hart', 'iclight', 'inpaint', 'instantid', 'ipadapter', 'liveportrait', 'magicbrush', 'omnigen', 'photomaker', 'pixart', 'projgan', 'pulid', 'qwenedit', 'realesrgan', 'reface', 'simswap', 'styleswin', 'tpsmm'] unmapped_fake_count 0
+pairs_in_train 197447 wrong_fake_label 0 wrong_real_label 0

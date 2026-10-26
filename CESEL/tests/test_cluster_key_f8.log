@@ -1,0 +1,16 @@
+PASS unit cases
+FF++ (configs/ces_ffpp.yaml)
+  ffpp_test: n=25401 leak-free-video drops old=2571 new=2571 keys changed=0
+  dfdc: n=22857 leak-free-video drops old=0 new=0 keys changed=0
+  celebdf: n=28458 leak-free-video drops old=0 new=0 keys changed=0
+  dfd: n=9385 leak-free-video drops old=0 new=0 keys changed=0
+PASS FF++ protocol: every cluster key and every leak-free-video drop count unchanged
+FF2-public (configs/ces_ff2_public.yaml)
+  ffpp_test: n=25401 leak-free-video drops old=0 new=0 keys changed=0
+  dfdc: n=22857 leak-free-video drops old=0 new=0 keys changed=0
+  celebdf: n=28458 leak-free-video drops old=0 new=0 keys changed=0
+  dfd: n=9385 leak-free-video drops old=0 new=0 keys changed=0
+  ff2_test: n=87564 leak-free-video drops old=1274 new=0 keys changed=15267
+  ff2_test dropped methods old {'pixart': 1274} -> new {}
+PASS FF2-public: the 1,274 PixArt test rows are no longer dropped
+ALL_PASS test_cluster_key_f8

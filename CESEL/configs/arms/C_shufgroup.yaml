@@ -1,0 +1,3 @@
+# Control: full CES, but L_floor sees group labels permuted within the step (the floor loses its demographic meaning).
+_base_: full.yaml
+loss: {floor: {shuffle_groups: true}}

@@ -1,0 +1,96 @@
+FAIRREL_REPRO PRE-REGISTRATION (written 2026-10-15, before any training, before any TEST scoring)
+R = ~/ICLR_2027/research/cvpr_readiness/r20261009 ; A = R/agents/FAIRREL_REPRO ; FR = ~/ICLR_2027/related_work/FairReL
+Spec: R/agents/DIRA_audit/AUDIT_AND_PLAN.md Step 1 + gates G1/G2 (PI: "Step 1 now, gate Direction A").
+This file is hashed into PREREG.sha256; run_task.sh refuses to score TEST if the hash does not match.
+
+1. QUESTION
+  Q1 (reproduction): what does the OFFICIAL FairReL code give on Lin et al.'s released FF++ split (train on FF++
+     train, select on FF++ val, test on FF++ test + Celeb-DF/DFD/DFDC in full)? Compare to the paper (Table 1 / S3).
+  Q2 (do FairReL's own losses do anything?): FAIRREL - CTRL, paired, video-cluster x seed bootstrap.
+  Q3 (is GCWD/SLMA active?): per-loss gradient norms during training.
+  Q4 (Direction-A precondition): is demographic information linearly decodable from the forensic path?
+
+2. DATA (built by code/build_data.py; log logs/build_data.log; hashes data/DATA_SHA256.txt)
+  - FF++ = Lin et al. ff++.zip; split = the manifest FILE a row came from (faketrain/realtrain -> train,
+    fakeval/realval -> val, test -> test). Others excluded via Lin's intersec_label (0 mismatches vs flags).
+    train 69,791 (newly extracted, data/extracted/ffpp_train) / val 23,078 / test 23,389 (EXACTMATCH_plan
+    extractions, file_size checked for all + CRC for a sample). Asserted: train rows only from train manifests;
+    zero path/basename overlap train/val/test; zero fake-video overlap across splits. (TRAIN_ON_LIN's train.csv
+    = 23,389/23,389 of our TEST basenames: confirmed invalid; not used.)
+  - Lin's stray-frame bug kept in the primary analysis (FairReL docs: keep Lin's split). 160 real videos have
+    frames in both train and test.
+  - ffpp_test_clean.csv = FF++ test minus those 160 real videos (real frames 4,206 -> 1,817; fakes unchanged
+    19,183). SENSITIVITY ONLY. Scored by subsetting the FF++ test scores (same threshold).
+  - Celeb-DF 28,278 / DFD 8,611 / DFDC 18,851 (as shipped 20,007; 1,156 duplicate paths dropped, keep first;
+    duplicates have identical label+subgroup, asserted). DFDC dedup = PRIMARY; as-shipped (duplicates counted
+    twice) reported as SECONDARY (reconstructed by re-weighting the duplicated paths' scores).
+  - Clusters for bootstrap / estimability: FF++ = video (Method_a_b / youtube_a); Celeb-DF = video; DFDC = video
+    (numeric id, 1 per video); DFD = actor/actor-pair id (32 clusters, EXACTMATCH convention; DFD has ~9 videos
+    per actor so video-level resampling would ignore within-actor dependence).
+  - Estimability (>= 5 clusters per class per subgroup; logs/estimability.log): FF++ test 6/6, FF++ clean 3/6
+    (M-W, F-W, F-A), Celeb-DF 2/3 (M-W has 0 fakes), DFD 0/4, DFDC 4/6 (M-A, F-A not). FF++ val 5/6 (F-B 2 real
+    videos). Subgroup fairness on non-estimable cells = descriptive only; DFD fairness descriptive only.
+
+3. ARMS (3 seeds each: 7, 17, 27)
+  FAIRREL = code/train_official_HEAD.py (= `git show HEAD:train.py`, sha 59794425..., byte-equal to the repo's
+            train.py.pre_sampleropt; the repo's locally modified train.py is NOT used) + the official
+            configs/fairrel_clip_vitl14.yaml UNCHANGED (10 epochs, AdamW 1e-3, wd 4e-3, bs 64 group-balanced,
+            bf16, SVD r=1, lambda_orth 0.1, lambda_G 0.5, lambda_S 0.5).
+  CTRL    = same script + code/config_ctrl.yaml, identical except lambda_gcwd = lambda_slma = 0 (both losses are
+            still computed, so the RNG stream / batches / forward passes are identical; only the update differs).
+  GRADLOG = DIAGNOSTIC ONLY (not scored, no TEST read): code/train_gradlog.py = the HEAD copy + gradient-norm
+            logging every 25 steps via torch.autograd.grad (does not alter .grad, RNG or module state), official
+            config, seed 7. Its history.json vs FAIRREL_s7 is reported as a determinism check.
+  Checkpoint: best.pt as written by the official code (max over epochs of val AUC - val F_FPR at FF++-val TPR
+  0.90). No other checkpoint is ever scored on TEST. last.pt deleted after the run (hash kept).
+
+4. SCORING (once per arm x seed; run_task.sh)
+  Official test.py on best.pt with tests ffpp/celebdf/dfd/dfdc AND code/score_eval.py (same modules, saves
+  per-image scores + FF++-val features) -> asserted equal (threshold within 1e-6, metrics within 1e-3).
+  Threshold = official threshold_at_tpr(FF++ val, 0.90), reused on every test set.
+  Metrics = official fairrel/metrics.py fairness_report: AUC, AUC_avg, AUC_gap, per-subgroup AUC/FPR, F_FPR, F_MEO
+  (percent). "_est" variants = fairness_report restricted to estimable subgroups. Ding metrics NOT used
+  (EXACTMATCH ding_metrics.py eq. 8 suspect).
+  Test results are not inspected until all 6 runs (3 FAIRREL + 3 CTRL) are DONE; then one analysis run
+  (code/analyze.py). Smoke tests use tiny train/val subsets only (never test).
+
+5. STATISTICS (code/analyze.py)
+  - Point = mean over seeds 7/17/27. Per-arm and paired-difference CIs: two-level bootstrap, 5,000 reps, seed
+    2026: clusters resampled with replacement (scheme per section 2), 3 seeds drawn with replacement; the same
+    cluster draw and seed draw are used for both arms (paired). 95% percentile CI. Reps where a metric is
+    undefined are dropped and counted.
+  - Primary contrast FAIRREL - CTRL on FF++ test: AUC, F_FPR, F_MEO, AUC_avg. Secondary: same on Celeb-DF, DFD,
+    DFDC, FF++ clean, DFDC as-shipped; _est variants.
+  - Effect "supported" only if the 95% CI excludes 0. No multiplicity correction claimed; all contrasts reported.
+
+6. GATE G1 (reproduction vs paper; FairReL 3-seed mean)
+  PASS if FF++ AUC within 2.0 of 96.14 AND Celeb-DF/DFD/DFDC AUC within 3.0 of 80.64 / 86.13 / 66.34.
+  If outside: investigate in this order (no extra TEST reads; use FF++ val + history.json + train AUC):
+  history curves; train/val AUC; per-method val AUC (FaceShifter); stray-frame impact (clean test); CTRL vs paper's
+  Effort row (94.83 FF++ / 78.52 CDF / 84.22 DFD / 65.08 DFDC). Report the gap honestly. Frame counts differ from
+  the paper (FairReL docs: FF++ 75,629 total; CDF 87,213; DFD 20,032; DFDC 63,225 vs Lin's 116,258 / 28,278 /
+  8,611 / 18,851), so an exact match is not expected. Fairness metrics compared descriptively only.
+
+7. GRADIENT-NORM DIAGNOSTIC (Q3; code/gradlog_summary.py)
+  Per logged step: ||grad(lambda_k * L_k)|| over the backbone SVD factors (GCWD and SLMA touch only these), for
+  k in {CE, orth, GCWD, SLMA}; also raw (unweighted) norms, cosine with the CE gradient, GCWD per-band D_l.
+  Rule (from AUDIT G3): a term is "INACTIVE" if the median over all logged steps of
+  ||grad(lambda_k L_k)||_backbone / ||grad(L_CE)||_backbone < 0.01. Also reported per epoch.
+
+8. DEMOGRAPHIC PROBE (Q4; code/probe.py; FF++ VAL only, no TEST)
+  Features: (a) frozen CLIP ViT-L/14 (untrained FairReLDetector: W_p + residual = original W exactly) CLS post-LN
+  z; (b) trained FAIRREL and CTRL best.pt z (the classifier input, "penultimate") for each seed. Secondary:
+  z_delta (residual-only path, SLMA's input) for (b); the 1-d classifier logit for (b).
+  Targets: 6-way subgroup (primary), gender (2), race (3). Frames: all val frames (primary); reals only (secondary).
+  Probe: StandardScaler + multinomial LogisticRegression(C=1.0, lbfgs, max_iter 3000), fixed, no tuning.
+  CV: 5-fold GroupKFold on identity components (union of the two ids in Method_a_b and youtube_a; 198 in val),
+  so no identity crosses train/test folds. Out-of-fold predictions -> accuracy and balanced accuracy.
+  Baselines: majority-class accuracy (training-fold majority, out-of-fold) and chance balanced accuracy 1/K.
+  CI: 2,000-rep component-cluster bootstrap of the out-of-fold predictions (and of probe - baseline).
+  Decision (G2a): demographic information is "PRESENT" in a feature set if the CI of (balanced acc - 1/K) has its
+  lower bound > 0.05 AND the CI of (acc - majority acc) has lower bound > 0. For the trained arms, required in all
+  3 seeds. If ABSENT in the trained z: Direction A's adversary/decorrelation have nothing to remove -> drop L_adv /
+  L_sep from the main claim (AUDIT G2). If PRESENT: Direction A screens may proceed (subject to coordinator/PI).
+  Caveat registered in advance: swap fakes carry the swapped-in identity's label (6-10% label noise).
+
+9. NOT DONE HERE: Direction A arms, any TEST read beyond section 4, any change to the official repo.

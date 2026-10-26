@@ -1,0 +1,366 @@
+{
+ "time": "2026-10-27T02:30:48",
+ "host": "gpu02",
+ "job": "44113.mgmt01",
+ "gate": "FAIL",
+ "ma_not_worse": null,
+ "tasks": [
+  {
+   "name": "bd_smoke",
+   "priority": 5.0,
+   "state": "done",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "bd_BD0_s7",
+   "priority": 5.0,
+   "state": "done",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "bd_BD1_s7",
+   "priority": 5.0,
+   "state": "done",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "bd_BD2_s7",
+   "priority": 5.0,
+   "state": "done",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "bd_BD3_s7",
+   "priority": 5.0,
+   "state": "done",
+   "slot": null,
+   "failed_attempts": 1
+  },
+  {
+   "name": "bd_BD4_s7",
+   "priority": 5.0,
+   "state": "done",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "bd_screen",
+   "priority": 5.0,
+   "state": "done",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "bd_resnet_s7",
+   "priority": 5.0,
+   "state": "done",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "bd_resnet_s17",
+   "priority": 5.0,
+   "state": "done",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "bd_resnet_s27",
+   "priority": 5.0,
+   "state": "done",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "bd_resnet_final",
+   "priority": 5.0,
+   "state": "done",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "bd_winner_s17",
+   "priority": 5.0,
+   "state": "done",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "bd_winner_s27",
+   "priority": 5.0,
+   "state": "done",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "bd_winner_eval_s17",
+   "priority": 5.0,
+   "state": "done",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "bd_winner_eval_s27",
+   "priority": 5.0,
+   "state": "done",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "bd_final",
+   "priority": 5.0,
+   "state": "done",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "ma_s7",
+   "priority": 10.0,
+   "state": "skipped",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "ma_compare_s7",
+   "priority": 10.0,
+   "state": "skipped",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "ma_s17",
+   "priority": 10.0,
+   "state": "skipped",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "ma_s27",
+   "priority": 10.0,
+   "state": "skipped",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "pgfdd_s7",
+   "priority": 20.0,
+   "state": "done",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "daw_s7",
+   "priority": 20.0,
+   "state": "done",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "dag_s7",
+   "priority": 20.0,
+   "state": "done",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "fairrel_s7",
+   "priority": 20.0,
+   "state": "done",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "sfd_s7",
+   "priority": 20.0,
+   "state": "done",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "ding_s7",
+   "priority": 20.0,
+   "state": "done",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "ding_gdagrad_s7",
+   "priority": 20.0,
+   "state": "done",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "pgfdd_s17",
+   "priority": 30.0,
+   "state": "held_elsewhere",
+   "slot": null,
+   "failed_attempts": 1
+  },
+  {
+   "name": "daw_s17",
+   "priority": 30.0,
+   "state": "done",
+   "slot": null,
+   "failed_attempts": 1
+  },
+  {
+   "name": "dag_s17",
+   "priority": 30.0,
+   "state": "done",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "fairrel_s17",
+   "priority": 30.0,
+   "state": "done",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "sfd_s17",
+   "priority": 30.0,
+   "state": "done",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "ding_s17",
+   "priority": 30.0,
+   "state": "done",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "ding_gdagrad_s17",
+   "priority": 30.0,
+   "state": "done",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "pgfdd_s27",
+   "priority": 30.0,
+   "state": "held_elsewhere",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "daw_s27",
+   "priority": 30.0,
+   "state": "held_elsewhere",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "dag_s27",
+   "priority": 30.0,
+   "state": "running",
+   "slot": 6,
+   "failed_attempts": 0
+  },
+  {
+   "name": "fairrel_s27",
+   "priority": 30.0,
+   "state": "held_elsewhere",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "sfd_s27",
+   "priority": 30.0,
+   "state": "ready",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "ding_s27",
+   "priority": 30.0,
+   "state": "waiting_dep",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "ding_gdagrad_s27",
+   "priority": 30.0,
+   "state": "waiting_dep",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "dingrepro_s17",
+   "priority": 40.0,
+   "state": "ready",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "dingrepro_s27",
+   "priority": 40.0,
+   "state": "ready",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "armE_w10_s17",
+   "priority": 40.0,
+   "state": "ready",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "armE_w10_s27",
+   "priority": 40.0,
+   "state": "ready",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "ff2p1_s7",
+   "priority": 90.0,
+   "state": "ready",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "ff2_cfesd_s7",
+   "priority": 91.0,
+   "state": "waiting_dep",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "ff2_B0_s7",
+   "priority": 91.0,
+   "state": "waiting_dep",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "ff2_validate_s7",
+   "priority": 92.0,
+   "state": "waiting",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "ff2_final_ma_s7",
+   "priority": 93.0,
+   "state": "skipped",
+   "slot": null,
+   "failed_attempts": 0
+  },
+  {
+   "name": "ff2_final_single_s7",
+   "priority": 93.0,
+   "state": "skipped",
+   "slot": null,
+   "failed_attempts": 0
+  }
+ ]
+}

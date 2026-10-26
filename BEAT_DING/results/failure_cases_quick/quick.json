@@ -1,0 +1,765 @@
+{
+ "ffpp_test": {
+  "n_real": 4538,
+  "n_fake": 20863,
+  "FPR": 13.5,
+  "TPR": 93.1,
+  "Ding_FPR": 12.5,
+  "Ding_TPR": 94.8,
+  "FP_shared_with_Ding_%": 36.1,
+  "FN_shared_with_Ding_%": 33.2,
+  "FPR_by_group": {
+   "F-Asian": {
+    "mean": 25.6,
+    "size": 414
+   },
+   "F-Black": {
+    "mean": 11.9,
+    "size": 118
+   },
+   "F-Others": {
+    "mean": 7.9,
+    "size": 151
+   },
+   "F-White": {
+    "mean": 12.3,
+    "size": 1755
+   },
+   "M-Asian": {
+    "mean": 9.7,
+    "size": 238
+   },
+   "M-Black": {
+    "mean": 3.3,
+    "size": 92
+   },
+   "M-Others": {
+    "mean": 2.8,
+    "size": 181
+   },
+   "M-White": {
+    "mean": 14.7,
+    "size": 1589
+   }
+  },
+  "Ding_FPR_by_group": {
+   "F-Asian": 10.9,
+   "F-Black": 18.6,
+   "F-Others": 14.6,
+   "F-White": 11.4,
+   "M-Asian": 18.5,
+   "M-Black": 8.7,
+   "M-Others": 16.0,
+   "M-White": 12.5
+  },
+  "TPR_by_method": {
+   "Deepfakes": 98.5,
+   "Face2Face": 94.7,
+   "FaceShifter": 95.0,
+   "FaceSwap": 96.1,
+   "NeuralTextures": 82.8
+  },
+  "Ding_TPR_by_method": {
+   "Deepfakes": 96.9,
+   "Face2Face": 96.6,
+   "FaceShifter": 97.3,
+   "FaceSwap": 97.4,
+   "NeuralTextures": 86.9
+  },
+  "top_FP_videos": [
+   {
+    "v": "youtube_305",
+    "n": 30,
+    "fp": 24,
+    "g": "M-White",
+    "ding_fp": 14,
+    "rate": 80.0
+   },
+   {
+    "v": "youtube_845",
+    "n": 29,
+    "fp": 23,
+    "g": "M-White",
+    "ding_fp": 21,
+    "rate": 79.0
+   },
+   {
+    "v": "youtube_307",
+    "n": 30,
+    "fp": 22,
+    "g": "M-White",
+    "ding_fp": 27,
+    "rate": 73.0
+   },
+   {
+    "v": "youtube_383",
+    "n": 30,
+    "fp": 21,
+    "g": "M-White",
+    "ding_fp": 2,
+    "rate": 70.0
+   },
+   {
+    "v": "youtube_237",
+    "n": 30,
+    "fp": 20,
+    "g": "M-White",
+    "ding_fp": 1,
+    "rate": 67.0
+   },
+   {
+    "v": "youtube_438",
+    "n": 29,
+    "fp": 20,
+    "g": "F-White",
+    "ding_fp": 6,
+    "rate": 69.0
+   },
+   {
+    "v": "youtube_062",
+    "n": 29,
+    "fp": 20,
+    "g": "F-Asian",
+    "ding_fp": 0,
+    "rate": 69.0
+   },
+   {
+    "v": "youtube_445",
+    "n": 30,
+    "fp": 19,
+    "g": "M-White",
+    "ding_fp": 0,
+    "rate": 63.0
+   }
+  ],
+  "FP_frames_in_top5_videos_%": 17.9,
+  "top_FN_videos": [
+   {
+    "v": "NeuralTextures_840_800",
+    "n": 30,
+    "miss": 30,
+    "g": "M-White",
+    "m": "NeuralTextures",
+    "ding_miss": 29
+   },
+   {
+    "v": "NeuralTextures_794_779",
+    "n": 30,
+    "miss": 30,
+    "g": "M-Others",
+    "m": "NeuralTextures",
+    "ding_miss": 30
+   },
+   {
+    "v": "Deepfakes_492_325",
+    "n": 30,
+    "miss": 29,
+    "g": "M-White",
+    "m": "Deepfakes",
+    "ding_miss": 29
+   },
+   {
+    "v": "NeuralTextures_235_194",
+    "n": 30,
+    "miss": 29,
+    "g": "M-Asian",
+    "m": "NeuralTextures",
+    "ding_miss": 29
+   },
+   {
+    "v": "NeuralTextures_306_278",
+    "n": 30,
+    "miss": 28,
+    "g": "M-White",
+    "m": "NeuralTextures",
+    "ding_miss": 0
+   },
+   {
+    "v": "NeuralTextures_016_209",
+    "n": 30,
+    "miss": 28,
+    "g": "M-Others",
+    "m": "NeuralTextures",
+    "ding_miss": 6
+   },
+   {
+    "v": "NeuralTextures_800_840",
+    "n": 30,
+    "miss": 28,
+    "g": "M-White",
+    "m": "NeuralTextures",
+    "ding_miss": 3
+   },
+   {
+    "v": "NeuralTextures_867_765",
+    "n": 30,
+    "miss": 27,
+    "g": "F-White",
+    "m": "NeuralTextures",
+    "ding_miss": 13
+   }
+  ]
+ },
+ "dfdc": {
+  "n_real": 14699,
+  "n_fake": 8158,
+  "FPR": 33.2,
+  "TPR": 72.5,
+  "Ding_FPR": 49.1,
+  "Ding_TPR": 55.6,
+  "FP_shared_with_Ding_%": 54.8,
+  "FN_shared_with_Ding_%": 54.3,
+  "FPR_by_group": {
+   "F-Asian": {
+    "mean": 31.4,
+    "size": 628
+   },
+   "F-Black": {
+    "mean": 45.5,
+    "size": 2100
+   },
+   "F-Others": {
+    "mean": 33.3,
+    "size": 705
+   },
+   "F-White": {
+    "mean": 30.0,
+    "size": 3366
+   },
+   "M-Asian": {
+    "mean": 22.5,
+    "size": 458
+   },
+   "M-Black": {
+    "mean": 30.4,
+    "size": 2008
+   },
+   "M-Others": {
+    "mean": 33.6,
+    "size": 1244
+   },
+   "M-White": {
+    "mean": 32.4,
+    "size": 4190
+   }
+  },
+  "Ding_FPR_by_group": {
+   "F-Asian": 47.1,
+   "F-Black": 56.0,
+   "F-Others": 48.8,
+   "F-White": 48.6,
+   "M-Asian": 51.7,
+   "M-Black": 62.3,
+   "M-Others": 37.9,
+   "M-White": 43.2
+  },
+  "TPR_by_method": {
+   "unknown": 72.5
+  },
+  "Ding_TPR_by_method": {
+   "unknown": 55.6
+  },
+  "top_FP_videos": [
+   {
+    "v": "4069",
+    "n": 60,
+    "fp": 60,
+    "g": "M-Black",
+    "ding_fp": 58,
+    "rate": 100.0
+   },
+   {
+    "v": "6461",
+    "n": 60,
+    "fp": 60,
+    "g": "M-Others",
+    "ding_fp": 0,
+    "rate": 100.0
+   },
+   {
+    "v": "6305",
+    "n": 60,
+    "fp": 58,
+    "g": "M-Asian",
+    "ding_fp": 0,
+    "rate": 97.0
+   },
+   {
+    "v": "6104",
+    "n": 60,
+    "fp": 58,
+    "g": "M-Others",
+    "ding_fp": 60,
+    "rate": 97.0
+   },
+   {
+    "v": "7138",
+    "n": 60,
+    "fp": 58,
+    "g": "F-White",
+    "ding_fp": 0,
+    "rate": 97.0
+   },
+   {
+    "v": "5432",
+    "n": 60,
+    "fp": 56,
+    "g": "F-Black",
+    "ding_fp": 54,
+    "rate": 93.0
+   },
+   {
+    "v": "5536",
+    "n": 60,
+    "fp": 56,
+    "g": "M-Black",
+    "ding_fp": 54,
+    "rate": 93.0
+   },
+   {
+    "v": "7509",
+    "n": 60,
+    "fp": 52,
+    "g": "F-White",
+    "ding_fp": 0,
+    "rate": 87.0
+   }
+  ],
+  "FP_frames_in_top5_videos_%": 6.0,
+  "top_FN_videos": [
+   {
+    "v": "4203",
+    "n": 60,
+    "miss": 56,
+    "g": "F-White",
+    "m": "unknown",
+    "ding_miss": 8
+   },
+   {
+    "v": "4367",
+    "n": 60,
+    "miss": 32,
+    "g": "F-Others",
+    "m": "unknown",
+    "ding_miss": 38
+   },
+   {
+    "v": "4734",
+    "n": 30,
+    "miss": 30,
+    "g": "F-White",
+    "m": "unknown",
+    "ding_miss": 27
+   },
+   {
+    "v": "4680",
+    "n": 30,
+    "miss": 30,
+    "g": "F-White",
+    "m": "unknown",
+    "ding_miss": 30
+   },
+   {
+    "v": "4776",
+    "n": 30,
+    "miss": 30,
+    "g": "F-White",
+    "m": "unknown",
+    "ding_miss": 30
+   },
+   {
+    "v": "6009",
+    "n": 30,
+    "miss": 30,
+    "g": "F-White",
+    "m": "unknown",
+    "ding_miss": 16
+   },
+   {
+    "v": "4799",
+    "n": 30,
+    "miss": 29,
+    "g": "M-White",
+    "m": "unknown",
+    "ding_miss": 7
+   },
+   {
+    "v": "4093",
+    "n": 30,
+    "miss": 29,
+    "g": "F-White",
+    "m": "unknown",
+    "ding_miss": 10
+   }
+  ]
+ },
+ "celebdf": {
+  "n_real": 5713,
+  "n_fake": 22745,
+  "FPR": 58.6,
+  "TPR": 95.5,
+  "Ding_FPR": 69.6,
+  "Ding_TPR": 90.5,
+  "FP_shared_with_Ding_%": 76.8,
+  "FN_shared_with_Ding_%": 41.7,
+  "FPR_by_group": {
+   "F-Others": {
+    "mean": 64.4,
+    "size": 90
+   },
+   "F-White": {
+    "mean": 63.0,
+    "size": 3929
+   },
+   "M-Black": {
+    "mean": 36.3,
+    "size": 710
+   },
+   "M-Others": {
+    "mean": 81.7,
+    "size": 60
+   },
+   "M-White": {
+    "mean": 55.1,
+    "size": 924
+   }
+  },
+  "Ding_FPR_by_group": {
+   "F-Others": 96.7,
+   "F-White": 71.1,
+   "M-Black": 50.6,
+   "M-Others": 90.0,
+   "M-White": 73.9
+  },
+  "TPR_by_method": {
+   "Celeb-synthesis": 95.5
+  },
+  "Ding_TPR_by_method": {
+   "Celeb-synthesis": 90.5
+  },
+  "top_FP_videos": [
+   {
+    "v": "Celeb-real_id48_0007",
+    "n": 30,
+    "fp": 30,
+    "g": "F-White",
+    "ding_fp": 26,
+    "rate": 100.0
+   },
+   {
+    "v": "Celeb-real_id51_0007",
+    "n": 30,
+    "fp": 30,
+    "g": "F-White",
+    "ding_fp": 28,
+    "rate": 100.0
+   },
+   {
+    "v": "Celeb-real_id52_0003",
+    "n": 30,
+    "fp": 30,
+    "g": "F-White",
+    "ding_fp": 30,
+    "rate": 100.0
+   },
+   {
+    "v": "YouTube-real_00268",
+    "n": 30,
+    "fp": 30,
+    "g": "M-White",
+    "ding_fp": 28,
+    "rate": 100.0
+   },
+   {
+    "v": "YouTube-real_00291",
+    "n": 30,
+    "fp": 30,
+    "g": "F-White",
+    "ding_fp": 25,
+    "rate": 100.0
+   },
+   {
+    "v": "Celeb-real_id57_0000",
+    "n": 30,
+    "fp": 30,
+    "g": "F-White",
+    "ding_fp": 22,
+    "rate": 100.0
+   },
+   {
+    "v": "Celeb-real_id56_0009",
+    "n": 30,
+    "fp": 30,
+    "g": "F-White",
+    "ding_fp": 29,
+    "rate": 100.0
+   },
+   {
+    "v": "Celeb-real_id54_0009",
+    "n": 30,
+    "fp": 30,
+    "g": "F-White",
+    "ding_fp": 20,
+    "rate": 100.0
+   }
+  ],
+  "FP_frames_in_top5_videos_%": 4.5,
+  "top_FN_videos": [
+   {
+    "v": "Celeb-synthesis_id60_id61_0004",
+    "n": 30,
+    "miss": 30,
+    "g": "M-Black",
+    "m": "Celeb-synthesis",
+    "ding_miss": 4
+   },
+   {
+    "v": "Celeb-synthesis_id60_id59_0004",
+    "n": 30,
+    "miss": 25,
+    "g": "M-Black",
+    "m": "Celeb-synthesis",
+    "ding_miss": 0
+   },
+   {
+    "v": "Celeb-synthesis_id60_id61_0002",
+    "n": 30,
+    "miss": 23,
+    "g": "M-Black",
+    "m": "Celeb-synthesis",
+    "ding_miss": 10
+   },
+   {
+    "v": "Celeb-synthesis_id60_id61_0007",
+    "n": 30,
+    "miss": 21,
+    "g": "M-Black",
+    "m": "Celeb-synthesis",
+    "ding_miss": 26
+   },
+   {
+    "v": "Celeb-synthesis_id52_id58_0002",
+    "n": 30,
+    "miss": 17,
+    "g": "F-White",
+    "m": "Celeb-synthesis",
+    "ding_miss": 1
+   },
+   {
+    "v": "Celeb-synthesis_id59_id61_0004",
+    "n": 30,
+    "miss": 15,
+    "g": "M-Black",
+    "m": "Celeb-synthesis",
+    "ding_miss": 18
+   },
+   {
+    "v": "Celeb-synthesis_id60_id59_0001",
+    "n": 30,
+    "miss": 15,
+    "g": "M-Black",
+    "m": "Celeb-synthesis",
+    "ding_miss": 7
+   },
+   {
+    "v": "Celeb-synthesis_id61_id59_0005",
+    "n": 30,
+    "miss": 13,
+    "g": "M-Black",
+    "m": "Celeb-synthesis",
+    "ding_miss": 1
+   }
+  ]
+ },
+ "dfd": {
+  "n_real": 3092,
+  "n_fake": 6293,
+  "FPR": 32.4,
+  "TPR": 89.2,
+  "Ding_FPR": 59.0,
+  "Ding_TPR": 83.6,
+  "FP_shared_with_Ding_%": 71.7,
+  "FN_shared_with_Ding_%": 43.1,
+  "FPR_by_group": {
+   "F-Black": {
+    "mean": 50.0,
+    "size": 88
+   },
+   "F-White": {
+    "mean": 33.5,
+    "size": 1549
+   },
+   "M-Black": {
+    "mean": 35.8,
+    "size": 682
+   },
+   "M-White": {
+    "mean": 25.4,
+    "size": 773
+   }
+  },
+  "Ding_FPR_by_group": {
+   "F-Black": 31.8,
+   "F-White": 58.9,
+   "M-Black": 72.7,
+   "M-White": 50.2
+  },
+  "TPR_by_method": {
+   "01": 60.1,
+   "08": 97.1,
+   "10": 94.7,
+   "16": 99.4,
+   "17": 66.5,
+   "19": 98.1,
+   "22": 77.9,
+   "23": 90.6,
+   "27": 90.1,
+   "28": 95.7
+  },
+  "Ding_TPR_by_method": {
+   "01": 75.1,
+   "08": 84.4,
+   "10": 81.8,
+   "16": 75.7,
+   "17": 93.2,
+   "19": 79.9,
+   "22": 80.4,
+   "23": 85.3,
+   "27": 72.8,
+   "28": 94.2
+  },
+  "top_FP_videos": [
+   {
+    "v": "01__walking_outside_cafe_disgusted",
+    "n": 30,
+    "fp": 30,
+    "g": "F-White",
+    "ding_fp": 26,
+    "rate": 100.0
+   },
+   {
+    "v": "19__exit_phone_room",
+    "n": 30,
+    "fp": 29,
+    "g": "M-Black",
+    "ding_fp": 29,
+    "rate": 97.0
+   },
+   {
+    "v": "19__podium_speech_happy",
+    "n": 30,
+    "fp": 29,
+    "g": "F-Black",
+    "ding_fp": 6,
+    "rate": 97.0
+   },
+   {
+    "v": "27__walking_outside_cafe_disgusted",
+    "n": 28,
+    "fp": 27,
+    "g": "F-White",
+    "ding_fp": 27,
+    "rate": 96.0
+   },
+   {
+    "v": "28__podium_speech_happy",
+    "n": 30,
+    "fp": 27,
+    "g": "F-White",
+    "ding_fp": 27,
+    "rate": 90.0
+   },
+   {
+    "v": "19__walking_down_street_outside_angry",
+    "n": 29,
+    "fp": 26,
+    "g": "M-Black",
+    "ding_fp": 28,
+    "rate": 90.0
+   },
+   {
+    "v": "27__podium_speech_happy",
+    "n": 30,
+    "fp": 26,
+    "g": "F-White",
+    "ding_fp": 25,
+    "rate": 87.0
+   },
+   {
+    "v": "19__walking_outside_cafe_disgusted",
+    "n": 30,
+    "fp": 26,
+    "g": "M-Black",
+    "ding_fp": 23,
+    "rate": 87.0
+   }
+  ],
+  "FP_frames_in_top5_videos_%": 14.2,
+  "top_FN_videos": [
+   {
+    "v": "17_08__podium_speech_happy__ISS1V0B1",
+    "n": 30,
+    "miss": 30,
+    "g": "M-Black",
+    "m": "17",
+    "ding_miss": 0
+   },
+   {
+    "v": "01_27__outside_talking_still_laughing__ZYCZ30C0",
+    "n": 30,
+    "miss": 27,
+    "g": "F-White",
+    "m": "01",
+    "ding_miss": 3
+   },
+   {
+    "v": "22_23__walking_and_outside_surprised__NUTQ0HJ5",
+    "n": 30,
+    "miss": 26,
+    "g": "F-White",
+    "m": "22",
+    "ding_miss": 14
+   },
+   {
+    "v": "22_10__walking_and_outside_surprised__G48B2EQ2",
+    "n": 30,
+    "miss": 25,
+    "g": "M-White",
+    "m": "22",
+    "ding_miss": 11
+   },
+   {
+    "v": "17_08__podium_speech_happy__ZCEYWYTC",
+    "n": 30,
+    "miss": 25,
+    "g": "M-Black",
+    "m": "17",
+    "ding_miss": 6
+   },
+   {
+    "v": "22_23__walking_and_outside_surprised__TU7RHG0S",
+    "n": 30,
+    "miss": 23,
+    "g": "F-White",
+    "m": "22",
+    "ding_miss": 13
+   },
+   {
+    "v": "01_27__outside_talking_still_laughing__S2YCUY48",
+    "n": 30,
+    "miss": 22,
+    "g": "F-White",
+    "m": "01",
+    "ding_miss": 5
+   },
+   {
+    "v": "22_10__walking_and_outside_surprised__8YQ2EUQP",
+    "n": 30,
+    "miss": 22,
+    "g": "M-White",
+    "m": "22",
+    "ding_miss": 8
+   }
+  ]
+ }
+}

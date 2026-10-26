@@ -1,0 +1,22 @@
+set,ita,spearman_vs_aif_mst(video median),median_white(cl_race),median_black(cl_race),median_asian(cl_race),median_others(cl_race),auc_white_vs_black
+ffpp_train,ita_vid,0.7193,35.48,-5.548,36.35,30.06,0.8077
+ffpp_train,itavid_raw,0.7354,33.02,-3.287,33.27,33.11,0.8017
+ffpp_train,itavid_gwexp,0.5117,44.66,17.9,47.41,40.48,0.7504
+ffpp_val,ita_vid,0.7524,32.12,0.8853,36.03,27.17,0.7812
+ffpp_val,itavid_raw,0.7745,27.71,-0.5619,31.91,27.6,0.7908
+ffpp_val,itavid_gwexp,0.533,41.69,-8.598,38.96,39.51,0.8622
+ffpp_test,ita_vid,0.746,34.34,7.84,43.76,29.61,0.7188
+ffpp_test,itavid_raw,0.7417,30.8,11.72,40.22,32.15,0.7054
+ffpp_test,itavid_gwexp,0.534,41.05,24.81,52.08,39.81,0.7065
+dfdc,ita_vid,0.7612,-15.38,-64.34,-11.46,-40.54,0.7353
+dfdc,itavid_raw,0.7813,-7.361,-56.4,-1.957,-29.82,0.7686
+dfdc,itavid_gwexp,0.5497,-14.26,-54.12,-16.16,-25.65,0.6745
+celebdf,ita_vid,0.7547,26.6,-54.1,0.9939,,0.956
+celebdf,itavid_raw,0.7752,21.22,-47.06,0.9753,,0.9746
+celebdf,itavid_gwexp,0.4893,50.16,-23.25,25.24,,0.9711
+dfd,ita_vid,0.7085,37.06,-2.116,32.05,10.06,0.7573
+dfd,itavid_raw,0.7548,27.45,-3.97,22.32,11.12,0.7484
+dfd,itavid_gwexp,0.5772,34.44,-16.02,64.37,-9.886,0.7339
+ff2_test,ita_vid,,39.35,-8.869,29.81,-0.863,0.7752
+ff2_test,itavid_raw,,33.21,-7.38,25.18,-0.2699,0.7819
+ff2_test,itavid_gwexp,,34.45,-2.779,29.78,-2.46,0.6787

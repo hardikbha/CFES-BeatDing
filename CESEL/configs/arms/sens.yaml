@@ -1,0 +1,2 @@
+# +sens: B0 + L_sens (validated-cue utility hinge). Start from B0's best.pt; ces.validated_json from its validation pass.
+loss: {sens_ces: {weight: 0.5}}

@@ -1,0 +1,5 @@
+# BD0 = base + B (ESA + stratified sampler 4 per (label x intersection group) cell = 64 images), no augmentation;
+# isolates A (BD2 - BD0)
+_base_: base_E.yaml
+loss: {esa: {weight: 1.0}}
+strat: {per_cell: 4}

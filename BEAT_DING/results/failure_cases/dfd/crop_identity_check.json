@@ -1,0 +1,45 @@
+{
+ "threshold_matched": -73.76414591500017,
+ "actor_male_share_over_real_frames": {
+  "01": 0.017,
+  "08": 1.0,
+  "10": 1.0,
+  "17": 1.0,
+  "19": 0.111,
+  "22": 0.868,
+  "23": 0.04,
+  "27": 0.005,
+  "28": 0.006
+ },
+ "frames_in_duplicate_hash_across_videos": 120,
+ "videos_involved_in_duplicates": 4,
+ "duplicate_real_frames": 120,
+ "duplicate_fake_frames": 0,
+ "real_gender_mismatch_0": {
+  "n": 2976,
+  "videos": 103,
+  "err_rate_ours": 31.451612903225808,
+  "err_rate_ding": 58.971774193548384
+ },
+ "real_gender_mismatch_1": {
+  "n": 116,
+  "videos": 15,
+  "err_rate_ours": 57.758620689655174,
+  "err_rate_ding": 60.3448275862069
+ },
+ "real_frames_unscored_actor_unknown": 0,
+ "fake_gender_mismatch_0": {
+  "n": 5333,
+  "videos": 186,
+  "err_rate_ours": 10.463153947121695,
+  "err_rate_ding": 16.857303581473843
+ },
+ "fake_gender_mismatch_1": {
+  "n": 136,
+  "videos": 10,
+  "err_rate_ours": 70.58823529411765,
+  "err_rate_ding": 26.47058823529412
+ },
+ "fake_frames_unscored_actor_unknown": 824,
+ "fake_frames_identical_to_a_real_frame": 0
+}

@@ -1,0 +1,1308 @@
+start 2026-10-23T10:38:49+05:30 host=gpu01 CUDA_VISIBLE_DEVICES=4 seed=17 E_BASE=5 E_GDA=5 data=/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/data_ding_schema/fairforge2_full
+script_sha256 32264d09949d590c prereg_sha256 a6fa46f1feee56b8
+0, NVIDIA H100 80GB HBM3, 28688 MiB, 81559 MiB, 100 %
+1, NVIDIA H100 80GB HBM3, 20163 MiB, 81559 MiB, 96 %
+2, NVIDIA H100 80GB HBM3, 6 MiB, 81559 MiB, 0 %
+3, NVIDIA H100 80GB HBM3, 2575 MiB, 81559 MiB, 42 %
+4, NVIDIA H100 80GB HBM3, 4 MiB, 81559 MiB, 0 %
+5, NVIDIA H100 80GB HBM3, 6 MiB, 81559 MiB, 0 %
+6, NVIDIA H100 80GB HBM3, 4 MiB, 81559 MiB, 0 %
+7, NVIDIA H100 80GB HBM3, 8 MiB, 81559 MiB, 0 %
++ /home/sachin.chaudhary/.conda/envs/qwen38/bin/python -u train_ori_model.py --seed 17 --num_epochs 5 --lr 0.001 --result_dir /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/results/DING_ff2_s17/base --dataset_dir /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/data_ding_schema/fairforge2_full --batch_size 64 --workers 8 --model_name XceptionDetector
+/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error [Errno 101] Network is unreachable>
+  data = fetch_version_info()
+Logging to /var/tmp/pbs.42582.mgmt01/openai-2026-10-23-10-39-55-643915
+===> random seed: 17
+Logging to /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/results/DING_ff2_s17/base
+Load pretrained model successfully!!!! missing= ['last_linear.weight', 'last_linear.bias', 'adjust_channel.0.weight', 'adjust_channel.0.bias', 'adjust_channel.1.weight', 'adjust_channel.1.bias', 'adjust_channel.1.running_mean', 'adjust_channel.1.running_var']
+Unsupported operator aten::add_ encountered 53 time(s)
+Unsupported operator aten::max_pool2d encountered 4 time(s)
+The following submodules of the model were never called during the trace of the graph. They may be unused, or they were accessed by direct calls to .forward() or via other python methods. In the latter case they will have zeros for statistics, though their statistics will still contribute to their parent calling module.
+loss_func, loss_func.loss_fn
+模型总FLOPs: 6.09 GFlops
+# of real training samples: 32992, # of fake training samples: 469043, 
+Epoch: 0/5
+Cur lr: 0.001
+Batch [100/7329]  Total Loss: 0.6601
+Batch [200/7329]  Total Loss: 0.5355
+Batch [300/7329]  Total Loss: 0.4356
+Batch [400/7329]  Total Loss: 0.4543
+Batch [500/7329]  Total Loss: 0.3931
+Batch [600/7329]  Total Loss: 0.3257
+Batch [700/7329]  Total Loss: 0.3251
+Batch [800/7329]  Total Loss: 0.3230
+Batch [900/7329]  Total Loss: 0.3615
+Batch [1000/7329]  Total Loss: 0.2508
+Batch [1100/7329]  Total Loss: 0.2804
+Batch [1200/7329]  Total Loss: 0.2106
+Batch [1300/7329]  Total Loss: 0.1932
+Batch [1400/7329]  Total Loss: 0.2669
+Batch [1500/7329]  Total Loss: 0.1371
+Batch [1600/7329]  Total Loss: 0.1961
+Batch [1700/7329]  Total Loss: 0.2758
+Batch [1800/7329]  Total Loss: 0.2226
+Batch [1900/7329]  Total Loss: 0.2323
+Batch [2000/7329]  Total Loss: 0.1848
+Batch [2100/7329]  Total Loss: 0.2129
+Batch [2200/7329]  Total Loss: 0.1327
+Batch [2300/7329]  Total Loss: 0.2141
+Batch [2400/7329]  Total Loss: 0.1819
+Batch [2500/7329]  Total Loss: 0.2486
+Batch [2600/7329]  Total Loss: 0.1234
+Batch [2700/7329]  Total Loss: 0.1696
+Batch [2800/7329]  Total Loss: 0.1485
+Batch [2900/7329]  Total Loss: 0.1743
+Batch [3000/7329]  Total Loss: 0.1835
+Batch [3100/7329]  Total Loss: 0.2268
+Batch [3200/7329]  Total Loss: 0.1667
+Batch [3300/7329]  Total Loss: 0.1813
+Batch [3400/7329]  Total Loss: 0.1526
+Batch [3500/7329]  Total Loss: 0.1146
+Batch [3600/7329]  Total Loss: 0.1059
+Batch [3700/7329]  Total Loss: 0.1675
+Batch [3800/7329]  Total Loss: 0.1300
+Batch [3900/7329]  Total Loss: 0.2141
+Batch [4000/7329]  Total Loss: 0.1713
+Batch [4100/7329]  Total Loss: 0.1185
+Batch [4200/7329]  Total Loss: 0.1248
+Batch [4300/7329]  Total Loss: 0.1313
+Batch [4400/7329]  Total Loss: 0.1594
+Batch [4500/7329]  Total Loss: 0.1476
+Batch [4600/7329]  Total Loss: 0.1770
+Batch [4700/7329]  Total Loss: 0.1520
+Batch [4800/7329]  Total Loss: 0.2077
+Batch [4900/7329]  Total Loss: 0.2096
+Batch [5000/7329]  Total Loss: 0.1501
+Batch [5100/7329]  Total Loss: 0.1444
+Batch [5200/7329]  Total Loss: 0.0907
+Batch [5300/7329]  Total Loss: 0.0707
+Batch [5400/7329]  Total Loss: 0.1788
+Batch [5500/7329]  Total Loss: 0.0529
+Batch [5600/7329]  Total Loss: 0.0885
+Batch [5700/7329]  Total Loss: 0.1249
+Batch [5800/7329]  Total Loss: 0.1328
+Batch [5900/7329]  Total Loss: 0.1907
+Batch [6000/7329]  Total Loss: 0.0744
+Batch [6100/7329]  Total Loss: 0.0500
+Batch [6200/7329]  Total Loss: 0.1357
+Batch [6300/7329]  Total Loss: 0.1076
+Batch [6400/7329]  Total Loss: 0.1489
+Batch [6500/7329]  Total Loss: 0.0845
+Batch [6600/7329]  Total Loss: 0.1045
+Batch [6700/7329]  Total Loss: 0.0362
+Batch [6800/7329]  Total Loss: 0.1545
+Batch [6900/7329]  Total Loss: 0.0906
+Batch [7000/7329]  Total Loss: 0.0730
+Batch [7100/7329]  Total Loss: 0.0915
+Batch [7200/7329]  Total Loss: 0.1111
+Batch [7300/7329]  Total Loss: 0.0821
+Epoch [1/5], Avg Loss: 0.1936
+Epoch: 1/5
+Cur lr: 0.001
+Batch [100/7329]  Total Loss: 0.0499
+Batch [200/7329]  Total Loss: 0.1035
+Batch [300/7329]  Total Loss: 0.0623
+Batch [400/7329]  Total Loss: 0.1214
+Batch [500/7329]  Total Loss: 0.0659
+Batch [600/7329]  Total Loss: 0.1133
+Batch [700/7329]  Total Loss: 0.0765
+Batch [800/7329]  Total Loss: 0.0434
+Batch [900/7329]  Total Loss: 0.0913
+Batch [1000/7329]  Total Loss: 0.0708
+Batch [1100/7329]  Total Loss: 0.1415
+Batch [1200/7329]  Total Loss: 0.0483
+Batch [1300/7329]  Total Loss: 0.0394
+Batch [1400/7329]  Total Loss: 0.0302
+Batch [1500/7329]  Total Loss: 0.0586
+Batch [1600/7329]  Total Loss: 0.1490
+Batch [1700/7329]  Total Loss: 0.0732
+Batch [1800/7329]  Total Loss: 0.0680
+Batch [1900/7329]  Total Loss: 0.0659
+Batch [2000/7329]  Total Loss: 0.0779
+Batch [2100/7329]  Total Loss: 0.0493
+Batch [2200/7329]  Total Loss: 0.1259
+Batch [2300/7329]  Total Loss: 0.1461
+Batch [2400/7329]  Total Loss: 0.0648
+Batch [2500/7329]  Total Loss: 0.0777
+Batch [2600/7329]  Total Loss: 0.0520
+Batch [2700/7329]  Total Loss: 0.0859
+Batch [2800/7329]  Total Loss: 0.1435
+Batch [2900/7329]  Total Loss: 0.0267
+Batch [3000/7329]  Total Loss: 0.0603
+Batch [3100/7329]  Total Loss: 0.0817
+Batch [3200/7329]  Total Loss: 0.0869
+Batch [3300/7329]  Total Loss: 0.1065
+Batch [3400/7329]  Total Loss: 0.0415
+Batch [3500/7329]  Total Loss: 0.0808
+Batch [3600/7329]  Total Loss: 0.0765
+Batch [3700/7329]  Total Loss: 0.0914
+Batch [3800/7329]  Total Loss: 0.0383
+Batch [3900/7329]  Total Loss: 0.0149
+Batch [4000/7329]  Total Loss: 0.0230
+Batch [4100/7329]  Total Loss: 0.0611
+Batch [4200/7329]  Total Loss: 0.0925
+Batch [4300/7329]  Total Loss: 0.0675
+Batch [4400/7329]  Total Loss: 0.0742
+Batch [4500/7329]  Total Loss: 0.1284
+Batch [4600/7329]  Total Loss: 0.0408
+Batch [4700/7329]  Total Loss: 0.0241
+Batch [4800/7329]  Total Loss: 0.0551
+Batch [4900/7329]  Total Loss: 0.0699
+Batch [5000/7329]  Total Loss: 0.0507
+Batch [5100/7329]  Total Loss: 0.0140
+Batch [5200/7329]  Total Loss: 0.0181
+Batch [5300/7329]  Total Loss: 0.0125
+Batch [5400/7329]  Total Loss: 0.0662
+Batch [5500/7329]  Total Loss: 0.0446
+Batch [5600/7329]  Total Loss: 0.0469
+Batch [5700/7329]  Total Loss: 0.0967
+Batch [5800/7329]  Total Loss: 0.0271
+Batch [5900/7329]  Total Loss: 0.0115
+Batch [6000/7329]  Total Loss: 0.0625
+Batch [6100/7329]  Total Loss: 0.0217
+Batch [6200/7329]  Total Loss: 0.0286
+Batch [6300/7329]  Total Loss: 0.0908
+Batch [6400/7329]  Total Loss: 0.0169
+Batch [6500/7329]  Total Loss: 0.0185
+Batch [6600/7329]  Total Loss: 0.0840
+Batch [6700/7329]  Total Loss: 0.0178
+Batch [6800/7329]  Total Loss: 0.0236
+Batch [6900/7329]  Total Loss: 0.0377
+Batch [7000/7329]  Total Loss: 0.0292
+Batch [7100/7329]  Total Loss: 0.0215
+Batch [7200/7329]  Total Loss: 0.0906
+Batch [7300/7329]  Total Loss: 0.0400
+Epoch [2/5], Avg Loss: 0.0677
+Epoch: 2/5
+Cur lr: 0.001
+Batch [100/7329]  Total Loss: 0.0097
+Batch [200/7329]  Total Loss: 0.0284
+Batch [300/7329]  Total Loss: 0.0176
+Batch [400/7329]  Total Loss: 0.0621
+Batch [500/7329]  Total Loss: 0.0267
+Batch [600/7329]  Total Loss: 0.0144
+Batch [700/7329]  Total Loss: 0.0190
+Batch [800/7329]  Total Loss: 0.0157
+Batch [900/7329]  Total Loss: 0.0651
+Batch [1000/7329]  Total Loss: 0.0752
+Batch [1100/7329]  Total Loss: 0.0283
+Batch [1200/7329]  Total Loss: 0.0537
+Batch [1300/7329]  Total Loss: 0.0425
+Batch [1400/7329]  Total Loss: 0.0402
+Batch [1500/7329]  Total Loss: 0.0079
+Batch [1600/7329]  Total Loss: 0.0289
+Batch [1700/7329]  Total Loss: 0.0706
+Batch [1800/7329]  Total Loss: 0.0936
+Batch [1900/7329]  Total Loss: 0.0504
+Batch [2000/7329]  Total Loss: 0.0092
+Batch [2100/7329]  Total Loss: 0.0402
+Batch [2200/7329]  Total Loss: 0.0352
+Batch [2300/7329]  Total Loss: 0.0105
+Batch [2400/7329]  Total Loss: 0.0376
+Batch [2500/7329]  Total Loss: 0.0232
+Batch [2600/7329]  Total Loss: 0.0425
+Batch [2700/7329]  Total Loss: 0.0091
+Batch [2800/7329]  Total Loss: 0.0176
+Batch [2900/7329]  Total Loss: 0.0142
+Batch [3000/7329]  Total Loss: 0.0074
+Batch [3100/7329]  Total Loss: 0.0433
+Batch [3200/7329]  Total Loss: 0.0993
+Batch [3300/7329]  Total Loss: 0.0528
+Batch [3400/7329]  Total Loss: 0.0121
+Batch [3500/7329]  Total Loss: 0.0610
+Batch [3600/7329]  Total Loss: 0.0510
+Batch [3700/7329]  Total Loss: 0.0298
+Batch [3800/7329]  Total Loss: 0.0395
+Batch [3900/7329]  Total Loss: 0.0052
+Batch [4000/7329]  Total Loss: 0.0137
+Batch [4100/7329]  Total Loss: 0.0977
+Batch [4200/7329]  Total Loss: 0.0490
+Batch [4300/7329]  Total Loss: 0.0309
+Batch [4400/7329]  Total Loss: 0.0311
+Batch [4500/7329]  Total Loss: 0.0762
+Batch [4600/7329]  Total Loss: 0.0244
+Batch [4700/7329]  Total Loss: 0.0527
+Batch [4800/7329]  Total Loss: 0.0182
+Batch [4900/7329]  Total Loss: 0.0997
+Batch [5000/7329]  Total Loss: 0.0830
+Batch [5100/7329]  Total Loss: 0.0203
+Batch [5200/7329]  Total Loss: 0.0699
+Batch [5300/7329]  Total Loss: 0.0194
+Batch [5400/7329]  Total Loss: 0.0312
+Batch [5500/7329]  Total Loss: 0.0282
+Batch [5600/7329]  Total Loss: 0.0055
+Batch [5700/7329]  Total Loss: 0.0496
+Batch [5800/7329]  Total Loss: 0.0098
+Batch [5900/7329]  Total Loss: 0.0091
+Batch [6000/7329]  Total Loss: 0.0614
+Batch [6100/7329]  Total Loss: 0.0101
+Batch [6200/7329]  Total Loss: 0.0252
+Batch [6300/7329]  Total Loss: 0.0572
+Batch [6400/7329]  Total Loss: 0.0193
+Batch [6500/7329]  Total Loss: 0.0338
+Batch [6600/7329]  Total Loss: 0.0186
+Batch [6700/7329]  Total Loss: 0.0342
+Batch [6800/7329]  Total Loss: 0.0246
+Batch [6900/7329]  Total Loss: 0.0590
+Batch [7000/7329]  Total Loss: 0.0501
+Batch [7100/7329]  Total Loss: 0.0462
+Batch [7200/7329]  Total Loss: 0.0095
+Batch [7300/7329]  Total Loss: 0.1097
+Epoch [3/5], Avg Loss: 0.0340
+Epoch: 3/5
+Cur lr: 0.001
+Batch [100/7329]  Total Loss: 0.0148
+Batch [200/7329]  Total Loss: 0.0405
+Batch [300/7329]  Total Loss: 0.0068
+Batch [400/7329]  Total Loss: 0.0091
+Batch [500/7329]  Total Loss: 0.0149
+Batch [600/7329]  Total Loss: 0.0111
+Batch [700/7329]  Total Loss: 0.0050
+Batch [800/7329]  Total Loss: 0.0399
+Batch [900/7329]  Total Loss: 0.0655
+Batch [1000/7329]  Total Loss: 0.0367
+Batch [1100/7329]  Total Loss: 0.0086
+Batch [1200/7329]  Total Loss: 0.0306
+Batch [1300/7329]  Total Loss: 0.0326
+Batch [1400/7329]  Total Loss: 0.0149
+Batch [1500/7329]  Total Loss: 0.0078
+Batch [1600/7329]  Total Loss: 0.0205
+Batch [1700/7329]  Total Loss: 0.0254
+Batch [1800/7329]  Total Loss: 0.0352
+Batch [1900/7329]  Total Loss: 0.0307
+Batch [2000/7329]  Total Loss: 0.0083
+Batch [2100/7329]  Total Loss: 0.0441
+Batch [2200/7329]  Total Loss: 0.0175
+Batch [2300/7329]  Total Loss: 0.0162
+Batch [2400/7329]  Total Loss: 0.0073
+Batch [2500/7329]  Total Loss: 0.0325
+Batch [2600/7329]  Total Loss: 0.0364
+Batch [2700/7329]  Total Loss: 0.0482
+Batch [2800/7329]  Total Loss: 0.0100
+Batch [2900/7329]  Total Loss: 0.0088
+Batch [3000/7329]  Total Loss: 0.0157
+Batch [3100/7329]  Total Loss: 0.0069
+Batch [3200/7329]  Total Loss: 0.0229
+Batch [3300/7329]  Total Loss: 0.0050
+Batch [3400/7329]  Total Loss: 0.0228
+Batch [3500/7329]  Total Loss: 0.0164
+Batch [3600/7329]  Total Loss: 0.0414
+Batch [3700/7329]  Total Loss: 0.0180
+Batch [3800/7329]  Total Loss: 0.0496
+Batch [3900/7329]  Total Loss: 0.0116
+Batch [4000/7329]  Total Loss: 0.0231
+Batch [4100/7329]  Total Loss: 0.0142
+Batch [4200/7329]  Total Loss: 0.0104
+Batch [4300/7329]  Total Loss: 0.0397
+Batch [4400/7329]  Total Loss: 0.0166
+Batch [4500/7329]  Total Loss: 0.0112
+Batch [4600/7329]  Total Loss: 0.0077
+Batch [4700/7329]  Total Loss: 0.0260
+Batch [4800/7329]  Total Loss: 0.0518
+Batch [4900/7329]  Total Loss: 0.0174
+Batch [5000/7329]  Total Loss: 0.0454
+Batch [5100/7329]  Total Loss: 0.0101
+Batch [5200/7329]  Total Loss: 0.0191
+Batch [5300/7329]  Total Loss: 0.0365
+Batch [5400/7329]  Total Loss: 0.0100
+Batch [5500/7329]  Total Loss: 0.0299
+Batch [5600/7329]  Total Loss: 0.0314
+Batch [5700/7329]  Total Loss: 0.0079
+Batch [5800/7329]  Total Loss: 0.0113
+Batch [5900/7329]  Total Loss: 0.0108
+Batch [6000/7329]  Total Loss: 0.0099
+Batch [6100/7329]  Total Loss: 0.0224
+Batch [6200/7329]  Total Loss: 0.0318
+Batch [6300/7329]  Total Loss: 0.0687
+Batch [6400/7329]  Total Loss: 0.0120
+Batch [6500/7329]  Total Loss: 0.0198
+Batch [6600/7329]  Total Loss: 0.0440
+Batch [6700/7329]  Total Loss: 0.0156
+Batch [6800/7329]  Total Loss: 0.0214
+Batch [6900/7329]  Total Loss: 0.0314
+Batch [7000/7329]  Total Loss: 0.0133
+Batch [7100/7329]  Total Loss: 0.0236
+Batch [7200/7329]  Total Loss: 0.0104
+Batch [7300/7329]  Total Loss: 0.0179
+Epoch [4/5], Avg Loss: 0.0276
+Epoch: 4/5
+Cur lr: 0.001
+Batch [100/7329]  Total Loss: 0.0086
+Batch [200/7329]  Total Loss: 0.0178
+Batch [300/7329]  Total Loss: 0.0081
+Batch [400/7329]  Total Loss: 0.0159
+Batch [500/7329]  Total Loss: 0.0435
+Batch [600/7329]  Total Loss: 0.0319
+Batch [700/7329]  Total Loss: 0.0079
+Batch [800/7329]  Total Loss: 0.0080
+Batch [900/7329]  Total Loss: 0.0288
+Batch [1000/7329]  Total Loss: 0.0322
+Batch [1100/7329]  Total Loss: 0.0124
+Batch [1200/7329]  Total Loss: 0.0208
+Batch [1300/7329]  Total Loss: 0.0222
+Batch [1400/7329]  Total Loss: 0.1008
+Batch [1500/7329]  Total Loss: 0.0123
+Batch [1600/7329]  Total Loss: 0.0647
+Batch [1700/7329]  Total Loss: 0.0104
+Batch [1800/7329]  Total Loss: 0.0406
+Batch [1900/7329]  Total Loss: 0.0280
+Batch [2000/7329]  Total Loss: 0.0456
+Batch [2100/7329]  Total Loss: 0.0335
+Batch [2200/7329]  Total Loss: 0.0292
+Batch [2300/7329]  Total Loss: 0.0094
+Batch [2400/7329]  Total Loss: 0.0086
+Batch [2500/7329]  Total Loss: 0.0174
+Batch [2600/7329]  Total Loss: 0.0119
+Batch [2700/7329]  Total Loss: 0.0311
+Batch [2800/7329]  Total Loss: 0.0494
+Batch [2900/7329]  Total Loss: 0.0186
+Batch [3000/7329]  Total Loss: 0.0172
+Batch [3100/7329]  Total Loss: 0.0388
+Batch [3200/7329]  Total Loss: 0.0289
+Batch [3300/7329]  Total Loss: 0.0296
+Batch [3400/7329]  Total Loss: 0.0204
+Batch [3500/7329]  Total Loss: 0.0686
+Batch [3600/7329]  Total Loss: 0.0525
+Batch [3700/7329]  Total Loss: 0.0572
+Batch [3800/7329]  Total Loss: 0.0553
+Batch [3900/7329]  Total Loss: 0.0645
+Batch [4000/7329]  Total Loss: 0.1179
+Batch [4100/7329]  Total Loss: 0.0311
+Batch [4200/7329]  Total Loss: 0.0222
+Batch [4300/7329]  Total Loss: 0.0256
+Batch [4400/7329]  Total Loss: 0.0534
+Batch [4500/7329]  Total Loss: 0.0277
+Batch [4600/7329]  Total Loss: 0.0493
+Batch [4700/7329]  Total Loss: 0.0119
+Batch [4800/7329]  Total Loss: 0.0344
+Batch [4900/7329]  Total Loss: 0.0248
+Batch [5000/7329]  Total Loss: 0.1025
+Batch [5100/7329]  Total Loss: 0.0241
+Batch [5200/7329]  Total Loss: 0.0441
+Batch [5300/7329]  Total Loss: 0.1069
+Batch [5400/7329]  Total Loss: 0.0168
+Batch [5500/7329]  Total Loss: 0.0512
+Batch [5600/7329]  Total Loss: 0.0228
+Batch [5700/7329]  Total Loss: 0.0248
+Batch [5800/7329]  Total Loss: 0.0593
+Batch [5900/7329]  Total Loss: 0.0489
+Batch [6000/7329]  Total Loss: 0.0642
+Batch [6100/7329]  Total Loss: 0.0699
+Batch [6200/7329]  Total Loss: 0.0107
+Batch [6300/7329]  Total Loss: 0.0523
+Batch [6400/7329]  Total Loss: 0.0681
+Batch [6500/7329]  Total Loss: 0.0256
+Batch [6600/7329]  Total Loss: 0.0319
+Batch [6700/7329]  Total Loss: 0.0686
+Batch [6800/7329]  Total Loss: 0.0418
+Batch [6900/7329]  Total Loss: 0.0459
+Batch [7000/7329]  Total Loss: 0.0157
+Batch [7100/7329]  Total Loss: 0.0158
+Batch [7200/7329]  Total Loss: 0.0262
+Batch [7300/7329]  Total Loss: 0.0385
+Epoch [5/5], Avg Loss: 0.0373
++ /home/sachin.chaudhary/.conda/envs/qwen38/bin/python -u SFD.py --model_name XceptionDetector --checkpoint /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/results/DING_ff2_s17/base/4.pth --dataset_dir /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/data_ding_schema/fairforge2_full --prc 2.0 --out_channels_file /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/results/DING_ff2_s17/SFD_channels.txt --batch_size 64 --workers 8
+/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error [Errno 101] Network is unreachable>
+  data = fetch_version_info()
+Load pretrained model successfully!!!! missing= ['last_linear.weight', 'last_linear.bias', 'adjust_channel.0.weight', 'adjust_channel.0.bias', 'adjust_channel.1.weight', 'adjust_channel.1.bias', 'adjust_channel.1.running_mean', 'adjust_channel.1.running_var']
+min_10 (2.0%): 1.8947327074387637
+min_10_channels: 15, 163, 170, 171, 206, 235, 340, 401, 403, 489
+Sorted min_10_channels: [170 340 163 401 489 403 171 206  15 235]
+Sorted min_10_values: [1.89424328 1.89448035 1.89451172 1.8945358  1.89464816 1.8946602
+ 1.89466652 1.89468031 1.89469793 1.89472742]
+DINGREPRO_LIN: wrote 10 channels to /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/results/DING_ff2_s17/SFD_channels.txt
++ /home/sachin.chaudhary/.conda/envs/qwen38/bin/python -u GDA.py --model_name XceptionDetector --checkpoints /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/results/DING_ff2_s17/base/4.pth --dataset_dir /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/data_ding_schema/fairforge2_full --channels_file /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/results/DING_ff2_s17/SFD_channels.txt --num_epochs 5 --lr 0.001 --batch_size 32 --workers 8 --sinkhorn_blur 5e-4 --lambda_fairloss 0.005 --result_dir /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/results/DING_ff2_s17 --training_title ding_ff2_s17 --gpu 4
+/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error [Errno 101] Network is unreachable>
+  data = fetch_version_info()
+Random Seed: 121
+Using PyTorch version: 2.10.0+cu128 CUDA: True
+Load pretrained model successfully!!!! missing= ['last_linear.weight', 'last_linear.bias', 'adjust_channel.0.weight', 'adjust_channel.0.bias', 'adjust_channel.1.weight', 'adjust_channel.1.bias', 'adjust_channel.1.running_mean', 'adjust_channel.1.running_var']
+Unsupported operator aten::add_ encountered 53 time(s)
+Unsupported operator aten::max_pool2d encountered 4 time(s)
+The following submodules of the model were never called during the trace of the graph. They may be unused, or they were accessed by direct calls to .forward() or via other python methods. In the latter case they will have zeros for statistics, though their statistics will still contribute to their parent calling module.
+loss_func, loss_func.loss_fn
+Total FLOPs: 6.09 GFlops
+DINGREPRO_LIN: loaded 10 channels to decouple from /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/results/DING_ff2_s17/SFD_channels.txt
+The real data volume of each group: [4231, 4745, 6701, 7543, 2124, 2867, 1798, 2983]
+The fake data volume of each group: [58018, 67544, 93001, 108287, 29511, 41398, 26255, 45029]
+Epoch: 0/5
+Cur lr: 0.001
+Batch [100/14658]
+Total Loss: 0.0116,main_loss Loss: 0.0114,fair_loss Loss: 0.0415
+Batch [200/14658]
+Total Loss: 0.0158,main_loss Loss: 0.0156,fair_loss Loss: 0.0500
+Batch [300/14658]
+Total Loss: 0.0170,main_loss Loss: 0.0169,fair_loss Loss: 0.0283
+Batch [400/14658]
+Total Loss: 0.0281,main_loss Loss: 0.0280,fair_loss Loss: 0.0210
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 703, in _rmtree_safe_fd
+    onexc(func, path, err)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 750, in onexc
+    return onerror(func, path, exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 662, in _rmtree_safe_fd
+    os.rmdir(name, dir_fd=dirfd)
+OSError: [Errno 39] Directory not empty: '/var/tmp/pbs.42582.mgmt01/pymp-2a8b3m2_'
+Batch [500/14658]
+Total Loss: 0.0294,main_loss Loss: 0.0293,fair_loss Loss: 0.0162
+Batch [600/14658]
+Total Loss: 0.0740,main_loss Loss: 0.0738,fair_loss Loss: 0.0320
+Batch [700/14658]
+Total Loss: 0.0318,main_loss Loss: 0.0318,fair_loss Loss: 0.0105
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 703, in _rmtree_safe_fd
+    onexc(func, path, err)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 750, in onexc
+    return onerror(func, path, exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 662, in _rmtree_safe_fd
+    os.rmdir(name, dir_fd=dirfd)
+OSError: [Errno 39] Directory not empty: '/var/tmp/pbs.42582.mgmt01/pymp-lnc_538q'
+Batch [800/14658]
+Total Loss: 0.0511,main_loss Loss: 0.0505,fair_loss Loss: 0.1192
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 703, in _rmtree_safe_fd
+    onexc(func, path, err)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 750, in onexc
+    return onerror(func, path, exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 662, in _rmtree_safe_fd
+    os.rmdir(name, dir_fd=dirfd)
+OSError: [Errno 39] Directory not empty: '/var/tmp/pbs.42582.mgmt01/pymp-ud58kio8'
+Batch [900/14658]
+Total Loss: 0.0484,main_loss Loss: 0.0481,fair_loss Loss: 0.0566
+Batch [1000/14658]
+Total Loss: 0.0644,main_loss Loss: 0.0641,fair_loss Loss: 0.0502
+Batch [1100/14658]
+Total Loss: 0.0175,main_loss Loss: 0.0174,fair_loss Loss: 0.0259
+Batch [1200/14658]
+Total Loss: 0.0290,main_loss Loss: 0.0287,fair_loss Loss: 0.0633
+Batch [1300/14658]
+Total Loss: 0.1088,main_loss Loss: 0.1084,fair_loss Loss: 0.0749
+Batch [1400/14658]
+Total Loss: 0.0251,main_loss Loss: 0.0250,fair_loss Loss: 0.0165
+Batch [1500/14658]
+Total Loss: 0.0630,main_loss Loss: 0.0626,fair_loss Loss: 0.0856
+Batch [1600/14658]
+Total Loss: 0.0232,main_loss Loss: 0.0232,fair_loss Loss: 0.0117
+Batch [1700/14658]
+Total Loss: 0.0177,main_loss Loss: 0.0176,fair_loss Loss: 0.0137
+Batch [1800/14658]
+Total Loss: 0.0277,main_loss Loss: 0.0275,fair_loss Loss: 0.0395
+Batch [1900/14658]
+Total Loss: 0.0501,main_loss Loss: 0.0500,fair_loss Loss: 0.0150
+Batch [2000/14658]
+Total Loss: 0.0229,main_loss Loss: 0.0224,fair_loss Loss: 0.1113
+Batch [2100/14658]
+Total Loss: 0.0105,main_loss Loss: 0.0099,fair_loss Loss: 0.1045
+Batch [2200/14658]
+Total Loss: 0.0577,main_loss Loss: 0.0572,fair_loss Loss: 0.1005
+Batch [2300/14658]
+Total Loss: 0.0189,main_loss Loss: 0.0188,fair_loss Loss: 0.0343
+Batch [2400/14658]
+Total Loss: 0.0742,main_loss Loss: 0.0741,fair_loss Loss: 0.0254
+Batch [2500/14658]
+Total Loss: 0.0953,main_loss Loss: 0.0952,fair_loss Loss: 0.0241
+Batch [2600/14658]
+Total Loss: 0.0228,main_loss Loss: 0.0227,fair_loss Loss: 0.0247
+Batch [2700/14658]
+Total Loss: 0.0218,main_loss Loss: 0.0215,fair_loss Loss: 0.0587
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 703, in _rmtree_safe_fd
+    onexc(func, path, err)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 750, in onexc
+    return onerror(func, path, exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 662, in _rmtree_safe_fd
+    os.rmdir(name, dir_fd=dirfd)
+OSError: [Errno 39] Directory not empty: '/var/tmp/pbs.42582.mgmt01/pymp-4t8ou9vh'
+Batch [2800/14658]
+Total Loss: 0.0696,main_loss Loss: 0.0694,fair_loss Loss: 0.0244
+Batch [2900/14658]
+Total Loss: 0.1518,main_loss Loss: 0.1517,fair_loss Loss: 0.0248
+Batch [3000/14658]
+Total Loss: 0.0110,main_loss Loss: 0.0109,fair_loss Loss: 0.0065
+Batch [3100/14658]
+Total Loss: 0.0192,main_loss Loss: 0.0185,fair_loss Loss: 0.1265
+Batch [3200/14658]
+Total Loss: 0.0493,main_loss Loss: 0.0492,fair_loss Loss: 0.0321
+Batch [3300/14658]
+Total Loss: 0.0220,main_loss Loss: 0.0219,fair_loss Loss: 0.0178
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 703, in _rmtree_safe_fd
+    onexc(func, path, err)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 750, in onexc
+    return onerror(func, path, exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 662, in _rmtree_safe_fd
+    os.rmdir(name, dir_fd=dirfd)
+OSError: [Errno 39] Directory not empty: '/var/tmp/pbs.42582.mgmt01/pymp-qzqatcvx'
+Batch [3400/14658]
+Total Loss: 0.0948,main_loss Loss: 0.0944,fair_loss Loss: 0.0769
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 703, in _rmtree_safe_fd
+    onexc(func, path, err)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 750, in onexc
+    return onerror(func, path, exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 662, in _rmtree_safe_fd
+    os.rmdir(name, dir_fd=dirfd)
+OSError: [Errno 39] Directory not empty: '/var/tmp/pbs.42582.mgmt01/pymp-grvwbl0z'
+Batch [3500/14658]
+Total Loss: 0.0586,main_loss Loss: 0.0584,fair_loss Loss: 0.0551
+Batch [3600/14658]
+Total Loss: 0.0885,main_loss Loss: 0.0882,fair_loss Loss: 0.0465
+Batch [3700/14658]
+Total Loss: 0.0473,main_loss Loss: 0.0469,fair_loss Loss: 0.0778
+Batch [3800/14658]
+Total Loss: 0.0238,main_loss Loss: 0.0236,fair_loss Loss: 0.0383
+Batch [3900/14658]
+Total Loss: 0.0353,main_loss Loss: 0.0350,fair_loss Loss: 0.0490
+Batch [4000/14658]
+Total Loss: 0.0287,main_loss Loss: 0.0285,fair_loss Loss: 0.0385
+Batch [4100/14658]
+Total Loss: 0.0117,main_loss Loss: 0.0114,fair_loss Loss: 0.0682
+Batch [4200/14658]
+Total Loss: 0.0151,main_loss Loss: 0.0150,fair_loss Loss: 0.0145
+Batch [4300/14658]
+Total Loss: 0.0429,main_loss Loss: 0.0426,fair_loss Loss: 0.0651
+Batch [4400/14658]
+Total Loss: 0.0559,main_loss Loss: 0.0558,fair_loss Loss: 0.0286
+Batch [4500/14658]
+Total Loss: 0.0165,main_loss Loss: 0.0161,fair_loss Loss: 0.0889
+Batch [4600/14658]
+Total Loss: 0.0332,main_loss Loss: 0.0331,fair_loss Loss: 0.0286
+Batch [4700/14658]
+Total Loss: 0.0564,main_loss Loss: 0.0562,fair_loss Loss: 0.0472
+Batch [4800/14658]
+Total Loss: 0.1798,main_loss Loss: 0.1797,fair_loss Loss: 0.0218
+Batch [4900/14658]
+Total Loss: 0.0153,main_loss Loss: 0.0152,fair_loss Loss: 0.0041
+Batch [5000/14658]
+Total Loss: 0.0183,main_loss Loss: 0.0183,fair_loss Loss: 0.0103
+Batch [5100/14658]
+Total Loss: 0.0388,main_loss Loss: 0.0387,fair_loss Loss: 0.0170
+Batch [5200/14658]
+Total Loss: 0.0210,main_loss Loss: 0.0210,fair_loss Loss: 0.0129
+Batch [5300/14658]
+Total Loss: 0.0185,main_loss Loss: 0.0181,fair_loss Loss: 0.0803
+Batch [5400/14658]
+Total Loss: 0.0448,main_loss Loss: 0.0444,fair_loss Loss: 0.0755
+Batch [5500/14658]
+Total Loss: 0.0225,main_loss Loss: 0.0223,fair_loss Loss: 0.0305
+Batch [5600/14658]
+Total Loss: 0.0139,main_loss Loss: 0.0138,fair_loss Loss: 0.0081
+Batch [5700/14658]
+Total Loss: 0.0308,main_loss Loss: 0.0304,fair_loss Loss: 0.0831
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 703, in _rmtree_safe_fd
+    onexc(func, path, err)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 750, in onexc
+    return onerror(func, path, exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 662, in _rmtree_safe_fd
+    os.rmdir(name, dir_fd=dirfd)
+OSError: [Errno 39] Directory not empty: '/var/tmp/pbs.42582.mgmt01/pymp-nb5yf9gb'
+Batch [5800/14658]
+Total Loss: 0.1094,main_loss Loss: 0.1092,fair_loss Loss: 0.0464
+Batch [5900/14658]
+Total Loss: 0.0178,main_loss Loss: 0.0174,fair_loss Loss: 0.0699
+Batch [6000/14658]
+Total Loss: 0.0533,main_loss Loss: 0.0531,fair_loss Loss: 0.0312
+Batch [6100/14658]
+Total Loss: 0.0140,main_loss Loss: 0.0137,fair_loss Loss: 0.0581
+Batch [6200/14658]
+Total Loss: 0.0622,main_loss Loss: 0.0619,fair_loss Loss: 0.0603
+Batch [6300/14658]
+Total Loss: 0.0347,main_loss Loss: 0.0340,fair_loss Loss: 0.1443
+Batch [6400/14658]
+Total Loss: 0.0520,main_loss Loss: 0.0516,fair_loss Loss: 0.0752
+Batch [6500/14658]
+Total Loss: 0.0643,main_loss Loss: 0.0639,fair_loss Loss: 0.0842
+Batch [6600/14658]
+Total Loss: 0.0585,main_loss Loss: 0.0584,fair_loss Loss: 0.0248
+Batch [6700/14658]
+Total Loss: 0.0093,main_loss Loss: 0.0086,fair_loss Loss: 0.1326
+Batch [6800/14658]
+Total Loss: 0.0846,main_loss Loss: 0.0845,fair_loss Loss: 0.0231
+Batch [6900/14658]
+Total Loss: 0.0316,main_loss Loss: 0.0311,fair_loss Loss: 0.1064
+Batch [7000/14658]
+Total Loss: 0.0580,main_loss Loss: 0.0578,fair_loss Loss: 0.0308
+Batch [7100/14658]
+Total Loss: 0.0383,main_loss Loss: 0.0382,fair_loss Loss: 0.0201
+Batch [7200/14658]
+Total Loss: 0.0095,main_loss Loss: 0.0094,fair_loss Loss: 0.0164
+Batch [7300/14658]
+Total Loss: 0.0189,main_loss Loss: 0.0187,fair_loss Loss: 0.0388
+Batch [7400/14658]
+Total Loss: 0.0729,main_loss Loss: 0.0728,fair_loss Loss: 0.0369
+Batch [7500/14658]
+Total Loss: 0.0085,main_loss Loss: 0.0072,fair_loss Loss: 0.2454
+Batch [7600/14658]
+Total Loss: 0.0708,main_loss Loss: 0.0705,fair_loss Loss: 0.0674
+Batch [7700/14658]
+Total Loss: 0.0168,main_loss Loss: 0.0167,fair_loss Loss: 0.0147
+Batch [7800/14658]
+Total Loss: 0.0334,main_loss Loss: 0.0332,fair_loss Loss: 0.0448
+Batch [7900/14658]
+Total Loss: 0.0448,main_loss Loss: 0.0444,fair_loss Loss: 0.0797
+Batch [8000/14658]
+Total Loss: 0.0109,main_loss Loss: 0.0108,fair_loss Loss: 0.0140
+Batch [8100/14658]
+Total Loss: 0.0526,main_loss Loss: 0.0525,fair_loss Loss: 0.0299
+Batch [8200/14658]
+Total Loss: 0.0367,main_loss Loss: 0.0365,fair_loss Loss: 0.0468
+Batch [8300/14658]
+Total Loss: 0.1976,main_loss Loss: 0.1974,fair_loss Loss: 0.0361
+Batch [8400/14658]
+Total Loss: 0.0074,main_loss Loss: 0.0068,fair_loss Loss: 0.1149
+Batch [8500/14658]
+Total Loss: 0.1193,main_loss Loss: 0.1189,fair_loss Loss: 0.0777
+Batch [8600/14658]
+Total Loss: 0.0111,main_loss Loss: 0.0106,fair_loss Loss: 0.1000
+Batch [8700/14658]
+Total Loss: 0.1035,main_loss Loss: 0.1033,fair_loss Loss: 0.0303
+Batch [8800/14658]
+Total Loss: 0.0170,main_loss Loss: 0.0163,fair_loss Loss: 0.1376
+Batch [8900/14658]
+Total Loss: 0.0528,main_loss Loss: 0.0527,fair_loss Loss: 0.0122
+Batch [9000/14658]
+Total Loss: 0.0877,main_loss Loss: 0.0875,fair_loss Loss: 0.0352
+Batch [9100/14658]
+Total Loss: 0.0109,main_loss Loss: 0.0109,fair_loss Loss: 0.0114
+Batch [9200/14658]
+Total Loss: 0.0056,main_loss Loss: 0.0053,fair_loss Loss: 0.0668
+Batch [9300/14658]
+Total Loss: 0.0327,main_loss Loss: 0.0326,fair_loss Loss: 0.0180
+Batch [9400/14658]
+Total Loss: 0.0170,main_loss Loss: 0.0169,fair_loss Loss: 0.0176
+Batch [9500/14658]
+Total Loss: 0.0257,main_loss Loss: 0.0255,fair_loss Loss: 0.0367
+Batch [9600/14658]
+Total Loss: 0.0075,main_loss Loss: 0.0069,fair_loss Loss: 0.1232
+Batch [9700/14658]
+Total Loss: 0.0910,main_loss Loss: 0.0909,fair_loss Loss: 0.0307
+Batch [9800/14658]
+Total Loss: 0.0359,main_loss Loss: 0.0355,fair_loss Loss: 0.0893
+Batch [9900/14658]
+Total Loss: 0.0466,main_loss Loss: 0.0465,fair_loss Loss: 0.0207
+Batch [10000/14658]
+Total Loss: 0.0258,main_loss Loss: 0.0258,fair_loss Loss: 0.0151
+Batch [10100/14658]
+Total Loss: 0.0100,main_loss Loss: 0.0097,fair_loss Loss: 0.0587
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 703, in _rmtree_safe_fd
+    onexc(func, path, err)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 750, in onexc
+    return onerror(func, path, exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 662, in _rmtree_safe_fd
+    os.rmdir(name, dir_fd=dirfd)
+OSError: [Errno 39] Directory not empty: '/var/tmp/pbs.42582.mgmt01/pymp-rh4k77jn'
+Batch [10200/14658]
+Total Loss: 0.0347,main_loss Loss: 0.0345,fair_loss Loss: 0.0342
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 703, in _rmtree_safe_fd
+    onexc(func, path, err)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 750, in onexc
+    return onerror(func, path, exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 662, in _rmtree_safe_fd
+    os.rmdir(name, dir_fd=dirfd)
+OSError: [Errno 39] Directory not empty: '/var/tmp/pbs.42582.mgmt01/pymp-gc6ayh4e'
+Batch [10300/14658]
+Total Loss: 0.0130,main_loss Loss: 0.0127,fair_loss Loss: 0.0473
+Batch [10400/14658]
+Total Loss: 0.0881,main_loss Loss: 0.0878,fair_loss Loss: 0.0726
+Batch [10500/14658]
+Total Loss: 0.0148,main_loss Loss: 0.0143,fair_loss Loss: 0.1037
+Batch [10600/14658]
+Total Loss: 0.0634,main_loss Loss: 0.0631,fair_loss Loss: 0.0568
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 703, in _rmtree_safe_fd
+    onexc(func, path, err)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 750, in onexc
+    return onerror(func, path, exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 662, in _rmtree_safe_fd
+    os.rmdir(name, dir_fd=dirfd)
+OSError: [Errno 39] Directory not empty: '/var/tmp/pbs.42582.mgmt01/pymp-kbhf3j_w'
+Batch [10700/14658]
+Total Loss: 0.1378,main_loss Loss: 0.1377,fair_loss Loss: 0.0224
+Batch [10800/14658]
+Total Loss: 0.0070,main_loss Loss: 0.0055,fair_loss Loss: 0.3159
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 703, in _rmtree_safe_fd
+    onexc(func, path, err)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 750, in onexc
+    return onerror(func, path, exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 662, in _rmtree_safe_fd
+    os.rmdir(name, dir_fd=dirfd)
+OSError: [Errno 39] Directory not empty: '/var/tmp/pbs.42582.mgmt01/pymp-z2hlw1le'
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 703, in _rmtree_safe_fd
+    onexc(func, path, err)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 750, in onexc
+    return onerror(func, path, exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 662, in _rmtree_safe_fd
+    os.rmdir(name, dir_fd=dirfd)
+OSError: [Errno 39] Directory not empty: '/var/tmp/pbs.42582.mgmt01/pymp-b1hmz1gi'
+Batch [10900/14658]
+Total Loss: 0.0586,main_loss Loss: 0.0576,fair_loss Loss: 0.1931
+Batch [11000/14658]
+Total Loss: 0.0167,main_loss Loss: 0.0165,fair_loss Loss: 0.0364
+Batch [11100/14658]
+Total Loss: 0.0172,main_loss Loss: 0.0171,fair_loss Loss: 0.0192
+Batch [11200/14658]
+Total Loss: 0.0602,main_loss Loss: 0.0597,fair_loss Loss: 0.1038
+Batch [11300/14658]
+Total Loss: 0.0136,main_loss Loss: 0.0135,fair_loss Loss: 0.0205
+Batch [11400/14658]
+Total Loss: 0.0337,main_loss Loss: 0.0333,fair_loss Loss: 0.0655
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 703, in _rmtree_safe_fd
+    onexc(func, path, err)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 750, in onexc
+    return onerror(func, path, exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 662, in _rmtree_safe_fd
+    os.rmdir(name, dir_fd=dirfd)
+OSError: [Errno 39] Directory not empty: '/var/tmp/pbs.42582.mgmt01/pymp-9m5itpyx'
+Batch [11500/14658]
+Total Loss: 0.0148,main_loss Loss: 0.0138,fair_loss Loss: 0.2144
+Batch [11600/14658]
+Total Loss: 0.0149,main_loss Loss: 0.0147,fair_loss Loss: 0.0471
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 703, in _rmtree_safe_fd
+    onexc(func, path, err)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 750, in onexc
+    return onerror(func, path, exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 662, in _rmtree_safe_fd
+    os.rmdir(name, dir_fd=dirfd)
+OSError: [Errno 39] Directory not empty: '/var/tmp/pbs.42582.mgmt01/pymp-zobp11gz'
+Batch [11700/14658]
+Total Loss: 0.0251,main_loss Loss: 0.0250,fair_loss Loss: 0.0209
+Batch [11800/14658]
+Total Loss: 0.0119,main_loss Loss: 0.0117,fair_loss Loss: 0.0314
+Batch [11900/14658]
+Total Loss: 0.0166,main_loss Loss: 0.0164,fair_loss Loss: 0.0323
+Batch [12000/14658]
+Total Loss: 0.1306,main_loss Loss: 0.1301,fair_loss Loss: 0.0816
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 703, in _rmtree_safe_fd
+    onexc(func, path, err)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 750, in onexc
+    return onerror(func, path, exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 662, in _rmtree_safe_fd
+    os.rmdir(name, dir_fd=dirfd)
+OSError: [Errno 39] Directory not empty: '/var/tmp/pbs.42582.mgmt01/pymp-4urv5fai'
+Batch [12100/14658]
+Total Loss: 0.0273,main_loss Loss: 0.0273,fair_loss Loss: 0.0105
+Batch [12200/14658]
+Total Loss: 0.0155,main_loss Loss: 0.0153,fair_loss Loss: 0.0265
+Batch [12300/14658]
+Total Loss: 0.0112,main_loss Loss: 0.0108,fair_loss Loss: 0.0717
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 703, in _rmtree_safe_fd
+    onexc(func, path, err)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 750, in onexc
+    return onerror(func, path, exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 662, in _rmtree_safe_fd
+    os.rmdir(name, dir_fd=dirfd)
+OSError: [Errno 39] Directory not empty: '/var/tmp/pbs.42582.mgmt01/pymp-q01mqhys'
+Batch [12400/14658]
+Total Loss: 0.0229,main_loss Loss: 0.0227,fair_loss Loss: 0.0489
+Batch [12500/14658]
+Total Loss: 0.0181,main_loss Loss: 0.0180,fair_loss Loss: 0.0231
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 703, in _rmtree_safe_fd
+    onexc(func, path, err)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 750, in onexc
+    return onerror(func, path, exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 662, in _rmtree_safe_fd
+    os.rmdir(name, dir_fd=dirfd)
+OSError: [Errno 39] Directory not empty: '/var/tmp/pbs.42582.mgmt01/pymp-kpf9zbye'
+Batch [12600/14658]
+Total Loss: 0.0541,main_loss Loss: 0.0536,fair_loss Loss: 0.1051
+Batch [12700/14658]
+Total Loss: 0.0090,main_loss Loss: 0.0086,fair_loss Loss: 0.0760
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 703, in _rmtree_safe_fd
+    onexc(func, path, err)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 750, in onexc
+    return onerror(func, path, exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 662, in _rmtree_safe_fd
+    os.rmdir(name, dir_fd=dirfd)
+OSError: [Errno 39] Directory not empty: '/var/tmp/pbs.42582.mgmt01/pymp-0w61zvu3'
+Batch [12800/14658]
+Total Loss: 0.0097,main_loss Loss: 0.0092,fair_loss Loss: 0.1025
+Batch [12900/14658]
+Total Loss: 0.0839,main_loss Loss: 0.0838,fair_loss Loss: 0.0180
+Batch [13000/14658]
+Total Loss: 0.0199,main_loss Loss: 0.0197,fair_loss Loss: 0.0388
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 703, in _rmtree_safe_fd
+    onexc(func, path, err)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 750, in onexc
+    return onerror(func, path, exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 662, in _rmtree_safe_fd
+    os.rmdir(name, dir_fd=dirfd)
+OSError: [Errno 39] Directory not empty: '/var/tmp/pbs.42582.mgmt01/pymp-axqsz2ki'
+Batch [13100/14658]
+Total Loss: 0.1054,main_loss Loss: 0.1051,fair_loss Loss: 0.0488
+Batch [13200/14658]
+Total Loss: 0.0340,main_loss Loss: 0.0339,fair_loss Loss: 0.0170
+Batch [13300/14658]
+Total Loss: 0.0100,main_loss Loss: 0.0095,fair_loss Loss: 0.0901
+Batch [13400/14658]
+Total Loss: 0.0611,main_loss Loss: 0.0607,fair_loss Loss: 0.0705
+Batch [13500/14658]
+Total Loss: 0.0242,main_loss Loss: 0.0239,fair_loss Loss: 0.0632
+Batch [13600/14658]
+Total Loss: 0.0149,main_loss Loss: 0.0149,fair_loss Loss: 0.0131
+Batch [13700/14658]
+Total Loss: 0.1901,main_loss Loss: 0.1892,fair_loss Loss: 0.1752
+Batch [13800/14658]
+Total Loss: 0.0485,main_loss Loss: 0.0483,fair_loss Loss: 0.0335
+Batch [13900/14658]
+Total Loss: 0.0653,main_loss Loss: 0.0647,fair_loss Loss: 0.1268
+Batch [14000/14658]
+Total Loss: 0.1971,main_loss Loss: 0.1970,fair_loss Loss: 0.0146
+Batch [14100/14658]
+Total Loss: 0.0110,main_loss Loss: 0.0107,fair_loss Loss: 0.0473
+Batch [14200/14658]
+Total Loss: 0.0732,main_loss Loss: 0.0728,fair_loss Loss: 0.0822
+Batch [14300/14658]
+Total Loss: 0.0113,main_loss Loss: 0.0107,fair_loss Loss: 0.1144
+Batch [14400/14658]
+Total Loss: 0.0127,main_loss Loss: 0.0126,fair_loss Loss: 0.0100
+Batch [14500/14658]
+Total Loss: 0.0316,main_loss Loss: 0.0313,fair_loss Loss: 0.0630
+Batch [14600/14658]
+Total Loss: 0.0152,main_loss Loss: 0.0149,fair_loss Loss: 0.0502
+Epoch [1/5], Avg Loss: 0.0402
+Epoch: 1/5
+Cur lr: 0.001
+Batch [100/14658]
+Total Loss: 0.0612,main_loss Loss: 0.0608,fair_loss Loss: 0.0866
+Batch [200/14658]
+Total Loss: 0.0351,main_loss Loss: 0.0349,fair_loss Loss: 0.0499
+Batch [300/14658]
+Total Loss: 0.0226,main_loss Loss: 0.0225,fair_loss Loss: 0.0344
+Batch [400/14658]
+Total Loss: 0.0168,main_loss Loss: 0.0167,fair_loss Loss: 0.0142
+Batch [500/14658]
+Total Loss: 0.0133,main_loss Loss: 0.0124,fair_loss Loss: 0.1658
+Batch [600/14658]
+Total Loss: 0.0291,main_loss Loss: 0.0288,fair_loss Loss: 0.0498
+Batch [700/14658]
+Total Loss: 0.0184,main_loss Loss: 0.0183,fair_loss Loss: 0.0180
+Batch [800/14658]
+Total Loss: 0.0482,main_loss Loss: 0.0481,fair_loss Loss: 0.0280
+Batch [900/14658]
+Total Loss: 0.0514,main_loss Loss: 0.0505,fair_loss Loss: 0.1771
+Batch [1000/14658]
+Total Loss: 0.1164,main_loss Loss: 0.1162,fair_loss Loss: 0.0353
+Batch [1100/14658]
+Total Loss: 0.0079,main_loss Loss: 0.0074,fair_loss Loss: 0.0979
+Batch [1200/14658]
+Total Loss: 0.1287,main_loss Loss: 0.1283,fair_loss Loss: 0.0714
+Batch [1300/14658]
+Total Loss: 0.0241,main_loss Loss: 0.0239,fair_loss Loss: 0.0368
+Batch [1400/14658]
+Total Loss: 0.0917,main_loss Loss: 0.0916,fair_loss Loss: 0.0094
+Batch [1500/14658]
+Total Loss: 0.0093,main_loss Loss: 0.0091,fair_loss Loss: 0.0401
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 703, in _rmtree_safe_fd
+    onexc(func, path, err)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 750, in onexc
+    return onerror(func, path, exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 662, in _rmtree_safe_fd
+    os.rmdir(name, dir_fd=dirfd)
+OSError: [Errno 39] Directory not empty: '/var/tmp/pbs.42582.mgmt01/pymp-0reco0rn'
+Batch [1600/14658]
+Total Loss: 0.0146,main_loss Loss: 0.0144,fair_loss Loss: 0.0322
+Batch [1700/14658]
+Total Loss: 0.0353,main_loss Loss: 0.0351,fair_loss Loss: 0.0408
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 703, in _rmtree_safe_fd
+    onexc(func, path, err)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 750, in onexc
+    return onerror(func, path, exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 662, in _rmtree_safe_fd
+    os.rmdir(name, dir_fd=dirfd)
+OSError: [Errno 39] Directory not empty: '/var/tmp/pbs.42582.mgmt01/pymp-mxg0vef4'
+Batch [1800/14658]
+Total Loss: 0.0269,main_loss Loss: 0.0268,fair_loss Loss: 0.0278
+Batch [1900/14658]
+Total Loss: 0.0297,main_loss Loss: 0.0295,fair_loss Loss: 0.0363
+Batch [2000/14658]
+Total Loss: 0.0099,main_loss Loss: 0.0096,fair_loss Loss: 0.0540
+Batch [2100/14658]
+Total Loss: 0.0342,main_loss Loss: 0.0339,fair_loss Loss: 0.0584
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 703, in _rmtree_safe_fd
+    onexc(func, path, err)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 750, in onexc
+    return onerror(func, path, exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 662, in _rmtree_safe_fd
+    os.rmdir(name, dir_fd=dirfd)
+OSError: [Errno 39] Directory not empty: '/var/tmp/pbs.42582.mgmt01/pymp-rkxw3fl6'
+Batch [2200/14658]
+Total Loss: 0.1061,main_loss Loss: 0.1059,fair_loss Loss: 0.0454
+Batch [2300/14658]
+Total Loss: 0.0451,main_loss Loss: 0.0449,fair_loss Loss: 0.0231
+Batch [2400/14658]
+Total Loss: 0.0272,main_loss Loss: 0.0271,fair_loss Loss: 0.0236
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 703, in _rmtree_safe_fd
+    onexc(func, path, err)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 750, in onexc
+    return onerror(func, path, exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 662, in _rmtree_safe_fd
+    os.rmdir(name, dir_fd=dirfd)
+OSError: [Errno 39] Directory not empty: '/var/tmp/pbs.42582.mgmt01/pymp-u9h1c8ic'
+Batch [2500/14658]
+Total Loss: 0.0921,main_loss Loss: 0.0919,fair_loss Loss: 0.0341
+Batch [2600/14658]
+Total Loss: 0.0155,main_loss Loss: 0.0154,fair_loss Loss: 0.0186
+Batch [2700/14658]
+Total Loss: 0.0097,main_loss Loss: 0.0096,fair_loss Loss: 0.0132
+Batch [2800/14658]
+Total Loss: 0.0413,main_loss Loss: 0.0412,fair_loss Loss: 0.0184
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 703, in _rmtree_safe_fd
+    onexc(func, path, err)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 750, in onexc
+    return onerror(func, path, exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 662, in _rmtree_safe_fd
+    os.rmdir(name, dir_fd=dirfd)
+OSError: [Errno 39] Directory not empty: '/var/tmp/pbs.42582.mgmt01/pymp-dgureg9q'
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 703, in _rmtree_safe_fd
+    onexc(func, path, err)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 750, in onexc
+    return onerror(func, path, exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 662, in _rmtree_safe_fd
+    os.rmdir(name, dir_fd=dirfd)
+OSError: [Errno 39] Directory not empty: '/var/tmp/pbs.42582.mgmt01/pymp-nb6e9rj_'
+Batch [2900/14658]
+Total Loss: 0.0352,main_loss Loss: 0.0349,fair_loss Loss: 0.0454
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 703, in _rmtree_safe_fd
+    onexc(func, path, err)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 750, in onexc
+    return onerror(func, path, exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 662, in _rmtree_safe_fd
+    os.rmdir(name, dir_fd=dirfd)
+OSError: [Errno 39] Directory not empty: '/var/tmp/pbs.42582.mgmt01/pymp-fs5f8074'
+Batch [3000/14658]
+Total Loss: 0.0113,main_loss Loss: 0.0106,fair_loss Loss: 0.1428
+Batch [3100/14658]
+Total Loss: 0.0105,main_loss Loss: 0.0099,fair_loss Loss: 0.1186
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 703, in _rmtree_safe_fd
+    onexc(func, path, err)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 750, in onexc
+    return onerror(func, path, exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 662, in _rmtree_safe_fd
+    os.rmdir(name, dir_fd=dirfd)
+OSError: [Errno 39] Directory not empty: '/var/tmp/pbs.42582.mgmt01/pymp-r04nipw6'
+Batch [3200/14658]
+Total Loss: 0.0396,main_loss Loss: 0.0394,fair_loss Loss: 0.0354
+Batch [3300/14658]
+Total Loss: 0.0906,main_loss Loss: 0.0905,fair_loss Loss: 0.0236
+Batch [3400/14658]
+Total Loss: 0.0275,main_loss Loss: 0.0270,fair_loss Loss: 0.1076
+Batch [3500/14658]
+Total Loss: 0.0693,main_loss Loss: 0.0689,fair_loss Loss: 0.0795
+Batch [3600/14658]
+Total Loss: 0.0479,main_loss Loss: 0.0477,fair_loss Loss: 0.0377
+Batch [3700/14658]
+Total Loss: 0.0122,main_loss Loss: 0.0112,fair_loss Loss: 0.2012
+Batch [3800/14658]
+Total Loss: 0.0114,main_loss Loss: 0.0107,fair_loss Loss: 0.1461
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 703, in _rmtree_safe_fd
+    onexc(func, path, err)
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 750, in onexc
+    return onerror(func, path, exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/shutil.py", line 662, in _rmtree_safe_fd
+    os.rmdir(name, dir_fd=dirfd)
+OSError: [Errno 39] Directory not empty: '/var/tmp/pbs.42582.mgmt01/pymp-6w596hwe'
+Batch [3900/14658]
+Total Loss: 0.0128,main_loss Loss: 0.0126,fair_loss Loss: 0.0286
+Batch [4000/14658]
+Total Loss: 0.0180,main_loss Loss: 0.0179,fair_loss Loss: 0.0209

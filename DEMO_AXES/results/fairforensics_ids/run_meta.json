@@ -1,0 +1,296 @@
+{
+ "sets": {
+  "ffpp_test": {
+   "rows": 25401,
+   "clusters": 965,
+   "person_src": "labels/labels_<set>.csv"
+  },
+  "dfdc": {
+   "rows": 22857,
+   "clusters": 757,
+   "person_src": "labels/labels_<set>.csv"
+  },
+  "celebdf": {
+   "rows": 28458,
+   "clusters": 956,
+   "person_src": "labels/labels_<set>.csv"
+  },
+  "dfd": {
+   "rows": 9385,
+   "clusters": 319,
+   "person_src": "labels/labels_<set>.csv"
+  },
+  "ff2_test": {
+   "rows": 87564,
+   "clusters": 19857,
+   "person_src": "FF2 person_id"
+  }
+ },
+ "B": 1000,
+ "rng": 2026,
+ "min_clusters": 3,
+ "runtime_s": 497.5,
+ "models": [
+  {
+   "model": "CFES-D",
+   "family": "ours",
+   "seed": 7,
+   "run": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CFES/runs_rev4/clip_D_w0.3_s7",
+   "a1_src": "stored",
+   "A1": -46.946319580078125,
+   "t05": -61.568626056336974
+  },
+  {
+   "model": "CFES-D",
+   "family": "ours",
+   "seed": 17,
+   "run": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CFES/runs_rev4/clip_D_w0.3_s17",
+   "a1_src": "stored",
+   "A1": -55.75469970703125,
+   "t05": -60.38920796911734
+  },
+  {
+   "model": "CFES-D",
+   "family": "ours",
+   "seed": 27,
+   "run": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CFES/runs_rev4/clip_D_w0.3_s27",
+   "a1_src": "stored",
+   "A1": 4.520336151123047,
+   "t05": -52.683194067619276
+  },
+  {
+   "model": "arm C",
+   "family": "ours",
+   "seed": 7,
+   "run": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CFES/runs_rev4/clip_C_w0.3_s7",
+   "a1_src": "rule re-run on saved FF++ val logits (Xu labels)",
+   "A1": 20.977060317993164,
+   "t05": -0.0
+  },
+  {
+   "model": "arm C",
+   "family": "ours",
+   "seed": 17,
+   "run": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CFES/runs_rev4/clip_C_w0.3_s17",
+   "a1_src": "rule re-run on saved FF++ val logits (Xu labels)",
+   "A1": -14.897315979003906,
+   "t05": -0.0
+  },
+  {
+   "model": "arm C",
+   "family": "ours",
+   "seed": 27,
+   "run": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CFES/runs_rev4/clip_C_w0.3_s27",
+   "a1_src": "rule re-run on saved FF++ val logits (Xu labels)",
+   "A1": 0.722869873046875,
+   "t05": -0.0
+  },
+  {
+   "model": "arm E w1",
+   "family": "ours",
+   "seed": 7,
+   "run": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CFES/runs_rev4/clip_E_w1_s7",
+   "a1_src": "rule re-run on saved FF++ val logits (Xu labels)",
+   "A1": 14.010115623474121,
+   "t05": -0.0
+  },
+  {
+   "model": "arm E w3",
+   "family": "ours",
+   "seed": 7,
+   "run": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CFES/runs_rev4/clip_E_w3_s7",
+   "a1_src": "rule re-run on saved FF++ val logits (Xu labels)",
+   "A1": 3.989377975463867,
+   "t05": -0.0
+  },
+  {
+   "model": "arm E w10",
+   "family": "ours",
+   "seed": 7,
+   "run": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CFES/runs_rev4/clip_E_w10_s7",
+   "a1_src": "rule re-run on saved FF++ val logits (Xu labels)",
+   "A1": -30.056564331054688,
+   "t05": -0.0
+  },
+  {
+   "model": "control (det-only)",
+   "family": "control",
+   "seed": 7,
+   "run": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CFES/runs_study/clip_A_s7",
+   "a1_src": "rule re-run on saved FF++ val logits (Xu labels)",
+   "A1": 3.5373353958129883,
+   "t05": -0.0
+  },
+  {
+   "model": "control (det-only)",
+   "family": "control",
+   "seed": 17,
+   "run": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CFES/runs_study/clip_A_s17",
+   "a1_src": "rule re-run on saved FF++ val logits (Xu labels)",
+   "A1": 10.404296875,
+   "t05": -0.0
+  },
+  {
+   "model": "control (det-only)",
+   "family": "control",
+   "seed": 27,
+   "run": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CFES/runs_study/clip_A_s27",
+   "a1_src": "rule re-run on saved FF++ val logits (Xu labels)",
+   "A1": 7.089841842651367,
+   "t05": -0.0
+  },
+  {
+   "model": "CFES-ResNet",
+   "family": "ours-resnet",
+   "seed": 7,
+   "run": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CFES/runs_rev4/resnet_A_s7",
+   "a1_src": "rule re-run on saved FF++ val logits (Xu labels)",
+   "A1": 4.153748512268066,
+   "t05": -0.0
+  },
+  {
+   "model": "CFES-ResNet",
+   "family": "ours-resnet",
+   "seed": 17,
+   "run": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CFES/runs_rev4/resnet_A_s17",
+   "a1_src": "rule re-run on saved FF++ val logits (Xu labels)",
+   "A1": 0.6500488519668579,
+   "t05": -0.0
+  },
+  {
+   "model": "CFES-ResNet",
+   "family": "ours-resnet",
+   "seed": 27,
+   "run": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CFES/runs_rev4/resnet_A_s27",
+   "a1_src": "rule re-run on saved FF++ val logits (Xu labels)",
+   "A1": 1.9491701126098633,
+   "t05": -0.0
+  },
+  {
+   "model": "CFES A (rev4)",
+   "family": "ours",
+   "seed": 7,
+   "run": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CFES/runs_rev4/clip_A_s7",
+   "a1_src": "rule re-run on saved FF++ val logits (Xu labels)",
+   "A1": 17.679553985595703,
+   "t05": -0.0
+  },
+  {
+   "model": "CFES A (rev4)",
+   "family": "ours",
+   "seed": 17,
+   "run": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CFES/runs_rev4/clip_A_s17",
+   "a1_src": "rule re-run on saved FF++ val logits (Xu labels)",
+   "A1": 10.404296875,
+   "t05": -0.0
+  },
+  {
+   "model": "CFES A (rev4)",
+   "family": "ours",
+   "seed": 27,
+   "run": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CFES/runs_rev4/clip_A_s27",
+   "a1_src": "rule re-run on saved FF++ val logits (Xu labels)",
+   "A1": 5.100410461425781,
+   "t05": -0.0
+  },
+  {
+   "model": "Ding repro (SFD+GDA)",
+   "family": "Ding",
+   "seed": 7,
+   "run": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/results/audit_scores",
+   "a1_src": "stored",
+   "A1": 4.204473495483398,
+   "t05": -0.0
+  },
+  {
+   "model": "Ding Ori repro (SFD)",
+   "family": "Ding",
+   "seed": 7,
+   "run": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/results/audit_scores",
+   "a1_src": "rule re-run on saved FF++ val logits (Xu labels)",
+   "A1": 5.184783935546875,
+   "t05": -0.0
+  },
+  {
+   "model": "Ding Ori repro (SFD)",
+   "family": "Ding",
+   "seed": 17,
+   "run": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/results/audit_scores",
+   "a1_src": "rule re-run on saved FF++ val logits (Xu labels)",
+   "A1": 2.3477208614349365,
+   "t05": -0.0
+  },
+  {
+   "model": "Ding Ori repro (SFD)",
+   "family": "Ding",
+   "seed": 27,
+   "run": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/results/audit_scores",
+   "a1_src": "rule re-run on saved FF++ val logits (Xu labels)",
+   "A1": 5.027690887451172,
+   "t05": -0.0
+  },
+  {
+   "model": "CESel B0",
+   "family": "CESel",
+   "seed": 7,
+   "run": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CESEL/runs/ffpp_B0_s7",
+   "a1_src": "stored",
+   "A1": 6.589578151702881,
+   "t05": -0.0
+  },
+  {
+   "model": "FF2-trained phase 1",
+   "family": "FF2-full-trained",
+   "seed": 7,
+   "run": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CFES/runs_ff2full/clip_s7_p1/eval_all_last",
+   "a1_src": "none (no FF++ val scores)",
+   "A1": null,
+   "t05": -0.0
+  },
+  {
+   "model": "FF2-trained phase 1",
+   "family": "FF2-full-trained",
+   "seed": 17,
+   "run": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CFES/runs_ff2full/clip_s17_p1/eval_all_last",
+   "a1_src": "none (no FF++ val scores)",
+   "A1": null,
+   "t05": -0.0
+  },
+  {
+   "model": "FF2-trained phase 1",
+   "family": "FF2-full-trained",
+   "seed": 27,
+   "run": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CFES/runs_ff2full/clip_s27_p1/eval_all_last",
+   "a1_src": "none (no FF++ val scores)",
+   "A1": null,
+   "t05": -0.0
+  },
+  {
+   "model": "FF2-trained control",
+   "family": "FF2-full-trained",
+   "seed": 7,
+   "run": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CFES/runs_ff2full/clip_A_s7/eval_all",
+   "a1_src": "none (no FF++ val scores)",
+   "A1": null,
+   "t05": -0.0
+  },
+  {
+   "model": "FF2-trained control",
+   "family": "FF2-full-trained",
+   "seed": 17,
+   "run": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CFES/runs_ff2full/clip_A_s17/eval_all",
+   "a1_src": "none (no FF++ val scores)",
+   "A1": null,
+   "t05": -0.0
+  },
+  {
+   "model": "FF2-trained CFES",
+   "family": "FF2-full-trained",
+   "seed": 7,
+   "run": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CFES/runs_ff2full/clip_B_s7/eval_all",
+   "a1_src": "none (no FF++ val scores)",
+   "A1": null,
+   "t05": -0.0
+  }
+ ]
+}

@@ -1,0 +1,3 @@
+# Control: full CES, but L_inv uses every swapped sample (no probe validity mask).
+_base_: full.yaml
+loss: {inv: {validity_mask: false}}

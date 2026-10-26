@@ -1,0 +1,2 @@
+# inv arm on ffpp (dataset: ../ces_ffpp.yaml, arm: ../arms/inv.yaml)
+_base_: [../ces_ffpp.yaml, ../arms/inv.yaml]

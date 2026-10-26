@@ -1,0 +1,5 @@
+REPRO rank threshold: val threshold=0.666667, test decisions=[False, False, False, False], fixed-logit decisions=[False, False, True, True]
+REPRO validation saturation: reported AUC=75.0, logit/rank AUC=100.0
+PASS F_FPR, F_DP, es-AUC formulas and A1 exhaustive threshold/tie-break oracle
+REPRO FF2 A1 omission: input ff2_test is silently absent from A1 test output
+REPRO full deletion numerical residual: [-2.2351741790771484e-08, -2.2351741790771484e-08, 0.0, 0.0], AUC=1.0 (exact constant: 0.5)

@@ -1,0 +1,2 @@
+# B0_cfesD arm on ffpp (dataset: ../ces_ffpp.yaml, arm: ../arms/B0_cfesD.yaml)
+_base_: [../ces_ffpp.yaml, ../arms/B0_cfesD.yaml]

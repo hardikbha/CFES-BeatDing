@@ -1,0 +1,87 @@
+{
+ "rule": "PASS iff an arm A in {Full CESel, +floor} has sel(A) - sel(B0) > 2.06 AND |sel(C) - sel(A)| > 2.06 for every negative control C in {C_randcue, C_shufgroup, C_novalid}; validation selection values only (Amendment-9 value of each run's selected checkpoint, Amendment-5 screen); report must be complete with a verified spread",
+ "spread": 2.06,
+ "screen_json": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CESEL/results/cesel_ffpp_screen_p1.json",
+ "generated": "2026-10-26T07:50:43",
+ "test_metrics_used": false,
+ "decision_deadline": "2026-11-02",
+ "screen_sha256": "5123bf9d2c599d4d63f121004a343507e17d4d569d536e6401175dde74068d52",
+ "screen_generated": "2026-10-26T07:50:36",
+ "selection_values": {
+  "B0": 85.62377137693542,
+  "sens": 86.41053975055242,
+  "inv": 84.80425490785292,
+  "floor": 84.23597485769793,
+  "full": 84.0635752293179,
+  "C_randcue": 81.21390691032538,
+  "C_shufgroup": 84.51851680112037,
+  "C_novalid": 84.6773580140025,
+  "B0_cfesD": 89.65534794428848
+ },
+ "screen_winner": "sens",
+ "status": "FAIL",
+ "detail": {
+  "B0": 85.62377137693542,
+  "candidates": {
+   "full": {
+    "label": "Full CESel",
+    "sel": 84.0635752293179,
+    "diff_vs_B0": -1.5601961476175177,
+    "beats_B0_by_more_than_spread": false,
+    "controls": {
+     "C_randcue": {
+      "sel": 81.21390691032538,
+      "abs_diff": 2.849668318992528,
+      "within": false
+     },
+     "C_shufgroup": {
+      "sel": 84.51851680112037,
+      "abs_diff": 0.45494157180246475,
+      "within": true
+     },
+     "C_novalid": {
+      "sel": 84.6773580140025,
+      "abs_diff": 0.613782784684588,
+      "within": true
+     }
+    },
+    "blocked_by": [
+     "C_shufgroup",
+     "C_novalid"
+    ],
+    "passes": false,
+    "note": null
+   },
+   "floor": {
+    "label": "+floor",
+    "sel": 84.23597485769793,
+    "diff_vs_B0": -1.3877965192374973,
+    "beats_B0_by_more_than_spread": false,
+    "controls": {
+     "C_randcue": {
+      "sel": 81.21390691032538,
+      "abs_diff": 3.0220679473725482,
+      "within": false
+     },
+     "C_shufgroup": {
+      "sel": 84.51851680112037,
+      "abs_diff": 0.2825419434224443,
+      "within": true
+     },
+     "C_novalid": {
+      "sel": 84.6773580140025,
+      "abs_diff": 0.4413831563045676,
+      "within": true
+     }
+    },
+    "blocked_by": [
+     "C_shufgroup",
+     "C_novalid"
+    ],
+    "passes": false,
+    "note": null
+   }
+  },
+  "passing_arms": []
+ }
+}

@@ -1,0 +1,25 @@
+# CFES revision study (17 Oct), CLIP, arm A: detection only. Phase-2 continuation of the model's own phase-1 last.pt
+# (--set model.init_ckpt=...). Every arm sees the SAME images per step with detection labels:
+#   ordinary batch (32 real + 32 fake) + 8 (fake, own source real) pairs under a shared nuisance intervention
+#   + a group-stratified batch (2 per (label, group) cell = 32 images).
+# Fusion: alpha = alpha_max * sigmoid(beta), alpha_max = 1 (development choice); phase-1 alpha loaded exactly by
+# rescaling the patch head's last layer (cfes/model.py). Budget: 10 epochs x 1976 steps (provisional).
+# Selection: one rule for all arms, validation intersection es-AUC (Ding Eq. 10 on FF++ val), start checkpoint
+# eligible. Arms B-D change ONLY loss weights.
+_base_: ../clip_p2.yaml
+model: {alpha_param: sigmoid, alpha_max: 1.0, alpha_init: 0.5}
+cf: {enabled: false, probs: {bg_blur: 0.6, bg_swap: 0.0, photometric: 0.4}}
+pairs: {enabled: true, per_step: 8, shared_intervention: true}
+strat: {enabled: true, per_cell: 2}
+loss:
+  det: {weight: 1.0}
+  pair_det: {weight: 1.0}
+  strat_det: {weight: 1.0}
+  stab: {weight: 0.0, bg_evidence_weight: 0.0}
+  sens: {weight: 0.0, map_terms: false}
+  loc: {weight: 0.0}
+  align: {weight: 0.0, require_strat: true}
+optim: {epochs: 10}
+select: {metric: val_inter_es_auc, include_init: true}
+train: {decoupled_rng: true}
+eval: {prob_float64: true, rank_metrics: true}   # metrics from a tie-free monotone map of the logit; 0.5 decisions unchanged

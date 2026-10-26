@@ -1,0 +1,5 @@
+# Optional ablation: B0 + the CFES-D terms (score stability under nuisance views, source-paired score sensitivity
+# under one shared view, real-group risk 0.3), on the CES architecture. Off in every other arm.
+cf: {enabled: true}
+pairs: {shared_intervention: true}
+loss: {stab: {weight: 0.5}, sens: {weight: 0.5}, risk: {weight: 0.3}}

@@ -1,0 +1,39 @@
+# Scope: only the Beat-Ding / fairness-vs-Ding comparison stack is tracked from this huge agents/ tree.
+/*
+!/.gitignore
+!/BEAT_DING
+!/CESEL
+!/CESEL_MA
+!/CLIPFAIR
+!/DEMO_AXES
+!/FAIRREL_REPRO
+!/DINGREPRO_LIN
+!/README.md
+
+# Within tracked dirs: code/config/docs only, never checkpoints, caches, raw outputs or locks.
+**/runs/
+**/runs_*/
+**/results/**/*.npz
+**/logs/
+**/__pycache__/
+**/*.pt
+**/*.pth
+**/*.npz
+**/*.RUNLOCK*
+**/*.bak*
+**/*.xc_wip*
+**/*.tar
+**/*.tar.gz
+**/pretrained/
+**/Ding_mod/pretrained/
+**/outputs/
+**/.ipynb_checkpoints/
+
+# raw image/data dumps accidentally present under some agent dirs
+**/data/extracted/
+**/*.jpg
+**/*.jpeg
+**/*.png
+**/*.bmp
+**/*.webp
+**/work/

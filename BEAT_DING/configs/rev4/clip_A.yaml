@@ -1,0 +1,4 @@
+# Review 4, 2x2 arm A: ORIGINAL CFES (= configs/abl/clip_Pboth.yaml: det + pair_det + strat_det + stability + sensitivity,
+# common tanh gate) with the operating-point-aware selection rule (STUDY_PLAN Amendment 9), identical for all four arms.
+_base_: ../abl/clip_Pboth.yaml
+select: {metric: val_oppoint, include_init: true}

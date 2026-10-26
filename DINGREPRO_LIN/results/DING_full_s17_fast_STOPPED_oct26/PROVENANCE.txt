@@ -1,0 +1,8 @@
+DING_full_s17_fast  created 2026-10-26T18:33:50+05:30 host=gpu01
+Amendment 4a D2 option (b): released SFD.py + GDA_fastloader.py (persistent group iterators only)
+e54c78e2a3413a2af85e361bba5a3fc134b04145df283126b8eb705ab3cd4780  SFD.py
+bef29fa69e46c729dc679356d0ac3904ebac6da4c00180350daf282fe94599db  GDA.py
+81216adc480b2402cd9e19f51e701c48c5cf1f2972b110ccf40e6ceab73c7e6b  GDA_fastloader.py
+49ffcf2b58e15f6241e9495f8b6b9bea28b33724a04bf36f861e7b5e81c0540c  GDA_fastloader.diff
+b2240f157d4f94895f0908ad1a177832d258ab3c0f71ac9e09acc87a333b4e32  /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/results/DING_base_s17/49.pth
+6f46daaac8f8495fc38f3b01d148fe5139fc17af36406e9e2263ceb668e223ca  /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/code/run_task_full_fast.sh

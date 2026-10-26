@@ -1,0 +1,10 @@
+{
+  "seed": 7,
+  "num_epochs": 1,
+  "lr": 0.001,
+  "result_dir": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/results/smoke_base",
+  "dataset_dir": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/smoke",
+  "batch_size": 8,
+  "workers": 2,
+  "model_name": "XceptionDetector"
+}

@@ -1,0 +1,4 @@
+# R50 BD2 = base + A + B
+_base_: BD1.yaml
+loss: {esa: {weight: 1.0}}
+strat: {per_cell: 4}

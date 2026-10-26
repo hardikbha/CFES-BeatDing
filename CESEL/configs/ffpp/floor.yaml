@@ -1,0 +1,2 @@
+# floor arm on ffpp (dataset: ../ces_ffpp.yaml, arm: ../arms/floor.yaml)
+_base_: [../ces_ffpp.yaml, ../arms/floor.yaml]

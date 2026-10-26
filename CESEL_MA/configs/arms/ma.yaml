@@ -1,0 +1,6 @@
+# CESel-MA (decisions/2026-10-26-final-model-spec.md section 2): L = L_det + 0.5 L_sens + 1.0 L_floor-MA + 0.5 L_inv
+# + 0.1 L_orth, frequency warm-up (aux BCE 0.2, first epoch), selection = val_oppoint_ma. Everything else as CESel Full.
+loss: {sens_ces: {weight: 0.5}, inv: {weight: 0.5}, floor: {weight: 0.0}, floor_ma: {weight: 1.0},
+       freq_aux: {weight: 0.2, epochs: 1}}
+select: {include_init: true, metric: val_oppoint_ma}
+ma: {enabled: true}

@@ -1,0 +1,6 @@
+REPRO stale RUNLOCK race: both A and B acquired the same run after observing the same stale heartbeat
+PASS fresh RUNLOCK contender exits 4
+wrote /tmp/claude-156900507/-home-sachin-chaudhary/3e01ae21-517f-480b-a721-cb2115803d08/scratchpad/cesel_review/review_scratch/report_fixture/results/cesel_ffpp_screen.md (complete=True)
+REPRO promotion: +sens fails B0-continued (89 < 90), but Full containing sens is promoted (95)
+wrote /tmp/claude-156900507/-home-sachin-chaudhary/3e01ae21-517f-480b-a721-cb2115803d08/scratchpad/cesel_review/review_scratch/report_fixture/results/cesel_ffpp_screen.md (complete=True)
+REPRO promotion: unavailable reference spread leaves drops pending but still promotes Full

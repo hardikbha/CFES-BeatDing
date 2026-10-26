@@ -1,0 +1,1559 @@
+Reading additional input from stdin...
+OpenAI Codex v0.163.0
+--------
+workdir: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CLIPFAIR
+model: gpt-6-astra
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: medium
+reasoning summaries: none
+session id: 01a176f1-debd-72e3-8ae9-f9d703dcebf7
+--------
+user
+You are editing the CLIPFAIR baseline code of a deepfake-fairness project. This folder (R/agents/CLIPFAIR,
+R=/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009) is the only place you may write. You may read
+anything under R. Do not use the network or ssh, do not touch PBS, do not start GPU work.
+Python: /home/sachin.chaudhary/.conda/envs/pulid/bin/python (set CUDA_VISIBLE_DEVICES=""); never the default python3;
+no pip installs. Back up every edited file as *.bak_codex_oct26. Log your actions in codex_ops/ACTIONS_01.md.
+Read first: R/decisions/2026-10-25-cesel-plan.md section "Amendment 7", README.md in this folder.
+
+TASK (Amendment 7):
+1. Find where the training loop computes the Amendment-9 selection value and saves best.pt (the CLIPFAIR train script
+   and the train/engine code it uses). Additionally track the best epoch under pooled-only eligibility (val pooled
+   TPR >= 80 and FPR <= 20; same selection value as Amendment 9) and save best_pooled.pt plus its epoch. At the end of
+   training, if NO trained epoch (epoch >= 0) was eligible under the full Amendment-9 rule, copy best_pooled.pt to
+   best.pt and record "selection_fallback": true and the chosen epoch in the TRAINED marker / run summary. If even
+   pooled-only has no eligible epoch, keep the current behaviour and record "selection_fallback": "none_eligible".
+   Evaluation keeps using best.pt. Note: running training processes already imported the old code; your edit only
+   affects future launches — do not rename or restructure modules they import.
+2. Add a CPU unit test (tests/test_amend7_fallback.py, stub backbone or a mocked loop) covering: normal eligible path
+   (no fallback), all-ineligible path (fallback picks the pooled-best epoch), none-eligible path. Run it and
+   tests/clipfair_checks.py; both must print ALL_PASS.
+3. Move runs/ffpp_daw_s7 -> runs/ffpp_daw_s7_DEGENERATE_oct26 (and any runs/ffpp_daw_s7.RUNLOCK* entries ->
+   append _DEGENERATE_oct26) so the external runner relaunches daw_s7 with the new code. Touch nothing else in runs/.
+4. Write codex_ops/REPORT_01.md: changed files with line ranges, tests and output, what was moved. Keep it short.
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (/home/sachin.chaudhary/.codex/config.toml): `profiles.unrestricted.dangerously_bypass_approvals_and_sandbox` is ignored.
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (/home/sachin.chaudhary/.codex/config.toml): `profiles.unrestricted.dangerously_bypass_approvals_and_sandbox` is ignored.
+codex
+I’ll read Amendment 7 and the README, then update checkpoint selection, run the CPU checks, and move only the specified run and lock entries.
+exec
+/usr/bin/bash -lc "pwd; rg --files -g AGENTS.md -g README.md -g '*train*' -g '*engine*' -g '*checks*' -g '*amend*'" in /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CLIPFAIR
+ succeeded in 40ms:
+/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CLIPFAIR
+README.md
+tests/clipfair_checks.py
+tests/clipfair_checks_codexfix.log
+scripts/train_ces.py
+scripts/train_clipfair.py
+scripts/train.py
+scripts/clipfair_report.py.bak_amend7
+scripts/train.py.bak_codexfix
+scripts/train_clipfair.py.bak_amend7
+runs/ffpp_pgfdd_s7/train_log.jsonl
+scripts/__pycache__/train.cpython-310.pyc
+runs/ffpp_pgfdd_s17/train_log.jsonl
+cfes/__pycache__/ces_engine.cpython-310.pyc
+cfes/__pycache__/engine.cpython-310.pyc
+cfes/__pycache__/clipfair_engine.cpython-310.pyc
+cfes/clipfair_engine.py
+cfes/ces_engine.py
+cfes/engine.py
+runs/ffpp_ding_s7/train_log.jsonl
+runs/ffpp_dag_s7/train_log.jsonl
+runs/ffpp_daw_s17/train_log.jsonl
+runs/ffpp_daw_s7/train_log.jsonl
+runs/ffpp_ding_gdagrad_s7/train_log.jsonl
+work/gpu_smoke_44073.mgmt01/runs/ffpp_daw_s7/train_log.jsonl
+work/gpu_smoke_44073.mgmt01/runs/ffpp_pgfdd_s7/train_log.jsonl
+work/gpu_smoke_44073.mgmt01/runs/ffpp_dag_s7/train_log.jsonl
+work/gpu_smoke_44073.mgmt01/runs/ffpp_ding_s7/train_log.jsonl
+
+exec
+/usr/bin/bash -lc "cat README.md; sed -n '/Amendment 7/,/"'^## /p'"' ../../decisions/2026-10-25-cesel-plan.md" in /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CLIPFAIR
+ succeeded in 0ms:
+# CLIPFAIR: four matched-backbone fairness baselines on CLIP (Amendment 3)
+
+Pre-registration: `decisions/2026-10-25-cesel-plan.md`, Amendment 3 (25 Oct 2026, user: "yes add the four CLIP
+baselines"; written before any baseline run or CESel result). R = `~/ICLR_2027/research/cvpr_readiness/r20261009`.
+
+The question these rows answer: is a published fairness method's gain the method or the backbone? So every baseline
+runs on the SAME CLIP ViT-L/14 + rank-1 SVD adapters, data, samplers, start checkpoint, budget, selection rule and
+evaluation as CESel B0. Ding's published Xception rows stay as the reference.
+
+## Status (25 Oct 2026)
+
+- Code + CPU checks: `tests/clipfair_checks.py` prints `ALL_PASS` (18/18, including one real CLIP ViT-L/14 pass from
+  `CFES/runs/clip_s7_p1/last.pt`). The checks run the official loss code, taken from the official files with `ast`,
+  against these ports. Values and gradients are equal for DAW-FDD, DAG-FDD, the whole PG-FDD training loss, Ding's
+  SNNL and the SAM step.
+- CPU dry run of the whole pipeline (stub backbone, scratch output): SFD, 4 trainings, evaluation, A1 and the report
+  all ran with rc 0.
+- GPU smoke: PBS 44073 (gpu01, GPU 3) finished with exit 0 (SMOKE OK). Each run was 20 bf16 steps of 176 images,
+  then evaluation, calibration, A1 and the report on 256 items per set. Logs are in `work/gpu_smoke_44073.mgmt01/`
+  (the checkpoints were deleted).
+  - SFD on 20 batches picked 20 channels.
+  - Results per baseline:
+
+    | Baseline | s/step | Peak allocated |
+    |---|---|---|
+    | DAW-FDD | 0.495 | 47.1 GB |
+    | DAG-FDD | 0.488 | 47.1 GB |
+    | PG-FDD (SAM, two passes) | 1.36 | 53.7 GB |
+    | Ding | 0.19 | 3.5 GB (frozen backbone) |
+
+  - Ding: the GDA Sinkhorn value was 2.19 with requires_grad 0, as released.
+  - Estimated full runs: about 3 h of training for DAW/DAG and about 7.5 h for PG-FDD, plus validation.
+- The pipeline jobs are queued:
+  - gpu01 runner: PBS 44074, `-W depend=afterany:44067`.
+  - gpu02 runner: PBS 44075 (GPUs 6 and 7 only), `-W depend=afterany:44068`.
+- **No baseline number exists yet.**
+
+The CESel code in `R/agents/CESEL` and `R/agents/CFES` was NOT modified. `cfes/` and `scripts/{train,train_ces,
+evaluate_ces,calibrate,fair_a1,ces_posteval,cue_stats}.py` and `configs/ces_ffpp.yaml` are byte-identical copies
+(sha256 list in `work/COPIED_FROM_CESEL.sha256`). The CLIPFAIR code is only the new files listed below.
+
+## Common protocol (identical to CESel B0; checked in tests/clipfair_checks.py section 1)
+
+| Item | Value |
+|---|---|
+| Backbone | FairReL CLIP ViT-L/14, frozen, rank-1 SVD residual adapters on every attention projection. `feat` = 16x16x1024 patch tokens after ln_post; `z` = CLS after ln_post |
+| Start | `CFES/runs/clip_s{seed}_p1/last.pt`, backbone keys only (872, strict). New heads are randomly initialised (as B0). Ding also takes p1's CLS head (its method starts from the trained base, see below) |
+| Data | FF++ Lin/Ding split: `DINGREPRO_LIN/data/ff++_ding/train.csv` (76,139); val = realval + fakeval |
+| Images per step | 176 in one backbone pass, the B0 stream (same seed, so the same images): 64 balanced (32 real + 32 fake), 8 (fake, own-source real) pairs (16 images), 96 stratified (4 per label x group x family cell) |
+| Budget and optimiser | 10 epochs x 1976 steps. AdamW: adapters lr 1e-4, new modules lr 1e-3, wd 4e-3, warmup 200, cosine, grad clip 1.0, bf16 |
+| Adapter regulariser | FairReL orthogonality loss, weight 0.1, as in B0 / CFES (not for Ding, whose backbone is frozen) |
+| Selection | Amendment-9 `val_oppoint` rule (`scripts/train.py` selection_value). The start checkpoint is eligible. Validation only |
+| Evaluation | `evaluate_clipfair.py`: the logic of `evaluate_ces.py`, with full test sets FF++ / DFDC / Celeb-DF / DFD and leak-free variants. Then `calibrate.py` (unchanged), then `clipfair_posteval.py`, which is the A1 part of `ces_posteval.py` unchanged (`fair_a1.py`, the verbatim CFES fair_oppoint rule; reference points t = 0 and t = -b) |
+| Seeds | 7, 17, 27 |
+
+**Optimiser.** Every baseline uses the shared CLIP-adapter recipe, not the official SGD settings:
+- AI-Face (DAW-FDD, DAG-FDD): SGD lr 5e-4.
+- PG-FDD: SAM(SGD lr 5e-4, momentum 0.9, wd 5e-3).
+- Ding GDA: SGD lr 1e-3, momentum 0.9, wd 5e-3.
+
+Those SGD settings were tuned for full Xception fine-tuning. The amendment fixes the backbone, budget and recipe. The
+*method* hyper-parameters (CVaR alphas, loss weights, LDAM margins, SAM rho, SFD ratio, Sinkhorn blur and lambda) are
+the official defaults. Nothing is tuned.
+
+**Loss pool.** Each method's loss is computed over the 176-image pool of the step. B0 instead sums three balanced BCEs,
+one per stream. The DRO losses (DAW, DAG, PG-FDD's fused CVaR) need one set of per-sample losses, and the pool holds
+at least 12 images of every intersectional group.
+
+Notation: N = 176 pool images, y in {0,1} (1 = fake), g in 0..7 (Lin's intersec_label), l_i = per-sample loss,
+CVaR_a(l) = min_lam lam + (1/a) mean_i relu(l_i - lam). The official code solves the dual with
+`scipy.optimize.fminbound` on [min l - 1000, max l]. Here the same search runs on a detached CPU float32 copy, and
+lam* then enters the differentiable loss exactly as in the official code.
+
+## 1. DAW-FDD (Ju et al., WACV'24)
+
+Source: `CFES/third_party/ff2id/AI-Face-FairnessBench/training` (the ff2id patches touch only `train_test.py` I/O).
+- Loss: `detectors/daw_fdd.py:73-94`. Defaults inner_alpha 0.9 and outer_alpha 0.5 (`:75-76`).
+- Dual search: `:55-65`.
+- Per-sample BCE: `loss/daw_bce_loss.py:10,24`.
+- Classifier: `:36-38` (Xception, `num_classes` 1).
+
+```
+s_i = w^T z_i + b                                   (Linear(1024, 1) on the CLS feature; official: relu-avgpool-Linear(2048, 1))
+l_i = BCEWithLogits(s_i, y_i)
+L_g = CVaR_0.9({l_i : g_i = g})        for every group g present in the pool
+L   = CVaR_0.5({L_g}) + 0.1 L_orth
+```
+
+Port: `cfes/clipfair_losses.py` (`daw_fdd_loss`). Equal in value and gradient to the official `get_losses`, as checked.
+
+## 2. DAG-FDD (Ju et al., WACV'24)
+
+Source: `detectors/dag_fdd.py:74-84` in the same repo, default dag_alpha 0.5 (`:76`).
+
+```
+L = CVaR_0.5({BCEWithLogits(s_i, y_i)}_i) + 0.1 L_orth          (no group labels)
+```
+
+Port: `dag_fdd_loss`. Equal in value and gradient to the official code, as checked.
+
+## 3. PG-FDD (Lin et al., CVPR'24)
+
+Source: `CFES/third_party/ff2id/Fairness-Generalization/training`.
+- `detectors/fair_df_detector.py`: modules `:34-105`, forward `:336-431`, loss `:193-282`.
+- Losses: `loss/bal_loss.py` (LDAM), `loss/contrastive_regularization.py`, `loss/bi_level_CE.py`, `loss/l1_loss.py`.
+- Optimiser: `sam.py` (SAM).
+- Training loop: `train.py:223-242` (SAM two-pass step), `utils/bypass_bn.py` (BN momentum 0 in the perturbed pass).
+- The ff2id patch to `cls_num_list` is for FF2 only. The official FF++ value is used here, and it equals our FF++ train
+  counts: [2475, 25443, 1468, 4163, 8013, 31281, 1111, 2185].
+
+Architecture (`cfes/clipfair_models.py` PGFDDDetector):
+
+```
+T = CLIP token map (1024 x 16 x 16)
+f = E_f(T), c = E_c(T), d = E_fair(T)                   E_* = Conv1x1(1024->512)-BN-ReLU   (the Xception adjust_channel analog)
+f_spe = B_spe(f), f_sha = B_sha(f), f_fair = B_fair(d)  B_* = Conv2d1x1 (512->256->256)     (:86-100, :161-166, :345)
+fused = AdaIN(f_fair, f_sha)                            (:346)
+heads: H_sha (2), H_spe (6), H_fair (8), H_fused (2)    Head = avgpool-Linear(256,512)-LeakyReLU-Linear-Dropout(0.2)
+reconstruction on the [real; fake] halves R, F:          cd = AdaIN(d, c)
+   G(f_F, cd_F) ~ x_F, G(f_R, cd_R) ~ x_R, G(f_R, cd_F) ~ x_F, G(f_F, cd_R) ~ x_R       (G = conditional UNet, :479-538)
+score = H_fused[1] - H_fused[0]                         (inference = fused head, :348-381)
+```
+
+Loss (`:220-272`, weights unchanged):
+
+```
+L = CE(H_sha, y) + 0.1 CE(H_spe, spe) + 0.3 L_rec + 0.05 L_con + 0.1 LDAM(H_fair, g) + L_fuse + 0.1 L_orth
+  L_rec  = sum of the 4 L1 terms against the image in [-1, 1]
+  L_con  = triplet contrastive regulariser on the pooled sha / spe features, margin 3.0
+  LDAM   : max_m 0.5, s 30, margins n_g^-1/4 rescaled to max 0.5
+  L_fuse = smoothed CVaR_0.5 over groups (tau1 1e-3, tau2 1e-4) of the per-group CVaR_0.9 of CE(H_fused)
+SAM: g = grad L(w); w' = w + 0.05 g / ||g||; second forward and backward at w' (BN momentum 0); restore w;
+     clip; AdamW step with grad L(w')
+```
+
+spe = Lin's `spe_label` column: 0 real, 1 Deepfakes, 2 Face2Face, 3 FaceSwap, 4 NeuralTextures, 5 FaceShifter. These are
+the 6 classes of `:63`.
+
+Adaptations to CLIP (each one a reviewer could question):
+1. **One shared adapted CLIP trunk, three necks.** The official model has three separate Xception encoders
+   (`encoder_f`, `encoder_c`, `encoder_fair`, `:44-46`). Here those are three adjust_channel necks on one shared adapted
+   CLIP trunk. Three ViT-L/14 passes of 176 images do not fit one 80 GB GPU (one CESel pass of 176 images peaked at 47 GB in PBS 44066). The
+   content/forgery/fairness disentanglement therefore separates only above the shared trunk.
+2. **Decoder output size.** The decoder's three x2 stages give 128 px from the 16x16 grid. Its last upsampling
+   resamples to 224 px (official: a fixed x4 from 8x8 to 256 px). The output is compared with the 224 px input mapped
+   to [-1, 1] (official Normalize 0.5/0.5).
+3. **Real/fake halves.** Reconstruction and the contrastive term use the 40 real + 40 fake images of the balanced batch
+   plus the pairs, which gives the official [real; fake] chunk layout. The sha, spe, fair and fused terms use the whole
+   176-image pool.
+4. **SAM base optimiser.** The base optimiser is AdamW (the shared recipe), not SGD. SAM is the official two-pass
+   rule; the check compares it with `sam.py` with an SGD base. Gradient clipping is applied to the perturbed gradient.
+5. **Float32 statistics under bf16.** AdaIN statistics and the heads run in float32; the trunk, necks, blocks and
+   decoder run in bf16 autocast.
+
+Faithfully reproduced released behaviour:
+- `block_fused` is constructed but never used (`:101-105`).
+- Dropout acts on the head logits.
+- The smoothed outer CVaR's inf guard limits lam to at least max_g L_g - ~88 tau1. In practice this puts almost all
+  of the outer weight on the worst group of the batch (noted earlier in `fairforge2/src/sota_pgfdd_full.py`).
+
+## 4. Ding et al. CVPR'26: SFD + GDA
+
+Source: `DINGREPRO_LIN/code/Ding_mod` (= ywh1093/Fairness-Optimization @ 059ec37, with the disclosed DINGREPRO_LIN
+patches).
+- SFD: `SFD.py:15-58` (SoftNearestNeighborLoss), `:61-81, 136-188` (per-channel SNNL over the training set, lowest
+  `prc` %).
+- GDA: `GDA.py:63-74, 151-158` (out-channel pruning), `:121-124` (only `last_linear` trains), `:191` (Sinkhorn,
+  blur 5e-4), `:202-239` (step), `:86` (lambda 0.005).
+
+```
+SFD (scripts/ding_sfd.py; once per seed on the start checkpoint p1, the analog of Ding's CE-trained base):
+  for every training batch (64, shuffled, whole train set) and channel c of the 1024 ln_post channels:
+      SNNL_c = soft-nearest-neighbour loss of the channel's 16x16 token map (256-d), cos distance, T = 1, label = g
+  decoupled = the round(2% x 1024) = 20 channels with the lowest mean SNNL
+GDA (train_clipfair.py, method ding):
+  z' = z * keep  (keep_c = 0 on decoupled channels);  logits = Linear(1024, 2)(z'), initialised from p1's cls_head
+  L  = CE(logits, y) + 0.005 * Sinkhorn_{p=2, blur 5e-4}(logits_pool, logits_{pool, group k})   k ~ U{0..7}
+  RELEASED: the Sinkhorn term (and the total) is computed inside torch.no_grad() (GDA.py:232-235)
+```
+
+**The released GDA fairness term is inert.** It contributes no gradient. `DINGREPRO_LIN/results/GDA_GRAD_CHECK.json`
+shows this: with the released step the parameter change from lambda = 0 to lambda = 1000 is exactly 0. Here the term is
+implemented AS RELEASED by default (`clipfair.ding.gda_grad: false`; the check confirms the term has no gradient), so
+the Ding row is SFD + classifier fine-tuning with CE. The gradient-enabled variant (`gda_grad: true`) is implemented and
+tested but refuses to run unless `CLIPFAIR_ALLOW_GDA_GRAD=1`, which is to be set only after the decision file is
+amended.
+
+Adaptations to CLIP:
+1. **Channels.** The 512 Xception adjust_channel conv channels (8x8 maps) become the 1024 CLIP ln_post channels (16x16
+   token maps). 2% gives 20 channels, not 10.
+2. **Decoupling.** "Pruning" = zeroing those channels of the CLS feature fed to the classifier. The official code
+   zeroes the conv out-channel weights, which leaves a constant (bias -> BN -> ReLU) channel; with a linear
+   classifier that difference is only a bias shift.
+3. **Base model.** The base is the CFES phase-1 checkpoint p1. It is CE-trained on the same FF++ split, but with a fused
+   CLS + patch score (Ding: Xception CE for 50 epochs). GDA starts from p1's CLS-path classifier, rewritten exactly as
+   an equivalent 2-way head (rows -w/2, +w/2). The check confirms the head reproduces p1's CLS logit.
+4. **Trainable parameters.** As released, only the classifier trains (`train_backbone: false`), so the backbone and its
+   adapters stay at p1 and no orthogonality term applies. This is faithful, but it gives Ding fewer trainable
+   parameters than the other three baselines.
+5. **Group logits.** The group sample for the Sinkhorn term is the pool images of the drawn group. The official code
+   forwards a separate 32 + 32 batch of that group under no_grad, which in train mode also updates Xception's BN
+   running statistics (a side effect with no analog: CLIP has no BN). Because the term is inert, this changes only
+   the logged value.
+6. **Pool and sampler.** The main CE is over the 176-image pool. Official: 32 real + 32 fake, which is the balanced
+   part of the B0 stream.
+
+Geomloss: the training env (pulid) has no geomloss, and installs are not allowed, so geomloss 0.3.1 (pure Python, MIT)
+is vendored unchanged in `third_party/geomloss`, copied from the qwen38 env.
+
+## Files
+
+| File | Role |
+|---|---|
+| `cfes/clipfair_losses.py` | the four methods' losses, CVaR duals, LDAM, contrastive, SNNL, SFD selection, Sinkhorn (file:line in every docstring) |
+| `cfes/clipfair_models.py` | LinearHeadDetector (DAW/DAG), DingDetector, PGFDDDetector (+ AdaIN, ConditionalUNet, Conv2d1x1, Head), `build_model` (p1 warm start) |
+| `cfes/clipfair_engine.py` | pool assembly (B0's 176 images), `compute_losses` per method, active terms, SAM helpers, BN bypass |
+| `configs/clipfair_ffpp.yaml` | `_base_: ces_ffpp.yaml` (the CESel FF++ config, copied) + `clipfair.*` (every method hyper-parameter, with its source line) |
+| `configs/ffpp/{daw,dag,pgfdd,ding}.yaml` | method switch |
+| `scripts/train_clipfair.py` | trainer (train_ces.py logic: validation, Amendment-9 selection, checkpoints; SAM for PG-FDD) |
+| `scripts/ding_sfd.py` | Ding SFD pass -> `runs/ffpp_ding_sfd_s<seed>/sfd_channels.json` |
+| `scripts/evaluate_clipfair.py`, `scripts/clipfair_posteval.py` | evaluation (full test sets, leak-free variants) and A1 |
+| `scripts/clipfair_pipeline.py`, `run/clipfair_run.sh`, `run/pick_gpu.sh` | CESel runner pattern: shared RUNLOCKs, GPU free check (>= 60 GB free, < 10 % util, not locked by CLIPFAIR or CESel), <= 4 concurrent (gpu02: 2), STOP sentinel `work/STOP_CLIPFAIR` |
+| `run/pbs_clipfair_smoke.sh`, `run/pbs_clipfair_ffpp.sh`, `run/pbs_clipfair_ffpp_gpu02.sh` | PBS jobs |
+| `scripts/clipfair_report.py` | `results/clipfair_ffpp.md` (+ .json) |
+| `tests/clipfair_checks.py` | CPU checks |
+
+## Commands
+
+```
+~/.conda/envs/pulid/bin/python tests/clipfair_checks.py                          # ALL_PASS
+CLIPFAIR_DRY=1 CLIPFAIR_OUT=<scratch> SEEDS=7 ~/.conda/envs/aiface/bin/python scripts/clipfair_pipeline.py   # CPU dry run
+qsub run/pbs_clipfair_smoke.sh                                                   # GPU smoke (20 steps per baseline)
+qsub -W depend=afterany:44067 run/pbs_clipfair_ffpp.sh                           # gpu01 runner, after CESel gpu01
+qsub -W depend=afterany:44068 run/pbs_clipfair_ffpp_gpu02.sh                     # gpu02 runner (GPUs 6, 7), after CESel gpu02
+touch work/STOP_CLIPFAIR                                                         # stop new launches
+~/.conda/envs/aiface/bin/python scripts/clipfair_report.py                       # report at any time
+```
+
+Outputs:
+- `runs/ffpp_<method>_s<seed>/`: config, provenance, train_log, best.pt / last.pt, TRAINED, and `eval/` (scores,
+  summary, calibration, a1.json).
+- `runs/ffpp_ding_sfd_s<seed>/`: the SFD channels.
+- Logs: `logs/clipfair_pipeline_<host>.log` and `logs/clipfair_runs/<task>.log`.
+## Amendment 7 (26 Oct ~12:45; matched-CLIP baselines; selection fallback for degenerate runs)
+Problem (validation logs only): the Amendment-9 eligibility compares every epoch with the START checkpoint's group
+operating point. The baselines start from a FRESH (random) head, so that reference is arbitrary: a random head can
+give some group a TPR near 100%, which no trained epoch can match within 2 points.
+- DAW-FDD s7: all 10 trained epochs ineligible (val AUC 92.8–93.2, pooled TPR ~84%, FPR ~14%). The run therefore
+  kept its random start head; its test AUC (44.5) measures that start, not DAW-FDD.
+- PG-FDD s7: epochs 0–3 ineligible, epoch 4 onward eligible.
+
+Rule, applied uniformly to every matched-CLIP baseline run:
+- The pre-registered Amendment-9 rule stands.
+- If NO trained epoch is eligible, the run falls back to the pooled-only eligibility (val TPR ≥ 80%, FPR ≤ 20%) with
+  the same selection value, as in TTD Amendment 4.
+- Implementation: each run also saves `best_pooled.pt`; the fallback uses it.
+- Degenerate runs are re-run with this code: DAW-FDD s7 (archived as `ffpp_daw_s7_DEGENERATE_oct26`), plus DAW-FDD
+  s17 and PG-FDD s17, which were stopped early and restarted with the new code.
+- Disclosed: this was decided after seeing DAW-FDD s7's (meaningless) start-head test numbers.
+
+exec
+/usr/bin/bash -lc 'for p in ../../AGENTS.md ../AGENTS.md AGENTS.md; do if [ -f "$p" ]; then cat "$p"; fi; done; cat scripts/train_clipfair.py; rg -n '"'selection_value|eligible|TRAINED|best_epoch' scripts/train.py cfes/clipfair_engine.py tests/clipfair_checks.py; ls -ld runs/ffpp_daw_s7*; ls codex_ops" in /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CLIPFAIR
+ succeeded in 0ms:
+"""Train one CLIPFAIR baseline (Amendment 3). Adapted from scripts/train_ces.py (the CESel trainer, copied unchanged
+next to this file): same data stream as B0 (ces_engine loaders, same seed), same optimiser recipe (AdamW, adapters lr
+1e-4, new modules lr 1e-3, wd 4e-3, warmup 200, cosine, grad clip 1.0, bf16), same validation (train.validate), same
+Amendment-9 selection rule (start checkpoint eligible), same checkpoint format (full state dict). PG-FDD wraps every
+step in SAM (two forward/backward passes, rho 0.05), as its official train.py:223-242.
+
+  python scripts/train_clipfair.py --config configs/ffpp/daw.yaml --out runs/ffpp_daw_s7 --set seed=7 \
+         model.init_backbone_ckpt=<CFES runs/clip_s7_p1/last.pt>
+  (ding: first scripts/ding_sfd.py, then --set clipfair.ding.channels_json=<sfd_channels.json>)
+Test sets are never read here.
+"""
+import argparse
+import json
+import math
+import os
+import sys
+import time
+
+import numpy as np
+import torch
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(HERE)
+sys.path.insert(0, ROOT)
+sys.path.insert(0, HERE)
+
+import train as T  # noqa: E402  (CFES trainer: validate, selection_value, provenance)
+from cfes import ces_engine as CE  # noqa: E402
+from cfes import clipfair_engine as FE  # noqa: E402
+from cfes import engine as E  # noqa: E402
+from cfes.clipfair_models import build_model  # noqa: E402
+from cfes.config import dump_config, load_config  # noqa: E402
+from cfes.data import cycle  # noqa: E402
+from cfes.utils import JsonlLogger, code_hash, load_checkpoint, save_checkpoint, set_seed  # noqa: E402
+
+
+def grad_norms(model):
+    acc = {"backbone": 0.0, "new": 0.0}
+    for n, p in model.named_parameters():
+        if p.grad is not None:
+            acc["backbone" if n.startswith("backbone.") else "new"] += float(p.grad.detach().float().pow(2).sum())
+    return {f"gn_{k}": v ** 0.5 for k, v in acc.items()}
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--config", required=True)
+    ap.add_argument("--out", required=True)
+    ap.add_argument("--set", nargs="*", default=[])
+    ap.add_argument("--resume", action="store_true")
+    ap.add_argument("--smoke", action="store_true")
+    ap.add_argument("--device", default=None)
+    a = ap.parse_args()
+    cfg = load_config(a.config, a.set)
+    method = cfg["clipfair"]["method"]
+    if method == "ding" and not cfg["clipfair"]["ding"].get("channels_json"):
+        raise SystemExit("ding needs clipfair.ding.channels_json (scripts/ding_sfd.py output)")
+    if method == "ding" and cfg["clipfair"]["ding"].get("gda_grad") and not os.environ.get("CLIPFAIR_ALLOW_GDA_GRAD"):
+        raise SystemExit("gda_grad=true is the gradient-enabled variant; not run unless the decision file is amended "
+                         "(set CLIPFAIR_ALLOW_GDA_GRAD=1 only then)")
+    os.makedirs(a.out, exist_ok=True)
+    if not a.resume and os.path.exists(os.path.join(a.out, "last.pt")):
+        raise SystemExit(f"{a.out} already has last.pt; pass --resume or use a new --out")
+    dump_config(cfg, os.path.join(a.out, "config.yaml"))
+    JsonlLogger(os.path.join(a.out, "provenance.jsonl")).log(**T.provenance(cfg, a, a.out))
+    log = JsonlLogger(os.path.join(a.out, "train_log.jsonl"))
+    set_seed(cfg["seed"])
+    device = torch.device(a.device or ("cuda" if torch.cuda.is_available() else "cpu"))
+
+    model = build_model(cfg, device)
+    train_df, cond, sampler, loader = CE.train_loader(cfg, cfg["seed"])
+    pairs = CE.pair_loader(cfg, train_df, cond, cfg["seed"])
+    strat_dl = CE.strat_loader(cfg, train_df, cond, len(loader), cfg["seed"])
+    spe = FE.SpeLookup(train_df, pairs.dataset if pairs is not None else None)
+    terms = FE.active_terms(cfg)
+    val_df, val_loader = E.eval_loader(cfg["data"]["val"], cfg, cfg["debug"].get("max_eval_items"))
+    sam = cfg["clipfair"]["pgfdd"]["sam"] if method == "pgfdd" else None
+
+    o = cfg["optim"]
+    opt = torch.optim.AdamW(model.param_groups(o["lr"], o.get("lr_new", o["lr"]), o["weight_decay"]))
+    steps_total = o["epochs"] * len(loader)
+    warm = max(1, min(o["warmup_steps"], max(1, steps_total // 10)))
+    sched = torch.optim.lr_scheduler.LambdaLR(opt, lambda s: (s + 1) / warm if s < warm else
+                                              (0.5 * (1 + math.cos(math.pi * (s - warm) / max(1, steps_total - warm)))
+                                               if o["schedule"] == "cosine" else 1.0))
+    state = {"epoch": 0, "step": 0, "best": -float("inf"), "best_epoch": -1}
+    if a.resume:
+        state = load_checkpoint(os.path.join(a.out, "last.pt"), model, opt, sched, None, restore_rng=True)
+    log.log(event="start", method=method, code_hash=code_hash(ROOT), device=str(device), terms=terms,
+            params=model.parameter_report(), init=getattr(model, "init_info", None), n_train=len(train_df),
+            n_val=len(val_df), steps_per_epoch=len(loader), pairs=pairs.dataset.report if pairs else None,
+            strat_cells=strat_dl.batch_sampler.describe() if strat_dl else None, sam=sam,
+            clipfair=cfg["clipfair"][method])
+    print("method", method, "terms", terms, "params", model.parameter_report(), flush=True)
+
+    if cfg["select"].get("include_init") and not a.resume:
+        res = T.validate(model, cfg, device, val_df, val_loader)
+        val = T.selection_value(res, cfg["select"]["metric"])
+        state["select_ref"] = res["oppoint"]
+        state.update(best=val, best_epoch=-1, best_threshold_tpr=res["threshold_tpr"])
+        save_checkpoint(os.path.join(a.out, "best.pt"), model, None, None, None, state, full=cfg["ckpt"]["full"])
+        log.log(event="epoch", epoch=-1, select_value=val, val_auc=res["auc"], val_oppoint=res["oppoint"])
+    gen = torch.Generator().manual_seed(cfg["seed"] * 7919 + state["epoch"])
+    pair_iter = cycle(pairs) if pairs else None
+    params = model.trainable_parameters()
+    model.train()
+    for epoch in range(state["epoch"], o["epochs"]):
+        sampler.set_epoch(epoch)
+        if cfg.get("train", {}).get("decoupled_rng"):
+            gen.manual_seed(cfg["seed"] * 7919 + epoch)
+            if pairs is not None:
+                pairs.generator.manual_seed(cfg["seed"] * 104729 + epoch)
+                pair_iter = cycle(pairs)
+        strat_iter = None
+        if strat_dl is not None:
+            strat_dl.batch_sampler.set_epoch(epoch)
+            strat_iter = iter(strat_dl)
+        t0, agg = time.time(), {}
+        if device.type == "cuda":
+            torch.cuda.reset_peak_memory_stats(device)
+        t_it = time.time()
+        for it, batch in enumerate(loader):
+            pb = next(pair_iter) if pair_iter else None
+            sb = next(strat_iter) if strat_iter else None
+            pool = FE.assemble(batch, pb, sb, device, spe)
+            if sam is not None:
+                FE.enable_running_stats(model)                       # FG train.py:225
+            vals, stats = FE.compute_losses(model, pool, cfg, gen, device, terms)
+            total = FE.weighted_total(vals, terms)
+            opt.zero_grad(set_to_none=True)
+            total.backward()
+            log_now = (state["step"] + 1) % cfg["log_every"] == 0
+            if sam is not None:                                      # FG train.py:223-242 + sam.py
+                old, gnorm1 = FE.sam_first_step(params, float(sam["rho"]), bool(sam.get("adaptive", False)))
+                opt.zero_grad(set_to_none=True)
+                FE.disable_running_stats(model)                      # FG train.py:235
+                vals2, _ = FE.compute_losses(model, pool, cfg, gen, device, terms)
+                total2 = FE.weighted_total(vals2, terms)
+                total2.backward()
+                FE.sam_restore(old)
+                FE.enable_running_stats(model)
+                stats.update(sam_grad_norm_w=gnorm1, total_perturbed=float(total2))
+            gns = grad_norms(model) if log_now else {}
+            gn = torch.nn.utils.clip_grad_norm_(params, o["grad_clip"])
+            opt.step()
+            sched.step()
+            state["step"] += 1
+            rec = {k: float(v) for k, v in vals.items()}
+            rec.update(stats, total=float(total), grad_norm=float(gn), lr=sched.get_last_lr()[0], **gns)
+            rec["sec_step"] = time.time() - t_it
+            t_it = time.time()
+            for k, v in rec.items():
+                if isinstance(v, (int, float)):
+                    agg.setdefault(k, []).append(v)
+            if log_now:
+                log.log(event="step", epoch=epoch, step=state["step"], **rec)
+                print(f"ep {epoch} it {it + 1}/{len(loader)} " +
+                      " ".join(f"{k}={rec[k]:.4f}" for k in ["total", *vals.keys()]), flush=True)
+        t_train = time.time() - t0
+        peak = torch.cuda.max_memory_allocated(device) / 2 ** 30 if device.type == "cuda" else 0.0
+        res = T.validate(model, cfg, device, val_df, val_loader)
+        val = T.selection_value(res, cfg["select"]["metric"],
+                                state.get("select_ref") if cfg["select"].get("ref_checks", True) else None)
+        state["epoch"] = epoch + 1
+        improved = val > state["best"]
+        if improved:
+            state.update(best=val, best_epoch=epoch, best_threshold_tpr=res["threshold_tpr"])
+            save_checkpoint(os.path.join(a.out, "best.pt"), model, None, None, None, state, full=cfg["ckpt"]["full"])
+        save_checkpoint(os.path.join(a.out, "last.pt"), model, opt, sched, None, state, full=cfg["ckpt"]["full"])
+        log.log(event="epoch", epoch=epoch, seconds=time.time() - t0, train_seconds=t_train, peak_mem_gb=peak,
+                peak_reserved_gb=(torch.cuda.max_memory_reserved(device) / 2 ** 30 if device.type == "cuda" else 0.0),
+                select_value=val, improved=improved, val_auc=res["auc"], val_ding=res["ding@0.5"],
+                val_stats=res["val_stats"], val_oppoint=res["oppoint"],
+                train_means={k: float(np.mean(v)) for k, v in agg.items()})
+        print(f"epoch {epoch} val_auc {res['auc']:.2f} select {val:.3f} best_epoch {state['best_epoch']} "
+              f"sec {time.time() - t0:.0f}", flush=True)
+    with open(os.path.join(a.out, "TRAINED"), "w") as f:
+        json.dump(state, f, default=float)
+
+
+if __name__ == "__main__":
+    main()
+scripts/train.py:126:def selection_value(res, metric, ref=None):
+scripts/train.py:218:    state = {"epoch": 0, "step": 0, "best": -float("inf"), "best_epoch": -1}
+scripts/train.py:239:        # the starting checkpoint is an eligible candidate of the selection rule (epoch -1)
+scripts/train.py:241:        val = selection_value(res, cfg["select"]["metric"])
+scripts/train.py:243:        state.update(best=val, best_epoch=-1, best_threshold_tpr=res["threshold_tpr"])
+scripts/train.py:302:        val = selection_value(res, cfg["select"]["metric"],         # ref_checks false: TTD only (cfer spec Amendment 4)
+scripts/train.py:307:            state.update(best=val, best_epoch=epoch, best_threshold_tpr=res["threshold_tpr"])
+scripts/train.py:317:        print(f"epoch {epoch} val_auc {res['auc']:.2f} select {val:.3f} best_epoch {state['best_epoch']} "
+scripts/train.py:320:    with open(os.path.join(a.out, "TRAINED"), "w") as f:
+drwx------ 3 sachin.chaudhary hpc 4096 Oct 26 10:49 runs/ffpp_daw_s7
+drwx------ 2 sachin.chaudhary hpc 4096 Oct 26 10:56 runs/ffpp_daw_s7.RUNLOCK.gone.gpu01_44112.mgmt01_1969594_1792981318236049630_1101328702
+TASK_01.md
+codex_01.log
+
+exec
+/usr/bin/bash -lc "sed -n '90,165p' scripts/train.py; cat cfes/clipfair_engine.py | head -65; rg -n 'def save_checkpoint|def load_checkpoint' cfes/utils.py; sed -n '1,85p' tests/clipfair_checks.py; tail -45 tests/clipfair_checks.py; cat codex_ops/TASK_01.md; rg --files -g AGENTS.md ../../.." in /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CLIPFAIR
+ exited 1 in 724ms:
+    b = fit_intercept(z, y)[0]
+    d = (z + b) >= 0
+    fpr, tpr = {}, {}
+    for k, name in enumerate(SCHEMES[scheme]):
+        r, f = (g == k) & (y == 0), (g == k) & (y == 1)
+        if r.any() and f.any():
+            fpr[name], tpr[name] = float(100 * d[r].mean()), float(100 * d[f].mean())
+    return {"intercept": float(b), "pooled_FPR": float(100 * d[y == 0].mean()), "pooled_TPR": float(100 * d[y == 1].mean()),
+            "group_FPR": fpr, "group_TPR": tpr, "worst_FPR": max(fpr.values()),
+            "fpr_gap": max(fpr.values()) - min(fpr.values()), "tpr_gap": max(tpr.values()) - min(tpr.values())}
+
+
+def validate(model, cfg, device, val_df, val_loader):
+    """Codex review F3 (25 Oct, CESel copy): with eval.rank_metrics the validation AUC, group AUCs and ding@0.5 block
+    are computed from rank_prob(logit) (exact, no sigmoid saturation: float64 sigmoid ties every logit above ~37);
+    0.5 decisions are identical (z >= 0). The validation-TPR threshold and the operating point (common intercept,
+    pooled / group FPR and TPR) are on the LOGIT scale. Before this fix validation used sigmoid probabilities."""
+    p, z = engine.predict(model, val_loader, device, amp=bool(cfg["optim"]["amp"]), return_logits=True, prob64=bool(cfg["eval"].get("prob_float64")))
+    y, g = val_df["label"].values[:len(p)], val_df["group"].values[:len(p)]
+    z64 = np.asarray(z, dtype=np.float64)
+    rank = bool(cfg["eval"].get("rank_metrics"))
+    res = evaluate_scores(y, rank_prob(z64) if rank else p, g, cfg["data"]["val"].get("scheme", "eight"))
+    res["metric_scores"] = "rank_prob(logit)" if rank else "prob"
+    res["threshold_tpr"] = threshold_at_tpr(y, z64, cfg["eval"]["val_tpr"])
+    res["threshold_tpr_units"] = "logit"
+    res["val_stats"] = {"fpr@0.5": float(100 * (p[y == 0] >= 0.5).mean()), "tpr@0.5": float(100 * (p[y == 1] >= 0.5).mean()),
+                        "logit_mean_real": float(z[y == 0].mean()), "logit_mean_fake": float(z[y == 1].mean()),
+                        "logit_absmean": float(np.abs(z).mean()), "logit_std": float(z.std())}
+    res["_probs"] = p
+    res["oppoint"] = oppoint_stats(y, z, g, cfg["data"]["val"].get("scheme", "eight"))
+    return res
+
+
+OPP = {"min_tpr": 80.0, "max_fpr": 20.0, "tpr_drop": 2.0, "gap_weight": 0.5}     # STUDY_PLAN Amendment 9
+
+
+def selection_value(res, metric, ref=None):
+    if metric == "val_oppoint":
+        o = res["oppoint"]
+        ok = o["pooled_TPR"] >= OPP["min_tpr"] and o["pooled_FPR"] <= OPP["max_fpr"]
+        if ref is not None:
+            ok = ok and o["worst_FPR"] <= ref["worst_FPR"] and all(
+                o["group_TPR"].get(k, 0.0) >= v - OPP["tpr_drop"] for k, v in ref["group_TPR"].items())
+        return (res["auc"] - OPP["gap_weight"] * o["fpr_gap"]) if ok else -1e9      # res["auc"] is in %
+    if metric == "val_auc":
+        return res["auc"]
+    if metric == "val_auc_minus_inter_ffpr":
+        return res["auc"] - res["ding@0.5"]["intersection"].get("F_FPR", 0.0)
+    if metric == "val_inter_es_auc":
+        return res["ding@0.5"]["intersection"]["es_AUC"]
+    raise ValueError(metric)
+
+
+def term_grad_norms(model, vals, terms):
+    """Gradient-norm contribution of each weighted loss term w.r.t. the trainable parameters (diagnostic; needs the
+    graph, so it is computed before the main backward with retain_graph)."""
+    params = model.trainable_parameters()
+    out = {}
+    for k, v in vals.items():
+        if k not in terms:
+            continue
+        gs = torch.autograd.grad(terms[k] * v, params, retain_graph=True, allow_unused=True)
+        out[f"tg_{k}"] = float(torch.sqrt(sum((x.float() ** 2).sum() for x in gs if x is not None)))
+    return out
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--config", required=True)
+    ap.add_argument("--out", required=True)
+    ap.add_argument("--set", nargs="*", default=[], help="dotted overrides, e.g. loss.stab.weight=0")
+    ap.add_argument("--resume", action="store_true")
+    ap.add_argument("--smoke", action="store_true", help="code-path run; allows smoke_only matched-set fixtures")
+    a = ap.parse_args()
+
+    if a.smoke:
+"""One training step of a CLIPFAIR baseline on EXACTLY the images CESel B0 forwards in that step.
+
+Data: cfes.ces_engine.train_loader / pair_loader / strat_loader with the B0 config (same seed -> the same image stream as
+B0): 64 balanced images (32 real + 32 fake), 8 (fake, own-source real) pairs = 16 images, 96 stratified images
+(4 per label x group x manipulation-family cell). Pool = [batch; pair fakes; pair reals; stratified] = 176 images,
+one backbone pass (the same exposure as B0's det + pair_det + strat_det).
+
+Per method (weights in configs/clipfair_ffpp.yaml, from the official code):
+  daw   : DAW-FDD over the pool (per-group CVaR_0.9 of per-sample BCE, CVaR_0.5 across groups)      + orth 0.1
+  dag   : DAG-FDD over the pool (CVaR_0.5 of per-sample BCE)                                       + orth 0.1
+  pgfdd : CE(sha) + 0.1 CE(spe) + 0.3 L_rec + 0.05 L_con + 0.1 LDAM(fair) + bi-level CVaR(fused)    + orth 0.1
+          (sha / spe / fair / fused over the pool; rec / con over the [real; fake] halves of batch + pairs, 40 + 40);
+          SAM (rho 0.05) wraps the whole loss in scripts/train_clipfair.py
+  ding  : CE over the pool + 0.005 * Sinkhorn(pool logits, one random group's pool logits) inside no_grad (released
+          GDA: no gradient), head only trainable (GDA.py:121-124), SFD channels zeroed
+orth = the FairReL rank-1 orthogonality regulariser of the adapters, weight 0.1, as in B0 / CFES (backbone recipe).
+"""
+import random
+
+import numpy as np
+import pandas as pd
+import torch
+import torch.nn.functional as F
+
+from . import clipfair_losses as FL
+from .data import ffpp_method
+
+
+def _w(cfg, m, k):
+    return float(cfg["clipfair"][m]["weights"].get(k, 0.0))
+
+
+def active_terms(cfg):
+    m = cfg["clipfair"]["method"]
+    keys = {"daw": ["daw"], "dag": ["dag"], "pgfdd": ["sha", "spe", "rec", "con", "fair", "fuse"],
+            "ding": ["ce", "gda_fair"]}[m]
+    on = {k: _w(cfg, m, k) for k in keys}
+    if cfg["model"].get("backend", "clip") in ("clip", "stub") and not (m == "ding" and
+                                                                         not cfg["clipfair"]["ding"].get("train_backbone")):
+        on["orth"] = float(cfg["loss"]["orth"]["weight"])
+    return {k: v for k, v in on.items() if v > 0}
+
+
+class SpeLookup:
+    """PG-FDD specific-forgery label (6-way: 0 real, 1 Deepfakes, 2 Face2Face, 3 FaceSwap, 4 NeuralTextures,
+    5 FaceShifter = the spe_label column of Lin's train.csv, NaN for reals -> 0). For images without the column,
+    the FF++ method in the file name is mapped with the same table."""
+    TABLE = {"real": 0, "Deepfakes": 1, "Face2Face": 2, "FaceSwap": 3, "NeuralTextures": 4, "FaceShifter": 5}
+
+    def __init__(self, train_df, pair_ds=None):
+        if "spe_label" in train_df.columns:
+            spe = train_df["spe_label"].fillna(0).astype(int).values
+        else:
+            spe = train_df["method"].map(lambda m: self.TABLE.get(m, 0)).values
+        spe = np.where(train_df["label"].values == 0, 0, spe)
+        self.by_index = torch.as_tensor(spe, dtype=torch.long)
+        self.pair_fake = None
+        if pair_ds is not None:
+            mp = dict(zip(train_df["img_path"], spe))
+            self.pair_fake = torch.as_tensor([int(mp.get(p, self.TABLE.get(ffpp_method(p), 0)))
+                                              for p in pair_ds.df["fake_path"]], dtype=torch.long)
+
+
+def assemble(batch, pb, sb, device, spe):
+    """Pool tensors in the CES order. Returns dict(x, y, g, spe, n, npair, nst, real_idx, fake_idx)."""
+42:def save_checkpoint(path, model, optimizer, scheduler, scaler, state, full=True):
+54:def load_checkpoint(path, model, optimizer=None, scheduler=None, scaler=None, restore_rng=False):
+"""CLIPFAIR CPU checks (no GPU, no training run). One line per check, ALL_PASS at the end.
+
+  ~/.conda/envs/pulid/bin/python tests/clipfair_checks.py                 # incl. ONE real-CLIP pass (p1 checkpoint)
+  CLIPFAIR_SKIP_CLIP=1 ~/.conda/envs/pulid/bin/python tests/clipfair_checks.py
+
+What is checked
+  1. configs: the four method configs load; data / pairs / strat / optim / select / eval / orth equal CESel B0's
+     resolved config (agents/CESEL/configs/ffpp/B0.yaml, read only); budget 10 x 1976 steps.
+  2. ports vs the OFFICIAL code, executed from the official source files (methods extracted with ast; CPU shims only
+     for .cuda / torch.cuda.FloatTensor): DAW-FDD and DAG-FDD get_losses; PG-FDD get_train_losses (whole loss incl.
+     LDAM, contrastive, reconstruction, bi-level CVaR); Ding SoftNearestNeighborLoss per channel; SAM (sam.py).
+  3. CVaR dual = brute-force CVaR; released GDA fairness term carries no gradient, the gda_grad variant does.
+  4. per method on the stub backbone: every loss finite, gradients reach the adapters (Ding: frozen by design, head only)
+     and every head / module the official loss trains.
+  5. real CLIP ViT-L/14 from CFES clip_s7_p1: backbone loads strictly, forward + backward on 2 FF++ images reach the
+     rank-1 adapters; Ding's 2-way head initialised from p1's cls_head reproduces p1's CLS logit exactly.
+"""
+import ast
+import os
+import random
+import sys
+import textwrap
+
+import numpy as np
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from scipy import optimize
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, ROOT)
+
+from cfes import clipfair_engine as FE  # noqa: E402
+from cfes import clipfair_losses as FL  # noqa: E402
+from cfes.clipfair_models import build_model  # noqa: E402
+from cfes.config import load_config  # noqa: E402
+
+R = "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009"
+AIF = f"{R}/agents/CFES/third_party/ff2id/AI-Face-FairnessBench/training"
+FG = f"{R}/agents/CFES/third_party/ff2id/Fairness-Generalization/training"
+DM = f"{R}/agents/DINGREPRO_LIN/code/Ding_mod"
+RESULTS = []
+
+
+def check(name, ok, info=""):
+    RESULTS.append((name, bool(ok)))
+    print(f"[{'PASS' if ok else 'FAIL'}] {name}" + (f"  ({info})" if info else ""), flush=True)
+
+
+def official(path, cls, names, ns=None, base="object", replace=()):
+    """Build a class from the OFFICIAL source: the methods `names` of class `cls` in `path`, verbatim (plus optional
+    textual CPU shims in `replace`)."""
+    src = open(path).read()
+    tree = ast.parse(src)
+    node = [n for n in ast.walk(tree) if isinstance(n, ast.ClassDef) and n.name == cls][0]
+    body = []
+    for f in node.body:
+        if isinstance(f, ast.FunctionDef) and f.name in names:
+            body.append(textwrap.indent(textwrap.dedent(ast.get_source_segment(src, f)), "    "))
+    code = f"class {cls}({base}):\n" + "\n".join(body)
+    for a, b in replace:
+        code = code.replace(a, b)
+    g = dict(torch=torch, nn=nn, F=F, np=np, optimize=optimize, random=random)
+    g.update(ns or {})
+    exec(code, g)
+    return g[cls]
+
+
+def stub_cfg(method, **over):
+    return load_config(os.path.join(ROOT, "configs", "ffpp", f"{method}.yaml"),
+                       ["model.backend=stub", "data.input_size=64", "model.stub={dim: 32, grid: 8}", "optim.amp=false"]
+                       + [f"{k}={v}" for k, v in over.items()])
+
+
+def synth_pool(gen, n=8, npair=2, nst=16, size=64):
+    y = torch.arange(n) % 2
+    batch = dict(image=torch.rand(n, 3, size, size, generator=gen), label=y,
+                 group=torch.randint(0, 8, (n,), generator=gen), index=torch.arange(n))
+    pb = dict(fake=torch.rand(npair, 3, size, size, generator=gen), real=torch.rand(npair, 3, size, size, generator=gen),
+              fake_group=torch.randint(0, 8, (npair,), generator=gen), real_group=torch.randint(0, 8, (npair,), generator=gen),
+              index=torch.arange(npair))
+    sb = dict(image=torch.rand(nst, 3, size, size, generator=gen), label=torch.arange(nst) % 2,
+              group=torch.arange(nst) % 8, index=torch.arange(nst) + n)
+
+    class Spe:
+            model.eval()
+            with torch.no_grad():
+                s_eval = model(pool["x"])["score"]
+            ok &= s_eval.shape == (pool["x"].shape[0],)
+            extra = f"halves 6+6; eval score shape ok"
+        check(f"stub {m}: losses finite, gradients reach {need[m]}",
+              ok, f"terms {sorted(vals)} " + " ".join(f"{k}={float(v):.3f}" for k, v in vals.items()) + "; " + extra)
+
+    # ---------------------------------------------------------------- 5. real CLIP
+    if os.environ.get("CLIPFAIR_SKIP_CLIP"):
+        print("[SKIP] real-CLIP checks (CLIPFAIR_SKIP_CLIP set)")
+    else:
+        p1 = f"{R}/agents/CFES/runs/clip_s7_p1/last.pt"
+        cfg = load_config(os.path.join(ROOT, "configs", "ffpp", "dag.yaml"), [f"model.init_backbone_ckpt={p1}", "optim.amp=false"])
+        model = build_model(cfg, torch.device("cpu")).train()
+        from cfes.data import load_image, read_split
+        df = read_split(cfg["data"]["train"])
+        rows = [df[df.label == 0].iloc[0], df[df.label == 1].iloc[0]]
+        x = torch.stack([load_image(r.img_path, 224) for r in rows])
+        y = torch.tensor([0, 1])
+        out = model(x)
+        loss = FL.dag_fdd_loss(out["score"], y)[0] + 0.1 * model.orthogonality_loss()
+        loss.backward()
+        ad = [p for n_, p in model.backbone.named_parameters() if p.requires_grad]
+        gnorm = sum(float(p.grad.norm()) for p in ad if p.grad is not None)
+        check("real CLIP: p1 backbone loads strictly, DAG loss + orth backward reaches the rank-1 adapters",
+              model.init_info.get("backbone_keys", 0) > 800 and gnorm > 0 and torch.isfinite(loss),
+              f"{model.init_info.get('backbone_keys')} keys, {len(ad)} adapter tensors, |g| {gnorm:.3e}")
+        cfgd = load_config(os.path.join(ROOT, "configs", "ffpp", "ding.yaml"), [f"model.init_backbone_ckpt={p1}", "optim.amp=false"])
+        md = build_model(cfgd, torch.device("cpu")).eval()
+        sd = torch.load(p1, map_location="cpu", weights_only=False)["model"]
+        with torch.no_grad():
+            o = md(x)
+            ref = o["z"] @ sd["cls_head.weight"][0].float() + sd["cls_head.bias"][0].float()
+        check("real CLIP: Ding 2-way head from p1 cls_head reproduces p1's CLS logit (no channel zeroed)",
+              torch.allclose(o["score"], ref, atol=1e-4) and all(p.requires_grad is False for p in md.backbone.parameters()),
+              f"scores {o['score'].tolist()} vs {ref.tolist()}")
+
+    n_ok = sum(ok for _, ok in RESULTS)
+    print(f"{n_ok}/{len(RESULTS)} checks passed")
+    print("ALL_PASS" if n_ok == len(RESULTS) else "SOME_FAILED")
+
+
+if __name__ == "__main__":
+    main()
+You are editing the CLIPFAIR baseline code of a deepfake-fairness project. This folder (R/agents/CLIPFAIR,
+R=/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009) is the only place you may write. You may read
+anything under R. Do not use the network or ssh, do not touch PBS, do not start GPU work.
+Python: /home/sachin.chaudhary/.conda/envs/pulid/bin/python (set CUDA_VISIBLE_DEVICES=""); never the default python3;
+no pip installs. Back up every edited file as *.bak_codex_oct26. Log your actions in codex_ops/ACTIONS_01.md.
+Read first: R/decisions/2026-10-25-cesel-plan.md section "Amendment 7", README.md in this folder.
+
+TASK (Amendment 7):
+1. Find where the training loop computes the Amendment-9 selection value and saves best.pt (the CLIPFAIR train script
+   and the train/engine code it uses). Additionally track the best epoch under pooled-only eligibility (val pooled
+   TPR >= 80 and FPR <= 20; same selection value as Amendment 9) and save best_pooled.pt plus its epoch. At the end of
+   training, if NO trained epoch (epoch >= 0) was eligible under the full Amendment-9 rule, copy best_pooled.pt to
+   best.pt and record "selection_fallback": true and the chosen epoch in the TRAINED marker / run summary. If even
+   pooled-only has no eligible epoch, keep the current behaviour and record "selection_fallback": "none_eligible".
+   Evaluation keeps using best.pt. Note: running training processes already imported the old code; your edit only
+   affects future launches — do not rename or restructure modules they import.
+2. Add a CPU unit test (tests/test_amend7_fallback.py, stub backbone or a mocked loop) covering: normal eligible path
+   (no fallback), all-ineligible path (fallback picks the pooled-best epoch), none-eligible path. Run it and
+   tests/clipfair_checks.py; both must print ALL_PASS.
+3. Move runs/ffpp_daw_s7 -> runs/ffpp_daw_s7_DEGENERATE_oct26 (and any runs/ffpp_daw_s7.RUNLOCK* entries ->
+   append _DEGENERATE_oct26) so the external runner relaunches daw_s7 with the new code. Touch nothing else in runs/.
+4. Write codex_ops/REPORT_01.md: changed files with line ranges, tests and output, what was moved. Keep it short.
+
+codex
+The selection rule is in `scripts/train.py`; `scripts/train_clipfair.py` applies it and saves checkpoints. The engine modules handle training and prediction, so they need no changes. I’ll track eligibility separately from score improvement: an eligible trained epoch must prevent fallback even if it does not beat the start checkpoint.
+exec
+/usr/bin/bash -lc "sed -n '35,80p' cfes/utils.py; rg -n 'best.pt|TRAINED' scripts/evaluate_clipfair.py scripts/clipfair_pipeline.py; ls scripts/train_clipfair.py.bak_codex_oct26 codex_ops/ACTIONS_01.md 2>/dev/null" in /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CLIPFAIR
+ exited 2 in 0ms:
+
+    def log(self, **rec):
+        rec["time"] = time.strftime("%Y-%m-%dT%H:%M:%S")
+        with open(self.path, "a") as f:
+            f.write(json.dumps(rec, default=float) + "\n")
+
+
+def save_checkpoint(path, model, optimizer, scheduler, scaler, state, full=True):
+    tmp = path + ".tmp"
+    torch.save({"model": model.state_dict() if full else model.trainable_state_dict(), "full": full,
+                "optimizer": optimizer.state_dict() if optimizer else None,
+                "scheduler": scheduler.state_dict() if scheduler else None,
+                "scaler": scaler.state_dict() if scaler else None,
+                "state": state,
+                "rng": {"torch": torch.get_rng_state(), "numpy": np.random.get_state(), "python": random.getstate(),
+                        "cuda": torch.cuda.get_rng_state_all() if torch.cuda.is_available() else None}}, tmp)
+    os.replace(tmp, path)
+
+
+def load_checkpoint(path, model, optimizer=None, scheduler=None, scaler=None, restore_rng=False):
+    ck = torch.load(path, map_location="cpu", weights_only=False)
+    missing, unexpected = model.load_state_dict(ck["model"], strict=ck.get("full", True))
+    if unexpected:
+        raise RuntimeError(f"unexpected keys in checkpoint: {unexpected[:5]}")
+    if optimizer and ck.get("optimizer"):
+        optimizer.load_state_dict(ck["optimizer"])
+    if scheduler and ck.get("scheduler"):
+        scheduler.load_state_dict(ck["scheduler"])
+    if scaler and ck.get("scaler"):
+        scaler.load_state_dict(ck["scaler"])
+    if restore_rng and ck.get("rng"):
+        torch.set_rng_state(ck["rng"]["torch"])
+        np.random.set_state(ck["rng"]["numpy"])
+        random.setstate(ck["rng"]["python"])
+        if ck["rng"]["cuda"] is not None and torch.cuda.is_available():
+            torch.cuda.set_rng_state_all(ck["rng"]["cuda"])
+    return ck["state"]
+scripts/evaluate_clipfair.py:4:  python scripts/evaluate_clipfair.py --run runs/ffpp_daw_s7 --ckpt best.pt --leak_free [--max_items N]
+scripts/evaluate_clipfair.py:35:    ap.add_argument("--ckpt", default="best.pt")
+scripts/evaluate_clipfair.py:44:    out_dir = a.out_dir or os.path.join(a.run, "eval" if a.ckpt == "best.pt" else f"eval_{a.ckpt.split('.')[0]}")
+scripts/clipfair_pipeline.py:57:    return lambda: all(ex(d, *p) for p in (("TRAINED",), ("eval", "summary_calibrated.csv"), ("eval", "a1.json")))
+
+exec
+/usr/bin/bash -lc "cp -p scripts/train_clipfair.py scripts/train_clipfair.py.bak_codex_oct26
+cat > codex_ops/ACTIONS_01.md <<'EOF'
+# Amendment 7 actions — 2026-10-26
+
+- Read decision Amendment 7 and README; inspected trainer, selection rule, engines, checkpoint utilities and CPU checks.
+- Located selection in scripts/train.py:126 and checkpoint writes in scripts/train_clipfair.py. Evaluation already consumes best.pt.
+- Backed up scripts/train_clipfair.py to scripts/train_clipfair.py.bak_codex_oct26 before editing. New files have no prior version to back up.
+EOF" in /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CLIPFAIR
+ succeeded in 0ms:
+apply patch
+patch: completed
+/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CLIPFAIR/scripts/train_clipfair.py
+diff --git a/scripts/train_clipfair.py b/scripts/train_clipfair.py
+index f2fef6da381e11ddcd3966fa723c7489036bb46d..8050a6485282108564f491aa37d2244417a98ea4
+--- a/scripts/train_clipfair.py
++++ b/scripts/train_clipfair.py
+@@ -13,6 +13,7 @@
+ import json
+ import math
+ import os
++import shutil
+ import sys
+ import time
+ 
+@@ -42,6 +43,45 @@
+     return {f"gn_{k}": v ** 0.5 for k, v in acc.items()}
+ 
+ 
++def select_epoch(model, cfg, out, state, epoch, res):
++    """Amendment 9 selection plus Amendment 7's trained-only pooled candidate."""
++    metric = cfg["select"]["metric"]
++    val = T.selection_value(res, metric,
++                            state.get("select_ref") if cfg["select"].get("ref_checks", True) else None)
++    if epoch >= 0 and metric == "val_oppoint":
++        # Eligibility is independent of whether this epoch beats the start's score.
++        if val > -1e9:
++            state["trained_eligible_epochs"] = state.get("trained_eligible_epochs", 0) + 1
++        pooled = T.selection_value(res, metric, ref=None)
++        if pooled > -1e9 and pooled > state.get("best_pooled", -float("inf")):
++            state.update(best_pooled=pooled, best_pooled_epoch=epoch,
++                         best_pooled_threshold_tpr=res["threshold_tpr"])
++            pooled_state = dict(state, best=pooled, best_epoch=epoch,
++                                best_threshold_tpr=res["threshold_tpr"])
++            save_checkpoint(os.path.join(out, "best_pooled.pt"), model, None, None, None,
++                            pooled_state, full=cfg["ckpt"]["full"])
++    improved = val > state["best"]
++    if improved:
++        state.update(best=val, best_epoch=epoch, best_threshold_tpr=res["threshold_tpr"])
++        save_checkpoint(os.path.join(out, "best.pt"), model, None, None, None, state, full=cfg["ckpt"]["full"])
++    return val, improved
++
++
++def finalize_selection(out, state, metric):
++    """Keep best.pt as the evaluation entry point; disclose fallback in TRAINED."""
++    state["selection_fallback"] = False
++    if metric == "val_oppoint" and not state.get("trained_eligible_epochs", 0):
++        if state.get("best_pooled_epoch", -1) >= 0:
++            shutil.copyfile(os.path.join(out, "best_pooled.pt"), os.path.join(out, "best.pt"))
++            state.update(selection_fallback=True, best=state["best_pooled"],
++                         best_epoch=state["best_pooled_epoch"],
++                         best_threshold_tpr=state["best_pooled_threshold_tpr"])
++        else:
++            state["selection_fallback"] = "none_eligible"
++    with open(os.path.join(out, "TRAINED"), "w") as f:
++        json.dump(state, f, default=float)
++
++
+ def main():
+     ap = argparse.ArgumentParser()
+     ap.add_argument("--config", required=True)
+@@ -83,9 +123,12 @@
+     sched = torch.optim.lr_scheduler.LambdaLR(opt, lambda s: (s + 1) / warm if s < warm else
+                                               (0.5 * (1 + math.cos(math.pi * (s - warm) / max(1, steps_total - warm)))
+                                                if o["schedule"] == "cosine" else 1.0))
+-    state = {"epoch": 0, "step": 0, "best": -float("inf"), "best_epoch": -1}
++    state = {"epoch": 0, "step": 0, "best": -float("inf"), "best_epoch": -1,
++             "trained_eligible_epochs": 0, "best_pooled": -float("inf"), "best_pooled_epoch": -1}
+     if a.resume:
+         state = load_checkpoint(os.path.join(a.out, "last.pt"), model, opt, sched, None, restore_rng=True)
++        if cfg["select"]["metric"] == "val_oppoint" and "trained_eligible_epochs" not in state:
++            raise SystemExit("Pre-Amendment-7 checkpoint lacks pooled history; restart in a new --out")
+     log.log(event="start", method=method, code_hash=code_hash(ROOT), device=str(device), terms=terms,
+             params=model.parameter_report(), init=getattr(model, "init_info", None), n_train=len(train_df),
+             n_val=len(val_df), steps_per_epoch=len(loader), pairs=pairs.dataset.report if pairs else None,
+@@ -159,13 +202,8 @@
+         t_train = time.time() - t0
+         peak = torch.cuda.max_memory_allocated(device) / 2 ** 30 if device.type == "cuda" else 0.0
+         res = T.validate(model, cfg, device, val_df, val_loader)
+-        val = T.selection_value(res, cfg["select"]["metric"],
+-                                state.get("select_ref") if cfg["select"].get("ref_checks", True) else None)
+         state["epoch"] = epoch + 1
+-        improved = val > state["best"]
+-        if improved:
+-            state.update(best=val, best_epoch=epoch, best_threshold_tpr=res["threshold_tpr"])
+-            save_checkpoint(os.path.join(a.out, "best.pt"), model, None, None, None, state, full=cfg["ckpt"]["full"])
++        val, improved = select_epoch(model, cfg, a.out, state, epoch, res)
+         save_checkpoint(os.path.join(a.out, "last.pt"), model, opt, sched, None, state, full=cfg["ckpt"]["full"])
+         log.log(event="epoch", epoch=epoch, seconds=time.time() - t0, train_seconds=t_train, peak_mem_gb=peak,
+                 peak_reserved_gb=(torch.cuda.max_memory_reserved(device) / 2 ** 30 if device.type == "cuda" else 0.0),
+@@ -174,8 +212,7 @@
+                 train_means={k: float(np.mean(v)) for k, v in agg.items()})
+         print(f"epoch {epoch} val_auc {res['auc']:.2f} select {val:.3f} best_epoch {state['best_epoch']} "
+               f"sec {time.time() - t0:.0f}", flush=True)
+-    with open(os.path.join(a.out, "TRAINED"), "w") as f:
+-        json.dump(state, f, default=float)
++    finalize_selection(a.out, state, cfg["select"]["metric"])
+ 
+ 
+ if __name__ == "__main__":
+
+exec
+/usr/bin/bash -lc "cat > tests/test_amend7_fallback.py <<'EOF'
+\"\"\"CPU mocked epoch loop using production selection and real checkpoint I/O.\"\"\"
+import json
+import os
+from pathlib import Path
+import sys
+import tempfile
+import unittest
+
+os.environ[\"CUDA_VISIBLE_DEVICES\"] = \"\"
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / \"scripts\"))
+import torch
+import train_clipfair as trainer
+
+
+def result(auc, tpr=85., fpr=15., group_tpr=85., gap=4.):
+    return dict(auc=auc, threshold_tpr=auc / 100,
+                oppoint=dict(pooled_TPR=tpr, pooled_FPR=fpr, worst_FPR=18.,
+                             group_TPR={\"g\": group_tpr}, fpr_gap=gap))
+
+
+class FallbackTests(unittest.TestCase):
+    def run_epochs(self, rows, expected_fallback, expected_epoch, pooled_epoch, start_auc=90.):
+        cfg = {\"select\": {\"metric\": \"val_oppoint\", \"ref_checks\": True}, \"ckpt\": {\"full\": True}}
+        model = torch.nn.Linear(1, 1)
+        start = result(start_auc, group_tpr=99.)
+        state = dict(epoch=0, step=0, best=trainer.T.selection_value(start, \"val_oppoint\"),
+                     best_epoch=-1, best_threshold_tpr=start[\"threshold_tpr\"], select_ref=start[\"oppoint\"],
+                     trained_eligible_epochs=0, best_pooled=-float(\"inf\"), best_pooled_epoch=-1)
+        # All scratch writes stay within CLIPFAIR, never the system temp directory.
+        with tempfile.TemporaryDirectory(dir=ROOT / \"codex_ops\") as out:
+            with torch.no_grad():
+                model.weight.fill_(-1)
+            trainer.save_checkpoint(os.path.join(out, \"best.pt\"), model, None, None, None, state)
+            original = Path(out, \"best.pt\").read_bytes()
+            for epoch, res in enumerate(rows):
+                with torch.no_grad():
+                    model.weight.fill_(epoch)
+                state[\"epoch\"] = epoch + 1
+                trainer.select_epoch(model, cfg, out, state, epoch, res)
+                # Exercise persistence of selection state across a resume.
+                trainer.save_checkpoint(os.path.join(out, \"last.pt\"), model, None, None, None, state)
+                state = trainer.load_checkpoint(os.path.join(out, \"last.pt\"), model)
+            trainer.finalize_selection(out, state, \"val_oppoint\")
+            summary = json.loads(Path(out, \"TRAINED\").read_text())
+            self.assertEqual(summary[\"selection_fallback\"], expected_fallback)
+            self.assertEqual(summary[\"best_epoch\"], expected_epoch)
+            self.assertEqual(summary[\"best_pooled_epoch\"], pooled_epoch)
+            ckpt = torch.load(Path(out, \"best.pt\"), map_location=\"cpu\", weights_only=False)
+            self.assertEqual(ckpt[\"state\"][\"best_epoch\"], expected_epoch)
+            self.assertEqual(ckpt[\"model\"][\"weight\"].item(), expected_epoch)
+            if expected_fallback is True:
+                self.assertEqual(Path(out, \"best.pt\").read_bytes(), Path(out, \"best_pooled.pt\").read_bytes())
+            if expected_epoch == -1:
+                self.assertEqual(Path(out, \"best.pt\").read_bytes(), original)
+            self.assertEqual(Path(out, \"best_pooled.pt\").exists(), pooled_epoch >= 0)
+
+    def test_normal(self):
+        self.run_epochs([result(93., group_tpr=98.), result(96.)], False, 0, 1)
+
+    def test_eligible_below_start_prevents_fallback(self):
+        self.run_epochs([result(88., group_tpr=98.), result(96.)], False, -1, 1)
+
+    def test_pooled_best_uses_penalized_score_and_boundaries(self):
+        self.run_epochs([result(93.), result(96., tpr=80., fpr=20.),
+                         result(97., gap=12.), result(99., tpr=79.)], True, 1, 1)
+
+    def test_none_eligible(self):
+        self.run_epochs([result(93., tpr=79.), result(96., fpr=21.)], \"none_eligible\", -1, -1)
+
+
+if __name__ == \"__main__\":
+    suite = unittest.defaultTestLoader.loadTestsFromTestCase(FallbackTests)
+    outcome = unittest.TextTestRunner(verbosity=2).run(suite)
+    print(\"ALL_PASS\" if outcome.wasSuccessful() else \"SOME_FAILED\", flush=True)
+    sys.exit(0 if outcome.wasSuccessful() else 1)
+EOF
+CUDA_VISIBLE_DEVICES=\"\" PYTHONDONTWRITEBYTECODE=1 /home/sachin.chaudhary/.conda/envs/pulid/bin/python tests/test_amend7_fallback.py > codex_ops/test_amend7_fallback.log 2>&1
+cat codex_ops/test_amend7_fallback.log" in /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CLIPFAIR
+exec
+/usr/bin/bash -lc 'CUDA_VISIBLE_DEVICES="" PYTHONDONTWRITEBYTECODE=1 OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 /home/sachin.chaudhary/.conda/envs/pulid/bin/python tests/clipfair_checks.py > codex_ops/clipfair_checks.log 2>&1' in /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CLIPFAIR
+codex
+The fallback is implemented, and both CPU test suites are running. The new tests cover all three requested paths, plus an eligible epoch that scores below the start checkpoint. Selection history is saved in `last.pt` for resuming; older checkpoints lack that history, so the updated trainer requires a fresh output directory for those.
+exec
+/usr/bin/bash -lc "tail -10 codex_ops/test_amend7_fallback.log; tail -5 codex_ops/clipfair_checks.log; git diff --stat; nl -ba scripts/train_clipfair.py | sed -n '45,110p'; nl -ba scripts/train_clipfair.py | tail -30" in /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CLIPFAIR
+ succeeded in 0ms:
+test_eligible_below_start_prevents_fallback (__main__.FallbackTests) ... ok
+test_none_eligible (__main__.FallbackTests) ... ok
+test_normal (__main__.FallbackTests) ... ok
+test_pooled_best_uses_penalized_score_and_boundaries (__main__.FallbackTests) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.292s
+
+OK
+ALL_PASS
+[PASS] Ding GDA: released fairness term has no gradient (no_grad); gda_grad variant has one; same value  (sinkhorn 0.3925, grad-variant |g| 4.036e-01)
+[PASS] stub daw: losses finite, gradients reach ['backbone.adapter', 'head.']  (terms ['daw', 'orth'] daw=0.779 orth=0.000; )
+[PASS] stub dag: losses finite, gradients reach ['backbone.adapter', 'head.']  (terms ['dag', 'orth'] dag=0.800 orth=0.000; )
+[PASS] stub pgfdd: losses finite, gradients reach ['backbone.adapter', 'encoder_f', 'encoder_c', 'encoder_fair', 'block_spe', 'block_sha', 'block_fair', 'con_gan', 'head_spe', 'head_sha', 'head_fair', 'head_fused']  (terms ['con', 'fair', 'fuse', 'orth', 'rec', 'sha', 'spe'] rec=2.003 sha=0.693 spe=1.794 con=11.894 fair=13.675 fuse=0.706 orth=0.000; halves 6+6; eval score shape ok)
+[PASS] stub ding: losses finite, gradients reach ['head.']  (terms ['ce', 'gda_fair'] ce=0.693 gda_fair=0.000; backbone frozen True, keep[3]=0, gda_fair requires_grad False)
+warning: Not a git repository. Use --no-index to compare two paths outside a working tree
+usage: git diff --no-index [<options>] <path> <path>
+
+Diff output format options
+    -p, --patch           generate patch
+    -s, --no-patch        suppress diff output
+    -u                    generate patch
+    -U, --unified[=<n>]   generate diffs with <n> lines context
+    -W, --[no-]function-context
+                          generate diffs with <n> lines context
+    --raw                 generate the diff in raw format
+    --patch-with-raw      synonym for '-p --raw'
+    --patch-with-stat     synonym for '-p --stat'
+    --numstat             machine friendly --stat
+    --shortstat           output only the last line of --stat
+    -X, --dirstat[=<param1,param2>...]
+                          output the distribution of relative amount of changes for each sub-directory
+    --cumulative          synonym for --dirstat=cumulative
+    --dirstat-by-file[=<param1,param2>...]
+                          synonym for --dirstat=files,param1,param2...
+    --check               warn if changes introduce conflict markers or whitespace errors
+    --summary             condensed summary such as creations, renames and mode changes
+    --name-only           show only names of changed files
+    --name-status         show only names and status of changed files
+    --stat[=<width>[,<name-width>[,<count>]]]
+                          generate diffstat
+    --stat-width <width>  generate diffstat with a given width
+    --stat-name-width <width>
+                          generate diffstat with a given name width
+    --stat-graph-width <width>
+                          generate diffstat with a given graph width
+    --stat-count <count>  generate diffstat with limited lines
+    --[no-]compact-summary
+                          generate compact summary in diffstat
+    --binary              output a binary diff that can be applied
+    --[no-]full-index     show full pre- and post-image object names on the "index" lines
+    --[no-]color[=<when>] show colored diff
+    --ws-error-highlight <kind>
+                          highlight whitespace errors in the 'context', 'old' or 'new' lines in the diff
+    -z                    do not munge pathnames and use NULs as output field terminators in --raw or --numstat
+    --[no-]abbrev[=<n>]   use <n> digits to display object names
+    --src-prefix <prefix> show the given source prefix instead of "a/"
+    --dst-prefix <prefix> show the given destination prefix instead of "b/"
+    --line-prefix <prefix>
+                          prepend an additional prefix to every line of output
+    --no-prefix           do not show any source or destination prefix
+    --default-prefix      use default prefixes a/ and b/
+    --inter-hunk-context <n>
+                          show context between diff hunks up to the specified number of lines
+    --output-indicator-new <char>
+                          specify the character to indicate a new line instead of '+'
+    --output-indicator-old <char>
+                          specify the character to indicate an old line instead of '-'
+    --output-indicator-context <char>
+                          specify the character to indicate a context instead of ' '
+
+Diff rename options
+    -B, --break-rewrites[=<n>[/<m>]]
+                          break complete rewrite changes into pairs of delete and create
+    -M, --find-renames[=<n>]
+                          detect renames
+    -D, --irreversible-delete
+                          omit the preimage for deletes
+    -C, --find-copies[=<n>]
+                          detect copies
+    --[no-]find-copies-harder
+                          use unmodified files as source to find copies
+    --no-renames          disable rename detection
+    --[no-]rename-empty   use empty blobs as rename source
+    --[no-]follow         continue listing the history of a file beyond renames
+    -l <n>                prevent rename/copy detection if the number of rename/copy targets exceeds given limit
+
+Diff algorithm options
+    --minimal             produce the smallest possible diff
+    -w, --ignore-all-space
+                          ignore whitespace when comparing lines
+    -b, --ignore-space-change
+                          ignore changes in amount of whitespace
+    --ignore-space-at-eol ignore changes in whitespace at EOL
+    --ignore-cr-at-eol    ignore carrier-return at the end of line
+    --ignore-blank-lines  ignore changes whose lines are all blank
+    -I, --[no-]ignore-matching-lines <regex>
+                          ignore changes whose all lines match <regex>
+    --[no-]indent-heuristic
+                          heuristic to shift diff hunk boundaries for easy reading
+    --patience            generate diff using the "patience diff" algorithm
+    --histogram           generate diff using the "histogram diff" algorithm
+    --diff-algorithm <algorithm>
+                          choose a diff algorithm
+    --anchored <text>     generate diff using the "anchored diff" algorithm
+    --word-diff[=<mode>]  show word diff, using <mode> to delimit changed words
+    --word-diff-regex <regex>
+                          use <regex> to decide what a word is
+    --color-words[=<regex>]
+                          equivalent to --word-diff=color --word-diff-regex=<regex>
+    --[no-]color-moved[=<mode>]
+                          moved lines of code are colored differently
+    --[no-]color-moved-ws <mode>
+                          how white spaces are ignored in --color-moved
+
+Other diff options
+    --[no-]relative[=<prefix>]
+                          when run from subdir, exclude changes outside and show relative paths
+    -a, --[no-]text       treat all files as text
+    -R                    swap two inputs, reverse the diff
+    --[no-]exit-code      exit with 1 if there were differences, 0 otherwise
+    --[no-]quiet          disable all output of the program
+    --[no-]ext-diff       allow an external diff helper to be executed
+    --[no-]textconv       run external text conversion filters when comparing binary files
+    --ignore-submodules[=<when>]
+                          ignore changes to submodules in the diff generation
+    --submodule[=<format>]
+                          specify how differences in submodules are shown
+    --ita-invisible-in-index
+                          hide 'git add -N' entries from the index
+    --ita-visible-in-index
+                          treat 'git add -N' entries as real in the index
+    -S <string>           look for differences that change the number of occurrences of the specified string
+    -G <regex>            look for differences that change the number of occurrences of the specified regex
+    --pickaxe-all         show all changes in the changeset with -S or -G
+    --pickaxe-regex       treat <string> in -S as extended POSIX regular expression
+    -O <file>             control the order in which files appear in the output
+    --rotate-to <path>    show the change in the specified path first
+    --skip-to <path>      skip the output to the specified path
+    --find-object <object-id>
+                          look for differences that change the number of occurrences of the specified object
+    --diff-filter [(A|C|D|M|R|T|U|X|B)...[*]]
+                          select files by diff type
+    --output <file>       output to a specific file
+
+    45	
+    46	def select_epoch(model, cfg, out, state, epoch, res):
+    47	    """Amendment 9 selection plus Amendment 7's trained-only pooled candidate."""
+    48	    metric = cfg["select"]["metric"]
+    49	    val = T.selection_value(res, metric,
+    50	                            state.get("select_ref") if cfg["select"].get("ref_checks", True) else None)
+    51	    if epoch >= 0 and metric == "val_oppoint":
+    52	        # Eligibility is independent of whether this epoch beats the start's score.
+    53	        if val > -1e9:
+    54	            state["trained_eligible_epochs"] = state.get("trained_eligible_epochs", 0) + 1
+    55	        pooled = T.selection_value(res, metric, ref=None)
+    56	        if pooled > -1e9 and pooled > state.get("best_pooled", -float("inf")):
+    57	            state.update(best_pooled=pooled, best_pooled_epoch=epoch,
+    58	                         best_pooled_threshold_tpr=res["threshold_tpr"])
+    59	            pooled_state = dict(state, best=pooled, best_epoch=epoch,
+    60	                                best_threshold_tpr=res["threshold_tpr"])
+    61	            save_checkpoint(os.path.join(out, "best_pooled.pt"), model, None, None, None,
+    62	                            pooled_state, full=cfg["ckpt"]["full"])
+    63	    improved = val > state["best"]
+    64	    if improved:
+    65	        state.update(best=val, best_epoch=epoch, best_threshold_tpr=res["threshold_tpr"])
+    66	        save_checkpoint(os.path.join(out, "best.pt"), model, None, None, None, state, full=cfg["ckpt"]["full"])
+    67	    return val, improved
+    68	
+    69	
+    70	def finalize_selection(out, state, metric):
+    71	    """Keep best.pt as the evaluation entry point; disclose fallback in TRAINED."""
+    72	    state["selection_fallback"] = False
+    73	    if metric == "val_oppoint" and not state.get("trained_eligible_epochs", 0):
+    74	        if state.get("best_pooled_epoch", -1) >= 0:
+    75	            shutil.copyfile(os.path.join(out, "best_pooled.pt"), os.path.join(out, "best.pt"))
+    76	            state.update(selection_fallback=True, best=state["best_pooled"],
+    77	                         best_epoch=state["best_pooled_epoch"],
+    78	                         best_threshold_tpr=state["best_pooled_threshold_tpr"])
+    79	        else:
+    80	            state["selection_fallback"] = "none_eligible"
+    81	    with open(os.path.join(out, "TRAINED"), "w") as f:
+    82	        json.dump(state, f, default=float)
+    83	
+    84	
+    85	def main():
+    86	    ap = argparse.ArgumentParser()
+    87	    ap.add_argument("--config", required=True)
+    88	    ap.add_argument("--out", required=True)
+    89	    ap.add_argument("--set", nargs="*", default=[])
+    90	    ap.add_argument("--resume", action="store_true")
+    91	    ap.add_argument("--smoke", action="store_true")
+    92	    ap.add_argument("--device", default=None)
+    93	    a = ap.parse_args()
+    94	    cfg = load_config(a.config, a.set)
+    95	    method = cfg["clipfair"]["method"]
+    96	    if method == "ding" and not cfg["clipfair"]["ding"].get("channels_json"):
+    97	        raise SystemExit("ding needs clipfair.ding.channels_json (scripts/ding_sfd.py output)")
+    98	    if method == "ding" and cfg["clipfair"]["ding"].get("gda_grad") and not os.environ.get("CLIPFAIR_ALLOW_GDA_GRAD"):
+    99	        raise SystemExit("gda_grad=true is the gradient-enabled variant; not run unless the decision file is amended "
+   100	                         "(set CLIPFAIR_ALLOW_GDA_GRAD=1 only then)")
+   101	    os.makedirs(a.out, exist_ok=True)
+   102	    if not a.resume and os.path.exists(os.path.join(a.out, "last.pt")):
+   103	        raise SystemExit(f"{a.out} already has last.pt; pass --resume or use a new --out")
+   104	    dump_config(cfg, os.path.join(a.out, "config.yaml"))
+   105	    JsonlLogger(os.path.join(a.out, "provenance.jsonl")).log(**T.provenance(cfg, a, a.out))
+   106	    log = JsonlLogger(os.path.join(a.out, "train_log.jsonl"))
+   107	    set_seed(cfg["seed"])
+   108	    device = torch.device(a.device or ("cuda" if torch.cuda.is_available() else "cpu"))
+   109	
+   110	    model = build_model(cfg, device)
+   190	            state["step"] += 1
+   191	            rec = {k: float(v) for k, v in vals.items()}
+   192	            rec.update(stats, total=float(total), grad_norm=float(gn), lr=sched.get_last_lr()[0], **gns)
+   193	            rec["sec_step"] = time.time() - t_it
+   194	            t_it = time.time()
+   195	            for k, v in rec.items():
+   196	                if isinstance(v, (int, float)):
+   197	                    agg.setdefault(k, []).append(v)
+   198	            if log_now:
+   199	                log.log(event="step", epoch=epoch, step=state["step"], **rec)
+   200	                print(f"ep {epoch} it {it + 1}/{len(loader)} " +
+   201	                      " ".join(f"{k}={rec[k]:.4f}" for k in ["total", *vals.keys()]), flush=True)
+   202	        t_train = time.time() - t0
+   203	        peak = torch.cuda.max_memory_allocated(device) / 2 ** 30 if device.type == "cuda" else 0.0
+   204	        res = T.validate(model, cfg, device, val_df, val_loader)
+   205	        state["epoch"] = epoch + 1
+   206	        val, improved = select_epoch(model, cfg, a.out, state, epoch, res)
+   207	        save_checkpoint(os.path.join(a.out, "last.pt"), model, opt, sched, None, state, full=cfg["ckpt"]["full"])
+   208	        log.log(event="epoch", epoch=epoch, seconds=time.time() - t0, train_seconds=t_train, peak_mem_gb=peak,
+   209	                peak_reserved_gb=(torch.cuda.max_memory_reserved(device) / 2 ** 30 if device.type == "cuda" else 0.0),
+   210	                select_value=val, improved=improved, val_auc=res["auc"], val_ding=res["ding@0.5"],
+   211	                val_stats=res["val_stats"], val_oppoint=res["oppoint"],
+   212	                train_means={k: float(np.mean(v)) for k, v in agg.items()})
+   213	        print(f"epoch {epoch} val_auc {res['auc']:.2f} select {val:.3f} best_epoch {state['best_epoch']} "
+   214	              f"sec {time.time() - t0:.0f}", flush=True)
+   215	    finalize_selection(a.out, state, cfg["select"]["metric"])
+   216	
+   217	
+   218	if __name__ == "__main__":
+   219	    main()
+
+ succeeded in 21937ms:
+test_eligible_below_start_prevents_fallback (__main__.FallbackTests) ... ok
+test_none_eligible (__main__.FallbackTests) ... ok
+test_normal (__main__.FallbackTests) ... ok
+test_pooled_best_uses_penalized_score_and_boundaries (__main__.FallbackTests) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.292s
+
+OK
+ALL_PASS
+
+exec
+/usr/bin/bash -lc 'diff -u scripts/train_clipfair.py.bak_codex_oct26 scripts/train_clipfair.py | head -100; tail -6 codex_ops/clipfair_checks.log' in /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CLIPFAIR
+ succeeded in 0ms:
+--- scripts/train_clipfair.py.bak_codex_oct26	2026-10-25 20:08:28.000000000 +0530
++++ scripts/train_clipfair.py	2026-10-26 12:13:26.000000000 +0530
+@@ -13,6 +13,7 @@
+ import json
+ import math
+ import os
++import shutil
+ import sys
+ import time
+ 
+@@ -42,6 +43,45 @@
+     return {f"gn_{k}": v ** 0.5 for k, v in acc.items()}
+ 
+ 
++def select_epoch(model, cfg, out, state, epoch, res):
++    """Amendment 9 selection plus Amendment 7's trained-only pooled candidate."""
++    metric = cfg["select"]["metric"]
++    val = T.selection_value(res, metric,
++                            state.get("select_ref") if cfg["select"].get("ref_checks", True) else None)
++    if epoch >= 0 and metric == "val_oppoint":
++        # Eligibility is independent of whether this epoch beats the start's score.
++        if val > -1e9:
++            state["trained_eligible_epochs"] = state.get("trained_eligible_epochs", 0) + 1
++        pooled = T.selection_value(res, metric, ref=None)
++        if pooled > -1e9 and pooled > state.get("best_pooled", -float("inf")):
++            state.update(best_pooled=pooled, best_pooled_epoch=epoch,
++                         best_pooled_threshold_tpr=res["threshold_tpr"])
++            pooled_state = dict(state, best=pooled, best_epoch=epoch,
++                                best_threshold_tpr=res["threshold_tpr"])
++            save_checkpoint(os.path.join(out, "best_pooled.pt"), model, None, None, None,
++                            pooled_state, full=cfg["ckpt"]["full"])
++    improved = val > state["best"]
++    if improved:
++        state.update(best=val, best_epoch=epoch, best_threshold_tpr=res["threshold_tpr"])
++        save_checkpoint(os.path.join(out, "best.pt"), model, None, None, None, state, full=cfg["ckpt"]["full"])
++    return val, improved
++
++
++def finalize_selection(out, state, metric):
++    """Keep best.pt as the evaluation entry point; disclose fallback in TRAINED."""
++    state["selection_fallback"] = False
++    if metric == "val_oppoint" and not state.get("trained_eligible_epochs", 0):
++        if state.get("best_pooled_epoch", -1) >= 0:
++            shutil.copyfile(os.path.join(out, "best_pooled.pt"), os.path.join(out, "best.pt"))
++            state.update(selection_fallback=True, best=state["best_pooled"],
++                         best_epoch=state["best_pooled_epoch"],
++                         best_threshold_tpr=state["best_pooled_threshold_tpr"])
++        else:
++            state["selection_fallback"] = "none_eligible"
++    with open(os.path.join(out, "TRAINED"), "w") as f:
++        json.dump(state, f, default=float)
++
++
+ def main():
+     ap = argparse.ArgumentParser()
+     ap.add_argument("--config", required=True)
+@@ -83,9 +123,12 @@
+     sched = torch.optim.lr_scheduler.LambdaLR(opt, lambda s: (s + 1) / warm if s < warm else
+                                               (0.5 * (1 + math.cos(math.pi * (s - warm) / max(1, steps_total - warm)))
+                                                if o["schedule"] == "cosine" else 1.0))
+-    state = {"epoch": 0, "step": 0, "best": -float("inf"), "best_epoch": -1}
++    state = {"epoch": 0, "step": 0, "best": -float("inf"), "best_epoch": -1,
++             "trained_eligible_epochs": 0, "best_pooled": -float("inf"), "best_pooled_epoch": -1}
+     if a.resume:
+         state = load_checkpoint(os.path.join(a.out, "last.pt"), model, opt, sched, None, restore_rng=True)
++        if cfg["select"]["metric"] == "val_oppoint" and "trained_eligible_epochs" not in state:
++            raise SystemExit("Pre-Amendment-7 checkpoint lacks pooled history; restart in a new --out")
+     log.log(event="start", method=method, code_hash=code_hash(ROOT), device=str(device), terms=terms,
+             params=model.parameter_report(), init=getattr(model, "init_info", None), n_train=len(train_df),
+             n_val=len(val_df), steps_per_epoch=len(loader), pairs=pairs.dataset.report if pairs else None,
+@@ -159,13 +202,8 @@
+         t_train = time.time() - t0
+         peak = torch.cuda.max_memory_allocated(device) / 2 ** 30 if device.type == "cuda" else 0.0
+         res = T.validate(model, cfg, device, val_df, val_loader)
+-        val = T.selection_value(res, cfg["select"]["metric"],
+-                                state.get("select_ref") if cfg["select"].get("ref_checks", True) else None)
+         state["epoch"] = epoch + 1
+-        improved = val > state["best"]
+-        if improved:
+-            state.update(best=val, best_epoch=epoch, best_threshold_tpr=res["threshold_tpr"])
+-            save_checkpoint(os.path.join(a.out, "best.pt"), model, None, None, None, state, full=cfg["ckpt"]["full"])
++        val, improved = select_epoch(model, cfg, a.out, state, epoch, res)
+         save_checkpoint(os.path.join(a.out, "last.pt"), model, opt, sched, None, state, full=cfg["ckpt"]["full"])
+         log.log(event="epoch", epoch=epoch, seconds=time.time() - t0, train_seconds=t_train, peak_mem_gb=peak,
+                 peak_reserved_gb=(torch.cuda.max_memory_reserved(device) / 2 ** 30 if device.type == "cuda" else 0.0),
+@@ -174,8 +212,7 @@
+                 train_means={k: float(np.mean(v)) for k, v in agg.items()})
+         print(f"epoch {epoch} val_auc {res['auc']:.2f} select {val:.3f} best_epoch {state['best_epoch']} "
+               f"sec {time.time() - t0:.0f}", flush=True)
+-    with open(os.path.join(a.out, "TRAINED"), "w") as f:
+-        json.dump(state, f, default=float)
++    finalize_selection(a.out, state, cfg["select"]["metric"])
+ 
+ 
+ if __name__ == "__main__":
+[PASS] stub daw: losses finite, gradients reach ['backbone.adapter', 'head.']  (terms ['daw', 'orth'] daw=0.779 orth=0.000; )
+[PASS] stub dag: losses finite, gradients reach ['backbone.adapter', 'head.']  (terms ['dag', 'orth'] dag=0.800 orth=0.000; )
+[PASS] stub pgfdd: losses finite, gradients reach ['backbone.adapter', 'encoder_f', 'encoder_c', 'encoder_fair', 'block_spe', 'block_sha', 'block_fair', 'con_gan', 'head_spe', 'head_sha', 'head_fair', 'head_fused']  (terms ['con', 'fair', 'fuse', 'orth', 'rec', 'sha', 'spe'] rec=2.003 sha=0.693 spe=1.794 con=11.894 fair=13.675 fuse=0.706 orth=0.000; halves 6+6; eval score shape ok)
+[PASS] stub ding: losses finite, gradients reach ['head.']  (terms ['ce', 'gda_fair'] ce=0.693 gda_fair=0.000; backbone frozen True, keep[3]=0, gda_fair requires_grad False)
+/home/sachin.chaudhary/.conda/envs/pulid/lib/python3.10/site-packages/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+
+exec
+/usr/bin/bash -lc "cp -p codex_ops/ACTIONS_01.md codex_ops/ACTIONS_01.md.bak_codex_oct26
+cat >> codex_ops/ACTIONS_01.md <<'EOF'
+- Added trained-epoch eligibility count, pooled checkpoint/epoch tracking, and final fallback/none_eligible disclosure to the CLIPFAIR trainer. Shared selection/engine modules and evaluation are unchanged. Legacy resumes without pooled history explicitly require a fresh output directory.
+- Added tests/test_amend7_fallback.py: four CPU mocked-loop tests with real checkpoint writes/loads, boundary eligibility, penalized score ranking and start-checkpoint exclusion; ALL_PASS (4/4).
+- Started full tests/clipfair_checks.py on CPU, including real CLIP checks, using the prescribed pulid interpreter with CUDA_VISIBLE_DEVICES empty and bytecode writes disabled. Logs are under codex_ops/.
+- Reviewed the trainer diff against its backup (this folder is not a Git repository).
+EOF" in /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CLIPFAIR
+ succeeded in 0ms:
+exec
+/usr/bin/bash -lc "CUDA_VISIBLE_DEVICES=\"\" PYTHONDONTWRITEBYTECODE=1 /home/sachin.chaudhary/.conda/envs/pulid/bin/python - <<'PY'
+from pathlib import Path
+runs = Path('runs')
+sources = [runs / 'ffpp_daw_s7', *sorted(runs.glob('ffpp_daw_s7.RUNLOCK*'))]
+moves = [(p, p.with_name(p.name + '_DEGENERATE_oct26')) for p in sources]
+for src, dst in moves:
+    assert src.exists(), src
+    assert not dst.exists(), dst
+others = {p.name: (p.stat().st_ino, p.stat().st_mtime_ns) for p in runs.iterdir() if p not in sources}
+with Path('codex_ops/ACTIONS_01.md').open('a') as log:
+    for src, dst in moves:
+        src.rename(dst)
+        msg = f'Moved {src} -> {dst}'
+        print(msg)
+        log.write(f'- {msg}\\n')
+for name, before in others.items():
+    p = runs / name
+    assert (p.stat().st_ino, p.stat().st_mtime_ns) == before, name
+print('Other runs/ entries unchanged during moves.')
+PY" in /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CLIPFAIR
+ succeeded in 0ms:
+Moved runs/ffpp_daw_s7 -> runs/ffpp_daw_s7_DEGENERATE_oct26
+Moved runs/ffpp_daw_s7.RUNLOCK.gone.gpu01_44112.mgmt01_1969594_1792981318236049630_1101328702 -> runs/ffpp_daw_s7.RUNLOCK.gone.gpu01_44112.mgmt01_1969594_1792981318236049630_1101328702_DEGENERATE_oct26
+Other runs/ entries unchanged during moves.
+
+codex
+The four new fallback tests passed. I’ve archived `ffpp_daw_s7` and its one matching RUNLOCK entry; the other `runs/` entries were unchanged during the moves. The existing check suite is still running its real-CLIP checks on CPU.
+exec
+/usr/bin/bash -lc "tail -7 codex_ops/clipfair_checks.log; wc -l tests/test_amend7_fallback.py codex_ops/ACTIONS_01.md; rg -n 'trained_eligible_epochs|def select_epoch|def finalize_selection|select_epoch\\(|finalize_selection\\(' scripts/train_clipfair.py" in /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CLIPFAIR
+ succeeded in 0ms:
+[PASS] stub daw: losses finite, gradients reach ['backbone.adapter', 'head.']  (terms ['daw', 'orth'] daw=0.779 orth=0.000; )
+[PASS] stub dag: losses finite, gradients reach ['backbone.adapter', 'head.']  (terms ['dag', 'orth'] dag=0.800 orth=0.000; )
+[PASS] stub pgfdd: losses finite, gradients reach ['backbone.adapter', 'encoder_f', 'encoder_c', 'encoder_fair', 'block_spe', 'block_sha', 'block_fair', 'con_gan', 'head_spe', 'head_sha', 'head_fair', 'head_fused']  (terms ['con', 'fair', 'fuse', 'orth', 'rec', 'sha', 'spe'] rec=2.003 sha=0.693 spe=1.794 con=11.894 fair=13.675 fuse=0.706 orth=0.000; halves 6+6; eval score shape ok)
+[PASS] stub ding: losses finite, gradients reach ['head.']  (terms ['ce', 'gda_fair'] ce=0.693 gda_fair=0.000; backbone frozen True, keep[3]=0, gda_fair requires_grad False)
+/home/sachin.chaudhary/.conda/envs/pulid/lib/python3.10/site-packages/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+[PASS] real CLIP: p1 backbone loads strictly, DAG loss + orth backward reaches the rank-1 adapters  (872 keys, 288 adapter tensors, |g| 3.038e+00)
+  76 tests/test_amend7_fallback.py
+  11 codex_ops/ACTIONS_01.md
+  87 total
+46:def select_epoch(model, cfg, out, state, epoch, res):
+54:            state["trained_eligible_epochs"] = state.get("trained_eligible_epochs", 0) + 1
+70:def finalize_selection(out, state, metric):
+73:    if metric == "val_oppoint" and not state.get("trained_eligible_epochs", 0):
+127:             "trained_eligible_epochs": 0, "best_pooled": -float("inf"), "best_pooled_epoch": -1}
+130:        if cfg["select"]["metric"] == "val_oppoint" and "trained_eligible_epochs" not in state:
+206:        val, improved = select_epoch(model, cfg, a.out, state, epoch, res)
+215:    finalize_selection(a.out, state, cfg["select"]["metric"])
+
+ succeeded in 82957ms:
+exec
+/usr/bin/bash -lc "tail -4 codex_ops/clipfair_checks.log
+cat >> codex_ops/ACTIONS_01.md <<'EOF'
+- Full CPU checks completed with exit 0: 18/18 checks passed, ALL_PASS, including both real-CLIP checks. No checks skipped.
+- Verified other runs/ entry inode/mtime pairs stayed unchanged during the two renames. No network, SSH, PBS, installs, or GPU work used.
+- Wrote codex_ops/REPORT_01.md with file ranges, test commands/results and exact archived paths.
+EOF
+cat > codex_ops/REPORT_01.md <<'EOF'
+# Amendment 7 report
+
+Changed/new files:
+- "'`scripts/train_clipfair.py`: line 16 (copy import), lines 46–82 (pooled checkpoint and final fallback), 126–132 (persistent eligibility state/resume guard), 205–207 and 215 (loop integration). Backup: `scripts/train_clipfair.py.bak_codex_oct26`.
+- `tests/test_amend7_fallback.py`: lines 1–76, four CPU mocked-loop tests using production selection and checkpoint I/O.
+- `codex_ops/ACTIONS_01.md`: lines 1–14, action log (initial version backed up as `.bak_codex_oct26`). Test outputs: `codex_ops/test_amend7_fallback.log`, `codex_ops/clipfair_checks.log`.
+
+Selection remains `scripts/train.py:126–140`: AUC minus 0.5 × FPR gap. Pooled candidates require TPR ≥ 80 and FPR ≤ 20 and epoch ≥ 0. Any eligible trained epoch prevents fallback, even if it does not improve the start score. Otherwise best_pooled.pt is copied to best.pt. TRAINED records selection_fallback (false / true / "none_eligible") and best_epoch. Evaluation still reads best.pt. Shared train/engine modules were inspected and unchanged. New-code resumes retain history; pre-amendment checkpoints must restart because they lack pooled history. Already-running imported code is unaffected.
+
+Tests (both exit 0; no skips):
+```text
+CUDA_VISIBLE_DEVICES="" PYTHONDONTWRITEBYTECODE=1 /home/sachin.chaudhary/.conda/envs/pulid/bin/python tests/test_amend7_fallback.py
+Ran 4 tests; OK; ALL_PASS
+CUDA_VISIBLE_DEVICES="" PYTHONDONTWRITEBYTECODE=1 OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 /home/sachin.chaudhary/.conda/envs/pulid/bin/python tests/clipfair_checks.py
+18/18 checks passed; ALL_PASS (including real CLIP on CPU)
+```
+
+Moved only:
+- `runs/ffpp_daw_s7` → `runs/ffpp_daw_s7_DEGENERATE_oct26`
+- `runs/ffpp_daw_s7.RUNLOCK.gone.gpu01_44112.mgmt01_1969594_1792981318236049630_1101328702` → same name plus `_DEGENERATE_oct26`.
+
+Other runs/ entries were unchanged during the moves. No network, SSH, PBS, installs or GPU work.
+EOF' in /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CLIPFAIR
+ succeeded in 0ms:
+[PASS] real CLIP: p1 backbone loads strictly, DAG loss + orth backward reaches the rank-1 adapters  (872 keys, 288 adapter tensors, |g| 3.038e+00)
+[PASS] real CLIP: Ding 2-way head from p1 cls_head reproduces p1's CLS logit (no channel zeroed)  (scores [4.547160625457764, 4.4110493659973145] vs [4.54716157913208, 4.411049842834473])
+18/18 checks passed
+ALL_PASS
+
+codex
+Implemented Amendment 7 fallback and TRAINED metadata.
+
+- New fallback tests: 4/4, `ALL_PASS`.
+- Existing CPU checks: 18/18, `ALL_PASS`.
+- Archived daw_s7 and its matching RUNLOCK entry.
+- Backups and action log saved.
+
+Legacy checkpoints lacking pooled history require a fresh run.
+
+Details: [REPORT_01.md](/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CLIPFAIR/codex_ops/REPORT_01.md).
+tokens used
+34,028
+Implemented Amendment 7 fallback and TRAINED metadata.
+
+- New fallback tests: 4/4, `ALL_PASS`.
+- Existing CPU checks: 18/18, `ALL_PASS`.
+- Archived daw_s7 and its matching RUNLOCK entry.
+- Backups and action log saved.
+
+Legacy checkpoints lacking pooled history require a fresh run.
+
+Details: [REPORT_01.md](/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CLIPFAIR/codex_ops/REPORT_01.md).

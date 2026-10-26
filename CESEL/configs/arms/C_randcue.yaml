@@ -1,0 +1,3 @@
+# Control: full CES, but cue removal replaces c_k by the cue of a uniformly random OTHER image of the step (any label).
+_base_: full.yaml
+ces: {replace: random}

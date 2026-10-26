@@ -1,0 +1,133 @@
+{
+ "selection": {
+  "B0 (start)": {
+   "select": 90.0,
+   "best_epoch": 3,
+   "epochs": 10
+  },
+  "B0-continued": {
+   "select": 90.0,
+   "best_epoch": 3,
+   "epochs": 10
+  },
+  "+sens": {
+   "select": 89.0,
+   "best_epoch": 3,
+   "epochs": 10
+  },
+  "+inv": {
+   "select": 91.0,
+   "best_epoch": 3,
+   "epochs": 10
+  },
+  "+floor": {
+   "select": 92.0,
+   "best_epoch": 3,
+   "epochs": 10
+  },
+  "Full CESel": {
+   "select": 95.0,
+   "best_epoch": 3,
+   "epochs": 10
+  },
+  "C_randcue": {
+   "select": 80.0,
+   "best_epoch": 3,
+   "epochs": 10
+  },
+  "C_shufgroup": {
+   "select": 80.0,
+   "best_epoch": 3,
+   "epochs": 10
+  },
+  "C_novalid": {
+   "select": 80.0,
+   "best_epoch": 3,
+   "epochs": 10
+  },
+  "B0+CFES-D": {
+   "select": 90.0,
+   "best_epoch": 3,
+   "epochs": 10
+  },
+  "CFES-D s7": {
+   "select": 87.62,
+   "best_epoch": 3,
+   "epochs": 10
+  },
+  "Arm E w10 s7": null
+ },
+ "decisions": {
+  "spread_rule": "range of CFES-D full-data 3-seed selection values (frozen in Amendment 1)",
+  "spread": 2.06,
+  "keep": {
+   "sens": false,
+   "inv": true,
+   "floor": true,
+   "full": true
+  },
+  "drop": {
+   "C_randcue": {
+    "terms": [
+     "floor",
+     "sens"
+    ],
+    "abs_diff": 15.0,
+    "matches_full": false
+   },
+   "C_shufgroup": {
+    "terms": [
+     "floor"
+    ],
+    "abs_diff": 15.0,
+    "matches_full": false
+   },
+   "C_novalid": {
+    "terms": [
+     "inv"
+    ],
+    "abs_diff": 15.0,
+    "matches_full": false
+   }
+  },
+  "winner": "floor",
+  "promote": [
+   "B0",
+   "B0+CFES-D",
+   "+floor"
+  ],
+  "dropped_terms": [],
+  "failed_terms": [
+   "sens"
+  ],
+  "excluded_terms": [
+   "sens"
+  ],
+  "unresolved": [],
+  "eligible": [
+   "inv",
+   "floor"
+  ],
+  "design": "x5",
+  "reference_run": "B0-continued",
+  "cfesd_sd": 1.09233694435371,
+  "spread_status": "ok: recomputed range 2.0600 matches Amendment 1; the declared 2.06 is used",
+  "success_a_seed7": {
+   "B0 (start)": true,
+   "B0-continued": true,
+   "CFES-D s7": true,
+   "Arm E w10 s7": false
+  }
+ },
+ "complete": true,
+ "progress": [
+  1,
+  10,
+  0,
+  0
+ ],
+ "design": "x5",
+ "exploratory": true,
+ "generated": "2026-10-26T03:35:54",
+ "partial_flag": false
+}

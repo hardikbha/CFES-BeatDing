@@ -1,0 +1,155 @@
+set,level,source,attribute,n,agree_pct,kappa,fairface_pos_pct,other_pos_pct,pos_class,spearman_expected_age
+ffpp_test,frame,Xu,sex,25401,98.2245,0.9644,46.7462,47.4666,Male,
+ffpp_test,frame,Xu,race2 (White vs Non-White),25401,77.7135,0.5145,58.4819,74.1703,White,
+ffpp_test,frame,AIF-v2,sex,25401,99.5000,0.9900,46.7462,46.4194,Male,
+ffpp_test,frame,AIF-v2,race2 (White vs Non-White),25401,76.5442,0.4818,58.4819,77.9064,White,
+ffpp_test,frame,AIF-v1,sex,25401,99.5709,0.9914,46.7462,46.4116,Male,
+ffpp_test,frame,InsightFace,age2 (<30 vs 30+),25398,75.4705,0.5038,55.0988,55.5004,0-29,0.6521
+ffpp_test,frame,AIF-v1,age2 FairFace <30 vs AIF-v1 <25 (cut mismatch 30 vs 25),25401,61.7889,0.2749,55.1041,23.5699,<25,
+ffpp_test,frame,AIF-v2,age2 vs AIF-v2 young / middle+senior ('others' dropped; v2 cut not documented),20361,83.9743,0.6029,66.2738,79.6277,0-29,
+ffpp_test,video,Xu,sex,965,98.7565,0.9750,46.2176,46.8394,Male,
+ffpp_test,video,Xu,race2 (White vs Non-White),965,79.5855,0.5526,59.0674,74.0933,White,
+ffpp_test,video,AIF-v2,sex,965,99.7927,0.9958,46.2176,46.0104,Male,
+ffpp_test,video,AIF-v2,race2 (White vs Non-White),965,78.3420,0.5178,59.0674,78.0311,White,
+ffpp_test,video,AIF-v1,sex,965,99.8964,0.9979,46.2176,46.1140,Male,
+ffpp_test,video,InsightFace,age2 (<30 vs 30+),965,78.1347,0.5576,55.5440,55.2332,0-29,0.7061
+ffpp_test,video,AIF-v1,age2 FairFace <30 vs AIF-v1 <25 (cut mismatch 30 vs 25),965,60.4145,0.2559,55.6477,21.6580,<25,
+ffpp_test,video,AIF-v2,age2 vs AIF-v2 young / middle+senior ('others' dropped; v2 cut not documented),872,82.7982,0.6127,60.7798,75.9174,0-29,
+dfdc,frame,Xu,sex,21381,84.8136,0.6944,41.5836,48.2204,Male,
+dfdc,frame,Xu,race2 (White vs Non-White),21381,86.0390,0.7193,51.8030,57.1769,White,
+dfdc,frame,AIF-v2,sex,21381,92.5588,0.8470,41.5836,41.8689,Male,
+dfdc,frame,AIF-v2,race2 (White vs Non-White),21381,88.4383,0.7673,51.8030,58.5660,White,
+dfdc,frame,AIF-v1,sex,21381,93.9011,0.8730,41.5836,38.1507,Male,
+dfdc,frame,InsightFace,age2 (<30 vs 30+),21353,71.4560,0.4298,50.3536,41.8723,0-29,0.5857
+dfdc,frame,AIF-v1,age2 FairFace <30 vs AIF-v1 <25 (cut mismatch 30 vs 25),21381,59.0244,0.1846,50.3204,10.9256,<25,
+dfdc,frame,AIF-v2,age2 vs AIF-v2 young / middle+senior ('others' dropped; v2 cut not documented),14529,81.9327,0.5923,61.6973,74.2859,0-29,
+dfdc,video,Xu,sex,757,87.0542,0.7393,40.5548,48.2166,Male,
+dfdc,video,Xu,race2 (White vs Non-White),757,88.9036,0.7752,54.4254,57.3316,White,
+dfdc,video,AIF-v2,sex,757,94.4518,0.8853,40.5548,41.3474,Male,
+dfdc,video,AIF-v2,race2 (White vs Non-White),757,91.2814,0.8226,54.4254,59.7094,White,
+dfdc,video,AIF-v1,sex,757,95.1123,0.8974,40.5548,37.5165,Male,
+dfdc,video,InsightFace,age2 (<30 vs 30+),757,73.8441,0.4785,50.8587,41.0832,0-29,0.6647
+dfdc,video,AIF-v1,age2 FairFace <30 vs AIF-v1 <25 (cut mismatch 30 vs 25),757,57.0674,0.1534,50.8587,8.4544,<25,
+dfdc,video,AIF-v2,age2 vs AIF-v2 young / middle+senior ('others' dropped; v2 cut not documented),668,77.6946,0.5290,55.6886,73.2036,0-29,
+celebdf,frame,Xu,sex,28458,99.4026,0.9679,10.5559,10.2115,Male,
+celebdf,frame,Xu,race2 (White vs Non-White),28458,95.9976,0.7628,88.8713,92.6137,White,
+celebdf,frame,AIF-v2,sex,28458,99.4975,0.9729,10.5559,10.1167,Male,
+celebdf,frame,AIF-v2,race2 (White vs Non-White),28458,96.1101,0.7711,88.8713,92.4591,White,
+celebdf,frame,AIF-v1,sex,28458,99.5080,0.9734,10.5559,10.1061,Male,
+celebdf,frame,InsightFace,age2 (<30 vs 30+),28458,64.7586,0.2423,82.8660,55.3061,0-29,0.4909
+celebdf,frame,AIF-v1,age2 FairFace <30 vs AIF-v1 <25 (cut mismatch 30 vs 25),28458,28.7757,0.0488,82.8660,12.1548,<25,
+celebdf,frame,AIF-v2,age2 vs AIF-v2 young / middle+senior ('others' dropped; v2 cut not documented),26920,89.4428,0.3606,86.4004,95.9993,0-29,
+celebdf,video,Xu,sex,956,99.6862,0.9830,10.3556,10.2510,Male,
+celebdf,video,Xu,race2 (White vs Non-White),956,98.6402,0.9077,91.4226,92.5732,White,
+celebdf,video,AIF-v2,sex,956,99.7908,0.9886,10.3556,10.1464,Male,
+celebdf,video,AIF-v2,race2 (White vs Non-White),956,98.7448,0.9153,91.4226,92.4686,White,
+celebdf,video,AIF-v1,sex,956,99.7908,0.9886,10.3556,10.1464,Male,
+celebdf,video,InsightFace,age2 (<30 vs 30+),956,67.3640,0.2714,86.6109,57.1130,0-29,0.5988
+celebdf,video,AIF-v1,age2 FairFace <30 vs AIF-v1 <25 (cut mismatch 30 vs 25),956,23.7448,0.0331,86.5063,10.4603,<25,
+celebdf,video,AIF-v2,age2 vs AIF-v2 young / middle+senior ('others' dropped; v2 cut not documented),930,94.0860,0.6254,88.7097,94.1935,0-29,
+dfd,frame,Xu,sex,9385,78.0394,0.5584,47.2882,44.9547,Male,
+dfd,frame,Xu,race2 (White vs Non-White),9385,87.2989,0.6536,76.1961,75.4502,White,
+dfd,frame,AIF-v2,sex,9385,87.4161,0.7456,47.2882,40.1598,Male,
+dfd,frame,AIF-v2,race2 (White vs Non-White),9385,91.8274,0.7763,76.1961,75.7166,White,
+dfd,frame,AIF-v1,sex,9385,85.1572,0.6983,47.2882,35.3223,Male,
+dfd,frame,InsightFace,age2 (<30 vs 30+),9383,78.1946,0.2794,85.1540,78.0774,0-29,0.3966
+dfd,frame,AIF-v1,age2 FairFace <30 vs AIF-v1 <25 (cut mismatch 30 vs 25),9385,41.6090,0.0971,85.1572,29.1316,<25,
+dfd,frame,AIF-v2,age2 vs AIF-v2 young / middle+senior ('others' dropped; v2 cut not documented),8634,88.4642,0.2196,87.5956,96.8381,0-29,
+dfd,video,Xu,sex,319,79.6238,0.5883,45.1411,44.8276,Male,
+dfd,video,Xu,race2 (White vs Non-White),319,87.4608,0.6606,75.5486,75.5486,White,
+dfd,video,AIF-v2,sex,319,89.0282,0.7759,45.1411,39.1850,Male,
+dfd,video,AIF-v2,race2 (White vs Non-White),319,93.7304,0.8318,75.5486,74.9216,White,
+dfd,video,AIF-v1,sex,319,87.1473,0.7348,45.1411,34.1693,Male,
+dfd,video,InsightFace,age2 (<30 vs 30+),319,84.6395,0.2978,90.5956,84.6395,0-29,0.4533
+dfd,video,AIF-v1,age2 FairFace <30 vs AIF-v1 <25 (cut mismatch 30 vs 25),319,36.6771,0.0764,90.2821,26.9592,<25,
+dfd,video,AIF-v2,age2 vs AIF-v2 young / middle+senior ('others' dropped; v2 cut not documented),314,92.6752,0.3790,91.0828,96.4968,0-29,
+ffpp_val,frame,Xu,sex,25386,97.0732,0.9413,46.3366,48.3810,Male,
+ffpp_val,frame,Xu,race2 (White vs Non-White),25386,79.9378,0.5509,60.8367,74.5884,White,
+ffpp_val,frame,AIF-v1,sex,25386,99.3343,0.9866,46.3366,46.0805,Male,
+ffpp_val,frame,InsightFace,age2 (<30 vs 30+),25383,74.9793,0.4926,55.4347,56.3527,0-29,0.6436
+ffpp_val,frame,AIF-v1,age2 FairFace <30 vs AIF-v1 <25 (cut mismatch 30 vs 25),25386,61.9003,0.2853,55.4400,19.5856,<25,
+ffpp_val,video,Xu,sex,963,97.4039,0.9479,46.0021,47.9751,Male,
+ffpp_val,video,Xu,race2 (White vs Non-White),963,80.1661,0.5550,60.9553,74.7664,White,
+ffpp_val,video,AIF-v1,sex,963,99.6885,0.9937,46.0021,45.8982,Male,
+ffpp_val,video,InsightFace,age2 (<30 vs 30+),963,76.8432,0.5283,56.1786,57.3209,0-29,0.6918
+ffpp_val,video,AIF-v1,age2 FairFace <30 vs AIF-v1 <25 (cut mismatch 30 vs 25),963,62.3053,0.2973,55.9709,19.5223,<25,
+ffpp_train,frame,Xu,sex,76139,98.1560,0.9626,43.6583,44.0628,Male,
+ffpp_train,frame,Xu,race2 (White vs Non-White),76139,74.7764,0.4822,52.6209,74.5006,White,
+ffpp_train,frame,AIF-v2,sex,76139,99.1095,0.9819,43.6583,43.4981,Male,
+ffpp_train,frame,AIF-v2,race2 (White vs Non-White),76139,74.5978,0.4782,52.6209,75.1757,White,
+ffpp_train,frame,AIF-v1,sex,76139,99.2435,0.9846,43.6583,43.5401,Male,
+ffpp_train,frame,InsightFace,age2 (<30 vs 30+),76139,78.1571,0.5471,59.1957,59.6199,0-29,0.6612
+ffpp_train,frame,AIF-v1,age2 FairFace <30 vs AIF-v1 <25 (cut mismatch 30 vs 25),76139,59.5779,0.2661,59.1957,22.4038,<25,
+ffpp_train,frame,AIF-v2,age2 vs AIF-v2 young / middle+senior ('others' dropped; v2 cut not documented),63375,85.4959,0.6226,68.7511,80.8505,0-29,
+ffpp_train,video,Xu,sex,2722,98.1999,0.9634,43.3872,44.0118,Male,
+ffpp_train,video,Xu,race2 (White vs Non-White),2722,76.0103,0.5053,53.0860,74.3571,White,
+ffpp_train,video,AIF-v2,sex,2722,99.3020,0.9858,43.3872,43.2770,Male,
+ffpp_train,video,AIF-v2,race2 (White vs Non-White),2722,75.4225,0.4925,53.0860,75.5327,White,
+ffpp_train,video,AIF-v1,sex,2722,99.4857,0.9895,43.3872,43.2403,Male,
+ffpp_train,video,InsightFace,age2 (<30 vs 30+),2722,80.5658,0.5937,60.0661,60.7641,0-29,0.7057
+ffpp_train,video,AIF-v1,age2 FairFace <30 vs AIF-v1 <25 (cut mismatch 30 vs 25),2722,59.0007,0.2629,59.9559,21.7487,<25,
+ffpp_train,video,AIF-v2,age2 vs AIF-v2 young / middle+senior ('others' dropped; v2 cut not documented),2507,85.0020,0.6432,64.6191,77.2238,0-29,
+ff2pub_test,image:all,FF2 manifest,sex,93543,98.0736,0.9604,58.3945,58.2663,Male,
+ff2pub_test,image:all,FF2 manifest,race2 (White vs Non-White),93543,87.8494,0.6987,31.8260,23.3828,White,
+ff2pub_test,image:all,FF2 manifest if_age (InsightFace),age2 (<30 vs 30+),93543,78.4356,0.3510,26.0362,15.0081,0-29,0.6530
+ff2pub_test,image:all,FF2 manifest p_adult,P(adult) vs FairFace age9,93543,,,0.3389,,FairFace age <20 (bins<=10-19),0.6312
+ff2pub_test,image:real,FF2 manifest,sex,5441,98.7135,0.9732,59.7133,59.8971,Male,
+ff2pub_test,image:real,FF2 manifest,race2 (White vs Non-White),5441,91.8214,0.7769,26.4657,21.6688,White,
+ff2pub_test,image:real,FF2 manifest if_age (InsightFace),age2 (<30 vs 30+),5441,75.7214,0.2380,27.8258,9.0976,0-29,0.6474
+ff2pub_test,image:real,FF2 manifest p_adult,P(adult) vs FairFace age9,5441,,,0.3124,,FairFace age <20 (bins<=10-19),0.6383
+ff2pub_test,image:fake,FF2 manifest,sex,88102,98.0341,0.9596,58.3131,58.1655,Male,
+ff2pub_test,image:fake,FF2 manifest,race2 (White vs Non-White),88102,87.6041,0.6942,32.1570,23.4887,White,
+ff2pub_test,image:fake,FF2 manifest if_age (InsightFace),age2 (<30 vs 30+),88102,78.6032,0.3580,25.9256,15.3731,0-29,0.6548
+ff2pub_test,image:fake,FF2 manifest p_adult,P(adult) vs FairFace age9,88102,,,0.3405,,FairFace age <20 (bins<=10-19),0.6306
+ff2pub_test,image:cell-valid,FF2 manifest,sex,87564,98.1157,0.9613,58.3436,58.2089,Male,
+ff2pub_test,image:cell-valid,FF2 manifest,race2 (White vs Non-White),87564,89.2262,0.7340,31.6123,24.1892,White,
+ff2pub_test,image:cell-valid,FF2 manifest if_age (InsightFace),age2 (<30 vs 30+),87564,78.0937,0.3403,26.2608,14.6327,0-29,0.6516
+ff2pub_test,image:cell-valid,FF2 manifest p_adult,P(adult) vs FairFace age9,87564,,,0.3278,,FairFace age <20 (bins<=10-19),0.6309
+ff2pub_select,image:all,FF2 manifest,sex,34001,97.7001,0.9523,59.6159,59.3571,Male,
+ff2pub_select,image:all,FF2 manifest,race2 (White vs Non-White),34001,87.2533,0.6573,28.2521,20.5700,White,
+ff2pub_select,image:all,FF2 manifest if_age (InsightFace),age2 (<30 vs 30+),34001,78.3242,0.3436,24.9728,16.0789,0-29,0.6253
+ff2pub_select,image:all,FF2 manifest p_adult,P(adult) vs FairFace age9,34001,,,0.3118,,FairFace age <20 (bins<=10-19),0.6121
+ff2pub_select,image:real,FF2 manifest,sex,2438,98.5644,0.9704,58.8187,58.9418,Male,
+ff2pub_select,image:real,FF2 manifest,race2 (White vs Non-White),2438,92.0016,0.7737,24.6924,21.0418,White,
+ff2pub_select,image:real,FF2 manifest if_age (InsightFace),age2 (<30 vs 30+),2438,76.2920,0.2657,27.4815,10.6645,0-29,0.6436
+ff2pub_select,image:real,FF2 manifest p_adult,P(adult) vs FairFace age9,2438,,,0.2461,,FairFace age <20 (bins<=10-19),0.6378
+ff2pub_select,image:fake,FF2 manifest,sex,31563,97.6333,0.9509,59.6775,59.3892,Male,
+ff2pub_select,image:fake,FF2 manifest,race2 (White vs Non-White),31563,86.8865,0.6489,28.5271,20.5335,White,
+ff2pub_select,image:fake,FF2 manifest if_age (InsightFace),age2 (<30 vs 30+),31563,78.4811,0.3499,24.7790,16.4972,0-29,0.6264
+ff2pub_select,image:fake,FF2 manifest p_adult,P(adult) vs FairFace age9,31563,,,0.3168,,FairFace age <20 (bins<=10-19),0.6097
+ff2pub_select,image:cell-valid,FF2 manifest,sex,31107,97.7626,0.9535,59.7390,59.4496,Male,
+ff2pub_select,image:cell-valid,FF2 manifest,race2 (White vs Non-White),31107,89.1568,0.7079,27.4858,21.4003,White,
+ff2pub_select,image:cell-valid,FF2 manifest if_age (InsightFace),age2 (<30 vs 30+),31107,77.9053,0.3288,25.1873,15.5785,0-29,0.6177
+ff2pub_select,image:cell-valid,FF2 manifest p_adult,P(adult) vs FairFace age9,31107,,,0.3150,,FairFace age <20 (bins<=10-19),0.6082
+ff2pub_train,image:all,FF2 manifest,sex,236163,97.7460,0.9532,59.8595,59.5627,Male,
+ff2pub_train,image:all,FF2 manifest,race2 (White vs Non-White),236163,88.2098,0.6914,29.3806,21.4132,White,
+ff2pub_train,image:all,FF2 manifest if_age (InsightFace),age2 (<30 vs 30+),236163,78.1401,0.3307,25.3566,14.8211,0-29,0.6163
+ff2pub_train,image:all,FF2 manifest p_adult,P(adult) vs FairFace age9,236163,,,0.3565,,FairFace age <20 (bins<=10-19),0.6127
+ff2pub_train,image:real,FF2 manifest,sex,16777,98.4205,0.9672,59.3372,59.5696,Male,
+ff2pub_train,image:real,FF2 manifest,race2 (White vs Non-White),16777,91.8519,0.7766,26.3933,21.3566,White,
+ff2pub_train,image:real,FF2 manifest if_age (InsightFace),age2 (<30 vs 30+),16777,75.0849,0.2394,28.4973,9.9005,0-29,0.6315
+ff2pub_train,image:real,FF2 manifest p_adult,P(adult) vs FairFace age9,16777,,,0.3755,,FairFace age <20 (bins<=10-19),0.6432
+ff2pub_train,image:fake,FF2 manifest,sex,219386,97.6945,0.9521,59.8994,59.5621,Male,
+ff2pub_train,image:fake,FF2 manifest,race2 (White vs Non-White),219386,87.9313,0.6852,29.6090,21.4175,White,
+ff2pub_train,image:fake,FF2 manifest if_age (InsightFace),age2 (<30 vs 30+),219386,78.3737,0.3382,25.1165,15.1974,0-29,0.6175
+ff2pub_train,image:fake,FF2 manifest p_adult,P(adult) vs FairFace age9,219386,,,0.3551,,FairFace age <20 (bins<=10-19),0.6098
+ff2pub_train,image:cell-valid,FF2 manifest,sex,218266,97.8054,0.9544,59.8861,59.5590,Male,
+ff2pub_train,image:cell-valid,FF2 manifest,race2 (White vs Non-White),218266,89.8330,0.7344,28.9033,22.2101,White,
+ff2pub_train,image:cell-valid,FF2 manifest if_age (InsightFace),age2 (<30 vs 30+),218266,77.7588,0.3170,25.5729,14.3091,0-29,0.6107
+ff2pub_train,image:cell-valid,FF2 manifest p_adult,P(adult) vs FairFace age9,218266,,,0.3482,,FairFace age <20 (bins<=10-19),0.6105
+ff2pub_cal,image:all,FF2 manifest,sex,35250,97.5631,0.9490,60.9277,60.3121,Male,
+ff2pub_cal,image:all,FF2 manifest,race2 (White vs Non-White),35250,87.5773,0.6481,26.6270,18.5560,White,
+ff2pub_cal,image:all,FF2 manifest if_age (InsightFace),age2 (<30 vs 30+),35250,79.1801,0.3473,24.0170,15.1631,0-29,0.6198
+ff2pub_cal,image:all,FF2 manifest p_adult,P(adult) vs FairFace age9,35250,,,0.3177,,FairFace age <20 (bins<=10-19),0.5847
+ff2pub_cal,image:real,FF2 manifest,sex,2509,98.4456,0.9674,60.9406,60.5819,Male,
+ff2pub_cal,image:real,FF2 manifest,race2 (White vs Non-White),2509,91.9490,0.7555,22.5189,18.9318,White,
+ff2pub_cal,image:real,FF2 manifest if_age (InsightFace),age2 (<30 vs 30+),2509,76.0462,0.2618,27.8597,10.3627,0-29,0.6421
+ff2pub_cal,image:real,FF2 manifest p_adult,P(adult) vs FairFace age9,2509,,,0.3986,,FairFace age <20 (bins<=10-19),0.6208
+ff2pub_cal,image:fake,FF2 manifest,sex,32741,97.4955,0.9476,60.9267,60.2914,Male,
+ff2pub_cal,image:fake,FF2 manifest,race2 (White vs Non-White),32741,87.2423,0.6405,26.9418,18.5272,White,
+ff2pub_cal,image:fake,FF2 manifest if_age (InsightFace),age2 (<30 vs 30+),32741,79.4203,0.3546,23.7225,15.5310,0-29,0.6208
+ff2pub_cal,image:fake,FF2 manifest p_adult,P(adult) vs FairFace age9,32741,,,0.3115,,FairFace age <20 (bins<=10-19),0.5816
+ff2pub_cal,image:cell-valid,FF2 manifest,sex,32255,97.6159,0.9500,61.0727,60.3565,Male,
+ff2pub_cal,image:cell-valid,FF2 manifest,race2 (White vs Non-White),32255,89.4714,0.7002,25.8007,19.2466,White,
+ff2pub_cal,image:cell-valid,FF2 manifest if_age (InsightFace),age2 (<30 vs 30+),32255,78.8405,0.3304,24.0800,14.5094,0-29,0.6121
+ff2pub_cal,image:cell-valid,FF2 manifest p_adult,P(adult) vs FairFace age9,32255,,,0.3100,,FairFace age <20 (bins<=10-19),0.5818

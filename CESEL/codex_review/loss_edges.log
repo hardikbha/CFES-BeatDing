@@ -1,0 +1,4 @@
+PASS floor: empty pool, missing class/groups, undersized cells, empty cue mask; finite zero gradients
+PASS replacement: own-group EMA, absent/invalid group fallback, paired override, detached reference
+PASS swap without donor is identity/invalid; asinh finite at +/-400 and +/-1e30 (extreme gradients may underflow)
+PASS linear utility additivity with mixed paired/group/fallback replacements

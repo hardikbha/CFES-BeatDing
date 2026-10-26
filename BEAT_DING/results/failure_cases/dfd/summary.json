@@ -1,0 +1,575 @@
+{
+ "thresholds": {
+  "matched": -73.76414591500017,
+  "native": -65.96807621582647,
+  "A1": -19.132783889770508
+ },
+ "n": 9385,
+ "n_real": 3092,
+ "n_fake": 6293,
+ "n_real_videos": 104,
+ "n_fake_videos": 215,
+ "overall": {
+  "matched": {
+   "FP": 1003,
+   "FPR": 32.4385510996119,
+   "FN": 682,
+   "FNR": 10.83743842364532,
+   "TPR": 89.16256157635468
+  },
+  "native": {
+   "FP": 567,
+   "FPR": 18.33764553686934,
+   "FN": 1017,
+   "FNR": 16.160813602415384,
+   "TPR": 83.83918639758463
+  },
+  "A1": {
+   "FP": 103,
+   "FPR": 3.33117723156533,
+   "FN": 1996,
+   "FNR": 31.717781662164306,
+   "TPR": 68.28221833783569
+  },
+  "ding_0.5": {
+   "FP": 1825,
+   "FPR": 59.02328589909443,
+   "FN": 1034,
+   "FNR": 16.430955029397744,
+   "TPR": 83.56904497060226
+  }
+ },
+ "fairness_FPR": {
+  "matched": {
+   "gender": {
+    "F_FPR": 4.151630990391864,
+    "fpr_gap": 4.151630990391864,
+    "group_FPR": {
+     "male": 30.240549828178693,
+     "nonmale": 34.39218081857056
+    }
+   },
+   "race": {
+    "F_FPR": 6.610177075293356,
+    "fpr_gap": 6.610177075293356,
+    "group_FPR": {
+     "white": 30.79242032730405,
+     "black": 37.4025974025974
+    }
+   },
+   "intersection": {
+    "F_FPR": 29.04975451999543,
+    "fpr_gap": 24.64424320827943,
+    "group_FPR": {
+     "male,white": 25.35575679172057,
+     "male,black": 35.77712609970675,
+     "nonmale,white": 33.505487411233055,
+     "nonmale,black": 50.0
+    }
+   }
+  },
+  "native": {
+   "gender": {
+    "F_FPR": 3.091272065445341,
+    "fpr_gap": 3.091272065445341,
+    "group_FPR": {
+     "male": 16.70103092783505,
+     "nonmale": 19.79230299328039
+    }
+   },
+   "race": {
+    "F_FPR": 8.266384778012684,
+    "fpr_gap": 8.266384778012684,
+    "group_FPR": {
+     "white": 16.27906976744186,
+     "black": 24.545454545454547
+    }
+   },
+   "intersection": {
+    "F_FPR": 31.230071741345412,
+    "fpr_gap": 26.24514877102199,
+    "group_FPR": {
+     "male,white": 11.254851228978008,
+     "male,black": 22.87390029325513,
+     "nonmale,white": 18.786313750806972,
+     "nonmale,black": 37.5
+    }
+   }
+  },
+  "A1": {
+   "gender": {
+    "F_FPR": 0.06898042895498654,
+    "fpr_gap": 0.06898042895498654,
+    "group_FPR": {
+     "male": 3.3676975945017182,
+     "nonmale": 3.2987171655467313
+    }
+   },
+   "race": {
+    "F_FPR": 1.7898810922066737,
+    "fpr_gap": 1.7898810922066737,
+    "group_FPR": {
+     "white": 2.885443583118002,
+     "black": 4.675324675324675
+    }
+   },
+   "intersection": {
+    "F_FPR": 10.28491809750216,
+    "fpr_gap": 9.724015493867011,
+    "group_FPR": {
+     "male,white": 3.1047865459249677,
+     "male,black": 3.6656891495601176,
+     "nonmale,white": 2.775984506132989,
+     "nonmale,black": 12.5
+    }
+   }
+  },
+  "ding_0.5": {
+   "gender": {
+    "F_FPR": 3.2728127683067876,
+    "fpr_gap": 3.2728127683067876,
+    "group_FPR": {
+     "male": 60.756013745704465,
+     "nonmale": 57.48320097739767
+    }
+   },
+   "race": {
+    "F_FPR": 12.022662952895512,
+    "fpr_gap": 12.022662952895512,
+    "group_FPR": {
+     "white": 56.02928509905254,
+     "black": 68.05194805194805
+    }
+   },
+   "intersection": {
+    "F_FPR": 49.82036112724275,
+    "fpr_gap": 40.909090909090914,
+    "group_FPR": {
+     "male,white": 50.19404915912031,
+     "male,black": 72.72727272727273,
+     "nonmale,white": 58.941252420916726,
+     "nonmale,black": 31.818181818181817
+    }
+   }
+  }
+ },
+ "fp_concentration": {
+  "videos_with_any_fp": 83,
+  "real_videos": 104,
+  "share_top5": 14.15752741774676,
+  "share_top10": 27.018943170488534,
+  "share_top15": 38.6839481555334,
+  "n_videos_for_50pct": 21,
+  "n_videos_for_80pct": 42,
+  "videos_fp_rate_ge_90": 5,
+  "videos_fp_rate_ge_50": 30,
+  "videos_fp_rate_0": 21,
+  "frames_per_real_video_median": 30.0
+ },
+ "fn_concentration": {
+  "videos_with_any_fn": 86,
+  "fake_videos": 215,
+  "share_top5": 19.501466275659823,
+  "share_top10": 35.483870967741936,
+  "share_top15": 49.56011730205279,
+  "n_videos_for_50pct": 16,
+  "n_videos_for_80pct": 37,
+  "videos_fn_rate_ge_50": 17
+ },
+ "real_videos_per_group": {
+  "M-White": 26,
+  "M-Black": 23,
+  "M-Others": 0,
+  "F-White": 52,
+  "F-Black": 3,
+  "F-Others": 0
+ },
+ "real_frames_per_group": {
+  "M-White": 773,
+  "M-Black": 682,
+  "M-Others": 0,
+  "F-White": 1549,
+  "F-Black": 88,
+  "F-Others": 0
+ },
+ "fake_videos_per_group": {
+  "M-White": 74,
+  "M-Black": 17,
+  "M-Others": 3,
+  "F-White": 89,
+  "F-Black": 9,
+  "F-Others": 23
+ },
+ "videos_with_mixed_group": 0,
+ "iF_FPR_greedy_video_removal": [
+  {
+   "k": 0,
+   "iF_FPR": 29.04975451999543
+  },
+  {
+   "k": 1,
+   "removed": "0_19__podium_speech_happy",
+   "group": "F-Black",
+   "n": 30,
+   "fp_rate": 96.66666666666667,
+   "iF_FPR": 18.06478775370199
+  },
+  {
+   "k": 2,
+   "removed": "0_19__outside_talking_pan_laughing",
+   "group": "F-Black",
+   "n": 28,
+   "fp_rate": 17.857142857142858,
+   "iF_FPR": 13.384118859408195
+  },
+  {
+   "k": 3,
+   "removed": "0_22__outside_talking_still_laughing",
+   "group": "M-White",
+   "n": 30,
+   "fp_rate": 0.0,
+   "iF_FPR": 11.72242309039092
+  },
+  {
+   "k": 4,
+   "removed": "0_22__podium_speech_happy",
+   "group": "M-White",
+   "n": 30,
+   "fp_rate": 0.0,
+   "iF_FPR": 9.961704514063962
+  },
+  {
+   "k": 5,
+   "removed": "0_22__talking_against_wall",
+   "group": "M-White",
+   "n": 30,
+   "fp_rate": 0.0,
+   "iF_FPR": 8.090217167018054
+  },
+  {
+   "k": 6,
+   "removed": "0_22__outside_talking_pan_laughing",
+   "group": "M-White",
+   "n": 29,
+   "fp_rate": 0.0,
+   "iF_FPR": 6.162822909757476
+  },
+  {
+   "k": 7,
+   "removed": "0_19__exit_phone_room",
+   "group": "M-Black",
+   "n": 30,
+   "fp_rate": 96.66666666666667,
+   "iF_FPR": 4.6802171929829885
+  },
+  {
+   "k": 8,
+   "removed": "0_22__kitchen_pan",
+   "group": "M-White",
+   "n": 28,
+   "fp_rate": 0.0,
+   "iF_FPR": 2.7010865494029144
+  },
+  {
+   "k": 9,
+   "removed": "0_22__exit_phone_room",
+   "group": "M-White",
+   "n": 30,
+   "fp_rate": 3.3333333333333335,
+   "iF_FPR": 1.1452398164978728
+  },
+  {
+   "k": 10,
+   "removed": "0_10__talking_angry_couch",
+   "group": "M-White",
+   "n": 30,
+   "fp_rate": 20.0,
+   "iF_FPR": 0.5889201036102298
+  }
+ ],
+ "iF_FPR_drop_topk_fp_videos": [
+  {
+   "k": 1,
+   "iF_FPR": 29.06036785846092
+  },
+  {
+   "k": 3,
+   "iF_FPR": 13.949866096863811
+  },
+  {
+   "k": 5,
+   "iF_FPR": 11.531761675523178
+  },
+  {
+   "k": 10,
+   "iF_FPR": 4.236491077452984
+  },
+  {
+   "k": 15,
+   "iF_FPR": 15.82254407487908
+  }
+ ],
+ "iF_FPR_decomposition_matched": {
+  "pooled_FPR": 32.4385510996119,
+  "groups": [
+   {
+    "group": "M-White",
+    "FPR": 25.35575679172057,
+    "abs_dev_from_pooled": 7.082794307891333,
+    "real_videos": 26,
+    "real_frames": 773,
+    "FP": 196,
+    "videos_fp_rate_ge_50": 4,
+    "video_fp_rates": [
+     66.7,
+     60.0,
+     53.3,
+     53.3,
+     46.7,
+     46.7,
+     44.8,
+     40.0,
+     36.7,
+     30.0,
+     30.0,
+     26.7,
+     24.1,
+     23.3,
+     23.3,
+     20.0,
+     10.0,
+     10.0,
+     3.6,
+     3.3,
+     3.3,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "group": "M-Black",
+    "FPR": 35.77712609970675,
+    "abs_dev_from_pooled": 3.3385750000948455,
+    "real_videos": 23,
+    "real_frames": 682,
+    "FP": 244,
+    "videos_fp_rate_ge_50": 9,
+    "video_fp_rates": [
+     96.7,
+     89.7,
+     86.7,
+     86.7,
+     85.2,
+     80.0,
+     76.7,
+     53.3,
+     50.0,
+     41.4,
+     30.0,
+     30.0,
+     10.0,
+     6.7,
+     3.3,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "group": "F-White",
+    "FPR": 33.505487411233055,
+    "abs_dev_from_pooled": 1.0669363116211528,
+    "real_videos": 52,
+    "real_frames": 1549,
+    "FP": 519,
+    "videos_fp_rate_ge_50": 16,
+    "video_fp_rates": [
+     100.0,
+     96.4,
+     90.0,
+     86.7,
+     83.3,
+     80.0,
+     76.7,
+     76.7,
+     70.0,
+     66.7,
+     66.7,
+     56.7,
+     56.7,
+     53.3,
+     53.3,
+     50.0,
+     46.7,
+     46.7,
+     43.3,
+     43.3,
+     36.7,
+     36.7,
+     30.0,
+     30.0,
+     26.7,
+     26.7,
+     23.3,
+     20.0,
+     20.0,
+     17.2,
+     16.7,
+     13.3,
+     13.3,
+     13.3,
+     10.0,
+     10.0,
+     7.1,
+     6.9,
+     6.7,
+     6.7,
+     6.7,
+     6.7,
+     6.7,
+     3.6,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "group": "F-Black",
+    "FPR": 50.0,
+    "abs_dev_from_pooled": 17.5614489003881,
+    "real_videos": 3,
+    "real_frames": 88,
+    "FP": 44,
+    "videos_fp_rate_ge_50": 1,
+    "video_fp_rates": [
+     96.7,
+     33.3,
+     17.9
+    ]
+   }
+  ]
+ },
+ "iF_FPR_video_bootstrap_matched": {
+  "point": 29.04975451999543,
+  "B": 1000,
+  "seed": 0,
+  "mean": 35.888597031399655,
+  "ci95": [
+   9.26594620836996,
+   81.5338081325433
+  ]
+ },
+ "shared_with_ding": {
+  "matched": {
+   "FP": {
+    "ours": 1003,
+    "ding": 1825,
+    "both": 719,
+    "frac_ours_also_ding": 71.68494516450649,
+    "frac_ding_also_ours": 39.397260273972606,
+    "ours_only": 284,
+    "ding_only": 1106,
+    "label": "real"
+   },
+   "FN": {
+    "ours": 682,
+    "ding": 1034,
+    "both": 294,
+    "frac_ours_also_ding": 43.10850439882698,
+    "frac_ding_also_ours": 28.433268858800773,
+    "ours_only": 388,
+    "ding_only": 740,
+    "label": "fake"
+   },
+   "FP_overlap_if_ding_had_same_FP_count_oracle": 39.18245264207378,
+   "FN_overlap_if_ding_had_same_FN_count_oracle": 31.085043988269796
+  },
+  "native": {
+   "FP": {
+    "ours": 567,
+    "ding": 1825,
+    "both": 441,
+    "frac_ours_also_ding": 77.77777777777777,
+    "frac_ding_also_ours": 24.164383561643834,
+    "ours_only": 126,
+    "ding_only": 1384,
+    "label": "real"
+   },
+   "FN": {
+    "ours": 1017,
+    "ding": 1034,
+    "both": 412,
+    "frac_ours_also_ding": 40.511307767944935,
+    "frac_ding_also_ours": 39.845261121856865,
+    "ours_only": 605,
+    "ding_only": 622,
+    "label": "fake"
+   }
+  },
+  "A1": {
+   "FP": {
+    "ours": 103,
+    "ding": 1825,
+    "both": 96,
+    "frac_ours_also_ding": 93.20388349514563,
+    "frac_ding_also_ours": 5.260273972602739,
+    "ours_only": 7,
+    "ding_only": 1729,
+    "label": "real"
+   },
+   "FN": {
+    "ours": 1996,
+    "ding": 1034,
+    "both": 726,
+    "frac_ours_also_ding": 36.37274549098196,
+    "frac_ding_also_ours": 70.2127659574468,
+    "ours_only": 1270,
+    "ding_only": 308,
+    "label": "fake"
+   }
+  },
+  "video_level_matched_ge50pct": {
+   "FP_videos_ours": 30,
+   "FP_videos_ding": 67,
+   "FP_videos_both": 24,
+   "FN_videos_ours": 17,
+   "FN_videos_ding": 26,
+   "FN_videos_both": 4
+  }
+ },
+ "confident": {
+  "fp_logit_quantiles": [
+   -73.75,
+   -64.24,
+   -17.9,
+   66.54
+  ],
+  "fn_logit_quantiles": [
+   -110.53,
+   -95.21,
+   -83.68,
+   -73.8
+  ],
+  "fp_above_A1": 103,
+  "fp_above_0": 68,
+  "real_logit_median": -80.22040176391602,
+  "fake_logit_median": 16.744190216064453
+ },
+ "sheet_ding_correct": {
+  "fp_tiles_ding_says_real": 1,
+  "fn_tiles_ding_says_fake": 14
+ }
+}

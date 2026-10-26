@@ -1,0 +1,30 @@
+model,seed,t05_logit,A1_logit,a1_src,sets
+CFES-D,7,-61.5686,-46.9463,stored,"celebdf,dfd,dfdc,ff2_test,ffpp_test"
+CFES-D,17,-60.3892,-55.7547,stored,"celebdf,dfd,dfdc,ff2_test,ffpp_test"
+CFES-D,27,-52.6832,4.52034,stored,"celebdf,dfd,dfdc,ff2_test,ffpp_test"
+arm C,7,-0,20.9771,rule re-run on saved FF++ val logits (Xu labels),"celebdf,dfd,dfdc,ff2_test,ffpp_test"
+arm C,17,-0,-14.8973,rule re-run on saved FF++ val logits (Xu labels),"celebdf,dfd,dfdc,ff2_test,ffpp_test"
+arm C,27,-0,0.72287,rule re-run on saved FF++ val logits (Xu labels),"celebdf,dfd,dfdc,ff2_test,ffpp_test"
+arm E w1,7,-0,14.0101,rule re-run on saved FF++ val logits (Xu labels),"celebdf,dfd,dfdc,ff2_test,ffpp_test"
+arm E w3,7,-0,3.98938,rule re-run on saved FF++ val logits (Xu labels),"celebdf,dfd,dfdc,ff2_test,ffpp_test"
+arm E w10,7,-0,-30.0566,rule re-run on saved FF++ val logits (Xu labels),"celebdf,dfd,dfdc,ff2_test,ffpp_test"
+control (det-only),7,-0,3.53734,rule re-run on saved FF++ val logits (Xu labels),"celebdf,dfd,dfdc,ff2_test,ffpp_test"
+control (det-only),17,-0,10.4043,rule re-run on saved FF++ val logits (Xu labels),"celebdf,dfd,dfdc,ff2_test,ffpp_test"
+control (det-only),27,-0,7.08984,rule re-run on saved FF++ val logits (Xu labels),"celebdf,dfd,dfdc,ff2_test,ffpp_test"
+CFES-ResNet,7,-0,4.15375,rule re-run on saved FF++ val logits (Xu labels),"celebdf,dfd,dfdc,ff2_test,ffpp_test"
+CFES-ResNet,17,-0,0.650049,rule re-run on saved FF++ val logits (Xu labels),"celebdf,dfd,dfdc,ff2_test,ffpp_test"
+CFES-ResNet,27,-0,1.94917,rule re-run on saved FF++ val logits (Xu labels),"celebdf,dfd,dfdc,ff2_test,ffpp_test"
+CFES A (rev4),7,-0,17.6796,rule re-run on saved FF++ val logits (Xu labels),"celebdf,dfd,dfdc,ff2_test,ffpp_test"
+CFES A (rev4),17,-0,10.4043,rule re-run on saved FF++ val logits (Xu labels),"celebdf,dfd,dfdc,ff2_test,ffpp_test"
+CFES A (rev4),27,-0,5.10041,rule re-run on saved FF++ val logits (Xu labels),"celebdf,dfd,dfdc,ff2_test,ffpp_test"
+Ding repro (SFD+GDA),7,-0,4.20447,stored,"celebdf,dfd,dfdc,ff2_test,ffpp_test"
+Ding Ori repro (SFD),7,-0,5.18478,rule re-run on saved FF++ val logits (Xu labels),"celebdf,dfd,dfdc,ff2_test,ffpp_test"
+Ding Ori repro (SFD),17,-0,2.34772,rule re-run on saved FF++ val logits (Xu labels),"celebdf,dfd,dfdc,ff2_test,ffpp_test"
+Ding Ori repro (SFD),27,-0,5.02769,rule re-run on saved FF++ val logits (Xu labels),"celebdf,dfd,dfdc,ff2_test,ffpp_test"
+CESel B0,7,-0,6.58958,stored,"celebdf,dfd,dfdc,ffpp_test"
+FF2-trained phase 1,7,-0,,none (no FF++ val scores),ff2_test
+FF2-trained phase 1,17,-0,,none (no FF++ val scores),ff2_test
+FF2-trained phase 1,27,-0,,none (no FF++ val scores),ff2_test
+FF2-trained control,7,-0,,none (no FF++ val scores),ff2_test
+FF2-trained control,17,-0,,none (no FF++ val scores),ff2_test
+FF2-trained CFES,7,-0,,none (no FF++ val scores),ff2_test

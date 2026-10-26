@@ -1,0 +1,4 @@
+# X BD0 = base + B (ESA + 4 per (label x intersection) cell)
+_base_: base_E.yaml
+loss: {esa: {weight: 1.0}}
+strat: {per_cell: 4}

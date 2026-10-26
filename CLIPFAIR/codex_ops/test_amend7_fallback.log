@@ -1,0 +1,10 @@
+test_eligible_below_start_prevents_fallback (__main__.FallbackTests) ... ok
+test_none_eligible (__main__.FallbackTests) ... ok
+test_normal (__main__.FallbackTests) ... ok
+test_pooled_best_uses_penalized_score_and_boundaries (__main__.FallbackTests) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.292s
+
+OK
+ALL_PASS

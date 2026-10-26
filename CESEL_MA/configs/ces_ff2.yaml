@@ -1,0 +1,71 @@
+# CES on FULL FairForge-2 (data_ding_schema/fairforge2_full; person-disjoint TRAIN / SELECT / TEST), FF2 face template,
+# pairs from the generation provenance (FAKE_MANIFEST.csv real_path; scripts/build_ff2_manifest_pairs.py).
+_base_: ces_ffpp.yaml
+data:
+  batch_size: 32             # 16 real + 16 fake (the stratified batch below carries most of the step)
+  num_workers: 8
+  train:
+    csv: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/data_ding_schema/fairforge2_full/train.csv
+    scheme: eight
+    meta: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/data_ding_schema/fairforge2_full/provenance.csv
+  val:
+    csv: [/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/data_ding_schema/fairforge2_full/realval.csv,
+          /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/data_ding_schema/fairforge2_full/fakeval.csv]
+    scheme: eight
+    meta: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/data_ding_schema/fairforge2_full/provenance.csv
+  steps_per_epoch: 3732      # as CFES configs/ff2_full
+  families: [swap, reenact, edit, restore, idsyn, synth, gan]   # FAKE_MANIFEST.family
+  family_map:
+    blendface: swap
+    inswapper: swap
+    reface: swap
+    simswap: swap
+    swap: swap
+    liveportrait: reenact
+    tpsmm: reenact
+    iclight: edit
+    inpaint: edit
+    magicbrush: edit
+    omnigen: edit
+    qwenedit: edit
+    codeformer: restore
+    difface: restore
+    gfpgan: restore
+    realesrgan: restore
+    restore: restore
+    arc2face: idsyn
+    instantid: idsyn
+    ipadapter: idsyn
+    photomaker: idsyn
+    pulid: idsyn
+    flux: synth
+    flux_dev: synth
+    flux_schnell: synth
+    hart: synth
+    pixart: synth
+    playground: synth
+    cascade: synth
+    kolors: synth
+    infinity: synth
+    eg3d: gan
+    projgan: gan
+    styleswin: gan
+    stylegan2: gan
+ces:
+  validation: {per_family: true, family_min_n: 200}   # Amendment 2: per-family cue validation (FairForge-2 only)
+cf:
+  face_mask: {cx: 0.5, cy: 0.578, ax: 0.3125, ay: 0.4297, dilate: 1.15}   # canonical FF2 crop template
+pairs:
+  csv: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CESEL/data/pairs_ff2full_manifest_train.csv
+  exclude_families: [synth, gan]   # their real_path is an assigned cell real, not a pixel source -> EMA baseline
+strat:
+  per_cell: 4                # by (label, group, condition): 8x4 reals + 8x7x4 fakes = 256 images per step
+  by_cond: true
+eval:
+  test_sets:
+    ff2_test: {csv: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/data_ding_schema/fairforge2_full/test.csv, scheme: eight,
+               meta: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/data_ding_schema/fairforge2_full/provenance.csv}
+    ffpp_test: {csv: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/ff++/test.csv, scheme: eight}
+    dfdc: {csv: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/dfdc/test.csv, scheme: eight}
+    celebdf: {csv: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/celebdf/test.csv, scheme: six}
+    dfd: {csv: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/dfd/test.csv, scheme: six}

@@ -1,0 +1,5 @@
+# Arm B: A + revised CFES = stability on nuisance views (score Huber + face-cell map consistency; NO background
+# patch-logit suppression) + real-fake score margin on pairs (NO pixel-difference map terms, NO localisation).
+_base_: resnet_A.yaml
+cf: {enabled: true}
+loss: {stab: {weight: 0.5, bg_evidence_weight: 0.0}, sens: {weight: 0.5, map_terms: false}}

@@ -1,0 +1,73 @@
+check,stored,recomputed,pass
+"A1 re-derived == stored: ('CFES-D', 7)",-46.946319580078125,-46.946319580078125,True
+"A1 re-derived == stored: ('CFES-D', 17)",-55.75469970703125,-55.75469970703125,True
+"A1 re-derived == stored: ('CFES-D', 27)",4.520336151123047,4.520336151123047,True
+"A1 re-derived == stored: ('Ding repro (SFD+GDA)', 7)",4.204473495483398,4.204473495483398,True
+"A1 re-derived == stored: ('CESel B0', 7)",6.589578151702881,6.589578151702881,True
+"A1 re-derived == stored: ('CESel p1 full', 7)",731.6105346679688,731.6105346679688,True
+"A1 re-derived == stored: ('CESel p1 inv', 7)",5.067871570587158,5.067871570587158,True
+"A1 re-derived == stored: ('CESel p1 sens', 7)",2.046933174133301,2.046933174133301,True
+"ffpp_test CFES-D s7 A1 i_F_FPR (Xu, ding_compat) vs fair_oppoint.json",18.978043010227196,18.978043010227196,True
+"ffpp_test CFES-D s7 A1 g_F_FPR (Xu, ding_compat) vs fair_oppoint.json",0.48126879956248286,0.48126879956248286,True
+"ffpp_test CFES-D s7 A1 r_F_FPR (Xu, ding_compat) vs fair_oppoint.json",5.963856537405172,5.963856537405172,True
+ffpp_test CFES-D s7 A1 pooled TPR,79.99808273019221,79.99808273019221,True
+"ffpp_test CFES-D s17 A1 i_F_FPR (Xu, ding_compat) vs fair_oppoint.json",22.308672323334388,22.308672323334388,True
+"ffpp_test CFES-D s17 A1 g_F_FPR (Xu, ding_compat) vs fair_oppoint.json",2.2732528614399006,2.2732528614399006,True
+"ffpp_test CFES-D s17 A1 r_F_FPR (Xu, ding_compat) vs fair_oppoint.json",6.717333524411691,6.717333524411691,True
+ffpp_test CFES-D s17 A1 pooled TPR,78.38278291712601,78.38278291712601,True
+"ffpp_test CFES-D s27 A1 i_F_FPR (Xu, ding_compat) vs fair_oppoint.json",9.012073198486384,9.012073198486384,True
+"ffpp_test CFES-D s27 A1 g_F_FPR (Xu, ding_compat) vs fair_oppoint.json",0.3380991444978318,0.3380991444978318,True
+"ffpp_test CFES-D s27 A1 r_F_FPR (Xu, ding_compat) vs fair_oppoint.json",3.5406432476274645,3.5406432476274645,True
+ffpp_test CFES-D s27 A1 pooled TPR,80.84168144562143,80.84168144562143,True
+"ffpp_test Ding repro (SFD+GDA) s7 A1 i_F_FPR (Xu, ding_compat) vs fair_oppoint.json",7.7354662876574745,7.7354662876574745,True
+"ffpp_test Ding repro (SFD+GDA) s7 A1 g_F_FPR (Xu, ding_compat) vs fair_oppoint.json",0.609086292433298,0.609086292433298,True
+"ffpp_test Ding repro (SFD+GDA) s7 A1 r_F_FPR (Xu, ding_compat) vs fair_oppoint.json",3.2117014788498266,3.2117014788498266,True
+ffpp_test Ding repro (SFD+GDA) s7 A1 pooled TPR,83.410822988065,83.410822988065,True
+"dfdc CFES-D s7 A1 i_F_FPR (Xu, ding_compat) vs fair_oppoint.json",16.301856900099107,16.301856900099107,True
+"dfdc CFES-D s7 A1 g_F_FPR (Xu, ding_compat) vs fair_oppoint.json",0.2762021965255504,0.2762021965255504,True
+"dfdc CFES-D s7 A1 r_F_FPR (Xu, ding_compat) vs fair_oppoint.json",6.79066489554398,6.79066489554398,True
+dfdc CFES-D s7 A1 pooled TPR,36.03824466781074,36.03824466781074,True
+"dfdc CFES-D s17 A1 i_F_FPR (Xu, ding_compat) vs fair_oppoint.json",15.175632841174169,15.175632841174169,True
+"dfdc CFES-D s17 A1 g_F_FPR (Xu, ding_compat) vs fair_oppoint.json",1.7263689187352576,1.7263689187352576,True
+"dfdc CFES-D s17 A1 r_F_FPR (Xu, ding_compat) vs fair_oppoint.json",0.8115028638071314,0.8115028638071314,True
+dfdc CFES-D s17 A1 pooled TPR,51.250306447658744,51.250306447658744,True
+"dfdc CFES-D s27 A1 i_F_FPR (Xu, ding_compat) vs fair_oppoint.json",10.956717927573017,10.956717927573017,True
+"dfdc CFES-D s27 A1 g_F_FPR (Xu, ding_compat) vs fair_oppoint.json",1.2953207936386772,1.2953207936386772,True
+"dfdc CFES-D s27 A1 r_F_FPR (Xu, ding_compat) vs fair_oppoint.json",2.6748568181484433,2.6748568181484433,True
+dfdc CFES-D s27 A1 pooled TPR,28.47511645011032,28.47511645011032,True
+"dfdc Ding repro (SFD+GDA) s7 A1 i_F_FPR (Xu, ding_compat) vs fair_oppoint.json",18.333715904571335,18.333715904571335,True
+"dfdc Ding repro (SFD+GDA) s7 A1 g_F_FPR (Xu, ding_compat) vs fair_oppoint.json",2.248338828681061,2.248338828681061,True
+"dfdc Ding repro (SFD+GDA) s7 A1 r_F_FPR (Xu, ding_compat) vs fair_oppoint.json",4.304968967082243,4.304968967082243,True
+dfdc Ding repro (SFD+GDA) s7 A1 pooled TPR,14.452071586173082,14.452071586173082,True
+"celebdf CFES-D s7 A1 i_F_FPR (Xu, ding_compat) vs fair_oppoint.json",5.436860556727647,5.436860556727647,True
+"celebdf CFES-D s7 A1 g_F_FPR (Xu, ding_compat) vs fair_oppoint.json",1.297908135882303,1.297908135882303,True
+"celebdf CFES-D s7 A1 r_F_FPR (Xu, ding_compat) vs fair_oppoint.json",4.390088069567318,4.390088069567318,True
+celebdf CFES-D s7 A1 pooled TPR,72.00263794240492,72.00263794240492,True
+"celebdf CFES-D s17 A1 i_F_FPR (Xu, ding_compat) vs fair_oppoint.json",29.050843132524275,29.050843132524275,True
+"celebdf CFES-D s17 A1 g_F_FPR (Xu, ding_compat) vs fair_oppoint.json",5.653032981178832,5.653032981178832,True
+"celebdf CFES-D s17 A1 r_F_FPR (Xu, ding_compat) vs fair_oppoint.json",26.376546517713262,26.376546517713262,True
+celebdf CFES-D s17 A1 pooled TPR,75.05825456144207,75.05825456144207,True
+"celebdf CFES-D s27 A1 i_F_FPR (Xu, ding_compat) vs fair_oppoint.json",26.94460010894517,26.94460010894517,True
+"celebdf CFES-D s27 A1 g_F_FPR (Xu, ding_compat) vs fair_oppoint.json",3.0138277655751473,3.0138277655751473,True
+"celebdf CFES-D s27 A1 r_F_FPR (Xu, ding_compat) vs fair_oppoint.json",18.23351345372245,18.23351345372245,True
+celebdf CFES-D s27 A1 pooled TPR,71.66410200043966,71.66410200043966,True
+"celebdf Ding repro (SFD+GDA) s7 A1 i_F_FPR (Xu, ding_compat) vs fair_oppoint.json",67.43195286146391,67.43195286146391,True
+"celebdf Ding repro (SFD+GDA) s7 A1 g_F_FPR (Xu, ding_compat) vs fair_oppoint.json",11.11334208554232,11.11334208554232,True
+"celebdf Ding repro (SFD+GDA) s7 A1 r_F_FPR (Xu, ding_compat) vs fair_oppoint.json",53.215306020045226,53.215306020045226,True
+celebdf Ding repro (SFD+GDA) s7 A1 pooled TPR,58.166630028577714,58.166630028577714,True
+"dfd CFES-D s7 A1 i_F_FPR (Xu, ding_compat) vs fair_oppoint.json",25.902658330706974,25.902658330706974,True
+"dfd CFES-D s7 A1 g_F_FPR (Xu, ding_compat) vs fair_oppoint.json",0.779441061198613,0.779441061198613,True
+"dfd CFES-D s7 A1 r_F_FPR (Xu, ding_compat) vs fair_oppoint.json",7.948924460552368,7.948924460552368,True
+dfd CFES-D s7 A1 pooled TPR,74.7815032575878,74.7815032575878,True
+"dfd CFES-D s17 A1 i_F_FPR (Xu, ding_compat) vs fair_oppoint.json",61.80447502457087,61.80447502457087,True
+"dfd CFES-D s17 A1 g_F_FPR (Xu, ding_compat) vs fair_oppoint.json",1.711873408527459,1.711873408527459,True
+"dfd CFES-D s17 A1 r_F_FPR (Xu, ding_compat) vs fair_oppoint.json",22.833428414823764,22.833428414823764,True
+dfd CFES-D s17 A1 pooled TPR,82.28190052439219,82.28190052439219,True
+"dfd CFES-D s27 A1 i_F_FPR (Xu, ding_compat) vs fair_oppoint.json",16.372687679340107,16.372687679340107,True
+"dfd CFES-D s27 A1 g_F_FPR (Xu, ding_compat) vs fair_oppoint.json",0.35854708659499923,0.35854708659499923,True
+"dfd CFES-D s27 A1 r_F_FPR (Xu, ding_compat) vs fair_oppoint.json",3.8287638287638286,3.8287638287638286,True
+dfd CFES-D s27 A1 pooled TPR,69.6329254727475,69.6329254727475,True
+"dfd Ding repro (SFD+GDA) s7 A1 i_F_FPR (Xu, ding_compat) vs fair_oppoint.json",40.88120967577231,40.88120967577231,True
+"dfd Ding repro (SFD+GDA) s7 A1 g_F_FPR (Xu, ding_compat) vs fair_oppoint.json",3.1022300033377608,3.1022300033377608,True
+"dfd Ding repro (SFD+GDA) s7 A1 r_F_FPR (Xu, ding_compat) vs fair_oppoint.json",10.420260187702048,10.420260187702048,True
+dfd Ding repro (SFD+GDA) s7 A1 pooled TPR,63.65803273478468,63.65803273478468,True

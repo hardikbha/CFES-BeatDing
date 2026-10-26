@@ -1,0 +1,11 @@
+# CFES-ResNet-50, phase 2 (50 epochs): CFES losses from this model's own phase-1 last.pt (two_phase.sh sets
+# model.init_ckpt). Same scope as xception_p2.yaml and Ding's phase 2 (GDA trains the final linear layer only):
+# classifier + patch head trainable, feature extractor and every BatchNorm statistic frozen. On Xception, updating BN
+# statistics collapsed them and training adjust_channel diverged (16 Oct), so the same safe scope is used here.
+# Ding's phase-2 optimiser and batch: SGD 1e-3, 32 real + 32 fake, 1976 steps per epoch.
+_base_: ffpp_ding_resnet.yaml
+model: {resnet: {trainable: head, freeze_all_bn_stats: true}}
+data: {steps_per_epoch: 1976}
+cf: {enabled: true}
+pairs: {enabled: true, per_step: 8}
+loss: {stab: {weight: 0.5}, sens: {weight: 0.5}}

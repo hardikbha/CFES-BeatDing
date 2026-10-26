@@ -1,0 +1,2 @@
+# sens arm on ff2 (dataset: ../ces_ff2.yaml, arm: ../arms/sens.yaml)
+_base_: [../ces_ff2.yaml, ../arms/sens.yaml]

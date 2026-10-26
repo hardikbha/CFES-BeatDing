@@ -1,0 +1,1 @@
+Logging to ../../results/DING_full_s7_epoch2_eval/ff++/ding_full_s7_epoch2

@@ -1,0 +1,2 @@
+# full arm on ffpp (dataset: ../ces_ffpp.yaml, arm: ../arms/full.yaml)
+_base_: [../ces_ffpp.yaml, ../arms/full.yaml]

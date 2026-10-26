@@ -1,0 +1,2 @@
+Logging to /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/results/DING_base_s27
+# of real training samples: 12926, # of fake training samples: 63213, 

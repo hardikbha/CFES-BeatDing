@@ -1,0 +1,5 @@
+fairrel/metrics.py from https://github.com/xiaoman89/FairReL (MIT licence, copy of LICENSE here), commit
+bebc986b5fcf88b42af2194e60a8564faedea722, unmodified (git status clean). sha256 of metrics.py:
+7c5d19497aa4f36b99497cfd36d65d0a66a6cf094e1d7e1e9c7faa7f16ddc360
+scripts/protocol_eval.py imports it from paths.fairrel_repo; this copy is included only so the FairReL-protocol
+numbers can be checked without cloning the repository.

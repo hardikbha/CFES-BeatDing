@@ -1,0 +1,9 @@
+PASS stale_heartbeat_2: 2 contenders all judged the lock stale, exactly 1 ACQUIRED, 1 backed off (exit 4)
+PASS stale_heartbeat_8: 8 contenders all judged the lock stale, exactly 1 ACQUIRED, 7 backed off (exit 4)
+PASS dead_pid_same_host_6: 6 contenders all judged the lock stale, exactly 1 ACQUIRED, 5 backed off (exit 4)
+PASS fresh live lock: contender exits 4
+PASS live owner with a 2-h-old heartbeat clock is not taken over (heartbeat advanced while observed)
+PASS taken-over owner exits without touching the successor's lock; successor releases its own generation
+PASS fencing: a runner whose generation was retired terminates its run within 0s
+PASS paths with spaces: one lock path, acquired and released
+ALL_PASS test_runlock_f1

@@ -1,0 +1,140 @@
+DINGREPRO_LIN PRE-REGISTRATION (written 2026-10-15, before any TEST scoring)
+R = ~/ICLR_2027/research/cvpr_readiness/r20261009 ; A = R/agents/DINGREPRO_LIN
+D = ~/ICLR_2027/related_work/Ding_Fairness-Optimization (official Ding et al. CVPR'26 repo, copied unmodified
+    into A/code/Ding_mod, then patched there -- D itself is never edited).
+Mirrors R/agents/FAIRREL_REPRO/PREREG.txt structure (same data, same cluster/bootstrap scheme).
+
+DISTINCT FROM: (1) agents/DING_repro = a frozen-CLIP-backbone ADAPTATION of Ding's SFD+GDA idea onto our own
+architecture -- NOT this. (2) our own model COVBD3 / Direction A -- unrelated. This agent (DINGREPRO_LIN) is a
+TRUE reproduction: Ding's OWN code, OWN architecture (Xception/ResNet-50, full end-to-end training), run on
+Lin et al.'s REAL annotated data.
+
+1. QUESTION
+  Q1: what does Ding's OWN official code (train_ori_model.py + SFD.py + GDA.py) give on Lin et al.'s released
+      FF++ split (train on FF++ train, select per their own rule, test on FF++ test + Celeb-DF/DFD/DFDC)?
+  Q2: does their fairness mechanism (SFD channel decoupling + GDA Sinkhorn-OT alignment) do anything beyond
+      plain CE training? DING_full - DING_base, paired, video-cluster x seed bootstrap.
+  Gate vs their paper's Table 1/2 (celebdf/DFD/DFDC AUC/AUCavg/F_FPR/F_DP) -- report gap honestly.
+
+2. DATA (built by code/build_ding_csv.py, reusing FAIRREL_REPRO's already-extracted Lin et al. PNGs/manifests,
+   NO re-extraction). Row counts asserted equal to FAIRREL_REPRO source csvs, 0 drops:
+     ffpp_train 69,791 / ffpp_val 23,078 / ffpp_test 23,389 / celebdf_test 28,278 / dfd_test 8,611 /
+     dfdc_test 18,851 (same dedup/cluster/estimability facts as FAIRREL_REPRO PREREG.txt section 2 -- not
+     re-derived here, reused as-is since it is the same underlying Lin et al. data).
+   Format: Ding's dataset.py needs img_path,label,ismale,isasian,iswhite,isblack,intersec_label (1/-1 dummies,
+   intersec_label integer). Lin et al.'s annotation gives only 3 races (Asian/White/Black), 2 genders -> 6
+   intersec groups (F-A,F-B,F-W,M-A,M-B,M-W -> intersec_label 0-5), NOT Ding's original 8 (2 gender x 4 race
+   incl. "others"). DISCLOSED DEVIATION: num_groups=6, not 8 -- forced by the real annotation available, same
+   deviation FAIRREL_REPRO's data necessarily has. data/ff++_ding/{real,fake}{train,val}.csv +
+   data/{ff++,celebdf,dfd,dfdc}/test.csv (Ding's expected directory/file layout).
+
+3. PRETRAINED WEIGHTS (DISCLOSED SUBSTITUTION): Ding's own pretrained/ folder ships no real weights (Baidu Pan
+   link blocked from this cluster; only placeholder look.py/readme.md). Their code hardcodes torch.load of
+   resnet50-19c8e357.pth and xception-b5690688.pth -- both are STANDARD ImageNet checkpoints (torchvision /
+   Cadene pretrainedmodels), not Ding-specific artifacts.
+     - ResNet-50: resnet50-19c8e357.pth already cached at ~/.cache/torch/hub/checkpoints/ with the EXACT
+       filename Ding's code expects -- used as-is, verified present.
+     - Xception: cached xception-43020ad28.pth (different hash suffix, same architecture family, ImageNet
+       pretrained) copied to data/xception-b5690688.pth. Verified clean load test
+       (code/test_xception_load.py): 0 unexpected keys, missing only last_linear/adjust_channel (the new head,
+       expected to be randomly initialized). Ding's build_backbone() unconditionally unsqueezes any
+       "pointwise" weight from 2D->4D assuming their own checkpoint format; our substitute is already 4D, so
+       code/Ding_mod/detectors/xception_detector.py was patched (disclosed, see inline comment) to only
+       unsqueeze when the stored tensor is still 2D. This is a minor, standard-deviation substitution, not
+       expected to materially change results (per task instruction).
+   OTHER DISCLOSED CODE PATCHES (all in A/code/Ding_mod, D itself untouched):
+     - train_ori_model.py: hardcoded output dir_path (`/home/user/local/zhouyunpeng/...`) -> args.result_dir.
+     - detectors/{xception,xception_mlp}_detector.py, res50_detector.py: hardcoded absolute weight paths ->
+       our copied weight files.
+     - src/dataprocess.py: `img_path.lstrip('/')` removed (3 call sites) -- Ding's own csvs store img_path as
+       a path meant to be lstrip'd and resolved relative to a training cwd equal to the dataset root; our
+       csvs store genuine absolute paths into FAIRREL_REPRO's extracted PNGs, so lstrip corrupted them
+       (`/home/...` -> `home/...`, not found). Verified with a smoke test (1 epoch, 32+32 images, CPU): loads
+       weights cleanly, trains, Avg Loss 0.7341 (~ln2, correct CE-at-init magnitude).
+   Env: new packages (fvcore, geomloss, albumentations, clip, efficientnet_pytorch, fairlearn) pip-installed
+   into ~/.conda/envs/qwen38 only (aiface/pulid/qwen38 all lacked them beforehand); PY=qwen38/bin/python.
+
+4. ARMS (3 seeds each: 7, 17, 27). Backbone = XceptionDetector (paper's main-table backbone).
+   DING_base = train_ori_model.py only (50 epochs, SGD lr=1e-3 momentum=0.9 wd=5e-3, bs=64, official defaults
+              unchanged) on ff++_ding/{real,fake}train.csv. Checkpoint = final epoch (49.pth), per their own
+              code (no val-based early stopping in train_ori_model.py -- it saves every epoch, no "best"
+              selection logic exists in the official script; last epoch used, matching their own test.py
+              default checkpoint path convention `.../49.pth`).
+   DING_full = DING_base checkpoint -> SFD.py (compute per-group channel SNNL Fk, decouple channels) ->
+              GDA.py (Sinkhorn-OT distribution alignment fine-tune, 50 epochs, lr=1e-3, sinkhorn_blur=5e-4,
+              lambda_fairloss=0.005, official defaults).
+   NAMED BLOCKER (не yet resolved): SFD.py as shipped is NOT parameterized for our pipeline -- it hardcodes
+   model_name=Res50Detector (we need Xception), hardcoded checkpoint path "sink_results/Res50Detector_ori/
+   49.pth", hardcoded prune count get_min_n(data_average, 10) (fixed top-10 channels, not a --prc percentage
+   argument at all -- the paper's "prc=2%" ablation number does not correspond to any CLI flag in the shipped
+   script). Minimally parameterizing this (model_name, checkpoint path, channel-count-from-percent) is a
+   disclosed, documented code change still to be written and is the current blocker for DING_full; DING_base
+   is unaffected and launches now.
+
+5. SCORING (once per arm x seed). Ding's own test.py + fairness_metrics.py (F_FPR eq.8, F_DP eq.9, es-AUC
+   eq.10 as implemented in their shipped fairness_metrics.py -- used verbatim; EXACTMATCH_plan's
+   ding_metrics.py transcription is NOT used per task instruction to prefer the real code for a true
+   reproduction). Threshold/checkpoint rule = whatever their own test.py/train_ori_model.py actually do (no
+   TPR-0.90 rule exists in train_ori_model.py; test.py takes an explicit --checkpoints path with no
+   selection logic either -- confirms Ding's official pipeline does NOT do val-based checkpoint selection,
+   unlike FairReL).
+
+6. STATISTICS: video-cluster x seed paired bootstrap, same scheme/code pattern as FAIRREL_REPRO's
+   code/analyze.py (reused, re-pointed at Ding's output format). 5,000 reps, seed 2026, paired DING_full vs
+   DING_base. TEST not inspected until all 6 (3 DING_base + 3 DING_full) seeds are DONE.
+
+---
+AMENDMENT 2026-10-15 (before any TEST scoring; predates all 6 training runs -- all prior ding_base/ding_full
+attempts that used the pre-amendment data were killed/failed before producing any usable checkpoint, see
+REPORT.txt for the incident log):
+
+CORRECTION: section 2's "6 intersec groups, Others excluded" was WRONG for Ding et al.'s actual protocol.
+Verified directly against the Ding et al. PDF appendix (Table A.1): Ding et al. does NOT exclude "Others" --
+their paper reports 4 race categories (Asian/Black/White/Others for FF++/DFDC, White/Black/Others for
+DFD/Celeb-DF) x 2 genders = 8 intersec groups, and their published per-set counts are FF++ train 76,139 / val
+25,386 / test 25,401, DFD 9,385, DFDC 22,857, Celeb-DF 28,458.
+
+PROOF + FIX: EXACTMATCH_plan/work/{ff++,dfd,dfdc,celebdf}/*.csv (NOT FAIRREL_REPRO's Others-excluded
+manifests) are already Ding's own native, UNFILTERED annotation format (same columns as Ding's shipped
+dataset/test.csv: img_path,label,ismale,isasian/iswhite/isblack,intersec_label, intersec_label in [0,7] =
+2 gender x 4 race incl. Others -- verified by cross-tabulating intersec_label against the is* flags). Their
+raw row counts are an EXACT match to Ding's Table A.1 for every set: FF++ train 12,926+63,213=76,139, val
+4,092+21,294=25,386, test 25,401; DFD 9,385; DFDC 22,857; Celeb-DF 28,458.
+
+These raw manifests reference frames that FAIRREL_REPRO/EXACTMATCH_plan's extraction never pulled from the
+zips (only extracted the Others-excluded subset -- confirmed in FAIRREL_REPRO/code/build_data.py: "Others
+already excluded by EM parser"). Fix: extracted the MISSING frames (new, from the same already-downloaded
+Lin et al. zips: ff++.zip, dfd.zip, dfdc.zip, celebdf.zip -- no new download) by basename lookup against the
+raw manifests. Code: code/find_missing.py (basename diff) + code/extract_missing.py (pulls only the missing
+names from each zip). Result: FF++ train/val/test, DFD, DFDC now extract/resolve to EXACTLY Ding's reported
+counts (76,139 / 25,386 / 25,401 / 9,385 / 22,857 -- all exact). Celeb-DF resolves to 28,278/28,458 (99.4%,
+180 frames short): celebdf.zip stores its crop_img/ tree as a NESTED 21.6 GB crop_img.zip, and Python's
+zipfile cannot ZipFile.read() a >2^31-byte member in one call (OverflowError) -- a real, specific, still-open
+technical blocker for the last 180 Celeb-DF frames, not a vague "takes time" excuse. Celeb-DF TEST will be
+scored on the 28,278 resolved rows; this is disclosed as a 99.4%-complete set, not a silent gap.
+
+Data rebuilt: code/build_ding_csv.py v2 now sources from EXACTMATCH_plan's raw manifests (img_path remapped
+to the newly-completed extraction directories) instead of FAIRREL_REPRO's 6-group csvs. intersec_label is
+NOT re-derived -- it is already Ding's own native 8-group encoding in the source files, used verbatim.
+Code reverted: src/dataprocess.py num_groups 6->8, GDA.py group_idx random.randint 0-5 -> 0-7 (both were
+DISCLOSED DEVIATIONS added before this amendment that are now UNNECESSARY and have been undone -- the real
+annotation does have 8 groups after all).
+
+INCIDENT: an intermediate state of this amendment (src/dataprocess.py mid-edit, a stray trailing comment
+breaking the open-paren) was live for a few minutes; PBS jobs 42049/42050/42056 (ding_base s17/s27 and a
+resubmitted s7) launched during that window and crashed immediately with a Python SyntaxError at import time
+(see logs/pbs/42049.mgmt01.OU etc.) -- rc=1 before any data loading or training step, so NO checkpoint was
+ever produced or scored from a broken-code or wrong-data state. Fixed, verified with `python3 -m py_compile`,
+and all three DING_base seeds resubmitted clean (jobs 42059/42060/42061) after this fix.
+
+---
+AMENDMENT 2026-10-15 (part 2, same day, before any TEST read): Celeb-DF 180-frame gap CLOSED. Root cause: the
+outer celebdf.zip's nested crop_img.zip member (compress_type=DEFLATE, file_size 21,676,135,376 bytes) cannot
+be read via Python zipfile.ZipFile.read() in one call (OverflowError on a >2^31 byte buffer). Fix: extracted
+the nested crop_img.zip to disk with the `unzip` CLI (first attempt was truncated at 19.69GB by an incidental
+`timeout 100` wrapper -- re-ran without a timeout, got the full 21,676,135,376 bytes matching the outer zip's
+recorded file_size exactly), then `unzip -j <nested> <179+1 names> -d <celebdf extraction dir>` (one name was
+missed on the first pass due to a missing trailing newline in the missing-list file; caught by re-diffing and
+extracted separately). Celeb-DF test now resolves to the full 28,458/28,458 (100%), matching Ding's Table A.1
+exactly, same as every other set. ALL SIX sets (FF++ train/val/test, DFD, DFDC, Celeb-DF) now EXACT MATCH
+Ding et al.'s published Table A.1 counts. No remaining data-count blockers.

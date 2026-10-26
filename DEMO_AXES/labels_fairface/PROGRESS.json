@@ -1,0 +1,119 @@
+{
+ "started": "2026-10-26 03:03:36",
+ "workers": 16,
+ "total_images": 585107,
+ "sets": {
+  "ffpp_test": {
+   "images": 25401,
+   "chunks_done": 64,
+   "cpu_s": 7291.52272439003,
+   "merged": "2026-10-26 03:11:47",
+   "det_mode": {
+    "mmod300": 25362,
+    "fullrect": 39
+   }
+  },
+  "dfdc": {
+   "images": 21381,
+   "chunks_done": 54,
+   "cpu_s": 6733.932278871536,
+   "merged": "2026-10-26 03:18:41",
+   "det_mode": {
+    "mmod300": 21249,
+    "fullrect": 128,
+    "hog400": 4
+   }
+  },
+  "celebdf": {
+   "images": 28458,
+   "chunks_done": 72,
+   "cpu_s": 9201.93375325203,
+   "merged": "2026-10-26 03:28:41",
+   "det_mode": {
+    "mmod300": 28456,
+    "fullrect": 2
+   }
+  },
+  "dfd": {
+   "images": 9385,
+   "chunks_done": 24,
+   "cpu_s": 3011.1518201828003,
+   "merged": "2026-10-26 03:32:14",
+   "det_mode": {
+    "mmod300": 9355,
+    "fullrect": 30
+   }
+  },
+  "ff2pub_test": {
+   "images": 93543,
+   "chunks_done": 234,
+   "cpu_s": 33805.3401787281,
+   "merged": "2026-10-26 04:08:11",
+   "det_mode": {
+    "mmod300": 93135,
+    "fullrect": 380,
+    "hog400": 28
+   }
+  },
+  "ff2pub_select": {
+   "images": 34001,
+   "chunks_done": 86,
+   "cpu_s": 14646.373536109924,
+   "merged": "2026-10-26 04:23:06",
+   "det_mode": {
+    "mmod300": 33807,
+    "fullrect": 181,
+    "hog400": 13
+   }
+  },
+  "ffpp_val": {
+   "images": 25386,
+   "chunks_done": 64,
+   "cpu_s": 14585.985476016998,
+   "merged": "2026-10-26 04:38:35",
+   "det_mode": {
+    "mmod300": 25380,
+    "hog400": 3,
+    "fullrect": 3
+   }
+  },
+  "ffpp_train": {
+   "images": 76139,
+   "chunks_done": 191,
+   "cpu_s": 22402.343922138214,
+   "merged": "2026-10-26 05:00:35",
+   "det_mode": {
+    "mmod300": 76021,
+    "hog400": 92,
+    "fullrect": 26
+   }
+  },
+  "ff2pub_train": {
+   "images": 236163,
+   "chunks_done": 591,
+   "cpu_s": 46788.6391556263,
+   "merged": "2026-10-26 05:49:35",
+   "det_mode": {
+    "mmod300": 234966,
+    "fullrect": 1112,
+    "hog400": 85
+   }
+  },
+  "ff2pub_cal": {
+   "images": 35250,
+   "chunks_done": 89,
+   "cpu_s": 7231.12059545517,
+   "merged": "2026-10-26 05:56:48",
+   "det_mode": {
+    "mmod300": 35041,
+    "fullrect": 191,
+    "hog400": 18
+   }
+  }
+ },
+ "done_images": 585107,
+ "elapsed_s": 10392,
+ "img_per_s": 56.3,
+ "eta_min": 0.0,
+ "updated": "2026-10-26 05:56:48"
+}

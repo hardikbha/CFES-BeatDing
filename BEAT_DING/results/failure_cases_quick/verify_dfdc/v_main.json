@@ -1,0 +1,386 @@
+{
+ "c1": {
+  "n": 22857,
+  "n_unique": 21381,
+  "n_dup_paths": 1476,
+  "dup_rows": 1476,
+  "t": -73.76414591500017,
+  "FP": 4885,
+  "nR": 14699,
+  "FPR": 33.23355330294578,
+  "FN": 2246,
+  "nK": 8158,
+  "FNR": 27.531257661191468,
+  "TPR": 72.46874233880854,
+  "val_FPR": 15.811339198435972,
+  "val_TPR": 94.17676340753263,
+  "med_real_dfdc": -80.86407470703125,
+  "med_real_val": -92.2165298461914,
+  "near_real": 40.85992244370365,
+  "near_fake": 30.742829124785487,
+  "native": {
+   "FPR": 19.436696373902986,
+   "TPR": 59.25471929394459
+  },
+  "A1": {
+   "FPR": 1.9048914892169537,
+   "TPR": 27.163520470703606
+  },
+  "ding": {
+   "FPR": 49.12579087012722,
+   "TPR": 55.601863201765134
+  }
+ },
+ "c2": {
+  "n_real_vid": 473,
+  "vid_with_fp": 380,
+  "ge50": 142,
+  "ge90": 49,
+  "top15_share": 14.698055271238486,
+  "n_half": 79,
+  "n_80": 166,
+  "median_vid_fpr": 20.0
+ },
+ "c4": {
+  "ita4": {
+   "0.0": [
+    36.35,
+    10645
+   ],
+   "1.0": [
+    24.54,
+    1043
+   ],
+   "2.0": [
+    25.94,
+    744
+   ],
+   "3.0": [
+    23.82,
+    1553
+   ],
+   "nan": [
+    27.59,
+    714
+   ]
+  },
+  "ita4_local": {
+   "0.0": [
+    34.57,
+    3465
+   ],
+   "1.0": [
+    37.65,
+    3397
+   ],
+   "2.0": [
+    36.46,
+    3673
+   ],
+   "3.0": [
+    25.28,
+    3450
+   ],
+   "nan": [
+    27.59,
+    714
+   ]
+  },
+  "mst3_vid": {
+   "0": [
+    3.33,
+    30
+   ],
+   "1": [
+    24.64,
+    4212
+   ],
+   "2": [
+    36.78,
+    10457
+   ]
+  },
+  "cl_race": {
+   "asian": [
+    35.82,
+    1569
+   ],
+   "black": [
+    39.31,
+    4363
+   ],
+   "others": [
+    23.35,
+    1199
+   ],
+   "white": [
+    30.76,
+    7568
+   ]
+  },
+  "cl_male": {
+   "0": [
+    37.56,
+    8090
+   ],
+   "1": [
+    27.93,
+    6609
+   ]
+  },
+  "race7": {
+   "Black": [
+    40.14,
+    4158
+   ],
+   "East Asian": [
+    22.05,
+    916
+   ],
+   "Indian": [
+    30.87,
+    149
+   ],
+   "Latino_Hispanic": [
+    34.08,
+    763
+   ],
+   "Middle Eastern": [
+    26.65,
+    1587
+   ],
+   "Southeast Asian": [
+    54.21,
+    356
+   ],
+   "White": [
+    30.9,
+    6770
+   ]
+  }
+ },
+ "c5": {
+  "xu_iFFPR": 32.22825225315636,
+  "dev": {
+   "M-Asian": -10.74,
+   "M-White": -0.85,
+   "M-Black": -2.81,
+   "M-Others": 0.37,
+   "F-Asian": -1.86,
+   "F-White": -3.26,
+   "F-Black": 12.24,
+   "F-Others": 0.1
+  },
+  "grpFPR": {
+   "M-Asian": 22.49,
+   "M-White": 32.39,
+   "M-Black": 30.43,
+   "M-Others": 33.6,
+   "F-Asian": 31.37,
+   "F-White": 29.98,
+   "F-Black": 45.48,
+   "F-Others": 33.33
+  },
+  "null_med": 33.50680239302406,
+  "null_p5": 19.125919038467188,
+  "null_p95": 52.43502476640914,
+  "p": 0.543,
+  "greedy_halve_xu": 9,
+  "greedy_random": {
+   "median": 8.5,
+   "min": 4,
+   "max": 14,
+   "all": [
+    8,
+    14,
+    4,
+    10,
+    6,
+    5,
+    12,
+    6,
+    5,
+    11,
+    10,
+    9,
+    7,
+    9,
+    6,
+    14,
+    6,
+    4,
+    9,
+    12
+   ]
+  },
+  "fblack_nvid": 68,
+  "fblack_fpr": 45.476190476190474,
+  "fblack_after_drop10_by_fp": 36.21468926553673,
+  "fblack_after_drop10_by_fpr": 36.4804469273743,
+  "vid_change": 76,
+  "top15_change": 6,
+  "cl_iFFPR": 68.7901684866609,
+  "cl_grpFPR": {
+   "M-Asian": 14.86,
+   "M-White": 32.82,
+   "M-Black": 27.23,
+   "M-Others": 17.03,
+   "F-Asian": 43.85,
+   "F-White": 28.96,
+   "F-Black": 45.47,
+   "F-Others": 32.55
+  },
+  "cl_null_med": 35.76510741409526,
+  "cl_null_p95": 54.47503832538042,
+  "cl_p": 0.0045,
+  "ding_cl_iFFPR": 62.51942725103109,
+  "ding_xu_iFFPR": 42.5565132704654
+ },
+ "c6": {
+  "FN": 2246,
+  "FWhite_FN": 1119,
+  "FWhite_share_FN": 49.821905609973285,
+  "FWhite_share_fake": 37.69306202500613,
+  "FNR_FWhite": 36.390243902439025,
+  "FNR_MWhite": 16.916299559471366,
+  "FNR_female": 31.900961735215876,
+  "FNR_male": 21.002751452155305,
+  "n_fake_vid": 284,
+  "ge50": 72,
+  "all": 8,
+  "ding_ge50": 128,
+  "top15_FWhite_by_count": 11,
+  "top15_FWhite_by_fnr": 12,
+  "methods": {
+   "unknown": 8158
+  }
+ },
+ "c7": {
+  "vids": 4,
+  "rows": 120,
+  "FNR": 57.49999999999999,
+  "FA": [
+   1,
+   30,
+   56.666666666666664
+  ],
+  "MA": [
+   3,
+   90,
+   57.77777777777777
+  ]
+ },
+ "c8": {
+  "fp_shared": 54.779938587512795,
+  "chance_fp": 49.12579087012722,
+  "fn_shared": 54.31878895814782,
+  "chance_fn": 44.39813679823486,
+  "only_ours_fp": 2209,
+  "only_ours_fn": 1026,
+  "only_ding_fp": 4545,
+  "only_ding_fn": 2402,
+  "rho_real": 0.2458950489266037,
+  "rho_fake": 0.2873760229630953,
+  "vid_fp_ours_gt50": 44,
+  "vid_fp_ding_gt50": 124,
+  "vid_fn_ours_gt50": 21,
+  "vid_fn_ding_gt50": 81
+ },
+ "c9": {
+  "fp_vids": {
+   "0_7434": 6,
+   "0_5633": 3,
+   "0_6104": 2,
+   "0_7964": 1
+  },
+  "fp_top": [
+   "0_6104",
+   67.53836822509766
+  ],
+  "fp_7434": [
+   61.53,
+   60.6,
+   58.65,
+   54.98,
+   53.39,
+   47.22
+  ],
+  "fp_7434_g": "F-Black",
+  "fn_vids": {
+   "0_4680": 6,
+   "0_7028": 2,
+   "0_5573": 1,
+   "0_7113": 1,
+   "0_4367": 1,
+   "0_4776": 1
+  },
+  "fn_4680": [
+   -119.21,
+   -114.53,
+   -112.89,
+   -112.57,
+   -111.57,
+   -111.5
+  ],
+  "fn_4680_g": "F-White",
+  "fn_4680_clgrp": "F-White"
+ },
+ "sheets": {
+  "fp_ding_wrong": 22,
+  "fn_ding_wrong": 23,
+  "fn_white_women_cl": 20,
+  "fn_white_women_xu": 16,
+  "fp_paths": [
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_6104_71.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_7434_171.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_7964_51.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_5633_241.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_4516_241.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_6463_21.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_4191_221.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_7492_161.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_7077_61.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_6593_181.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_6208_131.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_6566_201.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_4459_141.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_5804_91.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_7279_141.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_4692_31.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_6012_191.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_7825_241.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_7406_231.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_5719_241.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_7894_241.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_7085_211.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_4543_131.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_6554_61.png"
+  ],
+  "fn_paths": [
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_5573_191.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_4680_251.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_7028_191.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_7113_251.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_4367_91.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_4776_1.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_4609_251.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_7493_121.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_6894_241.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_7480_181.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_7547_1.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_6647_71.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_7411_121.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_4277_1.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_7277_21.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_7176_251.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_5877_31.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_6577_101.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_6231_271.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_5849_1.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_4900_191.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_7811_11.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_4734_131.png",
+   "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_7129_81.png"
+  ]
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "manifest_rows": 787669,
+ "train_fakes": 469043,
+ "train_reals": 32992,
+ "manifest_fakes_in_train": 464517,
+ "with_real_path": 464517,
+ "real_path_not_in_train_dropped": 0,
+ "pairs": 464517,
+ "train_fakes_without_pair": 4526,
+ "pairs_per_family": {
+  "swap": 166443,
+  "restore": 90785,
+  "edit": 90630,
+  "reenact": 49704,
+  "idsyn": 29559,
+  "synth": 26897,
+  "gan": 10499
+ }
+}

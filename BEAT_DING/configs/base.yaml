@@ -1,0 +1,110 @@
+# CFES defaults. Dataset configs inherit this with `_base_: base.yaml` and override data/cf.face_mask/eval.
+# Every loss term has a weight; weight 0 switches it off (ablation). Component switches:
+#   model.patch_head.enabled, model.score_path (cls | topk | fused), cf.enabled, pairs.enabled
+paths:
+  fairrel_repo: /home/sachin.chaudhary/ICLR_2027/related_work/FairReL   # CLIP backbone + rank-1 SVD adapters
+
+seed: 7
+log_every: 20
+
+model:
+  backbone: ViT-L-14
+  pretrained: openai
+  rank: 1                # trainable rank-1 residual per attention projection (FairReL/Effort form)
+  pooling: cls
+  patch_head: {enabled: true, hidden: 256}   # hidden 0 = single linear layer
+  local_norm: false     # review 4: running-RMS normalisation of the local contribution (see cfes/model.py)
+  local_norm_momentum: 0.01
+  patch_detach: false   # review 4: patch head on stop-gradient backbone features (stabilisation candidate)
+  score_path: fused      # s = s_cls + alpha * topk_mean(P)
+  topk: 8
+  alpha_init: 0.0        # patch path starts with no influence on the image score
+  alpha_param: raw       # raw = unconstrained alpha (all runs up to 16 Oct); softplus = alpha = softplus(beta) >= 0
+                         # (needs alpha_init > 0; a raw-alpha init_ckpt is converted on load)
+  init_from: null        # optional FairReL-code checkpoint (backbone.* + classifier.*) to warm-start
+
+data:
+  input_size: 224
+  batch_size: 32         # 16 real + 16 fake
+  num_workers: 8
+  demographics_reliable: false
+  pairing: null          # ffpp | ff2 (scripts/build_pairs.py)
+
+cf:
+  enabled: true
+  interventions: [bg_blur, bg_swap, photometric]
+  probs: {bg_blur: 0.6, bg_swap: 0.0, photometric: 0.4}   # bg_swap off: its seam mimics a face-swap blend boundary
+  bg_blur_sigma: [2.0, 6.0]                  # pixels at 224
+  photometric: {brightness: 0.08, contrast: 0.10, saturation: 0.10, gamma: [0.9, 1.1]}
+  face_mask: {cx: 0.5, cy: 0.5, ax: 0.30, ay: 0.38, dilate: 1.15}   # fractions of the crop; set per dataset
+
+pairs:
+  enabled: true
+  csv: null
+  per_step: 8            # pairs per step (16 extra images)
+  shared_intervention: true
+  diff_tau: 0.0314       # 8/255 grey change counts as manipulated
+  align_tau: 0.015       # pair is pixel-aligned if background grey diff <= this (see logs/ffpp_pairs_alignment.png)
+
+loss:
+  det:   {weight: 1.0, mode: balanced}
+  stab:  {weight: 0.5, huber_delta: 1.0, map_weight: 1.0, bg_evidence_weight: 0.5}
+  sens:  {weight: 0.5, margin: 2.0, map_margin: 1.0, map_weight: 1.0, unchanged_weight: 0.5, changed_thr: 0.25,
+          map_terms: true}   # map_terms = heuristic patch supervision from raw pixel differences (NOT validated
+                             # masks) on aligned pairs; false keeps only the score margin
+  loc:   {weight: 0.0}   # optional direct map supervision on aligned pairs (ELF L_loc)
+  align: {weight: 0.0, temperature: 1.0, n_min: 2, require_strat: false}   # needs data.demographics_reliable: true
+  orth:  {weight: 0.1}   # FairReL orthogonality of the rank-1 residuals
+  risk: {weight: 0.0, tau: 1.0, include_views: true, n_min: 2}   # real-image subgroup risk, smooth worst group (review 4)
+  dalign: {weight: 0.0, dist: w1, quantiles: 32, n_min: 2}   # class-conditional W1 alignment of standardised logits (review 3)
+  view_det: {weight: 0.0}         # BCE on the nuisance views with their labels, no consistency (augmentation control)
+  scale: {weight: 0.0, cap: 4.0}   # logit-scale hinge mean(max(0,|s|-cap)) on detection-labelled scores (option 2)
+  mfer_margin: {weight: 0.0, margin: 2.0}   # MFER: fake above its matched real (needs mfer.enabled)
+  mfer_cons:   {weight: 0.0}                # MFER: equal delta across groups within a matched set
+  mfer_det:    {weight: 0.0}                # MFER: BCE on the valid matched images themselves
+  pair_det:    {weight: 0.0}                # BCE on the (fake, own source real) pair images (exposure matching)
+  strat_det:   {weight: 0.0}                # BCE on the group-stratified batch (needs strat.enabled)
+
+mfer:                    # Matched Forensic Evidence Response; off unless a VALIDATED matched-set file is given
+  enabled: false
+  csv: null              # set_id, group, fake_path, real_path
+  validated: false       # must be set true explicitly, after the matched-set audit; training refuses otherwise
+  min_groups: 2
+  max_groups: 8
+  oversize: error        # set larger than max_groups: error | random (random subset each draw)
+  smoke: false           # set only by train.py --smoke: allows a smoke_only (unvalidated) fixture, output smoke_*
+  sets_per_step: 4
+
+optim:
+  lr: 1.0e-3
+  weight_decay: 4.0e-3
+  epochs: 10
+  warmup_steps: 200
+  schedule: cosine
+  grad_clip: 1.0
+  amp: true              # bf16 autocast on GPU
+
+strat:                   # group-stratified auxiliary batch: per_cell images from EVERY (label, group) cell per step
+  enabled: false
+  per_cell: 2
+
+select:
+  include_init: false    # true: the starting checkpoint (epoch -1) is an eligible selection candidate
+  metric: val_auc        # one fixed rule; or val_auc_minus_inter_ffpr
+
+ckpt:
+  full: true             # full state dict (frozen SVD factors included) so loading never depends on re-running SVD
+
+eval:
+  batch_size: 128
+  val_tpr: 0.90          # validation-calibrated threshold (reported next to Ding's fixed 0.5)
+  test_sets: {}
+
+debug:
+  max_train_items: null
+  max_steps_per_epoch: null
+  max_eval_items: null
+  max_pairs: null
+  stop_after_epochs: null   # smoke tests: stop at this epoch boundary without writing TRAINED (simulated interruption)
+  save_val_probs: false     # smoke tests: save each epoch's validation probabilities
+  term_grad_norms: false    # diagnostics: per-loss-term gradient norms at every logged step (extra backward passes)

@@ -1,0 +1,3 @@
+# Arm D: B + the same real-image subgroup risk term (same weight as selected for C).
+_base_: clip_B.yaml
+loss: {risk: {weight: 1.0, tau: 1.0, include_views: true, n_min: 2}}

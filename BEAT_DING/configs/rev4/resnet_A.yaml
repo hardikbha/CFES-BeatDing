@@ -1,0 +1,6 @@
+# Review-4 arm A on ResNet-50 (CFES row of Table 3): the ResNet CFES recipe (study/resnet_B.yaml: det + pair_det +
+# strat_det + stability + sensitivity) with the common tanh gate and the operating-point-aware selection rule.
+# Mirrors configs/rev4/clip_A.yaml; resnet_C.yaml = this + the real-image subgroup-risk term.
+_base_: ../study/resnet_B.yaml
+model: {alpha_param: tanh}
+select: {metric: val_oppoint, include_init: true}

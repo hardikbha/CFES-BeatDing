@@ -1,0 +1,98 @@
+{
+ "run": "runs/ffpp_B0_s7",
+ "best_epoch": 2,
+ "best_select_recorded": 85.62377137693542,
+ "per_epoch_val_logits_saved": false,
+ "epochs": [
+  {
+   "epoch": -1,
+   "val_auc_prob": 56.7588251055993,
+   "select": -1000000000.0,
+   "fake_logit_mean": null,
+   "logit_std": null
+  },
+  {
+   "epoch": 0,
+   "val_auc_prob": 94.35141069756455,
+   "select": 84.34525739236061,
+   "fake_logit_mean": 10.956804275512695,
+   "logit_std": 8.157998085021973
+  },
+  {
+   "epoch": 1,
+   "val_auc_prob": 94.23434873186734,
+   "select": 84.7899042874229,
+   "fake_logit_mean": 13.27382755279541,
+   "logit_std": 11.414251327514648
+  },
+  {
+   "epoch": 2,
+   "val_auc_prob": 94.20117723467601,
+   "select": 85.62377137693542,
+   "fake_logit_mean": 16.23716926574707,
+   "logit_std": 14.011909484863281
+  },
+  {
+   "epoch": 3,
+   "val_auc_prob": 94.39332437161221,
+   "select": 82.02968800797585,
+   "fake_logit_mean": 22.9438533782959,
+   "logit_std": 17.214298248291016
+  },
+  {
+   "epoch": 4,
+   "val_auc_prob": 94.43663587584183,
+   "select": 84.43663587584183,
+   "fake_logit_mean": 24.634912490844727,
+   "logit_std": 21.182586669921875
+  },
+  {
+   "epoch": 5,
+   "val_auc_prob": 94.03524515187046,
+   "select": 84.73935907592109,
+   "fake_logit_mean": 29.491086959838867,
+   "logit_std": 22.268648147583008
+  },
+  {
+   "epoch": 6,
+   "val_auc_prob": 93.67287144892605,
+   "select": 85.05121181460818,
+   "fake_logit_mean": 32.900482177734375,
+   "logit_std": 25.144718170166016
+  },
+  {
+   "epoch": 7,
+   "val_auc_prob": 93.66951860748388,
+   "select": 82.55840749637277,
+   "fake_logit_mean": 34.417293548583984,
+   "logit_std": 26.526004791259766
+  },
+  {
+   "epoch": 8,
+   "val_auc_prob": 93.44532925488261,
+   "select": 77.3342181437715,
+   "fake_logit_mean": 35.98415756225586,
+   "logit_std": 27.182649612426758
+  },
+  {
+   "epoch": 9,
+   "val_auc_prob": 93.44970464697514,
+   "select": 79.00526020253069,
+   "fake_logit_mean": 35.819297790527344,
+   "logit_std": 27.500158309936523
+  }
+ ],
+ "best_ckpt_from_eval": {
+  "val_auc_logit": 94.20117723467601,
+  "val_auc_prob_recomputed": 94.20117723467601,
+  "inter_es_auc_logit": 77.64900612998177,
+  "inter_es_auc_prob": 77.64900612998174,
+  "select_value_fixed_rule": 85.62377137693542,
+  "select_value_recorded": 85.62377137693542,
+  "n_real_saturated": 0,
+  "n_fake_saturated": 0,
+  "n_real": 4092,
+  "n_fake": 21294,
+  "cross_class_sigmoid_tie_pairs": 0
+ }
+}

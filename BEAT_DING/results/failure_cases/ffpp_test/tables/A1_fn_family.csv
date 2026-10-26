@@ -1,0 +1,3 @@
+family,n,n_err,n_videos,n_videos_with_err,rate_%,share_of_errors_%
+identity-swap,11982,1318,401,151,10.99983308295777,32.185592185592185
+reenactment,8881,2777,297,182,31.269001238599255,67.81440781440782

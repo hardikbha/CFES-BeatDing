@@ -1,0 +1,24 @@
+# Beat-Ding on ResNet-50 (Ding's Table 3; plan Amendment 2): CFES-ResNet (rev4 arm A = the "ours" ResNet-50 row: Ding's
+# ResNet50 'adjust_channel', ImageNet-1k V1 init, phase 2 from runs/resnet_s<seed>_p1/last.pt with the head-only scope,
+# frozen BN statistics, SGD 1e-3, fp32) + Arm E's soft group-FPR-gap at w* = 1 (Amendment 1), every Beat-Ding
+# component OFF. Same within-run selection as the CLIP arms (val AUC + val intersectional es-AUC) and the same matched
+# operating point (val TPR 94.18 %, the Xception reproduction's: disclosed proxy, no Ding ResNet reproduction exists).
+# NOTE: CLIP Arm E also carries CFES-D's real-group risk (0.3) and local norm; the ResNet base follows the coordinator's
+# definition "CFES-ResNet + Arm E group-FPR-gap" (no risk term; the ResNet model has no local norm).
+_base_: ../rev4/resnet_A.yaml
+loss:
+  fprgap: {weight: 1.0, q: 0.9, tau: 0.5, n_min: 2, include_views: true, window: 4096}
+  esa: {weight: 0.0, q_real: [0.5, 0.75, 0.9, 0.95], q_fake: [0.05, 0.1, 0.25, 0.5], n_min: 4,
+        levels: [gender, race, intersection]}
+  gauc: {weight: 0.0, tau: 1.0, n_min: 4, levels: [gender, race, intersection]}
+data:
+  aug: {enabled: false, p: 0.6, hflip: 0.5, ops: [jpeg, bilateral, gblur, downup, photometric, unsharp],
+        jpeg_q: [30, 90], bilateral_d: [5, 7, 9], bilateral_sigma: [20.0, 80.0], gblur_sigma: [0.4, 1.6],
+        downup_scale: [0.4, 0.9], gamma: [0.6, 1.6], brightness: 0.25, contrast: 0.25, saturation: 0.30,
+        unsharp_sigma: [0.5, 1.5], unsharp_amount: [0.5, 1.5]}
+model:
+  # C on ResNet: layer2 / layer3 / layer4 maps -> per-stage 1x1 conv evidence map -> pooled to the 7 x 7 grid ->
+  # averaged -> top-k (4, as the existing ResNet map) fused with its own tanh gate initialised at 0 (cfes/model_resnet.py)
+  multilayer: {enabled: false, stages: [layer2, layer3, layer4], gate_max: 1.0, init_seed: 0}
+select: {metric: val_auc_plus_inter_es_auc, include_init: true}
+bd: {log_val_ding: true}

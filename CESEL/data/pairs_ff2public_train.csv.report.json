@@ -1,0 +1,50 @@
+{
+ "train": {
+  "rows": 218266,
+  "reals": 16777,
+  "fakes": 201489
+ },
+ "realval": {
+  "rows": 2438,
+  "reals": 2438,
+  "fakes": 0
+ },
+ "fakeval": {
+  "rows": 28669,
+  "reals": 0,
+  "fakes": 28669
+ },
+ "cal": {
+  "rows": 32255,
+  "reals": 2509,
+  "fakes": 29746
+ },
+ "test": {
+  "rows": 87564,
+  "reals": 5441,
+  "fakes": 82123
+ },
+ "provenance_rows": 369192,
+ "pairs": {
+  "in": 464517,
+  "kept": 197447,
+  "fake_not_in_public_train": 266834,
+  "real_not_in_public_train": 214388,
+  "dropped_fake_is_inswapper": 64073,
+  "dropped_fake_in_public_but_cell_invalid": 18133,
+  "kept_per_family": {
+   "swap": 50778,
+   "edit": 48690,
+   "restore": 46847,
+   "reenact": 25031,
+   "idsyn": 10742,
+   "synth": 8630,
+   "gan": 6729
+  }
+ },
+ "pairs_cfes_format": {
+  "in": 464517,
+  "kept": 197444,
+  "file": "agents/CESEL/data/pairs_ff2public_train_cfesformat.csv"
+ }
+}

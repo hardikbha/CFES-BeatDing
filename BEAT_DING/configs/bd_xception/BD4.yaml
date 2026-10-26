@@ -1,0 +1,3 @@
+# X BD4 = base + A + B + C + D (group-AUC floor 0.5)
+_base_: BD3.yaml
+loss: {gauc: {weight: 0.5}}

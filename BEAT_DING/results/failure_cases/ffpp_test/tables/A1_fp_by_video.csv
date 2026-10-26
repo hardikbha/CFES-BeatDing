@@ -1,0 +1,268 @@
+video,n,n_fp,group,cl_gender,cl_race,ff_race7,age_vid,ita_vid,ita4,max_logit,ding_fp,fp_rate_%,ding_fp_rate_%
+0_youtube_845,29,12,M-White,male,white,White,42.0,12.86,Q1 darkest,31.92224884033203,21,41.37931034482759,72.41379310344827
+0_youtube_018,29,7,F-White,female,white,White,31.0,35.08,Q2,47.017555236816406,21,24.137931034482758,72.41379310344827
+0_youtube_383,30,7,M-White,male,white,Middle Eastern,34.0,44.49,Q3,12.439592361450195,2,23.333333333333332,6.666666666666667
+0_youtube_307,30,6,M-White,male,white,Middle Eastern,55.5,58.86,Q4 lightest,46.2203369140625,27,20.0,90.0
+0_youtube_348,27,6,F-White,female,white,White,25.0,32.38,Q2,24.681371688842773,3,22.22222222222222,11.11111111111111
+0_youtube_446,30,5,F-White,female,white,White,20.0,57.97,Q4 lightest,38.15448760986328,4,16.666666666666668,13.333333333333334
+0_youtube_237,30,4,M-White,male,white,White,24.0,45.86,Q3,28.780412673950195,1,13.333333333333334,3.3333333333333335
+0_youtube_062,29,4,F-Asian,female,asian,East Asian,31.0,46.09,Q3,27.495508193969727,0,13.793103448275861,0.0
+0_youtube_722,29,4,F-White,female,white,White,25.0,14.07,Q1 darkest,22.955089569091797,15,13.793103448275861,51.724137931034484
+0_youtube_305,30,3,M-White,female,asian,Middle Eastern,28.0,80.29,Q4 lightest,29.741348266601562,14,10.0,46.666666666666664
+0_youtube_019,30,3,F-White,female,white,White,31.0,83.77,Q4 lightest,20.547115325927734,14,10.0,46.666666666666664
+0_youtube_930,28,2,F-Asian,female,asian,East Asian,18.0,68.43,Q4 lightest,24.06511688232422,5,7.142857142857143,17.857142857142858
+0_youtube_202,29,2,F-White,female,white,Middle Eastern,27.0,15.74,Q1 darkest,14.497137069702148,2,6.896551724137931,6.896551724137931
+0_youtube_547,30,2,M-White,male,white,Middle Eastern,23.5,36.96,Q3,-2.165193557739258,13,6.666666666666667,43.333333333333336
+0_youtube_323,29,2,F-White,female,white,White,25.0,44.98,Q3,-5.966382026672363,0,6.896551724137931,0.0
+0_youtube_095,30,1,F-White,female,white,White,27.0,50.4,Q3,38.65800476074219,16,3.3333333333333335,53.333333333333336
+0_youtube_438,29,1,F-White,female,white,White,29.0,85.43,Q4 lightest,33.59068298339844,6,3.4482758620689653,20.689655172413794
+0_youtube_288,29,1,F-White,female,white,East Asian,25.0,13.97,Q1 darkest,28.799684524536133,2,3.4482758620689653,6.896551724137931
+0_youtube_345,29,1,M-Asian,male,asian,East Asian,25.0,20.32,Q2,20.60674285888672,10,3.4482758620689653,34.48275862068966
+0_youtube_736,29,1,M-White,female,white,White,37.0,72.62,Q4 lightest,20.533723831176758,0,3.4482758620689653,0.0
+0_youtube_862,29,1,F-White,female,white,East Asian,26.0,27.94,Q2,17.0550594329834,0,3.4482758620689653,0.0
+0_youtube_642,29,1,F-White,female,white,White,24.0,52.05,Q3,16.02107048034668,3,3.4482758620689653,10.344827586206897
+0_youtube_191,29,1,F-White,female,white,White,33.0,7.003,Q1 darkest,11.671782493591309,0,3.4482758620689653,0.0
+0_youtube_729,29,1,M-White,male,white,White,47.0,9.473,Q1 darkest,2.6962194442749023,3,3.4482758620689653,10.344827586206897
+0_youtube_513,29,1,M-Asian,male,asian,East Asian,29.0,-7.013,Q1 darkest,1.8353204727172852,13,3.4482758620689653,44.827586206896555
+0_youtube_458,29,1,F-Black,female,black,Black,14.0,-2.416,Q1 darkest,1.3584575653076172,14,3.4482758620689653,48.275862068965516
+0_youtube_133,29,1,M-White,male,white,White,44.0,2.743,Q1 darkest,0.428955078125,2,3.4482758620689653,6.896551724137931
+0_youtube_985,29,1,F-Asian,female,asian,East Asian,27.0,16.94,Q1 darkest,0.2748527526855469,9,3.4482758620689653,31.03448275862069
+0_youtube_413,29,1,F-White,female,white,White,29.0,65.73,Q4 lightest,-0.46386808156967163,2,3.4482758620689653,6.896551724137931
+0_youtube_958,30,1,F-Asian,female,asian,East Asian,25.0,31.1,Q2,-5.223732948303223,1,3.3333333333333335,3.3333333333333335
+0_youtube_094,29,1,M-White,male,white,White,32.0,55.94,Q4 lightest,-17.950206756591797,9,3.4482758620689653,31.03448275862069
+0_youtube_702,29,0,M-White,male,white,White,32.0,20.08,Q2,-20.435626983642578,1,0.0,3.4482758620689653
+0_youtube_492,29,0,M-White,male,white,White,40.0,35.02,Q2,-22.35934829711914,5,0.0,17.24137931034483
+0_youtube_951,29,0,F-White,female,white,White,26.0,37.14,Q3,-23.687448501586914,1,0.0,3.4482758620689653
+0_youtube_385,30,0,F-White,female,asian,Latino_Hispanic,27.0,88.07,Q4 lightest,-24.861291885375977,3,0.0,10.0
+0_youtube_718,29,0,F-White,female,white,White,25.0,56.39,Q4 lightest,-26.77803611755371,6,0.0,20.689655172413794
+0_youtube_514,30,0,M-White,male,white,Middle Eastern,58.0,50.1,Q3,-31.11440658569336,0,0.0,0.0
+0_youtube_118,29,0,F-Asian,female,asian,Southeast Asian,26.0,11.45,Q1 darkest,-32.25539779663086,1,0.0,3.4482758620689653
+0_youtube_956,30,0,F-White,female,white,White,33.0,33.08,Q2,-35.70228576660156,0,0.0,0.0
+0_youtube_063,30,0,M-White,male,white,White,33.0,84.11,Q4 lightest,-35.95013427734375,0,0.0,0.0
+0_youtube_230,29,0,F-White,female,white,White,44.0,57.44,Q4 lightest,-37.436546325683594,6,0.0,20.689655172413794
+0_youtube_442,29,0,M-White,male,white,White,24.0,69.94,Q4 lightest,-39.936195373535156,3,0.0,10.344827586206897
+0_youtube_805,29,0,M-Others,male,others,Middle Eastern,27.0,41.02,Q3,-40.60020446777344,0,0.0,0.0
+0_youtube_616,30,0,F-Asian,female,asian,East Asian,37.0,34.48,Q2,-41.47297668457031,18,0.0,60.0
+0_youtube_909,29,0,M-White,male,white,Middle Eastern,24.0,40.99,Q3,-42.521636962890625,14,0.0,48.275862068965516
+0_youtube_701,1,0,M-White,male,white,White,59.0,12.03,Q1 darkest,-43.913658142089844,1,0.0,100.0
+0_youtube_047,29,0,F-White,female,white,Middle Eastern,24.0,37.62,Q3,-46.84770965576172,12,0.0,41.37931034482759
+0_youtube_662,29,0,F-Asian,female,asian,East Asian,25.0,80.46,Q4 lightest,-48.363277435302734,0,0.0,0.0
+0_youtube_472,29,0,F-White,female,white,Latino_Hispanic,23.0,46.1,Q3,-49.62218475341797,6,0.0,20.689655172413794
+0_youtube_445,30,0,M-White,male,white,White,42.0,29.56,Q2,-50.81529998779297,0,0.0,0.0
+0_youtube_103,29,0,F-White,female,white,Middle Eastern,28.0,45.71,Q3,-52.89351272583008,7,0.0,24.137931034482758
+0_youtube_081,29,0,M-White,male,white,Middle Eastern,24.0,33.17,Q2,-54.273826599121094,0,0.0,0.0
+0_youtube_727,29,0,M-White,male,white,White,36.0,42.99,Q3,-54.90822219848633,3,0.0,10.344827586206897
+0_youtube_948,30,0,F-Others,female,others,White,23.0,48.49,Q3,-54.972328186035156,1,0.0,3.3333333333333335
+0_youtube_204,30,0,F-White,female,white,White,29.0,62.27,Q4 lightest,-55.17145919799805,2,0.0,6.666666666666667
+0_youtube_562,29,0,M-White,male,white,White,51.0,16.37,Q1 darkest,-55.53044891357422,2,0.0,6.896551724137931
+0_youtube_372,28,0,F-Asian,female,asian,East Asian,27.5,54.27,Q4 lightest,-56.0561637878418,0,0.0,0.0
+0_youtube_209,29,0,M-White,male,white,White,42.0,29.63,Q2,-56.121070861816406,3,0.0,10.344827586206897
+0_youtube_534,23,0,F-White,female,white,White,10.0,39.4,Q3,-57.039634704589844,1,0.0,4.3478260869565215
+0_youtube_599,30,0,F-White,female,white,White,33.0,24.24,Q2,-57.199867248535156,1,0.0,3.3333333333333335
+0_youtube_381,29,0,F-White,female,white,White,26.0,46.06,Q3,-57.23100280761719,0,0.0,0.0
+0_youtube_923,29,0,M-White,male,asian,White,32.0,-21.84,Q1 darkest,-57.88096237182617,24,0.0,82.75862068965517
+0_youtube_747,1,0,M-Asian,male,asian,East Asian,57.0,16.41,Q1 darkest,-58.46666717529297,0,0.0,0.0
+0_youtube_574,29,0,M-Asian,male,asian,East Asian,40.0,-89.37,Q1 darkest,-58.47294235229492,5,0.0,17.24137931034483
+0_youtube_873,30,0,M-White,male,white,White,23.0,33.43,Q2,-58.49794006347656,0,0.0,0.0
+0_youtube_434,29,0,F-Asian,female,white,White,27.0,33.1,Q2,-60.33816146850586,1,0.0,3.4482758620689653
+0_youtube_857,29,0,M-White,male,white,Middle Eastern,34.0,-3.159,Q1 darkest,-60.57491683959961,7,0.0,24.137931034482758
+0_youtube_877,29,0,M-White,male,white,Middle Eastern,29.0,31.77,Q2,-60.853172302246094,1,0.0,3.4482758620689653
+0_youtube_836,29,0,F-Black,female,black,Black,25.0,-61.47,Q1 darkest,-61.231529235839844,8,0.0,27.586206896551722
+0_youtube_058,29,0,M-Asian,male,asian,East Asian,19.0,3.009,Q1 darkest,-61.621620178222656,8,0.0,27.586206896551722
+0_youtube_719,1,0,M-Others,male,white,Middle Eastern,39.0,22.88,Q2,-62.267791748046875,0,0.0,0.0
+0_youtube_763,29,0,F-Others,female,asian,Southeast Asian,5.0,,missing,-62.461151123046875,14,0.0,48.275862068965516
+0_youtube_915,29,0,M-White,male,white,White,28.0,2.922,Q1 darkest,-63.406494140625,0,0.0,0.0
+0_youtube_813,29,0,F-Asian,female,asian,Latino_Hispanic,14.0,77.98,Q4 lightest,-64.0304946899414,1,0.0,3.4482758620689653
+0_youtube_030,29,0,F-Others,female,others,Latino_Hispanic,26.0,77.59,Q4 lightest,-64.71392822265625,2,0.0,6.896551724137931
+0_youtube_886,29,0,M-White,male,white,Middle Eastern,51.0,15.02,Q1 darkest,-65.43228149414062,2,0.0,6.896551724137931
+0_youtube_621,28,0,F-Asian,female,asian,Latino_Hispanic,22.5,80.0,Q4 lightest,-65.69746398925781,4,0.0,14.285714285714286
+0_youtube_037,28,0,F-White,female,white,Middle Eastern,26.5,55.79,Q4 lightest,-66.671630859375,0,0.0,0.0
+0_youtube_715,29,0,M-Black,male,black,Black,27.0,20.09,Q2,-66.81751251220703,0,0.0,0.0
+0_youtube_595,30,0,F-White,female,white,Middle Eastern,23.0,2.607,Q1 darkest,-67.10224914550781,11,0.0,36.666666666666664
+0_youtube_635,29,0,F-Asian,female,asian,East Asian,22.0,61.38,Q4 lightest,-68.11283874511719,0,0.0,0.0
+0_youtube_974,30,0,M-Others,male,others,Middle Eastern,40.0,27.88,Q2,-68.54498291015625,1,0.0,3.3333333333333335
+0_youtube_687,29,0,F-White,female,white,White,33.0,-15.28,Q1 darkest,-68.61133575439453,0,0.0,0.0
+0_youtube_652,29,0,F-White,female,white,White,6.0,86.29,Q4 lightest,-68.95700073242188,0,0.0,0.0
+0_youtube_332,1,0,F-White,female,white,East Asian,34.0,-66.65,Q1 darkest,-68.96868896484375,0,0.0,0.0
+0_youtube_746,29,0,M-White,male,white,White,48.0,16.81,Q1 darkest,-69.42020416259766,2,0.0,6.896551724137931
+0_youtube_888,1,0,M-White,male,white,White,41.0,26.64,Q2,-70.292724609375,0,0.0,0.0
+0_youtube_087,29,0,M-Black,male,black,Black,42.0,66.61,Q4 lightest,-70.37511444091797,0,0.0,0.0
+0_youtube_148,29,0,M-White,male,white,White,54.0,24.35,Q2,-70.97537994384766,5,0.0,17.24137931034483
+0_youtube_950,29,0,F-White,female,white,White,23.0,87.55,Q4 lightest,-71.29840850830078,1,0.0,3.4482758620689653
+0_youtube_955,29,0,M-White,male,white,Middle Eastern,49.0,53.8,Q4 lightest,-72.01251220703125,0,0.0,0.0
+0_youtube_883,29,0,F-White,female,white,White,29.0,57.83,Q4 lightest,-72.503662109375,2,0.0,6.896551724137931
+0_youtube_705,30,0,M-White,male,white,Middle Eastern,44.0,27.96,Q2,-72.59880065917969,6,0.0,20.0
+0_youtube_041,29,0,M-Asian,male,asian,East Asian,27.0,59.83,Q4 lightest,-72.99190521240234,0,0.0,0.0
+0_youtube_620,30,0,M-White,male,white,White,55.0,21.4,Q2,-73.01515197753906,0,0.0,0.0
+0_youtube_667,29,0,F-White,female,white,White,30.0,,missing,-73.05050659179688,0,0.0,0.0
+0_youtube_089,29,0,F-White,female,white,White,24.0,43.48,Q3,-73.44029998779297,1,0.0,3.4482758620689653
+0_youtube_837,1,0,F-White,female,white,White,22.0,37.84,Q3,-74.4569320678711,0,0.0,0.0
+0_youtube_965,29,0,F-White,female,white,White,27.0,67.9,Q4 lightest,-74.59675598144531,0,0.0,0.0
+0_youtube_302,29,0,F-White,female,white,White,34.0,27.97,Q2,-75.06398010253906,0,0.0,0.0
+0_youtube_482,29,0,F-White,female,white,White,33.0,88.8,Q4 lightest,-75.09713745117188,2,0.0,6.896551724137931
+0_youtube_615,29,0,F-White,female,white,White,29.0,54.91,Q4 lightest,-75.34432983398438,0,0.0,0.0
+0_youtube_962,1,0,F-Asian,female,asian,East Asian,27.0,34.67,Q2,-75.54199981689453,0,0.0,0.0
+0_youtube_053,29,0,F-White,female,white,White,31.0,60.91,Q4 lightest,-75.87772369384766,3,0.0,10.344827586206897
+0_youtube_149,1,0,F-White,female,white,White,30.0,41.94,Q3,-75.90251159667969,0,0.0,0.0
+0_youtube_192,1,0,F-White,female,white,White,33.0,67.45,Q4 lightest,-76.27265930175781,0,0.0,0.0
+0_youtube_304,29,0,M-Others,male,others,Middle Eastern,29.0,32.34,Q2,-76.42860412597656,3,0.0,10.344827586206897
+0_youtube_289,1,0,M-Asian,male,white,Southeast Asian,74.0,24.15,Q2,-76.5860595703125,1,0.0,100.0
+0_youtube_530,29,0,M-White,male,white,White,53.0,33.34,Q2,-77.98545837402344,8,0.0,27.586206896551722
+0_youtube_999,30,0,F-White,female,white,White,32.0,28.22,Q2,-78.04388427734375,0,0.0,0.0
+0_youtube_871,23,0,F-White,female,white,White,26.0,53.33,Q3,-78.1470947265625,0,0.0,0.0
+0_youtube_594,29,0,M-White,male,white,Middle Eastern,42.0,17.3,Q1 darkest,-78.17071533203125,0,0.0,0.0
+0_youtube_602,28,0,F-White,female,white,White,26.0,49.9,Q3,-79.10900115966797,13,0.0,46.42857142857143
+0_youtube_532,1,0,F-White,female,white,White,28.0,-13.6,Q1 darkest,-79.18001556396484,0,0.0,0.0
+0_youtube_807,1,0,M-White,male,white,White,60.0,7.735,Q1 darkest,-79.40776062011719,0,0.0,0.0
+0_youtube_494,29,0,M-Others,male,white,Indian,37.0,-67.95,Q1 darkest,-80.06521606445312,24,0.0,82.75862068965517
+0_youtube_998,29,0,F-White,female,white,White,33.0,15.46,Q1 darkest,-80.17979431152344,1,0.0,3.4482758620689653
+0_youtube_773,29,0,F-Asian,female,asian,East Asian,5.0,-11.65,Q1 darkest,-80.20021057128906,5,0.0,17.24137931034483
+0_youtube_780,1,0,F-White,female,white,White,32.0,18.77,Q1 darkest,-80.25911712646484,0,0.0,0.0
+0_youtube_779,29,0,M-White,male,white,White,55.0,33.98,Q2,-80.9805908203125,0,0.0,0.0
+0_youtube_898,1,0,M-Others,male,others,Indian,41.0,-5.399,Q1 darkest,-81.00209045410156,0,0.0,0.0
+0_youtube_623,29,0,F-White,female,white,White,21.0,37.87,Q3,-81.02379608154297,12,0.0,41.37931034482759
+0_youtube_082,30,0,F-Others,female,others,Middle Eastern,27.0,38.91,Q3,-81.23652648925781,0,0.0,0.0
+0_youtube_947,29,0,F-White,female,white,White,27.0,11.05,Q1 darkest,-81.42411804199219,0,0.0,0.0
+0_youtube_331,29,0,F-White,female,white,White,29.0,41.98,Q3,-81.48350524902344,1,0.0,3.4482758620689653
+0_youtube_607,1,0,F-Others,female,asian,Latino_Hispanic,18.0,-11.06,Q1 darkest,-81.83229064941406,0,0.0,0.0
+0_youtube_259,29,0,M-White,male,white,White,31.0,44.55,Q3,-81.89105987548828,0,0.0,0.0
+0_youtube_023,29,0,M-Others,male,others,Southeast Asian,24.0,34.86,Q2,-82.25569152832031,0,0.0,0.0
+0_youtube_031,1,0,M-Black,male,black,Black,40.0,-12.38,Q1 darkest,-82.73812866210938,0,0.0,0.0
+0_youtube_005,29,0,F-White,female,white,East Asian,30.0,31.74,Q2,-83.19941711425781,0,0.0,0.0
+0_youtube_195,30,0,M-White,male,white,Middle Eastern,38.0,47.26,Q3,-83.55643463134766,0,0.0,0.0
+0_youtube_011,30,0,M-White,male,white,White,23.0,50.33,Q3,-83.86067962646484,0,0.0,0.0
+0_youtube_038,1,0,F-White,female,white,White,27.0,14.51,Q1 darkest,-84.41756439208984,0,0.0,0.0
+0_youtube_235,29,0,M-Asian,male,asian,East Asian,25.0,51.1,Q3,-84.55793762207031,1,0.0,3.4482758620689653
+0_youtube_663,1,0,F-White,female,asian,Southeast Asian,28.0,15.01,Q1 darkest,-84.75935363769531,0,0.0,0.0
+0_youtube_239,29,0,M-White,male,white,White,43.0,23.95,Q2,-84.76789855957031,7,0.0,24.137931034482758
+0_youtube_436,1,0,F-White,female,white,White,20.0,30.14,Q2,-85.49464416503906,0,0.0,0.0
+0_youtube_606,29,0,F-White,female,white,White,28.0,33.14,Q2,-85.63227844238281,12,0.0,41.37931034482759
+0_youtube_967,29,0,F-White,female,white,White,24.0,64.45,Q4 lightest,-85.91482543945312,0,0.0,0.0
+0_youtube_896,1,0,M-White,male,white,White,22.0,37.91,Q3,-86.18587493896484,0,0.0,0.0
+0_youtube_953,29,0,M-White,male,white,White,32.0,36.58,Q3,-86.30001831054688,1,0.0,3.4482758620689653
+0_youtube_858,1,0,M-White,male,white,Middle Eastern,41.0,-1.774,Q1 darkest,-86.69454956054688,0,0.0,0.0
+0_youtube_905,29,0,F-White,female,white,White,26.0,86.57,Q4 lightest,-86.75452423095703,0,0.0,0.0
+0_youtube_636,30,0,F-White,female,white,White,33.5,61.87,Q4 lightest,-87.34323120117188,0,0.0,0.0
+0_youtube_840,29,0,M-White,male,white,Middle Eastern,33.0,-8.857,Q1 darkest,-87.56209564208984,0,0.0,0.0
+0_youtube_088,1,0,F-White,female,white,White,22.0,64.13,Q4 lightest,-87.61709594726562,0,0.0,0.0
+0_youtube_231,1,0,F-White,female,white,White,37.0,14.21,Q1 darkest,-87.73397827148438,0,0.0,0.0
+0_youtube_238,1,0,F-Others,female,others,Middle Eastern,22.0,2.914,Q1 darkest,-88.02766418457031,0,0.0,0.0
+0_youtube_959,1,0,F-White,female,white,Middle Eastern,26.0,82.19,Q4 lightest,-88.25067901611328,0,0.0,0.0
+0_youtube_010,29,0,F-Others,female,others,Indian,23.0,26.3,Q2,-88.36983489990234,5,0.0,17.24137931034483
+0_youtube_049,1,0,F-White,female,white,White,31.0,32.48,Q2,-88.41152954101562,0,0.0,0.0
+0_youtube_895,29,0,M-White,male,white,White,55.0,-14.67,Q1 darkest,-88.43285369873047,0,0.0,0.0
+0_youtube_205,1,0,F-White,female,white,White,29.0,32.01,Q2,-88.44331359863281,0,0.0,0.0
+0_youtube_294,29,0,F-Asian,female,asian,Southeast Asian,23.0,46.44,Q3,-88.46662902832031,0,0.0,0.0
+0_youtube_397,29,0,F-Black,female,black,Black,9.0,54.46,Q4 lightest,-88.51171875,0,0.0,0.0
+0_youtube_689,1,0,M-White,male,white,Middle Eastern,22.0,19.02,Q1 darkest,-88.5142593383789,0,0.0,0.0
+0_youtube_960,29,0,F-White,female,white,White,26.0,37.81,Q3,-88.56185913085938,1,0.0,3.4482758620689653
+0_youtube_766,1,0,F-Asian,female,asian,East Asian,24.0,51.84,Q3,-88.72444915771484,0,0.0,0.0
+0_youtube_700,29,0,F-White,female,white,White,34.0,-51.77,Q1 darkest,-88.88818359375,7,0.0,24.137931034482758
+0_youtube_136,1,0,F-Others,female,others,Indian,21.0,,missing,-88.89154052734375,0,0.0,0.0
+0_youtube_306,30,0,M-White,male,white,Middle Eastern,32.0,30.4,Q2,-88.9681396484375,6,0.0,20.0
+0_youtube_194,30,0,M-Asian,male,asian,East Asian,6.0,69.07,Q4 lightest,-89.19303894042969,0,0.0,0.0
+0_youtube_416,1,0,M-White,male,white,White,52.0,-12.21,Q1 darkest,-89.73898315429688,0,0.0,0.0
+0_youtube_326,1,0,M-White,male,white,Middle Eastern,31.0,2.461,Q1 darkest,-89.7840805053711,0,0.0,0.0
+0_youtube_490,29,0,F-White,female,white,White,22.0,32.36,Q2,-90.01398468017578,0,0.0,0.0
+0_youtube_801,1,0,M-White,male,white,White,52.0,37.59,Q3,-90.15097045898438,0,0.0,0.0
+0_youtube_643,1,0,F-White,female,white,White,27.0,28.71,Q2,-90.19029998779297,0,0.0,0.0
+0_youtube_535,1,0,F-Asian,female,asian,Latino_Hispanic,31.0,42.18,Q3,-90.44718933105469,0,0.0,0.0
+0_youtube_878,1,0,M-White,male,white,White,75.0,41.4,Q3,-90.54586791992188,0,0.0,0.0
+0_youtube_511,29,0,F-Black,female,black,Black,31.0,7.438,Q1 darkest,-90.5643539428711,0,0.0,0.0
+0_youtube_079,1,0,F-White,female,white,Middle Eastern,17.0,88.13,Q4 lightest,-90.96200561523438,0,0.0,0.0
+0_youtube_906,1,0,M-White,male,white,White,45.0,9.425,Q1 darkest,-90.99992370605469,0,0.0,0.0
+0_youtube_022,1,0,M-White,male,white,Middle Eastern,30.0,59.88,Q4 lightest,-91.30680847167969,0,0.0,0.0
+0_youtube_612,29,0,M-White,male,white,White,46.0,5.925,Q1 darkest,-91.65086364746094,0,0.0,0.0
+0_youtube_638,1,0,M-White,male,white,White,39.0,21.9,Q2,-91.77955627441406,0,0.0,0.0
+0_youtube_732,1,0,M-Others,male,others,Middle Eastern,31.0,75.8,Q4 lightest,-91.78644561767578,0,0.0,0.0
+0_youtube_872,30,0,M-White,male,white,White,48.0,22.04,Q2,-92.12247467041016,1,0.0,3.3333333333333335
+0_youtube_723,1,0,F-White,female,white,White,25.0,16.17,Q1 darkest,-92.14030456542969,0,0.0,0.0
+0_youtube_966,1,0,M-Black,male,others,Black,36.0,11.5,Q1 darkest,-92.26512145996094,0,0.0,0.0
+0_youtube_349,1,0,F-White,female,white,White,24.0,63.16,Q4 lightest,-92.41845703125,0,0.0,0.0
+0_youtube_575,1,0,F-Asian,female,asian,East Asian,22.0,72.14,Q4 lightest,-92.59230041503906,0,0.0,0.0
+0_youtube_954,1,0,F-White,female,white,Middle Eastern,23.0,33.1,Q2,-92.67472839355469,0,0.0,0.0
+0_youtube_197,1,0,M-White,male,white,Middle Eastern,27.0,32.75,Q2,-92.98926544189453,0,0.0,0.0
+0_youtube_448,1,0,M-White,male,white,White,62.0,20.12,Q2,-93.00719451904297,0,0.0,0.0
+0_youtube_841,1,0,M-White,male,white,Latino_Hispanic,53.0,56.7,Q4 lightest,-93.09133911132812,0,0.0,0.0
+0_youtube_014,1,0,M-Asian,male,asian,East Asian,23.0,78.68,Q4 lightest,-93.37059020996094,0,0.0,0.0
+0_youtube_016,29,0,M-Others,male,asian,Latino_Hispanic,3.0,26.09,Q2,-93.73634338378906,1,0.0,3.4482758620689653
+0_youtube_376,29,0,F-White,female,white,White,27.0,37.97,Q3,-93.9012451171875,0,0.0,0.0
+0_youtube_024,1,0,M-White,male,white,White,42.0,-0.6833,Q1 darkest,-93.9415283203125,0,0.0,0.0
+0_youtube_308,1,0,F-White,female,white,White,27.0,28.51,Q2,-93.95209503173828,0,0.0,0.0
+0_youtube_078,29,0,M-White,male,white,Latino_Hispanic,25.0,55.63,Q4 lightest,-93.96351623535156,0,0.0,0.0
+0_youtube_210,1,0,M-White,male,white,White,50.0,-32.84,Q1 darkest,-94.0785140991211,0,0.0,0.0
+0_youtube_717,1,0,F-White,female,white,White,26.0,22.5,Q2,-94.37059020996094,0,0.0,0.0
+0_youtube_668,1,0,F-White,female,white,White,28.0,27.73,Q2,-94.97256469726562,0,0.0,0.0
+0_youtube_976,1,0,F-White,female,white,White,27.0,47.11,Q3,-95.21690368652344,0,0.0,0.0
+0_youtube_603,1,0,F-White,female,white,White,23.0,72.7,Q4 lightest,-95.35549926757812,0,0.0,0.0
+0_youtube_193,29,0,F-White,female,white,White,27.0,-0.3073,Q1 darkest,-95.72682189941406,0,0.0,0.0
+0_youtube_548,30,0,M-White,male,white,White,40.0,41.55,Q3,-95.74049377441406,0,0.0,0.0
+0_youtube_474,1,0,F-Asian,female,asian,East Asian,24.0,66.22,Q4 lightest,-95.86492919921875,0,0.0,0.0
+0_youtube_834,29,0,M-Asian,male,asian,Southeast Asian,25.0,-22.78,Q1 darkest,-95.99285888671875,6,0.0,20.689655172413794
+0_youtube_816,1,0,F-Asian,female,asian,Southeast Asian,26.0,8.14,Q1 darkest,-96.56143951416016,0,0.0,0.0
+0_youtube_325,29,0,M-White,male,white,White,62.0,27.34,Q2,-96.88577270507812,0,0.0,0.0
+0_youtube_924,1,0,F-White,female,white,White,25.0,44.95,Q3,-97.0909652709961,0,0.0,0.0
+0_youtube_707,29,0,M-White,male,white,East Asian,29.0,16.18,Q1 darkest,-97.17407989501953,0,0.0,0.0
+0_youtube_491,1,0,M-White,male,white,Middle Eastern,35.0,16.36,Q1 darkest,-97.25558471679688,0,0.0,0.0
+0_youtube_774,1,0,M-Others,male,asian,Middle Eastern,29.0,32.4,Q2,-97.37171936035156,0,0.0,0.0
+0_youtube_987,1,0,M-White,male,white,Middle Eastern,36.0,19.85,Q2,-97.65399169921875,0,0.0,0.0
+0_youtube_090,1,0,F-White,female,white,White,26.0,26.26,Q2,-97.85926818847656,0,0.0,0.0
+0_youtube_324,1,0,M-White,male,white,White,47.0,54.16,Q4 lightest,-98.14794921875,0,0.0,0.0
+0_youtube_440,1,0,M-White,male,white,Middle Eastern,38.0,53.7,Q4 lightest,-98.25341796875,0,0.0,0.0
+0_youtube_619,29,0,M-White,male,white,White,54.0,41.49,Q3,-98.45172119140625,0,0.0,0.0
+0_youtube_398,1,0,F-White,female,white,White,22.0,13.74,Q1 darkest,-98.51322937011719,0,0.0,0.0
+0_youtube_578,29,0,F-White,female,white,White,33.0,57.38,Q4 lightest,-98.68502044677734,0,0.0,0.0
+0_youtube_515,1,0,M-White,male,white,White,34.0,48.97,Q3,-98.76898956298828,0,0.0,0.0
+0_youtube_884,1,0,F-White,female,white,White,36.0,78.52,Q4 lightest,-98.82474517822266,0,0.0,0.0
+0_youtube_006,1,0,M-White,male,white,Middle Eastern,40.0,5.624,Q1 darkest,-98.89418029785156,0,0.0,0.0
+0_youtube_600,1,0,M-Asian,male,asian,Southeast Asian,22.0,8.846,Q1 darkest,-99.27964782714844,0,0.0,0.0
+0_youtube_240,1,0,F-White,female,white,Middle Eastern,36.0,56.84,Q4 lightest,-99.30982971191406,0,0.0,0.0
+0_youtube_728,1,0,F-White,female,white,White,21.0,82.94,Q4 lightest,-99.44945526123047,0,0.0,0.0
+0_youtube_484,1,0,M-White,male,white,White,38.0,39.51,Q3,-99.5083236694336,0,0.0,0.0
+0_youtube_613,1,0,M-Black,male,black,Black,61.0,-40.75,Q1 darkest,-99.564453125,0,0.0,0.0
+0_youtube_236,30,0,M-White,male,white,Middle Eastern,31.0,25.72,Q2,-99.6779556274414,0,0.0,0.0
+0_youtube_581,30,0,M-Black,male,black,Black,22.0,-35.51,Q1 darkest,-99.87823486328125,7,0.0,23.333333333333332
+0_youtube_373,1,0,M-White,male,white,White,39.0,80.36,Q4 lightest,-99.99011993408203,0,0.0,0.0
+0_youtube_949,1,0,F-White,female,white,White,27.0,14.8,Q1 darkest,-100.37738037109375,0,0.0,0.0
+0_youtube_863,1,0,F-Black,female,black,Black,21.0,7.84,Q1 darkest,-100.57398986816406,0,0.0,0.0
+0_youtube_706,1,0,F-White,female,white,White,30.0,33.7,Q2,-100.64154052734375,0,0.0,0.0
+0_youtube_354,1,0,F-White,female,white,White,34.0,26.27,Q2,-100.69303894042969,0,0.0,0.0
+0_youtube_493,1,0,F-White,female,white,White,25.0,43.36,Q3,-100.74700927734375,0,0.0,0.0
+0_youtube_303,1,0,F-White,female,white,White,21.0,54.5,Q4 lightest,-101.54011535644531,0,0.0,0.0
+0_youtube_874,1,0,M-White,male,white,White,28.0,67.87,Q4 lightest,-101.60474395751953,0,0.0,0.0
+0_youtube_910,1,0,M-White,male,white,Latino_Hispanic,33.0,61.72,Q4 lightest,-101.83116149902344,0,0.0,0.0
+0_youtube_512,1,0,M-White,male,white,Middle Eastern,53.0,23.13,Q2,-102.038330078125,0,0.0,0.0
+0_youtube_897,29,0,F-White,female,white,White,33.0,51.09,Q3,-102.25115966796875,0,0.0,0.0
+0_youtube_708,1,0,F-Others,female,asian,Latino_Hispanic,21.0,29.35,Q2,-102.57209777832031,0,0.0,0.0
+0_youtube_653,1,0,M-Black,male,black,Black,42.0,-17.38,Q1 darkest,-102.76058959960938,1,0.0,100.0
+0_youtube_295,1,0,F-White,female,white,White,38.0,47.04,Q3,-102.82550048828125,0,0.0,0.0
+0_youtube_064,1,0,M-Others,male,asian,East Asian,37.0,31.22,Q2,-102.8543701171875,0,0.0,0.0
+0_youtube_918,1,0,F-White,female,white,White,37.0,58.32,Q4 lightest,-103.2181396484375,0,0.0,0.0
+0_youtube_546,29,0,F-White,female,white,White,22.0,,missing,-103.64530944824219,0,0.0,0.0
+0_youtube_059,1,0,M-White,male,white,Middle Eastern,33.0,44.64,Q3,-103.68927001953125,0,0.0,0.0
+0_youtube_847,1,0,M-White,male,white,White,21.0,,missing,-103.88587951660156,0,0.0,0.0
+0_youtube_618,1,0,F-White,female,white,White,26.0,48.96,Q3,-104.2230453491211,0,0.0,0.0
+0_youtube_353,29,0,M-White,male,white,White,53.0,15.25,Q1 darkest,-104.35700988769531,0,0.0,0.0
+0_youtube_622,1,0,M-White,male,white,Latino_Hispanic,39.0,-19.36,Q1 darkest,-104.74049377441406,0,0.0,0.0
+0_youtube_346,1,0,M-Others,male,white,Middle Eastern,49.0,12.73,Q1 darkest,-104.93022155761719,0,0.0,0.0
+0_youtube_459,1,0,F-White,female,white,White,10.0,76.69,Q4 lightest,-104.96173095703125,0,0.0,0.0
+0_youtube_952,1,0,F-White,female,white,White,23.0,,missing,-105.1387939453125,0,0.0,0.0
+0_youtube_054,1,0,M-White,male,white,Middle Eastern,38.0,30.28,Q2,-105.88587951660156,0,0.0,0.0
+0_youtube_388,1,0,F-White,female,white,White,37.0,35.13,Q2,-106.25643920898438,0,0.0,0.0
+0_youtube_042,1,0,F-Black,female,asian,Black,28.0,56.15,Q4 lightest,-106.36380004882812,0,0.0,0.0
+0_youtube_835,1,0,F-Asian,female,asian,East Asian,26.0,45.43,Q3,-106.42757415771484,0,0.0,0.0
+0_youtube_261,1,0,F-White,female,white,White,55.0,52.87,Q3,-107.00267028808594,0,0.0,0.0
+0_youtube_738,1,0,F-White,female,white,White,36.0,28.89,Q2,-107.67596435546875,0,0.0,0.0
+0_youtube_096,1,0,F-Asian,female,asian,Southeast Asian,23.0,27.77,Q2,-108.78871154785156,0,0.0,0.0
+0_youtube_624,1,0,F-White,female,white,White,30.0,58.87,Q4 lightest,-109.5041732788086,0,0.0,0.0
+0_youtube_800,29,0,M-White,male,white,White,59.0,12.93,Q1 darkest,-109.79171752929688,5,0.0,17.24137931034483
+0_youtube_564,1,0,M-White,male,white,Middle Eastern,33.0,36.51,Q3,-111.24436950683594,0,0.0,0.0
+0_youtube_584,1,0,M-Asian,male,asian,East Asian,17.0,59.06,Q4 lightest,-111.52351379394531,0,0.0,0.0
+0_youtube_378,1,0,F-White,female,white,White,20.0,,missing,-111.88890075683594,0,0.0,0.0
+0_youtube_495,1,0,M-White,male,white,White,40.0,15.15,Q1 darkest,-112.89266967773438,0,0.0,0.0
+0_youtube_931,1,0,F-White,female,white,White,33.0,55.8,Q4 lightest,-113.64907836914062,0,0.0,0.0
+0_youtube_104,1,0,F-White,female,white,White,27.0,86.57,Q4 lightest,-114.42078399658203,0,0.0,0.0
+0_youtube_119,1,0,F-Asian,female,asian,East Asian,11.0,36.53,Q3,-114.4639892578125,0,0.0,0.0
+0_youtube_017,1,0,F-White,female,white,White,51.0,24.48,Q2,-118.18096923828125,0,0.0,0.0
+0_youtube_083,1,0,F-White,female,white,White,32.0,42.93,Q3,-121.99739074707031,0,0.0,0.0
+0_youtube_549,1,0,F-White,female,white,White,24.0,66.07,Q4 lightest,-122.28266906738281,0,0.0,0.0

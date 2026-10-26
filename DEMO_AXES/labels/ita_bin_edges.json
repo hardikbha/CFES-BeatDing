@@ -1,0 +1,121 @@
+{
+ "declared": "2026-10-26, before any score was read; quartiles of the TRAIN distribution",
+ "ffpp_protocol": {
+  "ita_gw": {
+   "edges": [
+    19.173375,
+    35.215,
+    53.36687499999999
+   ],
+   "n_real_train_videos": 582
+  },
+  "ita_raw": {
+   "edges": [
+    18.76175,
+    32.908500000000004,
+    46.833125
+   ],
+   "n_real_train_videos": 588
+  },
+  "ita_gwexp": {
+   "edges": [
+    25.552124999999997,
+    42.868,
+    60.2455
+   ],
+   "n_real_train_videos": 582
+  }
+ },
+ "ff2": {
+  "ita_gw": {
+   "edges": [
+    -36.6215,
+    2.8592,
+    38.4915
+   ],
+   "n_real_train_persons": 13055
+  },
+  "ita_raw": {
+   "edges": [
+    -31.64025,
+    3.76125,
+    34.39075
+   ],
+   "n_real_train_persons": 13422
+  },
+  "ita_gwexp": {
+   "edges": [
+    -39.7505,
+    1.9016,
+    41.90575
+   ],
+   "n_real_train_persons": 13059
+  }
+ },
+ "unit": {
+  "ffpp_protocol": "per-video median of frame ITA over FF++ TRAIN real videos (Ding/Lin split)",
+  "ff2": "per-person median of image ITA over FF2-public TRAIN reals (manifests/ding/realtrain.csv)"
+ },
+ "bins": "ita4 = 0 if ITA < q25; 1 if < q50; 2 if < q75; 3 otherwise (0 = darkest skin, 3 = lightest)",
+ "local_sensitivity": {
+  "rule": "ita4_local (SENSITIVITY, added 26 Oct before any score was read, after seeing that the FF++-TRAIN edges put most DFDC videos in Q1 because DFDC footage is darker overall): quartiles of the test set's OWN real-video (FF2: real-person) median ita_gw; label- and score-free",
+  "edges": {
+   "ffpp_train": {
+    "edges": [
+     19.173375,
+     35.215,
+     53.36687499999999
+    ],
+    "n_real_units": 582
+   },
+   "ffpp_val": {
+    "edges": [
+     16.54075,
+     34.6575,
+     50.1765
+    ],
+    "n_real_units": 244
+   },
+   "ffpp_test": {
+    "edges": [
+     16.3655,
+     33.838499999999996,
+     54.18625
+    ],
+    "n_real_units": 260
+   },
+   "dfdc": {
+    "edges": [
+     -66.07974999999999,
+     -30.6415,
+     16.576
+    ],
+    "n_real_units": 450
+   },
+   "celebdf": {
+    "edges": [
+     -16.481250000000003,
+     21.669,
+     46.15025
+    ],
+    "n_real_units": 191
+   },
+   "dfd": {
+    "edges": [
+     -11.211825,
+     26.225749999999998,
+     56.81375
+    ],
+    "n_real_units": 104
+   },
+   "ff2_test": {
+    "edges": [
+     -37.473749999999995,
+     3.3576,
+     39.69075
+    ],
+    "n_real_units": 4256
+   }
+  }
+ }
+}

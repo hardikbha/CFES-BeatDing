@@ -1,0 +1,2 @@
+# full arm on ff2_public (dataset: ../ces_ff2_public.yaml, arm: ../arms/full.yaml)
+_base_: [../ces_ff2_public.yaml, ../arms/full.yaml]

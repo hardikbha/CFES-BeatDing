@@ -1,0 +1,6983 @@
+{
+ "n": 25401,
+ "n_real": 4538,
+ "n_fake": 20863,
+ "n_real_videos": 267,
+ "n_fake_videos": 698,
+ "thresholds": {
+  "matched": -73.76414591500017,
+  "native": -65.96807621582647,
+  "A1": -19.132783889770508
+ },
+ "check_matched": {
+  "TPR": 93.12658773905957,
+  "FPR": 13.508153371529307,
+  "iF_FPR": 46.55643613492688,
+  "gF_FPR": 1.6549474588851143,
+  "rF_FPR": 20.128924994686248
+ },
+ "ding_rates": {
+  "FPR": 12.5385632437197,
+  "TPR": 94.84733739155443,
+  "n_FP": 569,
+  "n_FN": 1075,
+  "iF_FPR": 24.23827009036314
+ },
+ "ops": {
+  "matched": {
+   "t": -73.76414591500017,
+   "n_FP": 613,
+   "FPR_%": 13.508153371529307,
+   "n_FN": 1434,
+   "FNR_%": 6.8734122609404205,
+   "FP_also_ding_%": 36.05220228384992,
+   "FN_also_ding_%": 33.19386331938633,
+   "dingFP_also_ours_%": 38.84007029876977,
+   "dingFN_also_ours_%": 44.27906976744186,
+   "FP_ours_only": 392,
+   "FP_ding_only": 348,
+   "FN_ours_only": 958,
+   "FN_ding_only": 599,
+   "FP_jaccard": 0.2299687825182102,
+   "FN_jaccard": 0.2341367437284801,
+   "tables": {
+    "fp_gname": [
+     {
+      "gname": "F-Asian",
+      "n": 414,
+      "n_err": 106,
+      "n_videos": 23,
+      "n_videos_with_err": 12,
+      "rate_%": 25.604,
+      "share_of_errors_%": 17.292
+     },
+     {
+      "gname": "F-Black",
+      "n": 118,
+      "n_err": 14,
+      "n_videos": 6,
+      "n_videos_with_err": 2,
+      "rate_%": 11.864,
+      "share_of_errors_%": 2.284
+     },
+     {
+      "gname": "F-Others",
+      "n": 151,
+      "n_err": 12,
+      "n_videos": 9,
+      "n_videos_with_err": 3,
+      "rate_%": 7.947,
+      "share_of_errors_%": 1.958
+     },
+     {
+      "gname": "F-White",
+      "n": 1755,
+      "n_err": 216,
+      "n_videos": 109,
+      "n_videos_with_err": 35,
+      "rate_%": 12.308,
+      "share_of_errors_%": 35.237
+     },
+     {
+      "gname": "M-Asian",
+      "n": 238,
+      "n_err": 23,
+      "n_videos": 13,
+      "n_videos_with_err": 6,
+      "rate_%": 9.664,
+      "share_of_errors_%": 3.752
+     },
+     {
+      "gname": "M-Black",
+      "n": 92,
+      "n_err": 3,
+      "n_videos": 7,
+      "n_videos_with_err": 2,
+      "rate_%": 3.261,
+      "share_of_errors_%": 0.489
+     },
+     {
+      "gname": "M-Others",
+      "n": 181,
+      "n_err": 5,
+      "n_videos": 12,
+      "n_videos_with_err": 3,
+      "rate_%": 2.762,
+      "share_of_errors_%": 0.816
+     },
+     {
+      "gname": "M-White",
+      "n": 1589,
+      "n_err": 234,
+      "n_videos": 88,
+      "n_videos_with_err": 34,
+      "rate_%": 14.726,
+      "share_of_errors_%": 38.173
+     }
+    ],
+    "fp_xu_gender": [
+     {
+      "xu_gender": "female",
+      "n": 2438,
+      "n_err": 348,
+      "n_videos": 147,
+      "n_videos_with_err": 52,
+      "rate_%": 14.274,
+      "share_of_errors_%": 56.77
+     },
+     {
+      "xu_gender": "male",
+      "n": 2100,
+      "n_err": 265,
+      "n_videos": 120,
+      "n_videos_with_err": 45,
+      "rate_%": 12.619,
+      "share_of_errors_%": 43.23
+     }
+    ],
+    "fp_cl_gender": [
+     {
+      "cl_gender": "female",
+      "n": 2497,
+      "n_err": 373,
+      "n_videos": 152,
+      "n_videos_with_err": 57,
+      "rate_%": 14.938,
+      "share_of_errors_%": 60.848
+     },
+     {
+      "cl_gender": "male",
+      "n": 2041,
+      "n_err": 240,
+      "n_videos": 120,
+      "n_videos_with_err": 44,
+      "rate_%": 11.759,
+      "share_of_errors_%": 39.152
+     }
+    ],
+    "fp_xu_race": [
+     {
+      "xu_race": "asian",
+      "n": 652,
+      "n_err": 129,
+      "n_videos": 36,
+      "n_videos_with_err": 18,
+      "rate_%": 19.785,
+      "share_of_errors_%": 21.044
+     },
+     {
+      "xu_race": "black",
+      "n": 210,
+      "n_err": 17,
+      "n_videos": 13,
+      "n_videos_with_err": 4,
+      "rate_%": 8.095,
+      "share_of_errors_%": 2.773
+     },
+     {
+      "xu_race": "others",
+      "n": 332,
+      "n_err": 17,
+      "n_videos": 21,
+      "n_videos_with_err": 6,
+      "rate_%": 5.12,
+      "share_of_errors_%": 2.773
+     },
+     {
+      "xu_race": "white",
+      "n": 3344,
+      "n_err": 450,
+      "n_videos": 197,
+      "n_videos_with_err": 69,
+      "rate_%": 13.457,
+      "share_of_errors_%": 73.409
+     }
+    ],
+    "fp_cl_race": [
+     {
+      "cl_race": "asian",
+      "n": 720,
+      "n_err": 139,
+      "n_videos": 51,
+      "n_videos_with_err": 22,
+      "rate_%": 19.306,
+      "share_of_errors_%": 22.675
+     },
+     {
+      "cl_race": "black",
+      "n": 208,
+      "n_err": 17,
+      "n_videos": 11,
+      "n_videos_with_err": 4,
+      "rate_%": 8.173,
+      "share_of_errors_%": 2.773
+     },
+     {
+      "cl_race": "others",
+      "n": 201,
+      "n_err": 17,
+      "n_videos": 20,
+      "n_videos_with_err": 8,
+      "rate_%": 8.458,
+      "share_of_errors_%": 2.773
+     },
+     {
+      "cl_race": "white",
+      "n": 3409,
+      "n_err": 440,
+      "n_videos": 209,
+      "n_videos_with_err": 75,
+      "rate_%": 12.907,
+      "share_of_errors_%": 71.778
+     }
+    ],
+    "fp_age4": [
+     {
+      "age4": "30-44",
+      "n": 1451,
+      "n_err": 195,
+      "n_videos": 92,
+      "n_videos_with_err": 30,
+      "rate_%": 13.439,
+      "share_of_errors_%": 31.811
+     },
+     {
+      "age4": "45-59",
+      "n": 509,
+      "n_err": 43,
+      "n_videos": 29,
+      "n_videos_with_err": 11,
+      "rate_%": 8.448,
+      "share_of_errors_%": 7.015
+     },
+     {
+      "age4": "60+",
+      "n": 34,
+      "n_err": 0,
+      "n_videos": 6,
+      "n_videos_with_err": 0,
+      "rate_%": 0.0,
+      "share_of_errors_%": 0.0
+     },
+     {
+      "age4": "<30",
+      "n": 2544,
+      "n_err": 375,
+      "n_videos": 140,
+      "n_videos_with_err": 56,
+      "rate_%": 14.741,
+      "share_of_errors_%": 61.175
+     }
+    ],
+    "fp_ita4": [
+     {
+      "ita4": "Q1 darkest",
+      "n": 1138,
+      "n_err": 140,
+      "n_videos": 72,
+      "n_videos_with_err": 25,
+      "rate_%": 12.302,
+      "share_of_errors_%": 22.838
+     },
+     {
+      "ita4": "Q2",
+      "n": 1112,
+      "n_err": 111,
+      "n_videos": 65,
+      "n_videos_with_err": 23,
+      "rate_%": 9.982,
+      "share_of_errors_%": 18.108
+     },
+     {
+      "ita4": "Q3",
+      "n": 1032,
+      "n_err": 156,
+      "n_videos": 55,
+      "n_videos_with_err": 19,
+      "rate_%": 15.116,
+      "share_of_errors_%": 25.449
+     },
+     {
+      "ita4": "Q4 lightest",
+      "n": 1165,
+      "n_err": 204,
+      "n_videos": 68,
+      "n_videos_with_err": 28,
+      "rate_%": 17.511,
+      "share_of_errors_%": 33.279
+     },
+     {
+      "ita4": "missing",
+      "n": 91,
+      "n_err": 2,
+      "n_videos": 7,
+      "n_videos_with_err": 2,
+      "rate_%": 2.198,
+      "share_of_errors_%": 0.326
+     }
+    ],
+    "fp_ff_race7": [
+     {
+      "ff_race7": "Black",
+      "n": 205,
+      "n_err": 16,
+      "n_videos": 15,
+      "n_videos_with_err": 3,
+      "rate_%": 7.805,
+      "share_of_errors_%": 2.61
+     },
+     {
+      "ff_race7": "East Asian",
+      "n": 529,
+      "n_err": 106,
+      "n_videos": 40,
+      "n_videos_with_err": 16,
+      "rate_%": 20.038,
+      "share_of_errors_%": 17.292
+     },
+     {
+      "ff_race7": "Indian",
+      "n": 56,
+      "n_err": 0,
+      "n_videos": 6,
+      "n_videos_with_err": 0,
+      "rate_%": 0.0,
+      "share_of_errors_%": 0.0
+     },
+     {
+      "ff_race7": "Latino_Hispanic",
+      "n": 241,
+      "n_err": 35,
+      "n_videos": 31,
+      "n_videos_with_err": 8,
+      "rate_%": 14.523,
+      "share_of_errors_%": 5.71
+     },
+     {
+      "ff_race7": "Middle Eastern",
+      "n": 819,
+      "n_err": 137,
+      "n_videos": 76,
+      "n_videos_with_err": 30,
+      "rate_%": 16.728,
+      "share_of_errors_%": 22.349
+     },
+     {
+      "ff_race7": "Southeast Asian",
+      "n": 175,
+      "n_err": 9,
+      "n_videos": 17,
+      "n_videos_with_err": 5,
+      "rate_%": 5.143,
+      "share_of_errors_%": 1.468
+     },
+     {
+      "ff_race7": "White",
+      "n": 2513,
+      "n_err": 310,
+      "n_videos": 171,
+      "n_videos_with_err": 58,
+      "rate_%": 12.336,
+      "share_of_errors_%": 50.571
+     }
+    ],
+    "fn_method": [
+     {
+      "method": "Deepfakes",
+      "n": 3880,
+      "n_err": 59,
+      "n_videos": 130,
+      "n_videos_with_err": 6,
+      "rate_%": 1.521,
+      "share_of_errors_%": 4.114
+     },
+     {
+      "method": "Face2Face",
+      "n": 4373,
+      "n_err": 233,
+      "n_videos": 146,
+      "n_videos_with_err": 28,
+      "rate_%": 5.328,
+      "share_of_errors_%": 16.248
+     },
+     {
+      "method": "FaceShifter",
+      "n": 4280,
+      "n_err": 216,
+      "n_videos": 143,
+      "n_videos_with_err": 41,
+      "rate_%": 5.047,
+      "share_of_errors_%": 15.063
+     },
+     {
+      "method": "FaceSwap",
+      "n": 3822,
+      "n_err": 149,
+      "n_videos": 128,
+      "n_videos_with_err": 28,
+      "rate_%": 3.898,
+      "share_of_errors_%": 10.391
+     },
+     {
+      "method": "NeuralTextures",
+      "n": 4508,
+      "n_err": 777,
+      "n_videos": 151,
+      "n_videos_with_err": 75,
+      "rate_%": 17.236,
+      "share_of_errors_%": 54.184
+     }
+    ],
+    "fn_family": [
+     {
+      "family": "identity-swap",
+      "n": 11982,
+      "n_err": 424,
+      "n_videos": 401,
+      "n_videos_with_err": 75,
+      "rate_%": 3.539,
+      "share_of_errors_%": 29.568
+     },
+     {
+      "family": "reenactment",
+      "n": 8881,
+      "n_err": 1010,
+      "n_videos": 297,
+      "n_videos_with_err": 103,
+      "rate_%": 11.373,
+      "share_of_errors_%": 70.432
+     }
+    ],
+    "fn_gname": [
+     {
+      "gname": "F-Asian",
+      "n": 1768,
+      "n_err": 59,
+      "n_videos": 60,
+      "n_videos_with_err": 7,
+      "rate_%": 3.337,
+      "share_of_errors_%": 4.114
+     },
+     {
+      "gname": "F-Black",
+      "n": 480,
+      "n_err": 11,
+      "n_videos": 16,
+      "n_videos_with_err": 3,
+      "rate_%": 2.292,
+      "share_of_errors_%": 0.767
+     },
+     {
+      "gname": "F-Others",
+      "n": 690,
+      "n_err": 25,
+      "n_videos": 23,
+      "n_videos_with_err": 2,
+      "rate_%": 3.623,
+      "share_of_errors_%": 1.743
+     },
+     {
+      "gname": "F-White",
+      "n": 7968,
+      "n_err": 320,
+      "n_videos": 267,
+      "n_videos_with_err": 55,
+      "rate_%": 4.016,
+      "share_of_errors_%": 22.315
+     },
+     {
+      "gname": "M-Asian",
+      "n": 929,
+      "n_err": 162,
+      "n_videos": 31,
+      "n_videos_with_err": 16,
+      "rate_%": 17.438,
+      "share_of_errors_%": 11.297
+     },
+     {
+      "gname": "M-Black",
+      "n": 510,
+      "n_err": 12,
+      "n_videos": 17,
+      "n_videos_with_err": 3,
+      "rate_%": 2.353,
+      "share_of_errors_%": 0.837
+     },
+     {
+      "gname": "M-Others",
+      "n": 990,
+      "n_err": 129,
+      "n_videos": 33,
+      "n_videos_with_err": 10,
+      "rate_%": 13.03,
+      "share_of_errors_%": 8.996
+     },
+     {
+      "gname": "M-White",
+      "n": 7528,
+      "n_err": 716,
+      "n_videos": 251,
+      "n_videos_with_err": 82,
+      "rate_%": 9.511,
+      "share_of_errors_%": 49.93
+     }
+    ],
+    "fn_xu_gender": [
+     {
+      "xu_gender": "female",
+      "n": 10906,
+      "n_err": 415,
+      "n_videos": 366,
+      "n_videos_with_err": 67,
+      "rate_%": 3.805,
+      "share_of_errors_%": 28.94
+     },
+     {
+      "xu_gender": "male",
+      "n": 9957,
+      "n_err": 1019,
+      "n_videos": 332,
+      "n_videos_with_err": 111,
+      "rate_%": 10.234,
+      "share_of_errors_%": 71.06
+     }
+    ],
+    "fn_cl_gender": [
+     {
+      "cl_gender": "female",
+      "n": 11113,
+      "n_err": 439,
+      "n_videos": 385,
+      "n_videos_with_err": 75,
+      "rate_%": 3.95,
+      "share_of_errors_%": 30.614
+     },
+     {
+      "cl_gender": "male",
+      "n": 9750,
+      "n_err": 995,
+      "n_videos": 331,
+      "n_videos_with_err": 106,
+      "rate_%": 10.205,
+      "share_of_errors_%": 69.386
+     }
+    ],
+    "fn_xu_race": [
+     {
+      "xu_race": "asian",
+      "n": 2697,
+      "n_err": 221,
+      "n_videos": 91,
+      "n_videos_with_err": 23,
+      "rate_%": 8.194,
+      "share_of_errors_%": 15.411
+     },
+     {
+      "xu_race": "black",
+      "n": 990,
+      "n_err": 23,
+      "n_videos": 33,
+      "n_videos_with_err": 6,
+      "rate_%": 2.323,
+      "share_of_errors_%": 1.604
+     },
+     {
+      "xu_race": "others",
+      "n": 1680,
+      "n_err": 154,
+      "n_videos": 56,
+      "n_videos_with_err": 12,
+      "rate_%": 9.167,
+      "share_of_errors_%": 10.739
+     },
+     {
+      "xu_race": "white",
+      "n": 15496,
+      "n_err": 1036,
+      "n_videos": 518,
+      "n_videos_with_err": 137,
+      "rate_%": 6.686,
+      "share_of_errors_%": 72.245
+     }
+    ],
+    "fn_cl_race": [
+     {
+      "cl_race": "asian",
+      "n": 2728,
+      "n_err": 297,
+      "n_videos": 136,
+      "n_videos_with_err": 30,
+      "rate_%": 10.887,
+      "share_of_errors_%": 20.711
+     },
+     {
+      "cl_race": "black",
+      "n": 857,
+      "n_err": 22,
+      "n_videos": 35,
+      "n_videos_with_err": 5,
+      "rate_%": 2.567,
+      "share_of_errors_%": 1.534
+     },
+     {
+      "cl_race": "others",
+      "n": 898,
+      "n_err": 58,
+      "n_videos": 77,
+      "n_videos_with_err": 10,
+      "rate_%": 6.459,
+      "share_of_errors_%": 4.045
+     },
+     {
+      "cl_race": "white",
+      "n": 16380,
+      "n_err": 1057,
+      "n_videos": 594,
+      "n_videos_with_err": 145,
+      "rate_%": 6.453,
+      "share_of_errors_%": 73.71
+     }
+    ],
+    "fn_age4": [
+     {
+      "age4": "30-44",
+      "n": 6563,
+      "n_err": 541,
+      "n_videos": 219,
+      "n_videos_with_err": 63,
+      "rate_%": 8.243,
+      "share_of_errors_%": 37.727
+     },
+     {
+      "age4": "45-59",
+      "n": 2549,
+      "n_err": 198,
+      "n_videos": 85,
+      "n_videos_with_err": 26,
+      "rate_%": 7.768,
+      "share_of_errors_%": 13.808
+     },
+     {
+      "age4": "60+",
+      "n": 30,
+      "n_err": 18,
+      "n_videos": 1,
+      "n_videos_with_err": 1,
+      "rate_%": 60.0,
+      "share_of_errors_%": 1.255
+     },
+     {
+      "age4": "<30",
+      "n": 11721,
+      "n_err": 677,
+      "n_videos": 393,
+      "n_videos_with_err": 88,
+      "rate_%": 5.776,
+      "share_of_errors_%": 47.211
+     }
+    ],
+    "fn_ita4": [
+     {
+      "ita4": "Q1 darkest",
+      "n": 5758,
+      "n_err": 373,
+      "n_videos": 192,
+      "n_videos_with_err": 51,
+      "rate_%": 6.478,
+      "share_of_errors_%": 26.011
+     },
+     {
+      "ita4": "Q2",
+      "n": 5066,
+      "n_err": 405,
+      "n_videos": 169,
+      "n_videos_with_err": 48,
+      "rate_%": 7.994,
+      "share_of_errors_%": 28.243
+     },
+     {
+      "ita4": "Q3",
+      "n": 4648,
+      "n_err": 394,
+      "n_videos": 156,
+      "n_videos_with_err": 45,
+      "rate_%": 8.477,
+      "share_of_errors_%": 27.476
+     },
+     {
+      "ita4": "Q4 lightest",
+      "n": 5108,
+      "n_err": 262,
+      "n_videos": 171,
+      "n_videos_with_err": 34,
+      "rate_%": 5.129,
+      "share_of_errors_%": 18.271
+     },
+     {
+      "ita4": "missing",
+      "n": 283,
+      "n_err": 0,
+      "n_videos": 10,
+      "n_videos_with_err": 0,
+      "rate_%": 0.0,
+      "share_of_errors_%": 0.0
+     }
+    ]
+   },
+   "fp_videos_any": 97,
+   "fp_videos_ge50pct": 18,
+   "fp_share_top5_videos_%": 17.94453507340946,
+   "fp_share_top15_videos_%": 46.32952691680261,
+   "n_videos_for_50pct_fp": 17,
+   "iF_FPR": 46.55643613492688,
+   "iF_FPR_group_dev": {
+    "M-Asian": 3.84428782531082,
+    "M-White": 1.218089548546211,
+    "M-Black": 10.247283806311916,
+    "M-Others": 10.745722432302788,
+    "F-Asian": 12.095711362770212,
+    "F-White": 1.2004610638369995,
+    "F-Black": 1.6437465918682905,
+    "F-Others": 5.561133503979638
+   },
+   "group_FPR_%": {
+    "M-Asian": 9.663865546218489,
+    "M-White": 14.726242920075519,
+    "M-Black": 3.260869565217391,
+    "M-Others": 2.7624309392265194,
+    "F-Asian": 25.60386473429952,
+    "F-White": 12.307692307692308,
+    "F-Black": 11.864406779661017,
+    "F-Others": 7.9470198675496695
+   },
+   "ding_group_FPR_%": {
+    "M-Asian": 18.487394957983195,
+    "M-White": 12.523599748269351,
+    "M-Black": 8.695652173913043,
+    "M-Others": 16.022099447513813,
+    "F-Asian": 10.869565217391305,
+    "F-White": 11.396011396011396,
+    "F-Black": 18.64406779661017,
+    "F-Others": 14.56953642384106
+   },
+   "ding_iF_FPR_group_dev": {
+    "M-Asian": 5.948831714263495,
+    "M-White": 0.014963495450348585,
+    "M-Black": 3.8429110698066564,
+    "M-Others": 3.483536203794113,
+    "F-Asian": 1.6689980263283957,
+    "F-White": 1.1425518477083036,
+    "F-Black": 6.10550455289047,
+    "F-Others": 2.030973180121359
+   },
+   "iF_FPR_drop_topk_videos": {
+    "1": {
+     "iF_FPR": 43.530397104785145,
+     "FPR_%": 13.065661047027508,
+     "videos": [
+      "0_youtube_305"
+     ],
+     "iF_FPR_same_FPR": 44.74400291953423,
+     "FPR_same_%": 13.509316770186336
+    },
+    "2": {
+     "iF_FPR": 41.39585315286155,
+     "FPR_%": 12.636749274391606,
+     "videos": [
+      "0_youtube_305",
+      "0_youtube_845"
+     ],
+     "iF_FPR_same_FPR": 42.18723831514133,
+     "FPR_same_%": 13.507479348068765
+    },
+    "3": {
+     "iF_FPR": 40.32283173004817,
+     "FPR_%": 12.227466846482356,
+     "videos": [
+      "0_youtube_305",
+      "0_youtube_845",
+      "0_youtube_307"
+     ],
+     "iF_FPR_same_FPR": 39.97404481913046,
+     "FPR_same_%": 13.508653630029219
+    },
+    "5": {
+     "iF_FPR": 38.513866502797946,
+     "FPR_%": 11.457858769931663,
+     "videos": [
+      "0_youtube_305",
+      "0_youtube_845",
+      "0_youtube_307",
+      "0_youtube_383",
+      "0_youtube_438"
+     ],
+     "iF_FPR_same_FPR": 36.049767517317164,
+     "FPR_same_%": 13.507972665148063
+    },
+    "10": {
+     "iF_FPR": 32.08693473220598,
+     "FPR_%": 9.618104667609618,
+     "videos": [
+      "0_youtube_305",
+      "0_youtube_845",
+      "0_youtube_307",
+      "0_youtube_383",
+      "0_youtube_438",
+      "0_youtube_237",
+      "0_youtube_062",
+      "0_youtube_445",
+      "0_youtube_018",
+      "0_youtube_446"
+     ],
+     "iF_FPR_same_FPR": 37.99178936803636,
+     "FPR_same_%": 13.507779349363508
+    },
+    "15": {
+     "iF_FPR": 24.90160302340308,
+     "FPR_%": 8.034188034188034,
+     "videos": [
+      "0_youtube_305",
+      "0_youtube_845",
+      "0_youtube_307",
+      "0_youtube_383",
+      "0_youtube_438",
+      "0_youtube_237",
+      "0_youtube_062",
+      "0_youtube_445",
+      "0_youtube_018",
+      "0_youtube_446",
+      "0_youtube_616",
+      "0_youtube_204",
+      "0_youtube_930",
+      "0_youtube_472",
+      "0_youtube_547"
+     ],
+     "iF_FPR_same_FPR": 40.847369425597265,
+     "FPR_same_%": 13.528693528693529
+    },
+    "20": {
+     "iF_FPR": 21.209665699106754,
+     "FPR_%": 6.783092887876487,
+     "videos": [
+      "0_youtube_305",
+      "0_youtube_845",
+      "0_youtube_307",
+      "0_youtube_383",
+      "0_youtube_438",
+      "0_youtube_237",
+      "0_youtube_062",
+      "0_youtube_445",
+      "0_youtube_018",
+      "0_youtube_446",
+      "0_youtube_616",
+      "0_youtube_204",
+      "0_youtube_930",
+      "0_youtube_472",
+      "0_youtube_547",
+      "0_youtube_923",
+      "0_youtube_202",
+      "0_youtube_458",
+      "0_youtube_985",
+      "0_youtube_372"
+     ],
+     "iF_FPR_same_FPR": 47.1283314327347,
+     "FPR_same_%": 13.515565679574792
+    }
+   },
+   "iF_FPR_drop_random_videos": {
+    "5": {
+     "median": 46.35576031942885,
+     "p5": 43.745373728908085,
+     "p95": 49.756154448480125
+    },
+    "10": {
+     "median": 45.774592964623665,
+     "p5": 42.622435963229734,
+     "p95": 52.18139583651816
+    }
+   },
+   "within_group_fp_concentration": {
+    "F-Asian": {
+     "n_fp": 106,
+     "n_videos": 23,
+     "videos_with_fp": 12,
+     "top1_share_%": 18.867924528301888,
+     "top3_share_%": 50.943396226415096,
+     "top3_videos": [
+      "0_youtube_062",
+      "0_youtube_616",
+      "0_youtube_930"
+     ]
+    },
+    "F-Black": {
+     "n_fp": 14,
+     "n_videos": 6,
+     "videos_with_fp": 2,
+     "top1_share_%": 85.71428571428571,
+     "top3_share_%": 100.0,
+     "top3_videos": [
+      "0_youtube_458",
+      "0_youtube_836",
+      "0_youtube_397"
+     ]
+    },
+    "F-Others": {
+     "n_fp": 12,
+     "n_videos": 9,
+     "videos_with_fp": 3,
+     "top1_share_%": 66.66666666666666,
+     "top3_share_%": 100.0,
+     "top3_videos": [
+      "0_youtube_948",
+      "0_youtube_030",
+      "0_youtube_763"
+     ]
+    },
+    "F-White": {
+     "n_fp": 216,
+     "n_videos": 109,
+     "videos_with_fp": 35,
+     "top1_share_%": 9.25925925925926,
+     "top3_share_%": 25.925925925925924,
+     "top3_videos": [
+      "0_youtube_438",
+      "0_youtube_018",
+      "0_youtube_446"
+     ]
+    },
+    "M-Asian": {
+     "n_fp": 23,
+     "n_videos": 13,
+     "videos_with_fp": 6,
+     "top1_share_%": 34.78260869565217,
+     "top3_share_%": 78.26086956521739,
+     "top3_videos": [
+      "0_youtube_345",
+      "0_youtube_513",
+      "0_youtube_058"
+     ]
+    },
+    "M-Black": {
+     "n_fp": 3,
+     "n_videos": 7,
+     "videos_with_fp": 2,
+     "top1_share_%": 66.66666666666666,
+     "top3_share_%": 100.0,
+     "top3_videos": [
+      "0_youtube_087",
+      "0_youtube_715",
+      "0_youtube_031"
+     ]
+    },
+    "M-Others": {
+     "n_fp": 5,
+     "n_videos": 12,
+     "videos_with_fp": 3,
+     "top1_share_%": 60.0,
+     "top3_share_%": 100.0,
+     "top3_videos": [
+      "0_youtube_974",
+      "0_youtube_805",
+      "0_youtube_719"
+     ]
+    },
+    "M-White": {
+     "n_fp": 234,
+     "n_videos": 88,
+     "videos_with_fp": 34,
+     "top1_share_%": 10.256410256410255,
+     "top3_share_%": 29.48717948717949,
+     "top3_videos": [
+      "0_youtube_305",
+      "0_youtube_845",
+      "0_youtube_307"
+     ]
+    }
+   },
+   "video_weighted_group_FPR_%": {
+    "F-Asian": 15.95,
+    "F-Black": 8.05,
+    "F-Others": 4.5,
+    "F-White": 7.73,
+    "M-Asian": 13.53,
+    "M-Black": 1.48,
+    "M-Others": 9.45,
+    "M-White": 11.19
+   },
+   "fn_videos_any": 178,
+   "fn_videos_ge50pct": 34,
+   "fn_share_top15_videos_%": 28.382147838214784,
+   "n_videos_for_50pct_fn": 31,
+   "fn_videos_ge50pct_by_method": {
+    "NeuralTextures": 22,
+    "Face2Face": 5,
+    "FaceShifter": 4,
+    "FaceSwap": 2,
+    "Deepfakes": 1
+   },
+   "top_fp_videos": [
+    {
+     "video": "0_youtube_305",
+     "n": 30,
+     "n_fp": 24,
+     "group": "M-White",
+     "cl_gender": "female",
+     "cl_race": "asian",
+     "ff_race7": "Middle Eastern",
+     "age_vid": 28.0,
+     "ita_vid": 80.29,
+     "ita4": "Q4 lightest",
+     "max_logit": 29.74,
+     "ding_fp": 14,
+     "fp_rate_%": 80.0,
+     "ding_fp_rate_%": 46.67
+    },
+    {
+     "video": "0_youtube_845",
+     "n": 29,
+     "n_fp": 23,
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "ff_race7": "White",
+     "age_vid": 42.0,
+     "ita_vid": 12.86,
+     "ita4": "Q1 darkest",
+     "max_logit": 31.92,
+     "ding_fp": 21,
+     "fp_rate_%": 79.31,
+     "ding_fp_rate_%": 72.41
+    },
+    {
+     "video": "0_youtube_307",
+     "n": 30,
+     "n_fp": 22,
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "ff_race7": "Middle Eastern",
+     "age_vid": 55.5,
+     "ita_vid": 58.86,
+     "ita4": "Q4 lightest",
+     "max_logit": 46.22,
+     "ding_fp": 27,
+     "fp_rate_%": 73.33,
+     "ding_fp_rate_%": 90.0
+    },
+    {
+     "video": "0_youtube_383",
+     "n": 30,
+     "n_fp": 21,
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "ff_race7": "Middle Eastern",
+     "age_vid": 34.0,
+     "ita_vid": 44.49,
+     "ita4": "Q3",
+     "max_logit": 12.44,
+     "ding_fp": 2,
+     "fp_rate_%": 70.0,
+     "ding_fp_rate_%": 6.67
+    },
+    {
+     "video": "0_youtube_438",
+     "n": 29,
+     "n_fp": 20,
+     "group": "F-White",
+     "cl_gender": "female",
+     "cl_race": "white",
+     "ff_race7": "White",
+     "age_vid": 29.0,
+     "ita_vid": 85.43,
+     "ita4": "Q4 lightest",
+     "max_logit": 33.59,
+     "ding_fp": 6,
+     "fp_rate_%": 68.97,
+     "ding_fp_rate_%": 20.69
+    },
+    {
+     "video": "0_youtube_237",
+     "n": 30,
+     "n_fp": 20,
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "ff_race7": "White",
+     "age_vid": 24.0,
+     "ita_vid": 45.86,
+     "ita4": "Q3",
+     "max_logit": 28.78,
+     "ding_fp": 1,
+     "fp_rate_%": 66.67,
+     "ding_fp_rate_%": 3.33
+    },
+    {
+     "video": "0_youtube_062",
+     "n": 29,
+     "n_fp": 20,
+     "group": "F-Asian",
+     "cl_gender": "female",
+     "cl_race": "asian",
+     "ff_race7": "East Asian",
+     "age_vid": 31.0,
+     "ita_vid": 46.09,
+     "ita4": "Q3",
+     "max_logit": 27.5,
+     "ding_fp": 0,
+     "fp_rate_%": 68.97,
+     "ding_fp_rate_%": 0.0
+    },
+    {
+     "video": "0_youtube_445",
+     "n": 30,
+     "n_fp": 19,
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "ff_race7": "White",
+     "age_vid": 42.0,
+     "ita_vid": 29.56,
+     "ita4": "Q2",
+     "max_logit": -50.82,
+     "ding_fp": 0,
+     "fp_rate_%": 63.33,
+     "ding_fp_rate_%": 0.0
+    },
+    {
+     "video": "0_youtube_018",
+     "n": 29,
+     "n_fp": 18,
+     "group": "F-White",
+     "cl_gender": "female",
+     "cl_race": "white",
+     "ff_race7": "White",
+     "age_vid": 31.0,
+     "ita_vid": 35.08,
+     "ita4": "Q2",
+     "max_logit": 47.02,
+     "ding_fp": 21,
+     "fp_rate_%": 62.07,
+     "ding_fp_rate_%": 72.41
+    },
+    {
+     "video": "0_youtube_446",
+     "n": 30,
+     "n_fp": 18,
+     "group": "F-White",
+     "cl_gender": "female",
+     "cl_race": "white",
+     "ff_race7": "White",
+     "age_vid": 20.0,
+     "ita_vid": 57.97,
+     "ita4": "Q4 lightest",
+     "max_logit": 38.15,
+     "ding_fp": 4,
+     "fp_rate_%": 60.0,
+     "ding_fp_rate_%": 13.33
+    },
+    {
+     "video": "0_youtube_616",
+     "n": 30,
+     "n_fp": 18,
+     "group": "F-Asian",
+     "cl_gender": "female",
+     "cl_race": "asian",
+     "ff_race7": "East Asian",
+     "age_vid": 37.0,
+     "ita_vid": 34.48,
+     "ita4": "Q2",
+     "max_logit": -41.47,
+     "ding_fp": 18,
+     "fp_rate_%": 60.0,
+     "ding_fp_rate_%": 60.0
+    },
+    {
+     "video": "0_youtube_204",
+     "n": 30,
+     "n_fp": 18,
+     "group": "F-White",
+     "cl_gender": "female",
+     "cl_race": "white",
+     "ff_race7": "White",
+     "age_vid": 29.0,
+     "ita_vid": 62.27,
+     "ita4": "Q4 lightest",
+     "max_logit": -55.17,
+     "ding_fp": 2,
+     "fp_rate_%": 60.0,
+     "ding_fp_rate_%": 6.67
+    },
+    {
+     "video": "0_youtube_930",
+     "n": 28,
+     "n_fp": 16,
+     "group": "F-Asian",
+     "cl_gender": "female",
+     "cl_race": "asian",
+     "ff_race7": "East Asian",
+     "age_vid": 18.0,
+     "ita_vid": 68.43,
+     "ita4": "Q4 lightest",
+     "max_logit": 24.07,
+     "ding_fp": 5,
+     "fp_rate_%": 57.14,
+     "ding_fp_rate_%": 17.86
+    },
+    {
+     "video": "0_youtube_472",
+     "n": 29,
+     "n_fp": 14,
+     "group": "F-White",
+     "cl_gender": "female",
+     "cl_race": "white",
+     "ff_race7": "Latino_Hispanic",
+     "age_vid": 23.0,
+     "ita_vid": 46.1,
+     "ita4": "Q3",
+     "max_logit": -49.62,
+     "ding_fp": 6,
+     "fp_rate_%": 48.28,
+     "ding_fp_rate_%": 20.69
+    },
+    {
+     "video": "0_youtube_547",
+     "n": 30,
+     "n_fp": 13,
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "ff_race7": "Middle Eastern",
+     "age_vid": 23.5,
+     "ita_vid": 36.96,
+     "ita4": "Q3",
+     "max_logit": -2.17,
+     "ding_fp": 13,
+     "fp_rate_%": 43.33,
+     "ding_fp_rate_%": 43.33
+    }
+   ],
+   "top_fn_videos": [
+    {
+     "video": "0_NeuralTextures_840_800",
+     "n": 30,
+     "n_fn": 30,
+     "method": "NeuralTextures",
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age_vid": 33.0,
+     "ita4": "Q1 darkest",
+     "min_logit": -103.29,
+     "ding_fn": 29,
+     "fn_rate_%": 100.0,
+     "ding_fn_rate_%": 96.67
+    },
+    {
+     "video": "0_NeuralTextures_794_779",
+     "n": 30,
+     "n_fn": 30,
+     "method": "NeuralTextures",
+     "group": "M-Others",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age_vid": 28.0,
+     "ita4": "Q2",
+     "min_logit": -96.22,
+     "ding_fn": 30,
+     "fn_rate_%": 100.0,
+     "ding_fn_rate_%": 100.0
+    },
+    {
+     "video": "0_Deepfakes_492_325",
+     "n": 30,
+     "n_fn": 29,
+     "method": "Deepfakes",
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age_vid": 42.0,
+     "ita4": "Q3",
+     "min_logit": -105.82,
+     "ding_fn": 29,
+     "fn_rate_%": 96.67,
+     "ding_fn_rate_%": 96.67
+    },
+    {
+     "video": "0_NeuralTextures_235_194",
+     "n": 30,
+     "n_fn": 29,
+     "method": "NeuralTextures",
+     "group": "M-Asian",
+     "cl_gender": "male",
+     "cl_race": "asian",
+     "age_vid": 24.0,
+     "ita4": "Q3",
+     "min_logit": -99.81,
+     "ding_fn": 29,
+     "fn_rate_%": 96.67,
+     "ding_fn_rate_%": 96.67
+    },
+    {
+     "video": "0_NeuralTextures_800_840",
+     "n": 30,
+     "n_fn": 28,
+     "method": "NeuralTextures",
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age_vid": 56.0,
+     "ita4": "Q1 darkest",
+     "min_logit": -110.75,
+     "ding_fn": 3,
+     "fn_rate_%": 93.33,
+     "ding_fn_rate_%": 10.0
+    },
+    {
+     "video": "0_NeuralTextures_016_209",
+     "n": 30,
+     "n_fn": 28,
+     "method": "NeuralTextures",
+     "group": "M-Others",
+     "cl_gender": "male",
+     "cl_race": "asian",
+     "age_vid": 3.0,
+     "ita4": "Q2",
+     "min_logit": -106.07,
+     "ding_fn": 6,
+     "fn_rate_%": 93.33,
+     "ding_fn_rate_%": 20.0
+    },
+    {
+     "video": "0_NeuralTextures_306_278",
+     "n": 30,
+     "n_fn": 28,
+     "method": "NeuralTextures",
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age_vid": 32.5,
+     "ita4": "Q2",
+     "min_logit": -100.85,
+     "ding_fn": 0,
+     "fn_rate_%": 93.33,
+     "ding_fn_rate_%": 0.0
+    },
+    {
+     "video": "0_NeuralTextures_578_636",
+     "n": 30,
+     "n_fn": 27,
+     "method": "NeuralTextures",
+     "group": "F-White",
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age_vid": 32.5,
+     "ita4": "Q4 lightest",
+     "min_logit": -113.82,
+     "ding_fn": 1,
+     "fn_rate_%": 90.0,
+     "ding_fn_rate_%": 3.33
+    },
+    {
+     "video": "0_NeuralTextures_867_765",
+     "n": 30,
+     "n_fn": 27,
+     "method": "NeuralTextures",
+     "group": "F-White",
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age_vid": 25.0,
+     "ita4": "Q4 lightest",
+     "min_logit": -110.34,
+     "ding_fn": 13,
+     "fn_rate_%": 90.0,
+     "ding_fn_rate_%": 43.33
+    },
+    {
+     "video": "0_NeuralTextures_619_620",
+     "n": 30,
+     "n_fn": 26,
+     "method": "NeuralTextures",
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age_vid": 54.0,
+     "ita4": "Q3",
+     "min_logit": -111.46,
+     "ding_fn": 29,
+     "fn_rate_%": 86.67,
+     "ding_fn_rate_%": 96.67
+    },
+    {
+     "video": "0_Face2Face_016_209",
+     "n": 30,
+     "n_fn": 26,
+     "method": "Face2Face",
+     "group": "M-Others",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age_vid": 3.0,
+     "ita4": "Q2",
+     "min_logit": -109.54,
+     "ding_fn": 1,
+     "fn_rate_%": 86.67,
+     "ding_fn_rate_%": 3.33
+    },
+    {
+     "video": "0_NeuralTextures_294_292",
+     "n": 30,
+     "n_fn": 25,
+     "method": "NeuralTextures",
+     "group": "F-Asian",
+     "cl_gender": "female",
+     "cl_race": "asian",
+     "age_vid": 23.0,
+     "ita4": "Q3",
+     "min_logit": -114.75,
+     "ding_fn": 28,
+     "fn_rate_%": 83.33,
+     "ding_fn_rate_%": 93.33
+    },
+    {
+     "video": "0_NeuralTextures_548_632",
+     "n": 30,
+     "n_fn": 25,
+     "method": "NeuralTextures",
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age_vid": 35.5,
+     "ita4": "Q3",
+     "min_logit": -101.77,
+     "ding_fn": 27,
+     "fn_rate_%": 83.33,
+     "ding_fn_rate_%": 90.0
+    },
+    {
+     "video": "0_NeuralTextures_494_445",
+     "n": 30,
+     "n_fn": 25,
+     "method": "NeuralTextures",
+     "group": "M-Others",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age_vid": 38.0,
+     "ita4": "Q1 darkest",
+     "min_logit": -89.79,
+     "ding_fn": 1,
+     "fn_rate_%": 83.33,
+     "ding_fn_rate_%": 3.33
+    },
+    {
+     "video": "0_NeuralTextures_010_005",
+     "n": 30,
+     "n_fn": 24,
+     "method": "NeuralTextures",
+     "group": "F-Others",
+     "cl_gender": "female",
+     "cl_race": "others",
+     "age_vid": 23.0,
+     "ita4": "Q2",
+     "min_logit": -103.47,
+     "ding_fn": 9,
+     "fn_rate_%": 80.0,
+     "ding_fn_rate_%": 30.0
+    }
+   ],
+   "unique_vs_ding": {
+    "fp_only_ours": [
+     {
+      "video": "0_youtube_062",
+      "n": 29,
+      "n_err": 20,
+      "group": "F-Asian",
+      "method": "real",
+      "ours_mean_logit": -57.19,
+      "ding_mean_logit": -5.09,
+      "rate_%": 68.97
+     },
+     {
+      "video": "0_youtube_445",
+      "n": 30,
+      "n_err": 19,
+      "group": "M-White",
+      "method": "real",
+      "ours_mean_logit": -71.32,
+      "ding_mean_logit": -4.9,
+      "rate_%": 63.33
+     },
+     {
+      "video": "0_youtube_237",
+      "n": 30,
+      "n_err": 19,
+      "group": "M-White",
+      "method": "real",
+      "ours_mean_logit": -53.75,
+      "ding_mean_logit": -4.63,
+      "rate_%": 63.33
+     },
+     {
+      "video": "0_youtube_383",
+      "n": 30,
+      "n_err": 19,
+      "group": "M-White",
+      "method": "real",
+      "ours_mean_logit": -48.41,
+      "ding_mean_logit": -3.2,
+      "rate_%": 63.33
+     },
+     {
+      "video": "0_youtube_204",
+      "n": 30,
+      "n_err": 17,
+      "group": "F-White",
+      "method": "real",
+      "ours_mean_logit": -73.19,
+      "ding_mean_logit": -3.66,
+      "rate_%": 56.67
+     },
+     {
+      "video": "0_youtube_446",
+      "n": 30,
+      "n_err": 14,
+      "group": "F-White",
+      "method": "real",
+      "ours_mean_logit": -57.43,
+      "ding_mean_logit": -3.54,
+      "rate_%": 46.67
+     },
+     {
+      "video": "0_youtube_438",
+      "n": 29,
+      "n_err": 14,
+      "group": "F-White",
+      "method": "real",
+      "ours_mean_logit": -65.91,
+      "ding_mean_logit": -2.62,
+      "rate_%": 48.28
+     },
+     {
+      "video": "0_youtube_372",
+      "n": 28,
+      "n_err": 12,
+      "group": "F-Asian",
+      "method": "real",
+      "ours_mean_logit": -78.41,
+      "ding_mean_logit": -4.81,
+      "rate_%": 42.86
+     },
+     {
+      "video": "0_youtube_930",
+      "n": 28,
+      "n_err": 11,
+      "group": "F-Asian",
+      "method": "real",
+      "ours_mean_logit": -56.62,
+      "ding_mean_logit": -2.91,
+      "rate_%": 39.29
+     },
+     {
+      "video": "0_youtube_202",
+      "n": 29,
+      "n_err": 11,
+      "group": "F-White",
+      "method": "real",
+      "ours_mean_logit": -68.4,
+      "ding_mean_logit": -3.92,
+      "rate_%": 37.93
+     }
+    ],
+    "fp_only_ours_by_group": {
+     "F-Asian": 80,
+     "F-Black": 4,
+     "F-Others": 9,
+     "F-White": 148,
+     "M-Asian": 13,
+     "M-Black": 3,
+     "M-Others": 5,
+     "M-White": 130
+    },
+    "fp_only_ding": [
+     {
+      "video": "0_youtube_494",
+      "n": 29,
+      "n_err": 24,
+      "group": "M-Others",
+      "method": "real",
+      "ours_mean_logit": -92.55,
+      "ding_mean_logit": 2.31,
+      "rate_%": 82.76
+     },
+     {
+      "video": "0_youtube_763",
+      "n": 29,
+      "n_err": 13,
+      "group": "F-Others",
+      "method": "real",
+      "ours_mean_logit": -91.24,
+      "ding_mean_logit": -0.07,
+      "rate_%": 44.83
+     },
+     {
+      "video": "0_youtube_602",
+      "n": 28,
+      "n_err": 13,
+      "group": "F-White",
+      "method": "real",
+      "ours_mean_logit": -96.73,
+      "ding_mean_logit": 0.07,
+      "rate_%": 46.43
+     },
+     {
+      "video": "0_youtube_923",
+      "n": 29,
+      "n_err": 12,
+      "group": "M-White",
+      "method": "real",
+      "ours_mean_logit": -75.79,
+      "ding_mean_logit": -0.26,
+      "rate_%": 41.38
+     },
+     {
+      "video": "0_youtube_623",
+      "n": 29,
+      "n_err": 12,
+      "group": "F-White",
+      "method": "real",
+      "ours_mean_logit": -102.71,
+      "ding_mean_logit": -0.7,
+      "rate_%": 41.38
+     },
+     {
+      "video": "0_youtube_606",
+      "n": 29,
+      "n_err": 12,
+      "group": "F-White",
+      "method": "real",
+      "ours_mean_logit": -103.71,
+      "ding_mean_logit": -0.67,
+      "rate_%": 41.38
+     },
+     {
+      "video": "0_youtube_513",
+      "n": 29,
+      "n_err": 10,
+      "group": "M-Asian",
+      "method": "real",
+      "ours_mean_logit": -79.31,
+      "ding_mean_logit": -0.81,
+      "rate_%": 34.48
+     },
+     {
+      "video": "0_youtube_019",
+      "n": 30,
+      "n_err": 10,
+      "group": "F-White",
+      "method": "real",
+      "ours_mean_logit": -85.64,
+      "ding_mean_logit": -0.55,
+      "rate_%": 33.33
+     },
+     {
+      "video": "0_youtube_095",
+      "n": 30,
+      "n_err": 10,
+      "group": "F-White",
+      "method": "real",
+      "ours_mean_logit": -79.3,
+      "ding_mean_logit": 0.71,
+      "rate_%": 33.33
+     },
+     {
+      "video": "0_youtube_595",
+      "n": 30,
+      "n_err": 10,
+      "group": "F-White",
+      "method": "real",
+      "ours_mean_logit": -84.62,
+      "ding_mean_logit": -1.21,
+      "rate_%": 33.33
+     }
+    ],
+    "fp_only_ding_by_group": {
+     "F-Asian": 19,
+     "F-Black": 12,
+     "F-Others": 19,
+     "F-White": 132,
+     "M-Asian": 34,
+     "M-Black": 8,
+     "M-Others": 29,
+     "M-White": 95
+    },
+    "fn_only_ours": [
+     {
+      "video": "0_NeuralTextures_306_278",
+      "n": 30,
+      "n_err": 28,
+      "group": "M-White",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -82.18,
+      "ding_mean_logit": 4.92,
+      "rate_%": 93.33
+     },
+     {
+      "video": "0_NeuralTextures_578_636",
+      "n": 30,
+      "n_err": 26,
+      "group": "F-White",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -89.85,
+      "ding_mean_logit": 4.21,
+      "rate_%": 86.67
+     },
+     {
+      "video": "0_NeuralTextures_800_840",
+      "n": 30,
+      "n_err": 25,
+      "group": "M-White",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -94.6,
+      "ding_mean_logit": 3.77,
+      "rate_%": 83.33
+     },
+     {
+      "video": "0_NeuralTextures_494_445",
+      "n": 30,
+      "n_err": 25,
+      "group": "M-Others",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -79.75,
+      "ding_mean_logit": 2.85,
+      "rate_%": 83.33
+     },
+     {
+      "video": "0_Face2Face_016_209",
+      "n": 30,
+      "n_err": 25,
+      "group": "M-Others",
+      "method": "Face2Face",
+      "ours_mean_logit": -85.0,
+      "ding_mean_logit": 3.71,
+      "rate_%": 83.33
+     },
+     {
+      "video": "0_NeuralTextures_872_873",
+      "n": 30,
+      "n_err": 23,
+      "group": "M-White",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -80.73,
+      "ding_mean_logit": 4.03,
+      "rate_%": 76.67
+     },
+     {
+      "video": "0_NeuralTextures_016_209",
+      "n": 30,
+      "n_err": 22,
+      "group": "M-Others",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -88.57,
+      "ding_mean_logit": 2.49,
+      "rate_%": 73.33
+     },
+     {
+      "video": "0_NeuralTextures_194_235",
+      "n": 30,
+      "n_err": 22,
+      "group": "M-Asian",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -76.46,
+      "ding_mean_logit": 4.0,
+      "rate_%": 73.33
+     },
+     {
+      "video": "0_NeuralTextures_705_707",
+      "n": 30,
+      "n_err": 22,
+      "group": "M-White",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -50.47,
+      "ding_mean_logit": 2.43,
+      "rate_%": 73.33
+     },
+     {
+      "video": "0_NeuralTextures_376_381",
+      "n": 30,
+      "n_err": 19,
+      "group": "F-White",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -76.1,
+      "ding_mean_logit": 3.94,
+      "rate_%": 63.33
+     }
+    ],
+    "fn_only_ours_by_group": {
+     "F-Asian": 28,
+     "F-Black": 8,
+     "F-Others": 18,
+     "F-White": 256,
+     "M-Asian": 78,
+     "M-Black": 10,
+     "M-Others": 85,
+     "M-White": 475
+    },
+    "fn_only_ours_by_method": {
+     "Deepfakes": 25,
+     "Face2Face": 172,
+     "FaceShifter": 168,
+     "FaceSwap": 110,
+     "NeuralTextures": 483
+    },
+    "fn_only_ding": [
+     {
+      "video": "0_NeuralTextures_381_376",
+      "n": 30,
+      "n_err": 25,
+      "group": "F-White",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -15.32,
+      "ding_mean_logit": -3.75,
+      "rate_%": 83.33
+     },
+     {
+      "video": "0_NeuralTextures_662_641",
+      "n": 28,
+      "n_err": 24,
+      "group": "F-Asian",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -34.64,
+      "ding_mean_logit": -3.08,
+      "rate_%": 85.71
+     },
+     {
+      "video": "0_NeuralTextures_534_490",
+      "n": 29,
+      "n_err": 21,
+      "group": "F-White",
+      "method": "NeuralTextures",
+      "ours_mean_logit": 11.05,
+      "ding_mean_logit": -1.1,
+      "rate_%": 72.41
+     },
+     {
+      "video": "0_Face2Face_193_030",
+      "n": 30,
+      "n_err": 20,
+      "group": "F-White",
+      "method": "Face2Face",
+      "ours_mean_logit": 20.4,
+      "ding_mean_logit": -1.87,
+      "rate_%": 66.67
+     },
+     {
+      "video": "0_NeuralTextures_620_619",
+      "n": 30,
+      "n_err": 20,
+      "group": "M-White",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -55.93,
+      "ding_mean_logit": -1.2,
+      "rate_%": 66.67
+     },
+     {
+      "video": "0_NeuralTextures_482_465",
+      "n": 30,
+      "n_err": 17,
+      "group": "F-White",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -52.82,
+      "ding_mean_logit": -0.77,
+      "rate_%": 56.67
+     },
+     {
+      "video": "0_Deepfakes_948_965",
+      "n": 30,
+      "n_err": 16,
+      "group": "F-White",
+      "method": "Deepfakes",
+      "ours_mean_logit": 42.52,
+      "ding_mean_logit": -0.51,
+      "rate_%": 53.33
+     },
+     {
+      "video": "0_NeuralTextures_857_909",
+      "n": 30,
+      "n_err": 15,
+      "group": "M-White",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -58.44,
+      "ding_mean_logit": -0.52,
+      "rate_%": 50.0
+     },
+     {
+      "video": "0_Face2Face_562_626",
+      "n": 30,
+      "n_err": 15,
+      "group": "M-White",
+      "method": "Face2Face",
+      "ours_mean_logit": -64.41,
+      "ding_mean_logit": -3.68,
+      "rate_%": 50.0
+     },
+     {
+      "video": "0_Deepfakes_300_304",
+      "n": 30,
+      "n_err": 14,
+      "group": "M-Others",
+      "method": "Deepfakes",
+      "ours_mean_logit": 33.97,
+      "ding_mean_logit": 0.23,
+      "rate_%": 46.67
+     }
+    ],
+    "fn_only_ding_by_group": {
+     "F-Asian": 54,
+     "F-Black": 9,
+     "F-Others": 9,
+     "F-White": 216,
+     "M-Asian": 49,
+     "M-Black": 5,
+     "M-Others": 35,
+     "M-White": 222
+    },
+    "fn_only_ding_by_method": {
+     "Deepfakes": 88,
+     "Face2Face": 87,
+     "FaceShifter": 68,
+     "FaceSwap": 60,
+     "NeuralTextures": 296
+    }
+   },
+   "top12_fp": [
+    {
+     "frame": "0_youtube_018_291.png",
+     "video": "0_youtube_018",
+     "gname": "F-White",
+     "method": "real",
+     "logit": 47.018,
+     "ding_logit": 5.2,
+     "ding_fake": true,
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age4": "30-44",
+     "ita4": "Q2",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_018_291.png"
+    },
+    {
+     "frame": "0_youtube_307_131.png",
+     "video": "0_youtube_307",
+     "gname": "M-White",
+     "method": "real",
+     "logit": 46.22,
+     "ding_logit": 2.953,
+     "ding_fake": true,
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age4": "45-59",
+     "ita4": "Q4 lightest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_307_131.png"
+    },
+    {
+     "frame": "0_youtube_095_121.png",
+     "video": "0_youtube_095",
+     "gname": "F-White",
+     "method": "real",
+     "logit": 38.658,
+     "ding_logit": -1.07,
+     "ding_fake": false,
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age4": "<30",
+     "ita4": "Q3",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_095_121.png"
+    },
+    {
+     "frame": "0_youtube_446_141.png",
+     "video": "0_youtube_446",
+     "gname": "F-White",
+     "method": "real",
+     "logit": 38.154,
+     "ding_logit": -5.46,
+     "ding_fake": false,
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age4": "<30",
+     "ita4": "Q4 lightest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_446_141.png"
+    },
+    {
+     "frame": "0_youtube_438_131.png",
+     "video": "0_youtube_438",
+     "gname": "F-White",
+     "method": "real",
+     "logit": 33.591,
+     "ding_logit": -4.803,
+     "ding_fake": false,
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age4": "<30",
+     "ita4": "Q4 lightest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_438_131.png"
+    },
+    {
+     "frame": "0_youtube_845_51.png",
+     "video": "0_youtube_845",
+     "gname": "M-White",
+     "method": "real",
+     "logit": 31.922,
+     "ding_logit": 1.232,
+     "ding_fake": true,
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age4": "30-44",
+     "ita4": "Q1 darkest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_845_51.png"
+    },
+    {
+     "frame": "0_youtube_305_21.png",
+     "video": "0_youtube_305",
+     "gname": "M-White",
+     "method": "real",
+     "logit": 29.741,
+     "ding_logit": 0.032,
+     "ding_fake": true,
+     "cl_gender": "female",
+     "cl_race": "asian",
+     "age4": "<30",
+     "ita4": "Q4 lightest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_305_21.png"
+    },
+    {
+     "frame": "0_youtube_288_221.png",
+     "video": "0_youtube_288",
+     "gname": "F-White",
+     "method": "real",
+     "logit": 28.8,
+     "ding_logit": 2.199,
+     "ding_fake": true,
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age4": "<30",
+     "ita4": "Q1 darkest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_288_221.png"
+    },
+    {
+     "frame": "0_youtube_237_81.png",
+     "video": "0_youtube_237",
+     "gname": "M-White",
+     "method": "real",
+     "logit": 28.78,
+     "ding_logit": -2.654,
+     "ding_fake": false,
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age4": "<30",
+     "ita4": "Q3",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_237_81.png"
+    },
+    {
+     "frame": "0_youtube_018_1.png",
+     "video": "0_youtube_018",
+     "gname": "F-White",
+     "method": "real",
+     "logit": 28.408,
+     "ding_logit": 4.859,
+     "ding_fake": true,
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age4": "30-44",
+     "ita4": "Q2",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_018_1.png"
+    },
+    {
+     "frame": "0_youtube_062_21.png",
+     "video": "0_youtube_062",
+     "gname": "F-Asian",
+     "method": "real",
+     "logit": 27.496,
+     "ding_logit": -5.169,
+     "ding_fake": false,
+     "cl_gender": "female",
+     "cl_race": "asian",
+     "age4": "30-44",
+     "ita4": "Q3",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_062_21.png"
+    },
+    {
+     "frame": "0_youtube_305_1.png",
+     "video": "0_youtube_305",
+     "gname": "M-White",
+     "method": "real",
+     "logit": 27.295,
+     "ding_logit": 4.139,
+     "ding_fake": true,
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age4": "<30",
+     "ita4": "Q4 lightest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_305_1.png"
+    }
+   ],
+   "top12_fn": [
+    {
+     "frame": "0_NeuralTextures_294_292_1.png",
+     "video": "0_NeuralTextures_294_292",
+     "gname": "F-Asian",
+     "method": "NeuralTextures",
+     "logit": -114.746,
+     "ding_logit": -5.436,
+     "ding_fake": false,
+     "cl_gender": "female",
+     "cl_race": "asian",
+     "age4": "<30",
+     "ita4": "Q3",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_NeuralTextures_294_292_1.png"
+    },
+    {
+     "frame": "0_NeuralTextures_578_636_101.png",
+     "video": "0_NeuralTextures_578_636",
+     "gname": "F-White",
+     "method": "NeuralTextures",
+     "logit": -113.817,
+     "ding_logit": 0.661,
+     "ding_fake": true,
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age4": "30-44",
+     "ita4": "Q4 lightest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_NeuralTextures_578_636_101.png"
+    },
+    {
+     "frame": "0_FaceSwap_800_840_101.png",
+     "video": "0_FaceSwap_800_840",
+     "gname": "M-White",
+     "method": "FaceSwap",
+     "logit": -113.249,
+     "ding_logit": 4.583,
+     "ding_fake": true,
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age4": "45-59",
+     "ita4": "Q1 darkest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_FaceSwap_800_840_101.png"
+    },
+    {
+     "frame": "0_FaceShifter_951_947_101.png",
+     "video": "0_FaceShifter_951_947",
+     "gname": "F-White",
+     "method": "FaceShifter",
+     "logit": -111.896,
+     "ding_logit": -5.652,
+     "ding_fake": false,
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age4": "<30",
+     "ita4": "Q2",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_FaceShifter_951_947_101.png"
+    },
+    {
+     "frame": "0_NeuralTextures_619_620_231.png",
+     "video": "0_NeuralTextures_619_620",
+     "gname": "M-White",
+     "method": "NeuralTextures",
+     "logit": -111.464,
+     "ding_logit": -4.18,
+     "ding_fake": false,
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age4": "45-59",
+     "ita4": "Q3",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_NeuralTextures_619_620_231.png"
+    },
+    {
+     "frame": "0_FaceSwap_800_840_111.png",
+     "video": "0_FaceSwap_800_840",
+     "gname": "M-White",
+     "method": "FaceSwap",
+     "logit": -111.274,
+     "ding_logit": 5.547,
+     "ding_fake": true,
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age4": "45-59",
+     "ita4": "Q1 darkest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_FaceSwap_800_840_111.png"
+    },
+    {
+     "frame": "0_NeuralTextures_800_840_31.png",
+     "video": "0_NeuralTextures_800_840",
+     "gname": "M-White",
+     "method": "NeuralTextures",
+     "logit": -110.75,
+     "ding_logit": 4.796,
+     "ding_fake": true,
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age4": "45-59",
+     "ita4": "Q1 darkest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_NeuralTextures_800_840_31.png"
+    },
+    {
+     "frame": "0_FaceShifter_800_840_41.png",
+     "video": "0_FaceShifter_800_840",
+     "gname": "M-White",
+     "method": "FaceShifter",
+     "logit": -110.749,
+     "ding_logit": 5.184,
+     "ding_fake": true,
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age4": "45-59",
+     "ita4": "Q1 darkest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_FaceShifter_800_840_41.png"
+    },
+    {
+     "frame": "0_Face2Face_619_620_1.png",
+     "video": "0_Face2Face_619_620",
+     "gname": "M-White",
+     "method": "Face2Face",
+     "logit": -110.654,
+     "ding_logit": -0.09,
+     "ding_fake": false,
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age4": "45-59",
+     "ita4": "Q3",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_Face2Face_619_620_1.png"
+    },
+    {
+     "frame": "0_NeuralTextures_619_620_11.png",
+     "video": "0_NeuralTextures_619_620",
+     "gname": "M-White",
+     "method": "NeuralTextures",
+     "logit": -110.361,
+     "ding_logit": -5.788,
+     "ding_fake": false,
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age4": "45-59",
+     "ita4": "Q3",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_NeuralTextures_619_620_11.png"
+    },
+    {
+     "frame": "0_NeuralTextures_867_765_1.png",
+     "video": "0_NeuralTextures_867_765",
+     "gname": "F-White",
+     "method": "NeuralTextures",
+     "logit": -110.34,
+     "ding_logit": -5.768,
+     "ding_fake": false,
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age4": "<30",
+     "ita4": "Q4 lightest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_NeuralTextures_867_765_1.png"
+    },
+    {
+     "frame": "0_FaceShifter_867_765_231.png",
+     "video": "0_FaceShifter_867_765",
+     "gname": "F-Asian",
+     "method": "FaceShifter",
+     "logit": -109.917,
+     "ding_logit": 5.259,
+     "ding_fake": true,
+     "cl_gender": "female",
+     "cl_race": "asian",
+     "age4": "<30",
+     "ita4": "Q4 lightest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_FaceShifter_867_765_231.png"
+    }
+   ]
+  },
+  "native": {
+   "t": -65.96807621582647,
+   "n_FP": 367,
+   "FPR_%": 8.087263111502866,
+   "n_FN": 1991,
+   "FNR_%": 9.54321046829315,
+   "FP_also_ding_%": 43.596730245231605,
+   "FN_also_ding_%": 29.733802109492718,
+   "dingFP_also_ours_%": 28.119507908611602,
+   "dingFN_also_ours_%": 55.06976744186046,
+   "FP_ours_only": 207,
+   "FP_ding_only": 409,
+   "FN_ours_only": 1399,
+   "FN_ding_only": 483,
+   "FP_jaccard": 0.20618556701030927,
+   "FN_jaccard": 0.2392886014551334,
+   "tables": {
+    "fp_gname": [
+     {
+      "gname": "F-Asian",
+      "n": 414,
+      "n_err": 63,
+      "n_videos": 23,
+      "n_videos_with_err": 11,
+      "rate_%": 15.217,
+      "share_of_errors_%": 17.166
+     },
+     {
+      "gname": "F-Black",
+      "n": 118,
+      "n_err": 12,
+      "n_videos": 6,
+      "n_videos_with_err": 2,
+      "rate_%": 10.169,
+      "share_of_errors_%": 3.27
+     },
+     {
+      "gname": "F-Others",
+      "n": 151,
+      "n_err": 4,
+      "n_videos": 9,
+      "n_videos_with_err": 3,
+      "rate_%": 2.649,
+      "share_of_errors_%": 1.09
+     },
+     {
+      "gname": "F-White",
+      "n": 1755,
+      "n_err": 128,
+      "n_videos": 109,
+      "n_videos_with_err": 26,
+      "rate_%": 7.293,
+      "share_of_errors_%": 34.877
+     },
+     {
+      "gname": "M-Asian",
+      "n": 238,
+      "n_err": 9,
+      "n_videos": 13,
+      "n_videos_with_err": 5,
+      "rate_%": 3.782,
+      "share_of_errors_%": 2.452
+     },
+     {
+      "gname": "M-Black",
+      "n": 92,
+      "n_err": 0,
+      "n_videos": 7,
+      "n_videos_with_err": 0,
+      "rate_%": 0.0,
+      "share_of_errors_%": 0.0
+     },
+     {
+      "gname": "M-Others",
+      "n": 181,
+      "n_err": 2,
+      "n_videos": 12,
+      "n_videos_with_err": 2,
+      "rate_%": 1.105,
+      "share_of_errors_%": 0.545
+     },
+     {
+      "gname": "M-White",
+      "n": 1589,
+      "n_err": 149,
+      "n_videos": 88,
+      "n_videos_with_err": 28,
+      "rate_%": 9.377,
+      "share_of_errors_%": 40.599
+     }
+    ],
+    "fp_xu_gender": [
+     {
+      "xu_gender": "female",
+      "n": 2438,
+      "n_err": 207,
+      "n_videos": 147,
+      "n_videos_with_err": 42,
+      "rate_%": 8.491,
+      "share_of_errors_%": 56.403
+     },
+     {
+      "xu_gender": "male",
+      "n": 2100,
+      "n_err": 160,
+      "n_videos": 120,
+      "n_videos_with_err": 35,
+      "rate_%": 7.619,
+      "share_of_errors_%": 43.597
+     }
+    ],
+    "fp_cl_gender": [
+     {
+      "cl_gender": "female",
+      "n": 2497,
+      "n_err": 220,
+      "n_videos": 152,
+      "n_videos_with_err": 46,
+      "rate_%": 8.811,
+      "share_of_errors_%": 59.946
+     },
+     {
+      "cl_gender": "male",
+      "n": 2041,
+      "n_err": 147,
+      "n_videos": 120,
+      "n_videos_with_err": 34,
+      "rate_%": 7.202,
+      "share_of_errors_%": 40.054
+     }
+    ],
+    "fp_xu_race": [
+     {
+      "xu_race": "asian",
+      "n": 652,
+      "n_err": 72,
+      "n_videos": 36,
+      "n_videos_with_err": 16,
+      "rate_%": 11.043,
+      "share_of_errors_%": 19.619
+     },
+     {
+      "xu_race": "black",
+      "n": 210,
+      "n_err": 12,
+      "n_videos": 13,
+      "n_videos_with_err": 2,
+      "rate_%": 5.714,
+      "share_of_errors_%": 3.27
+     },
+     {
+      "xu_race": "others",
+      "n": 332,
+      "n_err": 6,
+      "n_videos": 21,
+      "n_videos_with_err": 5,
+      "rate_%": 1.807,
+      "share_of_errors_%": 1.635
+     },
+     {
+      "xu_race": "white",
+      "n": 3344,
+      "n_err": 277,
+      "n_videos": 197,
+      "n_videos_with_err": 54,
+      "rate_%": 8.283,
+      "share_of_errors_%": 75.477
+     }
+    ],
+    "fp_cl_race": [
+     {
+      "cl_race": "asian",
+      "n": 720,
+      "n_err": 79,
+      "n_videos": 51,
+      "n_videos_with_err": 18,
+      "rate_%": 10.972,
+      "share_of_errors_%": 21.526
+     },
+     {
+      "cl_race": "black",
+      "n": 208,
+      "n_err": 12,
+      "n_videos": 11,
+      "n_videos_with_err": 2,
+      "rate_%": 5.769,
+      "share_of_errors_%": 3.27
+     },
+     {
+      "cl_race": "others",
+      "n": 201,
+      "n_err": 9,
+      "n_videos": 20,
+      "n_videos_with_err": 6,
+      "rate_%": 4.478,
+      "share_of_errors_%": 2.452
+     },
+     {
+      "cl_race": "white",
+      "n": 3409,
+      "n_err": 267,
+      "n_videos": 209,
+      "n_videos_with_err": 58,
+      "rate_%": 7.832,
+      "share_of_errors_%": 72.752
+     }
+    ],
+    "fp_age4": [
+     {
+      "age4": "30-44",
+      "n": 1451,
+      "n_err": 122,
+      "n_videos": 92,
+      "n_videos_with_err": 23,
+      "rate_%": 8.408,
+      "share_of_errors_%": 33.243
+     },
+     {
+      "age4": "45-59",
+      "n": 509,
+      "n_err": 29,
+      "n_videos": 29,
+      "n_videos_with_err": 7,
+      "rate_%": 5.697,
+      "share_of_errors_%": 7.902
+     },
+     {
+      "age4": "60+",
+      "n": 34,
+      "n_err": 0,
+      "n_videos": 6,
+      "n_videos_with_err": 0,
+      "rate_%": 0.0,
+      "share_of_errors_%": 0.0
+     },
+     {
+      "age4": "<30",
+      "n": 2544,
+      "n_err": 216,
+      "n_videos": 140,
+      "n_videos_with_err": 47,
+      "rate_%": 8.491,
+      "share_of_errors_%": 58.856
+     }
+    ],
+    "fp_ita4": [
+     {
+      "ita4": "Q1 darkest",
+      "n": 1138,
+      "n_err": 90,
+      "n_videos": 72,
+      "n_videos_with_err": 21,
+      "rate_%": 7.909,
+      "share_of_errors_%": 24.523
+     },
+     {
+      "ita4": "Q2",
+      "n": 1112,
+      "n_err": 66,
+      "n_videos": 65,
+      "n_videos_with_err": 17,
+      "rate_%": 5.935,
+      "share_of_errors_%": 17.984
+     },
+     {
+      "ita4": "Q3",
+      "n": 1032,
+      "n_err": 96,
+      "n_videos": 55,
+      "n_videos_with_err": 18,
+      "rate_%": 9.302,
+      "share_of_errors_%": 26.158
+     },
+     {
+      "ita4": "Q4 lightest",
+      "n": 1165,
+      "n_err": 114,
+      "n_videos": 68,
+      "n_videos_with_err": 20,
+      "rate_%": 9.785,
+      "share_of_errors_%": 31.063
+     },
+     {
+      "ita4": "missing",
+      "n": 91,
+      "n_err": 1,
+      "n_videos": 7,
+      "n_videos_with_err": 1,
+      "rate_%": 1.099,
+      "share_of_errors_%": 0.272
+     }
+    ],
+    "fp_ff_race7": [
+     {
+      "ff_race7": "Black",
+      "n": 205,
+      "n_err": 12,
+      "n_videos": 15,
+      "n_videos_with_err": 2,
+      "rate_%": 5.854,
+      "share_of_errors_%": 3.27
+     },
+     {
+      "ff_race7": "East Asian",
+      "n": 529,
+      "n_err": 61,
+      "n_videos": 40,
+      "n_videos_with_err": 13,
+      "rate_%": 11.531,
+      "share_of_errors_%": 16.621
+     },
+     {
+      "ff_race7": "Indian",
+      "n": 56,
+      "n_err": 0,
+      "n_videos": 6,
+      "n_videos_with_err": 0,
+      "rate_%": 0.0,
+      "share_of_errors_%": 0.0
+     },
+     {
+      "ff_race7": "Latino_Hispanic",
+      "n": 241,
+      "n_err": 17,
+      "n_videos": 31,
+      "n_videos_with_err": 6,
+      "rate_%": 7.054,
+      "share_of_errors_%": 4.632
+     },
+     {
+      "ff_race7": "Middle Eastern",
+      "n": 819,
+      "n_err": 92,
+      "n_videos": 76,
+      "n_videos_with_err": 24,
+      "rate_%": 11.233,
+      "share_of_errors_%": 25.068
+     },
+     {
+      "ff_race7": "Southeast Asian",
+      "n": 175,
+      "n_err": 8,
+      "n_videos": 17,
+      "n_videos_with_err": 5,
+      "rate_%": 4.571,
+      "share_of_errors_%": 2.18
+     },
+     {
+      "ff_race7": "White",
+      "n": 2513,
+      "n_err": 177,
+      "n_videos": 171,
+      "n_videos_with_err": 46,
+      "rate_%": 7.043,
+      "share_of_errors_%": 48.229
+     }
+    ],
+    "fn_method": [
+     {
+      "method": "Deepfakes",
+      "n": 3880,
+      "n_err": 85,
+      "n_videos": 130,
+      "n_videos_with_err": 10,
+      "rate_%": 2.191,
+      "share_of_errors_%": 4.269
+     },
+     {
+      "method": "Face2Face",
+      "n": 4373,
+      "n_err": 324,
+      "n_videos": 146,
+      "n_videos_with_err": 36,
+      "rate_%": 7.409,
+      "share_of_errors_%": 16.273
+     },
+     {
+      "method": "FaceShifter",
+      "n": 4280,
+      "n_err": 314,
+      "n_videos": 143,
+      "n_videos_with_err": 47,
+      "rate_%": 7.336,
+      "share_of_errors_%": 15.771
+     },
+     {
+      "method": "FaceSwap",
+      "n": 3822,
+      "n_err": 209,
+      "n_videos": 128,
+      "n_videos_with_err": 38,
+      "rate_%": 5.468,
+      "share_of_errors_%": 10.497
+     },
+     {
+      "method": "NeuralTextures",
+      "n": 4508,
+      "n_err": 1059,
+      "n_videos": 151,
+      "n_videos_with_err": 93,
+      "rate_%": 23.492,
+      "share_of_errors_%": 53.189
+     }
+    ],
+    "fn_family": [
+     {
+      "family": "identity-swap",
+      "n": 11982,
+      "n_err": 608,
+      "n_videos": 401,
+      "n_videos_with_err": 95,
+      "rate_%": 5.074,
+      "share_of_errors_%": 30.537
+     },
+     {
+      "family": "reenactment",
+      "n": 8881,
+      "n_err": 1383,
+      "n_videos": 297,
+      "n_videos_with_err": 129,
+      "rate_%": 15.573,
+      "share_of_errors_%": 69.463
+     }
+    ],
+    "fn_gname": [
+     {
+      "gname": "F-Asian",
+      "n": 1768,
+      "n_err": 74,
+      "n_videos": 60,
+      "n_videos_with_err": 9,
+      "rate_%": 4.186,
+      "share_of_errors_%": 3.717
+     },
+     {
+      "gname": "F-Black",
+      "n": 480,
+      "n_err": 18,
+      "n_videos": 16,
+      "n_videos_with_err": 3,
+      "rate_%": 3.75,
+      "share_of_errors_%": 0.904
+     },
+     {
+      "gname": "F-Others",
+      "n": 690,
+      "n_err": 29,
+      "n_videos": 23,
+      "n_videos_with_err": 4,
+      "rate_%": 4.203,
+      "share_of_errors_%": 1.457
+     },
+     {
+      "gname": "F-White",
+      "n": 7968,
+      "n_err": 469,
+      "n_videos": 267,
+      "n_videos_with_err": 73,
+      "rate_%": 5.886,
+      "share_of_errors_%": 23.556
+     },
+     {
+      "gname": "M-Asian",
+      "n": 929,
+      "n_err": 218,
+      "n_videos": 31,
+      "n_videos_with_err": 18,
+      "rate_%": 23.466,
+      "share_of_errors_%": 10.949
+     },
+     {
+      "gname": "M-Black",
+      "n": 510,
+      "n_err": 25,
+      "n_videos": 17,
+      "n_videos_with_err": 4,
+      "rate_%": 4.902,
+      "share_of_errors_%": 1.256
+     },
+     {
+      "gname": "M-Others",
+      "n": 990,
+      "n_err": 171,
+      "n_videos": 33,
+      "n_videos_with_err": 11,
+      "rate_%": 17.273,
+      "share_of_errors_%": 8.589
+     },
+     {
+      "gname": "M-White",
+      "n": 7528,
+      "n_err": 987,
+      "n_videos": 251,
+      "n_videos_with_err": 102,
+      "rate_%": 13.111,
+      "share_of_errors_%": 49.573
+     }
+    ],
+    "fn_xu_gender": [
+     {
+      "xu_gender": "female",
+      "n": 10906,
+      "n_err": 590,
+      "n_videos": 366,
+      "n_videos_with_err": 89,
+      "rate_%": 5.41,
+      "share_of_errors_%": 29.633
+     },
+     {
+      "xu_gender": "male",
+      "n": 9957,
+      "n_err": 1401,
+      "n_videos": 332,
+      "n_videos_with_err": 135,
+      "rate_%": 14.071,
+      "share_of_errors_%": 70.367
+     }
+    ],
+    "fn_cl_gender": [
+     {
+      "cl_gender": "female",
+      "n": 11113,
+      "n_err": 645,
+      "n_videos": 385,
+      "n_videos_with_err": 101,
+      "rate_%": 5.804,
+      "share_of_errors_%": 32.396
+     },
+     {
+      "cl_gender": "male",
+      "n": 9750,
+      "n_err": 1346,
+      "n_videos": 331,
+      "n_videos_with_err": 132,
+      "rate_%": 13.805,
+      "share_of_errors_%": 67.604
+     }
+    ],
+    "fn_xu_race": [
+     {
+      "xu_race": "asian",
+      "n": 2697,
+      "n_err": 292,
+      "n_videos": 91,
+      "n_videos_with_err": 27,
+      "rate_%": 10.827,
+      "share_of_errors_%": 14.666
+     },
+     {
+      "xu_race": "black",
+      "n": 990,
+      "n_err": 43,
+      "n_videos": 33,
+      "n_videos_with_err": 7,
+      "rate_%": 4.343,
+      "share_of_errors_%": 2.16
+     },
+     {
+      "xu_race": "others",
+      "n": 1680,
+      "n_err": 200,
+      "n_videos": 56,
+      "n_videos_with_err": 15,
+      "rate_%": 11.905,
+      "share_of_errors_%": 10.045
+     },
+     {
+      "xu_race": "white",
+      "n": 15496,
+      "n_err": 1456,
+      "n_videos": 518,
+      "n_videos_with_err": 175,
+      "rate_%": 9.396,
+      "share_of_errors_%": 73.129
+     }
+    ],
+    "fn_cl_race": [
+     {
+      "cl_race": "asian",
+      "n": 2728,
+      "n_err": 386,
+      "n_videos": 136,
+      "n_videos_with_err": 38,
+      "rate_%": 14.15,
+      "share_of_errors_%": 19.387
+     },
+     {
+      "cl_race": "black",
+      "n": 857,
+      "n_err": 42,
+      "n_videos": 35,
+      "n_videos_with_err": 7,
+      "rate_%": 4.901,
+      "share_of_errors_%": 2.109
+     },
+     {
+      "cl_race": "others",
+      "n": 898,
+      "n_err": 78,
+      "n_videos": 77,
+      "n_videos_with_err": 14,
+      "rate_%": 8.686,
+      "share_of_errors_%": 3.918
+     },
+     {
+      "cl_race": "white",
+      "n": 16380,
+      "n_err": 1485,
+      "n_videos": 594,
+      "n_videos_with_err": 185,
+      "rate_%": 9.066,
+      "share_of_errors_%": 74.586
+     }
+    ],
+    "fn_age4": [
+     {
+      "age4": "30-44",
+      "n": 6563,
+      "n_err": 742,
+      "n_videos": 219,
+      "n_videos_with_err": 80,
+      "rate_%": 11.306,
+      "share_of_errors_%": 37.268
+     },
+     {
+      "age4": "45-59",
+      "n": 2549,
+      "n_err": 275,
+      "n_videos": 85,
+      "n_videos_with_err": 33,
+      "rate_%": 10.789,
+      "share_of_errors_%": 13.812
+     },
+     {
+      "age4": "60+",
+      "n": 30,
+      "n_err": 21,
+      "n_videos": 1,
+      "n_videos_with_err": 1,
+      "rate_%": 70.0,
+      "share_of_errors_%": 1.055
+     },
+     {
+      "age4": "<30",
+      "n": 11721,
+      "n_err": 953,
+      "n_videos": 393,
+      "n_videos_with_err": 110,
+      "rate_%": 8.131,
+      "share_of_errors_%": 47.865
+     }
+    ],
+    "fn_ita4": [
+     {
+      "ita4": "Q1 darkest",
+      "n": 5758,
+      "n_err": 578,
+      "n_videos": 192,
+      "n_videos_with_err": 64,
+      "rate_%": 10.038,
+      "share_of_errors_%": 29.031
+     },
+     {
+      "ita4": "Q2",
+      "n": 5066,
+      "n_err": 536,
+      "n_videos": 169,
+      "n_videos_with_err": 64,
+      "rate_%": 10.58,
+      "share_of_errors_%": 26.921
+     },
+     {
+      "ita4": "Q3",
+      "n": 4648,
+      "n_err": 505,
+      "n_videos": 156,
+      "n_videos_with_err": 54,
+      "rate_%": 10.865,
+      "share_of_errors_%": 25.364
+     },
+     {
+      "ita4": "Q4 lightest",
+      "n": 5108,
+      "n_err": 372,
+      "n_videos": 171,
+      "n_videos_with_err": 42,
+      "rate_%": 7.283,
+      "share_of_errors_%": 18.684
+     },
+     {
+      "ita4": "missing",
+      "n": 283,
+      "n_err": 0,
+      "n_videos": 10,
+      "n_videos_with_err": 0,
+      "rate_%": 0.0,
+      "share_of_errors_%": 0.0
+     }
+    ]
+   },
+   "fp_videos_any": 77,
+   "fp_videos_ge50pct": 10,
+   "fp_share_top5_videos_%": 25.61307901907357,
+   "fp_share_top15_videos_%": 56.94822888283378,
+   "n_videos_for_50pct_fp": 12,
+   "iF_FPR": 36.10943680176993,
+   "iF_FPR_group_dev": {
+    "M-Asian": 4.305750506460849,
+    "M-White": 1.289703534186247,
+    "M-Black": 8.087263111502866,
+    "M-Others": 6.982290735812258,
+    "F-Asian": 7.130128192844961,
+    "F-White": 0.7938158180555723,
+    "F-Black": 2.082228413920864,
+    "F-Others": 5.438256488986309
+   },
+   "group_FPR_%": {
+    "M-Asian": 3.7815126050420167,
+    "M-White": 9.376966645689112,
+    "M-Black": 0.0,
+    "M-Others": 1.1049723756906076,
+    "F-Asian": 15.217391304347828,
+    "F-White": 7.293447293447293,
+    "F-Black": 10.16949152542373,
+    "F-Others": 2.6490066225165565
+   },
+   "ding_group_FPR_%": {
+    "M-Asian": 18.487394957983195,
+    "M-White": 12.523599748269351,
+    "M-Black": 8.695652173913043,
+    "M-Others": 16.022099447513813,
+    "F-Asian": 10.869565217391305,
+    "F-White": 11.396011396011396,
+    "F-Black": 18.64406779661017,
+    "F-Others": 14.56953642384106
+   },
+   "ding_iF_FPR_group_dev": {
+    "M-Asian": 5.948831714263495,
+    "M-White": 0.014963495450348585,
+    "M-Black": 3.8429110698066564,
+    "M-Others": 3.483536203794113,
+    "F-Asian": 1.6689980263283957,
+    "F-White": 1.1425518477083036,
+    "F-Black": 6.10550455289047,
+    "F-Others": 2.030973180121359
+   },
+   "iF_FPR_drop_topk_videos": {
+    "1": {
+     "iF_FPR": 34.11015574875995,
+     "FPR_%": 7.673541805278332,
+     "videos": [
+      "0_youtube_845"
+     ],
+     "iF_FPR_same_FPR": 35.55708908387345,
+     "FPR_same_%": 8.094921268573964
+    },
+    "2": {
+     "iF_FPR": 32.63670801294235,
+     "FPR_%": 7.300736771600803,
+     "videos": [
+      "0_youtube_845",
+      "0_youtube_307"
+     ],
+     "iF_FPR_same_FPR": 34.29914869065978,
+     "FPR_same_%": 8.10448760884126
+    },
+    "3": {
+     "iF_FPR": 32.99064656672175,
+     "FPR_%": 6.922904023376039,
+     "videos": [
+      "0_youtube_845",
+      "0_youtube_307",
+      "0_youtube_305"
+     ],
+     "iF_FPR_same_FPR": 36.244857284286454,
+     "FPR_same_%": 8.091706001348618
+    },
+    "5": {
+     "iF_FPR": 31.947808773472897,
+     "FPR_%": 6.21867881548975,
+     "videos": [
+      "0_youtube_845",
+      "0_youtube_307",
+      "0_youtube_305",
+      "0_youtube_383",
+      "0_youtube_018"
+     ],
+     "iF_FPR_same_FPR": 34.87285913075944,
+     "FPR_same_%": 8.086560364464694
+    },
+    "10": {
+     "iF_FPR": 23.33799467032783,
+     "FPR_%": 4.830348727615457,
+     "videos": [
+      "0_youtube_845",
+      "0_youtube_307",
+      "0_youtube_305",
+      "0_youtube_383",
+      "0_youtube_018",
+      "0_youtube_237",
+      "0_youtube_930",
+      "0_youtube_062",
+      "0_youtube_446",
+      "0_youtube_202"
+     ],
+     "iF_FPR_same_FPR": 27.565104464322243,
+     "FPR_same_%": 8.105560791705937
+    },
+    "15": {
+     "iF_FPR": 14.021573162081062,
+     "FPR_%": 3.8545986826055136,
+     "videos": [
+      "0_youtube_845",
+      "0_youtube_307",
+      "0_youtube_305",
+      "0_youtube_383",
+      "0_youtube_018",
+      "0_youtube_237",
+      "0_youtube_930",
+      "0_youtube_062",
+      "0_youtube_446",
+      "0_youtube_202",
+      "0_youtube_458",
+      "0_youtube_616",
+      "0_youtube_438",
+      "0_youtube_348",
+      "0_youtube_385"
+     ],
+     "iF_FPR_same_FPR": 26.657427199201187,
+     "FPR_same_%": 8.09953647231032
+    },
+    "20": {
+     "iF_FPR": 11.497264820528873,
+     "FPR_%": 3.2127498102706804,
+     "videos": [
+      "0_youtube_845",
+      "0_youtube_307",
+      "0_youtube_305",
+      "0_youtube_383",
+      "0_youtube_018",
+      "0_youtube_237",
+      "0_youtube_930",
+      "0_youtube_062",
+      "0_youtube_446",
+      "0_youtube_202",
+      "0_youtube_458",
+      "0_youtube_616",
+      "0_youtube_438",
+      "0_youtube_348",
+      "0_youtube_385",
+      "0_youtube_472",
+      "0_youtube_288",
+      "0_youtube_722",
+      "0_youtube_985",
+      "0_youtube_547"
+     ],
+     "iF_FPR_same_FPR": 27.75994882044462,
+     "FPR_same_%": 8.095117632178091
+    }
+   },
+   "iF_FPR_drop_random_videos": {
+    "5": {
+     "median": 36.651923300082814,
+     "p5": 34.87510358273529,
+     "p95": 38.81228120563451
+    },
+    "10": {
+     "median": 36.79070988505775,
+     "p5": 33.98179329573126,
+     "p95": 40.517058933059616
+    }
+   },
+   "within_group_fp_concentration": {
+    "F-Asian": {
+     "n_fp": 63,
+     "n_videos": 23,
+     "videos_with_fp": 11,
+     "top1_share_%": 25.396825396825395,
+     "top3_share_%": 63.49206349206349,
+     "top3_videos": [
+      "0_youtube_930",
+      "0_youtube_062",
+      "0_youtube_616"
+     ]
+    },
+    "F-Black": {
+     "n_fp": 12,
+     "n_videos": 6,
+     "videos_with_fp": 2,
+     "top1_share_%": 91.66666666666666,
+     "top3_share_%": 100.0,
+     "top3_videos": [
+      "0_youtube_458",
+      "0_youtube_836",
+      "0_youtube_397"
+     ]
+    },
+    "F-Others": {
+     "n_fp": 4,
+     "n_videos": 9,
+     "videos_with_fp": 3,
+     "top1_share_%": 50.0,
+     "top3_share_%": 100.0,
+     "top3_videos": [
+      "0_youtube_030",
+      "0_youtube_948",
+      "0_youtube_763"
+     ]
+    },
+    "F-White": {
+     "n_fp": 128,
+     "n_videos": 109,
+     "videos_with_fp": 26,
+     "top1_share_%": 12.5,
+     "top3_share_%": 30.46875,
+     "top3_videos": [
+      "0_youtube_018",
+      "0_youtube_446",
+      "0_youtube_202"
+     ]
+    },
+    "M-Asian": {
+     "n_fp": 9,
+     "n_videos": 13,
+     "videos_with_fp": 5,
+     "top1_share_%": 33.33333333333333,
+     "top3_share_%": 77.77777777777779,
+     "top3_videos": [
+      "0_youtube_345",
+      "0_youtube_513",
+      "0_youtube_747"
+     ]
+    },
+    "M-Black": {
+     "n_fp": 0,
+     "n_videos": 7,
+     "videos_with_fp": 0,
+     "top1_share_%": 0.0,
+     "top3_share_%": 0.0,
+     "top3_videos": [
+      "0_youtube_715",
+      "0_youtube_087",
+      "0_youtube_031"
+     ]
+    },
+    "M-Others": {
+     "n_fp": 2,
+     "n_videos": 12,
+     "videos_with_fp": 2,
+     "top1_share_%": 50.0,
+     "top3_share_%": 100.0,
+     "top3_videos": [
+      "0_youtube_805",
+      "0_youtube_719",
+      "0_youtube_974"
+     ]
+    },
+    "M-White": {
+     "n_fp": 149,
+     "n_videos": 88,
+     "videos_with_fp": 28,
+     "top1_share_%": 14.093959731543624,
+     "top3_share_%": 39.59731543624161,
+     "top3_videos": [
+      "0_youtube_845",
+      "0_youtube_307",
+      "0_youtube_305"
+     ]
+    }
+   },
+   "video_weighted_group_FPR_%": {
+    "F-Asian": 9.48,
+    "F-Black": 6.9,
+    "F-Others": 1.52,
+    "F-White": 4.06,
+    "M-Asian": 9.81,
+    "M-Black": 0.0,
+    "M-Others": 8.62,
+    "M-White": 6.82
+   },
+   "fn_videos_any": 224,
+   "fn_videos_ge50pct": 55,
+   "fn_share_top15_videos_%": 21.597187343043696,
+   "n_videos_for_50pct_fn": 40,
+   "fn_videos_ge50pct_by_method": {
+    "NeuralTextures": 31,
+    "Face2Face": 10,
+    "FaceShifter": 7,
+    "FaceSwap": 5,
+    "Deepfakes": 2
+   },
+   "top_fp_videos": [
+    {
+     "video": "0_youtube_845",
+     "n": 29,
+     "n_fp": 21,
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "ff_race7": "White",
+     "age_vid": 42.0,
+     "ita_vid": 12.86,
+     "ita4": "Q1 darkest",
+     "max_logit": 31.92,
+     "ding_fp": 21,
+     "fp_rate_%": 72.41,
+     "ding_fp_rate_%": 72.41
+    },
+    {
+     "video": "0_youtube_307",
+     "n": 30,
+     "n_fp": 19,
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "ff_race7": "Middle Eastern",
+     "age_vid": 55.5,
+     "ita_vid": 58.86,
+     "ita4": "Q4 lightest",
+     "max_logit": 46.22,
+     "ding_fp": 27,
+     "fp_rate_%": 63.33,
+     "ding_fp_rate_%": 90.0
+    },
+    {
+     "video": "0_youtube_305",
+     "n": 30,
+     "n_fp": 19,
+     "group": "M-White",
+     "cl_gender": "female",
+     "cl_race": "asian",
+     "ff_race7": "Middle Eastern",
+     "age_vid": 28.0,
+     "ita_vid": 80.29,
+     "ita4": "Q4 lightest",
+     "max_logit": 29.74,
+     "ding_fp": 14,
+     "fp_rate_%": 63.33,
+     "ding_fp_rate_%": 46.67
+    },
+    {
+     "video": "0_youtube_383",
+     "n": 30,
+     "n_fp": 19,
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "ff_race7": "Middle Eastern",
+     "age_vid": 34.0,
+     "ita_vid": 44.49,
+     "ita4": "Q3",
+     "max_logit": 12.44,
+     "ding_fp": 2,
+     "fp_rate_%": 63.33,
+     "ding_fp_rate_%": 6.67
+    },
+    {
+     "video": "0_youtube_018",
+     "n": 29,
+     "n_fp": 16,
+     "group": "F-White",
+     "cl_gender": "female",
+     "cl_race": "white",
+     "ff_race7": "White",
+     "age_vid": 31.0,
+     "ita_vid": 35.08,
+     "ita4": "Q2",
+     "max_logit": 47.02,
+     "ding_fp": 21,
+     "fp_rate_%": 55.17,
+     "ding_fp_rate_%": 72.41
+    },
+    {
+     "video": "0_youtube_237",
+     "n": 30,
+     "n_fp": 16,
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "ff_race7": "White",
+     "age_vid": 24.0,
+     "ita_vid": 45.86,
+     "ita4": "Q3",
+     "max_logit": 28.78,
+     "ding_fp": 1,
+     "fp_rate_%": 53.33,
+     "ding_fp_rate_%": 3.33
+    },
+    {
+     "video": "0_youtube_930",
+     "n": 28,
+     "n_fp": 16,
+     "group": "F-Asian",
+     "cl_gender": "female",
+     "cl_race": "asian",
+     "ff_race7": "East Asian",
+     "age_vid": 18.0,
+     "ita_vid": 68.43,
+     "ita4": "Q4 lightest",
+     "max_logit": 24.07,
+     "ding_fp": 5,
+     "fp_rate_%": 57.14,
+     "ding_fp_rate_%": 17.86
+    },
+    {
+     "video": "0_youtube_062",
+     "n": 29,
+     "n_fp": 13,
+     "group": "F-Asian",
+     "cl_gender": "female",
+     "cl_race": "asian",
+     "ff_race7": "East Asian",
+     "age_vid": 31.0,
+     "ita_vid": 46.09,
+     "ita4": "Q3",
+     "max_logit": 27.5,
+     "ding_fp": 0,
+     "fp_rate_%": 44.83,
+     "ding_fp_rate_%": 0.0
+    },
+    {
+     "video": "0_youtube_446",
+     "n": 30,
+     "n_fp": 12,
+     "group": "F-White",
+     "cl_gender": "female",
+     "cl_race": "white",
+     "ff_race7": "White",
+     "age_vid": 20.0,
+     "ita_vid": 57.97,
+     "ita4": "Q4 lightest",
+     "max_logit": 38.15,
+     "ding_fp": 4,
+     "fp_rate_%": 40.0,
+     "ding_fp_rate_%": 13.33
+    },
+    {
+     "video": "0_youtube_202",
+     "n": 29,
+     "n_fp": 11,
+     "group": "F-White",
+     "cl_gender": "female",
+     "cl_race": "white",
+     "ff_race7": "Middle Eastern",
+     "age_vid": 27.0,
+     "ita_vid": 15.74,
+     "ita4": "Q1 darkest",
+     "max_logit": 14.5,
+     "ding_fp": 2,
+     "fp_rate_%": 37.93,
+     "ding_fp_rate_%": 6.9
+    },
+    {
+     "video": "0_youtube_458",
+     "n": 29,
+     "n_fp": 11,
+     "group": "F-Black",
+     "cl_gender": "female",
+     "cl_race": "black",
+     "ff_race7": "Black",
+     "age_vid": 14.0,
+     "ita_vid": -2.42,
+     "ita4": "Q1 darkest",
+     "max_logit": 1.36,
+     "ding_fp": 14,
+     "fp_rate_%": 37.93,
+     "ding_fp_rate_%": 48.28
+    },
+    {
+     "video": "0_youtube_616",
+     "n": 30,
+     "n_fp": 11,
+     "group": "F-Asian",
+     "cl_gender": "female",
+     "cl_race": "asian",
+     "ff_race7": "East Asian",
+     "age_vid": 37.0,
+     "ita_vid": 34.48,
+     "ita4": "Q2",
+     "max_logit": -41.47,
+     "ding_fp": 18,
+     "fp_rate_%": 36.67,
+     "ding_fp_rate_%": 60.0
+    },
+    {
+     "video": "0_youtube_438",
+     "n": 29,
+     "n_fp": 10,
+     "group": "F-White",
+     "cl_gender": "female",
+     "cl_race": "white",
+     "ff_race7": "White",
+     "age_vid": 29.0,
+     "ita_vid": 85.43,
+     "ita4": "Q4 lightest",
+     "max_logit": 33.59,
+     "ding_fp": 6,
+     "fp_rate_%": 34.48,
+     "ding_fp_rate_%": 20.69
+    },
+    {
+     "video": "0_youtube_348",
+     "n": 27,
+     "n_fp": 8,
+     "group": "F-White",
+     "cl_gender": "female",
+     "cl_race": "white",
+     "ff_race7": "White",
+     "age_vid": 25.0,
+     "ita_vid": 32.38,
+     "ita4": "Q2",
+     "max_logit": 24.68,
+     "ding_fp": 3,
+     "fp_rate_%": 29.63,
+     "ding_fp_rate_%": 11.11
+    },
+    {
+     "video": "0_youtube_385",
+     "n": 30,
+     "n_fp": 7,
+     "group": "F-White",
+     "cl_gender": "female",
+     "cl_race": "asian",
+     "ff_race7": "Latino_Hispanic",
+     "age_vid": 27.0,
+     "ita_vid": 88.07,
+     "ita4": "Q4 lightest",
+     "max_logit": -24.86,
+     "ding_fp": 3,
+     "fp_rate_%": 23.33,
+     "ding_fp_rate_%": 10.0
+    }
+   ],
+   "top_fn_videos": [
+    {
+     "video": "0_Deepfakes_492_325",
+     "n": 30,
+     "n_fn": 30,
+     "method": "Deepfakes",
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age_vid": 42.0,
+     "ita4": "Q3",
+     "min_logit": -105.82,
+     "ding_fn": 29,
+     "fn_rate_%": 100.0,
+     "ding_fn_rate_%": 96.67
+    },
+    {
+     "video": "0_NeuralTextures_840_800",
+     "n": 30,
+     "n_fn": 30,
+     "method": "NeuralTextures",
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age_vid": 33.0,
+     "ita4": "Q1 darkest",
+     "min_logit": -103.29,
+     "ding_fn": 29,
+     "fn_rate_%": 100.0,
+     "ding_fn_rate_%": 96.67
+    },
+    {
+     "video": "0_NeuralTextures_235_194",
+     "n": 30,
+     "n_fn": 30,
+     "method": "NeuralTextures",
+     "group": "M-Asian",
+     "cl_gender": "male",
+     "cl_race": "asian",
+     "age_vid": 24.0,
+     "ita4": "Q3",
+     "min_logit": -99.81,
+     "ding_fn": 29,
+     "fn_rate_%": 100.0,
+     "ding_fn_rate_%": 96.67
+    },
+    {
+     "video": "0_NeuralTextures_794_779",
+     "n": 30,
+     "n_fn": 30,
+     "method": "NeuralTextures",
+     "group": "M-Others",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age_vid": 28.0,
+     "ita4": "Q2",
+     "min_logit": -96.22,
+     "ding_fn": 30,
+     "fn_rate_%": 100.0,
+     "ding_fn_rate_%": 100.0
+    },
+    {
+     "video": "0_NeuralTextures_578_636",
+     "n": 30,
+     "n_fn": 29,
+     "method": "NeuralTextures",
+     "group": "F-White",
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age_vid": 32.5,
+     "ita4": "Q4 lightest",
+     "min_logit": -113.82,
+     "ding_fn": 1,
+     "fn_rate_%": 96.67,
+     "ding_fn_rate_%": 3.33
+    },
+    {
+     "video": "0_NeuralTextures_619_620",
+     "n": 30,
+     "n_fn": 29,
+     "method": "NeuralTextures",
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age_vid": 54.0,
+     "ita4": "Q3",
+     "min_logit": -111.46,
+     "ding_fn": 29,
+     "fn_rate_%": 96.67,
+     "ding_fn_rate_%": 96.67
+    },
+    {
+     "video": "0_NeuralTextures_800_840",
+     "n": 30,
+     "n_fn": 29,
+     "method": "NeuralTextures",
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age_vid": 56.0,
+     "ita4": "Q1 darkest",
+     "min_logit": -110.75,
+     "ding_fn": 3,
+     "fn_rate_%": 96.67,
+     "ding_fn_rate_%": 10.0
+    },
+    {
+     "video": "0_NeuralTextures_306_278",
+     "n": 30,
+     "n_fn": 29,
+     "method": "NeuralTextures",
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age_vid": 32.5,
+     "ita4": "Q2",
+     "min_logit": -100.85,
+     "ding_fn": 0,
+     "fn_rate_%": 96.67,
+     "ding_fn_rate_%": 0.0
+    },
+    {
+     "video": "0_NeuralTextures_494_445",
+     "n": 30,
+     "n_fn": 29,
+     "method": "NeuralTextures",
+     "group": "M-Others",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age_vid": 38.0,
+     "ita4": "Q1 darkest",
+     "min_logit": -89.79,
+     "ding_fn": 1,
+     "fn_rate_%": 96.67,
+     "ding_fn_rate_%": 3.33
+    },
+    {
+     "video": "0_NeuralTextures_867_765",
+     "n": 30,
+     "n_fn": 28,
+     "method": "NeuralTextures",
+     "group": "F-White",
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age_vid": 25.0,
+     "ita4": "Q4 lightest",
+     "min_logit": -110.34,
+     "ding_fn": 13,
+     "fn_rate_%": 93.33,
+     "ding_fn_rate_%": 43.33
+    },
+    {
+     "video": "0_NeuralTextures_016_209",
+     "n": 30,
+     "n_fn": 28,
+     "method": "NeuralTextures",
+     "group": "M-Others",
+     "cl_gender": "male",
+     "cl_race": "asian",
+     "age_vid": 3.0,
+     "ita4": "Q2",
+     "min_logit": -106.07,
+     "ding_fn": 6,
+     "fn_rate_%": 93.33,
+     "ding_fn_rate_%": 20.0
+    },
+    {
+     "video": "0_NeuralTextures_548_632",
+     "n": 30,
+     "n_fn": 28,
+     "method": "NeuralTextures",
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age_vid": 35.5,
+     "ita4": "Q3",
+     "min_logit": -101.77,
+     "ding_fn": 27,
+     "fn_rate_%": 93.33,
+     "ding_fn_rate_%": 90.0
+    },
+    {
+     "video": "0_Face2Face_619_620",
+     "n": 30,
+     "n_fn": 27,
+     "method": "Face2Face",
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age_vid": 53.0,
+     "ita4": "Q3",
+     "min_logit": -110.65,
+     "ding_fn": 10,
+     "fn_rate_%": 90.0,
+     "ding_fn_rate_%": 33.33
+    },
+    {
+     "video": "0_NeuralTextures_259_345",
+     "n": 30,
+     "n_fn": 27,
+     "method": "NeuralTextures",
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age_vid": 10.0,
+     "ita4": "Q3",
+     "min_logit": -99.11,
+     "ding_fn": 18,
+     "fn_rate_%": 90.0,
+     "ding_fn_rate_%": 60.0
+    },
+    {
+     "video": "0_NeuralTextures_594_530",
+     "n": 30,
+     "n_fn": 27,
+     "method": "NeuralTextures",
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age_vid": 41.0,
+     "ita4": "Q1 darkest",
+     "min_logit": -97.84,
+     "ding_fn": 27,
+     "fn_rate_%": 90.0,
+     "ding_fn_rate_%": 90.0
+    }
+   ],
+   "unique_vs_ding": {
+    "fp_only_ours": [
+     {
+      "video": "0_youtube_383",
+      "n": 30,
+      "n_err": 17,
+      "group": "M-White",
+      "method": "real",
+      "ours_mean_logit": -48.41,
+      "ding_mean_logit": -3.2,
+      "rate_%": 56.67
+     },
+     {
+      "video": "0_youtube_237",
+      "n": 30,
+      "n_err": 15,
+      "group": "M-White",
+      "method": "real",
+      "ours_mean_logit": -53.75,
+      "ding_mean_logit": -4.63,
+      "rate_%": 50.0
+     },
+     {
+      "video": "0_youtube_062",
+      "n": 29,
+      "n_err": 13,
+      "group": "F-Asian",
+      "method": "real",
+      "ours_mean_logit": -57.19,
+      "ding_mean_logit": -5.09,
+      "rate_%": 44.83
+     },
+     {
+      "video": "0_youtube_930",
+      "n": 28,
+      "n_err": 11,
+      "group": "F-Asian",
+      "method": "real",
+      "ours_mean_logit": -56.62,
+      "ding_mean_logit": -2.91,
+      "rate_%": 39.29
+     },
+     {
+      "video": "0_youtube_202",
+      "n": 29,
+      "n_err": 10,
+      "group": "F-White",
+      "method": "real",
+      "ours_mean_logit": -68.4,
+      "ding_mean_logit": -3.92,
+      "rate_%": 34.48
+     },
+     {
+      "video": "0_youtube_446",
+      "n": 30,
+      "n_err": 9,
+      "group": "F-White",
+      "method": "real",
+      "ours_mean_logit": -57.43,
+      "ding_mean_logit": -3.54,
+      "rate_%": 30.0
+     },
+     {
+      "video": "0_youtube_305",
+      "n": 30,
+      "n_err": 6,
+      "group": "M-White",
+      "method": "real",
+      "ours_mean_logit": -48.34,
+      "ding_mean_logit": -1.0,
+      "rate_%": 20.0
+     },
+     {
+      "video": "0_youtube_438",
+      "n": 29,
+      "n_err": 6,
+      "group": "F-White",
+      "method": "real",
+      "ours_mean_logit": -65.91,
+      "ding_mean_logit": -2.62,
+      "rate_%": 20.69
+     },
+     {
+      "video": "0_youtube_385",
+      "n": 30,
+      "n_err": 5,
+      "group": "F-White",
+      "method": "real",
+      "ours_mean_logit": -75.62,
+      "ding_mean_logit": -3.12,
+      "rate_%": 16.67
+     },
+     {
+      "video": "0_youtube_445",
+      "n": 30,
+      "n_err": 5,
+      "group": "M-White",
+      "method": "real",
+      "ours_mean_logit": -71.32,
+      "ding_mean_logit": -4.9,
+      "rate_%": 16.67
+     }
+    ],
+    "fp_only_ours_by_group": {
+     "F-Asian": 44,
+     "F-Black": 4,
+     "F-Others": 3,
+     "F-White": 78,
+     "M-Asian": 4,
+     "M-Black": 0,
+     "M-Others": 2,
+     "M-White": 72
+    },
+    "fp_only_ding": [
+     {
+      "video": "0_youtube_494",
+      "n": 29,
+      "n_err": 24,
+      "group": "M-Others",
+      "method": "real",
+      "ours_mean_logit": -92.55,
+      "ding_mean_logit": 2.31,
+      "rate_%": 82.76
+     },
+     {
+      "video": "0_youtube_923",
+      "n": 29,
+      "n_err": 19,
+      "group": "M-White",
+      "method": "real",
+      "ours_mean_logit": -75.79,
+      "ding_mean_logit": -0.26,
+      "rate_%": 65.52
+     },
+     {
+      "video": "0_youtube_763",
+      "n": 29,
+      "n_err": 13,
+      "group": "F-Others",
+      "method": "real",
+      "ours_mean_logit": -91.24,
+      "ding_mean_logit": -0.07,
+      "rate_%": 44.83
+     },
+     {
+      "video": "0_youtube_602",
+      "n": 28,
+      "n_err": 13,
+      "group": "F-White",
+      "method": "real",
+      "ours_mean_logit": -96.73,
+      "ding_mean_logit": 0.07,
+      "rate_%": 46.43
+     },
+     {
+      "video": "0_youtube_095",
+      "n": 30,
+      "n_err": 13,
+      "group": "F-White",
+      "method": "real",
+      "ours_mean_logit": -79.3,
+      "ding_mean_logit": 0.71,
+      "rate_%": 43.33
+     },
+     {
+      "video": "0_youtube_623",
+      "n": 29,
+      "n_err": 12,
+      "group": "F-White",
+      "method": "real",
+      "ours_mean_logit": -102.71,
+      "ding_mean_logit": -0.7,
+      "rate_%": 41.38
+     },
+     {
+      "video": "0_youtube_606",
+      "n": 29,
+      "n_err": 12,
+      "group": "F-White",
+      "method": "real",
+      "ours_mean_logit": -103.71,
+      "ding_mean_logit": -0.67,
+      "rate_%": 41.38
+     },
+     {
+      "video": "0_youtube_513",
+      "n": 29,
+      "n_err": 11,
+      "group": "M-Asian",
+      "method": "real",
+      "ours_mean_logit": -79.31,
+      "ding_mean_logit": -0.81,
+      "rate_%": 37.93
+     },
+     {
+      "video": "0_youtube_595",
+      "n": 30,
+      "n_err": 11,
+      "group": "F-White",
+      "method": "real",
+      "ours_mean_logit": -84.62,
+      "ding_mean_logit": -1.21,
+      "rate_%": 36.67
+     },
+     {
+      "video": "0_youtube_547",
+      "n": 30,
+      "n_err": 10,
+      "group": "M-White",
+      "method": "real",
+      "ours_mean_logit": -70.7,
+      "ding_mean_logit": -0.17,
+      "rate_%": 33.33
+     }
+    ],
+    "fp_only_ding_by_group": {
+     "F-Asian": 26,
+     "F-Black": 14,
+     "F-Others": 21,
+     "F-White": 150,
+     "M-Asian": 39,
+     "M-Black": 8,
+     "M-Others": 29,
+     "M-White": 122
+    },
+    "fn_only_ours": [
+     {
+      "video": "0_NeuralTextures_306_278",
+      "n": 30,
+      "n_err": 29,
+      "group": "M-White",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -82.18,
+      "ding_mean_logit": 4.92,
+      "rate_%": 96.67
+     },
+     {
+      "video": "0_NeuralTextures_494_445",
+      "n": 30,
+      "n_err": 28,
+      "group": "M-Others",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -79.75,
+      "ding_mean_logit": 2.85,
+      "rate_%": 93.33
+     },
+     {
+      "video": "0_NeuralTextures_578_636",
+      "n": 30,
+      "n_err": 28,
+      "group": "F-White",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -89.85,
+      "ding_mean_logit": 4.21,
+      "rate_%": 93.33
+     },
+     {
+      "video": "0_NeuralTextures_800_840",
+      "n": 30,
+      "n_err": 26,
+      "group": "M-White",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -94.6,
+      "ding_mean_logit": 3.77,
+      "rate_%": 86.67
+     },
+     {
+      "video": "0_NeuralTextures_872_873",
+      "n": 30,
+      "n_err": 26,
+      "group": "M-White",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -80.73,
+      "ding_mean_logit": 4.03,
+      "rate_%": 86.67
+     },
+     {
+      "video": "0_Face2Face_016_209",
+      "n": 30,
+      "n_err": 25,
+      "group": "M-Others",
+      "method": "Face2Face",
+      "ours_mean_logit": -85.0,
+      "ding_mean_logit": 3.71,
+      "rate_%": 83.33
+     },
+     {
+      "video": "0_NeuralTextures_194_235",
+      "n": 30,
+      "n_err": 25,
+      "group": "M-Asian",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -76.46,
+      "ding_mean_logit": 4.0,
+      "rate_%": 83.33
+     },
+     {
+      "video": "0_Deepfakes_923_023",
+      "n": 30,
+      "n_err": 24,
+      "group": "M-White",
+      "method": "Deepfakes",
+      "ours_mean_logit": -54.81,
+      "ding_mean_logit": 1.42,
+      "rate_%": 80.0
+     },
+     {
+      "video": "0_FaceSwap_923_023",
+      "n": 30,
+      "n_err": 24,
+      "group": "M-White",
+      "method": "FaceSwap",
+      "ours_mean_logit": -60.04,
+      "ding_mean_logit": 1.2,
+      "rate_%": 80.0
+     },
+     {
+      "video": "0_NeuralTextures_376_381",
+      "n": 30,
+      "n_err": 24,
+      "group": "F-White",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -76.1,
+      "ding_mean_logit": 3.94,
+      "rate_%": 80.0
+     }
+    ],
+    "fn_only_ours_by_group": {
+     "F-Asian": 37,
+     "F-Black": 14,
+     "F-Others": 22,
+     "F-White": 387,
+     "M-Asian": 113,
+     "M-Black": 22,
+     "M-Others": 114,
+     "M-White": 690
+    },
+    "fn_only_ours_by_method": {
+     "Deepfakes": 44,
+     "Face2Face": 240,
+     "FaceShifter": 253,
+     "FaceSwap": 166,
+     "NeuralTextures": 696
+    },
+    "fn_only_ding": [
+     {
+      "video": "0_NeuralTextures_381_376",
+      "n": 30,
+      "n_err": 25,
+      "group": "F-White",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -15.32,
+      "ding_mean_logit": -3.75,
+      "rate_%": 83.33
+     },
+     {
+      "video": "0_NeuralTextures_662_641",
+      "n": 28,
+      "n_err": 22,
+      "group": "F-Asian",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -34.64,
+      "ding_mean_logit": -3.08,
+      "rate_%": 78.57
+     },
+     {
+      "video": "0_NeuralTextures_534_490",
+      "n": 29,
+      "n_err": 21,
+      "group": "F-White",
+      "method": "NeuralTextures",
+      "ours_mean_logit": 11.05,
+      "ding_mean_logit": -1.1,
+      "rate_%": 72.41
+     },
+     {
+      "video": "0_Face2Face_193_030",
+      "n": 30,
+      "n_err": 20,
+      "group": "F-White",
+      "method": "Face2Face",
+      "ours_mean_logit": 20.4,
+      "ding_mean_logit": -1.87,
+      "rate_%": 66.67
+     },
+     {
+      "video": "0_Deepfakes_948_965",
+      "n": 30,
+      "n_err": 16,
+      "group": "F-White",
+      "method": "Deepfakes",
+      "ours_mean_logit": 42.52,
+      "ding_mean_logit": -0.51,
+      "rate_%": 53.33
+     },
+     {
+      "video": "0_NeuralTextures_482_465",
+      "n": 30,
+      "n_err": 15,
+      "group": "F-White",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -52.82,
+      "ding_mean_logit": -0.77,
+      "rate_%": 50.0
+     },
+     {
+      "video": "0_NeuralTextures_620_619",
+      "n": 30,
+      "n_err": 15,
+      "group": "M-White",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -55.93,
+      "ding_mean_logit": -1.2,
+      "rate_%": 50.0
+     },
+     {
+      "video": "0_Deepfakes_300_304",
+      "n": 30,
+      "n_err": 14,
+      "group": "M-Others",
+      "method": "Deepfakes",
+      "ours_mean_logit": 33.97,
+      "ding_mean_logit": 0.23,
+      "rate_%": 46.67
+     },
+     {
+      "video": "0_FaceSwap_662_641",
+      "n": 30,
+      "n_err": 14,
+      "group": "M-White",
+      "method": "FaceSwap",
+      "ours_mean_logit": 32.33,
+      "ding_mean_logit": 0.13,
+      "rate_%": 46.67
+     },
+     {
+      "video": "0_FaceShifter_259_345",
+      "n": 30,
+      "n_err": 11,
+      "group": "M-Asian",
+      "method": "FaceShifter",
+      "ours_mean_logit": -53.25,
+      "ding_mean_logit": -0.88,
+      "rate_%": 36.67
+     }
+    ],
+    "fn_only_ding_by_group": {
+     "F-Asian": 48,
+     "F-Black": 8,
+     "F-Others": 9,
+     "F-White": 198,
+     "M-Asian": 28,
+     "M-Black": 4,
+     "M-Others": 22,
+     "M-White": 166
+    },
+    "fn_only_ding_by_method": {
+     "Deepfakes": 81,
+     "Face2Face": 64,
+     "FaceShifter": 55,
+     "FaceSwap": 56,
+     "NeuralTextures": 227
+    }
+   },
+   "top12_fp": [
+    {
+     "frame": "0_youtube_018_291.png",
+     "video": "0_youtube_018",
+     "gname": "F-White",
+     "method": "real",
+     "logit": 47.018,
+     "ding_logit": 5.2,
+     "ding_fake": true,
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age4": "30-44",
+     "ita4": "Q2",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_018_291.png"
+    },
+    {
+     "frame": "0_youtube_307_131.png",
+     "video": "0_youtube_307",
+     "gname": "M-White",
+     "method": "real",
+     "logit": 46.22,
+     "ding_logit": 2.953,
+     "ding_fake": true,
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age4": "45-59",
+     "ita4": "Q4 lightest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_307_131.png"
+    },
+    {
+     "frame": "0_youtube_095_121.png",
+     "video": "0_youtube_095",
+     "gname": "F-White",
+     "method": "real",
+     "logit": 38.658,
+     "ding_logit": -1.07,
+     "ding_fake": false,
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age4": "<30",
+     "ita4": "Q3",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_095_121.png"
+    },
+    {
+     "frame": "0_youtube_446_141.png",
+     "video": "0_youtube_446",
+     "gname": "F-White",
+     "method": "real",
+     "logit": 38.154,
+     "ding_logit": -5.46,
+     "ding_fake": false,
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age4": "<30",
+     "ita4": "Q4 lightest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_446_141.png"
+    },
+    {
+     "frame": "0_youtube_438_131.png",
+     "video": "0_youtube_438",
+     "gname": "F-White",
+     "method": "real",
+     "logit": 33.591,
+     "ding_logit": -4.803,
+     "ding_fake": false,
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age4": "<30",
+     "ita4": "Q4 lightest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_438_131.png"
+    },
+    {
+     "frame": "0_youtube_845_51.png",
+     "video": "0_youtube_845",
+     "gname": "M-White",
+     "method": "real",
+     "logit": 31.922,
+     "ding_logit": 1.232,
+     "ding_fake": true,
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age4": "30-44",
+     "ita4": "Q1 darkest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_845_51.png"
+    },
+    {
+     "frame": "0_youtube_305_21.png",
+     "video": "0_youtube_305",
+     "gname": "M-White",
+     "method": "real",
+     "logit": 29.741,
+     "ding_logit": 0.032,
+     "ding_fake": true,
+     "cl_gender": "female",
+     "cl_race": "asian",
+     "age4": "<30",
+     "ita4": "Q4 lightest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_305_21.png"
+    },
+    {
+     "frame": "0_youtube_288_221.png",
+     "video": "0_youtube_288",
+     "gname": "F-White",
+     "method": "real",
+     "logit": 28.8,
+     "ding_logit": 2.199,
+     "ding_fake": true,
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age4": "<30",
+     "ita4": "Q1 darkest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_288_221.png"
+    },
+    {
+     "frame": "0_youtube_237_81.png",
+     "video": "0_youtube_237",
+     "gname": "M-White",
+     "method": "real",
+     "logit": 28.78,
+     "ding_logit": -2.654,
+     "ding_fake": false,
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age4": "<30",
+     "ita4": "Q3",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_237_81.png"
+    },
+    {
+     "frame": "0_youtube_018_1.png",
+     "video": "0_youtube_018",
+     "gname": "F-White",
+     "method": "real",
+     "logit": 28.408,
+     "ding_logit": 4.859,
+     "ding_fake": true,
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age4": "30-44",
+     "ita4": "Q2",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_018_1.png"
+    },
+    {
+     "frame": "0_youtube_062_21.png",
+     "video": "0_youtube_062",
+     "gname": "F-Asian",
+     "method": "real",
+     "logit": 27.496,
+     "ding_logit": -5.169,
+     "ding_fake": false,
+     "cl_gender": "female",
+     "cl_race": "asian",
+     "age4": "30-44",
+     "ita4": "Q3",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_062_21.png"
+    },
+    {
+     "frame": "0_youtube_305_1.png",
+     "video": "0_youtube_305",
+     "gname": "M-White",
+     "method": "real",
+     "logit": 27.295,
+     "ding_logit": 4.139,
+     "ding_fake": true,
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age4": "<30",
+     "ita4": "Q4 lightest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_305_1.png"
+    }
+   ],
+   "top12_fn": [
+    {
+     "frame": "0_NeuralTextures_294_292_1.png",
+     "video": "0_NeuralTextures_294_292",
+     "gname": "F-Asian",
+     "method": "NeuralTextures",
+     "logit": -114.746,
+     "ding_logit": -5.436,
+     "ding_fake": false,
+     "cl_gender": "female",
+     "cl_race": "asian",
+     "age4": "<30",
+     "ita4": "Q3",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_NeuralTextures_294_292_1.png"
+    },
+    {
+     "frame": "0_NeuralTextures_578_636_101.png",
+     "video": "0_NeuralTextures_578_636",
+     "gname": "F-White",
+     "method": "NeuralTextures",
+     "logit": -113.817,
+     "ding_logit": 0.661,
+     "ding_fake": true,
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age4": "30-44",
+     "ita4": "Q4 lightest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_NeuralTextures_578_636_101.png"
+    },
+    {
+     "frame": "0_FaceSwap_800_840_101.png",
+     "video": "0_FaceSwap_800_840",
+     "gname": "M-White",
+     "method": "FaceSwap",
+     "logit": -113.249,
+     "ding_logit": 4.583,
+     "ding_fake": true,
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age4": "45-59",
+     "ita4": "Q1 darkest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_FaceSwap_800_840_101.png"
+    },
+    {
+     "frame": "0_FaceShifter_951_947_101.png",
+     "video": "0_FaceShifter_951_947",
+     "gname": "F-White",
+     "method": "FaceShifter",
+     "logit": -111.896,
+     "ding_logit": -5.652,
+     "ding_fake": false,
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age4": "<30",
+     "ita4": "Q2",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_FaceShifter_951_947_101.png"
+    },
+    {
+     "frame": "0_NeuralTextures_619_620_231.png",
+     "video": "0_NeuralTextures_619_620",
+     "gname": "M-White",
+     "method": "NeuralTextures",
+     "logit": -111.464,
+     "ding_logit": -4.18,
+     "ding_fake": false,
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age4": "45-59",
+     "ita4": "Q3",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_NeuralTextures_619_620_231.png"
+    },
+    {
+     "frame": "0_FaceSwap_800_840_111.png",
+     "video": "0_FaceSwap_800_840",
+     "gname": "M-White",
+     "method": "FaceSwap",
+     "logit": -111.274,
+     "ding_logit": 5.547,
+     "ding_fake": true,
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age4": "45-59",
+     "ita4": "Q1 darkest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_FaceSwap_800_840_111.png"
+    },
+    {
+     "frame": "0_NeuralTextures_800_840_31.png",
+     "video": "0_NeuralTextures_800_840",
+     "gname": "M-White",
+     "method": "NeuralTextures",
+     "logit": -110.75,
+     "ding_logit": 4.796,
+     "ding_fake": true,
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age4": "45-59",
+     "ita4": "Q1 darkest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_NeuralTextures_800_840_31.png"
+    },
+    {
+     "frame": "0_FaceShifter_800_840_41.png",
+     "video": "0_FaceShifter_800_840",
+     "gname": "M-White",
+     "method": "FaceShifter",
+     "logit": -110.749,
+     "ding_logit": 5.184,
+     "ding_fake": true,
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age4": "45-59",
+     "ita4": "Q1 darkest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_FaceShifter_800_840_41.png"
+    },
+    {
+     "frame": "0_Face2Face_619_620_1.png",
+     "video": "0_Face2Face_619_620",
+     "gname": "M-White",
+     "method": "Face2Face",
+     "logit": -110.654,
+     "ding_logit": -0.09,
+     "ding_fake": false,
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age4": "45-59",
+     "ita4": "Q3",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_Face2Face_619_620_1.png"
+    },
+    {
+     "frame": "0_NeuralTextures_619_620_11.png",
+     "video": "0_NeuralTextures_619_620",
+     "gname": "M-White",
+     "method": "NeuralTextures",
+     "logit": -110.361,
+     "ding_logit": -5.788,
+     "ding_fake": false,
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age4": "45-59",
+     "ita4": "Q3",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_NeuralTextures_619_620_11.png"
+    },
+    {
+     "frame": "0_NeuralTextures_867_765_1.png",
+     "video": "0_NeuralTextures_867_765",
+     "gname": "F-White",
+     "method": "NeuralTextures",
+     "logit": -110.34,
+     "ding_logit": -5.768,
+     "ding_fake": false,
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age4": "<30",
+     "ita4": "Q4 lightest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_NeuralTextures_867_765_1.png"
+    },
+    {
+     "frame": "0_FaceShifter_867_765_231.png",
+     "video": "0_FaceShifter_867_765",
+     "gname": "F-Asian",
+     "method": "FaceShifter",
+     "logit": -109.917,
+     "ding_logit": 5.259,
+     "ding_fake": true,
+     "cl_gender": "female",
+     "cl_race": "asian",
+     "age4": "<30",
+     "ita4": "Q4 lightest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_FaceShifter_867_765_231.png"
+    }
+   ]
+  },
+  "A1": {
+   "t": -19.132783889770508,
+   "n_FP": 85,
+   "FPR_%": 1.8730718378140152,
+   "n_FN": 4095,
+   "FNR_%": 19.62804965728802,
+   "FP_also_ding_%": 56.470588235294116,
+   "FN_also_ding_%": 19.48717948717949,
+   "dingFP_also_ours_%": 8.43585237258348,
+   "dingFN_also_ours_%": 74.23255813953489,
+   "FP_ours_only": 37,
+   "FP_ding_only": 521,
+   "FN_ours_only": 3297,
+   "FN_ding_only": 277,
+   "FP_jaccard": 0.07920792079207921,
+   "FN_jaccard": 0.18252516010978956,
+   "tables": {
+    "fp_gname": [
+     {
+      "gname": "F-Asian",
+      "n": 414,
+      "n_err": 8,
+      "n_videos": 23,
+      "n_videos_with_err": 4,
+      "rate_%": 1.932,
+      "share_of_errors_%": 9.412
+     },
+     {
+      "gname": "F-Black",
+      "n": 118,
+      "n_err": 1,
+      "n_videos": 6,
+      "n_videos_with_err": 1,
+      "rate_%": 0.847,
+      "share_of_errors_%": 1.176
+     },
+     {
+      "gname": "F-Others",
+      "n": 151,
+      "n_err": 0,
+      "n_videos": 9,
+      "n_videos_with_err": 0,
+      "rate_%": 0.0,
+      "share_of_errors_%": 0.0
+     },
+     {
+      "gname": "F-White",
+      "n": 1755,
+      "n_err": 36,
+      "n_videos": 109,
+      "n_videos_with_err": 14,
+      "rate_%": 2.051,
+      "share_of_errors_%": 42.353
+     },
+     {
+      "gname": "M-Asian",
+      "n": 238,
+      "n_err": 2,
+      "n_videos": 13,
+      "n_videos_with_err": 2,
+      "rate_%": 0.84,
+      "share_of_errors_%": 2.353
+     },
+     {
+      "gname": "M-Black",
+      "n": 92,
+      "n_err": 0,
+      "n_videos": 7,
+      "n_videos_with_err": 0,
+      "rate_%": 0.0,
+      "share_of_errors_%": 0.0
+     },
+     {
+      "gname": "M-Others",
+      "n": 181,
+      "n_err": 0,
+      "n_videos": 12,
+      "n_videos_with_err": 0,
+      "rate_%": 0.0,
+      "share_of_errors_%": 0.0
+     },
+     {
+      "gname": "M-White",
+      "n": 1589,
+      "n_err": 38,
+      "n_videos": 88,
+      "n_videos_with_err": 10,
+      "rate_%": 2.391,
+      "share_of_errors_%": 44.706
+     }
+    ],
+    "fp_xu_gender": [
+     {
+      "xu_gender": "female",
+      "n": 2438,
+      "n_err": 45,
+      "n_videos": 147,
+      "n_videos_with_err": 19,
+      "rate_%": 1.846,
+      "share_of_errors_%": 52.941
+     },
+     {
+      "xu_gender": "male",
+      "n": 2100,
+      "n_err": 40,
+      "n_videos": 120,
+      "n_videos_with_err": 12,
+      "rate_%": 1.905,
+      "share_of_errors_%": 47.059
+     }
+    ],
+    "fp_cl_gender": [
+     {
+      "cl_gender": "female",
+      "n": 2497,
+      "n_err": 47,
+      "n_videos": 152,
+      "n_videos_with_err": 21,
+      "rate_%": 1.882,
+      "share_of_errors_%": 55.294
+     },
+     {
+      "cl_gender": "male",
+      "n": 2041,
+      "n_err": 38,
+      "n_videos": 120,
+      "n_videos_with_err": 11,
+      "rate_%": 1.862,
+      "share_of_errors_%": 44.706
+     }
+    ],
+    "fp_xu_race": [
+     {
+      "xu_race": "asian",
+      "n": 652,
+      "n_err": 10,
+      "n_videos": 36,
+      "n_videos_with_err": 6,
+      "rate_%": 1.534,
+      "share_of_errors_%": 11.765
+     },
+     {
+      "xu_race": "black",
+      "n": 210,
+      "n_err": 1,
+      "n_videos": 13,
+      "n_videos_with_err": 1,
+      "rate_%": 0.476,
+      "share_of_errors_%": 1.176
+     },
+     {
+      "xu_race": "others",
+      "n": 332,
+      "n_err": 0,
+      "n_videos": 21,
+      "n_videos_with_err": 0,
+      "rate_%": 0.0,
+      "share_of_errors_%": 0.0
+     },
+     {
+      "xu_race": "white",
+      "n": 3344,
+      "n_err": 74,
+      "n_videos": 197,
+      "n_videos_with_err": 24,
+      "rate_%": 2.213,
+      "share_of_errors_%": 87.059
+     }
+    ],
+    "fp_cl_race": [
+     {
+      "cl_race": "asian",
+      "n": 720,
+      "n_err": 11,
+      "n_videos": 51,
+      "n_videos_with_err": 7,
+      "rate_%": 1.528,
+      "share_of_errors_%": 12.941
+     },
+     {
+      "cl_race": "black",
+      "n": 208,
+      "n_err": 1,
+      "n_videos": 11,
+      "n_videos_with_err": 1,
+      "rate_%": 0.481,
+      "share_of_errors_%": 1.176
+     },
+     {
+      "cl_race": "others",
+      "n": 201,
+      "n_err": 2,
+      "n_videos": 20,
+      "n_videos_with_err": 2,
+      "rate_%": 0.995,
+      "share_of_errors_%": 2.353
+     },
+     {
+      "cl_race": "white",
+      "n": 3409,
+      "n_err": 71,
+      "n_videos": 209,
+      "n_videos_with_err": 24,
+      "rate_%": 2.083,
+      "share_of_errors_%": 83.529
+     }
+    ],
+    "fp_age4": [
+     {
+      "age4": "30-44",
+      "n": 1451,
+      "n_err": 37,
+      "n_videos": 92,
+      "n_videos_with_err": 9,
+      "rate_%": 2.55,
+      "share_of_errors_%": 43.529
+     },
+     {
+      "age4": "45-59",
+      "n": 509,
+      "n_err": 7,
+      "n_videos": 29,
+      "n_videos_with_err": 2,
+      "rate_%": 1.375,
+      "share_of_errors_%": 8.235
+     },
+     {
+      "age4": "60+",
+      "n": 34,
+      "n_err": 0,
+      "n_videos": 6,
+      "n_videos_with_err": 0,
+      "rate_%": 0.0,
+      "share_of_errors_%": 0.0
+     },
+     {
+      "age4": "<30",
+      "n": 2544,
+      "n_err": 41,
+      "n_videos": 140,
+      "n_videos_with_err": 20,
+      "rate_%": 1.612,
+      "share_of_errors_%": 48.235
+     }
+    ],
+    "fp_ita4": [
+     {
+      "ita4": "Q1 darkest",
+      "n": 1138,
+      "n_err": 25,
+      "n_videos": 72,
+      "n_videos_with_err": 10,
+      "rate_%": 2.197,
+      "share_of_errors_%": 29.412
+     },
+     {
+      "ita4": "Q2",
+      "n": 1112,
+      "n_err": 16,
+      "n_videos": 65,
+      "n_videos_with_err": 5,
+      "rate_%": 1.439,
+      "share_of_errors_%": 18.824
+     },
+     {
+      "ita4": "Q3",
+      "n": 1032,
+      "n_err": 21,
+      "n_videos": 55,
+      "n_videos_with_err": 7,
+      "rate_%": 2.035,
+      "share_of_errors_%": 24.706
+     },
+     {
+      "ita4": "Q4 lightest",
+      "n": 1165,
+      "n_err": 23,
+      "n_videos": 68,
+      "n_videos_with_err": 9,
+      "rate_%": 1.974,
+      "share_of_errors_%": 27.059
+     },
+     {
+      "ita4": "missing",
+      "n": 91,
+      "n_err": 0,
+      "n_videos": 7,
+      "n_videos_with_err": 0,
+      "rate_%": 0.0,
+      "share_of_errors_%": 0.0
+     }
+    ],
+    "fp_ff_race7": [
+     {
+      "ff_race7": "Black",
+      "n": 205,
+      "n_err": 1,
+      "n_videos": 15,
+      "n_videos_with_err": 1,
+      "rate_%": 0.488,
+      "share_of_errors_%": 1.176
+     },
+     {
+      "ff_race7": "East Asian",
+      "n": 529,
+      "n_err": 7,
+      "n_videos": 40,
+      "n_videos_with_err": 5,
+      "rate_%": 1.323,
+      "share_of_errors_%": 8.235
+     },
+     {
+      "ff_race7": "Indian",
+      "n": 56,
+      "n_err": 0,
+      "n_videos": 6,
+      "n_videos_with_err": 0,
+      "rate_%": 0.0,
+      "share_of_errors_%": 0.0
+     },
+     {
+      "ff_race7": "Latino_Hispanic",
+      "n": 241,
+      "n_err": 0,
+      "n_videos": 31,
+      "n_videos_with_err": 0,
+      "rate_%": 0.0,
+      "share_of_errors_%": 0.0
+     },
+     {
+      "ff_race7": "Middle Eastern",
+      "n": 819,
+      "n_err": 21,
+      "n_videos": 76,
+      "n_videos_with_err": 11,
+      "rate_%": 2.564,
+      "share_of_errors_%": 24.706
+     },
+     {
+      "ff_race7": "Southeast Asian",
+      "n": 175,
+      "n_err": 2,
+      "n_videos": 17,
+      "n_videos_with_err": 2,
+      "rate_%": 1.143,
+      "share_of_errors_%": 2.353
+     },
+     {
+      "ff_race7": "White",
+      "n": 2513,
+      "n_err": 54,
+      "n_videos": 171,
+      "n_videos_with_err": 19,
+      "rate_%": 2.149,
+      "share_of_errors_%": 63.529
+     }
+    ],
+    "fn_method": [
+     {
+      "method": "Deepfakes",
+      "n": 3880,
+      "n_err": 159,
+      "n_videos": 130,
+      "n_videos_with_err": 19,
+      "rate_%": 4.098,
+      "share_of_errors_%": 3.883
+     },
+     {
+      "method": "Face2Face",
+      "n": 4373,
+      "n_err": 593,
+      "n_videos": 146,
+      "n_videos_with_err": 54,
+      "rate_%": 13.56,
+      "share_of_errors_%": 14.481
+     },
+     {
+      "method": "FaceShifter",
+      "n": 4280,
+      "n_err": 742,
+      "n_videos": 143,
+      "n_videos_with_err": 76,
+      "rate_%": 17.336,
+      "share_of_errors_%": 18.12
+     },
+     {
+      "method": "FaceSwap",
+      "n": 3822,
+      "n_err": 417,
+      "n_videos": 128,
+      "n_videos_with_err": 56,
+      "rate_%": 10.911,
+      "share_of_errors_%": 10.183
+     },
+     {
+      "method": "NeuralTextures",
+      "n": 4508,
+      "n_err": 2184,
+      "n_videos": 151,
+      "n_videos_with_err": 128,
+      "rate_%": 48.447,
+      "share_of_errors_%": 53.333
+     }
+    ],
+    "fn_family": [
+     {
+      "family": "identity-swap",
+      "n": 11982,
+      "n_err": 1318,
+      "n_videos": 401,
+      "n_videos_with_err": 151,
+      "rate_%": 11.0,
+      "share_of_errors_%": 32.186
+     },
+     {
+      "family": "reenactment",
+      "n": 8881,
+      "n_err": 2777,
+      "n_videos": 297,
+      "n_videos_with_err": 182,
+      "rate_%": 31.269,
+      "share_of_errors_%": 67.814
+     }
+    ],
+    "fn_gname": [
+     {
+      "gname": "F-Asian",
+      "n": 1768,
+      "n_err": 271,
+      "n_videos": 60,
+      "n_videos_with_err": 26,
+      "rate_%": 15.328,
+      "share_of_errors_%": 6.618
+     },
+     {
+      "gname": "F-Black",
+      "n": 480,
+      "n_err": 47,
+      "n_videos": 16,
+      "n_videos_with_err": 5,
+      "rate_%": 9.792,
+      "share_of_errors_%": 1.148
+     },
+     {
+      "gname": "F-Others",
+      "n": 690,
+      "n_err": 42,
+      "n_videos": 23,
+      "n_videos_with_err": 4,
+      "rate_%": 6.087,
+      "share_of_errors_%": 1.026
+     },
+     {
+      "gname": "F-White",
+      "n": 7968,
+      "n_err": 1283,
+      "n_videos": 267,
+      "n_videos_with_err": 122,
+      "rate_%": 16.102,
+      "share_of_errors_%": 31.331
+     },
+     {
+      "gname": "M-Asian",
+      "n": 929,
+      "n_err": 355,
+      "n_videos": 31,
+      "n_videos_with_err": 22,
+      "rate_%": 38.213,
+      "share_of_errors_%": 8.669
+     },
+     {
+      "gname": "M-Black",
+      "n": 510,
+      "n_err": 84,
+      "n_videos": 17,
+      "n_videos_with_err": 8,
+      "rate_%": 16.471,
+      "share_of_errors_%": 2.051
+     },
+     {
+      "gname": "M-Others",
+      "n": 990,
+      "n_err": 261,
+      "n_videos": 33,
+      "n_videos_with_err": 15,
+      "rate_%": 26.364,
+      "share_of_errors_%": 6.374
+     },
+     {
+      "gname": "M-White",
+      "n": 7528,
+      "n_err": 1752,
+      "n_videos": 251,
+      "n_videos_with_err": 131,
+      "rate_%": 23.273,
+      "share_of_errors_%": 42.784
+     }
+    ],
+    "fn_xu_gender": [
+     {
+      "xu_gender": "female",
+      "n": 10906,
+      "n_err": 1643,
+      "n_videos": 366,
+      "n_videos_with_err": 157,
+      "rate_%": 15.065,
+      "share_of_errors_%": 40.122
+     },
+     {
+      "xu_gender": "male",
+      "n": 9957,
+      "n_err": 2452,
+      "n_videos": 332,
+      "n_videos_with_err": 176,
+      "rate_%": 24.626,
+      "share_of_errors_%": 59.878
+     }
+    ],
+    "fn_cl_gender": [
+     {
+      "cl_gender": "female",
+      "n": 11113,
+      "n_err": 1736,
+      "n_videos": 385,
+      "n_videos_with_err": 170,
+      "rate_%": 15.621,
+      "share_of_errors_%": 42.393
+     },
+     {
+      "cl_gender": "male",
+      "n": 9750,
+      "n_err": 2359,
+      "n_videos": 331,
+      "n_videos_with_err": 173,
+      "rate_%": 24.195,
+      "share_of_errors_%": 57.607
+     }
+    ],
+    "fn_xu_race": [
+     {
+      "xu_race": "asian",
+      "n": 2697,
+      "n_err": 626,
+      "n_videos": 91,
+      "n_videos_with_err": 48,
+      "rate_%": 23.211,
+      "share_of_errors_%": 15.287
+     },
+     {
+      "xu_race": "black",
+      "n": 990,
+      "n_err": 131,
+      "n_videos": 33,
+      "n_videos_with_err": 13,
+      "rate_%": 13.232,
+      "share_of_errors_%": 3.199
+     },
+     {
+      "xu_race": "others",
+      "n": 1680,
+      "n_err": 303,
+      "n_videos": 56,
+      "n_videos_with_err": 19,
+      "rate_%": 18.036,
+      "share_of_errors_%": 7.399
+     },
+     {
+      "xu_race": "white",
+      "n": 15496,
+      "n_err": 3035,
+      "n_videos": 518,
+      "n_videos_with_err": 253,
+      "rate_%": 19.586,
+      "share_of_errors_%": 74.115
+     }
+    ],
+    "fn_cl_race": [
+     {
+      "cl_race": "asian",
+      "n": 2728,
+      "n_err": 711,
+      "n_videos": 136,
+      "n_videos_with_err": 60,
+      "rate_%": 26.063,
+      "share_of_errors_%": 17.363
+     },
+     {
+      "cl_race": "black",
+      "n": 857,
+      "n_err": 125,
+      "n_videos": 35,
+      "n_videos_with_err": 11,
+      "rate_%": 14.586,
+      "share_of_errors_%": 3.053
+     },
+     {
+      "cl_race": "others",
+      "n": 898,
+      "n_err": 144,
+      "n_videos": 77,
+      "n_videos_with_err": 21,
+      "rate_%": 16.036,
+      "share_of_errors_%": 3.516
+     },
+     {
+      "cl_race": "white",
+      "n": 16380,
+      "n_err": 3115,
+      "n_videos": 594,
+      "n_videos_with_err": 273,
+      "rate_%": 19.017,
+      "share_of_errors_%": 76.068
+     }
+    ],
+    "fn_age4": [
+     {
+      "age4": "30-44",
+      "n": 6563,
+      "n_err": 1440,
+      "n_videos": 219,
+      "n_videos_with_err": 105,
+      "rate_%": 21.941,
+      "share_of_errors_%": 35.165
+     },
+     {
+      "age4": "45-59",
+      "n": 2549,
+      "n_err": 524,
+      "n_videos": 85,
+      "n_videos_with_err": 46,
+      "rate_%": 20.557,
+      "share_of_errors_%": 12.796
+     },
+     {
+      "age4": "60+",
+      "n": 30,
+      "n_err": 28,
+      "n_videos": 1,
+      "n_videos_with_err": 1,
+      "rate_%": 93.333,
+      "share_of_errors_%": 0.684
+     },
+     {
+      "age4": "<30",
+      "n": 11721,
+      "n_err": 2103,
+      "n_videos": 393,
+      "n_videos_with_err": 181,
+      "rate_%": 17.942,
+      "share_of_errors_%": 51.355
+     }
+    ],
+    "fn_ita4": [
+     {
+      "ita4": "Q1 darkest",
+      "n": 5758,
+      "n_err": 1082,
+      "n_videos": 192,
+      "n_videos_with_err": 90,
+      "rate_%": 18.791,
+      "share_of_errors_%": 26.422
+     },
+     {
+      "ita4": "Q2",
+      "n": 5066,
+      "n_err": 1099,
+      "n_videos": 169,
+      "n_videos_with_err": 82,
+      "rate_%": 21.694,
+      "share_of_errors_%": 26.838
+     },
+     {
+      "ita4": "Q3",
+      "n": 4648,
+      "n_err": 971,
+      "n_videos": 156,
+      "n_videos_with_err": 82,
+      "rate_%": 20.891,
+      "share_of_errors_%": 23.712
+     },
+     {
+      "ita4": "Q4 lightest",
+      "n": 5108,
+      "n_err": 940,
+      "n_videos": 171,
+      "n_videos_with_err": 77,
+      "rate_%": 18.403,
+      "share_of_errors_%": 22.955
+     },
+     {
+      "ita4": "missing",
+      "n": 283,
+      "n_err": 3,
+      "n_videos": 10,
+      "n_videos_with_err": 2,
+      "rate_%": 1.06,
+      "share_of_errors_%": 0.073
+     }
+    ]
+   },
+   "fp_videos_any": 31,
+   "fp_videos_ge50pct": 0,
+   "fp_share_top5_videos_%": 44.70588235294118,
+   "fp_share_top15_videos_%": 81.17647058823529,
+   "n_videos_for_50pct_fp": 6,
+   "iF_FPR": 8.43344027305709,
+   "iF_FPR_group_dev": {
+    "M-Asian": 1.0327357033602336,
+    "M-White": 0.5183693201469667,
+    "M-Black": 1.8730718378140152,
+    "M-Others": 1.8730718378140152,
+    "F-Asian": 0.059295311944438864,
+    "F-White": 0.17821021346803612,
+    "F-Black": 1.0256142106953712,
+    "F-Others": 1.8730718378140152
+   },
+   "group_FPR_%": {
+    "M-Asian": 0.8403361344537815,
+    "M-White": 2.391441157960982,
+    "M-Black": 0.0,
+    "M-Others": 0.0,
+    "F-Asian": 1.932367149758454,
+    "F-White": 2.051282051282051,
+    "F-Black": 0.847457627118644,
+    "F-Others": 0.0
+   },
+   "ding_group_FPR_%": {
+    "M-Asian": 18.487394957983195,
+    "M-White": 12.523599748269351,
+    "M-Black": 8.695652173913043,
+    "M-Others": 16.022099447513813,
+    "F-Asian": 10.869565217391305,
+    "F-White": 11.396011396011396,
+    "F-Black": 18.64406779661017,
+    "F-Others": 14.56953642384106
+   },
+   "ding_iF_FPR_group_dev": {
+    "M-Asian": 5.948831714263495,
+    "M-White": 0.014963495450348585,
+    "M-Black": 3.8429110698066564,
+    "M-Others": 3.483536203794113,
+    "F-Asian": 1.6689980263283957,
+    "F-White": 1.1425518477083036,
+    "F-Black": 6.10550455289047,
+    "F-Others": 2.030973180121359
+   },
+   "iF_FPR_drop_topk_videos": {
+    "1": {
+     "iF_FPR": 7.200490613564331,
+     "FPR_%": 1.6189842537147927,
+     "videos": [
+      "0_youtube_845"
+     ],
+     "iF_FPR_same_FPR": 8.835509316403915,
+     "FPR_same_%": 1.8851186515857175
+    },
+    "2": {
+     "iF_FPR": 6.537854026049517,
+     "FPR_%": 1.4732142857142856,
+     "videos": [
+      "0_youtube_845",
+      "0_youtube_018"
+     ],
+     "iF_FPR_same_FPR": 8.079050586951528,
+     "FPR_same_%": 1.875
+    },
+    "3": {
+     "iF_FPR": 5.986299509111656,
+     "FPR_%": 1.3258426966292136,
+     "videos": [
+      "0_youtube_845",
+      "0_youtube_018",
+      "0_youtube_383"
+     ],
+     "iF_FPR_same_FPR": 8.888665071800888,
+     "FPR_same_%": 1.887640449438202
+    },
+    "5": {
+     "iF_FPR": 5.011179839019821,
+     "FPR_%": 1.069883906214432,
+     "videos": [
+      "0_youtube_845",
+      "0_youtube_018",
+      "0_youtube_383",
+      "0_youtube_307",
+      "0_youtube_348"
+     ],
+     "iF_FPR_same_FPR": 10.702357299761166,
+     "FPR_same_%": 1.8893694513999544
+    },
+    "10": {
+     "iF_FPR": 3.1637466704521637,
+     "FPR_%": 0.6360424028268552,
+     "videos": [
+      "0_youtube_845",
+      "0_youtube_018",
+      "0_youtube_383",
+      "0_youtube_307",
+      "0_youtube_348",
+      "0_youtube_446",
+      "0_youtube_237",
+      "0_youtube_062",
+      "0_youtube_722",
+      "0_youtube_305"
+     ],
+     "iF_FPR_same_FPR": 13.74724862625378,
+     "FPR_same_%": 1.884570082449941
+    },
+    "15": {
+     "iF_FPR": 2.4153608357809198,
+     "FPR_%": 0.3903391070992925,
+     "videos": [
+      "0_youtube_845",
+      "0_youtube_018",
+      "0_youtube_383",
+      "0_youtube_307",
+      "0_youtube_348",
+      "0_youtube_446",
+      "0_youtube_237",
+      "0_youtube_062",
+      "0_youtube_722",
+      "0_youtube_305",
+      "0_youtube_019",
+      "0_youtube_930",
+      "0_youtube_202",
+      "0_youtube_547",
+      "0_youtube_323"
+     ],
+     "iF_FPR_same_FPR": 12.733131038381341,
+     "FPR_same_%": 1.878506952915345
+    },
+    "20": {
+     "iF_FPR": 1.9522320212858224,
+     "FPR_%": 0.27826966860612196,
+     "videos": [
+      "0_youtube_845",
+      "0_youtube_018",
+      "0_youtube_383",
+      "0_youtube_307",
+      "0_youtube_348",
+      "0_youtube_446",
+      "0_youtube_237",
+      "0_youtube_062",
+      "0_youtube_722",
+      "0_youtube_305",
+      "0_youtube_019",
+      "0_youtube_930",
+      "0_youtube_202",
+      "0_youtube_547",
+      "0_youtube_323",
+      "0_youtube_095",
+      "0_youtube_438",
+      "0_youtube_288",
+      "0_youtube_345",
+      "0_youtube_736"
+     ],
+     "iF_FPR_same_FPR": 13.32061253528053,
+     "FPR_same_%": 1.8972931950417402
+    }
+   },
+   "iF_FPR_drop_random_videos": {
+    "5": {
+     "median": 8.5043863028204,
+     "p5": 8.315270755015659,
+     "p95": 8.910016047878406
+    },
+    "10": {
+     "median": 8.562893609906569,
+     "p5": 8.219720865399525,
+     "p95": 9.332995383683297
+    }
+   },
+   "within_group_fp_concentration": {
+    "F-Asian": {
+     "n_fp": 8,
+     "n_videos": 23,
+     "videos_with_fp": 4,
+     "top1_share_%": 50.0,
+     "top3_share_%": 87.5,
+     "top3_videos": [
+      "0_youtube_062",
+      "0_youtube_930",
+      "0_youtube_985"
+     ]
+    },
+    "F-Black": {
+     "n_fp": 1,
+     "n_videos": 6,
+     "videos_with_fp": 1,
+     "top1_share_%": 100.0,
+     "top3_share_%": 100.0,
+     "top3_videos": [
+      "0_youtube_458",
+      "0_youtube_836",
+      "0_youtube_397"
+     ]
+    },
+    "F-Others": {
+     "n_fp": 0,
+     "n_videos": 9,
+     "videos_with_fp": 0,
+     "top1_share_%": 0.0,
+     "top3_share_%": 0.0,
+     "top3_videos": [
+      "0_youtube_948",
+      "0_youtube_763",
+      "0_youtube_030"
+     ]
+    },
+    "F-White": {
+     "n_fp": 36,
+     "n_videos": 109,
+     "videos_with_fp": 14,
+     "top1_share_%": 19.444444444444446,
+     "top3_share_%": 50.0,
+     "top3_videos": [
+      "0_youtube_018",
+      "0_youtube_348",
+      "0_youtube_446"
+     ]
+    },
+    "M-Asian": {
+     "n_fp": 2,
+     "n_videos": 13,
+     "videos_with_fp": 2,
+     "top1_share_%": 50.0,
+     "top3_share_%": 100.0,
+     "top3_videos": [
+      "0_youtube_345",
+      "0_youtube_513",
+      "0_youtube_747"
+     ]
+    },
+    "M-Black": {
+     "n_fp": 0,
+     "n_videos": 7,
+     "videos_with_fp": 0,
+     "top1_share_%": 0.0,
+     "top3_share_%": 0.0,
+     "top3_videos": [
+      "0_youtube_715",
+      "0_youtube_087",
+      "0_youtube_031"
+     ]
+    },
+    "M-Others": {
+     "n_fp": 0,
+     "n_videos": 12,
+     "videos_with_fp": 0,
+     "top1_share_%": 0.0,
+     "top3_share_%": 0.0,
+     "top3_videos": [
+      "0_youtube_805",
+      "0_youtube_719",
+      "0_youtube_974"
+     ]
+    },
+    "M-White": {
+     "n_fp": 38,
+     "n_videos": 88,
+     "videos_with_fp": 10,
+     "top1_share_%": 31.57894736842105,
+     "top3_share_%": 65.78947368421053,
+     "top3_videos": [
+      "0_youtube_845",
+      "0_youtube_383",
+      "0_youtube_307"
+     ]
+    }
+   },
+   "video_weighted_group_FPR_%": {
+    "F-Asian": 1.21,
+    "F-Black": 0.57,
+    "F-Others": 0.0,
+    "F-White": 1.14,
+    "M-Asian": 0.53,
+    "M-Black": 0.0,
+    "M-Others": 0.0,
+    "M-White": 1.46
+   },
+   "fn_videos_any": 333,
+   "fn_videos_ge50pct": 131,
+   "fn_share_top15_videos_%": 10.989010989010989,
+   "n_videos_for_50pct_fn": 75,
+   "fn_videos_ge50pct_by_method": {
+    "NeuralTextures": 75,
+    "Face2Face": 21,
+    "FaceShifter": 21,
+    "FaceSwap": 11,
+    "Deepfakes": 3
+   },
+   "top_fp_videos": [
+    {
+     "video": "0_youtube_845",
+     "n": 29,
+     "n_fp": 12,
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "ff_race7": "White",
+     "age_vid": 42.0,
+     "ita_vid": 12.86,
+     "ita4": "Q1 darkest",
+     "max_logit": 31.92,
+     "ding_fp": 21,
+     "fp_rate_%": 41.38,
+     "ding_fp_rate_%": 72.41
+    },
+    {
+     "video": "0_youtube_018",
+     "n": 29,
+     "n_fp": 7,
+     "group": "F-White",
+     "cl_gender": "female",
+     "cl_race": "white",
+     "ff_race7": "White",
+     "age_vid": 31.0,
+     "ita_vid": 35.08,
+     "ita4": "Q2",
+     "max_logit": 47.02,
+     "ding_fp": 21,
+     "fp_rate_%": 24.14,
+     "ding_fp_rate_%": 72.41
+    },
+    {
+     "video": "0_youtube_383",
+     "n": 30,
+     "n_fp": 7,
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "ff_race7": "Middle Eastern",
+     "age_vid": 34.0,
+     "ita_vid": 44.49,
+     "ita4": "Q3",
+     "max_logit": 12.44,
+     "ding_fp": 2,
+     "fp_rate_%": 23.33,
+     "ding_fp_rate_%": 6.67
+    },
+    {
+     "video": "0_youtube_307",
+     "n": 30,
+     "n_fp": 6,
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "ff_race7": "Middle Eastern",
+     "age_vid": 55.5,
+     "ita_vid": 58.86,
+     "ita4": "Q4 lightest",
+     "max_logit": 46.22,
+     "ding_fp": 27,
+     "fp_rate_%": 20.0,
+     "ding_fp_rate_%": 90.0
+    },
+    {
+     "video": "0_youtube_348",
+     "n": 27,
+     "n_fp": 6,
+     "group": "F-White",
+     "cl_gender": "female",
+     "cl_race": "white",
+     "ff_race7": "White",
+     "age_vid": 25.0,
+     "ita_vid": 32.38,
+     "ita4": "Q2",
+     "max_logit": 24.68,
+     "ding_fp": 3,
+     "fp_rate_%": 22.22,
+     "ding_fp_rate_%": 11.11
+    },
+    {
+     "video": "0_youtube_446",
+     "n": 30,
+     "n_fp": 5,
+     "group": "F-White",
+     "cl_gender": "female",
+     "cl_race": "white",
+     "ff_race7": "White",
+     "age_vid": 20.0,
+     "ita_vid": 57.97,
+     "ita4": "Q4 lightest",
+     "max_logit": 38.15,
+     "ding_fp": 4,
+     "fp_rate_%": 16.67,
+     "ding_fp_rate_%": 13.33
+    },
+    {
+     "video": "0_youtube_237",
+     "n": 30,
+     "n_fp": 4,
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "ff_race7": "White",
+     "age_vid": 24.0,
+     "ita_vid": 45.86,
+     "ita4": "Q3",
+     "max_logit": 28.78,
+     "ding_fp": 1,
+     "fp_rate_%": 13.33,
+     "ding_fp_rate_%": 3.33
+    },
+    {
+     "video": "0_youtube_062",
+     "n": 29,
+     "n_fp": 4,
+     "group": "F-Asian",
+     "cl_gender": "female",
+     "cl_race": "asian",
+     "ff_race7": "East Asian",
+     "age_vid": 31.0,
+     "ita_vid": 46.09,
+     "ita4": "Q3",
+     "max_logit": 27.5,
+     "ding_fp": 0,
+     "fp_rate_%": 13.79,
+     "ding_fp_rate_%": 0.0
+    },
+    {
+     "video": "0_youtube_722",
+     "n": 29,
+     "n_fp": 4,
+     "group": "F-White",
+     "cl_gender": "female",
+     "cl_race": "white",
+     "ff_race7": "White",
+     "age_vid": 25.0,
+     "ita_vid": 14.07,
+     "ita4": "Q1 darkest",
+     "max_logit": 22.96,
+     "ding_fp": 15,
+     "fp_rate_%": 13.79,
+     "ding_fp_rate_%": 51.72
+    },
+    {
+     "video": "0_youtube_305",
+     "n": 30,
+     "n_fp": 3,
+     "group": "M-White",
+     "cl_gender": "female",
+     "cl_race": "asian",
+     "ff_race7": "Middle Eastern",
+     "age_vid": 28.0,
+     "ita_vid": 80.29,
+     "ita4": "Q4 lightest",
+     "max_logit": 29.74,
+     "ding_fp": 14,
+     "fp_rate_%": 10.0,
+     "ding_fp_rate_%": 46.67
+    },
+    {
+     "video": "0_youtube_019",
+     "n": 30,
+     "n_fp": 3,
+     "group": "F-White",
+     "cl_gender": "female",
+     "cl_race": "white",
+     "ff_race7": "White",
+     "age_vid": 31.0,
+     "ita_vid": 83.77,
+     "ita4": "Q4 lightest",
+     "max_logit": 20.55,
+     "ding_fp": 14,
+     "fp_rate_%": 10.0,
+     "ding_fp_rate_%": 46.67
+    },
+    {
+     "video": "0_youtube_930",
+     "n": 28,
+     "n_fp": 2,
+     "group": "F-Asian",
+     "cl_gender": "female",
+     "cl_race": "asian",
+     "ff_race7": "East Asian",
+     "age_vid": 18.0,
+     "ita_vid": 68.43,
+     "ita4": "Q4 lightest",
+     "max_logit": 24.07,
+     "ding_fp": 5,
+     "fp_rate_%": 7.14,
+     "ding_fp_rate_%": 17.86
+    },
+    {
+     "video": "0_youtube_202",
+     "n": 29,
+     "n_fp": 2,
+     "group": "F-White",
+     "cl_gender": "female",
+     "cl_race": "white",
+     "ff_race7": "Middle Eastern",
+     "age_vid": 27.0,
+     "ita_vid": 15.74,
+     "ita4": "Q1 darkest",
+     "max_logit": 14.5,
+     "ding_fp": 2,
+     "fp_rate_%": 6.9,
+     "ding_fp_rate_%": 6.9
+    },
+    {
+     "video": "0_youtube_547",
+     "n": 30,
+     "n_fp": 2,
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "ff_race7": "Middle Eastern",
+     "age_vid": 23.5,
+     "ita_vid": 36.96,
+     "ita4": "Q3",
+     "max_logit": -2.17,
+     "ding_fp": 13,
+     "fp_rate_%": 6.67,
+     "ding_fp_rate_%": 43.33
+    },
+    {
+     "video": "0_youtube_323",
+     "n": 29,
+     "n_fp": 2,
+     "group": "F-White",
+     "cl_gender": "female",
+     "cl_race": "white",
+     "ff_race7": "White",
+     "age_vid": 25.0,
+     "ita_vid": 44.98,
+     "ita4": "Q3",
+     "max_logit": -5.97,
+     "ding_fp": 0,
+     "fp_rate_%": 6.9,
+     "ding_fp_rate_%": 0.0
+    }
+   ],
+   "top_fn_videos": [
+    {
+     "video": "0_NeuralTextures_578_636",
+     "n": 30,
+     "n_fn": 30,
+     "method": "NeuralTextures",
+     "group": "F-White",
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age_vid": 32.5,
+     "ita4": "Q4 lightest",
+     "min_logit": -113.82,
+     "ding_fn": 1,
+     "fn_rate_%": 100.0,
+     "ding_fn_rate_%": 3.33
+    },
+    {
+     "video": "0_NeuralTextures_619_620",
+     "n": 30,
+     "n_fn": 30,
+     "method": "NeuralTextures",
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age_vid": 54.0,
+     "ita4": "Q3",
+     "min_logit": -111.46,
+     "ding_fn": 29,
+     "fn_rate_%": 100.0,
+     "ding_fn_rate_%": 96.67
+    },
+    {
+     "video": "0_NeuralTextures_800_840",
+     "n": 30,
+     "n_fn": 30,
+     "method": "NeuralTextures",
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age_vid": 56.0,
+     "ita4": "Q1 darkest",
+     "min_logit": -110.75,
+     "ding_fn": 3,
+     "fn_rate_%": 100.0,
+     "ding_fn_rate_%": 10.0
+    },
+    {
+     "video": "0_NeuralTextures_867_765",
+     "n": 30,
+     "n_fn": 30,
+     "method": "NeuralTextures",
+     "group": "F-White",
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age_vid": 25.0,
+     "ita4": "Q4 lightest",
+     "min_logit": -110.34,
+     "ding_fn": 13,
+     "fn_rate_%": 100.0,
+     "ding_fn_rate_%": 43.33
+    },
+    {
+     "video": "0_Deepfakes_492_325",
+     "n": 30,
+     "n_fn": 30,
+     "method": "Deepfakes",
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age_vid": 42.0,
+     "ita4": "Q3",
+     "min_logit": -105.82,
+     "ding_fn": 29,
+     "fn_rate_%": 100.0,
+     "ding_fn_rate_%": 96.67
+    },
+    {
+     "video": "0_NeuralTextures_010_005",
+     "n": 30,
+     "n_fn": 30,
+     "method": "NeuralTextures",
+     "group": "F-Others",
+     "cl_gender": "female",
+     "cl_race": "others",
+     "age_vid": 23.0,
+     "ita4": "Q2",
+     "min_logit": -103.47,
+     "ding_fn": 9,
+     "fn_rate_%": 100.0,
+     "ding_fn_rate_%": 30.0
+    },
+    {
+     "video": "0_NeuralTextures_840_800",
+     "n": 30,
+     "n_fn": 30,
+     "method": "NeuralTextures",
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age_vid": 33.0,
+     "ita4": "Q1 darkest",
+     "min_logit": -103.29,
+     "ding_fn": 29,
+     "fn_rate_%": 100.0,
+     "ding_fn_rate_%": 96.67
+    },
+    {
+     "video": "0_NeuralTextures_306_278",
+     "n": 30,
+     "n_fn": 30,
+     "method": "NeuralTextures",
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age_vid": 32.5,
+     "ita4": "Q2",
+     "min_logit": -100.85,
+     "ding_fn": 0,
+     "fn_rate_%": 100.0,
+     "ding_fn_rate_%": 0.0
+    },
+    {
+     "video": "0_NeuralTextures_235_194",
+     "n": 30,
+     "n_fn": 30,
+     "method": "NeuralTextures",
+     "group": "M-Asian",
+     "cl_gender": "male",
+     "cl_race": "asian",
+     "age_vid": 24.0,
+     "ita4": "Q3",
+     "min_logit": -99.81,
+     "ding_fn": 29,
+     "fn_rate_%": 100.0,
+     "ding_fn_rate_%": 96.67
+    },
+    {
+     "video": "0_NeuralTextures_259_345",
+     "n": 30,
+     "n_fn": 30,
+     "method": "NeuralTextures",
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age_vid": 10.0,
+     "ita4": "Q3",
+     "min_logit": -99.11,
+     "ding_fn": 18,
+     "fn_rate_%": 100.0,
+     "ding_fn_rate_%": 60.0
+    },
+    {
+     "video": "0_FaceSwap_259_345",
+     "n": 30,
+     "n_fn": 30,
+     "method": "FaceSwap",
+     "group": "M-Asian",
+     "cl_gender": "male",
+     "cl_race": "asian",
+     "age_vid": 17.0,
+     "ita4": "Q3",
+     "min_logit": -98.15,
+     "ding_fn": 12,
+     "fn_rate_%": 100.0,
+     "ding_fn_rate_%": 40.0
+    },
+    {
+     "video": "0_NeuralTextures_594_530",
+     "n": 30,
+     "n_fn": 30,
+     "method": "NeuralTextures",
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age_vid": 41.0,
+     "ita4": "Q1 darkest",
+     "min_logit": -97.84,
+     "ding_fn": 27,
+     "fn_rate_%": 100.0,
+     "ding_fn_rate_%": 90.0
+    },
+    {
+     "video": "0_NeuralTextures_794_779",
+     "n": 30,
+     "n_fn": 30,
+     "method": "NeuralTextures",
+     "group": "M-Others",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age_vid": 28.0,
+     "ita4": "Q2",
+     "min_logit": -96.22,
+     "ding_fn": 30,
+     "fn_rate_%": 100.0,
+     "ding_fn_rate_%": 100.0
+    },
+    {
+     "video": "0_NeuralTextures_872_873",
+     "n": 30,
+     "n_fn": 30,
+     "method": "NeuralTextures",
+     "group": "M-White",
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age_vid": 47.0,
+     "ita4": "Q2",
+     "min_logit": -92.57,
+     "ding_fn": 1,
+     "fn_rate_%": 100.0,
+     "ding_fn_rate_%": 3.33
+    },
+    {
+     "video": "0_NeuralTextures_376_381",
+     "n": 30,
+     "n_fn": 30,
+     "method": "NeuralTextures",
+     "group": "F-White",
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age_vid": 26.0,
+     "ita4": "Q3",
+     "min_logit": -90.82,
+     "ding_fn": 2,
+     "fn_rate_%": 100.0,
+     "ding_fn_rate_%": 6.67
+    }
+   ],
+   "unique_vs_ding": {
+    "fp_only_ours": [
+     {
+      "video": "0_youtube_383",
+      "n": 30,
+      "n_err": 6,
+      "group": "M-White",
+      "method": "real",
+      "ours_mean_logit": -48.41,
+      "ding_mean_logit": -3.2,
+      "rate_%": 20.0
+     },
+     {
+      "video": "0_youtube_062",
+      "n": 29,
+      "n_err": 4,
+      "group": "F-Asian",
+      "method": "real",
+      "ours_mean_logit": -57.19,
+      "ding_mean_logit": -5.09,
+      "rate_%": 13.79
+     },
+     {
+      "video": "0_youtube_237",
+      "n": 30,
+      "n_err": 4,
+      "group": "M-White",
+      "method": "real",
+      "ours_mean_logit": -53.75,
+      "ding_mean_logit": -4.63,
+      "rate_%": 13.33
+     },
+     {
+      "video": "0_youtube_348",
+      "n": 27,
+      "n_err": 3,
+      "group": "F-White",
+      "method": "real",
+      "ours_mean_logit": -67.31,
+      "ding_mean_logit": -3.54,
+      "rate_%": 11.11
+     },
+     {
+      "video": "0_youtube_446",
+      "n": 30,
+      "n_err": 3,
+      "group": "F-White",
+      "method": "real",
+      "ours_mean_logit": -57.43,
+      "ding_mean_logit": -3.54,
+      "rate_%": 10.0
+     },
+     {
+      "video": "0_youtube_845",
+      "n": 29,
+      "n_err": 2,
+      "group": "M-White",
+      "method": "real",
+      "ours_mean_logit": -34.05,
+      "ding_mean_logit": 1.1,
+      "rate_%": 6.9
+     },
+     {
+      "video": "0_youtube_323",
+      "n": 29,
+      "n_err": 2,
+      "group": "F-White",
+      "method": "real",
+      "ours_mean_logit": -90.28,
+      "ding_mean_logit": -5.46,
+      "rate_%": 6.9
+     },
+     {
+      "video": "0_youtube_202",
+      "n": 29,
+      "n_err": 1,
+      "group": "F-White",
+      "method": "real",
+      "ours_mean_logit": -68.4,
+      "ding_mean_logit": -3.92,
+      "rate_%": 3.45
+     },
+     {
+      "video": "0_youtube_642",
+      "n": 29,
+      "n_err": 1,
+      "group": "F-White",
+      "method": "real",
+      "ours_mean_logit": -97.25,
+      "ding_mean_logit": -3.8,
+      "rate_%": 3.45
+     },
+     {
+      "video": "0_youtube_458",
+      "n": 29,
+      "n_err": 1,
+      "group": "F-Black",
+      "method": "real",
+      "ours_mean_logit": -69.26,
+      "ding_mean_logit": 0.0,
+      "rate_%": 3.45
+     }
+    ],
+    "fp_only_ours_by_group": {
+     "F-Asian": 5,
+     "F-Black": 1,
+     "F-Others": 0,
+     "F-White": 15,
+     "M-Asian": 0,
+     "M-Black": 0,
+     "M-Others": 0,
+     "M-White": 16
+    },
+    "fp_only_ding": [
+     {
+      "video": "0_youtube_923",
+      "n": 29,
+      "n_err": 24,
+      "group": "M-White",
+      "method": "real",
+      "ours_mean_logit": -75.79,
+      "ding_mean_logit": -0.26,
+      "rate_%": 82.76
+     },
+     {
+      "video": "0_youtube_494",
+      "n": 29,
+      "n_err": 24,
+      "group": "M-Others",
+      "method": "real",
+      "ours_mean_logit": -92.55,
+      "ding_mean_logit": 2.31,
+      "rate_%": 82.76
+     },
+     {
+      "video": "0_youtube_307",
+      "n": 30,
+      "n_err": 21,
+      "group": "M-White",
+      "method": "real",
+      "ours_mean_logit": -46.59,
+      "ding_mean_logit": 2.13,
+      "rate_%": 70.0
+     },
+     {
+      "video": "0_youtube_616",
+      "n": 30,
+      "n_err": 18,
+      "group": "F-Asian",
+      "method": "real",
+      "ours_mean_logit": -70.26,
+      "ding_mean_logit": 0.95,
+      "rate_%": 60.0
+     },
+     {
+      "video": "0_youtube_095",
+      "n": 30,
+      "n_err": 16,
+      "group": "F-White",
+      "method": "real",
+      "ours_mean_logit": -79.3,
+      "ding_mean_logit": 0.71,
+      "rate_%": 53.33
+     },
+     {
+      "video": "0_youtube_909",
+      "n": 29,
+      "n_err": 14,
+      "group": "M-White",
+      "method": "real",
+      "ours_mean_logit": -75.07,
+      "ding_mean_logit": -0.19,
+      "rate_%": 48.28
+     },
+     {
+      "video": "0_youtube_458",
+      "n": 29,
+      "n_err": 14,
+      "group": "F-Black",
+      "method": "real",
+      "ours_mean_logit": -69.26,
+      "ding_mean_logit": 0.0,
+      "rate_%": 48.28
+     },
+     {
+      "video": "0_youtube_763",
+      "n": 29,
+      "n_err": 14,
+      "group": "F-Others",
+      "method": "real",
+      "ours_mean_logit": -91.24,
+      "ding_mean_logit": -0.07,
+      "rate_%": 48.28
+     },
+     {
+      "video": "0_youtube_018",
+      "n": 29,
+      "n_err": 14,
+      "group": "F-White",
+      "method": "real",
+      "ours_mean_logit": -46.54,
+      "ding_mean_logit": 1.47,
+      "rate_%": 48.28
+     },
+     {
+      "video": "0_youtube_602",
+      "n": 28,
+      "n_err": 13,
+      "group": "F-White",
+      "method": "real",
+      "ours_mean_logit": -96.73,
+      "ding_mean_logit": 0.07,
+      "rate_%": 46.43
+     }
+    ],
+    "fp_only_ding_by_group": {
+     "F-Asian": 42,
+     "F-Black": 22,
+     "F-Others": 22,
+     "F-White": 179,
+     "M-Asian": 42,
+     "M-Black": 8,
+     "M-Others": 29,
+     "M-White": 177
+    },
+    "fn_only_ours": [
+     {
+      "video": "0_NeuralTextures_546_621",
+      "n": 30,
+      "n_err": 30,
+      "group": "F-White",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -70.68,
+      "ding_mean_logit": 4.9,
+      "rate_%": 100.0
+     },
+     {
+      "video": "0_NeuralTextures_306_278",
+      "n": 30,
+      "n_err": 30,
+      "group": "M-White",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -82.18,
+      "ding_mean_logit": 4.92,
+      "rate_%": 100.0
+     },
+     {
+      "video": "0_NeuralTextures_494_445",
+      "n": 30,
+      "n_err": 29,
+      "group": "M-Others",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -79.75,
+      "ding_mean_logit": 2.85,
+      "rate_%": 96.67
+     },
+     {
+      "video": "0_NeuralTextures_623_630",
+      "n": 30,
+      "n_err": 29,
+      "group": "F-White",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -54.06,
+      "ding_mean_logit": 5.22,
+      "rate_%": 96.67
+     },
+     {
+      "video": "0_NeuralTextures_578_636",
+      "n": 30,
+      "n_err": 29,
+      "group": "F-White",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -89.85,
+      "ding_mean_logit": 4.21,
+      "rate_%": 96.67
+     },
+     {
+      "video": "0_NeuralTextures_974_953",
+      "n": 30,
+      "n_err": 29,
+      "group": "M-Others",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -56.63,
+      "ding_mean_logit": 4.29,
+      "rate_%": 96.67
+     },
+     {
+      "video": "0_NeuralTextures_872_873",
+      "n": 30,
+      "n_err": 29,
+      "group": "M-White",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -80.73,
+      "ding_mean_logit": 4.03,
+      "rate_%": 96.67
+     },
+     {
+      "video": "0_NeuralTextures_194_235",
+      "n": 30,
+      "n_err": 28,
+      "group": "M-Asian",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -76.46,
+      "ding_mean_logit": 4.0,
+      "rate_%": 93.33
+     },
+     {
+      "video": "0_NeuralTextures_636_578",
+      "n": 30,
+      "n_err": 28,
+      "group": "F-White",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -65.64,
+      "ding_mean_logit": 3.85,
+      "rate_%": 93.33
+     },
+     {
+      "video": "0_NeuralTextures_567_606",
+      "n": 30,
+      "n_err": 28,
+      "group": "F-White",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -65.9,
+      "ding_mean_logit": 3.21,
+      "rate_%": 93.33
+     }
+    ],
+    "fn_only_ours_by_group": {
+     "F-Asian": 220,
+     "F-Black": 39,
+     "F-Others": 32,
+     "F-White": 1128,
+     "M-Asian": 235,
+     "M-Black": 79,
+     "M-Others": 198,
+     "M-White": 1366
+    },
+    "fn_only_ours_by_method": {
+     "Deepfakes": 110,
+     "Face2Face": 484,
+     "FaceShifter": 650,
+     "FaceSwap": 365,
+     "NeuralTextures": 1688
+    },
+    "fn_only_ding": [
+     {
+      "video": "0_Face2Face_193_030",
+      "n": 30,
+      "n_err": 19,
+      "group": "F-White",
+      "method": "Face2Face",
+      "ours_mean_logit": 20.4,
+      "ding_mean_logit": -1.87,
+      "rate_%": 63.33
+     },
+     {
+      "video": "0_NeuralTextures_534_490",
+      "n": 29,
+      "n_err": 18,
+      "group": "F-White",
+      "method": "NeuralTextures",
+      "ours_mean_logit": 11.05,
+      "ding_mean_logit": -1.1,
+      "rate_%": 62.07
+     },
+     {
+      "video": "0_NeuralTextures_381_376",
+      "n": 30,
+      "n_err": 16,
+      "group": "F-White",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -15.32,
+      "ding_mean_logit": -3.75,
+      "rate_%": 53.33
+     },
+     {
+      "video": "0_Deepfakes_948_965",
+      "n": 30,
+      "n_err": 16,
+      "group": "F-White",
+      "method": "Deepfakes",
+      "ours_mean_logit": 42.52,
+      "ding_mean_logit": -0.51,
+      "rate_%": 53.33
+     },
+     {
+      "video": "0_FaceSwap_662_641",
+      "n": 30,
+      "n_err": 14,
+      "group": "M-White",
+      "method": "FaceSwap",
+      "ours_mean_logit": 32.33,
+      "ding_mean_logit": 0.13,
+      "rate_%": 46.67
+     },
+     {
+      "video": "0_Deepfakes_300_304",
+      "n": 30,
+      "n_err": 12,
+      "group": "M-Others",
+      "method": "Deepfakes",
+      "ours_mean_logit": 33.97,
+      "ding_mean_logit": 0.23,
+      "rate_%": 40.0
+     },
+     {
+      "video": "0_NeuralTextures_662_641",
+      "n": 28,
+      "n_err": 10,
+      "group": "F-Asian",
+      "method": "NeuralTextures",
+      "ours_mean_logit": -34.64,
+      "ding_mean_logit": -3.08,
+      "rate_%": 35.71
+     },
+     {
+      "video": "0_Deepfakes_376_381",
+      "n": 30,
+      "n_err": 9,
+      "group": "F-White",
+      "method": "Deepfakes",
+      "ours_mean_logit": 69.22,
+      "ding_mean_logit": 1.53,
+      "rate_%": 30.0
+     },
+     {
+      "video": "0_FaceShifter_490_534",
+      "n": 30,
+      "n_err": 7,
+      "group": "F-White",
+      "method": "FaceShifter",
+      "ours_mean_logit": 20.1,
+      "ding_mean_logit": 1.56,
+      "rate_%": 23.33
+     },
+     {
+      "video": "0_FaceShifter_235_194",
+      "n": 30,
+      "n_err": 7,
+      "group": "M-Asian",
+      "method": "FaceShifter",
+      "ours_mean_logit": -25.89,
+      "ding_mean_logit": 0.56,
+      "rate_%": 23.33
+     }
+    ],
+    "fn_only_ding_by_group": {
+     "F-Asian": 34,
+     "F-Black": 4,
+     "F-Others": 6,
+     "F-White": 125,
+     "M-Asian": 13,
+     "M-Black": 2,
+     "M-Others": 16,
+     "M-White": 77
+    },
+    "fn_only_ding_by_method": {
+     "Deepfakes": 73,
+     "Face2Face": 39,
+     "FaceShifter": 24,
+     "FaceSwap": 47,
+     "NeuralTextures": 94
+    }
+   },
+   "top12_fp": [
+    {
+     "frame": "0_youtube_018_291.png",
+     "video": "0_youtube_018",
+     "gname": "F-White",
+     "method": "real",
+     "logit": 47.018,
+     "ding_logit": 5.2,
+     "ding_fake": true,
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age4": "30-44",
+     "ita4": "Q2",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_018_291.png"
+    },
+    {
+     "frame": "0_youtube_307_131.png",
+     "video": "0_youtube_307",
+     "gname": "M-White",
+     "method": "real",
+     "logit": 46.22,
+     "ding_logit": 2.953,
+     "ding_fake": true,
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age4": "45-59",
+     "ita4": "Q4 lightest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_307_131.png"
+    },
+    {
+     "frame": "0_youtube_095_121.png",
+     "video": "0_youtube_095",
+     "gname": "F-White",
+     "method": "real",
+     "logit": 38.658,
+     "ding_logit": -1.07,
+     "ding_fake": false,
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age4": "<30",
+     "ita4": "Q3",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_095_121.png"
+    },
+    {
+     "frame": "0_youtube_446_141.png",
+     "video": "0_youtube_446",
+     "gname": "F-White",
+     "method": "real",
+     "logit": 38.154,
+     "ding_logit": -5.46,
+     "ding_fake": false,
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age4": "<30",
+     "ita4": "Q4 lightest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_446_141.png"
+    },
+    {
+     "frame": "0_youtube_438_131.png",
+     "video": "0_youtube_438",
+     "gname": "F-White",
+     "method": "real",
+     "logit": 33.591,
+     "ding_logit": -4.803,
+     "ding_fake": false,
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age4": "<30",
+     "ita4": "Q4 lightest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_438_131.png"
+    },
+    {
+     "frame": "0_youtube_845_51.png",
+     "video": "0_youtube_845",
+     "gname": "M-White",
+     "method": "real",
+     "logit": 31.922,
+     "ding_logit": 1.232,
+     "ding_fake": true,
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age4": "30-44",
+     "ita4": "Q1 darkest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_845_51.png"
+    },
+    {
+     "frame": "0_youtube_305_21.png",
+     "video": "0_youtube_305",
+     "gname": "M-White",
+     "method": "real",
+     "logit": 29.741,
+     "ding_logit": 0.032,
+     "ding_fake": true,
+     "cl_gender": "female",
+     "cl_race": "asian",
+     "age4": "<30",
+     "ita4": "Q4 lightest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_305_21.png"
+    },
+    {
+     "frame": "0_youtube_288_221.png",
+     "video": "0_youtube_288",
+     "gname": "F-White",
+     "method": "real",
+     "logit": 28.8,
+     "ding_logit": 2.199,
+     "ding_fake": true,
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age4": "<30",
+     "ita4": "Q1 darkest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_288_221.png"
+    },
+    {
+     "frame": "0_youtube_237_81.png",
+     "video": "0_youtube_237",
+     "gname": "M-White",
+     "method": "real",
+     "logit": 28.78,
+     "ding_logit": -2.654,
+     "ding_fake": false,
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age4": "<30",
+     "ita4": "Q3",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_237_81.png"
+    },
+    {
+     "frame": "0_youtube_018_1.png",
+     "video": "0_youtube_018",
+     "gname": "F-White",
+     "method": "real",
+     "logit": 28.408,
+     "ding_logit": 4.859,
+     "ding_fake": true,
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age4": "30-44",
+     "ita4": "Q2",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_018_1.png"
+    },
+    {
+     "frame": "0_youtube_062_21.png",
+     "video": "0_youtube_062",
+     "gname": "F-Asian",
+     "method": "real",
+     "logit": 27.496,
+     "ding_logit": -5.169,
+     "ding_fake": false,
+     "cl_gender": "female",
+     "cl_race": "asian",
+     "age4": "30-44",
+     "ita4": "Q3",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_062_21.png"
+    },
+    {
+     "frame": "0_youtube_305_1.png",
+     "video": "0_youtube_305",
+     "gname": "M-White",
+     "method": "real",
+     "logit": 27.295,
+     "ding_logit": 4.139,
+     "ding_fake": true,
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age4": "<30",
+     "ita4": "Q4 lightest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_youtube_305_1.png"
+    }
+   ],
+   "top12_fn": [
+    {
+     "frame": "0_NeuralTextures_294_292_1.png",
+     "video": "0_NeuralTextures_294_292",
+     "gname": "F-Asian",
+     "method": "NeuralTextures",
+     "logit": -114.746,
+     "ding_logit": -5.436,
+     "ding_fake": false,
+     "cl_gender": "female",
+     "cl_race": "asian",
+     "age4": "<30",
+     "ita4": "Q3",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_NeuralTextures_294_292_1.png"
+    },
+    {
+     "frame": "0_NeuralTextures_578_636_101.png",
+     "video": "0_NeuralTextures_578_636",
+     "gname": "F-White",
+     "method": "NeuralTextures",
+     "logit": -113.817,
+     "ding_logit": 0.661,
+     "ding_fake": true,
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age4": "30-44",
+     "ita4": "Q4 lightest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_NeuralTextures_578_636_101.png"
+    },
+    {
+     "frame": "0_FaceSwap_800_840_101.png",
+     "video": "0_FaceSwap_800_840",
+     "gname": "M-White",
+     "method": "FaceSwap",
+     "logit": -113.249,
+     "ding_logit": 4.583,
+     "ding_fake": true,
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age4": "45-59",
+     "ita4": "Q1 darkest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_FaceSwap_800_840_101.png"
+    },
+    {
+     "frame": "0_FaceShifter_951_947_101.png",
+     "video": "0_FaceShifter_951_947",
+     "gname": "F-White",
+     "method": "FaceShifter",
+     "logit": -111.896,
+     "ding_logit": -5.652,
+     "ding_fake": false,
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age4": "<30",
+     "ita4": "Q2",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_FaceShifter_951_947_101.png"
+    },
+    {
+     "frame": "0_NeuralTextures_619_620_231.png",
+     "video": "0_NeuralTextures_619_620",
+     "gname": "M-White",
+     "method": "NeuralTextures",
+     "logit": -111.464,
+     "ding_logit": -4.18,
+     "ding_fake": false,
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age4": "45-59",
+     "ita4": "Q3",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_NeuralTextures_619_620_231.png"
+    },
+    {
+     "frame": "0_FaceSwap_800_840_111.png",
+     "video": "0_FaceSwap_800_840",
+     "gname": "M-White",
+     "method": "FaceSwap",
+     "logit": -111.274,
+     "ding_logit": 5.547,
+     "ding_fake": true,
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age4": "45-59",
+     "ita4": "Q1 darkest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_FaceSwap_800_840_111.png"
+    },
+    {
+     "frame": "0_NeuralTextures_800_840_31.png",
+     "video": "0_NeuralTextures_800_840",
+     "gname": "M-White",
+     "method": "NeuralTextures",
+     "logit": -110.75,
+     "ding_logit": 4.796,
+     "ding_fake": true,
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age4": "45-59",
+     "ita4": "Q1 darkest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_NeuralTextures_800_840_31.png"
+    },
+    {
+     "frame": "0_FaceShifter_800_840_41.png",
+     "video": "0_FaceShifter_800_840",
+     "gname": "M-White",
+     "method": "FaceShifter",
+     "logit": -110.749,
+     "ding_logit": 5.184,
+     "ding_fake": true,
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age4": "45-59",
+     "ita4": "Q1 darkest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_FaceShifter_800_840_41.png"
+    },
+    {
+     "frame": "0_Face2Face_619_620_1.png",
+     "video": "0_Face2Face_619_620",
+     "gname": "M-White",
+     "method": "Face2Face",
+     "logit": -110.654,
+     "ding_logit": -0.09,
+     "ding_fake": false,
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age4": "45-59",
+     "ita4": "Q3",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_Face2Face_619_620_1.png"
+    },
+    {
+     "frame": "0_NeuralTextures_619_620_11.png",
+     "video": "0_NeuralTextures_619_620",
+     "gname": "M-White",
+     "method": "NeuralTextures",
+     "logit": -110.361,
+     "ding_logit": -5.788,
+     "ding_fake": false,
+     "cl_gender": "male",
+     "cl_race": "white",
+     "age4": "45-59",
+     "ita4": "Q3",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_NeuralTextures_619_620_11.png"
+    },
+    {
+     "frame": "0_NeuralTextures_867_765_1.png",
+     "video": "0_NeuralTextures_867_765",
+     "gname": "F-White",
+     "method": "NeuralTextures",
+     "logit": -110.34,
+     "ding_logit": -5.768,
+     "ding_fake": false,
+     "cl_gender": "female",
+     "cl_race": "white",
+     "age4": "<30",
+     "ita4": "Q4 lightest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_NeuralTextures_867_765_1.png"
+    },
+    {
+     "frame": "0_FaceShifter_867_765_231.png",
+     "video": "0_FaceShifter_867_765",
+     "gname": "F-Asian",
+     "method": "FaceShifter",
+     "logit": -109.917,
+     "ding_logit": 5.259,
+     "ding_fake": true,
+     "cl_gender": "female",
+     "cl_race": "asian",
+     "age4": "<30",
+     "ita4": "Q4 lightest",
+     "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/ffpp/0_FaceShifter_867_765_231.png"
+    }
+   ]
+  }
+ },
+ "fn_target_identity": {
+  "n_targets": 192,
+  "targets_with_fn": 101,
+  "n_targets_for_50pct_fn": 15,
+  "share_fn_top10_targets_%": 38.912133891213394,
+  "targets_with_ge2_methods_ge50pct_fn": 5,
+  "n_targets_with_real_video_in_test": 152,
+  "spearman_real_logit_vs_fake_fnrate": -0.44623328948948054,
+  "spearman_real_logit_vs_fake_mean_logit": 0.45273682843649826,
+  "ding_spearman_real_logit_vs_fake_fnrate": -0.36856481079036796,
+  "top10": [
+   {
+    "target": "705",
+    "n_fake": 150,
+    "n_fn": 74,
+    "n_methods": 5,
+    "fake_mean_logit": -20.74,
+    "group": "M-White",
+    "fn_rate_%": 49.33,
+    "methods_ge50pct_fn": 3,
+    "real_mean_logit": -90.48,
+    "real_fp_rate": 0.03,
+    "ding_real_mean_logit": -4.36,
+    "ding_fn_rate": 0.0
+   },
+   {
+    "target": "259",
+    "n_fake": 150,
+    "n_fn": 70,
+    "n_methods": 5,
+    "fake_mean_logit": -55.94,
+    "group": "M-White",
+    "fn_rate_%": 46.67,
+    "methods_ge50pct_fn": 2,
+    "real_mean_logit": -101.08,
+    "real_fp_rate": 0.0,
+    "ding_real_mean_logit": -5.38,
+    "ding_fn_rate": 38.67
+   },
+   {
+    "target": "923",
+    "n_fake": 150,
+    "n_fn": 61,
+    "n_methods": 5,
+    "fake_mean_logit": -56.85,
+    "group": "M-White",
+    "fn_rate_%": 40.67,
+    "methods_ge50pct_fn": 1,
+    "real_mean_logit": -75.79,
+    "real_fp_rate": 0.45,
+    "ding_real_mean_logit": -0.26,
+    "ding_fn_rate": 5.33
+   },
+   {
+    "target": "016",
+    "n_fake": 150,
+    "n_fn": 56,
+    "n_methods": 5,
+    "fake_mean_logit": -13.36,
+    "group": "M-Others",
+    "fn_rate_%": 37.33,
+    "methods_ge50pct_fn": 2,
+    "real_mean_logit": -108.84,
+    "real_fp_rate": 0.0,
+    "ding_real_mean_logit": -3.69,
+    "ding_fn_rate": 4.67
+   },
+   {
+    "target": "800",
+    "n_fake": 150,
+    "n_fn": 54,
+    "n_methods": 5,
+    "fake_mean_logit": -27.36,
+    "group": "M-White",
+    "fn_rate_%": 36.0,
+    "methods_ge50pct_fn": 1,
+    "real_mean_logit": -116.83,
+    "real_fp_rate": 0.0,
+    "ding_real_mean_logit": -3.1,
+    "ding_fn_rate": 2.67
+   },
+   {
+    "target": "567",
+    "n_fake": 150,
+    "n_fn": 54,
+    "n_methods": 5,
+    "fake_mean_logit": -51.69,
+    "group": "F-White",
+    "fn_rate_%": 36.0,
+    "methods_ge50pct_fn": 1,
+    "real_mean_logit": NaN,
+    "real_fp_rate": NaN,
+    "ding_real_mean_logit": NaN,
+    "ding_fn_rate": 16.0
+   },
+   {
+    "target": "306",
+    "n_fake": 120,
+    "n_fn": 51,
+    "n_methods": 4,
+    "fake_mean_logit": -37.97,
+    "group": "M-White",
+    "fn_rate_%": 42.5,
+    "methods_ge50pct_fn": 1,
+    "real_mean_logit": -104.51,
+    "real_fp_rate": 0.0,
+    "ding_real_mean_logit": -2.04,
+    "ding_fn_rate": 0.0
+   },
+   {
+    "target": "619",
+    "n_fake": 149,
+    "n_fn": 49,
+    "n_methods": 5,
+    "fake_mean_logit": -15.95,
+    "group": "M-White",
+    "fn_rate_%": 32.89,
+    "methods_ge50pct_fn": 2,
+    "real_mean_logit": -114.32,
+    "real_fp_rate": 0.0,
+    "ding_real_mean_logit": -4.84,
+    "ding_fn_rate": 28.19
+   },
+   {
+    "target": "492",
+    "n_fake": 150,
+    "n_fn": 48,
+    "n_methods": 5,
+    "fake_mean_logit": -33.05,
+    "group": "M-White",
+    "fn_rate_%": 32.0,
+    "methods_ge50pct_fn": 2,
+    "real_mean_logit": -87.99,
+    "real_fp_rate": 0.14,
+    "ding_real_mean_logit": -3.36,
+    "ding_fn_rate": 32.67
+   },
+   {
+    "target": "867",
+    "n_fake": 60,
+    "n_fn": 41,
+    "n_methods": 2,
+    "fake_mean_logit": -65.8,
+    "group": "F-White",
+    "fn_rate_%": 68.33,
+    "methods_ge50pct_fn": 1,
+    "real_mean_logit": NaN,
+    "real_fp_rate": NaN,
+    "ding_real_mean_logit": NaN,
+    "ding_fn_rate": 21.67
+   }
+  ]
+ },
+ "fp_target_identity": {
+  "spearman_real_fprate_vs_fake_fnrate": -0.39100701228157575
+ },
+ "spearman_reals_ours_vs_ding": 0.3558599544502382,
+ "spearman_fakes_ours_vs_ding": 0.36526848501995285,
+ "fp_sheet_ding_also_wrong": 12,
+ "fn_sheet_ding_also_wrong": 13
+}

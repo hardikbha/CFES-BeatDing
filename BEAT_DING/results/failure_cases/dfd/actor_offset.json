@@ -1,0 +1,23 @@
+{
+ "n_actors_with_real_videos": 9,
+ "spearman_FPR_vs_FNR_a": [
+  -0.25,
+  0.5164895523012261
+ ],
+ "spearman_real_med_vs_fake_a_med_logit": [
+  0.11666666666666665,
+  0.765007942926146
+ ],
+ "ding_spearman_FPR_vs_FNR_a": [
+  -0.11666666666666665,
+  0.765007942926146
+ ],
+ "mean_within_actor_AUC": 89.06364188913362,
+ "pooled_AUC_same_rows": 89.82889087435349,
+ "ding_mean_within_actor_AUC": 70.25846705353514,
+ "ding_pooled_AUC_same_rows": 72.75750774591489,
+ "spread_real_med_logit_across_actors": [
+  -94.67720031738281,
+  -67.05808639526367
+ ]
+}

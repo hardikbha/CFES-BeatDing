@@ -1,0 +1,33 @@
+{
+ "orig": {
+  "steps": 120,
+  "group_iterators_created": 120,
+  "wall_s_per_step_mean_excl_step0": 1.4592543277222303,
+  "wall_s_per_step_median": 1.3690289850346744,
+  "group_fetch_mean_all": 1.3267022955764938,
+  "group_fetch_mean_fresh_iterator_steps": 1.3267022955764938,
+  "group_fetch_mean_reuse_steps": null,
+  "n_fresh": 120,
+  "n_reuse": 0,
+  "combined_fetch_mean_excl_step0": 0.014483842450906248,
+  "total_s": 179.0970982069848,
+  "workers": 8,
+  "host": "mgmt01"
+ },
+ "fast": {
+  "steps": 120,
+  "group_iterators_created": 8,
+  "wall_s_per_step_mean_excl_step0": 0.17685399538673022,
+  "wall_s_per_step_median": 0.13707695004995912,
+  "group_fetch_mean_all": 0.05681164193180545,
+  "group_fetch_mean_fresh_iterator_steps": 0.6878119115281152,
+  "group_fetch_mean_reuse_steps": 0.011740194103497612,
+  "n_fresh": 8,
+  "n_reuse": 112,
+  "combined_fetch_mean_excl_step0": 0.012439027387539254,
+  "total_s": 25.574158121016808,
+  "workers": 8,
+  "host": "mgmt01"
+ },
+ "combined_batches_identical": "120/120"
+}

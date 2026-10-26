@@ -1,0 +1,41 @@
+# Beat-Ding on Ding's Xception (Tables 1-2; plan Amendments 4 / 4a / 4b): "Arm E on Xception" = the CFES-ResNet arm-A
+# recipe (rev4/resnet_A <- study/resnet_B <- study/resnet_A: det + pair_det + strat_det + stability 0.5 on nuisance views
+# (bg_blur 0.6 / photometric 0.4, no background-evidence BCE) + sensitivity 0.5 on 8 (fake, own source) pairs per step with
+# a shared intervention (no map terms) + 2 per (label x group) stratified cell, tanh gate) + Arm E's soft group-FPR-gap at
+# w* = 1 (Amendment 1), every Beat-Ding component OFF -- built exactly like configs/bd_resnet/base_E.yaml (tests/bd_checks.py
+# x0 checks the resolved configs are equal outside the backbone-specific keys). Same within-run selection (val AUC + val
+# intersectional es-AUC, start eligible) and matched operating point (val TPR 94.18 %, the Xception reproduction's own:
+# same backbone, not a proxy). 10 x 1976 steps. This config alone = the X-base control (D3).
+_base_: ../xception_bd_p2.yaml
+model:
+  alpha_param: tanh
+  alpha_max: 1.0
+  alpha_init: 0.5
+  # C on Xception: block2 / block11 / block12 outputs -> per-stage 1x1 conv evidence map -> pooled to the 7 x 7 grid ->
+  # averaged -> top-k (4) fused with its own tanh gate initialised at 0 (cfes/model_xception_bd.py)
+  multilayer: {enabled: false, stages: [block2, block11, block12], gate_max: 1.0, init_seed: 0}
+cf: {enabled: true, probs: {bg_blur: 0.6, bg_swap: 0.0, photometric: 0.4}}
+pairs: {enabled: true, per_step: 8, shared_intervention: true}
+strat: {enabled: true, per_cell: 2}
+loss:
+  det: {weight: 1.0}
+  pair_det: {weight: 1.0}
+  strat_det: {weight: 1.0}
+  stab: {weight: 0.5, bg_evidence_weight: 0.0}
+  sens: {weight: 0.5, map_terms: false}
+  loc: {weight: 0.0}
+  align: {weight: 0.0, require_strat: true}
+  fprgap: {weight: 1.0, q: 0.9, tau: 0.5, n_min: 2, include_views: true, window: 4096}
+  esa: {weight: 0.0, q_real: [0.5, 0.75, 0.9, 0.95], q_fake: [0.05, 0.1, 0.25, 0.5], n_min: 4,
+        levels: [gender, race, intersection]}
+  gauc: {weight: 0.0, tau: 1.0, n_min: 4, levels: [gender, race, intersection]}
+data:
+  aug: {enabled: false, p: 0.6, hflip: 0.5, ops: [jpeg, bilateral, gblur, downup, photometric, unsharp],
+        jpeg_q: [30, 90], bilateral_d: [5, 7, 9], bilateral_sigma: [20.0, 80.0], gblur_sigma: [0.4, 1.6],
+        downup_scale: [0.4, 0.9], gamma: [0.6, 1.6], brightness: 0.25, contrast: 0.25, saturation: 0.30,
+        unsharp_sigma: [0.5, 1.5], unsharp_amount: [0.5, 1.5]}
+optim: {epochs: 10}
+select: {metric: val_auc_plus_inter_es_auc, include_init: true}
+train: {decoupled_rng: true}
+eval: {prob_float64: true, rank_metrics: true}
+bd: {log_val_ding: true}

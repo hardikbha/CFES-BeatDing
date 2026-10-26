@@ -1,0 +1,41 @@
+# ResNet-50 backend (Ding et al. Table 3): Ding's ResNet50 'adjust_channel' network, ImageNet-1k V1 initialisation,
+# Ding's ResNet transforms (Resize 224x224, Normalize 0.5/0.5; test the same) and phase-1 recipe (SGD 1e-3,
+# momentum 0.9, wd 5e-3, batch 64, fp32). Never loads Ding's trained checkpoints.
+_base_: ffpp_ding.yaml
+
+model:
+  backend: resnet
+  resnet:
+    weights: /home/sachin.chaudhary/.cache/torch/hub/checkpoints/resnet50-19c8e357.pth   # torchvision V1, sha256 19c8e357...
+    init_from: null
+    trainable: all
+    grid: 7                      # 224 / 32
+    freeze_frozen_bn: true
+  patch_head: {enabled: true, hidden: 128}
+  score_path: fused
+  topk: 4
+  alpha_init: 0.0
+
+data:
+  input_size: 224
+  eval_size: 224
+  resample: bilinear             # torchvision default used by Ding
+  batch_size: 64
+  num_workers: 6
+
+loss:
+  orth: {weight: 0.0}
+
+optim:
+  name: sgd
+  lr: 1.0e-3
+  momentum: 0.9
+  weight_decay: 5.0e-3
+  epochs: 50
+  warmup_steps: 1
+  schedule: constant
+  grad_clip: 5.0
+  amp: false
+
+eval:
+  batch_size: 256

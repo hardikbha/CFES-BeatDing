@@ -1,0 +1,138 @@
+# CES (Counterfactual Evidence Selectivity) on Ding/Lin FF++ (the split of CFES configs/rev4/clip_D.yaml).
+# Dataset + architecture + defaults only; the arms (configs/arms/*.yaml) switch the CES losses on.
+# Every CES choice is a flag here; defaults are the specified ones (README.md lists them with their equations).
+paths:
+  fairrel_repo: /home/sachin.chaudhary/ICLR_2027/related_work/FairReL
+  ding_repo: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/code/Ding_mod
+seed: 7
+log_every: 20
+
+model:
+  backend: clip              # clip | resnet | xception | stub (tests only)
+  backbone: ViT-L-14
+  pretrained: openai
+  rank: 1                    # rank-1 SVD residual adapters (FairReL), everything else frozen
+  pooling: cls
+  init_backbone_ckpt: null   # CFES phase-1 checkpoint of the same seed (e.g. CFES/runs/clip_s7_p1/last.pt), backbone only
+  init_ckpt: null            # CES checkpoint (whole model + CES state): arms start from B0's best.pt
+  resnet: {weights: null, grid: 7, trainable: last_block}
+  xception: {init_from: null, grid: 8, trainable: last_block}
+  stub: {dim: 32, grid: 8}
+
+ces:
+  dim: 128                   # cue dimension d
+  hidden: 256                # branch MLP hidden width
+  pool: attn                 # attn | mean pooling over the texture / boundary cells
+  cue_norm: layernorm        # layernorm | none (applied to every cue)
+  freq_hidden: 128
+  freq_widths: [16, 32, 64, 128]
+  head: additive             # additive (s = sum_k w_k^T c_k + b) | mlp (concat-MLP, contributions by replacement)
+  head_hidden: 256           # mlp head only
+  margin: asinh              # asinh: m = (2y-1) kappa asinh(s/kappa) | linear: m = (2y-1) s
+  kappa: 1.0
+  replace: counterfactual    # counterfactual (paired source / opposite-class EMA mean) | random (control)
+  fake_baseline: group       # unpaired fakes: EMA real-cue mean of the SAME group (user decision 25 Oct, Amendment 1;
+                             # class mean while the group has no estimate) | class (real class mean)
+  ema: 0.02                  # EMA momentum of the class / group cue means
+  load_state: true           # take the CES state (EMA, subspaces, probe) from model.init_ckpt
+  validated_json: null       # scripts/ces_validate_cues.py output; null = all 4 cues valid, target default_target
+  default_target: 0.5        # asinh units
+  validation: {bootstrap: 1000, alpha: 0.05, min_util: 0.0, tau_min: 0.1, tau_max: 2.0,
+               per_family: false, family_min_n: 200}   # per_family: Amendment 2, FairForge-2 only (FF++ stays global)
+  geometry: {core_r: 0.78, core_frac: 0.90, ring: [0.80, 1.00], ring_frac: 0.30, freq_r: 1.0, freq_feather: 0.05}
+
+data:
+  input_size: 224
+  batch_size: 64             # 32 real + 32 fake
+  num_workers: 8
+  demographics_reliable: true
+  train:
+    csv: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/ff++_ding/train.csv
+    scheme: eight
+  val:
+    csv:
+    - /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/ff++_ding/realval.csv
+    - /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/ff++_ding/fakeval.csv
+    scheme: eight
+  steps_per_epoch: 1976
+  families: [swap, reenact]  # manipulation condition of L_floor cells (cond 0 = real)
+  family_map: {Deepfakes: swap, FaceSwap: swap, FaceShifter: swap, Face2Face: reenact, NeuralTextures: reenact}
+
+cf:                          # CFES nuisance views: only used by the optional CFES-D stability term
+  enabled: false
+  interventions: [bg_blur, bg_swap, photometric]
+  probs: {bg_blur: 0.6, bg_swap: 0.0, photometric: 0.4}
+  bg_blur_sigma: [2.0, 6.0]
+  photometric: {brightness: 0.08, contrast: 0.10, saturation: 0.10, gamma: [0.9, 1.1]}
+  face_mask: {cx: 0.5, cy: 0.48, ax: 0.30, ay: 0.38, dilate: 1.15}
+
+pairs:
+  enabled: true
+  csv: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CFES/data/pairs_ffpp_train.csv
+  per_step: 8                # 8 (fake, own source real) pairs = 16 images per step, forwarded in EVERY arm
+  shared_intervention: false # true applies one CFES nuisance view to both images (CFES-D sens arm only)
+  exclude_families: []
+
+strat:
+  enabled: true
+  per_cell: 4                # 4 per (label, group, condition) cell: 8x4 reals + 8x2x4 fakes = 96 images
+  by_cond: true
+
+mfer: {enabled: false, csv: null, validated: false, min_groups: 2, max_groups: 8, oversize: error, smoke: false,
+       sets_per_step: 4}
+
+loss:
+  det: {weight: 1.0, mode: balanced}
+  pair_det: {weight: 1.0}
+  strat_det: {weight: 1.0}
+  sens_ces: {weight: 0.0}                      # L_sens (lambda_sens 0.5 in the arms)
+  inv:                                         # L_inv (lambda_inv 0.5 in the arms)
+    weight: 0.0
+    source: feature                            # feature | matched (MatchedSetTable cross-group sets, mfer.*)
+    rank: 2                                    # r, demographic subspace dimension per cue
+    subspace_every: 1
+    warmup_steps: 200                          # state steps before L_inv starts (EMA + probe warm-up)
+    probe_lr: 1.0e-3
+    huber_delta: 1.0
+    stopgrad: none                             # none | clean | cf
+    detach_donor: true
+    validity_mask: true                        # false = control "no validity mask"
+  floor:                                       # L_floor (lambda_floor 1.0 in the arms)
+    weight: 0.0
+    n_min: 4
+    delta: 0.1
+    cues: validated                            # validated | all
+    reduce: sum                                # sum (specified) | mean over cells
+    shuffle_groups: false                      # true = control "shuffled-group floor"
+  orth: {weight: 0.1}                          # FairReL rank-1 orthogonality (CLIP backbone regulariser, as in CFES)
+  # CFES-D terms, OFF (weight 0) unless an ablation arm switches them on:
+  stab: {weight: 0.0, huber_delta: 1.0, map_weight: 0.0, bg_evidence_weight: 0.0}
+  sens: {weight: 0.0, margin: 2.0, map_margin: 1.0, map_weight: 1.0, unchanged_weight: 0.5, changed_thr: 0.25,
+         map_terms: false}
+  risk: {weight: 0.0, tau: 1.0, include_views: true, n_min: 2}
+  fprgap: {weight: 0.0, q: 0.9, window: 4096, tau: 1.0, n_min: 2, include_views: true}
+
+optim:
+  lr: 1.0e-4                 # backbone adapters (CFES phase-2 lr)
+  lr_new: 1.0e-3             # new modules: branches, cue norms, head (from scratch)
+  weight_decay: 4.0e-3
+  epochs: 10
+  warmup_steps: 200
+  schedule: cosine
+  grad_clip: 1.0
+  amp: true
+
+select: {include_init: true, metric: val_oppoint}   # CFES Amendment 9 rule
+ckpt: {full: true}
+eval:
+  batch_size: 128
+  val_tpr: 0.9
+  prob_float64: true
+  rank_metrics: true         # as CFES-D (configs/abl/clip_Pdet chain): metrics from rank_prob(logit), same 0.5 decisions
+  test_sets:
+    ffpp_test: {csv: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/ff++/test.csv, scheme: eight}
+    dfdc: {csv: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/dfdc/test.csv, scheme: eight}
+    celebdf: {csv: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/celebdf/test.csv, scheme: six}
+    dfd: {csv: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/dfd/test.csv, scheme: six}
+debug: {max_train_items: null, max_steps_per_epoch: null, max_eval_items: null, max_pairs: null}
+train: {decoupled_rng: true}

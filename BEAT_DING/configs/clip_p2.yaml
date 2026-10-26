@@ -1,0 +1,9 @@
+# CFES-CLIP, phase 2 (50 epochs): counterfactual stability + evidence sensitivity, starting from this model's own
+# phase-1 final checkpoint (--set model.init_ckpt=runs/clip_s<seed>_p1/last.pt). Same budget as Ding's phase 2
+# (GDA.py: 50 epochs x 1976 steps x 32 real + 32 fake). Lower lr than phase 1 because it fine-tunes.
+_base_: ffpp_ding.yaml
+data: {batch_size: 64, steps_per_epoch: 1976, num_workers: 8}
+cf: {enabled: true}
+pairs: {enabled: true, per_step: 8}
+loss: {stab: {weight: 0.5}, sens: {weight: 0.5}}
+optim: {name: adamw, lr: 1.0e-4, weight_decay: 4.0e-3, epochs: 50, warmup_steps: 200, schedule: cosine, amp: true}

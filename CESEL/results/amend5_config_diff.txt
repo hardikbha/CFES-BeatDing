@@ -1,0 +1,54 @@
+Amendment 5 resolved-config diff: each redesigned arm vs B0 (runs/ffpp_B0_s7/config.yaml, the config B0 was trained with).
+Arm configs resolved exactly as run/cesel_run.sh arm_p1 resolves them (train_ces.py --set seed=7 data.num_workers=2
+model.init_backbone_ckpt=/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CFES/runs/clip_s7_p1/last.pt ces.validated_json=<B0 validated_cues.json>).
+Re-resolving configs/ffpp/B0.yaml with B0's overrides reproduces B0's saved config byte-identically (checked).
+
+== sens: 2 differing keys
+   ces.validated_json: B0=None -> sens='/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CESEL/runs/ffpp_B0_s7/validated_cues.json'
+   loss.sens_ces.weight: B0=0.0 -> sens=0.5
+
+== inv: 2 differing keys
+   ces.validated_json: B0=None -> inv='/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CESEL/runs/ffpp_B0_s7/validated_cues.json'
+   loss.inv.weight: B0=0.0 -> inv=0.5
+
+== floor: 2 differing keys
+   ces.validated_json: B0=None -> floor='/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CESEL/runs/ffpp_B0_s7/validated_cues.json'
+   loss.floor.weight: B0=0.0 -> floor=1.0
+
+== full: 4 differing keys
+   ces.validated_json: B0=None -> full='/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CESEL/runs/ffpp_B0_s7/validated_cues.json'
+   loss.floor.weight: B0=0.0 -> full=1.0
+   loss.inv.weight: B0=0.0 -> full=0.5
+   loss.sens_ces.weight: B0=0.0 -> full=0.5
+
+== C_randcue: 5 differing keys
+   ces.replace: B0='counterfactual' -> C_randcue='random'
+   ces.validated_json: B0=None -> C_randcue='/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CESEL/runs/ffpp_B0_s7/validated_cues.json'
+   loss.floor.weight: B0=0.0 -> C_randcue=1.0
+   loss.inv.weight: B0=0.0 -> C_randcue=0.5
+   loss.sens_ces.weight: B0=0.0 -> C_randcue=0.5
+
+== C_shufgroup: 5 differing keys
+   ces.validated_json: B0=None -> C_shufgroup='/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CESEL/runs/ffpp_B0_s7/validated_cues.json'
+   loss.floor.shuffle_groups: B0=False -> C_shufgroup=True
+   loss.floor.weight: B0=0.0 -> C_shufgroup=1.0
+   loss.inv.weight: B0=0.0 -> C_shufgroup=0.5
+   loss.sens_ces.weight: B0=0.0 -> C_shufgroup=0.5
+
+== C_novalid: 5 differing keys
+   ces.validated_json: B0=None -> C_novalid='/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CESEL/runs/ffpp_B0_s7/validated_cues.json'
+   loss.floor.weight: B0=0.0 -> C_novalid=1.0
+   loss.inv.validity_mask: B0=True -> C_novalid=False
+   loss.inv.weight: B0=0.0 -> C_novalid=0.5
+   loss.sens_ces.weight: B0=0.0 -> C_novalid=0.5
+
+== B0_cfesD: 6 differing keys
+   ces.validated_json: B0=None -> B0_cfesD='/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CESEL/runs/ffpp_B0_s7/validated_cues.json'
+   cf.enabled: B0=False -> B0_cfesD=True
+   loss.risk.weight: B0=0.0 -> B0_cfesD=0.3
+   loss.sens.weight: B0=0.0 -> B0_cfesD=0.5
+   loss.stab.weight: B0=0.0 -> B0_cfesD=0.5
+   pairs.shared_intervention: B0=False -> B0_cfesD=True
+
+Union of differing keys over all arms: ces.replace, ces.validated_json, cf.enabled, loss.floor.shuffle_groups, loss.floor.weight, loss.inv.validity_mask, loss.inv.weight, loss.risk.weight, loss.sens.weight, loss.sens_ces.weight, loss.stab.weight, pairs.shared_intervention
+Identical in every arm and B0 (spot list): model.init_backbone_ckpt='/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CFES/runs/clip_s7_p1/last.pt', model.init_ckpt=None, optim.epochs=10, optim.lr=0.0001, optim.lr_new=0.001, optim.warmup_steps=200, optim.schedule='cosine', data.steps_per_epoch=1976, data.batch_size=64, seed=7, select.include_init=True, select.metric='val_oppoint', train.decoupled_rng=True, data.num_workers=2

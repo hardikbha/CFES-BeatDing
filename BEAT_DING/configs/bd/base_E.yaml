@@ -1,0 +1,28 @@
+# Beat-Ding base (decisions/2026-10-26-beat-ding-plan.md section 2 + Amendment 1): rev4 Arm E (= CFES-D + soft
+# group-FPR-gap) with the validation-chosen weight w* = 1 (loss.fprgap.weight), and every Beat-Ding component OFF.
+# With all components off this config trains EXACTLY rev4 Arm E w1 (tests/identity_rev4_EF.py, bit-identical step);
+# the only change is the within-run checkpoint selection (plan section 4): val AUC + val intersectional es-AUC
+# (threshold-free; rank_prob(logit) metrics, Codex F3). Start: CFES runs/clip_s<seed>_p1/last.pt (run/bd_run.sh).
+_base_: ../rev4/clip_E.yaml
+loss:
+  fprgap: {weight: 1.0}
+  # B. ESA: class-conditional multi-quantile alignment of asinh(score) per gender / race / intersection group (n >= 4 of
+  #    the class in the step pool = ordinary batch + nuisance views + pair images + stratified batch), stop-grad pooled
+  #    quantiles, mean over (class, level, group) cells of sum_q |Q_g(q) - sg Q_pool(q)| (cfes/losses.py esa_loss)
+  esa: {weight: 0.0, q_real: [0.5, 0.75, 0.9, 0.95], q_fake: [0.05, 0.1, 0.25, 0.5], n_min: 4,
+        levels: [gender, race, intersection]}
+  # D. group-AUC floor: sum_g relu(sg AUC_pool - AUC_g), soft pairwise AUC sigmoid((u_f - u_r) / tau) on u = asinh(score),
+  #    same pool and levels, groups with >= 4 fakes and >= 4 reals (cfes/losses.py group_auc_floor_loss)
+  gauc: {weight: 0.0, tau: 1.0, n_min: 4, levels: [gender, race, intersection]}
+data:
+  # A. label-preserving processing augmentation, both classes, at the 224 px model input (cfes/bd_aug.py)
+  aug: {enabled: false, p: 0.6, hflip: 0.5, ops: [jpeg, bilateral, gblur, downup, photometric, unsharp],
+        jpeg_q: [30, 90], bilateral_d: [5, 7, 9], bilateral_sigma: [20.0, 80.0], gblur_sigma: [0.4, 1.6],
+        downup_scale: [0.4, 0.9], gamma: [0.6, 1.6], brightness: 0.25, contrast: 0.25, saturation: 0.30,
+        unsharp_sigma: [0.5, 1.5], unsharp_amount: [0.5, 1.5]}
+model:
+  # C. multi-layer evidence: CLIP blocks 8/12/16/20 (1-based) -> LN -> Linear(1024, 256) -> GELU -> Linear -> patch logit,
+  #    averaged map, fused as top-8 + local norm with its own tanh gate initialised at 0 (cfes/model.py)
+  multilayer: {enabled: false, blocks: [8, 12, 16, 20], hidden: 256, gate_max: 1.0, c0: base, init_seed: 0}
+select: {metric: val_auc_plus_inter_es_auc, include_init: true}
+bd: {log_val_ding: true}

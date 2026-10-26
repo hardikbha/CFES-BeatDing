@@ -1,0 +1,5 @@
+# Ablation (review 2, 19 Oct). P = patch-evidence model (global + patch heads, fused score), signed tanh gate for EVERY
+# seed (exact init). Pdet = detection only (= study arm A with the common gate). Selection: validation intersectional
+# es-AUC, start eligible (unchanged).
+_base_: ../study/clip_A.yaml
+model: {alpha_param: tanh}

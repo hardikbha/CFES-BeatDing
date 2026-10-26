@@ -1,0 +1,68 @@
+{
+ "n_images": 300,
+ "official_no_face": 0,
+ "per_set": {
+  "all": {
+   "n": 300,
+   "agree_sex": 99.0,
+   "agree_age2": 100.0,
+   "agree_race2": 98.33,
+   "agree_race7": 97.0,
+   "agree_age9": 98.0,
+   "agree_ids8": 97.33,
+   "median_max_abs_prob_diff": 0.0201
+  },
+  "celebdf": {
+   "n": 60,
+   "agree_sex": 98.33,
+   "agree_age2": 100.0,
+   "agree_race2": 98.33,
+   "agree_race7": 96.67,
+   "agree_age9": 100.0,
+   "agree_ids8": 96.67,
+   "median_max_abs_prob_diff": 0.0116
+  },
+  "dfd": {
+   "n": 60,
+   "agree_sex": 100.0,
+   "agree_age2": 100.0,
+   "agree_race2": 98.33,
+   "agree_race7": 98.33,
+   "agree_age9": 96.67,
+   "agree_ids8": 98.33,
+   "median_max_abs_prob_diff": 0.018
+  },
+  "dfdc": {
+   "n": 60,
+   "agree_sex": 96.67,
+   "agree_age2": 100.0,
+   "agree_race2": 100.0,
+   "agree_race7": 96.67,
+   "agree_age9": 96.67,
+   "agree_ids8": 96.67,
+   "median_max_abs_prob_diff": 0.031
+  },
+  "ff2pub_test": {
+   "n": 60,
+   "agree_sex": 100.0,
+   "agree_age2": 100.0,
+   "agree_race2": 98.33,
+   "agree_race7": 96.67,
+   "agree_age9": 96.67,
+   "agree_ids8": 98.33,
+   "median_max_abs_prob_diff": 0.0281
+  },
+  "ffpp_test": {
+   "n": 60,
+   "agree_sex": 100.0,
+   "agree_age2": 100.0,
+   "agree_race2": 96.67,
+   "agree_race7": 96.67,
+   "agree_age9": 100.0,
+   "agree_ids8": 96.67,
+   "median_max_abs_prob_diff": 0.0183
+  }
+ },
+ "runtime_s": 229,
+ "official_s_per_image_median": 9.26
+}

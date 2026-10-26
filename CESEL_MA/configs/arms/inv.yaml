@@ -1,0 +1,2 @@
+# +inv: B0 + L_inv (feature-space demographic counterfactual, validity-masked).
+loss: {inv: {weight: 0.5}}

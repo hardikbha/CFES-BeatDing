@@ -1,0 +1,157 @@
+{
+ "selection": {
+  "B0": {
+   "select": 85.62377137693542,
+   "best_epoch": 2,
+   "epochs": 10,
+   "val_auc": 94.20117723467601,
+   "val_fpr_gap": 17.154811715481173
+  },
+  "+sens": {
+   "select": 86.41053975055242,
+   "best_epoch": 0,
+   "epochs": 10,
+   "val_auc": 94.987945608293,
+   "val_fpr_gap": 17.154811715481173
+  },
+  "+inv": {
+   "select": 84.80425490785292,
+   "best_epoch": 0,
+   "epochs": 10,
+   "val_auc": 94.79415389775191,
+   "val_fpr_gap": 19.97979797979798
+  },
+  "+floor": {
+   "select": 84.23597485769793,
+   "best_epoch": 2,
+   "epochs": 10,
+   "val_auc": 94.48702088280253,
+   "val_fpr_gap": 20.502092050209207
+  },
+  "Full CESel": {
+   "select": 84.0635752293179,
+   "best_epoch": 6,
+   "epochs": 10,
+   "val_auc": 94.11104358374828,
+   "val_fpr_gap": 20.094936708860757
+  },
+  "C_randcue": {
+   "select": 81.21390691032538,
+   "best_epoch": 0,
+   "epochs": 10,
+   "val_auc": 92.40852716348994,
+   "val_fpr_gap": 22.389240506329113
+  },
+  "C_shufgroup": {
+   "select": 84.51851680112037,
+   "best_epoch": 7,
+   "epochs": 10,
+   "val_auc": 93.77484591504442,
+   "val_fpr_gap": 18.5126582278481
+  },
+  "C_novalid": {
+   "select": 84.6773580140025,
+   "best_epoch": 6,
+   "epochs": 10,
+   "val_auc": 93.69634535577464,
+   "val_fpr_gap": 18.037974683544302
+  },
+  "B0+CFES-D": {
+   "select": 89.65534794428848,
+   "best_epoch": 7,
+   "epochs": 10,
+   "val_auc": 95.26892037748117,
+   "val_fpr_gap": 11.227144866385373
+  },
+  "CFES-D s7": {
+   "select": 87.62175118292858,
+   "best_epoch": 1,
+   "epochs": 10,
+   "val_auc": 96.06744406682371,
+   "val_fpr_gap": 16.89138576779026
+  },
+  "Arm E w10 s7": {
+   "select": 89.22608231269396,
+   "best_epoch": 2,
+   "epochs": 10,
+   "val_auc": 96.56066408547798,
+   "val_fpr_gap": 14.669163545568038
+  }
+ },
+ "decisions": {
+  "spread_rule": "range of CFES-D full-data 3-seed selection values (frozen in Amendment 1)",
+  "spread": 2.06,
+  "keep": {
+   "sens": true,
+   "inv": false,
+   "floor": false,
+   "full": false
+  },
+  "drop": {
+   "C_randcue": {
+    "terms": [
+     "floor",
+     "sens"
+    ],
+    "abs_diff": 2.849668318992528,
+    "matches_full": false
+   },
+   "C_shufgroup": {
+    "terms": [
+     "floor"
+    ],
+    "abs_diff": 0.45494157180246475,
+    "matches_full": true
+   },
+   "C_novalid": {
+    "terms": [
+     "inv"
+    ],
+    "abs_diff": 0.613782784684588,
+    "matches_full": true
+   }
+  },
+  "winner": "sens",
+  "promote": [
+   "B0",
+   "B0+CFES-D",
+   "+sens"
+  ],
+  "dropped_terms": [
+   "floor",
+   "inv"
+  ],
+  "failed_terms": [
+   "floor",
+   "inv"
+  ],
+  "excluded_terms": [
+   "floor",
+   "inv"
+  ],
+  "unresolved": [],
+  "eligible": [
+   "sens"
+  ],
+  "design": "p1",
+  "reference_run": "B0",
+  "cfesd_sd": 1.0903358399057044,
+  "spread_status": "ok: recomputed range 2.0552 matches Amendment 1; the declared 2.06 is used",
+  "success_a_seed7": {
+   "B0": true,
+   "CFES-D s7": false,
+   "Arm E w10 s7": false
+  }
+ },
+ "complete": true,
+ "progress": [
+  1,
+  9,
+  9,
+  9
+ ],
+ "design": "p1",
+ "exploratory": false,
+ "generated": "2026-10-26T07:51:06",
+ "partial_flag": false
+}

@@ -1,0 +1,23 @@
+[PASS] config daw: loads, method set, data/samplers/optim/select/eval/model == CESel B0, budget 10 x 1976  (terms {'daw': 1.0, 'orth': 0.1})
+[PASS] config dag: loads, method set, data/samplers/optim/select/eval/model == CESel B0, budget 10 x 1976  (terms {'dag': 1.0, 'orth': 0.1})
+[PASS] config pgfdd: loads, method set, data/samplers/optim/select/eval/model == CESel B0, budget 10 x 1976  (terms {'sha': 1.0, 'spe': 0.1, 'rec': 0.3, 'con': 0.05, 'fair': 0.1, 'fuse': 1.0, 'orth': 0.1})
+[PASS] config ding: loads, method set, data/samplers/optim/select/eval/model == CESel B0, budget 10 x 1976  (terms {'ce': 1.0, 'gda_fair': 0.005})
+[PASS] DAW-FDD loss == official get_losses (value and gradient)  (1.516526 vs 1.516526)
+[PASS] DAG-FDD loss == official get_losses (value and gradient)  (2.082808 vs 2.082808)
+<string>:21: UserWarning: where received a uint8 condition tensor. This behavior is deprecated and will be removed in a future version of PyTorch. Use a boolean condition instead. (Triggered internally at ../aten/src/ATen/native/TensorCompare.cpp:530.)
+[PASS] PG-FDD total loss == official get_train_losses (each term, total, gradients)  (overall 8.93544 vs 8.93544; max term diff 0.00e+00)
+[PASS] Ding SFD: vectorised per-channel SNNL == official SoftNearestNeighborLoss channel loop  (max diff 0.00e+00)
+[PASS] Ding SFD: 2% of 1024 channels -> 20 lowest-SNNL channels (SFD.py:172-188)
+[PASS] PG-FDD SAM two-pass step == official sam.py SAM (rho 0.05)
+[PASS] CVaR dual (fminbound) == brute-force mean of the top 50% losses  (2.02260 vs 2.02260)
+[PASS] Ding GDA: released fairness term has no gradient (no_grad); gda_grad variant has one; same value  (sinkhorn 0.3925, grad-variant |g| 4.036e-01)
+[PASS] stub daw: losses finite, gradients reach ['backbone.adapter', 'head.']  (terms ['daw', 'orth'] daw=0.779 orth=0.000; )
+[PASS] stub dag: losses finite, gradients reach ['backbone.adapter', 'head.']  (terms ['dag', 'orth'] dag=0.800 orth=0.000; )
+[PASS] stub pgfdd: losses finite, gradients reach ['backbone.adapter', 'encoder_f', 'encoder_c', 'encoder_fair', 'block_spe', 'block_sha', 'block_fair', 'con_gan', 'head_spe', 'head_sha', 'head_fair', 'head_fused']  (terms ['con', 'fair', 'fuse', 'orth', 'rec', 'sha', 'spe'] rec=2.003 sha=0.693 spe=1.794 con=11.894 fair=13.675 fuse=0.706 orth=0.000; halves 6+6; eval score shape ok)
+[PASS] stub ding: losses finite, gradients reach ['head.']  (terms ['ce', 'gda_fair'] ce=0.693 gda_fair=0.000; backbone frozen True, keep[3]=0, gda_fair requires_grad False)
+/home/sachin.chaudhary/.conda/envs/pulid/lib/python3.10/site-packages/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+[PASS] real CLIP: p1 backbone loads strictly, DAG loss + orth backward reaches the rank-1 adapters  (872 keys, 288 adapter tensors, |g| 3.038e+00)
+[PASS] real CLIP: Ding 2-way head from p1 cls_head reproduces p1's CLS logit (no channel zeroed)  (scores [4.547160625457764, 4.4110493659973145] vs [4.54716157913208, 4.411049842834473])
+18/18 checks passed
+ALL_PASS

@@ -1,0 +1,143 @@
+{
+ "repo": "https://github.com/ywh1093/Fairness-Optimization @ 059ec37fc969825bab9dc5f79e01c9864d00eaec",
+ "base_ckpt": "DING_base_s7/49.pth",
+ "channels": [
+  336,
+  35,
+  272,
+  26,
+  255,
+  1,
+  205,
+  371,
+  369,
+  395
+ ],
+ "batch": "32 real + 32 fake; group batch = group 3",
+ "optimizer": "SGD lr 1e-3 momentum 0.9 wd 5e-3 (as GDA.py)",
+ "released": {
+  "lambda=0.0": {
+   "fair_loss": 0.024730335921049118,
+   "fair_requires_grad": false,
+   "total_requires_grad": true,
+   "total_graph": [
+    "AddBackward0",
+    "NllLossBackward0",
+    "LogSoftmaxBackward0",
+    "AddmmBackward0",
+    "AccumulateGrad",
+    "TBackward0",
+    "AccumulateGrad"
+   ],
+   "fair_grad_norm": 0.0,
+   "total_grad_norm": 0.01809036359190941
+  },
+  "lambda=0.005": {
+   "fair_loss": 0.024730335921049118,
+   "fair_requires_grad": false,
+   "total_requires_grad": true,
+   "total_graph": [
+    "AddBackward0",
+    "NllLossBackward0",
+    "LogSoftmaxBackward0",
+    "AddmmBackward0",
+    "AccumulateGrad",
+    "TBackward0",
+    "AccumulateGrad"
+   ],
+   "fair_grad_norm": 0.0,
+   "total_grad_norm": 0.01809036359190941
+  },
+  "lambda=1000.0": {
+   "fair_loss": 0.024730335921049118,
+   "fair_requires_grad": false,
+   "total_requires_grad": true,
+   "total_graph": [
+    "AddBackward0",
+    "NllLossBackward0",
+    "LogSoftmaxBackward0",
+    "AddmmBackward0",
+    "AccumulateGrad",
+    "TBackward0",
+    "AccumulateGrad"
+   ],
+   "fair_grad_norm": 0.0,
+   "total_grad_norm": 0.01809036359190941
+  },
+  "max|param(lambda=0.005) - param(lambda=0)| after one step": 0.0,
+  "max|param(lambda=1000.0) - param(lambda=0)| after one step": 0.0
+ },
+ "connected": {
+  "lambda=0.0": {
+   "fair_loss": 0.024730335921049118,
+   "fair_requires_grad": true,
+   "total_requires_grad": true,
+   "total_graph": [
+    "AddBackward0",
+    "NllLossBackward0",
+    "MulBackward0",
+    "LogSoftmaxBackward0",
+    "SelectBackward0",
+    "AddmmBackward0",
+    "AddBackward0",
+    "AccumulateGrad",
+    "TBackward0",
+    "SumBackward1",
+    "SumBackward1",
+    "AccumulateGrad",
+    "MulBackward0",
+    "MulBackward0"
+   ],
+   "fair_grad_norm": 0.0,
+   "total_grad_norm": 0.01809036359190941
+  },
+  "lambda=0.005": {
+   "fair_loss": 0.024730335921049118,
+   "fair_requires_grad": true,
+   "total_requires_grad": true,
+   "total_graph": [
+    "AddBackward0",
+    "NllLossBackward0",
+    "MulBackward0",
+    "LogSoftmaxBackward0",
+    "SelectBackward0",
+    "AddmmBackward0",
+    "AddBackward0",
+    "AccumulateGrad",
+    "TBackward0",
+    "SumBackward1",
+    "SumBackward1",
+    "AccumulateGrad",
+    "MulBackward0",
+    "MulBackward0"
+   ],
+   "fair_grad_norm": 8.160157449310645e-05,
+   "total_grad_norm": 0.01800907775759697
+  },
+  "lambda=1000.0": {
+   "fair_loss": 0.024730335921049118,
+   "fair_requires_grad": true,
+   "total_requires_grad": true,
+   "total_graph": [
+    "AddBackward0",
+    "NllLossBackward0",
+    "MulBackward0",
+    "LogSoftmaxBackward0",
+    "SelectBackward0",
+    "AddmmBackward0",
+    "AddBackward0",
+    "AccumulateGrad",
+    "TBackward0",
+    "SumBackward1",
+    "SumBackward1",
+    "AccumulateGrad",
+    "MulBackward0",
+    "MulBackward0"
+   ],
+   "fair_grad_norm": 16.320253372192383,
+   "total_grad_norm": 16.302234649658203
+  },
+  "max|param(lambda=0.005) - param(lambda=0)| after one step": 2.0489096641540527e-08,
+  "max|param(lambda=1000.0) - param(lambda=0)| after one step": 0.0041261231526732445
+ }
+}

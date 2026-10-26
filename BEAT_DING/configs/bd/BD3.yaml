@@ -1,0 +1,3 @@
+# BD3 = base + A + B + C (multi-layer evidence)
+_base_: BD2.yaml
+model: {multilayer: {enabled: true}}

@@ -1,0 +1,2 @@
+Logging to /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/results/smoke_base
+# of real training samples: 32, # of fake training samples: 32, 

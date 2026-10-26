@@ -1,0 +1,110 @@
+batch 1/100
+batch 2/100
+batch 3/100
+batch 4/100
+batch 5/100
+batch 6/100
+batch 7/100
+batch 8/100
+batch 9/100
+batch 10/100
+batch 11/100
+batch 12/100
+batch 13/100
+batch 14/100
+batch 15/100
+batch 16/100
+batch 17/100
+batch 18/100
+batch 19/100
+batch 20/100
+batch 21/100
+batch 22/100
+batch 23/100
+batch 24/100
+batch 25/100
+batch 26/100
+batch 27/100
+batch 28/100
+batch 29/100
+batch 30/100
+batch 31/100
+batch 32/100
+batch 33/100
+batch 34/100
+batch 35/100
+batch 36/100
+batch 37/100
+batch 38/100
+batch 39/100
+batch 40/100
+batch 41/100
+batch 42/100
+batch 43/100
+batch 44/100
+batch 45/100
+batch 46/100
+batch 47/100
+batch 48/100
+batch 49/100
+batch 50/100
+batch 51/100
+batch 52/100
+batch 53/100
+batch 54/100
+batch 55/100
+batch 56/100
+batch 57/100
+batch 58/100
+batch 59/100
+batch 60/100
+batch 61/100
+batch 62/100
+batch 63/100
+batch 64/100
+batch 65/100
+batch 66/100
+batch 67/100
+batch 68/100
+batch 69/100
+batch 70/100
+batch 71/100
+batch 72/100
+batch 73/100
+batch 74/100
+batch 75/100
+batch 76/100
+batch 77/100
+batch 78/100
+batch 79/100
+batch 80/100
+batch 81/100
+batch 82/100
+batch 83/100
+batch 84/100
+batch 85/100
+batch 86/100
+batch 87/100
+batch 88/100
+batch 89/100
+batch 90/100
+batch 91/100
+batch 92/100
+batch 93/100
+batch 94/100
+batch 95/100
+batch 96/100
+batch 97/100
+batch 98/100
+batch 99/100
+batch 100/100
+
+Overall AUC: 0.9745  n=25401
+  male-asian     n=  1167  AUC=0.9223  FPR=0.1807  TPR=0.8504
+  male-white     n=  9117  AUC=0.9723  FPR=0.1145  TPR=0.9345
+  male-black     n=   602  AUC=0.9917  FPR=0.0870  TPR=0.9843
+  male-others    n=  1171  AUC=0.9601  FPR=0.1547  TPR=0.9192
+  nonmale-asian  n=  2182  AUC=0.9779  FPR=0.1087  TPR=0.9485
+  nonmale-white  n=  9723  AUC=0.9819  FPR=0.1100  TPR=0.9623
+  nonmale-black  n=   598  AUC=0.9737  FPR=0.2034  TPR=0.9729
+  nonmale-others n=   841  AUC=0.9781  FPR=0.1192  TPR=0.9754

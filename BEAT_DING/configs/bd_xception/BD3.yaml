@@ -1,0 +1,3 @@
+# X BD3 = base + A + B + C (multi-stage evidence: block2 / block11 / block12)
+_base_: BD2.yaml
+model: {multilayer: {enabled: true}}

@@ -1,0 +1,113 @@
+{
+ "selection": {
+  "B0 (start)": {
+   "select": 85.62377137693542,
+   "best_epoch": 2,
+   "epochs": 10,
+   "val_auc": 94.20117723467601,
+   "val_fpr_gap": 17.154811715481173
+  },
+  "B0-continued": {
+   "select": 85.62377137693542,
+   "best_epoch": -1,
+   "epochs": 5,
+   "val_auc": 94.20117723467601,
+   "val_fpr_gap": 17.154811715481173
+  },
+  "+sens": {
+   "select": 85.62377137693542,
+   "best_epoch": -1,
+   "epochs": 5,
+   "val_auc": 94.20117723467601,
+   "val_fpr_gap": 17.154811715481173
+  },
+  "+inv": {
+   "select": 85.62377137693542,
+   "best_epoch": -1,
+   "epochs": 5,
+   "val_auc": 94.20117723467601,
+   "val_fpr_gap": 17.154811715481173
+  },
+  "+floor": {
+   "select": 85.62377137693542,
+   "best_epoch": -1,
+   "epochs": 5,
+   "val_auc": 94.20117723467601,
+   "val_fpr_gap": 17.154811715481173
+  },
+  "Full CESel": {
+   "select": 85.62377137693542,
+   "best_epoch": -1,
+   "epochs": 5,
+   "val_auc": 94.20117723467601,
+   "val_fpr_gap": 17.154811715481173
+  },
+  "C_randcue": null,
+  "C_shufgroup": null,
+  "C_novalid": null,
+  "B0+CFES-D": null,
+  "CFES-D s7": {
+   "select": 87.62175118292858,
+   "best_epoch": 1,
+   "epochs": 10,
+   "val_auc": 96.06744406682371,
+   "val_fpr_gap": 16.89138576779026
+  },
+  "Arm E w10 s7": {
+   "select": 89.22608231269396,
+   "best_epoch": 2,
+   "epochs": 10,
+   "val_auc": 96.56066408547798,
+   "val_fpr_gap": 14.669163545568038
+  }
+ },
+ "decisions": {
+  "spread_rule": "range of CFES-D full-data 3-seed selection values (frozen in Amendment 1)",
+  "spread": 2.06,
+  "keep": {
+   "sens": false,
+   "inv": false,
+   "floor": false,
+   "full": false
+  },
+  "drop": {
+   "C_randcue": null,
+   "C_shufgroup": null,
+   "C_novalid": null
+  },
+  "winner": null,
+  "promote": null,
+  "dropped_terms": [],
+  "failed_terms": [
+   "floor",
+   "inv",
+   "sens"
+  ],
+  "excluded_terms": [
+   "floor",
+   "inv",
+   "sens"
+  ],
+  "unresolved": [
+   "drop:C_randcue",
+   "drop:C_shufgroup",
+   "drop:C_novalid"
+  ],
+  "eligible": [],
+  "design": "x5",
+  "reference_run": "B0-continued",
+  "cfesd_sd": 1.0903358399057044,
+  "spread_status": "ok: recomputed range 2.0552 matches Amendment 1; the declared 2.06 is used"
+ },
+ "complete": false,
+ "progress": [
+  0,
+  6,
+  6,
+  6
+ ],
+ "design": "x5",
+ "exploratory": true,
+ "generated": "2026-10-26T00:53:09",
+ "partial_flag": true
+}

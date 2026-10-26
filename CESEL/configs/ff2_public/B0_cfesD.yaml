@@ -1,0 +1,2 @@
+# B0_cfesD arm on ff2_public (dataset: ../ces_ff2_public.yaml, arm: ../arms/B0_cfesD.yaml)
+_base_: [../ces_ff2_public.yaml, ../arms/B0_cfesD.yaml]

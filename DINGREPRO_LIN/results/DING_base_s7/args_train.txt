@@ -1,0 +1,10 @@
+{
+  "seed": 7,
+  "num_epochs": 50,
+  "lr": 0.001,
+  "result_dir": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/results/DING_base_s7",
+  "dataset_dir": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/ff++_ding",
+  "batch_size": 64,
+  "workers": 8,
+  "model_name": "XceptionDetector"
+}

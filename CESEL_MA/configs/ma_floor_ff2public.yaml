@@ -1,0 +1,18 @@
+# CESel-MA (+floor base) on the FROZEN FF2-public split, seed 7 (--set seed=<s>). Inherits ces_ff2_public.yaml, so the
+# FF2-public provenance guard (cfes/public_guard.py, role phase2) REFUSES to start unless data.train.csv is the frozen
+# public TRAIN and model.init_backbone_ckpt comes from the public phase-1 run (PUBLIC_P1:
+# runs_ff2public/clip_s<s>_p1, configs/ff2_public_p1.yaml). Validated cues = the FF2-public B0's JSON.
+#   train_ces.py --config configs/ma_floor_ff2public.yaml --out runs_ff2public/ma_floor_s<s> --set seed=<s> \
+#     model.init_backbone_ckpt=/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CESEL_MA/runs_ff2public/clip_s<s>_p1/last.pt \
+#     ces.validated_json=/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CESEL_MA/runs_ff2public/B0_s<s>/validated_cues.json
+_base_: [ces_ff2_public.yaml, arms/ma_floor.yaml]
+ma:
+  labels:            # agents/DEMO_AXES/labels (README.md "Label contract"; build_labels.py column dictionary)
+    train: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DEMO_AXES/labels/labels_ff2public_train.csv
+    val: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DEMO_AXES/labels/labels_ff2public_val.csv
+    ita_edges_json: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DEMO_AXES/labels/ita_bin_edges.json
+    ita_edges_key: ff2.ita_gw.edges
+    # gender / gender x race = AI-Face cleaner v2 (cl_*; Xu fallback flagged in cl_src); age = InsightFace per-video
+    # median age binned <30/30-44/45-59/60+ (age4_if: the spec's bins); ITA = per-image ita_gw
+    # with the declared TRAIN-quartile bins (ita4)
+    columns: {img_path: img_path, male: cl_male, race: cl_race, age_bin: age4_if, ita: ita_gw, ita_bin: ita4}

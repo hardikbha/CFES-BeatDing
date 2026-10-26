@@ -1,0 +1,184 @@
+# CESEL_MA priority runner task list (scripts/priority_runner.py RE-READS this file every scheduling round: edit it in
+# place to add / re-order / disable tasks; no restart needed. Write atomically: edit a copy, then `mv` it over this file).
+# Order (user, 26 Oct): Ding/Lin FF++ protocol first ("first beat Ding's published Tables 1-3"), FairForge-2 at the END.
+# Lower priority number = launched first; same number = concurrent up to the free GPUs (file order breaks ties).
+# Leave gaps (e.g. 15, 25, 35) for new 'beat-Ding' arms (kind cmd: run [cmd], cmd: "<bash>", cwd: "<dir>", done: [...]).
+# Fields: name, priority, run [kind, args...] (run/ma_run.sh), done [marker files, ALL must exist], deps [task names],
+#   when (always | gate_pass | gate_fail | gate_decided | ma_not_worse | ma_worse), needs [files that must exist before
+#   launch], gpu (default true), hosts [gpu01, gpu02] (optional), enabled (default true), cmd / cwd / env (kind cmd).
+# Placeholders: {MA} {CESEL} {CFES} {CLIPFAIR} {FAIRREL} {DING} {LABELS} {R}; {ma_config} {single_axis_arm} (gate.json).
+# Done markers of external tasks = the markers their own scripts write (CLIPFAIR: TRAINED + eval/summary_calibrated.csv
+# + eval/a1.json; FAIRREL_REPRO: DONE; DINGREPRO_LIN: DONE; CFES Arm E: TRAINED + eval/summary_calibrated.csv +
+# eval_ff2full_best/summary.csv).
+# External task files (README "External task files"): every task of an include gets the include's priority; a missing
+# optional file contributes nothing yet; the file is re-read whenever it changes. BEAT_DING (user, 26 Oct: beat Ding
+# first) = highest priority; `reserve` keeps one free GPU per BD arm that only waits for a running dependency (bd_smoke)
+# away from lower-priority tasks for at most RESERVE_MAX_S (1 h). A failed bd_smoke skips the BD arms (deps), nothing else.
+include:
+- {file: '{R}/agents/BEAT_DING/run/bd_tasks.json', priority: 5, prefix: '', optional: true, reserve: true}
+tasks:
+- name: ma_s7
+  priority: 10
+  when: gate_pass
+  run: [ma, '{ma_config}', '7']
+  done: ['{MA}/runs/ffpp_{ma_config}_s7/TRAINED', '{MA}/runs/ffpp_{ma_config}_s7/eval/summary_calibrated.csv', '{MA}/runs/ffpp_{ma_config}_s7/eval/interp.json', '{MA}/runs/ffpp_{ma_config}_s7/validated_cues_post.json']
+  needs: &id001 ['{LABELS}/labels_ffpp_train.csv', '{LABELS}/labels_ffpp_val.csv', '{LABELS}/ita_bin_edges.json']
+- name: ma_compare_s7
+  priority: 10
+  gpu: false
+  deps: [ma_s7]
+  when: gate_pass
+  run: [ma_compare, '7']
+  done: ['{MA}/results/ma_vs_single_s7.json']
+- name: ma_s17
+  priority: 10
+  when: ma_not_worse
+  deps: [ma_compare_s7]
+  run: [ma, '{ma_config}', '17']
+  done: ['{MA}/runs/ffpp_{ma_config}_s17/TRAINED', '{MA}/runs/ffpp_{ma_config}_s17/eval/summary_calibrated.csv', '{MA}/runs/ffpp_{ma_config}_s17/eval/interp.json', '{MA}/runs/ffpp_{ma_config}_s17/validated_cues_post.json']
+  needs: *id001
+- name: ma_s27
+  priority: 10
+  when: ma_not_worse
+  deps: [ma_compare_s7]
+  run: [ma, '{ma_config}', '27']
+  done: ['{MA}/runs/ffpp_{ma_config}_s27/TRAINED', '{MA}/runs/ffpp_{ma_config}_s27/eval/summary_calibrated.csv', '{MA}/runs/ffpp_{ma_config}_s27/eval/interp.json', '{MA}/runs/ffpp_{ma_config}_s27/validated_cues_post.json']
+  needs: *id001
+- name: pgfdd_s7
+  priority: 20
+  run: [clipfair, pgfdd, '7']
+  done: ['{CLIPFAIR}/runs/ffpp_pgfdd_s7/TRAINED', '{CLIPFAIR}/runs/ffpp_pgfdd_s7/eval/summary_calibrated.csv', '{CLIPFAIR}/runs/ffpp_pgfdd_s7/eval/a1.json']
+- name: daw_s7
+  priority: 20
+  run: [clipfair, daw, '7']
+  done: ['{CLIPFAIR}/runs/ffpp_daw_s7/TRAINED', '{CLIPFAIR}/runs/ffpp_daw_s7/eval/summary_calibrated.csv', '{CLIPFAIR}/runs/ffpp_daw_s7/eval/a1.json']
+- name: dag_s7
+  priority: 20
+  run: [clipfair, dag, '7']
+  done: ['{CLIPFAIR}/runs/ffpp_dag_s7/TRAINED', '{CLIPFAIR}/runs/ffpp_dag_s7/eval/summary_calibrated.csv', '{CLIPFAIR}/runs/ffpp_dag_s7/eval/a1.json']
+- name: fairrel_s7
+  priority: 20
+  run: [fairrel, '7']
+  done: ['{FAIRREL}/runs/FAIRREL_s7/DONE']
+- name: sfd_s7
+  priority: 20
+  run: [clipfair_sfd, '7']
+  done: ['{CLIPFAIR}/runs/ffpp_ding_sfd_s7/sfd_channels.json']
+- name: ding_s7
+  priority: 20
+  deps: [sfd_s7]
+  run: [clipfair, ding, '7']
+  done: ['{CLIPFAIR}/runs/ffpp_ding_s7/TRAINED', '{CLIPFAIR}/runs/ffpp_ding_s7/eval/summary_calibrated.csv', '{CLIPFAIR}/runs/ffpp_ding_s7/eval/a1.json']
+- name: ding_gdagrad_s7
+  priority: 20
+  deps: [sfd_s7]
+  run: [ding_gdagrad, '7']
+  done: ['{CLIPFAIR}/runs/ffpp_ding_gdagrad_s7/TRAINED', '{CLIPFAIR}/runs/ffpp_ding_gdagrad_s7/eval/summary_calibrated.csv', '{CLIPFAIR}/runs/ffpp_ding_gdagrad_s7/eval/a1.json']
+- name: pgfdd_s17
+  priority: 30
+  run: [clipfair, pgfdd, '17']
+  done: ['{CLIPFAIR}/runs/ffpp_pgfdd_s17/TRAINED', '{CLIPFAIR}/runs/ffpp_pgfdd_s17/eval/summary_calibrated.csv', '{CLIPFAIR}/runs/ffpp_pgfdd_s17/eval/a1.json']
+- name: daw_s17
+  priority: 30
+  run: [clipfair, daw, '17']
+  done: ['{CLIPFAIR}/runs/ffpp_daw_s17/TRAINED', '{CLIPFAIR}/runs/ffpp_daw_s17/eval/summary_calibrated.csv', '{CLIPFAIR}/runs/ffpp_daw_s17/eval/a1.json']
+- name: dag_s17
+  priority: 30
+  run: [clipfair, dag, '17']
+  done: ['{CLIPFAIR}/runs/ffpp_dag_s17/TRAINED', '{CLIPFAIR}/runs/ffpp_dag_s17/eval/summary_calibrated.csv', '{CLIPFAIR}/runs/ffpp_dag_s17/eval/a1.json']
+- name: fairrel_s17
+  priority: 30
+  run: [fairrel, '17']
+  done: ['{FAIRREL}/runs/FAIRREL_s17/DONE']
+- name: sfd_s17
+  priority: 30
+  run: [clipfair_sfd, '17']
+  done: ['{CLIPFAIR}/runs/ffpp_ding_sfd_s17/sfd_channels.json']
+- name: ding_s17
+  priority: 30
+  deps: [sfd_s17]
+  run: [clipfair, ding, '17']
+  done: ['{CLIPFAIR}/runs/ffpp_ding_s17/TRAINED', '{CLIPFAIR}/runs/ffpp_ding_s17/eval/summary_calibrated.csv', '{CLIPFAIR}/runs/ffpp_ding_s17/eval/a1.json']
+- name: ding_gdagrad_s17
+  priority: 30
+  deps: [sfd_s17]
+  run: [ding_gdagrad, '17']
+  done: ['{CLIPFAIR}/runs/ffpp_ding_gdagrad_s17/TRAINED', '{CLIPFAIR}/runs/ffpp_ding_gdagrad_s17/eval/summary_calibrated.csv', '{CLIPFAIR}/runs/ffpp_ding_gdagrad_s17/eval/a1.json']
+- name: pgfdd_s27
+  priority: 30
+  run: [clipfair, pgfdd, '27']
+  done: ['{CLIPFAIR}/runs/ffpp_pgfdd_s27/TRAINED', '{CLIPFAIR}/runs/ffpp_pgfdd_s27/eval/summary_calibrated.csv', '{CLIPFAIR}/runs/ffpp_pgfdd_s27/eval/a1.json']
+- name: daw_s27
+  priority: 30
+  run: [clipfair, daw, '27']
+  done: ['{CLIPFAIR}/runs/ffpp_daw_s27/TRAINED', '{CLIPFAIR}/runs/ffpp_daw_s27/eval/summary_calibrated.csv', '{CLIPFAIR}/runs/ffpp_daw_s27/eval/a1.json']
+- name: dag_s27
+  priority: 30
+  run: [clipfair, dag, '27']
+  done: ['{CLIPFAIR}/runs/ffpp_dag_s27/TRAINED', '{CLIPFAIR}/runs/ffpp_dag_s27/eval/summary_calibrated.csv', '{CLIPFAIR}/runs/ffpp_dag_s27/eval/a1.json']
+- name: fairrel_s27
+  priority: 30
+  run: [fairrel, '27']
+  done: ['{FAIRREL}/runs/FAIRREL_s27/DONE']
+- name: sfd_s27
+  priority: 30
+  run: [clipfair_sfd, '27']
+  done: ['{CLIPFAIR}/runs/ffpp_ding_sfd_s27/sfd_channels.json']
+- name: ding_s27
+  priority: 30
+  deps: [sfd_s27]
+  run: [clipfair, ding, '27']
+  done: ['{CLIPFAIR}/runs/ffpp_ding_s27/TRAINED', '{CLIPFAIR}/runs/ffpp_ding_s27/eval/summary_calibrated.csv', '{CLIPFAIR}/runs/ffpp_ding_s27/eval/a1.json']
+- name: ding_gdagrad_s27
+  priority: 30
+  deps: [sfd_s27]
+  run: [ding_gdagrad, '27']
+  done: ['{CLIPFAIR}/runs/ffpp_ding_gdagrad_s27/TRAINED', '{CLIPFAIR}/runs/ffpp_ding_gdagrad_s27/eval/summary_calibrated.csv', '{CLIPFAIR}/runs/ffpp_ding_gdagrad_s27/eval/a1.json']
+- name: dingrepro_s17
+  priority: 40
+  run: [dingrepro, '17']
+  done: ['{DING}/results/DING_full_s17/DONE']
+- name: dingrepro_s27
+  priority: 40
+  run: [dingrepro, '27']
+  done: ['{DING}/results/DING_full_s27/DONE']
+- name: armE_w10_s17
+  priority: 40
+  run: [armE, '17', '10']
+  done: ['{CFES}/runs_rev4/clip_E_w10_s17/TRAINED', '{CFES}/runs_rev4/clip_E_w10_s17/eval/summary_calibrated.csv', '{CFES}/runs_rev4/clip_E_w10_s17/eval_ff2full_best/summary.csv']
+- name: armE_w10_s27
+  priority: 40
+  run: [armE, '27', '10']
+  done: ['{CFES}/runs_rev4/clip_E_w10_s27/TRAINED', '{CFES}/runs_rev4/clip_E_w10_s27/eval/summary_calibrated.csv', '{CFES}/runs_rev4/clip_E_w10_s27/eval_ff2full_best/summary.csv']
+- name: ff2p1_s7
+  priority: 90
+  run: [ff2p1, '7']
+  done: ['{MA}/runs_ff2public/clip_s7_p1/PUBLIC_P1']
+- name: ff2_cfesd_s7
+  priority: 91
+  deps: [ff2p1_s7]
+  run: [ff2_cfesd, '7']
+  done: ['{MA}/runs_ff2public/cfesd_s7/TRAINED', '{MA}/runs_ff2public/cfesd_s7/eval/summary_calibrated.csv']
+- name: ff2_B0_s7
+  priority: 91
+  deps: [ff2p1_s7]
+  run: [ff2_ces, configs/ff2_public/B0.yaml, B0_s7, '7']
+  done: ['{MA}/runs_ff2public/B0_s7/TRAINED', '{MA}/runs_ff2public/B0_s7/eval/summary_calibrated.csv', '{MA}/runs_ff2public/B0_s7/eval/interp.json']
+- name: ff2_validate_s7
+  priority: 92
+  deps: [ff2_B0_s7]
+  run: [ff2_validate, '7']
+  done: ['{MA}/runs_ff2public/B0_s7/validated_cues.json']
+- name: ff2_final_ma_s7
+  priority: 93
+  when: ma_not_worse
+  deps: [ff2_validate_s7]
+  needs: ['{LABELS}/labels_ff2public_train.csv', '{LABELS}/labels_ff2public_val.csv', '{LABELS}/ita_bin_edges.json']
+  run: [ff2_ces, 'configs/{ma_config}_ff2public.yaml', '{ma_config}_s7', '7', '{MA}/runs_ff2public/B0_s7/validated_cues.json']
+  done: ['{MA}/runs_ff2public/{ma_config}_s7/TRAINED', '{MA}/runs_ff2public/{ma_config}_s7/eval/summary_calibrated.csv', '{MA}/runs_ff2public/{ma_config}_s7/eval/interp.json']
+- name: ff2_final_single_s7
+  priority: 93
+  when: ma_worse
+  deps: [ff2_validate_s7]
+  run: [ff2_ces, 'configs/ff2_public/{single_axis_arm}.yaml', '{single_axis_arm}_s7', '7', '{MA}/runs_ff2public/B0_s7/validated_cues.json']
+  done: ['{MA}/runs_ff2public/{single_axis_arm}_s7/TRAINED', '{MA}/runs_ff2public/{single_axis_arm}_s7/eval/summary_calibrated.csv', '{MA}/runs_ff2public/{single_axis_arm}_s7/eval/interp.json']

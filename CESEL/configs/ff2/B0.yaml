@@ -1,0 +1,2 @@
+# B0 arm on ff2 (dataset: ../ces_ff2.yaml, arm: ../arms/B0.yaml)
+_base_: [../ces_ff2.yaml, ../arms/B0.yaml]

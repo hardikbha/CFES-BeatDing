@@ -1,0 +1,3 @@
+# Arm B: A + stabilisation = running-RMS normalisation of the local contribution (model.local_norm; cfes/model.py).
+_base_: clip_A.yaml
+model: {local_norm: true, local_norm_momentum: 0.01}

@@ -1,0 +1,3 @@
+cl_gender,n,n_err,n_videos,n_videos_with_err,rate_%,share_of_errors_%
+female,2497,47,152,21,1.882258710452543,55.294117647058826
+male,2041,38,120,11,1.8618324350808426,44.705882352941174

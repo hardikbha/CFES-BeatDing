@@ -1,0 +1,41 @@
+# CLIPFAIR: four matched-backbone fairness baselines (decisions/2026-10-25-cesel-plan.md, Amendment 3) on the SAME
+# CLIP ViT-L/14 + rank-1 SVD adapters, FF++ (Lin) data, samplers (64 balanced + 8 pairs + 96 stratified = 176 images per
+# step), start checkpoint (CFES runs/clip_s{seed}_p1/last.pt), budget (10 x 1976 steps), optimiser recipe, Amendment-9
+# validation selection and evaluation as CESel B0. Base = the CESel FF++ config (copied unchanged next to this file);
+# its CES-specific sections are unused here. Method hyper-parameters below = the official code's defaults (README.md
+# cites file:line for each). Pick a method with configs/ffpp/<method>.yaml.
+_base_: ces_ffpp.yaml
+
+clipfair:
+  method: null                  # daw | dag | pgfdd | ding
+  daw:                          # AIF detectors/daw_fdd.py:73-94 (inner_alpha 0.9, outer_alpha 0.5 at :75-76)
+    inner_alpha: 0.9
+    outer_alpha: 0.5
+    weights: {daw: 1.0}
+  dag:                          # AIF detectors/dag_fdd.py:74-84 (dag_alpha 0.5 at :76)
+    alpha: 0.5
+    weights: {dag: 1.0}
+  pgfdd:                        # FG detectors/fair_df_detector.py
+    specific_task_number: 6     # :63 (real + 5 FF++ methods)
+    fair_task_number: 8         # :64
+    cls_num_list: [2475, 25443, 1468, 4163, 8013, 31281, 1111, 2185]   # :139 official FF++ train counts (= ours)
+    ldam_max_m: 0.5             # loss/bal_loss.py:14
+    ldam_s: 30.0                # loss/bal_loss.py:14
+    con_margin: 3.0             # :134
+    inner_alpha: 0.9            # :255,259
+    outer_alpha: 0.5            # :263,268
+    tau1: 0.001
+    tau2: 0.0001
+    sam: {rho: 0.05, adaptive: false}     # sam.py:5 defaults (train.py:389 does not override rho)
+    weights: {sha: 1.0, spe: 0.1, rec: 0.3, con: 0.05, fair: 0.1, fuse: 1.0}   # :271-272
+  ding:                         # DM SFD.py, GDA.py
+    prc: 2.0                    # SFD.py:97 (Ding's ablation best: 2% of channels -> 20 of 1024)
+    snnl_temperature: 1.0       # SFD.py:17
+    sfd_batch_size: 64          # SFD.py:93
+    sfd_max_batches: null       # null = one pass over the whole training set (SFD.py:136); smoke only sets it
+    channels_json: null         # scripts/ding_sfd.py output (runs/ffpp_ding_sfd_s<seed>/sfd_channels.json)
+    sinkhorn_blur: 5.0e-4       # GDA.py:85
+    gda_grad: false             # false = AS RELEASED (fair loss inside no_grad, GDA.py:232-235: no gradient);
+                                # true = gradient-enabled variant (NOT run unless the decision file is amended)
+    train_backbone: false       # GDA.py:121-124: only the classifier trains
+    weights: {ce: 1.0, gda_fair: 0.005}   # GDA.py:86 lambda_fairloss 0.005

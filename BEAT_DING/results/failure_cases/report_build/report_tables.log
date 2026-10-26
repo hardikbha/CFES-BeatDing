@@ -1,0 +1,27 @@
+thresholds {'matched': -73.76414591500017, 'native': -65.96807621582647, 'A1': -19.132783889770508}
+ffpp_test matched AUC 96.78 TPR 93.13 FPR 13.51 iF_FPR 46.56 wins 0/10
+ffpp_test native AUC 96.78 TPR 90.46 FPR 8.09 iF_FPR 36.11 wins 0/10
+ffpp_test A1 AUC 96.78 TPR 80.37 FPR 1.87 iF_FPR 8.43 wins 3/10
+  Ding published AUC 97.71 iF_FPR 20.18
+  Ding repro@0.5 TPR 94.85 FPR 12.54
+dfdc matched AUC 77.41 TPR 72.47 FPR 33.23 iF_FPR 32.23 wins 7/10
+dfdc native AUC 77.41 TPR 59.25 FPR 19.44 iF_FPR 27.78 wins 8/10
+dfdc A1 AUC 77.41 TPR 27.16 FPR 1.90 iF_FPR 7.25 wins 8/10
+  Ding published AUC 61.86 iF_FPR 37.37
+  Ding repro@0.5 TPR 55.60 FPR 49.13
+celebdf matched AUC 87.32 TPR 95.54 FPR 58.62 iF_FPR 32.48 wins 4/10
+celebdf native AUC 87.32 TPR 90.82 FPR 40.70 iF_FPR 31.83 wins 4/10
+celebdf A1 AUC 87.32 TPR 64.80 FPR 10.19 iF_FPR 22.99 wins 7/10
+  Ding published AUC 76.75 iF_FPR 23.32
+  Ding repro@0.5 TPR 90.49 FPR 69.60
+dfd matched AUC 90.21 TPR 89.16 FPR 32.44 iF_FPR 29.05 wins 7/10
+dfd native AUC 90.21 TPR 83.84 FPR 18.34 iF_FPR 31.23 wins 7/10
+dfd A1 AUC 90.21 TPR 68.28 FPR 3.33 iF_FPR 10.28 wins 9/10
+  Ding published AUC 81.46 iF_FPR 27.32
+  Ding repro@0.5 TPR 83.57 FPR 59.02
+total wins {'matched': 18, 'native': 19, 'A1': 27}
+youtube_305 rows 30
+       xu_male xu_race  xu_group  cl_male cl_race     cl_src  cl_male_vid cl_race_vid  cl_age_v2
+22151        1   white         1        0   asian  aiface_v2            0       asian          0
+22153        1   white         1        1   white  aiface_v2            0       asian          1
+22156        1   white         1        1  others  aiface_v2            0       asian          1

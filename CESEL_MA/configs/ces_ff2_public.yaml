@@ -1,0 +1,34 @@
+# CES on the FROZEN FF2-Public split (release_ff2_public/FREEZE.md): RFW, flagged v1.0 rows, InSwapper and FFHQ Flickr
+# opt-outs removed; cell-valid rows only (data_ding_schema/fairforge2_public = release_ff2_public/manifests/ding with
+# on-disk paths, built by release_ff2_public/build_training_csvs.py).
+# INHERITS ces_ff2.yaml (recipe, family map, strat, ces.validation.per_family = Amendment 2, ...); only the data, pairs
+# and FF2 test paths are overridden here. SELECT (realval + fakeval) is the validation set; CAL
+# (fairforge2_public/cal.csv) is for thresholds only. ff2_test below = the public TEST (ding/test.csv).
+# Pairs: pairs_ff2public_train.csv = pairs_ff2full_manifest_train.csv restricted to fake AND source in public TRAIN.
+# steps_per_epoch stays 3732 (inherited: same step budget as FF2-full; public TRAIN is smaller).
+# Codex review F5 fix (Amendment 4): the guard below (cfes/public_guard.py) makes every config inheriting this file
+# (configs/ff2_public/*.yaml) REFUSE to start unless data.train.csv is the frozen public TRAIN and the start checkpoint
+# comes from a phase-1 run on that TRAIN (PUBLIC_P1: configs/ff2_public_p1.yaml -> runs_ff2public/clip_s<seed>_p1; set
+# model.init_backbone_ckpt=<that>/last.pt for B0) or from a guarded public run (PUBLIC_LINEAGE: arms from B0 best.pt).
+_base_: ces_ff2.yaml
+guard:
+  public_only: true
+  role: phase2
+  public_train_csv: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/data_ding_schema/fairforge2_public/train.csv
+  frozen_sha256: e93a5f3adabeb728154a909e4431e04a4ab92e3e57d60ba5f477a800d2ebbc36
+data:
+  train:
+    csv: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/data_ding_schema/fairforge2_public/train.csv
+    scheme: eight
+    meta: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/data_ding_schema/fairforge2_public/provenance.csv
+  val:
+    csv: [/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/data_ding_schema/fairforge2_public/realval.csv,
+          /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/data_ding_schema/fairforge2_public/fakeval.csv]
+    scheme: eight
+    meta: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/data_ding_schema/fairforge2_public/provenance.csv
+pairs:
+  csv: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CESEL/data/pairs_ff2public_train.csv
+eval:
+  test_sets:
+    ff2_test: {csv: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/data_ding_schema/fairforge2_public/test.csv, scheme: eight,
+               meta: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/data_ding_schema/fairforge2_public/provenance.csv}

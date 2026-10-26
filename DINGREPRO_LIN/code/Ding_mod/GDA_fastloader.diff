@@ -1,0 +1,39 @@
+--- GDA.py	2026-10-15 17:47:26.000000000 +0530
++++ GDA_fastloader.py	2026-10-26 18:09:36.000000000 +0530
+@@ -190,6 +190,27 @@
+ 
+     fairLoss = SamplesLoss(loss="sinkhorn", p=2, blur=args.sinkhorn_blur)
+ 
++    # DINGREPRO_LIN fast-loader (Amendment 4a, D2 option b; the ONLY change vs GDA.py, see FASTLOADER_NOTE.md):
++    # the released step called next(iter(selected_dataloader)), i.e. a NEW DataLoader iterator (8 fresh workers,
++    # 16 prefetched batches) for every one 32+32 group batch. Here each group keeps one persistent iterator that is
++    # re-created (re-shuffled) when its pass is exhausted. The short last batch of a pass is dropped, so every group
++    # batch stays 32 real + 32 fake as in the released step. Two global-RNG draws are made when an existing iterator is
++    # reused, the same as the replaced iter() call (worker base seed + RandomSampler seed), so the global torch RNG
++    # stream, and hence the combined-batch order of every later epoch, is unchanged.
++    group_iters = [None] * len(dataloaders)
++
++    def next_group_batch(g):
++        it = group_iters[g]
++        if it is not None:
++            batch = next(it, None)
++            if batch is not None and len(batch[0][1]) == min(args.batch_size, len(dataloaders[g].dataset)):
++                torch.empty((), dtype=torch.int64).random_()
++                torch.empty((), dtype=torch.int64).random_()
++                return batch
++        group_iters[g] = None
++        group_iters[g] = iter(dataloaders[g])
++        return next(group_iters[g])
++
+     for epoch in range(args.num_epochs):
+         cur_lr = af.get_lr(optimizer)
+         start_time = time.time()
+@@ -218,7 +239,7 @@
+             group_imgs, group_labels, group_attrs = [], [], []
+             group_idx = random.randint(0, 7)  # DINGREPRO_LIN: corrected - true 8 groups (Others included), matches Ding
+             selected_dataloader = dataloaders[group_idx]
+-            real_batch, fake_batch = next(iter(selected_dataloader))
++            real_batch, fake_batch = next_group_batch(group_idx)  # DINGREPRO_LIN fast-loader; was next(iter(selected_dataloader))
+             real_img_dist, real_label_dist, real_attr_dist = real_batch
+             fake_img_dist, fake_label_dist, fake_attr_dist = fake_batch
+             group_imgs = torch.cat([real_img_dist, fake_img_dist], dim=0)

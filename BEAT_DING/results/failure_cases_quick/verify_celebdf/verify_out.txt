@@ -1,0 +1,168 @@
+matched t -73.76414591500017 FPR 58.620689655172406 TPR 95.5374807650033 FNR 4.462519234996705 iF_FPR 32.47885464265551 | bd_eval 58.6207 95.5375 32.4789
+native t -65.96807621582647 FPR 40.69665674776825 TPR 90.81556386018906 FNR 9.184436139810941 iF_FPR 31.829293899698463 | bd_eval 40.6967 90.8156 31.8293
+A1 t -19.132783889770508 FPR 10.187292140731664 TPR 64.7966586062871 FNR 35.203341393712904 iF_FPR 22.994765640421583 | bd_eval 10.1873 64.7967 22.9948
+
+==== CLAIM 1 ====
+median real logit -70.15058898925781 real logit pct 10/25/50/75/90 [-87.59708862 -80.14682007 -70.15058899 -54.95940018 -17.82823486]
+FP 3349 / 5713 58.620689655172406
+real videos 192 >=1 FP 183 >=50% 126 100% 15
+top15 share 13.31740818154673 videos to reach 50% 62
+Celeb-real FPR 58.55576739752145 n 4196
+YouTube-real FPR 58.80026367831246 n 1517
+Ding FPR 69.59565902328025 Ding FNR 9.514178940426467
+A1 FPR 10.187292140731664 A1 FNR 35.203341393712904 native FPR 40.69665674776825
+
+==== CLAIM 2 ====
+matched iF_FPR 32.47885464265551 {'M-Black': np.float64(22.28), 'F-White': np.float64(4.37), 'F-Others': np.float64(5.82)}
+   M-Black FPR 36.33802816901409 n_real 710 n_real_vids 24 n_fake 1212 n_fake_vids 41
+   F-White FPR 62.993128022397556 n_real 3929 n_real_vids 132 n_fake 21503 n_fake_vids 722
+   F-Others FPR 64.44444444444444 n_real 90 n_real_vids 3 n_fake 30 n_fake_vids 1
+  drop top-FP video: 0_YouTube-real_00247 fp 30.0 iF-> 32.697291966312875 delta 0.21843732365736201
+  drop-one over top-10 FP videos max |delta| 0.21843732365736201  over top-20 2.8623985644748586  over all videos max |delta| 2.8623985644748586 argmax 0_Celeb-real_id59_0005
+  greedy steps to halve: 8
+     ('0_YouTube-real_00262', 'F-Others', 21, 30, np.float64(29.76))
+     ('0_Celeb-real_id60_0002', 'M-Black', 0, 30, np.float64(27.85))
+     ('0_Celeb-real_id60_0007', 'M-Black', 0, 30, np.float64(25.78))
+     ('0_Celeb-real_id61_0004', 'M-Black', 0, 30, np.float64(23.54))
+     ('0_Celeb-real_id61_0008', 'M-Black', 0, 30, np.float64(21.11))
+     ('0_Celeb-real_id59_0004', 'M-Black', 1, 30, np.float64(18.64))
+     ('0_Celeb-real_id59_0002', 'M-Black', 3, 30, np.float64(16.33))
+     ('0_Celeb-real_id60_0000', 'M-Black', 3, 30, np.float64(13.78))
+  null mean 20.195400520493173 p5,p95 [ 5.29726225 39.31575672] p 0.1435 p(+1) 0.14392803598200898
+real id 59 FPR 59.523809523809526 n 294 nvid 10
+real id 60 FPR 12.560386473429952 n 207 nvid 7
+real id 61 FPR 27.27272727272727 n 209 nvid 7
+
+==== CLAIM 3 ====
+A1 iF_FPR 22.994765640421583 {'M-Black': np.float64(1.88), 'F-White': np.float64(1.3), 'F-Others': np.float64(19.81)}
+   M-Black FPR 8.309859154929578 n_real 710 n_real_vids 24 n_fake 1212 n_fake_vids 41
+   F-White FPR 8.882667345380504 n_real 3929 n_real_vids 132 n_fake 21503 n_fake_vids 722
+   F-Others FPR 30.0 n_real 90 n_real_vids 3 n_fake 30 n_fake_vids 1
+  drop top-FP video: 0_YouTube-real_00247 fp 25.0 iF-> 22.608634858127363 delta -0.38613078229422015
+  drop-one over top-10 FP videos max |delta| 1.6291035369541191  over top-20 8.525904376053383  over all videos max |delta| 8.525904376053383 argmax 0_YouTube-real_00262
+  greedy steps to halve: 2
+     ('0_YouTube-real_00262', 'F-Others', 14, 30, np.float64(14.47))
+     ('0_YouTube-real_00255', 'F-Others', 9, 30, np.float64(6.03))
+  null mean 10.21816292957819 p5,p95 [ 2.81425903 20.74257179] p 0.0355 p(+1) 0.035982008995502246
+  remove ['0_YouTube-real_00262'] iF_FPR 14.4688612643682
+  remove ['0_YouTube-real_00262', '0_YouTube-real_00255'] iF_FPR 6.0293615827136815
+                       n cl_race  cl_male           src  A1_fp
+vid                                                           
+0_YouTube-real_00255  30   asian        0  YouTube-real      9
+0_YouTube-real_00262  30   asian        0  YouTube-real     14
+0_YouTube-real_00276  30   asian        0  YouTube-real      4
+F-Others fake videos <ArrowStringArray>
+['0_Celeb-synthesis_id49_id52_0005']
+Length: 1, dtype: str <ArrowStringArray>
+['white']
+Length: 1, dtype: str
+A1 FP videos touched 98 / 192 top20 share 49.140893470790374
+
+==== CLAIM 4 ====
+              n   fn   dfn   fnA  ...       dFNR      A1FNR  share_fakes   share_FN
+gname                             ...                                              
+F-Others     30    0     0    11  ...   0.000000  36.666667     0.131897   0.000000
+F-White   21503  719  1850  7346  ...   8.603451  34.162675    94.539459  70.837438
+M-Black    1212  296   314   650  ...  25.907591  53.630363     5.328644  29.162562
+
+[3 rows x 9 columns]
+       n         fn        dfn        fnA
+tgt                                      
+59   438  13.698630  27.853881  40.410959
+60   480  40.000000  30.625000  71.041667
+61   294  14.965986  15.306122  44.897959
+          n         fn        dfn
+pair                             
+59->60  204  11.274510  10.294118
+59->61  234  15.811966  43.162393
+60->59  240  30.000000  10.000000
+60->61  240  50.000000  51.250000
+61->59  147  11.564626  14.285714
+61->60  147  18.367347  16.326531
+M-Black fake target/source ids <ArrowStringArray>
+['59', '60', '61']
+Length: 3, dtype: str <ArrowStringArray>
+['60', '61', '59']
+Length: 3, dtype: str
+M-Black median real logit -79.46356201171875 median fake logit -28.597579956054688 AUC 76.50281225305629 Ding AUC 66.19334820806026
+F-White median real logit -68.86822509765625 median fake logit 19.94149398803711 AUC 88.37056800197648 Ding AUC 71.12878600980548
+
+==== CLAIM 5 ====
+BD matched FNR f1 35.47120418848168 271 / 764 FNR other 3.384741367544698 | FPR f1 22.916666666666664 44 / 192 FPR other 59.86234377830103 | f1 share of FN 26.699507389162562
+Ding FNR f1 63.87434554973822 488 / 764 FNR other 7.624766844092626 | FPR f1 25.520833333333332 49 / 192 FPR other 71.12841876471654 | f1 share of FN 22.55083179297597
+BD A1 FNR f1 89.92146596858639 687 / 764 FNR other 33.30148764842364 | FPR f1 0.0 0 / 192 FPR other 10.541568556420938 | f1 share of FN 8.579992506556763
+frames per video min/max 24 30 videos with frame1 956
+
+==== CLAIM 6 ====
+matched our FN 1015 Ding also misses 41.67487684729064 Ding base miss 9.514178940426467 ratio 4.3802914690001185
+matched our FP 3349 Ding also flags 76.76918483129292 Ding base FPR 69.59565902328023 ratio 1.1030743283228783
+matched only-ours FP 778 FN 592 | only-Ding FP 1405 FN 1741
+matched fake videos ours>=50% & Ding<50% 5
+A1 our FN 8007 Ding also misses 19.807668290246035 Ding base miss 9.514178940426467 ratio 2.0819104217266458
+A1 our FP 582 Ding also flags 90.54982817869416 Ding base FPR 69.59565902328023 ratio 1.3010844275273634
+A1 only-ours FP 55 FN 6421 | only-Ding FP 3449 FN 578
+A1 fake videos ours>=50% & Ding<50% 229
+
+==== CLAIM 7 ====
+real ours>=50 & Ding<50: 22 {'F-White': 16, 'M-Black': 3, 'M-White': 3}
+                          o         d        g
+vid                                           
+0_Celeb-real_id57_0001  0.9  0.066667  F-White
+0_Celeb-real_id55_0006  1.0  0.153846  F-White
+real other way (Ding>=50 & ours<50): 46
+fake ours-missed>=50 & Ding<50: 5
+                                         o         d tgt
+vid                                                     
+0_Celeb-synthesis_id52_id58_0002  0.566667  0.033333  52
+0_Celeb-synthesis_id60_id59_0001  0.500000  0.233333  60
+0_Celeb-synthesis_id60_id59_0004  0.833333  0.000000  60
+0_Celeb-synthesis_id60_id61_0002  0.766667  0.333333  60
+0_Celeb-synthesis_id60_id61_0004  1.000000  0.133333  60
+fake other way: 11
+total other way (real+fake): 57
+
+==== CLAIM 8 ====
+                          vid  frame      logit  dpred    gname
+176      0_YouTube-real_00247     71  72.252190   True  M-White
+178      0_YouTube-real_00247     91  72.095871   True  M-White
+25297  0_Celeb-real_id50_0007    251  67.822281   True  F-White
+159      0_YouTube-real_00247    191  67.691803   True  M-White
+170      0_YouTube-real_00247    281  64.711525   True  M-White
+149      0_YouTube-real_00247    101  64.657654   True  M-White
+153      0_YouTube-real_00247    131  63.536240   True  M-White
+24795  0_Celeb-real_id48_0007     31  63.251198   True  F-White
+154      0_YouTube-real_00247    141  61.163315   True  M-White
+156      0_YouTube-real_00247    161  59.701996   True  M-White
+167      0_YouTube-real_00247    251  59.339729   True  M-White
+25294  0_Celeb-real_id50_0007    221  58.686493   True  F-White
+                                    vid  frame       logit  dpred    gname
+23091  0_Celeb-synthesis_id59_id60_0001      1 -104.383614   True  M-Black
+23875  0_Celeb-synthesis_id60_id61_0004     71 -103.740601   True  M-Black
+23562  0_Celeb-synthesis_id60_id59_0002     21 -101.810028  False  M-Black
+23338  0_Celeb-synthesis_id59_id61_0004    101 -101.382484  False  M-Black
+6964   0_Celeb-synthesis_id51_id50_0008    241  -99.784180  False  F-White
+4924   0_Celeb-synthesis_id50_id51_0008      1  -99.498138  False  F-White
+23295  0_Celeb-synthesis_id59_id61_0001      1  -98.994370  False  M-Black
+23849  0_Celeb-synthesis_id60_id61_0004    111  -98.527390   True  M-Black
+23802  0_Celeb-synthesis_id60_id61_0002     21  -98.349091   True  M-Black
+23866  0_Celeb-synthesis_id60_id61_0004    251  -97.885132   True  M-Black
+23794  0_Celeb-synthesis_id60_id61_0002    151  -97.851349   True  M-Black
+23864  0_Celeb-synthesis_id60_id61_0004    231  -97.673805   True  M-Black
+FP sheet groups {'F-White': 18, 'M-White': 5, 'M-Black': 1} Ding flags 23
+FN sheet groups {'M-Black': 16, 'F-White': 8} Ding detects 7
+
+==== CLAIM 9 ====
+disagree (race asian->others mapped): 1
+                      xm     xr  cm      cr    o  nun
+vid                                                  
+0_YouTube-real_00263   1  white   0  others  1.0    1
+disagree (raw strings): 6
+xu_male {1: np.float64(48.17), 0: np.float64(63.03)}
+cl_male_vid {1: np.float64(47.24), 0: np.float64(63.3)}
+M-Black identities (real) <ArrowStringArray>
+['59', '60', '61']
+Length: 3, dtype: str fake tgt <ArrowStringArray>
+['59', '60', '61']
+Length: 3, dtype: str
+ita4 {0: np.float64(56.18), 1: np.float64(65.18), 2: np.float64(57.38), 3: np.float64(57.86)} n_real_vids {0: 89, 1: 41, 2: 24, 3: 37}
+ita4_local {0: np.float64(43.66), 1: np.float64(69.96), 2: np.float64(62.11), 3: np.float64(58.77)} n_real_vids {0: 48, 1: 47, 2: 48, 3: 48}

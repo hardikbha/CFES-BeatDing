@@ -1,0 +1,2 @@
+# inv arm on ff2_public (dataset: ../ces_ff2_public.yaml, arm: ../arms/inv.yaml)
+_base_: [../ces_ff2_public.yaml, ../arms/inv.yaml]

@@ -1,0 +1,54 @@
+# Beat-Ding on Ding et al.'s Xception (Tables 1-2; plan Amendments 4 / 4a / 4b; design agents/BEAT_DING/XCEPTION_DESIGN.md
+# 3.2 / 3.5). Network, input and optimiser exactly as Ding's official Xception code (DINGREPRO_LIN/code/Ding_mod):
+#  - network: Ding's Xception 'adjust_channel' (cfes/ding_xception.py = Ding's classes copied verbatim), backend xception_bd
+#    (cfes/model_xception_bd.py); s_cls = logit_fake - logit_real (sigmoid = Ding's softmax P(fake));
+#  - input: resnet_default_data_transforms = Resize((224,224)) (PIL bilinear) + ToTensor + Normalize(0.5, 0.5) -- the
+#    transform BOTH Xception training scripts (train_ori_model.py, GDA.py) import; NOT 256 px (the old CFES config's
+#    ffpp_ding_xception.yaml was wrong); test = Resize(224) + CenterCrop(224) = the same 224 x 224 on the square crops;
+#  - optimiser: SGD lr 1e-3, momentum 0.9, wd 5e-3, constant LR, fp32 (Ding phase 1 and GDA). grid 7 x 7 at 224 px.
+# init_from (D1 = X0) is set per seed by run/bd_run.sh: DINGREPRO_LIN/results/DING_base_s<seed>/49.pth (strict load).
+# weights (ImageNet substitute, as Ding's XceptionDetector loads it) are used only when init_from is null (X1; unused).
+_base_: ffpp_ding.yaml
+
+paths:
+  ding_repo: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/code/Ding_mod
+
+model:
+  backend: xception_bd
+  xception:
+    weights: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/xception-b5690688.pth
+    init_from: null
+    trainable: all
+    grid: 7                      # 224 / 32
+    freeze_frozen_bn: true
+    freeze_all_bn_stats: false
+    bn_recal: {batches: 0, per_class: 32, seed_offset: 999}   # step-0 BN re-estimation, off here (xception_bd_p2.yaml)
+    patch_zero_init: false
+  patch_head: {enabled: true, hidden: 128}
+  score_path: fused
+  topk: 4
+  alpha_init: 0.0
+
+data:
+  input_size: 224
+  eval_size: 224
+  resample: bilinear             # torchvision Resize on a PIL image = PIL bilinear (bit-identity: tests/bd_checks.py x2)
+  batch_size: 64                 # 32 real + 32 fake = Ding's GDA step batch
+  num_workers: 6
+
+loss:
+  orth: {weight: 0.0}
+
+optim:
+  name: sgd
+  lr: 1.0e-3
+  momentum: 0.9
+  weight_decay: 5.0e-3
+  epochs: 50
+  warmup_steps: 1                # factor 1 at step 0: no effect
+  schedule: constant
+  grad_clip: 5.0                 # Ding: none (deviation 12; guard carried over from the ResNet head-only arm)
+  amp: false                     # Ding trains in fp32
+
+eval:
+  batch_size: 256

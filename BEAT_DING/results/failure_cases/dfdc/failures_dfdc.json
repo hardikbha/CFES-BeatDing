@@ -1,0 +1,5202 @@
+{
+ "n_rows": 22857,
+ "n_unique_images": 21381,
+ "n_duplicated_paths": 1476,
+ "n_real_rows": 14699,
+ "n_fake_rows": 8158,
+ "n_real_videos": 473,
+ "n_fake_videos": 284,
+ "thresholds": {
+  "matched": -73.76414591500017,
+  "native": -65.96807621582647,
+  "A1": -19.132783889770508
+ },
+ "ops": {
+  "matched": {
+   "t": -73.76414591500017,
+   "FP": 4885,
+   "FPR%": 33.23,
+   "FN": 2246,
+   "FNR%": 27.53,
+   "TPR%": 72.47,
+   "FP_videos": 380,
+   "FN_videos": 197,
+   "iF_FPR_recomputed": 32.2283
+  },
+  "native": {
+   "t": -65.96807621582647,
+   "FP": 2857,
+   "FPR%": 19.44,
+   "FN": 3324,
+   "FNR%": 40.75,
+   "TPR%": 59.25,
+   "FP_videos": 321,
+   "FN_videos": 225,
+   "iF_FPR_recomputed": 27.7793
+  },
+  "A1": {
+   "t": -19.132783889770508,
+   "FP": 280,
+   "FPR%": 1.9,
+   "FN": 5942,
+   "FNR%": 72.84,
+   "TPR%": 27.16,
+   "FP_videos": 74,
+   "FN_videos": 261,
+   "iF_FPR_recomputed": 7.2512
+  },
+  "Ding repro 0.5": {
+   "t": null,
+   "FP": 7221,
+   "FPR%": 49.13,
+   "FN": 3622,
+   "FNR%": 44.4,
+   "TPR%": 55.6,
+   "FP_videos": 385,
+   "FN_videos": 229,
+   "iF_FPR_recomputed": 42.5565
+  }
+ },
+ "logit_percentiles_real_10_50_90": [
+  -97.21,
+  -80.86,
+  -57.65
+ ],
+ "logit_percentiles_fake_10_50_90": [
+  -85.94,
+  -59.45,
+  30.73
+ ],
+ "val_logit_percentiles_real_10_50_90": [
+  -108.15,
+  -92.22,
+  -67.54
+ ],
+ "ding": {
+  "FPR%": 49.13,
+  "TPR%": 55.6,
+  "FP": 7221,
+  "FN": 3622
+ },
+ "fp_breakdowns": {
+  "matched": {
+   "grp": [
+    {
+     "grp": "F-Asian",
+     "n": 628,
+     "errors": 197,
+     "videos": 20,
+     "rate%": 31.37,
+     "share_of_errors%": 4.03
+    },
+    {
+     "grp": "F-Black",
+     "n": 2100,
+     "errors": 955,
+     "videos": 68,
+     "rate%": 45.48,
+     "share_of_errors%": 19.55
+    },
+    {
+     "grp": "F-Others",
+     "n": 705,
+     "errors": 235,
+     "videos": 24,
+     "rate%": 33.33,
+     "share_of_errors%": 4.81
+    },
+    {
+     "grp": "F-White",
+     "n": 3366,
+     "errors": 1009,
+     "videos": 110,
+     "rate%": 29.98,
+     "share_of_errors%": 20.66
+    },
+    {
+     "grp": "M-Asian",
+     "n": 458,
+     "errors": 103,
+     "videos": 14,
+     "rate%": 22.49,
+     "share_of_errors%": 2.11
+    },
+    {
+     "grp": "M-Black",
+     "n": 2008,
+     "errors": 611,
+     "videos": 64,
+     "rate%": 30.43,
+     "share_of_errors%": 12.51
+    },
+    {
+     "grp": "M-Others",
+     "n": 1244,
+     "errors": 418,
+     "videos": 35,
+     "rate%": 33.6,
+     "share_of_errors%": 8.56
+    },
+    {
+     "grp": "M-White",
+     "n": 4190,
+     "errors": 1357,
+     "videos": 138,
+     "rate%": 32.39,
+     "share_of_errors%": 27.78
+    }
+   ],
+   "xu_gender": [
+    {
+     "xu_gender": "female",
+     "n": 6799,
+     "errors": 2396,
+     "videos": 222,
+     "rate%": 35.24,
+     "share_of_errors%": 49.05
+    },
+    {
+     "xu_gender": "male",
+     "n": 7900,
+     "errors": 2489,
+     "videos": 251,
+     "rate%": 31.51,
+     "share_of_errors%": 50.95
+    }
+   ],
+   "xu_race": [
+    {
+     "xu_race": "asian",
+     "n": 1086,
+     "errors": 300,
+     "videos": 34,
+     "rate%": 27.62,
+     "share_of_errors%": 6.14
+    },
+    {
+     "xu_race": "black",
+     "n": 4108,
+     "errors": 1566,
+     "videos": 132,
+     "rate%": 38.12,
+     "share_of_errors%": 32.06
+    },
+    {
+     "xu_race": "others",
+     "n": 1949,
+     "errors": 653,
+     "videos": 59,
+     "rate%": 33.5,
+     "share_of_errors%": 13.37
+    },
+    {
+     "xu_race": "white",
+     "n": 7556,
+     "errors": 2366,
+     "videos": 248,
+     "rate%": 31.31,
+     "share_of_errors%": 48.43
+    }
+   ],
+   "cl_gender": [
+    {
+     "cl_gender": "female",
+     "n": 8090,
+     "errors": 3039,
+     "videos": 308,
+     "rate%": 37.56,
+     "share_of_errors%": 62.21
+    },
+    {
+     "cl_gender": "male",
+     "n": 6609,
+     "errors": 1846,
+     "videos": 272,
+     "rate%": 27.93,
+     "share_of_errors%": 37.79
+    }
+   ],
+   "cl_race": [
+    {
+     "cl_race": "asian",
+     "n": 1569,
+     "errors": 562,
+     "videos": 106,
+     "rate%": 35.82,
+     "share_of_errors%": 11.5
+    },
+    {
+     "cl_race": "black",
+     "n": 4363,
+     "errors": 1715,
+     "videos": 190,
+     "rate%": 39.31,
+     "share_of_errors%": 35.11
+    },
+    {
+     "cl_race": "others",
+     "n": 1199,
+     "errors": 280,
+     "videos": 103,
+     "rate%": 23.35,
+     "share_of_errors%": 5.73
+    },
+    {
+     "cl_race": "white",
+     "n": 7568,
+     "errors": 2328,
+     "videos": 300,
+     "rate%": 30.76,
+     "share_of_errors%": 47.66
+    }
+   ],
+   "cl_race_vid": [
+    {
+     "cl_race_vid": "asian",
+     "n": 1525,
+     "errors": 540,
+     "videos": 47,
+     "rate%": 35.41,
+     "share_of_errors%": 11.05
+    },
+    {
+     "cl_race_vid": "black",
+     "n": 4363,
+     "errors": 1701,
+     "videos": 139,
+     "rate%": 38.99,
+     "share_of_errors%": 34.82
+    },
+    {
+     "cl_race_vid": "others",
+     "n": 1104,
+     "errors": 261,
+     "videos": 34,
+     "rate%": 23.64,
+     "share_of_errors%": 5.34
+    },
+    {
+     "cl_race_vid": "white",
+     "n": 7707,
+     "errors": 2383,
+     "videos": 253,
+     "rate%": 30.92,
+     "share_of_errors%": 48.78
+    }
+   ],
+   "ff_race7": [
+    {
+     "ff_race7": "Black",
+     "n": 4158,
+     "errors": 1669,
+     "videos": 186,
+     "rate%": 40.14,
+     "share_of_errors%": 34.17
+    },
+    {
+     "ff_race7": "East Asian",
+     "n": 916,
+     "errors": 202,
+     "videos": 87,
+     "rate%": 22.05,
+     "share_of_errors%": 4.14
+    },
+    {
+     "ff_race7": "Indian",
+     "n": 149,
+     "errors": 46,
+     "videos": 37,
+     "rate%": 30.87,
+     "share_of_errors%": 0.94
+    },
+    {
+     "ff_race7": "Latino_Hispanic",
+     "n": 763,
+     "errors": 260,
+     "videos": 110,
+     "rate%": 34.08,
+     "share_of_errors%": 5.32
+    },
+    {
+     "ff_race7": "Middle Eastern",
+     "n": 1587,
+     "errors": 423,
+     "videos": 177,
+     "rate%": 26.65,
+     "share_of_errors%": 8.66
+    },
+    {
+     "ff_race7": "Southeast Asian",
+     "n": 356,
+     "errors": 193,
+     "videos": 52,
+     "rate%": 54.21,
+     "share_of_errors%": 3.95
+    },
+    {
+     "ff_race7": "White",
+     "n": 6770,
+     "errors": 2092,
+     "videos": 310,
+     "rate%": 30.9,
+     "share_of_errors%": 42.82
+    }
+   ],
+   "ff_vid_sex": [
+    {
+     "ff_vid_sex": "Female",
+     "n": 8439,
+     "errors": 3128,
+     "videos": 270,
+     "rate%": 37.07,
+     "share_of_errors%": 64.03
+    },
+    {
+     "ff_vid_sex": "Male",
+     "n": 6260,
+     "errors": 1757,
+     "videos": 203,
+     "rate%": 28.07,
+     "share_of_errors%": 35.97
+    }
+   ],
+   "age_if": [
+    {
+     "age_if": "30-44",
+     "n": 6826,
+     "errors": 2486,
+     "videos": 215,
+     "rate%": 36.42,
+     "share_of_errors%": 50.89
+    },
+    {
+     "age_if": "45-59",
+     "n": 1452,
+     "errors": 520,
+     "videos": 49,
+     "rate%": 35.81,
+     "share_of_errors%": 10.64
+    },
+    {
+     "age_if": "60+",
+     "n": 437,
+     "errors": 215,
+     "videos": 15,
+     "rate%": 49.2,
+     "share_of_errors%": 4.4
+    },
+    {
+     "age_if": "<30",
+     "n": 5984,
+     "errors": 1664,
+     "videos": 194,
+     "rate%": 27.81,
+     "share_of_errors%": 34.06
+    }
+   ],
+   "age_aif": [
+    {
+     "age_aif": "25-44",
+     "n": 9474,
+     "errors": 3413,
+     "videos": 303,
+     "rate%": 36.02,
+     "share_of_errors%": 69.87
+    },
+    {
+     "age_aif": "45-64",
+     "n": 2656,
+     "errors": 737,
+     "videos": 85,
+     "rate%": 27.75,
+     "share_of_errors%": 15.09
+    },
+    {
+     "age_aif": "65+",
+     "n": 896,
+     "errors": 284,
+     "videos": 32,
+     "rate%": 31.7,
+     "share_of_errors%": 5.81
+    },
+    {
+     "age_aif": "<25",
+     "n": 1673,
+     "errors": 451,
+     "videos": 53,
+     "rate%": 26.96,
+     "share_of_errors%": 9.23
+    }
+   ],
+   "ff_vid_age4": [
+    {
+     "ff_vid_age4": "30-49",
+     "n": 6000,
+     "errors": 2187,
+     "videos": 190,
+     "rate%": 36.45,
+     "share_of_errors%": 44.77
+    },
+    {
+     "ff_vid_age4": "50-69",
+     "n": 1098,
+     "errors": 240,
+     "videos": 39,
+     "rate%": 21.86,
+     "share_of_errors%": 4.91
+    },
+    {
+     "ff_vid_age4": "70+",
+     "n": 30,
+     "errors": 5,
+     "videos": 1,
+     "rate%": 16.67,
+     "share_of_errors%": 0.1
+    },
+    {
+     "ff_vid_age4": "<30",
+     "n": 7571,
+     "errors": 2453,
+     "videos": 243,
+     "rate%": 32.4,
+     "share_of_errors%": 50.21
+    }
+   ],
+   "ita4_ffpp": [
+    {
+     "ita4_ffpp": "Q1 darkest",
+     "n": 10645,
+     "errors": 3869,
+     "videos": 341,
+     "rate%": 36.35,
+     "share_of_errors%": 79.2
+    },
+    {
+     "ita4_ffpp": "Q2",
+     "n": 1043,
+     "errors": 256,
+     "videos": 35,
+     "rate%": 24.54,
+     "share_of_errors%": 5.24
+    },
+    {
+     "ita4_ffpp": "Q3",
+     "n": 744,
+     "errors": 193,
+     "videos": 24,
+     "rate%": 25.94,
+     "share_of_errors%": 3.95
+    },
+    {
+     "ita4_ffpp": "Q4 lightest",
+     "n": 1553,
+     "errors": 370,
+     "videos": 50,
+     "rate%": 23.82,
+     "share_of_errors%": 7.57
+    },
+    {
+     "ita4_ffpp": "n/a",
+     "n": 714,
+     "errors": 197,
+     "videos": 23,
+     "rate%": 27.59,
+     "share_of_errors%": 4.03
+    }
+   ],
+   "ita4_loc": [
+    {
+     "ita4_loc": "Q1 darkest",
+     "n": 3465,
+     "errors": 1198,
+     "videos": 113,
+     "rate%": 34.57,
+     "share_of_errors%": 24.52
+    },
+    {
+     "ita4_loc": "Q2",
+     "n": 3397,
+     "errors": 1279,
+     "videos": 112,
+     "rate%": 37.65,
+     "share_of_errors%": 26.18
+    },
+    {
+     "ita4_loc": "Q3",
+     "n": 3673,
+     "errors": 1339,
+     "videos": 112,
+     "rate%": 36.46,
+     "share_of_errors%": 27.41
+    },
+    {
+     "ita4_loc": "Q4 lightest",
+     "n": 3450,
+     "errors": 872,
+     "videos": 113,
+     "rate%": 25.28,
+     "share_of_errors%": 17.85
+    },
+    {
+     "ita4_loc": "n/a",
+     "n": 714,
+     "errors": 197,
+     "videos": 23,
+     "rate%": 27.59,
+     "share_of_errors%": 4.03
+    }
+   ],
+   "mst3": [
+    {
+     "mst3": "MST 1-3",
+     "n": 30,
+     "errors": 1,
+     "videos": 1,
+     "rate%": 3.33,
+     "share_of_errors%": 0.02
+    },
+    {
+     "mst3": "MST 4-6",
+     "n": 4212,
+     "errors": 1038,
+     "videos": 136,
+     "rate%": 24.64,
+     "share_of_errors%": 21.25
+    },
+    {
+     "mst3": "MST 7-10",
+     "n": 10457,
+     "errors": 3846,
+     "videos": 336,
+     "rate%": 36.78,
+     "share_of_errors%": 78.73
+    }
+   ],
+   "gray_s": [
+    {
+     "gray_s": "colour",
+     "n": 14553,
+     "errors": 4801,
+     "videos": 470,
+     "rate%": 32.99,
+     "share_of_errors%": 98.28
+    },
+    {
+     "gray_s": "grayscale",
+     "n": 146,
+     "errors": 84,
+     "videos": 14,
+     "rate%": 57.53,
+     "share_of_errors%": 1.72
+    }
+   ],
+   "det_q": [
+    {
+     "det_q": "det Q1 (lowest)",
+     "n": 3838,
+     "errors": 1455,
+     "videos": 338,
+     "rate%": 37.91,
+     "share_of_errors%": 29.79
+    },
+    {
+     "det_q": "det Q2",
+     "n": 3718,
+     "errors": 1193,
+     "videos": 410,
+     "rate%": 32.09,
+     "share_of_errors%": 24.42
+    },
+    {
+     "det_q": "det Q3",
+     "n": 3747,
+     "errors": 1123,
+     "videos": 425,
+     "rate%": 29.97,
+     "share_of_errors%": 22.99
+    },
+    {
+     "det_q": "det Q4",
+     "n": 3382,
+     "errors": 1100,
+     "videos": 336,
+     "rate%": 32.53,
+     "share_of_errors%": 22.52
+    },
+    {
+     "det_q": "n/a",
+     "n": 14,
+     "errors": 14,
+     "videos": 5,
+     "rate%": 100.0,
+     "share_of_errors%": 0.29
+    }
+   ],
+   "lum_mean_q": [
+    {
+     "lum_mean_q": "brightness Q1 (low)",
+     "n": 3526,
+     "errors": 1513,
+     "videos": 174,
+     "rate%": 42.91,
+     "share_of_errors%": 30.97
+    },
+    {
+     "lum_mean_q": "brightness Q2",
+     "n": 3902,
+     "errors": 1352,
+     "videos": 227,
+     "rate%": 34.65,
+     "share_of_errors%": 27.68
+    },
+    {
+     "lum_mean_q": "brightness Q3",
+     "n": 3572,
+     "errors": 1035,
+     "videos": 224,
+     "rate%": 28.98,
+     "share_of_errors%": 21.19
+    },
+    {
+     "lum_mean_q": "brightness Q4 (high)",
+     "n": 3699,
+     "errors": 985,
+     "videos": 204,
+     "rate%": 26.63,
+     "share_of_errors%": 20.16
+    }
+   ],
+   "lum_std_q": [
+    {
+     "lum_std_q": "contrast Q1 (low)",
+     "n": 3348,
+     "errors": 1449,
+     "videos": 201,
+     "rate%": 43.28,
+     "share_of_errors%": 29.66
+    },
+    {
+     "lum_std_q": "contrast Q2",
+     "n": 3494,
+     "errors": 1141,
+     "videos": 247,
+     "rate%": 32.66,
+     "share_of_errors%": 23.36
+    },
+    {
+     "lum_std_q": "contrast Q3",
+     "n": 3756,
+     "errors": 1315,
+     "videos": 259,
+     "rate%": 35.01,
+     "share_of_errors%": 26.92
+    },
+    {
+     "lum_std_q": "contrast Q4 (high)",
+     "n": 4101,
+     "errors": 980,
+     "videos": 221,
+     "rate%": 23.9,
+     "share_of_errors%": 20.06
+    }
+   ],
+   "sharp_lapvar_q": [
+    {
+     "sharp_lapvar_q": "sharpness Q1 (low)",
+     "n": 3164,
+     "errors": 1498,
+     "videos": 173,
+     "rate%": 47.35,
+     "share_of_errors%": 30.67
+    },
+    {
+     "sharp_lapvar_q": "sharpness Q2",
+     "n": 3559,
+     "errors": 1018,
+     "videos": 228,
+     "rate%": 28.6,
+     "share_of_errors%": 20.84
+    },
+    {
+     "sharp_lapvar_q": "sharpness Q3",
+     "n": 3652,
+     "errors": 849,
+     "videos": 258,
+     "rate%": 23.25,
+     "share_of_errors%": 17.38
+    },
+    {
+     "sharp_lapvar_q": "sharpness Q4 (high)",
+     "n": 4324,
+     "errors": 1520,
+     "videos": 222,
+     "rate%": 35.15,
+     "share_of_errors%": 31.12
+    }
+   ],
+   "sat_mean_q": [
+    {
+     "sat_mean_q": "saturation Q1 (low)",
+     "n": 3594,
+     "errors": 1114,
+     "videos": 184,
+     "rate%": 31.0,
+     "share_of_errors%": 22.8
+    },
+    {
+     "sat_mean_q": "saturation Q2",
+     "n": 3586,
+     "errors": 1117,
+     "videos": 223,
+     "rate%": 31.15,
+     "share_of_errors%": 22.87
+    },
+    {
+     "sat_mean_q": "saturation Q3",
+     "n": 3496,
+     "errors": 1174,
+     "videos": 226,
+     "rate%": 33.58,
+     "share_of_errors%": 24.03
+    },
+    {
+     "sat_mean_q": "saturation Q4 (high)",
+     "n": 4023,
+     "errors": 1480,
+     "videos": 202,
+     "rate%": 36.79,
+     "share_of_errors%": 30.3
+    }
+   ]
+  },
+  "native": {
+   "grp": [
+    {
+     "grp": "F-Asian",
+     "n": 628,
+     "errors": 103,
+     "videos": 20,
+     "rate%": 16.4,
+     "share_of_errors%": 3.61
+    },
+    {
+     "grp": "F-Black",
+     "n": 2100,
+     "errors": 594,
+     "videos": 68,
+     "rate%": 28.29,
+     "share_of_errors%": 20.79
+    },
+    {
+     "grp": "F-Others",
+     "n": 705,
+     "errors": 108,
+     "videos": 24,
+     "rate%": 15.32,
+     "share_of_errors%": 3.78
+    },
+    {
+     "grp": "F-White",
+     "n": 3366,
+     "errors": 565,
+     "videos": 110,
+     "rate%": 16.79,
+     "share_of_errors%": 19.78
+    },
+    {
+     "grp": "M-Asian",
+     "n": 458,
+     "errors": 66,
+     "videos": 14,
+     "rate%": 14.41,
+     "share_of_errors%": 2.31
+    },
+    {
+     "grp": "M-Black",
+     "n": 2008,
+     "errors": 361,
+     "videos": 64,
+     "rate%": 17.98,
+     "share_of_errors%": 12.64
+    },
+    {
+     "grp": "M-Others",
+     "n": 1244,
+     "errors": 268,
+     "videos": 35,
+     "rate%": 21.54,
+     "share_of_errors%": 9.38
+    },
+    {
+     "grp": "M-White",
+     "n": 4190,
+     "errors": 792,
+     "videos": 138,
+     "rate%": 18.9,
+     "share_of_errors%": 27.72
+    }
+   ],
+   "xu_gender": [
+    {
+     "xu_gender": "female",
+     "n": 6799,
+     "errors": 1370,
+     "videos": 222,
+     "rate%": 20.15,
+     "share_of_errors%": 47.95
+    },
+    {
+     "xu_gender": "male",
+     "n": 7900,
+     "errors": 1487,
+     "videos": 251,
+     "rate%": 18.82,
+     "share_of_errors%": 52.05
+    }
+   ],
+   "xu_race": [
+    {
+     "xu_race": "asian",
+     "n": 1086,
+     "errors": 169,
+     "videos": 34,
+     "rate%": 15.56,
+     "share_of_errors%": 5.92
+    },
+    {
+     "xu_race": "black",
+     "n": 4108,
+     "errors": 955,
+     "videos": 132,
+     "rate%": 23.25,
+     "share_of_errors%": 33.43
+    },
+    {
+     "xu_race": "others",
+     "n": 1949,
+     "errors": 376,
+     "videos": 59,
+     "rate%": 19.29,
+     "share_of_errors%": 13.16
+    },
+    {
+     "xu_race": "white",
+     "n": 7556,
+     "errors": 1357,
+     "videos": 248,
+     "rate%": 17.96,
+     "share_of_errors%": 47.5
+    }
+   ],
+   "cl_gender": [
+    {
+     "cl_gender": "female",
+     "n": 8090,
+     "errors": 1809,
+     "videos": 308,
+     "rate%": 22.36,
+     "share_of_errors%": 63.32
+    },
+    {
+     "cl_gender": "male",
+     "n": 6609,
+     "errors": 1048,
+     "videos": 272,
+     "rate%": 15.86,
+     "share_of_errors%": 36.68
+    }
+   ],
+   "cl_race": [
+    {
+     "cl_race": "asian",
+     "n": 1569,
+     "errors": 306,
+     "videos": 106,
+     "rate%": 19.5,
+     "share_of_errors%": 10.71
+    },
+    {
+     "cl_race": "black",
+     "n": 4363,
+     "errors": 1047,
+     "videos": 190,
+     "rate%": 24.0,
+     "share_of_errors%": 36.65
+    },
+    {
+     "cl_race": "others",
+     "n": 1199,
+     "errors": 177,
+     "videos": 103,
+     "rate%": 14.76,
+     "share_of_errors%": 6.2
+    },
+    {
+     "cl_race": "white",
+     "n": 7568,
+     "errors": 1327,
+     "videos": 300,
+     "rate%": 17.53,
+     "share_of_errors%": 46.45
+    }
+   ],
+   "cl_race_vid": [
+    {
+     "cl_race_vid": "asian",
+     "n": 1525,
+     "errors": 287,
+     "videos": 47,
+     "rate%": 18.82,
+     "share_of_errors%": 10.05
+    },
+    {
+     "cl_race_vid": "black",
+     "n": 4363,
+     "errors": 1037,
+     "videos": 139,
+     "rate%": 23.77,
+     "share_of_errors%": 36.3
+    },
+    {
+     "cl_race_vid": "others",
+     "n": 1104,
+     "errors": 166,
+     "videos": 34,
+     "rate%": 15.04,
+     "share_of_errors%": 5.81
+    },
+    {
+     "cl_race_vid": "white",
+     "n": 7707,
+     "errors": 1367,
+     "videos": 253,
+     "rate%": 17.74,
+     "share_of_errors%": 47.85
+    }
+   ],
+   "ff_race7": [
+    {
+     "ff_race7": "Black",
+     "n": 4158,
+     "errors": 1032,
+     "videos": 186,
+     "rate%": 24.82,
+     "share_of_errors%": 36.12
+    },
+    {
+     "ff_race7": "East Asian",
+     "n": 916,
+     "errors": 85,
+     "videos": 87,
+     "rate%": 9.28,
+     "share_of_errors%": 2.98
+    },
+    {
+     "ff_race7": "Indian",
+     "n": 149,
+     "errors": 26,
+     "videos": 37,
+     "rate%": 17.45,
+     "share_of_errors%": 0.91
+    },
+    {
+     "ff_race7": "Latino_Hispanic",
+     "n": 763,
+     "errors": 144,
+     "videos": 110,
+     "rate%": 18.87,
+     "share_of_errors%": 5.04
+    },
+    {
+     "ff_race7": "Middle Eastern",
+     "n": 1587,
+     "errors": 247,
+     "videos": 177,
+     "rate%": 15.56,
+     "share_of_errors%": 8.65
+    },
+    {
+     "ff_race7": "Southeast Asian",
+     "n": 356,
+     "errors": 137,
+     "videos": 52,
+     "rate%": 38.48,
+     "share_of_errors%": 4.8
+    },
+    {
+     "ff_race7": "White",
+     "n": 6770,
+     "errors": 1186,
+     "videos": 310,
+     "rate%": 17.52,
+     "share_of_errors%": 41.51
+    }
+   ],
+   "ff_vid_sex": [
+    {
+     "ff_vid_sex": "Female",
+     "n": 8439,
+     "errors": 1838,
+     "videos": 270,
+     "rate%": 21.78,
+     "share_of_errors%": 64.33
+    },
+    {
+     "ff_vid_sex": "Male",
+     "n": 6260,
+     "errors": 1019,
+     "videos": 203,
+     "rate%": 16.28,
+     "share_of_errors%": 35.67
+    }
+   ],
+   "age_if": [
+    {
+     "age_if": "30-44",
+     "n": 6826,
+     "errors": 1468,
+     "videos": 215,
+     "rate%": 21.51,
+     "share_of_errors%": 51.38
+    },
+    {
+     "age_if": "45-59",
+     "n": 1452,
+     "errors": 328,
+     "videos": 49,
+     "rate%": 22.59,
+     "share_of_errors%": 11.48
+    },
+    {
+     "age_if": "60+",
+     "n": 437,
+     "errors": 142,
+     "videos": 15,
+     "rate%": 32.49,
+     "share_of_errors%": 4.97
+    },
+    {
+     "age_if": "<30",
+     "n": 5984,
+     "errors": 919,
+     "videos": 194,
+     "rate%": 15.36,
+     "share_of_errors%": 32.17
+    }
+   ],
+   "age_aif": [
+    {
+     "age_aif": "25-44",
+     "n": 9474,
+     "errors": 1960,
+     "videos": 303,
+     "rate%": 20.69,
+     "share_of_errors%": 68.6
+    },
+    {
+     "age_aif": "45-64",
+     "n": 2656,
+     "errors": 429,
+     "videos": 85,
+     "rate%": 16.15,
+     "share_of_errors%": 15.02
+    },
+    {
+     "age_aif": "65+",
+     "n": 896,
+     "errors": 177,
+     "videos": 32,
+     "rate%": 19.75,
+     "share_of_errors%": 6.2
+    },
+    {
+     "age_aif": "<25",
+     "n": 1673,
+     "errors": 291,
+     "videos": 53,
+     "rate%": 17.39,
+     "share_of_errors%": 10.19
+    }
+   ],
+   "ff_vid_age4": [
+    {
+     "ff_vid_age4": "30-49",
+     "n": 6000,
+     "errors": 1251,
+     "videos": 190,
+     "rate%": 20.85,
+     "share_of_errors%": 43.79
+    },
+    {
+     "ff_vid_age4": "50-69",
+     "n": 1098,
+     "errors": 154,
+     "videos": 39,
+     "rate%": 14.03,
+     "share_of_errors%": 5.39
+    },
+    {
+     "ff_vid_age4": "70+",
+     "n": 30,
+     "errors": 4,
+     "videos": 1,
+     "rate%": 13.33,
+     "share_of_errors%": 0.14
+    },
+    {
+     "ff_vid_age4": "<30",
+     "n": 7571,
+     "errors": 1448,
+     "videos": 243,
+     "rate%": 19.13,
+     "share_of_errors%": 50.68
+    }
+   ],
+   "ita4_ffpp": [
+    {
+     "ita4_ffpp": "Q1 darkest",
+     "n": 10645,
+     "errors": 2268,
+     "videos": 341,
+     "rate%": 21.31,
+     "share_of_errors%": 79.38
+    },
+    {
+     "ita4_ffpp": "Q2",
+     "n": 1043,
+     "errors": 157,
+     "videos": 35,
+     "rate%": 15.05,
+     "share_of_errors%": 5.5
+    },
+    {
+     "ita4_ffpp": "Q3",
+     "n": 744,
+     "errors": 101,
+     "videos": 24,
+     "rate%": 13.58,
+     "share_of_errors%": 3.54
+    },
+    {
+     "ita4_ffpp": "Q4 lightest",
+     "n": 1553,
+     "errors": 215,
+     "videos": 50,
+     "rate%": 13.84,
+     "share_of_errors%": 7.53
+    },
+    {
+     "ita4_ffpp": "n/a",
+     "n": 714,
+     "errors": 116,
+     "videos": 23,
+     "rate%": 16.25,
+     "share_of_errors%": 4.06
+    }
+   ],
+   "ita4_loc": [
+    {
+     "ita4_loc": "Q1 darkest",
+     "n": 3465,
+     "errors": 681,
+     "videos": 113,
+     "rate%": 19.65,
+     "share_of_errors%": 23.84
+    },
+    {
+     "ita4_loc": "Q2",
+     "n": 3397,
+     "errors": 820,
+     "videos": 112,
+     "rate%": 24.14,
+     "share_of_errors%": 28.7
+    },
+    {
+     "ita4_loc": "Q3",
+     "n": 3673,
+     "errors": 726,
+     "videos": 112,
+     "rate%": 19.77,
+     "share_of_errors%": 25.41
+    },
+    {
+     "ita4_loc": "Q4 lightest",
+     "n": 3450,
+     "errors": 514,
+     "videos": 113,
+     "rate%": 14.9,
+     "share_of_errors%": 17.99
+    },
+    {
+     "ita4_loc": "n/a",
+     "n": 714,
+     "errors": 116,
+     "videos": 23,
+     "rate%": 16.25,
+     "share_of_errors%": 4.06
+    }
+   ],
+   "mst3": [
+    {
+     "mst3": "MST 1-3",
+     "n": 30,
+     "errors": 1,
+     "videos": 1,
+     "rate%": 3.33,
+     "share_of_errors%": 0.04
+    },
+    {
+     "mst3": "MST 4-6",
+     "n": 4212,
+     "errors": 620,
+     "videos": 136,
+     "rate%": 14.72,
+     "share_of_errors%": 21.7
+    },
+    {
+     "mst3": "MST 7-10",
+     "n": 10457,
+     "errors": 2236,
+     "videos": 336,
+     "rate%": 21.38,
+     "share_of_errors%": 78.26
+    }
+   ],
+   "gray_s": [
+    {
+     "gray_s": "colour",
+     "n": 14553,
+     "errors": 2817,
+     "videos": 470,
+     "rate%": 19.36,
+     "share_of_errors%": 98.6
+    },
+    {
+     "gray_s": "grayscale",
+     "n": 146,
+     "errors": 40,
+     "videos": 14,
+     "rate%": 27.4,
+     "share_of_errors%": 1.4
+    }
+   ],
+   "det_q": [
+    {
+     "det_q": "det Q1 (lowest)",
+     "n": 3838,
+     "errors": 846,
+     "videos": 338,
+     "rate%": 22.04,
+     "share_of_errors%": 29.61
+    },
+    {
+     "det_q": "det Q2",
+     "n": 3718,
+     "errors": 666,
+     "videos": 410,
+     "rate%": 17.91,
+     "share_of_errors%": 23.31
+    },
+    {
+     "det_q": "det Q3",
+     "n": 3747,
+     "errors": 634,
+     "videos": 425,
+     "rate%": 16.92,
+     "share_of_errors%": 22.19
+    },
+    {
+     "det_q": "det Q4",
+     "n": 3382,
+     "errors": 701,
+     "videos": 336,
+     "rate%": 20.73,
+     "share_of_errors%": 24.54
+    },
+    {
+     "det_q": "n/a",
+     "n": 14,
+     "errors": 10,
+     "videos": 5,
+     "rate%": 71.43,
+     "share_of_errors%": 0.35
+    }
+   ],
+   "lum_mean_q": [
+    {
+     "lum_mean_q": "brightness Q1 (low)",
+     "n": 3526,
+     "errors": 959,
+     "videos": 174,
+     "rate%": 27.2,
+     "share_of_errors%": 33.57
+    },
+    {
+     "lum_mean_q": "brightness Q2",
+     "n": 3902,
+     "errors": 768,
+     "videos": 227,
+     "rate%": 19.68,
+     "share_of_errors%": 26.88
+    },
+    {
+     "lum_mean_q": "brightness Q3",
+     "n": 3572,
+     "errors": 569,
+     "videos": 224,
+     "rate%": 15.93,
+     "share_of_errors%": 19.92
+    },
+    {
+     "lum_mean_q": "brightness Q4 (high)",
+     "n": 3699,
+     "errors": 561,
+     "videos": 204,
+     "rate%": 15.17,
+     "share_of_errors%": 19.64
+    }
+   ],
+   "lum_std_q": [
+    {
+     "lum_std_q": "contrast Q1 (low)",
+     "n": 3348,
+     "errors": 906,
+     "videos": 201,
+     "rate%": 27.06,
+     "share_of_errors%": 31.71
+    },
+    {
+     "lum_std_q": "contrast Q2",
+     "n": 3494,
+     "errors": 646,
+     "videos": 247,
+     "rate%": 18.49,
+     "share_of_errors%": 22.61
+    },
+    {
+     "lum_std_q": "contrast Q3",
+     "n": 3756,
+     "errors": 798,
+     "videos": 259,
+     "rate%": 21.25,
+     "share_of_errors%": 27.93
+    },
+    {
+     "lum_std_q": "contrast Q4 (high)",
+     "n": 4101,
+     "errors": 507,
+     "videos": 221,
+     "rate%": 12.36,
+     "share_of_errors%": 17.75
+    }
+   ],
+   "sharp_lapvar_q": [
+    {
+     "sharp_lapvar_q": "sharpness Q1 (low)",
+     "n": 3164,
+     "errors": 896,
+     "videos": 173,
+     "rate%": 28.32,
+     "share_of_errors%": 31.36
+    },
+    {
+     "sharp_lapvar_q": "sharpness Q2",
+     "n": 3559,
+     "errors": 555,
+     "videos": 228,
+     "rate%": 15.59,
+     "share_of_errors%": 19.43
+    },
+    {
+     "sharp_lapvar_q": "sharpness Q3",
+     "n": 3652,
+     "errors": 484,
+     "videos": 258,
+     "rate%": 13.25,
+     "share_of_errors%": 16.94
+    },
+    {
+     "sharp_lapvar_q": "sharpness Q4 (high)",
+     "n": 4324,
+     "errors": 922,
+     "videos": 222,
+     "rate%": 21.32,
+     "share_of_errors%": 32.27
+    }
+   ],
+   "sat_mean_q": [
+    {
+     "sat_mean_q": "saturation Q1 (low)",
+     "n": 3594,
+     "errors": 620,
+     "videos": 184,
+     "rate%": 17.25,
+     "share_of_errors%": 21.7
+    },
+    {
+     "sat_mean_q": "saturation Q2",
+     "n": 3586,
+     "errors": 615,
+     "videos": 223,
+     "rate%": 17.15,
+     "share_of_errors%": 21.53
+    },
+    {
+     "sat_mean_q": "saturation Q3",
+     "n": 3496,
+     "errors": 660,
+     "videos": 226,
+     "rate%": 18.88,
+     "share_of_errors%": 23.1
+    },
+    {
+     "sat_mean_q": "saturation Q4 (high)",
+     "n": 4023,
+     "errors": 962,
+     "videos": 202,
+     "rate%": 23.91,
+     "share_of_errors%": 33.67
+    }
+   ]
+  },
+  "A1": {
+   "grp": [
+    {
+     "grp": "F-Asian",
+     "n": 628,
+     "errors": 6,
+     "videos": 20,
+     "rate%": 0.96,
+     "share_of_errors%": 2.14
+    },
+    {
+     "grp": "F-Black",
+     "n": 2100,
+     "errors": 87,
+     "videos": 68,
+     "rate%": 4.14,
+     "share_of_errors%": 31.07
+    },
+    {
+     "grp": "F-Others",
+     "n": 705,
+     "errors": 16,
+     "videos": 24,
+     "rate%": 2.27,
+     "share_of_errors%": 5.71
+    },
+    {
+     "grp": "F-White",
+     "n": 3366,
+     "errors": 51,
+     "videos": 110,
+     "rate%": 1.52,
+     "share_of_errors%": 18.21
+    },
+    {
+     "grp": "M-Asian",
+     "n": 458,
+     "errors": 3,
+     "videos": 14,
+     "rate%": 0.66,
+     "share_of_errors%": 1.07
+    },
+    {
+     "grp": "M-Black",
+     "n": 2008,
+     "errors": 15,
+     "videos": 64,
+     "rate%": 0.75,
+     "share_of_errors%": 5.36
+    },
+    {
+     "grp": "M-Others",
+     "n": 1244,
+     "errors": 32,
+     "videos": 35,
+     "rate%": 2.57,
+     "share_of_errors%": 11.43
+    },
+    {
+     "grp": "M-White",
+     "n": 4190,
+     "errors": 70,
+     "videos": 138,
+     "rate%": 1.67,
+     "share_of_errors%": 25.0
+    }
+   ],
+   "xu_gender": [
+    {
+     "xu_gender": "female",
+     "n": 6799,
+     "errors": 160,
+     "videos": 222,
+     "rate%": 2.35,
+     "share_of_errors%": 57.14
+    },
+    {
+     "xu_gender": "male",
+     "n": 7900,
+     "errors": 120,
+     "videos": 251,
+     "rate%": 1.52,
+     "share_of_errors%": 42.86
+    }
+   ],
+   "xu_race": [
+    {
+     "xu_race": "asian",
+     "n": 1086,
+     "errors": 9,
+     "videos": 34,
+     "rate%": 0.83,
+     "share_of_errors%": 3.21
+    },
+    {
+     "xu_race": "black",
+     "n": 4108,
+     "errors": 102,
+     "videos": 132,
+     "rate%": 2.48,
+     "share_of_errors%": 36.43
+    },
+    {
+     "xu_race": "others",
+     "n": 1949,
+     "errors": 48,
+     "videos": 59,
+     "rate%": 2.46,
+     "share_of_errors%": 17.14
+    },
+    {
+     "xu_race": "white",
+     "n": 7556,
+     "errors": 121,
+     "videos": 248,
+     "rate%": 1.6,
+     "share_of_errors%": 43.21
+    }
+   ],
+   "cl_gender": [
+    {
+     "cl_gender": "female",
+     "n": 8090,
+     "errors": 173,
+     "videos": 308,
+     "rate%": 2.14,
+     "share_of_errors%": 61.79
+    },
+    {
+     "cl_gender": "male",
+     "n": 6609,
+     "errors": 107,
+     "videos": 272,
+     "rate%": 1.62,
+     "share_of_errors%": 38.21
+    }
+   ],
+   "cl_race": [
+    {
+     "cl_race": "asian",
+     "n": 1569,
+     "errors": 19,
+     "videos": 106,
+     "rate%": 1.21,
+     "share_of_errors%": 6.79
+    },
+    {
+     "cl_race": "black",
+     "n": 4363,
+     "errors": 103,
+     "videos": 190,
+     "rate%": 2.36,
+     "share_of_errors%": 36.79
+    },
+    {
+     "cl_race": "others",
+     "n": 1199,
+     "errors": 35,
+     "videos": 103,
+     "rate%": 2.92,
+     "share_of_errors%": 12.5
+    },
+    {
+     "cl_race": "white",
+     "n": 7568,
+     "errors": 123,
+     "videos": 300,
+     "rate%": 1.63,
+     "share_of_errors%": 43.93
+    }
+   ],
+   "cl_race_vid": [
+    {
+     "cl_race_vid": "asian",
+     "n": 1525,
+     "errors": 10,
+     "videos": 47,
+     "rate%": 0.66,
+     "share_of_errors%": 3.57
+    },
+    {
+     "cl_race_vid": "black",
+     "n": 4363,
+     "errors": 103,
+     "videos": 139,
+     "rate%": 2.36,
+     "share_of_errors%": 36.79
+    },
+    {
+     "cl_race_vid": "others",
+     "n": 1104,
+     "errors": 42,
+     "videos": 34,
+     "rate%": 3.8,
+     "share_of_errors%": 15.0
+    },
+    {
+     "cl_race_vid": "white",
+     "n": 7707,
+     "errors": 125,
+     "videos": 253,
+     "rate%": 1.62,
+     "share_of_errors%": 44.64
+    }
+   ],
+   "ff_race7": [
+    {
+     "ff_race7": "Black",
+     "n": 4158,
+     "errors": 102,
+     "videos": 186,
+     "rate%": 2.45,
+     "share_of_errors%": 36.43
+    },
+    {
+     "ff_race7": "East Asian",
+     "n": 916,
+     "errors": 10,
+     "videos": 87,
+     "rate%": 1.09,
+     "share_of_errors%": 3.57
+    },
+    {
+     "ff_race7": "Indian",
+     "n": 149,
+     "errors": 7,
+     "videos": 37,
+     "rate%": 4.7,
+     "share_of_errors%": 2.5
+    },
+    {
+     "ff_race7": "Latino_Hispanic",
+     "n": 763,
+     "errors": 9,
+     "videos": 110,
+     "rate%": 1.18,
+     "share_of_errors%": 3.21
+    },
+    {
+     "ff_race7": "Middle Eastern",
+     "n": 1587,
+     "errors": 46,
+     "videos": 177,
+     "rate%": 2.9,
+     "share_of_errors%": 16.43
+    },
+    {
+     "ff_race7": "Southeast Asian",
+     "n": 356,
+     "errors": 20,
+     "videos": 52,
+     "rate%": 5.62,
+     "share_of_errors%": 7.14
+    },
+    {
+     "ff_race7": "White",
+     "n": 6770,
+     "errors": 86,
+     "videos": 310,
+     "rate%": 1.27,
+     "share_of_errors%": 30.71
+    }
+   ],
+   "ff_vid_sex": [
+    {
+     "ff_vid_sex": "Female",
+     "n": 8439,
+     "errors": 175,
+     "videos": 270,
+     "rate%": 2.07,
+     "share_of_errors%": 62.5
+    },
+    {
+     "ff_vid_sex": "Male",
+     "n": 6260,
+     "errors": 105,
+     "videos": 203,
+     "rate%": 1.68,
+     "share_of_errors%": 37.5
+    }
+   ],
+   "age_if": [
+    {
+     "age_if": "30-44",
+     "n": 6826,
+     "errors": 101,
+     "videos": 215,
+     "rate%": 1.48,
+     "share_of_errors%": 36.07
+    },
+    {
+     "age_if": "45-59",
+     "n": 1452,
+     "errors": 6,
+     "videos": 49,
+     "rate%": 0.41,
+     "share_of_errors%": 2.14
+    },
+    {
+     "age_if": "60+",
+     "n": 437,
+     "errors": 0,
+     "videos": 15,
+     "rate%": 0.0,
+     "share_of_errors%": 0.0
+    },
+    {
+     "age_if": "<30",
+     "n": 5984,
+     "errors": 173,
+     "videos": 194,
+     "rate%": 2.89,
+     "share_of_errors%": 61.79
+    }
+   ],
+   "age_aif": [
+    {
+     "age_aif": "25-44",
+     "n": 9474,
+     "errors": 206,
+     "videos": 303,
+     "rate%": 2.17,
+     "share_of_errors%": 73.57
+    },
+    {
+     "age_aif": "45-64",
+     "n": 2656,
+     "errors": 14,
+     "videos": 85,
+     "rate%": 0.53,
+     "share_of_errors%": 5.0
+    },
+    {
+     "age_aif": "65+",
+     "n": 896,
+     "errors": 3,
+     "videos": 32,
+     "rate%": 0.33,
+     "share_of_errors%": 1.07
+    },
+    {
+     "age_aif": "<25",
+     "n": 1673,
+     "errors": 57,
+     "videos": 53,
+     "rate%": 3.41,
+     "share_of_errors%": 20.36
+    }
+   ],
+   "ff_vid_age4": [
+    {
+     "ff_vid_age4": "30-49",
+     "n": 6000,
+     "errors": 107,
+     "videos": 190,
+     "rate%": 1.78,
+     "share_of_errors%": 38.21
+    },
+    {
+     "ff_vid_age4": "50-69",
+     "n": 1098,
+     "errors": 6,
+     "videos": 39,
+     "rate%": 0.55,
+     "share_of_errors%": 2.14
+    },
+    {
+     "ff_vid_age4": "70+",
+     "n": 30,
+     "errors": 0,
+     "videos": 1,
+     "rate%": 0.0,
+     "share_of_errors%": 0.0
+    },
+    {
+     "ff_vid_age4": "<30",
+     "n": 7571,
+     "errors": 167,
+     "videos": 243,
+     "rate%": 2.21,
+     "share_of_errors%": 59.64
+    }
+   ],
+   "ita4_ffpp": [
+    {
+     "ita4_ffpp": "Q1 darkest",
+     "n": 10645,
+     "errors": 233,
+     "videos": 341,
+     "rate%": 2.19,
+     "share_of_errors%": 83.21
+    },
+    {
+     "ita4_ffpp": "Q2",
+     "n": 1043,
+     "errors": 20,
+     "videos": 35,
+     "rate%": 1.92,
+     "share_of_errors%": 7.14
+    },
+    {
+     "ita4_ffpp": "Q3",
+     "n": 744,
+     "errors": 2,
+     "videos": 24,
+     "rate%": 0.27,
+     "share_of_errors%": 0.71
+    },
+    {
+     "ita4_ffpp": "Q4 lightest",
+     "n": 1553,
+     "errors": 20,
+     "videos": 50,
+     "rate%": 1.29,
+     "share_of_errors%": 7.14
+    },
+    {
+     "ita4_ffpp": "n/a",
+     "n": 714,
+     "errors": 5,
+     "videos": 23,
+     "rate%": 0.7,
+     "share_of_errors%": 1.79
+    }
+   ],
+   "ita4_loc": [
+    {
+     "ita4_loc": "Q1 darkest",
+     "n": 3465,
+     "errors": 41,
+     "videos": 113,
+     "rate%": 1.18,
+     "share_of_errors%": 14.64
+    },
+    {
+     "ita4_loc": "Q2",
+     "n": 3397,
+     "errors": 83,
+     "videos": 112,
+     "rate%": 2.44,
+     "share_of_errors%": 29.64
+    },
+    {
+     "ita4_loc": "Q3",
+     "n": 3673,
+     "errors": 109,
+     "videos": 112,
+     "rate%": 2.97,
+     "share_of_errors%": 38.93
+    },
+    {
+     "ita4_loc": "Q4 lightest",
+     "n": 3450,
+     "errors": 42,
+     "videos": 113,
+     "rate%": 1.22,
+     "share_of_errors%": 15.0
+    },
+    {
+     "ita4_loc": "n/a",
+     "n": 714,
+     "errors": 5,
+     "videos": 23,
+     "rate%": 0.7,
+     "share_of_errors%": 1.79
+    }
+   ],
+   "mst3": [
+    {
+     "mst3": "MST 1-3",
+     "n": 30,
+     "errors": 0,
+     "videos": 1,
+     "rate%": 0.0,
+     "share_of_errors%": 0.0
+    },
+    {
+     "mst3": "MST 4-6",
+     "n": 4212,
+     "errors": 77,
+     "videos": 136,
+     "rate%": 1.83,
+     "share_of_errors%": 27.5
+    },
+    {
+     "mst3": "MST 7-10",
+     "n": 10457,
+     "errors": 203,
+     "videos": 336,
+     "rate%": 1.94,
+     "share_of_errors%": 72.5
+    }
+   ],
+   "gray_s": [
+    {
+     "gray_s": "colour",
+     "n": 14553,
+     "errors": 280,
+     "videos": 470,
+     "rate%": 1.92,
+     "share_of_errors%": 100.0
+    },
+    {
+     "gray_s": "grayscale",
+     "n": 146,
+     "errors": 0,
+     "videos": 14,
+     "rate%": 0.0,
+     "share_of_errors%": 0.0
+    }
+   ],
+   "det_q": [
+    {
+     "det_q": "det Q1 (lowest)",
+     "n": 3838,
+     "errors": 40,
+     "videos": 338,
+     "rate%": 1.04,
+     "share_of_errors%": 14.29
+    },
+    {
+     "det_q": "det Q2",
+     "n": 3718,
+     "errors": 49,
+     "videos": 410,
+     "rate%": 1.32,
+     "share_of_errors%": 17.5
+    },
+    {
+     "det_q": "det Q3",
+     "n": 3747,
+     "errors": 79,
+     "videos": 425,
+     "rate%": 2.11,
+     "share_of_errors%": 28.21
+    },
+    {
+     "det_q": "det Q4",
+     "n": 3382,
+     "errors": 112,
+     "videos": 336,
+     "rate%": 3.31,
+     "share_of_errors%": 40.0
+    },
+    {
+     "det_q": "n/a",
+     "n": 14,
+     "errors": 0,
+     "videos": 5,
+     "rate%": 0.0,
+     "share_of_errors%": 0.0
+    }
+   ],
+   "lum_mean_q": [
+    {
+     "lum_mean_q": "brightness Q1 (low)",
+     "n": 3526,
+     "errors": 94,
+     "videos": 174,
+     "rate%": 2.67,
+     "share_of_errors%": 33.57
+    },
+    {
+     "lum_mean_q": "brightness Q2",
+     "n": 3902,
+     "errors": 96,
+     "videos": 227,
+     "rate%": 2.46,
+     "share_of_errors%": 34.29
+    },
+    {
+     "lum_mean_q": "brightness Q3",
+     "n": 3572,
+     "errors": 50,
+     "videos": 224,
+     "rate%": 1.4,
+     "share_of_errors%": 17.86
+    },
+    {
+     "lum_mean_q": "brightness Q4 (high)",
+     "n": 3699,
+     "errors": 40,
+     "videos": 204,
+     "rate%": 1.08,
+     "share_of_errors%": 14.29
+    }
+   ],
+   "lum_std_q": [
+    {
+     "lum_std_q": "contrast Q1 (low)",
+     "n": 3348,
+     "errors": 100,
+     "videos": 201,
+     "rate%": 2.99,
+     "share_of_errors%": 35.71
+    },
+    {
+     "lum_std_q": "contrast Q2",
+     "n": 3494,
+     "errors": 70,
+     "videos": 247,
+     "rate%": 2.0,
+     "share_of_errors%": 25.0
+    },
+    {
+     "lum_std_q": "contrast Q3",
+     "n": 3756,
+     "errors": 85,
+     "videos": 259,
+     "rate%": 2.26,
+     "share_of_errors%": 30.36
+    },
+    {
+     "lum_std_q": "contrast Q4 (high)",
+     "n": 4101,
+     "errors": 25,
+     "videos": 221,
+     "rate%": 0.61,
+     "share_of_errors%": 8.93
+    }
+   ],
+   "sharp_lapvar_q": [
+    {
+     "sharp_lapvar_q": "sharpness Q1 (low)",
+     "n": 3164,
+     "errors": 109,
+     "videos": 173,
+     "rate%": 3.45,
+     "share_of_errors%": 38.93
+    },
+    {
+     "sharp_lapvar_q": "sharpness Q2",
+     "n": 3559,
+     "errors": 101,
+     "videos": 228,
+     "rate%": 2.84,
+     "share_of_errors%": 36.07
+    },
+    {
+     "sharp_lapvar_q": "sharpness Q3",
+     "n": 3652,
+     "errors": 56,
+     "videos": 258,
+     "rate%": 1.53,
+     "share_of_errors%": 20.0
+    },
+    {
+     "sharp_lapvar_q": "sharpness Q4 (high)",
+     "n": 4324,
+     "errors": 14,
+     "videos": 222,
+     "rate%": 0.32,
+     "share_of_errors%": 5.0
+    }
+   ],
+   "sat_mean_q": [
+    {
+     "sat_mean_q": "saturation Q1 (low)",
+     "n": 3594,
+     "errors": 20,
+     "videos": 184,
+     "rate%": 0.56,
+     "share_of_errors%": 7.14
+    },
+    {
+     "sat_mean_q": "saturation Q2",
+     "n": 3586,
+     "errors": 102,
+     "videos": 223,
+     "rate%": 2.84,
+     "share_of_errors%": 36.43
+    },
+    {
+     "sat_mean_q": "saturation Q3",
+     "n": 3496,
+     "errors": 89,
+     "videos": 226,
+     "rate%": 2.55,
+     "share_of_errors%": 31.79
+    },
+    {
+     "sat_mean_q": "saturation Q4 (high)",
+     "n": 4023,
+     "errors": 69,
+     "videos": 202,
+     "rate%": 1.72,
+     "share_of_errors%": 24.64
+    }
+   ]
+  }
+ },
+ "fn_breakdowns": {
+  "matched": {
+   "grp": [
+    {
+     "grp": "F-Asian",
+     "n": 30,
+     "errors": 17,
+     "videos": 1,
+     "rate%": 56.67,
+     "share_of_errors%": 0.76
+    },
+    {
+     "grp": "F-Black",
+     "n": 1285,
+     "errors": 274,
+     "videos": 45,
+     "rate%": 21.32,
+     "share_of_errors%": 12.2
+    },
+    {
+     "grp": "F-Others",
+     "n": 497,
+     "errors": 149,
+     "videos": 17,
+     "rate%": 29.98,
+     "share_of_errors%": 6.63
+    },
+    {
+     "grp": "F-White",
+     "n": 3075,
+     "errors": 1119,
+     "videos": 107,
+     "rate%": 36.39,
+     "share_of_errors%": 49.82
+    },
+    {
+     "grp": "M-Asian",
+     "n": 90,
+     "errors": 52,
+     "videos": 3,
+     "rate%": 57.78,
+     "share_of_errors%": 2.32
+    },
+    {
+     "grp": "M-Black",
+     "n": 507,
+     "errors": 126,
+     "videos": 17,
+     "rate%": 24.85,
+     "share_of_errors%": 5.61
+    },
+    {
+     "grp": "M-Others",
+     "n": 404,
+     "errors": 125,
+     "videos": 15,
+     "rate%": 30.94,
+     "share_of_errors%": 5.57
+    },
+    {
+     "grp": "M-White",
+     "n": 2270,
+     "errors": 384,
+     "videos": 79,
+     "rate%": 16.92,
+     "share_of_errors%": 17.1
+    }
+   ],
+   "xu_gender": [
+    {
+     "xu_gender": "female",
+     "n": 4887,
+     "errors": 1559,
+     "videos": 170,
+     "rate%": 31.9,
+     "share_of_errors%": 69.41
+    },
+    {
+     "xu_gender": "male",
+     "n": 3271,
+     "errors": 687,
+     "videos": 114,
+     "rate%": 21.0,
+     "share_of_errors%": 30.59
+    }
+   ],
+   "xu_race": [
+    {
+     "xu_race": "asian",
+     "n": 120,
+     "errors": 69,
+     "videos": 4,
+     "rate%": 57.5,
+     "share_of_errors%": 3.07
+    },
+    {
+     "xu_race": "black",
+     "n": 1792,
+     "errors": 400,
+     "videos": 62,
+     "rate%": 22.32,
+     "share_of_errors%": 17.81
+    },
+    {
+     "xu_race": "others",
+     "n": 901,
+     "errors": 274,
+     "videos": 32,
+     "rate%": 30.41,
+     "share_of_errors%": 12.2
+    },
+    {
+     "xu_race": "white",
+     "n": 5345,
+     "errors": 1503,
+     "videos": 186,
+     "rate%": 28.12,
+     "share_of_errors%": 66.92
+    }
+   ],
+   "cl_gender": [
+    {
+     "cl_gender": "female",
+     "n": 5253,
+     "errors": 1607,
+     "videos": 207,
+     "rate%": 30.59,
+     "share_of_errors%": 71.55
+    },
+    {
+     "cl_gender": "male",
+     "n": 2905,
+     "errors": 639,
+     "videos": 135,
+     "rate%": 22.0,
+     "share_of_errors%": 28.45
+    }
+   ],
+   "cl_race_vid": [
+    {
+     "cl_race_vid": "asian",
+     "n": 158,
+     "errors": 68,
+     "videos": 6,
+     "rate%": 43.04,
+     "share_of_errors%": 3.03
+    },
+    {
+     "cl_race_vid": "black",
+     "n": 1763,
+     "errors": 332,
+     "videos": 61,
+     "rate%": 18.83,
+     "share_of_errors%": 14.78
+    },
+    {
+     "cl_race_vid": "others",
+     "n": 367,
+     "errors": 72,
+     "videos": 13,
+     "rate%": 19.62,
+     "share_of_errors%": 3.21
+    },
+    {
+     "cl_race_vid": "white",
+     "n": 5870,
+     "errors": 1774,
+     "videos": 204,
+     "rate%": 30.22,
+     "share_of_errors%": 78.98
+    }
+   ],
+   "ff_race7": [
+    {
+     "ff_race7": "Black",
+     "n": 1680,
+     "errors": 368,
+     "videos": 85,
+     "rate%": 21.9,
+     "share_of_errors%": 16.38
+    },
+    {
+     "ff_race7": "East Asian",
+     "n": 138,
+     "errors": 62,
+     "videos": 29,
+     "rate%": 44.93,
+     "share_of_errors%": 2.76
+    },
+    {
+     "ff_race7": "Indian",
+     "n": 101,
+     "errors": 19,
+     "videos": 23,
+     "rate%": 18.81,
+     "share_of_errors%": 0.85
+    },
+    {
+     "ff_race7": "Latino_Hispanic",
+     "n": 264,
+     "errors": 35,
+     "videos": 49,
+     "rate%": 13.26,
+     "share_of_errors%": 1.56
+    },
+    {
+     "ff_race7": "Middle Eastern",
+     "n": 901,
+     "errors": 169,
+     "videos": 110,
+     "rate%": 18.76,
+     "share_of_errors%": 7.52
+    },
+    {
+     "ff_race7": "Southeast Asian",
+     "n": 105,
+     "errors": 24,
+     "videos": 28,
+     "rate%": 22.86,
+     "share_of_errors%": 1.07
+    },
+    {
+     "ff_race7": "White",
+     "n": 4969,
+     "errors": 1569,
+     "videos": 221,
+     "rate%": 31.58,
+     "share_of_errors%": 69.86
+    }
+   ],
+   "age_if": [
+    {
+     "age_if": "30-44",
+     "n": 3702,
+     "errors": 940,
+     "videos": 130,
+     "rate%": 25.39,
+     "share_of_errors%": 41.85
+    },
+    {
+     "age_if": "45-59",
+     "n": 901,
+     "errors": 193,
+     "videos": 31,
+     "rate%": 21.42,
+     "share_of_errors%": 8.59
+    },
+    {
+     "age_if": "60+",
+     "n": 175,
+     "errors": 25,
+     "videos": 6,
+     "rate%": 14.29,
+     "share_of_errors%": 1.11
+    },
+    {
+     "age_if": "<30",
+     "n": 3380,
+     "errors": 1088,
+     "videos": 117,
+     "rate%": 32.19,
+     "share_of_errors%": 48.44
+    }
+   ],
+   "age_aif": [
+    {
+     "age_aif": "25-44",
+     "n": 5102,
+     "errors": 1476,
+     "videos": 177,
+     "rate%": 28.93,
+     "share_of_errors%": 65.72
+    },
+    {
+     "age_aif": "45-64",
+     "n": 2270,
+     "errors": 574,
+     "videos": 78,
+     "rate%": 25.29,
+     "share_of_errors%": 25.56
+    },
+    {
+     "age_aif": "65+",
+     "n": 426,
+     "errors": 153,
+     "videos": 16,
+     "rate%": 35.92,
+     "share_of_errors%": 6.81
+    },
+    {
+     "age_aif": "<25",
+     "n": 360,
+     "errors": 43,
+     "videos": 13,
+     "rate%": 11.94,
+     "share_of_errors%": 1.91
+    }
+   ],
+   "ita4_ffpp": [
+    {
+     "ita4_ffpp": "Q1 darkest",
+     "n": 5565,
+     "errors": 1475,
+     "videos": 194,
+     "rate%": 26.5,
+     "share_of_errors%": 65.67
+    },
+    {
+     "ita4_ffpp": "Q2",
+     "n": 452,
+     "errors": 118,
+     "videos": 16,
+     "rate%": 26.11,
+     "share_of_errors%": 5.25
+    },
+    {
+     "ita4_ffpp": "Q3",
+     "n": 480,
+     "errors": 148,
+     "videos": 15,
+     "rate%": 30.83,
+     "share_of_errors%": 6.59
+    },
+    {
+     "ita4_ffpp": "Q4 lightest",
+     "n": 1168,
+     "errors": 374,
+     "videos": 40,
+     "rate%": 32.02,
+     "share_of_errors%": 16.65
+    },
+    {
+     "ita4_ffpp": "n/a",
+     "n": 493,
+     "errors": 131,
+     "videos": 19,
+     "rate%": 26.57,
+     "share_of_errors%": 5.83
+    }
+   ],
+   "ita4_loc": [
+    {
+     "ita4_loc": "Q1 darkest",
+     "n": 2054,
+     "errors": 428,
+     "videos": 70,
+     "rate%": 20.84,
+     "share_of_errors%": 19.06
+    },
+    {
+     "ita4_loc": "Q2",
+     "n": 2307,
+     "errors": 719,
+     "videos": 80,
+     "rate%": 31.17,
+     "share_of_errors%": 32.01
+    },
+    {
+     "ita4_loc": "Q3",
+     "n": 1134,
+     "errors": 323,
+     "videos": 41,
+     "rate%": 28.48,
+     "share_of_errors%": 14.38
+    },
+    {
+     "ita4_loc": "Q4 lightest",
+     "n": 2170,
+     "errors": 645,
+     "videos": 74,
+     "rate%": 29.72,
+     "share_of_errors%": 28.72
+    },
+    {
+     "ita4_loc": "n/a",
+     "n": 493,
+     "errors": 131,
+     "videos": 19,
+     "rate%": 26.57,
+     "share_of_errors%": 5.83
+    }
+   ],
+   "mst3": [
+    {
+     "mst3": "MST 4-6",
+     "n": 2487,
+     "errors": 815,
+     "videos": 85,
+     "rate%": 32.77,
+     "share_of_errors%": 36.29
+    },
+    {
+     "mst3": "MST 7-10",
+     "n": 5671,
+     "errors": 1431,
+     "videos": 199,
+     "rate%": 25.23,
+     "share_of_errors%": 63.71
+    }
+   ],
+   "gray_s": [
+    {
+     "gray_s": "colour",
+     "n": 7972,
+     "errors": 2234,
+     "videos": 279,
+     "rate%": 28.02,
+     "share_of_errors%": 99.47
+    },
+    {
+     "gray_s": "grayscale",
+     "n": 186,
+     "errors": 12,
+     "videos": 11,
+     "rate%": 6.45,
+     "share_of_errors%": 0.53
+    }
+   ],
+   "det_q": [
+    {
+     "det_q": "det Q1 (lowest)",
+     "n": 1874,
+     "errors": 528,
+     "videos": 192,
+     "rate%": 28.18,
+     "share_of_errors%": 23.51
+    },
+    {
+     "det_q": "det Q2",
+     "n": 1983,
+     "errors": 486,
+     "videos": 227,
+     "rate%": 24.51,
+     "share_of_errors%": 21.64
+    },
+    {
+     "det_q": "det Q3",
+     "n": 1981,
+     "errors": 546,
+     "videos": 240,
+     "rate%": 27.56,
+     "share_of_errors%": 24.31
+    },
+    {
+     "det_q": "det Q4",
+     "n": 2301,
+     "errors": 685,
+     "videos": 201,
+     "rate%": 29.77,
+     "share_of_errors%": 30.5
+    },
+    {
+     "det_q": "n/a",
+     "n": 19,
+     "errors": 1,
+     "videos": 7,
+     "rate%": 5.26,
+     "share_of_errors%": 0.04
+    }
+   ],
+   "lum_mean_q": [
+    {
+     "lum_mean_q": "brightness Q1 (low)",
+     "n": 2189,
+     "errors": 365,
+     "videos": 101,
+     "rate%": 16.67,
+     "share_of_errors%": 16.25
+    },
+    {
+     "lum_mean_q": "brightness Q2",
+     "n": 1812,
+     "errors": 502,
+     "videos": 113,
+     "rate%": 27.7,
+     "share_of_errors%": 22.35
+    },
+    {
+     "lum_mean_q": "brightness Q3",
+     "n": 2143,
+     "errors": 738,
+     "videos": 128,
+     "rate%": 34.44,
+     "share_of_errors%": 32.86
+    },
+    {
+     "lum_mean_q": "brightness Q4 (high)",
+     "n": 2014,
+     "errors": 641,
+     "videos": 115,
+     "rate%": 31.83,
+     "share_of_errors%": 28.54
+    }
+   ],
+   "lum_std_q": [
+    {
+     "lum_std_q": "contrast Q1 (low)",
+     "n": 2367,
+     "errors": 606,
+     "videos": 133,
+     "rate%": 25.6,
+     "share_of_errors%": 26.98
+    },
+    {
+     "lum_std_q": "contrast Q2",
+     "n": 2220,
+     "errors": 612,
+     "videos": 148,
+     "rate%": 27.57,
+     "share_of_errors%": 27.25
+    },
+    {
+     "lum_std_q": "contrast Q3",
+     "n": 1958,
+     "errors": 585,
+     "videos": 141,
+     "rate%": 29.88,
+     "share_of_errors%": 26.05
+    },
+    {
+     "lum_std_q": "contrast Q4 (high)",
+     "n": 1613,
+     "errors": 443,
+     "videos": 104,
+     "rate%": 27.46,
+     "share_of_errors%": 19.72
+    }
+   ],
+   "sharp_lapvar_q": [
+    {
+     "sharp_lapvar_q": "sharpness Q1 (low)",
+     "n": 2551,
+     "errors": 656,
+     "videos": 135,
+     "rate%": 25.72,
+     "share_of_errors%": 29.21
+    },
+    {
+     "sharp_lapvar_q": "sharpness Q2",
+     "n": 2156,
+     "errors": 644,
+     "videos": 151,
+     "rate%": 29.87,
+     "share_of_errors%": 28.67
+    },
+    {
+     "sharp_lapvar_q": "sharpness Q3",
+     "n": 2061,
+     "errors": 604,
+     "videos": 139,
+     "rate%": 29.31,
+     "share_of_errors%": 26.89
+    },
+    {
+     "sharp_lapvar_q": "sharpness Q4 (high)",
+     "n": 1390,
+     "errors": 342,
+     "videos": 91,
+     "rate%": 24.6,
+     "share_of_errors%": 15.23
+    }
+   ],
+   "sat_mean_q": [
+    {
+     "sat_mean_q": "saturation Q1 (low)",
+     "n": 2121,
+     "errors": 668,
+     "videos": 103,
+     "rate%": 31.49,
+     "share_of_errors%": 29.74
+    },
+    {
+     "sat_mean_q": "saturation Q2",
+     "n": 2128,
+     "errors": 633,
+     "videos": 124,
+     "rate%": 29.75,
+     "share_of_errors%": 28.18
+    },
+    {
+     "sat_mean_q": "saturation Q3",
+     "n": 2218,
+     "errors": 614,
+     "videos": 132,
+     "rate%": 27.68,
+     "share_of_errors%": 27.34
+    },
+    {
+     "sat_mean_q": "saturation Q4 (high)",
+     "n": 1691,
+     "errors": 331,
+     "videos": 102,
+     "rate%": 19.57,
+     "share_of_errors%": 14.74
+    }
+   ],
+   "method": [
+    {
+     "method": "unknown",
+     "n": 8158,
+     "errors": 2246,
+     "videos": 284,
+     "rate%": 27.53,
+     "share_of_errors%": 100.0
+    }
+   ]
+  },
+  "native": {
+   "grp": [
+    {
+     "grp": "F-Asian",
+     "n": 30,
+     "errors": 18,
+     "videos": 1,
+     "rate%": 60.0,
+     "share_of_errors%": 0.54
+    },
+    {
+     "grp": "F-Black",
+     "n": 1285,
+     "errors": 459,
+     "videos": 45,
+     "rate%": 35.72,
+     "share_of_errors%": 13.81
+    },
+    {
+     "grp": "F-Others",
+     "n": 497,
+     "errors": 189,
+     "videos": 17,
+     "rate%": 38.03,
+     "share_of_errors%": 5.69
+    },
+    {
+     "grp": "F-White",
+     "n": 3075,
+     "errors": 1546,
+     "videos": 107,
+     "rate%": 50.28,
+     "share_of_errors%": 46.51
+    },
+    {
+     "grp": "M-Asian",
+     "n": 90,
+     "errors": 67,
+     "videos": 3,
+     "rate%": 74.44,
+     "share_of_errors%": 2.02
+    },
+    {
+     "grp": "M-Black",
+     "n": 507,
+     "errors": 206,
+     "videos": 17,
+     "rate%": 40.63,
+     "share_of_errors%": 6.2
+    },
+    {
+     "grp": "M-Others",
+     "n": 404,
+     "errors": 174,
+     "videos": 15,
+     "rate%": 43.07,
+     "share_of_errors%": 5.23
+    },
+    {
+     "grp": "M-White",
+     "n": 2270,
+     "errors": 665,
+     "videos": 79,
+     "rate%": 29.3,
+     "share_of_errors%": 20.01
+    }
+   ],
+   "xu_gender": [
+    {
+     "xu_gender": "female",
+     "n": 4887,
+     "errors": 2212,
+     "videos": 170,
+     "rate%": 45.26,
+     "share_of_errors%": 66.55
+    },
+    {
+     "xu_gender": "male",
+     "n": 3271,
+     "errors": 1112,
+     "videos": 114,
+     "rate%": 34.0,
+     "share_of_errors%": 33.45
+    }
+   ],
+   "xu_race": [
+    {
+     "xu_race": "asian",
+     "n": 120,
+     "errors": 85,
+     "videos": 4,
+     "rate%": 70.83,
+     "share_of_errors%": 2.56
+    },
+    {
+     "xu_race": "black",
+     "n": 1792,
+     "errors": 665,
+     "videos": 62,
+     "rate%": 37.11,
+     "share_of_errors%": 20.01
+    },
+    {
+     "xu_race": "others",
+     "n": 901,
+     "errors": 363,
+     "videos": 32,
+     "rate%": 40.29,
+     "share_of_errors%": 10.92
+    },
+    {
+     "xu_race": "white",
+     "n": 5345,
+     "errors": 2211,
+     "videos": 186,
+     "rate%": 41.37,
+     "share_of_errors%": 66.52
+    }
+   ],
+   "cl_gender": [
+    {
+     "cl_gender": "female",
+     "n": 5253,
+     "errors": 2286,
+     "videos": 207,
+     "rate%": 43.52,
+     "share_of_errors%": 68.77
+    },
+    {
+     "cl_gender": "male",
+     "n": 2905,
+     "errors": 1038,
+     "videos": 135,
+     "rate%": 35.73,
+     "share_of_errors%": 31.23
+    }
+   ],
+   "cl_race_vid": [
+    {
+     "cl_race_vid": "asian",
+     "n": 158,
+     "errors": 90,
+     "videos": 6,
+     "rate%": 56.96,
+     "share_of_errors%": 2.71
+    },
+    {
+     "cl_race_vid": "black",
+     "n": 1763,
+     "errors": 581,
+     "videos": 61,
+     "rate%": 32.96,
+     "share_of_errors%": 17.48
+    },
+    {
+     "cl_race_vid": "others",
+     "n": 367,
+     "errors": 123,
+     "videos": 13,
+     "rate%": 33.51,
+     "share_of_errors%": 3.7
+    },
+    {
+     "cl_race_vid": "white",
+     "n": 5870,
+     "errors": 2530,
+     "videos": 204,
+     "rate%": 43.1,
+     "share_of_errors%": 76.11
+    }
+   ],
+   "ff_race7": [
+    {
+     "ff_race7": "Black",
+     "n": 1680,
+     "errors": 622,
+     "videos": 85,
+     "rate%": 37.02,
+     "share_of_errors%": 18.71
+    },
+    {
+     "ff_race7": "East Asian",
+     "n": 138,
+     "errors": 88,
+     "videos": 29,
+     "rate%": 63.77,
+     "share_of_errors%": 2.65
+    },
+    {
+     "ff_race7": "Indian",
+     "n": 101,
+     "errors": 36,
+     "videos": 23,
+     "rate%": 35.64,
+     "share_of_errors%": 1.08
+    },
+    {
+     "ff_race7": "Latino_Hispanic",
+     "n": 264,
+     "errors": 57,
+     "videos": 49,
+     "rate%": 21.59,
+     "share_of_errors%": 1.71
+    },
+    {
+     "ff_race7": "Middle Eastern",
+     "n": 901,
+     "errors": 288,
+     "videos": 110,
+     "rate%": 31.96,
+     "share_of_errors%": 8.66
+    },
+    {
+     "ff_race7": "Southeast Asian",
+     "n": 105,
+     "errors": 43,
+     "videos": 28,
+     "rate%": 40.95,
+     "share_of_errors%": 1.29
+    },
+    {
+     "ff_race7": "White",
+     "n": 4969,
+     "errors": 2190,
+     "videos": 221,
+     "rate%": 44.07,
+     "share_of_errors%": 65.88
+    }
+   ],
+   "age_if": [
+    {
+     "age_if": "30-44",
+     "n": 3702,
+     "errors": 1482,
+     "videos": 130,
+     "rate%": 40.03,
+     "share_of_errors%": 44.58
+    },
+    {
+     "age_if": "45-59",
+     "n": 901,
+     "errors": 290,
+     "videos": 31,
+     "rate%": 32.19,
+     "share_of_errors%": 8.72
+    },
+    {
+     "age_if": "60+",
+     "n": 175,
+     "errors": 39,
+     "videos": 6,
+     "rate%": 22.29,
+     "share_of_errors%": 1.17
+    },
+    {
+     "age_if": "<30",
+     "n": 3380,
+     "errors": 1513,
+     "videos": 117,
+     "rate%": 44.76,
+     "share_of_errors%": 45.52
+    }
+   ],
+   "age_aif": [
+    {
+     "age_aif": "25-44",
+     "n": 5102,
+     "errors": 2203,
+     "videos": 177,
+     "rate%": 43.18,
+     "share_of_errors%": 66.28
+    },
+    {
+     "age_aif": "45-64",
+     "n": 2270,
+     "errors": 810,
+     "videos": 78,
+     "rate%": 35.68,
+     "share_of_errors%": 24.37
+    },
+    {
+     "age_aif": "65+",
+     "n": 426,
+     "errors": 213,
+     "videos": 16,
+     "rate%": 50.0,
+     "share_of_errors%": 6.41
+    },
+    {
+     "age_aif": "<25",
+     "n": 360,
+     "errors": 98,
+     "videos": 13,
+     "rate%": 27.22,
+     "share_of_errors%": 2.95
+    }
+   ],
+   "ita4_ffpp": [
+    {
+     "ita4_ffpp": "Q1 darkest",
+     "n": 5565,
+     "errors": 2252,
+     "videos": 194,
+     "rate%": 40.47,
+     "share_of_errors%": 67.75
+    },
+    {
+     "ita4_ffpp": "Q2",
+     "n": 452,
+     "errors": 173,
+     "videos": 16,
+     "rate%": 38.27,
+     "share_of_errors%": 5.2
+    },
+    {
+     "ita4_ffpp": "Q3",
+     "n": 480,
+     "errors": 208,
+     "videos": 15,
+     "rate%": 43.33,
+     "share_of_errors%": 6.26
+    },
+    {
+     "ita4_ffpp": "Q4 lightest",
+     "n": 1168,
+     "errors": 474,
+     "videos": 40,
+     "rate%": 40.58,
+     "share_of_errors%": 14.26
+    },
+    {
+     "ita4_ffpp": "n/a",
+     "n": 493,
+     "errors": 217,
+     "videos": 19,
+     "rate%": 44.02,
+     "share_of_errors%": 6.53
+    }
+   ],
+   "ita4_loc": [
+    {
+     "ita4_loc": "Q1 darkest",
+     "n": 2054,
+     "errors": 693,
+     "videos": 70,
+     "rate%": 33.74,
+     "share_of_errors%": 20.85
+    },
+    {
+     "ita4_loc": "Q2",
+     "n": 2307,
+     "errors": 1107,
+     "videos": 80,
+     "rate%": 47.98,
+     "share_of_errors%": 33.3
+    },
+    {
+     "ita4_loc": "Q3",
+     "n": 1134,
+     "errors": 442,
+     "videos": 41,
+     "rate%": 38.98,
+     "share_of_errors%": 13.3
+    },
+    {
+     "ita4_loc": "Q4 lightest",
+     "n": 2170,
+     "errors": 865,
+     "videos": 74,
+     "rate%": 39.86,
+     "share_of_errors%": 26.02
+    },
+    {
+     "ita4_loc": "n/a",
+     "n": 493,
+     "errors": 217,
+     "videos": 19,
+     "rate%": 44.02,
+     "share_of_errors%": 6.53
+    }
+   ],
+   "mst3": [
+    {
+     "mst3": "MST 4-6",
+     "n": 2487,
+     "errors": 1018,
+     "videos": 85,
+     "rate%": 40.93,
+     "share_of_errors%": 30.63
+    },
+    {
+     "mst3": "MST 7-10",
+     "n": 5671,
+     "errors": 2306,
+     "videos": 199,
+     "rate%": 40.66,
+     "share_of_errors%": 69.37
+    }
+   ],
+   "gray_s": [
+    {
+     "gray_s": "colour",
+     "n": 7972,
+     "errors": 3268,
+     "videos": 279,
+     "rate%": 40.99,
+     "share_of_errors%": 98.32
+    },
+    {
+     "gray_s": "grayscale",
+     "n": 186,
+     "errors": 56,
+     "videos": 11,
+     "rate%": 30.11,
+     "share_of_errors%": 1.68
+    }
+   ],
+   "det_q": [
+    {
+     "det_q": "det Q1 (lowest)",
+     "n": 1874,
+     "errors": 883,
+     "videos": 192,
+     "rate%": 47.12,
+     "share_of_errors%": 26.56
+    },
+    {
+     "det_q": "det Q2",
+     "n": 1983,
+     "errors": 740,
+     "videos": 227,
+     "rate%": 37.32,
+     "share_of_errors%": 22.26
+    },
+    {
+     "det_q": "det Q3",
+     "n": 1981,
+     "errors": 784,
+     "videos": 240,
+     "rate%": 39.58,
+     "share_of_errors%": 23.59
+    },
+    {
+     "det_q": "det Q4",
+     "n": 2301,
+     "errors": 915,
+     "videos": 201,
+     "rate%": 39.77,
+     "share_of_errors%": 27.53
+    },
+    {
+     "det_q": "n/a",
+     "n": 19,
+     "errors": 2,
+     "videos": 7,
+     "rate%": 10.53,
+     "share_of_errors%": 0.06
+    }
+   ],
+   "lum_mean_q": [
+    {
+     "lum_mean_q": "brightness Q1 (low)",
+     "n": 2189,
+     "errors": 681,
+     "videos": 101,
+     "rate%": 31.11,
+     "share_of_errors%": 20.49
+    },
+    {
+     "lum_mean_q": "brightness Q2",
+     "n": 1812,
+     "errors": 815,
+     "videos": 113,
+     "rate%": 44.98,
+     "share_of_errors%": 24.52
+    },
+    {
+     "lum_mean_q": "brightness Q3",
+     "n": 2143,
+     "errors": 983,
+     "videos": 128,
+     "rate%": 45.87,
+     "share_of_errors%": 29.57
+    },
+    {
+     "lum_mean_q": "brightness Q4 (high)",
+     "n": 2014,
+     "errors": 845,
+     "videos": 115,
+     "rate%": 41.96,
+     "share_of_errors%": 25.42
+    }
+   ],
+   "lum_std_q": [
+    {
+     "lum_std_q": "contrast Q1 (low)",
+     "n": 2367,
+     "errors": 1001,
+     "videos": 133,
+     "rate%": 42.29,
+     "share_of_errors%": 30.11
+    },
+    {
+     "lum_std_q": "contrast Q2",
+     "n": 2220,
+     "errors": 895,
+     "videos": 148,
+     "rate%": 40.32,
+     "share_of_errors%": 26.93
+    },
+    {
+     "lum_std_q": "contrast Q3",
+     "n": 1958,
+     "errors": 803,
+     "videos": 141,
+     "rate%": 41.01,
+     "share_of_errors%": 24.16
+    },
+    {
+     "lum_std_q": "contrast Q4 (high)",
+     "n": 1613,
+     "errors": 625,
+     "videos": 104,
+     "rate%": 38.75,
+     "share_of_errors%": 18.8
+    }
+   ],
+   "sharp_lapvar_q": [
+    {
+     "sharp_lapvar_q": "sharpness Q1 (low)",
+     "n": 2551,
+     "errors": 1156,
+     "videos": 135,
+     "rate%": 45.32,
+     "share_of_errors%": 34.78
+    },
+    {
+     "sharp_lapvar_q": "sharpness Q2",
+     "n": 2156,
+     "errors": 841,
+     "videos": 151,
+     "rate%": 39.01,
+     "share_of_errors%": 25.3
+    },
+    {
+     "sharp_lapvar_q": "sharpness Q3",
+     "n": 2061,
+     "errors": 812,
+     "videos": 139,
+     "rate%": 39.4,
+     "share_of_errors%": 24.43
+    },
+    {
+     "sharp_lapvar_q": "sharpness Q4 (high)",
+     "n": 1390,
+     "errors": 515,
+     "videos": 91,
+     "rate%": 37.05,
+     "share_of_errors%": 15.49
+    }
+   ],
+   "sat_mean_q": [
+    {
+     "sat_mean_q": "saturation Q1 (low)",
+     "n": 2121,
+     "errors": 929,
+     "videos": 103,
+     "rate%": 43.8,
+     "share_of_errors%": 27.95
+    },
+    {
+     "sat_mean_q": "saturation Q2",
+     "n": 2128,
+     "errors": 903,
+     "videos": 124,
+     "rate%": 42.43,
+     "share_of_errors%": 27.17
+    },
+    {
+     "sat_mean_q": "saturation Q3",
+     "n": 2218,
+     "errors": 942,
+     "videos": 132,
+     "rate%": 42.47,
+     "share_of_errors%": 28.34
+    },
+    {
+     "sat_mean_q": "saturation Q4 (high)",
+     "n": 1691,
+     "errors": 550,
+     "videos": 102,
+     "rate%": 32.53,
+     "share_of_errors%": 16.55
+    }
+   ],
+   "method": [
+    {
+     "method": "unknown",
+     "n": 8158,
+     "errors": 3324,
+     "videos": 284,
+     "rate%": 40.75,
+     "share_of_errors%": 100.0
+    }
+   ]
+  },
+  "A1": {
+   "grp": [
+    {
+     "grp": "F-Asian",
+     "n": 30,
+     "errors": 27,
+     "videos": 1,
+     "rate%": 90.0,
+     "share_of_errors%": 0.45
+    },
+    {
+     "grp": "F-Black",
+     "n": 1285,
+     "errors": 944,
+     "videos": 45,
+     "rate%": 73.46,
+     "share_of_errors%": 15.89
+    },
+    {
+     "grp": "F-Others",
+     "n": 497,
+     "errors": 297,
+     "videos": 17,
+     "rate%": 59.76,
+     "share_of_errors%": 5.0
+    },
+    {
+     "grp": "F-White",
+     "n": 3075,
+     "errors": 2304,
+     "videos": 107,
+     "rate%": 74.93,
+     "share_of_errors%": 38.77
+    },
+    {
+     "grp": "M-Asian",
+     "n": 90,
+     "errors": 89,
+     "videos": 3,
+     "rate%": 98.89,
+     "share_of_errors%": 1.5
+    },
+    {
+     "grp": "M-Black",
+     "n": 507,
+     "errors": 469,
+     "videos": 17,
+     "rate%": 92.5,
+     "share_of_errors%": 7.89
+    },
+    {
+     "grp": "M-Others",
+     "n": 404,
+     "errors": 274,
+     "videos": 15,
+     "rate%": 67.82,
+     "share_of_errors%": 4.61
+    },
+    {
+     "grp": "M-White",
+     "n": 2270,
+     "errors": 1538,
+     "videos": 79,
+     "rate%": 67.75,
+     "share_of_errors%": 25.88
+    }
+   ],
+   "xu_gender": [
+    {
+     "xu_gender": "female",
+     "n": 4887,
+     "errors": 3572,
+     "videos": 170,
+     "rate%": 73.09,
+     "share_of_errors%": 60.11
+    },
+    {
+     "xu_gender": "male",
+     "n": 3271,
+     "errors": 2370,
+     "videos": 114,
+     "rate%": 72.45,
+     "share_of_errors%": 39.89
+    }
+   ],
+   "xu_race": [
+    {
+     "xu_race": "asian",
+     "n": 120,
+     "errors": 116,
+     "videos": 4,
+     "rate%": 96.67,
+     "share_of_errors%": 1.95
+    },
+    {
+     "xu_race": "black",
+     "n": 1792,
+     "errors": 1413,
+     "videos": 62,
+     "rate%": 78.85,
+     "share_of_errors%": 23.78
+    },
+    {
+     "xu_race": "others",
+     "n": 901,
+     "errors": 571,
+     "videos": 32,
+     "rate%": 63.37,
+     "share_of_errors%": 9.61
+    },
+    {
+     "xu_race": "white",
+     "n": 5345,
+     "errors": 3842,
+     "videos": 186,
+     "rate%": 71.88,
+     "share_of_errors%": 64.66
+    }
+   ],
+   "cl_gender": [
+    {
+     "cl_gender": "female",
+     "n": 5253,
+     "errors": 3882,
+     "videos": 207,
+     "rate%": 73.9,
+     "share_of_errors%": 65.33
+    },
+    {
+     "cl_gender": "male",
+     "n": 2905,
+     "errors": 2060,
+     "videos": 135,
+     "rate%": 70.91,
+     "share_of_errors%": 34.67
+    }
+   ],
+   "cl_race_vid": [
+    {
+     "cl_race_vid": "asian",
+     "n": 158,
+     "errors": 130,
+     "videos": 6,
+     "rate%": 82.28,
+     "share_of_errors%": 2.19
+    },
+    {
+     "cl_race_vid": "black",
+     "n": 1763,
+     "errors": 1319,
+     "videos": 61,
+     "rate%": 74.82,
+     "share_of_errors%": 22.2
+    },
+    {
+     "cl_race_vid": "others",
+     "n": 367,
+     "errors": 206,
+     "videos": 13,
+     "rate%": 56.13,
+     "share_of_errors%": 3.47
+    },
+    {
+     "cl_race_vid": "white",
+     "n": 5870,
+     "errors": 4287,
+     "videos": 204,
+     "rate%": 73.03,
+     "share_of_errors%": 72.15
+    }
+   ],
+   "ff_race7": [
+    {
+     "ff_race7": "Black",
+     "n": 1680,
+     "errors": 1336,
+     "videos": 85,
+     "rate%": 79.52,
+     "share_of_errors%": 22.48
+    },
+    {
+     "ff_race7": "East Asian",
+     "n": 138,
+     "errors": 120,
+     "videos": 29,
+     "rate%": 86.96,
+     "share_of_errors%": 2.02
+    },
+    {
+     "ff_race7": "Indian",
+     "n": 101,
+     "errors": 59,
+     "videos": 23,
+     "rate%": 58.42,
+     "share_of_errors%": 0.99
+    },
+    {
+     "ff_race7": "Latino_Hispanic",
+     "n": 264,
+     "errors": 112,
+     "videos": 49,
+     "rate%": 42.42,
+     "share_of_errors%": 1.88
+    },
+    {
+     "ff_race7": "Middle Eastern",
+     "n": 901,
+     "errors": 583,
+     "videos": 110,
+     "rate%": 64.71,
+     "share_of_errors%": 9.81
+    },
+    {
+     "ff_race7": "Southeast Asian",
+     "n": 105,
+     "errors": 82,
+     "videos": 28,
+     "rate%": 78.1,
+     "share_of_errors%": 1.38
+    },
+    {
+     "ff_race7": "White",
+     "n": 4969,
+     "errors": 3650,
+     "videos": 221,
+     "rate%": 73.46,
+     "share_of_errors%": 61.43
+    }
+   ],
+   "age_if": [
+    {
+     "age_if": "30-44",
+     "n": 3702,
+     "errors": 2814,
+     "videos": 130,
+     "rate%": 76.01,
+     "share_of_errors%": 47.36
+    },
+    {
+     "age_if": "45-59",
+     "n": 901,
+     "errors": 666,
+     "videos": 31,
+     "rate%": 73.92,
+     "share_of_errors%": 11.21
+    },
+    {
+     "age_if": "60+",
+     "n": 175,
+     "errors": 94,
+     "videos": 6,
+     "rate%": 53.71,
+     "share_of_errors%": 1.58
+    },
+    {
+     "age_if": "<30",
+     "n": 3380,
+     "errors": 2368,
+     "videos": 117,
+     "rate%": 70.06,
+     "share_of_errors%": 39.85
+    }
+   ],
+   "age_aif": [
+    {
+     "age_aif": "25-44",
+     "n": 5102,
+     "errors": 3880,
+     "videos": 177,
+     "rate%": 76.05,
+     "share_of_errors%": 65.3
+    },
+    {
+     "age_aif": "45-64",
+     "n": 2270,
+     "errors": 1475,
+     "videos": 78,
+     "rate%": 64.98,
+     "share_of_errors%": 24.82
+    },
+    {
+     "age_aif": "65+",
+     "n": 426,
+     "errors": 363,
+     "videos": 16,
+     "rate%": 85.21,
+     "share_of_errors%": 6.11
+    },
+    {
+     "age_aif": "<25",
+     "n": 360,
+     "errors": 224,
+     "videos": 13,
+     "rate%": 62.22,
+     "share_of_errors%": 3.77
+    }
+   ],
+   "ita4_ffpp": [
+    {
+     "ita4_ffpp": "Q1 darkest",
+     "n": 5565,
+     "errors": 4167,
+     "videos": 194,
+     "rate%": 74.88,
+     "share_of_errors%": 70.13
+    },
+    {
+     "ita4_ffpp": "Q2",
+     "n": 452,
+     "errors": 280,
+     "videos": 16,
+     "rate%": 61.95,
+     "share_of_errors%": 4.71
+    },
+    {
+     "ita4_ffpp": "Q3",
+     "n": 480,
+     "errors": 321,
+     "videos": 15,
+     "rate%": 66.88,
+     "share_of_errors%": 5.4
+    },
+    {
+     "ita4_ffpp": "Q4 lightest",
+     "n": 1168,
+     "errors": 771,
+     "videos": 40,
+     "rate%": 66.01,
+     "share_of_errors%": 12.98
+    },
+    {
+     "ita4_ffpp": "n/a",
+     "n": 493,
+     "errors": 403,
+     "videos": 19,
+     "rate%": 81.74,
+     "share_of_errors%": 6.78
+    }
+   ],
+   "ita4_loc": [
+    {
+     "ita4_loc": "Q1 darkest",
+     "n": 2054,
+     "errors": 1483,
+     "videos": 70,
+     "rate%": 72.2,
+     "share_of_errors%": 24.96
+    },
+    {
+     "ita4_loc": "Q2",
+     "n": 2307,
+     "errors": 1821,
+     "videos": 80,
+     "rate%": 78.93,
+     "share_of_errors%": 30.65
+    },
+    {
+     "ita4_loc": "Q3",
+     "n": 1134,
+     "errors": 801,
+     "videos": 41,
+     "rate%": 70.63,
+     "share_of_errors%": 13.48
+    },
+    {
+     "ita4_loc": "Q4 lightest",
+     "n": 2170,
+     "errors": 1434,
+     "videos": 74,
+     "rate%": 66.08,
+     "share_of_errors%": 24.13
+    },
+    {
+     "ita4_loc": "n/a",
+     "n": 493,
+     "errors": 403,
+     "videos": 19,
+     "rate%": 81.74,
+     "share_of_errors%": 6.78
+    }
+   ],
+   "mst3": [
+    {
+     "mst3": "MST 4-6",
+     "n": 2487,
+     "errors": 1563,
+     "videos": 85,
+     "rate%": 62.85,
+     "share_of_errors%": 26.3
+    },
+    {
+     "mst3": "MST 7-10",
+     "n": 5671,
+     "errors": 4379,
+     "videos": 199,
+     "rate%": 77.22,
+     "share_of_errors%": 73.7
+    }
+   ],
+   "gray_s": [
+    {
+     "gray_s": "colour",
+     "n": 7972,
+     "errors": 5765,
+     "videos": 279,
+     "rate%": 72.32,
+     "share_of_errors%": 97.02
+    },
+    {
+     "gray_s": "grayscale",
+     "n": 186,
+     "errors": 177,
+     "videos": 11,
+     "rate%": 95.16,
+     "share_of_errors%": 2.98
+    }
+   ],
+   "det_q": [
+    {
+     "det_q": "det Q1 (lowest)",
+     "n": 1874,
+     "errors": 1616,
+     "videos": 192,
+     "rate%": 86.23,
+     "share_of_errors%": 27.2
+    },
+    {
+     "det_q": "det Q2",
+     "n": 1983,
+     "errors": 1419,
+     "videos": 227,
+     "rate%": 71.56,
+     "share_of_errors%": 23.88
+    },
+    {
+     "det_q": "det Q3",
+     "n": 1981,
+     "errors": 1354,
+     "videos": 240,
+     "rate%": 68.35,
+     "share_of_errors%": 22.79
+    },
+    {
+     "det_q": "det Q4",
+     "n": 2301,
+     "errors": 1534,
+     "videos": 201,
+     "rate%": 66.67,
+     "share_of_errors%": 25.82
+    },
+    {
+     "det_q": "n/a",
+     "n": 19,
+     "errors": 19,
+     "videos": 7,
+     "rate%": 100.0,
+     "share_of_errors%": 0.32
+    }
+   ],
+   "lum_mean_q": [
+    {
+     "lum_mean_q": "brightness Q1 (low)",
+     "n": 2189,
+     "errors": 1603,
+     "videos": 101,
+     "rate%": 73.23,
+     "share_of_errors%": 26.98
+    },
+    {
+     "lum_mean_q": "brightness Q2",
+     "n": 1812,
+     "errors": 1419,
+     "videos": 113,
+     "rate%": 78.31,
+     "share_of_errors%": 23.88
+    },
+    {
+     "lum_mean_q": "brightness Q3",
+     "n": 2143,
+     "errors": 1527,
+     "videos": 128,
+     "rate%": 71.26,
+     "share_of_errors%": 25.7
+    },
+    {
+     "lum_mean_q": "brightness Q4 (high)",
+     "n": 2014,
+     "errors": 1393,
+     "videos": 115,
+     "rate%": 69.17,
+     "share_of_errors%": 23.44
+    }
+   ],
+   "lum_std_q": [
+    {
+     "lum_std_q": "contrast Q1 (low)",
+     "n": 2367,
+     "errors": 1914,
+     "videos": 133,
+     "rate%": 80.86,
+     "share_of_errors%": 32.21
+    },
+    {
+     "lum_std_q": "contrast Q2",
+     "n": 2220,
+     "errors": 1542,
+     "videos": 148,
+     "rate%": 69.46,
+     "share_of_errors%": 25.95
+    },
+    {
+     "lum_std_q": "contrast Q3",
+     "n": 1958,
+     "errors": 1347,
+     "videos": 141,
+     "rate%": 68.79,
+     "share_of_errors%": 22.67
+    },
+    {
+     "lum_std_q": "contrast Q4 (high)",
+     "n": 1613,
+     "errors": 1139,
+     "videos": 104,
+     "rate%": 70.61,
+     "share_of_errors%": 19.17
+    }
+   ],
+   "sharp_lapvar_q": [
+    {
+     "sharp_lapvar_q": "sharpness Q1 (low)",
+     "n": 2551,
+     "errors": 2168,
+     "videos": 135,
+     "rate%": 84.99,
+     "share_of_errors%": 36.49
+    },
+    {
+     "sharp_lapvar_q": "sharpness Q2",
+     "n": 2156,
+     "errors": 1371,
+     "videos": 151,
+     "rate%": 63.59,
+     "share_of_errors%": 23.07
+    },
+    {
+     "sharp_lapvar_q": "sharpness Q3",
+     "n": 2061,
+     "errors": 1286,
+     "videos": 139,
+     "rate%": 62.4,
+     "share_of_errors%": 21.64
+    },
+    {
+     "sharp_lapvar_q": "sharpness Q4 (high)",
+     "n": 1390,
+     "errors": 1117,
+     "videos": 91,
+     "rate%": 80.36,
+     "share_of_errors%": 18.8
+    }
+   ],
+   "sat_mean_q": [
+    {
+     "sat_mean_q": "saturation Q1 (low)",
+     "n": 2121,
+     "errors": 1503,
+     "videos": 103,
+     "rate%": 70.86,
+     "share_of_errors%": 25.29
+    },
+    {
+     "sat_mean_q": "saturation Q2",
+     "n": 2128,
+     "errors": 1536,
+     "videos": 124,
+     "rate%": 72.18,
+     "share_of_errors%": 25.85
+    },
+    {
+     "sat_mean_q": "saturation Q3",
+     "n": 2218,
+     "errors": 1688,
+     "videos": 132,
+     "rate%": 76.1,
+     "share_of_errors%": 28.41
+    },
+    {
+     "sat_mean_q": "saturation Q4 (high)",
+     "n": 1691,
+     "errors": 1215,
+     "videos": 102,
+     "rate%": 71.85,
+     "share_of_errors%": 20.45
+    }
+   ],
+   "method": [
+    {
+     "method": "unknown",
+     "n": 8158,
+     "errors": 5942,
+     "videos": 284,
+     "rate%": 72.84,
+     "share_of_errors%": 100.0
+    }
+   ]
+  }
+ },
+ "fp_video_concentration_matched": {
+  "top5_share%": 6.02,
+  "top10_share%": 11.38,
+  "top15_share%": 14.7,
+  "top25_share%": 20.84,
+  "top50_share%": 35.56,
+  "top100_share%": 59.24,
+  "videos_for_50pct_of_FP": 79,
+  "videos_for_80pct_of_FP": 166,
+  "videos_with_any_FP": 380,
+  "videos_with_FPR>=50%": 142,
+  "videos_with_FPR>=90%": 49,
+  "video_fpr_median%": 20.0
+ },
+ "fp_top15_videos_matched": [
+  {
+   "video": "0_4069",
+   "grp": "M-Black",
+   "n": 60,
+   "fp": 60,
+   "fpr%": 100.0,
+   "ding_fpr%": 96.66666666666667,
+   "cl_gender_vid": "male",
+   "cl_race_vid": "black",
+   "ff_race7": "Black",
+   "age_vid_if": 39.0,
+   "ita_vid": -45.18,
+   "ita4": "Q1 darkest",
+   "lum": 96.67991256713867,
+   "sharp": 1.575180172920227,
+   "max_logit": -45.91708755493164,
+   "med_logit": -58.241065979003906
+  },
+  {
+   "video": "0_6461",
+   "grp": "M-Others",
+   "n": 60,
+   "fp": 60,
+   "fpr%": 100.0,
+   "ding_fpr%": 0.0,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "others",
+   "ff_race7": "White",
+   "age_vid_if": 37.0,
+   "ita_vid": -51.39,
+   "ita4": "Q1 darkest",
+   "lum": 64.09940338134766,
+   "sharp": 280.67283630371094,
+   "max_logit": -33.09523010253906,
+   "med_logit": -58.28586959838867
+  },
+  {
+   "video": "0_6104",
+   "grp": "M-Others",
+   "n": 60,
+   "fp": 58,
+   "fpr%": 96.66666666666667,
+   "ding_fpr%": 100.0,
+   "cl_gender_vid": "male",
+   "cl_race_vid": "others",
+   "ff_race7": "Southeast Asian",
+   "age_vid_if": 26.0,
+   "ita_vid": 5.669,
+   "ita4": "Q1 darkest",
+   "lum": 85.64515686035156,
+   "sharp": 1.4683637619018555,
+   "max_logit": 67.53836822509766,
+   "med_logit": -25.330398559570312
+  },
+  {
+   "video": "0_6305",
+   "grp": "M-Asian",
+   "n": 60,
+   "fp": 58,
+   "fpr%": 96.66666666666667,
+   "ding_fpr%": 0.0,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "asian",
+   "ff_race7": "Southeast Asian",
+   "age_vid_if": 39.0,
+   "ita_vid": -71.82,
+   "ita4": "Q1 darkest",
+   "lum": 41.194942474365234,
+   "sharp": 1257.7275390625,
+   "max_logit": -48.92454528808594,
+   "med_logit": -62.5843620300293
+  },
+  {
+   "video": "0_7138",
+   "grp": "F-White",
+   "n": 60,
+   "fp": 58,
+   "fpr%": 96.66666666666667,
+   "ding_fpr%": 0.0,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "white",
+   "ff_race7": "White",
+   "age_vid_if": 37.0,
+   "ita_vid": -83.52,
+   "ita4": "Q1 darkest",
+   "lum": 47.93475151062012,
+   "sharp": 611.3382263183594,
+   "max_logit": -24.99885368347168,
+   "med_logit": -59.82658004760742
+  },
+  {
+   "video": "0_5432",
+   "grp": "F-Black",
+   "n": 60,
+   "fp": 56,
+   "fpr%": 93.33333333333333,
+   "ding_fpr%": 90.0,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "black",
+   "ff_race7": "Black",
+   "age_vid_if": 26.0,
+   "ita_vid": -65.84,
+   "ita4": "Q1 darkest",
+   "lum": 33.36191368103027,
+   "sharp": 18.05216884613037,
+   "max_logit": 1.2103462219238281,
+   "med_logit": -61.63732147216797
+  },
+  {
+   "video": "0_5536",
+   "grp": "M-Black",
+   "n": 60,
+   "fp": 56,
+   "fpr%": 93.33333333333333,
+   "ding_fpr%": 90.0,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "black",
+   "ff_race7": "Black",
+   "age_vid_if": 44.0,
+   "ita_vid": -29.41,
+   "ita4": "Q1 darkest",
+   "lum": 67.88333511352539,
+   "sharp": 8.591742992401123,
+   "max_logit": -39.7591552734375,
+   "med_logit": -61.87474060058594
+  },
+  {
+   "video": "0_7509",
+   "grp": "F-White",
+   "n": 60,
+   "fp": 52,
+   "fpr%": 86.66666666666667,
+   "ding_fpr%": 0.0,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "asian",
+   "ff_race7": "Southeast Asian",
+   "age_vid_if": 63.0,
+   "ita_vid": -89.13,
+   "ita4": "Q1 darkest",
+   "lum": 40.71291160583496,
+   "sharp": 1.3339413404464722,
+   "max_logit": -54.86553192138672,
+   "med_logit": -67.23042297363281
+  },
+  {
+   "video": "0_5143",
+   "grp": "M-Others",
+   "n": 54,
+   "fp": 50,
+   "fpr%": 92.5925925925926,
+   "ding_fpr%": 0.0,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "asian",
+   "ff_race7": "Latino_Hispanic",
+   "age_vid_if": 39.0,
+   "ita_vid": NaN,
+   "ita4": NaN,
+   "lum": 18.297643661499023,
+   "sharp": 1257.715087890625,
+   "max_logit": -34.6103401184082,
+   "med_logit": -56.57294464111328
+  },
+  {
+   "video": "0_6112",
+   "grp": "M-White",
+   "n": 60,
+   "fp": 48,
+   "fpr%": 80.0,
+   "ding_fpr%": 0.0,
+   "cl_gender_vid": "male",
+   "cl_race_vid": "white",
+   "ff_race7": "White",
+   "age_vid_if": 25.5,
+   "ita_vid": -11.78,
+   "ita4": "Q1 darkest",
+   "lum": 111.95891571044922,
+   "sharp": 2.831853985786438,
+   "max_logit": -63.31284713745117,
+   "med_logit": -69.67572021484375
+  },
+  {
+   "video": "0_4763",
+   "grp": "F-Asian",
+   "n": 60,
+   "fp": 38,
+   "fpr%": 63.333333333333336,
+   "ding_fpr%": 30.0,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "asian",
+   "ff_race7": "Middle Eastern",
+   "age_vid_if": 33.0,
+   "ita_vid": 26.56,
+   "ita4": "Q2",
+   "lum": 123.57416152954102,
+   "sharp": 5.6992270946502686,
+   "max_logit": -52.63449478149414,
+   "med_logit": -69.23731994628906
+  },
+  {
+   "video": "0_6247",
+   "grp": "M-White",
+   "n": 60,
+   "fp": 32,
+   "fpr%": 53.333333333333336,
+   "ding_fpr%": 53.333333333333336,
+   "cl_gender_vid": "male",
+   "cl_race_vid": "white",
+   "ff_race7": "Middle Eastern",
+   "age_vid_if": 23.0,
+   "ita_vid": 8.453,
+   "ita4": "Q1 darkest",
+   "lum": 102.0160140991211,
+   "sharp": 9.543085098266602,
+   "max_logit": -38.91572570800781,
+   "med_logit": -71.83369445800781
+  },
+  {
+   "video": "0_7068",
+   "grp": "M-Others",
+   "n": 60,
+   "fp": 32,
+   "fpr%": 53.333333333333336,
+   "ding_fpr%": 53.333333333333336,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "black",
+   "ff_race7": "Black",
+   "age_vid_if": 27.5,
+   "ita_vid": -23.06,
+   "ita4": "Q1 darkest",
+   "lum": 68.08543014526367,
+   "sharp": 18.588444709777832,
+   "max_logit": -43.729164123535156,
+   "med_logit": -73.62355041503906
+  },
+  {
+   "video": "0_4421",
+   "grp": "F-Black",
+   "n": 30,
+   "fp": 30,
+   "fpr%": 100.0,
+   "ding_fpr%": 100.0,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "black",
+   "ff_race7": "Black",
+   "age_vid_if": 37.0,
+   "ita_vid": -68.22,
+   "ita4": "Q1 darkest",
+   "lum": 42.37130165100098,
+   "sharp": 1.3807958960533142,
+   "max_logit": 6.166444778442383,
+   "med_logit": -49.261192321777344
+  },
+  {
+   "video": "0_4459",
+   "grp": "M-White",
+   "n": 30,
+   "fp": 30,
+   "fpr%": 100.0,
+   "ding_fpr%": 80.0,
+   "cl_gender_vid": "male",
+   "cl_race_vid": "white",
+   "ff_race7": "Middle Eastern",
+   "age_vid_if": 30.0,
+   "ita_vid": -56.69,
+   "ita4": "Q1 darkest",
+   "lum": 80.55219650268555,
+   "sharp": 2.5160951614379883,
+   "max_logit": 31.857101440429688,
+   "med_logit": 6.38883113861084
+  }
+ ],
+ "fp_disparity_vs_videos": {
+  "matched": {
+   "iF_FPR": 32.2283,
+   "group_FPR_minus_pooled_pp": {
+    "M-Asian": -10.74,
+    "M-White": -0.85,
+    "M-Black": -2.81,
+    "M-Others": 0.37,
+    "F-Asian": -1.86,
+    "F-White": -3.26,
+    "F-Black": 12.24,
+    "F-Others": 0.1
+   },
+   "greedy_drop_path_first10": [
+    32.228,
+    29.183,
+    27.209,
+    25.236,
+    22.889,
+    20.284,
+    18.84,
+    17.876,
+    17.016,
+    16.078,
+    15.192
+   ],
+   "greedy_dropped_videos_first10": [
+    "0_6756",
+    "0_5432",
+    "0_4074",
+    "0_4221",
+    "0_4567",
+    "0_7002",
+    "0_4421",
+    "0_7256",
+    "0_6887",
+    "0_7434"
+   ],
+   "greedy_videos_to_halve_iF_FPR": 9,
+   "greedy_iF_FPR_after_5_10_20_drops": [
+    20.284,
+    15.192,
+    7.594
+   ],
+   "loo_best_single_video": "0_6756",
+   "loo_best_iF_FPR": 29.183,
+   "perm_null_median": 34.18,
+   "perm_null_p5_p95": [
+    19.82,
+    52.8
+   ],
+   "perm_p_value_one_sided": 0.5675
+  },
+  "native": {
+   "iF_FPR": 27.7793,
+   "group_FPR_minus_pooled_pp": {
+    "M-Asian": -5.03,
+    "M-White": -0.53,
+    "M-Black": -1.46,
+    "M-Others": 2.11,
+    "F-Asian": -3.04,
+    "F-White": -2.65,
+    "F-Black": 8.85,
+    "F-Others": -4.12
+   },
+   "greedy_drop_path_first10": [
+    27.779,
+    24.741,
+    22.887,
+    21.029,
+    19.368,
+    17.95,
+    16.67,
+    15.347,
+    14.072,
+    12.848,
+    11.728
+   ],
+   "greedy_dropped_videos_first10": [
+    "0_5143",
+    "0_7434",
+    "0_6756",
+    "0_4421",
+    "0_5277",
+    "0_5432",
+    "0_7942",
+    "0_4074",
+    "0_6574",
+    "0_7256"
+   ],
+   "greedy_videos_to_halve_iF_FPR": 9,
+   "greedy_iF_FPR_after_5_10_20_drops": [
+    17.95,
+    11.728,
+    2.979
+   ],
+   "loo_best_single_video": "0_5143",
+   "loo_best_iF_FPR": 24.741,
+   "perm_null_median": 26.81,
+   "perm_null_p5_p95": [
+    15.24,
+    41.29
+   ],
+   "perm_p_value_one_sided": 0.444
+  },
+  "A1": {
+   "iF_FPR": 7.2512,
+   "group_FPR_minus_pooled_pp": {
+    "M-Asian": -1.25,
+    "M-White": -0.23,
+    "M-Black": -1.16,
+    "M-Others": 0.67,
+    "F-Asian": -0.95,
+    "F-White": -0.39,
+    "F-Black": 2.24,
+    "F-Others": 0.36
+   },
+   "greedy_drop_path_first10": [
+    7.251,
+    6.328,
+    5.696,
+    5.197,
+    4.677,
+    4.211,
+    3.862,
+    3.605,
+    3.464,
+    3.353,
+    3.254
+   ],
+   "greedy_dropped_videos_first10": [
+    "0_7434",
+    "0_5277",
+    "0_6554",
+    "0_6208",
+    "0_6593",
+    "0_6574",
+    "0_5432",
+    "0_6012",
+    "0_4763",
+    "0_6305"
+   ],
+   "greedy_videos_to_halve_iF_FPR": 7,
+   "greedy_iF_FPR_after_5_10_20_drops": [
+    4.211,
+    3.254,
+    2.233
+   ],
+   "loo_best_single_video": "0_7434",
+   "loo_best_iF_FPR": 6.328,
+   "perm_null_median": 7.49,
+   "perm_null_p5_p95": [
+    4.6,
+    11.92
+   ],
+   "perm_p_value_one_sided": 0.5405
+  }
+ },
+ "fn_video_concentration_matched": {
+  "top5_share%": 7.93,
+  "top10_share%": 14.43,
+  "top15_share%": 20.7,
+  "top25_share%": 32.59,
+  "top50_share%": 56.54,
+  "videos_for_50pct_of_FN": 43,
+  "videos_with_any_FN": 197,
+  "videos_with_FNR>=50%": 72,
+  "videos_with_FNR=100%": 8,
+  "ding_videos_with_FNR>=50%": 128
+ },
+ "fn_top15_videos_matched": [
+  {
+   "video": "0_4203",
+   "grp": "F-White",
+   "n": 60,
+   "fn": 56,
+   "fnr%": 93.33333333333333,
+   "ding_fnr%": 13.333333333333334,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "white",
+   "age_vid_if": 29.5,
+   "ita_vid": -42.33,
+   "lum": 105.42270278930664,
+   "sharp": 4.673446893692017,
+   "min_logit": -94.493896484375,
+   "med_logit": -85.917236328125
+  },
+  {
+   "video": "0_4367",
+   "grp": "F-Others",
+   "n": 60,
+   "fn": 32,
+   "fnr%": 53.333333333333336,
+   "ding_fnr%": 63.333333333333336,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "white",
+   "age_vid_if": 30.0,
+   "ita_vid": -46.85,
+   "lum": 96.38348007202148,
+   "sharp": 30.745830535888672,
+   "min_logit": -112.59418487548828,
+   "med_logit": -75.5638427734375
+  },
+  {
+   "video": "0_4680",
+   "grp": "F-White",
+   "n": 30,
+   "fn": 30,
+   "fnr%": 100.0,
+   "ding_fnr%": 100.0,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "white",
+   "age_vid_if": 31.0,
+   "ita_vid": 84.69,
+   "lum": 177.45738220214844,
+   "sharp": 24.13983535766602,
+   "min_logit": -119.20758056640625,
+   "med_logit": -107.33522033691406
+  },
+  {
+   "video": "0_4734",
+   "grp": "F-White",
+   "n": 30,
+   "fn": 30,
+   "fnr%": 100.0,
+   "ding_fnr%": 90.0,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "white",
+   "age_vid_if": 28.0,
+   "ita_vid": -41.71,
+   "lum": 109.60047912597656,
+   "sharp": 17.234209060668945,
+   "min_logit": -103.07738494873047,
+   "med_logit": -87.55567932128906
+  },
+  {
+   "video": "0_4776",
+   "grp": "F-White",
+   "n": 30,
+   "fn": 30,
+   "fnr%": 100.0,
+   "ding_fnr%": 100.0,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "white",
+   "age_vid_if": 36.5,
+   "ita_vid": NaN,
+   "lum": 98.35300064086914,
+   "sharp": 19.816365242004395,
+   "min_logit": -110.39305114746094,
+   "med_logit": -96.5367660522461
+  },
+  {
+   "video": "0_6009",
+   "grp": "F-White",
+   "n": 30,
+   "fn": 30,
+   "fnr%": 100.0,
+   "ding_fnr%": 53.333333333333336,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "white",
+   "age_vid_if": 33.0,
+   "ita_vid": -35.88,
+   "lum": 105.53042221069336,
+   "sharp": 5.0756919384002686,
+   "min_logit": -96.92747497558594,
+   "med_logit": -88.579833984375
+  },
+  {
+   "video": "0_4093",
+   "grp": "F-White",
+   "n": 30,
+   "fn": 29,
+   "fnr%": 96.66666666666667,
+   "ding_fnr%": 33.333333333333336,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "white",
+   "age_vid_if": 27.5,
+   "ita_vid": NaN,
+   "lum": 96.3516731262207,
+   "sharp": 1.986303687095642,
+   "min_logit": -99.17041015625,
+   "med_logit": -89.26861572265625
+  },
+  {
+   "video": "0_4414",
+   "grp": "M-Others",
+   "n": 30,
+   "fn": 29,
+   "fnr%": 96.66666666666667,
+   "ding_fnr%": 100.0,
+   "cl_gender_vid": "male",
+   "cl_race_vid": "others",
+   "age_vid_if": 47.5,
+   "ita_vid": NaN,
+   "lum": 14.77622127532959,
+   "sharp": 0.8746123909950256,
+   "min_logit": -89.67115783691406,
+   "med_logit": -82.28238677978516
+  },
+  {
+   "video": "0_4799",
+   "grp": "M-White",
+   "n": 30,
+   "fn": 29,
+   "fnr%": 96.66666666666667,
+   "ding_fnr%": 23.333333333333332,
+   "cl_gender_vid": "male",
+   "cl_race_vid": "white",
+   "age_vid_if": 47.0,
+   "ita_vid": -88.2,
+   "lum": 95.18047332763672,
+   "sharp": 4.392874717712402,
+   "min_logit": -94.71587371826172,
+   "med_logit": -85.61304473876953
+  },
+  {
+   "video": "0_6894",
+   "grp": "F-White",
+   "n": 30,
+   "fn": 29,
+   "fnr%": 96.66666666666667,
+   "ding_fnr%": 100.0,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "white",
+   "age_vid_if": 31.0,
+   "ita_vid": 59.41,
+   "lum": 124.87481307983398,
+   "sharp": 9.321390628814697,
+   "min_logit": -107.6696548461914,
+   "med_logit": -100.87220001220703
+  },
+  {
+   "video": "0_7411",
+   "grp": "F-White",
+   "n": 30,
+   "fn": 29,
+   "fnr%": 96.66666666666667,
+   "ding_fnr%": 80.0,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "white",
+   "age_vid_if": 26.0,
+   "ita_vid": -28.1,
+   "lum": 105.1426773071289,
+   "sharp": 4.562504053115845,
+   "min_logit": -104.74588012695312,
+   "med_logit": -85.85601806640625
+  },
+  {
+   "video": "0_5695",
+   "grp": "F-Black",
+   "n": 30,
+   "fn": 28,
+   "fnr%": 93.33333333333333,
+   "ding_fnr%": 16.666666666666668,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "white",
+   "age_vid_if": 50.0,
+   "ita_vid": 43.69,
+   "lum": 134.20436096191406,
+   "sharp": 7.479524612426758,
+   "min_logit": -94.47454833984375,
+   "med_logit": -84.43681335449219
+  },
+  {
+   "video": "0_6231",
+   "grp": "F-White",
+   "n": 30,
+   "fn": 28,
+   "fnr%": 93.33333333333333,
+   "ding_fnr%": 33.333333333333336,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "white",
+   "age_vid_if": 27.0,
+   "ita_vid": -85.83,
+   "lum": 52.9398250579834,
+   "sharp": 6.342732906341553,
+   "min_logit": -103.50003051757812,
+   "med_logit": -85.09007263183594
+  },
+  {
+   "video": "0_7113",
+   "grp": "F-White",
+   "n": 30,
+   "fn": 28,
+   "fnr%": 93.33333333333333,
+   "ding_fnr%": 66.66666666666667,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "white",
+   "age_vid_if": 28.0,
+   "ita_vid": -40.26,
+   "lum": 111.16676712036133,
+   "sharp": 11.147239685058594,
+   "min_logit": -112.91728210449219,
+   "med_logit": -95.1693115234375
+  },
+  {
+   "video": "0_7129",
+   "grp": "F-White",
+   "n": 30,
+   "fn": 28,
+   "fnr%": 93.33333333333333,
+   "ding_fnr%": 86.66666666666667,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "white",
+   "age_vid_if": 30.0,
+   "ita_vid": 47.26,
+   "lum": 126.47681045532227,
+   "sharp": 3.682645559310913,
+   "min_logit": -103.07474517822266,
+   "med_logit": -88.94700622558594
+  }
+ ],
+ "asian_fake_videos": [
+  "0_4302",
+  "0_5460",
+  "0_5562",
+  "0_7350"
+ ],
+ "shared_vs_ding": {
+  "matched": {
+   "ours_FP": 4885,
+   "ours_FP_also_Ding%": 54.78,
+   "Ding_FP": 7221,
+   "Ding_FP_also_ours%": 37.06,
+   "FP_only_ours": 2209,
+   "FP_only_Ding": 4545,
+   "ours_FN": 2246,
+   "ours_FN_also_Ding%": 54.32,
+   "Ding_FN": 3622,
+   "Ding_FN_also_ours%": 33.68,
+   "FN_only_ours": 1026,
+   "FN_only_Ding": 2402,
+   "chance_overlap_FP%(=Ding FPR)": 49.13,
+   "chance_overlap_FN%(=Ding FNR)": 44.4
+  },
+  "native": {
+   "ours_FP": 2857,
+   "ours_FP_also_Ding%": 58.07,
+   "Ding_FP": 7221,
+   "Ding_FP_also_ours%": 22.97,
+   "FP_only_ours": 1198,
+   "FP_only_Ding": 5562,
+   "ours_FN": 3324,
+   "ours_FN_also_Ding%": 52.26,
+   "Ding_FN": 3622,
+   "Ding_FN_also_ours%": 47.96,
+   "FN_only_ours": 1587,
+   "FN_only_Ding": 1885,
+   "chance_overlap_FP%(=Ding FPR)": 49.13,
+   "chance_overlap_FN%(=Ding FNR)": 44.4
+  },
+  "A1": {
+   "ours_FP": 280,
+   "ours_FP_also_Ding%": 86.43,
+   "Ding_FP": 7221,
+   "Ding_FP_also_ours%": 3.35,
+   "FP_only_ours": 38,
+   "FP_only_Ding": 6979,
+   "ours_FN": 5942,
+   "ours_FN_also_Ding%": 50.07,
+   "Ding_FN": 3622,
+   "Ding_FN_also_ours%": 82.14,
+   "FN_only_ours": 2967,
+   "FN_only_Ding": 647,
+   "chance_overlap_FP%(=Ding FPR)": 49.13,
+   "chance_overlap_FN%(=Ding FNR)": 44.4
+  },
+  "spearman_logit_real_frames": 0.246,
+  "spearman_logit_fake_frames": 0.287,
+  "spearman_video_median_real": 0.234,
+  "spearman_video_median_fake": 0.287
+ },
+ "video_level_vs_ding": {
+  "real_videos_ours_fpr_gt_ding_by_50pp": 46,
+  "real_videos_ding_fpr_gt_ours_by_50pp": 125,
+  "fake_videos_ours_fnr_gt_ding_by_50pp": 22,
+  "fake_videos_ding_fnr_gt_ours_by_50pp": 81
+ },
+ "top12_fp": [
+  {
+   "video": "0_6104",
+   "grp": "M-Others",
+   "logit": 67.53836822509766,
+   "ding_logit": 4.234633922576904,
+   "ding_pred": true,
+   "cl_gender_vid": "male",
+   "cl_race_vid": "others",
+   "age_vid_if": 26.0,
+   "ita_vid": 5.669,
+   "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_6104_71.png"
+  },
+  {
+   "video": "0_7434",
+   "grp": "F-Black",
+   "logit": 61.525489807128906,
+   "ding_logit": 2.0997447967529297,
+   "ding_pred": true,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "black",
+   "age_vid_if": 31.0,
+   "ita_vid": -58.76,
+   "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_7434_171.png"
+  },
+  {
+   "video": "0_7434",
+   "grp": "F-Black",
+   "logit": 60.597755432128906,
+   "ding_logit": 4.977643966674805,
+   "ding_pred": true,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "black",
+   "age_vid_if": 31.0,
+   "ita_vid": -58.76,
+   "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_7434_221.png"
+  },
+  {
+   "video": "0_7434",
+   "grp": "F-Black",
+   "logit": 58.654640197753906,
+   "ding_logit": 2.9917454719543457,
+   "ding_pred": true,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "black",
+   "age_vid_if": 31.0,
+   "ita_vid": -58.76,
+   "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_7434_121.png"
+  },
+  {
+   "video": "0_7964",
+   "grp": "F-White",
+   "logit": 55.01288604736328,
+   "ding_logit": 4.942707538604736,
+   "ding_pred": true,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "white",
+   "age_vid_if": 42.5,
+   "ita_vid": -40.2,
+   "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_7964_51.png"
+  },
+  {
+   "video": "0_7434",
+   "grp": "F-Black",
+   "logit": 54.97991943359375,
+   "ding_logit": 3.429670810699463,
+   "ding_pred": true,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "black",
+   "age_vid_if": 31.0,
+   "ita_vid": -58.76,
+   "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_7434_51.png"
+  },
+  {
+   "video": "0_7434",
+   "grp": "F-Black",
+   "logit": 53.38982391357422,
+   "ding_logit": 3.633665084838867,
+   "ding_pred": true,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "black",
+   "age_vid_if": 31.0,
+   "ita_vid": -58.76,
+   "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_7434_41.png"
+  },
+  {
+   "video": "0_5633",
+   "grp": "M-White",
+   "logit": 50.48666000366211,
+   "ding_logit": 5.071996688842773,
+   "ding_pred": true,
+   "cl_gender_vid": "male",
+   "cl_race_vid": "white",
+   "age_vid_if": 22.0,
+   "ita_vid": -17.73,
+   "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_5633_241.png"
+  },
+  {
+   "video": "0_5633",
+   "grp": "M-White",
+   "logit": 50.46550369262695,
+   "ding_logit": 5.165842533111572,
+   "ding_pred": true,
+   "cl_gender_vid": "male",
+   "cl_race_vid": "white",
+   "age_vid_if": 22.0,
+   "ita_vid": -17.73,
+   "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_5633_291.png"
+  },
+  {
+   "video": "0_6104",
+   "grp": "M-Others",
+   "logit": 49.88499450683594,
+   "ding_logit": 4.881425380706787,
+   "ding_pred": true,
+   "cl_gender_vid": "male",
+   "cl_race_vid": "others",
+   "age_vid_if": 26.0,
+   "ita_vid": 5.669,
+   "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_6104_51.png"
+  },
+  {
+   "video": "0_7434",
+   "grp": "F-Black",
+   "logit": 47.220458984375,
+   "ding_logit": 4.718493461608887,
+   "ding_pred": true,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "black",
+   "age_vid_if": 31.0,
+   "ita_vid": -58.76,
+   "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_7434_231.png"
+  },
+  {
+   "video": "0_5633",
+   "grp": "M-White",
+   "logit": 45.29361343383789,
+   "ding_logit": 5.370960235595703,
+   "ding_pred": true,
+   "cl_gender_vid": "male",
+   "cl_race_vid": "white",
+   "age_vid_if": 22.0,
+   "ita_vid": -17.73,
+   "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_5633_121.png"
+  }
+ ],
+ "top12_fn": [
+  {
+   "video": "0_5573",
+   "grp": "M-Others",
+   "logit": -122.63323974609375,
+   "ding_logit": -5.064300060272217,
+   "ding_pred": false,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "white",
+   "age_vid_if": 28.5,
+   "ita_vid": -43.71,
+   "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_5573_191.png"
+  },
+  {
+   "video": "0_4680",
+   "grp": "F-White",
+   "logit": -119.20758056640625,
+   "ding_logit": -5.700489044189453,
+   "ding_pred": false,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "white",
+   "age_vid_if": 31.0,
+   "ita_vid": 84.69,
+   "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_4680_251.png"
+  },
+  {
+   "video": "0_7028",
+   "grp": "F-Others",
+   "logit": -118.13776397705078,
+   "ding_logit": -4.313939094543457,
+   "ding_pred": false,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "white",
+   "age_vid_if": 31.0,
+   "ita_vid": 37.46,
+   "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_7028_191.png"
+  },
+  {
+   "video": "0_4680",
+   "grp": "F-White",
+   "logit": -114.52814483642578,
+   "ding_logit": -5.501403331756592,
+   "ding_pred": false,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "white",
+   "age_vid_if": 31.0,
+   "ita_vid": 84.69,
+   "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_4680_261.png"
+  },
+  {
+   "video": "0_7113",
+   "grp": "F-White",
+   "logit": -112.91728210449219,
+   "ding_logit": -5.488630294799805,
+   "ding_pred": false,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "white",
+   "age_vid_if": 28.0,
+   "ita_vid": -40.26,
+   "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_7113_251.png"
+  },
+  {
+   "video": "0_4680",
+   "grp": "F-White",
+   "logit": -112.89191436767578,
+   "ding_logit": -5.7000274658203125,
+   "ding_pred": false,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "white",
+   "age_vid_if": 31.0,
+   "ita_vid": 84.69,
+   "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_4680_91.png"
+  },
+  {
+   "video": "0_4367",
+   "grp": "F-Others",
+   "logit": -112.59418487548828,
+   "ding_logit": -1.7569375038146973,
+   "ding_pred": false,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "white",
+   "age_vid_if": 30.0,
+   "ita_vid": -46.85,
+   "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_4367_91.png"
+  },
+  {
+   "video": "0_4680",
+   "grp": "F-White",
+   "logit": -112.56607055664062,
+   "ding_logit": -5.743464469909668,
+   "ding_pred": false,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "white",
+   "age_vid_if": 31.0,
+   "ita_vid": 84.69,
+   "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_4680_241.png"
+  },
+  {
+   "video": "0_7028",
+   "grp": "F-Others",
+   "logit": -111.89266967773438,
+   "ding_logit": 1.6162199974060059,
+   "ding_pred": true,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "white",
+   "age_vid_if": 31.0,
+   "ita_vid": 37.46,
+   "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_7028_41.png"
+  },
+  {
+   "video": "0_4680",
+   "grp": "F-White",
+   "logit": -111.56871032714844,
+   "ding_logit": -3.6935176849365234,
+   "ding_pred": false,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "white",
+   "age_vid_if": 31.0,
+   "ita_vid": 84.69,
+   "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_4680_201.png"
+  },
+  {
+   "video": "0_4680",
+   "grp": "F-White",
+   "logit": -111.49776458740234,
+   "ding_logit": -5.688474178314209,
+   "ding_pred": false,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "white",
+   "age_vid_if": 31.0,
+   "ita_vid": 84.69,
+   "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_4680_181.png"
+  },
+  {
+   "video": "0_4776",
+   "grp": "F-White",
+   "logit": -110.39305114746094,
+   "ding_logit": -5.635976791381836,
+   "ding_pred": false,
+   "cl_gender_vid": "female",
+   "cl_race_vid": "white",
+   "age_vid_if": 36.5,
+   "ita_vid": NaN,
+   "img_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/EXACTMATCH_plan/work/extracted/dfdc/0_4776_1.png"
+  }
+ ],
+ "top12_fp_videos_distinct": 4,
+ "top12_fn_videos_distinct": 6,
+ "fp_sheet_ding_also_wrong": 22,
+ "fn_sheet_ding_also_wrong": 23,
+ "extras": {
+  "real_videos_xu_vs_cleaner_group_disagree": 76,
+  "real_videos_xu_vs_cleaner_gender_disagree": 46,
+  "top15_fp_videos_xu_vs_cleaner_group_disagree": 6,
+  "fake_videos_xu_vs_cleaner_group_disagree": 60,
+  "n_real_videos": 473,
+  "n_fake_videos": 284,
+  "iF_FPR_cleaner_vid_labels": {
+   "matched": 68.79,
+   "native": 42.97,
+   "A1": 9.5,
+   "Ding repro 0.5": 62.52
+  },
+  "cleaner_perm_null_matched": {
+   "obs": 68.79,
+   "median": 36.25,
+   "p5_p95": [
+    20.24,
+    54.7
+   ],
+   "p_one_sided": 0.0025
+  },
+  "F_Black_FPR_after_dropping_top_k_FBlack_videos": {
+   "n_videos": 68,
+   "drop0": 45.48,
+   "drop3": 42.37,
+   "drop5": 40.57,
+   "drop10": 36.17,
+   "pooled_after_drop10": 31.81,
+   "top10_FBlack_videos": [
+    "0_5432",
+    "0_4421",
+    "0_7256",
+    "0_7434",
+    "0_7942",
+    "0_5277",
+    "0_6574",
+    "0_7081",
+    "0_6961",
+    "0_6290"
+   ]
+  },
+  "cleaner_group_FPR_matched%": {
+   "M-Asian": 14.86,
+   "M-White": 32.82,
+   "M-Black": 27.23,
+   "M-Others": 17.03,
+   "F-Asian": 43.85,
+   "F-White": 28.96,
+   "F-Black": 45.47,
+   "F-Others": 32.55
+  },
+  "fp_rate_by_race_x_brightness_matched": {
+   "asian": {
+    "brightness Q1 (low)": "54.3 (n=479)",
+    "brightness Q2": "31.7 (n=309)",
+    "brightness Q3": "28.0 (n=422)",
+    "brightness Q4 (high)": "20.3 (n=315)"
+   },
+   "black": {
+    "brightness Q1 (low)": "46.5 (n=1580)",
+    "brightness Q2": "37.7 (n=1571)",
+    "brightness Q3": "32.4 (n=738)",
+    "brightness Q4 (high)": "28.5 (n=474)"
+   },
+   "others": {
+    "brightness Q1 (low)": "12.4 (n=370)",
+    "brightness Q2": "36.4 (n=308)",
+    "brightness Q3": "20.7 (n=304)",
+    "brightness Q4 (high)": "32.8 (n=122)"
+   },
+   "white": {
+    "brightness Q1 (low)": "43.1 (n=1097)",
+    "brightness Q2": "32.0 (n=1714)",
+    "brightness Q3": "29.2 (n=2108)",
+    "brightness Q4 (high)": "26.8 (n=2788)"
+   }
+  },
+  "fn_rate_by_race_x_brightness_matched": {
+   "asian": {
+    "brightness Q1 (low)": "32.1 (n=28)",
+    "brightness Q2": "66.7 (n=6)",
+    "brightness Q3": "35.2 (n=91)",
+    "brightness Q4 (high)": "69.7 (n=33)"
+   },
+   "black": {
+    "brightness Q1 (low)": "16.2 (n=1047)",
+    "brightness Q2": "24.3 (n=580)",
+    "brightness Q3": "12.8 (n=117)",
+    "brightness Q4 (high)": "31.6 (n=19)"
+   },
+   "others": {
+    "brightness Q1 (low)": "26.3 (n=137)",
+    "brightness Q2": "19.4 (n=175)",
+    "brightness Q3": "6.9 (n=29)",
+    "brightness Q4 (high)": "0.0 (n=26)"
+   },
+   "white": {
+    "brightness Q1 (low)": "15.4 (n=977)",
+    "brightness Q2": "30.7 (n=1051)",
+    "brightness Q3": "36.1 (n=1906)",
+    "brightness Q4 (high)": "31.6 (n=1936)"
+   }
+  },
+  "real_median_brightness_by_race": {
+   "asian": 86.0,
+   "black": 71.5,
+   "others": 70.2,
+   "white": 100.8
+  },
+  "spearman_logit_lum_mean_real": -0.173,
+  "spearman_logit_lum_mean_fake": -0.056,
+  "spearman_logit_lum_std_real": -0.157,
+  "spearman_logit_lum_std_fake": 0.047,
+  "spearman_logit_sharp_lapvar_real": -0.101,
+  "spearman_logit_sharp_lapvar_fake": 0.073,
+  "perm_greedy_videos_to_halve_matched": {
+   "values": [
+    7,
+    8,
+    4,
+    8,
+    14,
+    5,
+    8,
+    10,
+    6,
+    8,
+    11,
+    6,
+    4,
+    5,
+    7,
+    4,
+    10,
+    5,
+    7,
+    9
+   ],
+   "median": 7.0
+  },
+  "fn_sheet_group_counts": {
+   "F-White": 16,
+   "M-Others": 2,
+   "F-Others": 2,
+   "M-White": 2,
+   "F-Black": 1,
+   "M-Black": 1
+  },
+  "fp_sheet_group_counts": {
+   "F-Black": 7,
+   "F-White": 7,
+   "M-White": 4,
+   "M-Others": 2,
+   "M-Black": 2,
+   "F-Asian": 1,
+   "F-Others": 1
+  },
+  "top15_fn_videos_group_counts": {
+   "F-White": 11,
+   "F-Others": 1,
+   "M-Others": 1,
+   "M-White": 1,
+   "F-Black": 1
+  },
+  "fn_sheet_cleaner_white_female": 20,
+  "fake_rows_within_10_logits_of_t_matched%": 30.74,
+  "real_rows_within_10_logits_of_t_matched%": 40.86
+ }
+}

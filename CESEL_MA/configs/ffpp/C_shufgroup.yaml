@@ -1,0 +1,2 @@
+# C_shufgroup arm on ffpp (dataset: ../ces_ffpp.yaml, arm: ../arms/C_shufgroup.yaml)
+_base_: [../ces_ffpp.yaml, ../arms/C_shufgroup.yaml]

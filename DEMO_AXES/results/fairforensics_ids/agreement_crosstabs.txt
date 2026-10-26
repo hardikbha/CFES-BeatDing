@@ -1,0 +1,239 @@
+== ffpp_test frame: FairFace race7 x Xu race
+col_0            asian  black  others  white
+race7                                       
+Black               11    969      38      2
+East Asian        2208      3      31    395
+Indian               0     35     206     54
+Latino_Hispanic    141     92     391    714
+Middle Eastern      28     54     772   3603
+Southeast Asian    481     42     221     55
+White              480      5     353  14017
+
+== ffpp_test frame: FairFace age2 x AIF-v2 age (rows)
+col_0  middle  others  senior  young
+row_0                               
+0-29      259     503      13  13222
+30+      3033    4537     843   2991
+
+== ffpp_test frame: FairFace age9 x AIF-v1 age5 (0 child 0-14,1 youth 15-24,2 adult 25-44,3 middle 45-64,4 senior 65+)
+v1_age5     0       1       2       3     4
+age9                                       
+0-2       0.0     0.0     5.0     3.0   0.0
+3-9       0.0    51.0   196.0    47.0   2.0
+10-19    16.0   470.0   561.0   131.0   6.0
+20-29    25.0  4577.0  6558.0  1322.0  27.0
+30-39    12.0   811.0  3038.0  1996.0  46.0
+40-49     0.0    25.0   698.0  2951.0  36.0
+50-59     0.0     0.0     4.0  1654.0  63.0
+60-69     0.0     0.0     0.0    24.0  46.0
+
+== ffpp_test video: FairFace age2 x AIF-v2 age (rows)
+col_0  middle  others  senior  young
+row_0                               
+0-29        8      14       0    514
+30+       117     171      30    111
+
+== dfdc frame: FairFace race7 x Xu race
+col_0            asian  black  others  white
+race7                                       
+Black               30   4826     276    285
+East Asian         712     25     152    110
+Indian              12    123      90     21
+Latino_Hispanic     67    207     440    236
+Middle Eastern      31    100     797   1368
+Southeast Asian    204     88      58     47
+White               60    141     717  10158
+
+== dfdc frame: FairFace age2 x AIF-v2 age (rows)
+col_0  middle  others  senior  young
+row_0                               
+0-29      360    1795      38   8566
+30+      2523    5057     815   2227
+
+== dfdc frame: FairFace age9 x AIF-v1 age5 (0 child 0-14,1 youth 15-24,2 adult 25-44,3 middle 45-64,4 senior 65+)
+v1_age5   0     1     2     3    4
+age9                              
+0-2       1     1     4     5   12
+3-9      34    48   246    30   16
+10-19    66   434   913   101   19
+20-29    84  1499  6568   624   54
+30-39    10   139  4171  2036  174
+40-49     4    16   522  1594  254
+50-59     0     0    67   678  630
+60-69     0     0     1    14  273
+70+       0     0     0     0   39
+
+== dfdc video: FairFace age2 x AIF-v2 age (rows)
+col_0  middle  others  senior  young
+row_0                               
+0-29        8      61       1    315
+30+        89     183      28     72
+
+== celebdf frame: FairFace race7 x Xu race
+col_0            black  others  white
+race7                                
+Black             1811       0      1
+East Asian           3     107    182
+Indian              13       1      2
+Latino_Hispanic     53       9    145
+Middle Eastern       3      20    745
+Southeast Asian     32      13     27
+White                7      30  25254
+
+== celebdf frame: FairFace age2 x AIF-v2 age (rows)
+col_0  middle  others  senior  young
+row_0                               
+0-29      129     323       0  23130
+30+       907    1215      41   2713
+
+== celebdf frame: FairFace age9 x AIF-v1 age5 (0 child 0-14,1 youth 15-24,2 adult 25-44,3 middle 45-64,4 senior 65+)
+v1_age5      0       1        2       3    4
+age9                                        
+3-9       45.0    23.0     33.0     6.0  0.0
+10-19     75.0   322.0    505.0    66.0  0.0
+20-29    129.0  2792.0  15925.0  3658.0  3.0
+30-39      2.0    70.0   2069.0  1996.0  0.0
+40-49      1.0     0.0     70.0   555.0  2.0
+50-59      0.0     0.0      4.0   100.0  5.0
+60-69      0.0     0.0      0.0     2.0  0.0
+
+== celebdf video: FairFace age2 x AIF-v2 age (rows)
+col_0  middle  others  senior  young
+row_0                               
+0-29        2       4       0    822
+30+        32      44       1     51
+
+== dfd frame: FairFace race7 x Xu race
+col_0            black  others  white
+race7                                
+Black              920      39     93
+East Asian          44      34     14
+Latino_Hispanic    424     110    320
+Middle Eastern       2      25    109
+Southeast Asian     61      14     25
+White               79     552   6520
+
+== dfd frame: FairFace age2 x AIF-v2 age (rows)
+col_0  middle  others  young
+row_0                       
+0-29       99     429   7464
+30+       174     322    897
+
+== dfd frame: FairFace age9 x AIF-v1 age5 (0 child 0-14,1 youth 15-24,2 adult 25-44,3 middle 45-64,4 senior 65+)
+v1_age5     0       1       2     3     4
+age9                                     
+0-2       0.0     1.0     1.0   0.0   0.0
+3-9       2.0     9.0    10.0   0.0   0.0
+10-19     1.0   364.0   670.0   1.0   2.0
+20-29    16.0  2230.0  4649.0  23.0  13.0
+30-39     4.0    96.0  1173.0  41.0   2.0
+40-49     1.0     7.0    56.0   8.0   0.0
+50-59     1.0     2.0     2.0   0.0   0.0
+
+== dfd video: FairFace age2 x AIF-v2 age (rows)
+col_0  middle  others  young
+row_0                       
+0-29        3      12    274
+30+         7       5     18
+
+== ffpp_val frame: FairFace race7 x Xu race
+col_0            asian  black  others  white
+race7                                       
+Black                1    408      67     33
+East Asian        2123      3     102    388
+Indian              18    150     514     29
+Latino_Hispanic    216     12     387    470
+Middle Eastern     183     30     866   3325
+Southeast Asian    512      8      50     47
+White              460     19     322  14643
+
+== ffpp_val frame: FairFace age9 x AIF-v1 age5 (0 child 0-14,1 youth 15-24,2 adult 25-44,3 middle 45-64,4 senior 65+)
+v1_age5     0       1       2       3      4
+age9                                        
+0-2       0.0     0.0     2.0     0.0    0.0
+3-9      24.0   142.0   131.0    33.0    0.0
+10-19     2.0   288.0   528.0   132.0    3.0
+20-29    19.0  4212.0  6907.0  1557.0   94.0
+30-39     2.0   268.0  3138.0  2240.0   22.0
+40-49     1.0    10.0   781.0  2403.0  229.0
+50-59     0.0     4.0    53.0  1428.0  284.0
+60-69     0.0     0.0     0.0   197.0  252.0
+
+== ffpp_train frame: FairFace race7 x Xu race
+col_0            asian  black  others  white
+race7                                       
+Black                9   2213      73    114
+East Asian        7115      3     411   1590
+Indian              82    116    1070     85
+Latino_Hispanic    413    158    1104   2833
+Middle Eastern     460     54    2822  12906
+Southeast Asian   1636     31     372    404
+White              773      4     496  38792
+
+== ffpp_train frame: FairFace age2 x AIF-v2 age (rows)
+col_0  middle  others  senior  young
+row_0                               
+0-29      742    1500      20  42809
+30+      8632   11264    2742   8430
+
+== ffpp_train frame: FairFace age9 x AIF-v1 age5 (0 child 0-14,1 youth 15-24,2 adult 25-44,3 middle 45-64,4 senior 65+)
+v1_age5      0        1        2       3      4
+age9                                           
+3-9        1.0    202.0    277.0   120.0    8.0
+10-19     47.0   1247.0   1680.0   265.0    4.0
+20-29    104.0  14075.0  23844.0  3110.0   87.0
+30-39      9.0   1284.0   9352.0  4672.0  109.0
+40-49      7.0     34.0   2509.0  7091.0  307.0
+50-59     36.0     11.0    373.0  3704.0  760.0
+60-69      0.0      1.0      2.0    82.0  669.0
+70+        0.0      0.0      0.0     0.0   56.0
+
+== ffpp_train video: FairFace age2 x AIF-v2 age (rows)
+col_0  middle  others  senior  young
+row_0                               
+0-29       27      45       0   1563
+30+       303     398     103    283
+
+== ff2pub_test: FairFace race7 x manifest race_native (images)
+race_native      Asian  Black  East Asian  Indian  Latino_Hispanic  Middle Eastern  Southeast Asian  White
+race7                                                                                                     
+Black              182  17623          41     485              423              70              192     43
+East Asian        4713     41        4795      53              194              27             1683    108
+Indian             125    606          12    6760              523             305              117    100
+Latino_Hispanic   1144   1087         209    1246             5217            1026              504    745
+Middle Eastern     178     99          35     628              899            4387               86    698
+Southeast Asian   1172    218         770     220              345              40             3558     40
+White             2625    486         381     583             2745            2487              325  20139
+
+== ff2pub_select: FairFace race7 x manifest race_native (images)
+race_native      Asian  Black  East Asian  Indian  Latino_Hispanic  Middle Eastern  Southeast Asian  White
+race7                                                                                                     
+Black                9   5366          29     219              196              37               92     36
+East Asian         572      9        2436      19              150              26              873     48
+Indian              12    114           6    3214              213             133               60     42
+Latino_Hispanic    114    312          89     565             2548             407              214    368
+Middle Eastern       9     48          18     282              427            1940               29    348
+Southeast Asian    173     76         398      98              130              13             1859     19
+White              179    106         187     227             1302            1319              153   6133
+
+== ff2pub_train: FairFace race7 x manifest race_native (images)
+race_native      Asian  Black  East Asian  Indian  Latino_Hispanic  Middle Eastern  Southeast Asian  White
+race7                                                                                                     
+Black              195  40751         121    1661             1271             242              600    152
+East Asian        6694     95       14431     160              602             121             4546    296
+Indian             115   1299          44   21135             1669            1008              441    198
+Latino_Hispanic   1460   2545         620    3518            15480            2893             1797   2042
+Middle Eastern     128    240          94    1847             2657           13591              259   1699
+Southeast Asian   1762    651        2407     704             1079             119            11211    127
+White             2087   1026        1292    1745             7834            8356              990  46056
+
+== ff2pub_cal: FairFace race7 x manifest race_native (images)
+race_native      Asian  Black  East Asian  Indian  Latino_Hispanic  Middle Eastern  Southeast Asian  White
+race7                                                                                                     
+Black                7   5640           9     269              200              19              115     24
+East Asian         472     18        2554      30              100              30              754     43
+Indian              16    176          10    3471              321             144               55     23
+Latino_Hispanic     96    258         116     547             2851             465              253    411
+Middle Eastern       4     30          22     330              478            2278               36    248
+Southeast Asian    123     73         429     107              147              27             2017     18
+White              153    139         268     269             1316            1322              145   5774

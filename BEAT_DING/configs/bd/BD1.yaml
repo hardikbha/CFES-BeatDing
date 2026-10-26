@@ -1,0 +1,3 @@
+# BD1 = base + A (label-preserving processing augmentation, both classes; plan section 3)
+_base_: base_E.yaml
+data: {aug: {enabled: true}}

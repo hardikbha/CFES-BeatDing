@@ -1,0 +1,21 @@
+Random Seed: 121
+Using PyTorch version: 2.10.0+cu128 CUDA: False
+Load pretrained model successfully!!!! missing= ['last_linear.weight', 'last_linear.bias', 'adjust_channel.0.weight', 'adjust_channel.0.bias', 'adjust_channel.1.weight', 'adjust_channel.1.bias', 'adjust_channel.1.running_mean', 'adjust_channel.1.running_var']
+Unsupported operator aten::add_ encountered 53 time(s)
+Unsupported operator aten::max_pool2d encountered 4 time(s)
+The following submodules of the model were never called during the trace of the graph. They may be unused, or they were accessed by direct calls to .forward() or via other python methods. In the latter case they will have zeros for statistics, though their statistics will still contribute to their parent calling module.
+loss_func, loss_func.loss_fn
+Total FLOPs: 6.09 GFlops
+DINGREPRO_LIN: loaded 10 channels to decouple from /tmp/claude-156900507/-home-sachin-chaudhary/3e01ae21-517f-480b-a721-cb2115803d08/scratchpad/fastloader/run1/orig/channels.txt
+The real data volume of each group: [486, 4455, 268, 569, 1506, 5190, 182, 270]
+The fake data volume of each group: [1989, 20988, 1200, 3594, 6507, 26091, 929, 1915]
+Epoch: 0/2
+Cur lr: 0.001
+/home/sachin.chaudhary/.conda/envs/qwen38/lib/python3.12/site-packages/torch/utils/data/dataloader.py:1118: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  super().__init__(loader)
+Epoch [1/2], Avg Loss: 0.0307
+Epoch: 1/2
+Cur lr: 0.001
+Epoch [2/2], Avg Loss: 0.0204
+HARNESS_DONE orig 10 steps 108.2s
+~/.conda/envs/qwen38/bin/python -u equiv_harness.py --script GDA.py --tag ori  386.74s user 222.25s system 465% cpu 2:10.86 total

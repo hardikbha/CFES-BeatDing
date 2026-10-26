@@ -1,0 +1,653 @@
+                       This CVPR paper is the Open Access version, provided by the Computer Vision Foundation.
+                                    Except for this watermark, it is identical to the accepted version;
+                              the final published version of the proceedings is available on IEEE Xplore.
+
+
+
+
+ Decoupling Bias, Aligning Distributions: Synergistic Fairness Optimization for
+                              Deepfake Detection
+
+                    Feng Ding1 , Wenhui Yi1 , Yunpeng Zhou1 , Xinan He1,2 , Hong Rao1 *, Shu Hu3 *
+                            1
+                              Nanchang University {fengding, raohong}@ncu.edu.cn,
+                                {408000240010, yunpengzhou, shahur}@email.ncu.edu.cn
+                2
+                 Guangdong Provincial Key Laboratory of Intelligent Information Processing,
+                              Shenzhen Key Laboratory of Media Security,
+                and SZU–AFS Joint Innovation Center for AI Technology, Shenzhen University
+                                 3
+                                   Purdue University hu968@purdue.edu
+
+
+                              Abstract
+
+Fairness is a core element in the trustworthy deployment
+of deepfake detection models, especially in the field of dig-
+ital identity security. Biases in detection models toward
+different demographic groups, such as gender and race,
+may lead to systemic misjudgments, exacerbating the digi-
+tal divide and social inequities. However, current fairness-
+enhanced detectors often improve fairness at the cost of
+detection accuracy. To address this challenge, we propose a
+dual-mechanism collaborative optimization framework. Our
+proposed method innovatively integrates structural fairness
+decoupling and global distribution alignment: decoupling
+                                                                     Figure 1. Example illustrating our proposed fairness enhancement
+channels sensitive to demographic groups at the model ar-            strategy. The baseline method may lead to unfair model perfor-
+chitectural level, and subsequently reducing the distance            mance across intra-group and inter-group. Our proposed method
+between the overall sample distribution and the distributions        effectively addresses this issue by more balanced handling of dif-
+corresponding to each demographic group at the feature               ferent sensitive attributes.
+level. Experimental results demonstrate that, compared with
+other methods, our framework improves both inter-group               Deepfakes a critical security threat requiring urgent gover-
+and intra-group fairness while maintaining overall detec-            nance in the AI era [6, 8, 40].
+tion accuracy across domains. The code is available at                  To mitigate the risks posed by Deepfakes, numerous de-
+https://github.com/ywh1093/Fairness-Optimization.                    tection methods have been proposed in recent years [12,
+                                                                     22, 28, 30, 45, 47]. Nevertheless, fairness has often been
+                                                                     overlooked, resulting in inconsistent performance across de-
+1. Introduction                                                      mographic groups defined by gender, race, and age [1, 21].
+Deepfake, a combination of “deep learning” and “fake”,               A principal driver of these disparities is dataset imbalance:
+refers to the use of deep learning techniques to replace faces       large benchmarks frequently mirror societal or cultural
+in real images or videos with others, thereby generating fab-        skews, with Caucasian faces and certain genders overrepre-
+ricated identities. Due to their high fidelity, synthetic media      sented (e.g., FF++ dataset [36]). Under standard empirical
+can evade human perception and are maliciously exploited             risk minimization, models are biased toward the majority
+in financial fraud, judicial evidence manipulation, and misin-       distribution, producing unequal error rates across groups.
+formation dissemination [7, 11, 40, 46]. The convergence of          For example, detectors commonly achieve higher accuracy
+technological sophistication and societal impact has made            on lighter than on darker skin tones [41].
+                                                                        Early efforts [29, 43] addressed fairness from the dataset
+  * Corresponding   author.                                          side by balancing demographic distributions through resam-
+
+
+
+                                                               32704
+pling. Subsequent work [20] shifted to algorithm-level ob-        forgery-trace–oriented approaches. Early studies [27] fo-
+jective design and loss reweighting to reduce bias, yet gener-    cused on extracting biological or physiological cues from
+alization remained insufficient. Disentanglement was then         facial regions to expose tampering traces. Subsequently, re-
+explored to separate demographic features from domain-            searchers [42] found that signal-level inconsistencies such
+agnostic forgery cues, which improved fairness generaliza-        as frequency or compression artifacts were more reliable
+tion but reduced detection accuracy [24]. Overall, existing       for identifying synthetic content. Current deepfake de-
+strategies either fail to generalize or degrade detection ac-     tection research is predominantly grounded in convolu-
+curacy, which motivates our approach that improves both           tional neural network (CNN)–based classification frame-
+inter- and intra-group fairness while maintaining detection       works [9, 14, 33, 34, 45], which learn discriminative forgery
+performance.                                                      features through end-to-end training. As forgery techniques
+    As shown in Fig. 1, performance disparities across demo-      have evolved in complexity, recent studies have advanced
+graphic groups are effectively mitigated by the proposed          toward forgery-trace–oriented approaches. For instance, Cao
+method, while overall detection accuracy is maintained.           et al. [3] introduced a forgery detection framework that re-
+Specifically, this paper proposes an innovative synergistic       lies on reconfigurable classification learning. There are also
+fairness optimization framework that integrates structural        detectors developed with large language models [19].
+fairness decoupling and global distribution alignment. In
+the structural fairness decoupling stage, we compute fair-         2.2. Stage-Wise Fairness Optimization Methods
+ness index to identify channels highly correlated with demo-       Previous studies have documented significant demographic
+graphic groups and decouple a certain percentage of chan-          biases in deepfake detectors across gender, age, and race [16,
+nels, thereby reducing the model’s reliance on these sensi-        28, 32, 41, 44]. To mitigate these biases, prior work can
+tive attributes that may introduce bias into the model. In         be organized into pre-processing, in-processing, and post-
+the global distribution alignment stage, we enhance model          processing stages [4, 10, 24].
+fairness by minimizing the distance between the overall fea-       Pre-processing methods. [29, 43] rebalance data via re-
+ture distribution and the distributions corresponding to each      sampling or cross-group synthesis to alleviate distribution
+demographic group. The purpose of the second stage is to           skew. These methods show limited adaptability to evolv-
+derive common sense from the decoupled features, thereby           ing generative attacks and sparsely observed intersectional
+reducing the discrepancies across different domains.               combinations.
+    In sum, the contributions of our work are three fold:          In-processing approaches. [10, 18, 20, 24, 25, 35, 37] in-
+• This paper introduces a structural fairness decoupling mod-      corporate adversarial debiasing, risk-sensitive objectives,
+   ule to dynamically identify and decouple channels that are      or disentanglement modules to reduce the dependence of
+   highly correlated with sensitive attributes. By reducing the    predictions on sensitive attributes. These mechanisms can in-
+   model’s reliance on sensitive attributes, the module nar-       advertently suppress discriminative forgery cues and degrade
+   rows performance disparities across groups and improves         accuracy or robustness.
+   both inter-group and intra-group fairness.                      Post-processing methods. [15, 31, 39] calibrate thresholds
+• This paper proposes a global distribution alignment mod-         or align output distributions conditioned on sensitive at-
+   ule that aligns the distributions between the overall sam-      tributes. Their effectiveness is constrained by residual repre-
+   ple and each demographic group. With the decoupled              sentation bias and instability under cross-domain shifts.
+   demographic-insensitive features, this module can extract
+   common sense from them to reduce discrepancies across           3. Method
+   different domains, thereby further enhancing fairness gen-      3.1. Overview
+   eralization.
+                                                                  To address fairness concerns in deepfake detection, we pro-
+• This method outperforms state-of-the-art approaches in
+                                                                  pose a novel method that improves both intra-group and inter-
+   improving both inter-group and intra-group fairness while
+                                                                  group fairness without sacrificing detection performance and
+   maintaining overall detection accuracy during deepfake
+                                                                  demonstrates a notable ability to generalize fairness in this
+   detection, as demonstrated in extensive experiments on
+                                                                  section.
+   various leading deepfake datasets.
+                                                                  Problem Definition. Given a training dataset Dsensitive =
+                                                                  {(xi , yi , ai )}m
+                                                                                   i=1 with size m, where xi represents an input
+2. Related Work
+                                                                  image, yi ∈ {0 : real, 1 : f ake} indicates identity label,
+2.1. Deepfake Detection                                           and ai represents a sensitive attribute (single or intersec-
+Based on prior research, deepfake detection methods can           tional). Our goal is to train a fair deepfake detection model
+be broadly categorized into four main directions: biolog-         fθ using Dsensitive that both accurately detects Deepfakes and
+ical feature–based detection, signal-level artifact analysis,     maintains fairness across attribute groups.
+data-driven deep neural network (DNN) classification, and         Framework. Fig. 2 presents an overview of the proposed
+
+
+
+                                                              32705
+Figure 2. Overview of our proposed method: (1) Structural Fairness Decoupling: dynamically identify and decouple channels that are
+highly correlated with sensitive attributes; (2) Global Distribution Alignment: align prediction distributions of real and fake images within
+each sensitive subgroup with the global distributions. Specifically, this module adjusts the distributions of real images gri and fake images gfi
+for different sensitive groups (i ∈ A) to align with the global distributions of real images R and fake images G.
+
+framework, which comprises two stages: Structural Fair-                    deepfake detection model respond to sensitive attributes with
+ness Decoupling and Global Distribution Alignment. The                     significant heterogeneity. Some channels may introduce pre-
+purpose of the Structural Fairness Decoupling stage is to                  diction bias by encoding local texture patterns strongly corre-
+selectively decouple channels that are sensitive to attribute              lated with attributes such as skin color and gender (e.g., skin
+ai from a specific layer of the model fθ , thereby reducing the            reflectance properties, facial contour geometrical features).
+model’s reliance on these sensitive attributes. In the Global              To address this, we design a channel sensitivity evaluation
+Distribution Alignment stage, we align the distributions of                criterion based on inter-class and intra-class feature similar-
+real and fake images within each sensitive subgroup to the                 ity comparison, and dynamically quantify the fairness sensi-
+global distributions. This dual-path fairness optimization                 tivity of channels by regularizing the Soft Nearest Neighbor
+mechanism effectively mitigates the model’s prediction bias                Loss (SNNL).
+across different sensitive attribute groups. We will delve into                Specifically, for the t-th bath, given the feature tensor
+each stage’s specifics in the following sections.                          M ∈ RB×C×H×W (where B is the batch size, C is the
+                                                                           number of channels, and H × W represents the spatial di-
+3.2. Structural Fairness Decoupling                                        mensions) produced by the last convolution layer of the
+To eliminate the implicit encoding of sensitive attributes in              convolutional neural network, the feature map of each chan-
+the feature representation layer of the model, we propose a                nel is denoted as Mk ∈ RB×H×W . To evaluate the fairness
+fairness-sensitive channel decoupling strategy that reduces                sensitivity of channel k, we define its sensitivity loss as:
+bias by optimizing the feature entanglement.                                                        b                                           
+Prior Forensics Knowledge Acquisition. First, we adopt                                                                         −∥mk,i −mk,x ∥2
+                                                                                                     P                     
+                                                                                        b                 δ(ai − ax ) exp             T
+the Cross-Entropy Loss as the classification loss function to               k,t      1X
+                                                                                               
+                                                                                                x=1,x̸=i
+                                                                                                                                                  
+                                                                           lsn  =−         log                                                   ,
+                                                                                                                                                  
+optimize the classification performance of the model. The                            b i=1               Pb       
+                                                                                                                      −∥mk,i −mk,y ∥2
+                                                                                                                                                 
+                                                                                                               exp
+classification loss is defined as:                                                                       y=1,y̸=i
+                                                                                                                             T
+
+                                                                                                                                                 (2)
+            Lcls = C(h(zri ), yri ) + C(h(zfi ), yfi ),          (1)           where mk,i , mk,x and mk,y represent the feature repre-
+                                                                           sentations of the i-th, x-th and y-th samples in channel k,
+where C(·, ·) represents the Cross-Entropy Loss, h(·) is the               respectively. δ(ai − ax ) is Dirac’s Delta function, which
+classification head, and zri and zfi are the feature represen-             equals 1 when ai = ax (i.e., the two samples belong to the
+tations of real and fake images, respectively. yri and yfi are             same sensitive group) and 0 otherwise. T > 0 is the tem-
+the true labels of the real and fake images, respectively. This            perature parameter, used to control the sensitivity of feature
+loss function ensures that the model can accurately distin-                similarity. b is the number of samples in the current t-th
+guish between real and fake images. Through this design,                   batch.
+we provide support for subsequent fairness optimization.                       To better observe the feature distribution ability of each
+Quantification of Channel Sensitivity. The core idea of                    channel across different sensitive groups,P we compute     the
+this module is that different convolutional channels in the                fairness index of channel k as Fk = N1b t∈Nb lsn   k,t
+                                                                                                                                  , where
+
+
+
+                                                                     32706
+                                      k,t
+Nb is the number of batches, and lsn      denotes the sensitivity            hyperparameter. The non-negativity of mutual information
+loss of channel k in the t-th batch. A lower value of Fk                     I(X; Y ) ensures it equals zero when X and Y are indepen-
+indicates stronger discriminatory ability of channel k for                   dent, thereby penalizing the model for violating the inde-
+sensitive attributes, thus potentially introducing more unfair-              pendence assumption between the sensitive attribute and the
+ness. By calculating the fairness index, we can optimize the                 prediction.
+fairness of the model by ensuring that channels provide clear                    Similarly, we define the transport cost for the predicted
+and accurate information, leading to a more balanced model.                  distribution of fake images as Lϵc (gfa , G), The total fairness
+Fairness-Sensitive Channel Decoupling. Based on the                          loss is the average of the fairness losses across all sensitive
+computed fairness index Fk for each channel, we propose                      attribute groups. Specifically, it is computed as:
+to decouple channels. Specifically, we sort all channels ac-
+                                                                                                1 X ϵ a
+                                                                                                    Lc (gr , R) + Lϵc (gfa , G) .
+                                                                                                                               
+cording to their fairness index Fk , and decouple the bottom                         Lfair =                                             (6)
+prc percent, where prc is the channel decoupling ratio. In                                     |A|
+                                                                                                  a∈A
+the ablation study, we will study its impact on fairness.
+                                                                                During training, the model efficiently computes the above
+3.3. Global Distribution Alignment                                           loss using the Sinkhorn-Knopp algorithm. For each input
+The improvement in fairness during the second stage is                       batch, the predicted probabilities for real and fake images
+achieved by minimizing the distributional discrepancies                      from each sensitive group are first extracted. The empirical
+across different groups.                                                     distributions are approximated using kernel density estima-
+   Let D{(xI ,a)}|f represent the distribution of feature given              tion, and a cost matrix is constructed based on the squared
+the model f , and D{(xI ,a)|a=α}|f denote the distribution                   Euclidean distance between the predicted values of each
+conditioned on a specific group α. The fairness objective is                 group. The Gibbs kernel K = exp(−C/ϵ) is initialized. By
+defined as:                                                                  alternately iterating between row normalization and column
+                                                                             normalization vectors until convergence, the transport plan is
+              A
+              X                                                              obtained, and the transport cost is computed. The algorithm
+        min         d(D{(xI ,a)}|f − D{(xI ,a)|a=α}|f ),              (3)
+          f                                                                  uses entropy regularization to reduce the complexity from
+               α
+                                                                             the classical optimal transport problem’s O(n3 ) to O(n2 ),
+where d is a distance function. Since the computation is                     significantly improving computational efficiency.
+intractable, we propose to align the empirical distributions                    The final training objective for the second stage (global
+DB|f (estimated from batch B) and DBa |f (for group a),                      distribution alignment) combines the classification loss and
+ensuring that the model’s predictions are invariant to sensi-                fairness loss as follows:
+tive attributes. Specifically, for a sensitive attribute group
+a ∈ A, the predicted distributions of real and fake images                                       Ltotal = Lcls + λLfair ,                (7)
+are denoted as gra and gfa , respectively. The global distribu-
+                                                                            where Lcls is the binary cross-entropy classification loss, and
+tions of real and fake images are denoted as R and G. The
+                                                                            λ balances detection accuracy and fairness. This method
+proposed method aligns the predicted distributions of each
+                                                                            reduces algorithmic bias by constraining the independence
+sensitive group with the global distribution through optimal
+                                                                            between sensitive groups and the global distribution, while
+transport, while using mutual information to constrain the
+                                                                            maintaining high accuracy in deepfake detection.
+complexity of the transport plan. The transport cost function
+is formulated as:
+                                                                             4. Experiment
+   Lϵc (gra , R) = min
+                            
+                                E(X,Y ) [c(X, Y )] + ϵ · I(X; Y ) ,   (4)    4.1. Experimental Settings
+                   (X,Y )
+                       a
+                   X∼gr
+                   Y ∼R                                                     Datasets. To evaluate the fairness generalization capabil-
+                                                                            ity of the proposed method, we trained the model on the
+where the mutual information term I(X; Y ) in the equation
+                                                                            widely used FaceForensics++ (FF++) dataset [36] and tested
+is defined as:
+                                                                            it on four benchmark datasets: FF++, DeepFake Detection
+                I(X; Y ) = KL(π ∥ gra ⊗ R).                           (5)   Challenge (DFDC) [2], DeepFakeDetection (DFD) [13], and
+                                                                            Celeb-DF [23]. To evaluate the fairness attribute, we di-
+   In this formulation, c(X, Y ) represents the transport cost,             vided the test dataset into intra-group evaluations focusing
+which measures the difference between the sensitive attribute               separately on gender and race, and inter-group evaluations
+group and the global distribution. Equation (5) shows that                  combining both attributes (e.g., Male-White, Female-Asian).
+the KL divergence term quantifies the deviation between the                 Details of each annotated dataset are in Appendix A.
+joint distribution π (describing the statistical dependence                 Evaluation Metrics. For detection comparison, the Area Un-
+between X and Y ) and the product of marginal distribu-                     der Curve (AUC) is used to benchmark our approach against
+tions gra ⊗ R. The regularization coefficient ϵ > 0 is a                    previous works, which aligns with the detection evaluation
+
+
+
+                                                                        32707
+Table 1. Intra-domain evaluation on FF++ dataset. All methods are trained on FF++, tested on its test sub-datasets separated by sensitive
+attribute.
+                                                                                           Fairness Metrics(%)         Detection Metrics(%)
+                  Attributes                 Methods           Backbone
+                                                                                FF P R ↓       FDP ↓      es − AU C↑         AU C↑
+                                             Ori               Xception           4.10           5.72        91.93             92.69
+                                  DAG-FDD WACV’24 [20]         Xception           1.82           4.65         94.87            96.72
+                                  DAW-FDD WACV’24 [20]         Xception           0.78           9.52        95.76             97.46
+                   Gender           PG-FDD CVPR’24 [24]        Xception           0.62          4.74         96.32             97.66
+                                  Fairadapter ICASSP’25 [10]   ViT-L/14           4.16          12.21        67.85             71.50
+                                   RSEF-FDD arxiv’25 [18]      Xception           0.57           8.55         94.91            97.09
+                                            Ours               Xception           0.53           3.61        96.45             97.71
+                                             Ori               Xception          19.76           4.74        82.85             92.69
+                                  DAG-FDD WACV’24 [20]         Xception           5.48           9.20        93.43             96.72
+                                  DAW-FDD WACV’24 [20]         Xception           5.43         14.69         94.15             97.46
+                    Race            PG-FDD CVPR’24 [24]        Xception          11.13          4.78         94.52             97.66
+                                  Fairadapter ICASSP’25 [10]   ViT-L/14          43.22          20.39        56.03             71.50
+                                   RSEF-FDD arxiv’25 [18]      Xception           8.39           5.28        93.60             97.09
+                                            Ours               Xception           9.29          4.35         94.86             97.71
+                                             Ori               Xception          36.03         14.64         74.43             92.69
+                                  DAG-FDD WACV’24 [20]         Xception          24.08          26.25        85.80             96.72
+                                  DAW-FDD WACV’24 [20]         Xception          14.36          26.13        86.74             97.46
+               Intersection         PG-FDD CVPR’24 [24]        Xception           9.19          13.39        86.83             97.66
+                                  Fairadapter ICASSP’25 [10]   ViT-L/14          86.91         42.44         45.98             71.50
+                                   RSEF-FDD arxiv’25 [18]      Xception          23.64          21.74         85.77            97.09
+                                            Ours               Xception          20.18           9.47         86.91            97.71
+
+
+approach adopted in precedent works [20, 24]. Regarding                               method (i.e., Xception [5], ResNet-50 [17]). We compare our
+fairness, we use three distinct fairness metrics to evaluate                          method against the latest fairness method DAG-FDD [20],
+the effectiveness of our proposed method. Specifically, we                            DAW-FDD [20], PG-FDD [24], Fairadapter [10] and RSEF-
+report the Equal False Positive Rate (FF P R ), Demographic                           FDD [18] in deepfake detection. The compared method also
+Parity (FDP ) and es − AU C.                                                          includes ‘Ori’ (a backbone with cross-entropy loss).
+                                                                                      Implementation Details. All experiments are based on Py-
+                   X
+                           Pn
+                               j=1I[Yj = 1, Dj = Jj , Yj′ = 0]                        Torch and trained with two NVIDIA RTX 4090. For training,
+      FF P R :=                  Pn                 ′
+                                                               −                      we fix the batch size 64, epochs 50, use SGD optimizer with
+                  Jj ∈J           j=1 I[Dj = Jj , Yj = 0]
+                           Pn                                             (8)         learning rate β = 1 × 10−3 . The ϵ in Eq. 4 is set to 5 × 10−4 .
+                               j=1   I[Yj = 1, Yj′ = 0]                               For the overall loss, we set the λ in Eq. 7 as 0.005.
+                                 Pn                       .
+                                     j=1   I[Yj′ = 0]
+                           (          Pn                                              4.2. Experimental Results
+                                           I[Ŷj = k, Dj = Jj ]
+                                           j=1
+      FDP := max               max                              −
+              k∈{0,1}          Jj ∈J
+                                         Pn
+                                           j=1 I[Dj = Jj ]
+                                                                                      4.2.1. Performance of Intra-Domain
+                                                                          (9)
+                                      Pn                    ′
+                                       j=1 I[Ŷj = k, Dj = Jj ]
+                                                                )
+                                                                                      As shown in Table 1, our method outperforms others in
+                                min      Pn              ′
+                                                                  .                   terms of fairness while achieving the best detection re-
+                               Jj′ ∈J      j=1 I[Dj = Jj ]
+                                                                                      sults. Whether in intra-group or inter-group evaluations,
+                                      Overall AUC
+     es − AU C :=              PN                           .         (10)            our method excels in most fairness metrics, demonstrating
+                       1+         j=1 |Overall AUC − AUCj |                           that the dual-mechanism collaborative optimization strategy
+   Where D is the demographic variable, J is the set of                               not only mitigates bias in individual sensitive attributes but
+subgroups with each subgroup Jj ∈ J . FFPR measures the                               also effectively suppresses the complex bias accumulation
+disparity in False Positive Rate (FPR) across different groups                        caused by nonlinear interactions between attributes.
+compared to the overall population. FDP measures the maxi-
+mum difference in prediction rates across all demographic                             4.2.2. Performance of Cross-Domain
+groups. es − AU C measures the overall fairness-consistent                            Table 2 reports cross-domain fairness and detection results.
+detection performance by penalizing disparities between the                           Compared with other methods, our approach demonstrates
+overall AUC and group-specific AUCs. The experimental re-                             superior fairness generalization while simultaneously achiev-
+sults presented in all tables are used ↑ to indicate that higher                      ing state-of-the-art detection performance. Notably, on the
+values are better, and ↓ that lower values are better. By de-                         Celeb-DF dataset our method attains the best results on the
+fault, the best results are shown in bold, and the second-best                        intersection attribute and exhibits stronger generalization on
+results are indicated with underline.                                                 individual attributes as well. By contrast, DAG-FDD and
+Baseline Methods. We consider two widely used CNN                                     DAW-FDD show limited generalization and, in certain cross-
+architectures to validate the effectiveness of our proposed                           domain settings, underperform the Ori baseline. Fairadapter,
+
+
+
+                                                                            32708
+Table 2. Evaluation of different methods for improving fairness and detection generalization across cross-domain datasets (DFDC, Celeb-DF,
+and DFD).
+
+                                                                                           Fairness Metrics(%)                                      Detection Metrics(%)
+  Datasets           Methods              Backbone                 Gender                          Race                        Intersection                Overall
+                                                      FF P R ↓   FDP ↓ es − AU C↑   FF P R ↓ FDP ↓ es − AU C↑       FF P R ↓   FDP ↓ es − AU C↑           AU C↑
+                       Ori                 Xception     8.67      6.70    54.56      19.41       7.99       47.02    53.42      17.34       36.96         56.13
+             DAG-FDD WACV’24 [20]          Xception     5.29      6.68    57.41       9.26      12.51       45.91    45.30      12.92       36.42         59.13
+             DAW-FDD WACV’24 [20]          Xception     3.60      3.67    55.88      22.36       9.72       47.77    46.80      12.69       36.63         56.90
+  DFDC         PG-FDD CVPR’24 [24]         Xception     2.35      2.57    57.71      10.10      11.49       50.53    32.16      17.71       37.42         59.64
+             Fairadapter ICASSP’25 [10]    ViT-L/14     2.39      4.57    55.88      32.49      26.77       52.27    74.10      31.53       31.39         59.25
+              RSEF-FDD arxiv’25 [18]       Xception     2.09      3.83    57.90      12.24       7.74       50.27    38.89      12.18       37.72         59.08
+                       Ours                Xception    1.76       3.67    57.94      17.93       7.58       52.33    37.37      11.92       39.03         61.86
+                       Ori                 Xception     6.93     20.23    60.94      23.44      17.89       61.21    27.38      18.72       61.22         69.18
+             DAG-FDD WACV’24 [20]          Xception     8.70     14.25    66.23      19.44      13.26       62.61    23.60      13.80       63.08         72.29
+             DAW-FDD WACV’24 [20]          Xception     8.71     12.73    68.31      14.76       7.80       66.47    24.75      13.78       59.24         74.09
+ Celeb-DF      PG-FDD CVPR’24 [24]         Xception     7.95     16.29    69.47      23.99      12.47       67.78    23.71      13.30       62.63         74.24
+             Fairadapter ICASSP’25 [10]    ViT-L/14     8.59     26.84    56.84      46.14      36.35       58.34    47.03      35.69       54.77         64.94
+              RSEF-FDD arxiv’25 [18]       Xception     1.94     35.63    68.92      17.40      27.48       67.80    24.17      27.73       62.56         74.36
+                       Ours                Xception     6.41     10.81    69.68      16.60       7.29       69.96    23.32      12.01       63.27         76.75
+                       Ori                 Xception     9.45      6.63    72.68       7.75      22.31       69.07    35.06      25.53       59.20         74.32
+             DAG-FDD WACV’24 [20]          Xception     5.41      5.60    75.87       2.56      21.34       70.14    33.00      23.02       61.09         76.29
+             DAW-FDD WACV’24 [20]          Xception     5.30     10.63    71.68       4.32      20.16       63.24    33.81      24.72       56.01         73.71
+   DFD         PG-FDD CVPR’24 [24]         Xception     5.05      1.86    76.37       5.79      19.31       74.81    28.00      23.93       66.32         80.70
+             Fairadapter ICASSP’25 [10]    ViT-L/14     6.32      7.55    63.28      11.29      12.28       56.28    29.56      33.11       48.63         68.12
+              RSEF-FDD arxiv’25 [18]       Xception    18.50      6.11    75.97      19.45      19.40       72.65    35.34      10.97       67.24         80.54
+                       Ours                Xception     4.72      5.49    78.98       2.09      18.66       77.44    27.32      22.81       69.73         81.46
+
+
+Table 3. Evaluation of fairness adaptation with different backbone across intra-domain (FF++) and cross-domain (DFDC, Celeb-DF, DFD)
+datasets.
+
+                                                                                           Fairness Metrics(%)                                      Detection Metrics(%)
+  Datasets           Methods              Backbone                 Gender                          Race                        Intersection                Overall
+                                                      FF P R ↓   FDP ↓ es − AU C↑   FF P R ↓ FDP ↓ es − AU C↑       FF P R ↓   FDP ↓ es − AU C↑           AU C↑
+                    Ori                   ResNet-50     8.90      9.27    90.40      17.49       7.04       89.17    38.26      15.43       76.14         94.29
+             DAG-FDD WACV’24 [20]         ResNet-50    1.92       6.02    91.09       6.38       3.98       91.39    32.58      11.06       80.64         94.74
+   FF++      DAW-FDD WACV’24 [20]         ResNet-50     3.25      5.29    90.13      12.46       3.29       90.92    31.07      11.03       80.98         93.96
+              PG-FDD CVPR’24 [24]         ResNet-50     3.05      3.06    93.57      10.89       2.83       91.53    22.10       9.69       81.58         94.46
+                    Ours                  ResNet-50     3.94      5.14    94.46      18.67       2.43       92.69    34.30       8.61       82.87         95.53
+                    Ori                   ResNet-50    12.55     11.06    54.96      17.34       8.38       48.30    48.10      16.30       35.76         57.83
+             DAG-FDD WACV’24 [20]         ResNet-50     6.57      4.87    57.63      15.96       2.95       50.31    44.10      11.25       33.41         60.29
+  DFDC       DAW-FDD WACV’24 [20]         ResNet-50     9.12      7.14    57.22      14.60       2.81       48.94    43.31       9.55       34.71         59.78
+              PG-FDD CVPR’24 [24]         ResNet-50     5.78      4.65    58.34      12.68       5.23       49.33    31.97       8.54       34.85         61.83
+                    Ours                  ResNet-50     3.97      3.61    56.96      11.94       5.15       50.99    32.14      10.27       37.55         62.54
+                    Ori                   ResNet-50    12.26     22.12    61.11      18.55      22.43       59.82    24.84      23.18       56.09         71.65
+             DAG-FDD WACV’24 [20]         ResNet-50     8.22     20.45    67.01      23.07      18.50       68.07    20.29      19.33       66.76         75.77
+ Celeb-DF    DAW-FDD WACV’24 [20]         ResNet-50     9.03     20.85    68.33       18.6      17.65       69.14    23.84      18.55       68.74         76.51
+              PG-FDD CVPR’24 [24]         ResNet-50     6.98     16.92    68.49      16.74      16.50       70.35    29.34      18.72       66.26         76.10
+                    Ours                  ResNet-50     4.53     12.00    68.98       6.76       8.16       71.03     5.56       9.11       68.25         77.35
+                    Ori                   ResNet-50    10.95      9.08    70.33       4.66      12.57       66.68    33.46      16.84       56.00         71.31
+             DAG-FDD WACV’24 [20]         ResNet-50     3.62      4.19    73.74       3.86      13.54       70.33    25.22      14.84       57.19         73.97
+   DFD       DAW-FDD WACV’24 [20]         ResNet-50     4.81      3.90    72.12       7.36       3.21       70.57    33.45      14.30       54.52         73.58
+              PG-FDD CVPR’24 [24]         ResNet-50     3.57      1.82    76.14       2.62       7.81       72.16    23.15      11.01       62.65         77.47
+                    Ours                  ResNet-50     3.12      1.76    77.68       6.51       3.03       70.93    20.99       4.85       66.19         78.63
+
+
+
+which is designed to improve fairness for AI-generated im-                              results across different backbone. These findings demon-
+age detectors, performs poorly in the deepfake setting. PG-                             strate that the proposed approach is not constrained by the
+FDD and RSEF-FDD, though competitive and often stronger                                 choice of backbone and remains effective and applicable
+on fairness generalization, incur a drop in detection accuracy.                         under various backbone settings.
+Overall, our method outperforms all competitors on most
+fairness metrics and achieves the best results in both fairness                         4.3. Robustness Study
+generalization and AUC.
+                                                                                        Fig. 3 presents the performance of all method under different
+                                                                                        degradation scenarios across FF++ and Celeb-df datasets,
+4.2.3. Performance of Different Backbone
+                                                                                        encompassing four common types of distortion: Image Com-
+To evaluate the fairness generalization capability of our pro-                          pression (IC), Gaussian Noise (GN), Gaussian Blur (GB),
+posed method with respect to backbone network selection,                                and Block-Wise Noise (BWN). We introduce two additional
+we replaced the Xception backbone with ResNet-50 [17].                                  metrics: ∆FF P R and ∆es − AU C. Experimental results
+As shown in Table 3, our method achieves similarly superior                             show that our method exhibits comparable robustness to
+
+
+
+                                                                                32709
+Table 4. Ablation study results of the Xception backbone, comparing the original model (Ori), Global Distribution Alignment module
+(GDA), and GDA with Structural Fairness Decoupling (GDA + SFD).
+
+                                                                                      Fairness Metrics(%)
+     Dataset    Methods                    Gender                                           Race                                       Intersection                   Detection Metrics(%)
+
+                            FF P R ↓       FDP ↓       es − AU C ↑       FF P R ↓         FDP ↓        es − AU C ↑      FF P R ↓        FDP ↓         es − AU C ↑            AU C ↑
+                   Ori       4.10           5.72          91.93           19.76            4.74           82.85          36.03           14.64            74.43              92.69
+     FF++         GDA     3.91(+0.19)    5.44(+0.28)   96.11(+4.18)   3.95(+15.81)      3.23(+1.51)   95.19(+12.34)   26.85(+9.18)    16.60(-1.96)    87.11(+12.68)       97.22(+4.53)
+                GDA+SFD   0.53(+3.38)    3.61(+1.83)   96.45(+0.34)    9.29(-5.34)      4.35(-1.12)    94.86(-0.33)   20.18(+6.67)    9.47(+7.13)      86.91(-0.2)        97.71(+0.49)
+                   Ori       8.67           6.70          54.56          19.41             7.99           47.02          53.42           17.34           36.96               56.13
+     DFDC         GDA     4.41(+4.26)    4.36(+2.34)   58.75(+4.19)   20.77(-1.36)      11.6(-3.61)    43.69(-3.33)   46.28(+7.14)    13.08(+4.26)    32.45(-4.51)        60.91(+4.78)
+                GDA+SFD   1.76(+2.65)    3.67(+0.69)   57.94(-0.81)   17.93(+2.84)      7.58(+4.02)    52.33(+8.64)   37.37(+8.91)    11.92(+1.16)    39.03(+6.58)        61.86(+0.95)
+                   Ori       6.93          20.23          60.94          23.44            17.89           61.21           27.38          18.72           61.22               69.18
+    Celeb-DF      GDA     6.50(+0.43)   18.18(+2.05)   64.31(+3.37)   22.96(+0.48)     17.47(+0.42)    64.92(+3.71)   27.12(+0.26)    18.12(+0.6)     63.96(+2.74)        72.89(+3.71)
+                GDA+SFD   6.41(+0.09)   10.81(+7.37)   69.68(+5.37)   16.60(-6.36)     7.29(+10.18)    69.96(+5.04)    23.32(+3.8)    12.01(+6.11)    63.27(-0.69)        76.75(+3.86)
+                   Ori       9.45           6.63          72.68            7.75           22.31            69.07         35.06           25.53           59.20               74.32
+      DFD         GDA     8.89(+0.56)    6.03(+0.6)    74.47(+1.79)    11.38(-3.63)    17.18(+5.13)    75.24(+6.17)   32.27(+2.79)    20.46(+5.07)    63.21(+4.01)        77.78(+3.46)
+                GDA+SFD   4.72(+4.17)    5.49(+0.54)   78.98(+4.51)    2.09(+9.29)     18.66(-1.48)     77.44(+2.2)   27.32(+4.95)    22.81(-2.35)    69.73(+6.52)        81.46(+3.68)
+
+
+Table 5. Ablation study results of the ResNet-50 backbone, comparing the original model (Ori), Global Distribution Alignment module
+(GDA), and GDA with Structural Fairness Decoupling (GDA + SFD).
+
+                                                                                      Fairness Metrics(%)
+     Dataset    Methods                    Gender                                          Race                                        Intersection                   Detection Metrics(%)
+
+                           FF P R ↓       FDP ↓        es − AU C ↑      FF P R ↓         FDP ↓         es − AU C ↑      FF P R ↓          FDP ↓        es − AU C ↑           AU C ↑
+                  Ori        8.90           9.27          90.40          17.49            7.04            89.17          38.26             15.43          76.14              94.29
+     FF++        GDA      3.86(+5.04)   5.54(+3.73)    91.70(+1.3)    18.38(-0.89)     6.94(+0.1)      89.72(+0.55)   37.32(+0.94)     11.10(+4.33)    79.79(+3.65)       94.75(+0.46)
+               GDA+SFD    3.94(-0.08)    5.14(+0.4)    94.46(+2.76)   18.67(-0.29)     2.43(+4.51)     92.69(+2.97)   34.30(+3.02)      8.61(+2.49)    82.87(+3.08)       95.53(+0.78)
+                  Ori        12.55         11.06           54.96         17.34            8.38            48.30           48.10           16.30           35.76              57.83
+     DFDC        GDA      4.32(+8.23)   2.01(+9.05)    56.81(+1.85)   17.25(+0.09)     3.46(+4.92)     46.16(-2.14)   45.50(+2.60)     12.57(+3.73)    34.12(-1.64)       60.58(+2.75)
+               GDA+SFD    3.97(+0.35)   3.61(-1.60)     56.96(0.15)   11.94(+5.31)     5.15(-1.69)     50.99(+4.83)   32.14(+13.36)    10.27(+2.30)    37.55(+3.43)       62.54(+1.96)
+                  Ori        12.26         22.12          61.11          18.55            22.43           59.82          24.84            23.18           56.09              71.65
+    Celeb-DF     GDA      6.80(+5.46)   14.07(+8.05)   67.56(+6.45)   21.51(-2.96)    10.73(+11.70)    58.86(-0.96)   21.31(+3.53)    11.18(+12.00)    64.25(+8.16)       72.40(+0.75)
+               GDA+SFD    4.53(+2.27)   12.00(+2.07)   68.98(+1.42)   6.76(+14.75)     8.16(+2.57)    71.03(+12.17)   5.56(+15.75)     9.11(+2.07)     68.25(+4.00)       77.35(+4.95)
+                  Ori        10.95         9.08           70.33          4.66             12.57           66.68          33.46            16.84           56.00              71.31
+     DFD         GDA      7.46(+3.49)   2.74(+6.34)    70.77(+0.44)   7.84(-3.18)      3.74(+8.83)     67.84(+1.16)   26.13(+7.33)     9.20(+7.64)     58.31(+2.31)       70.99(-0.32)
+               GDA+SFD    3.12(+4.34)   1.76(+0.98)    77.68(+6.91)   6.51(+1.33)      3.03(+0.71)     70.93(+3.09)   20.99(+5.14)     4.85(+4.35)     66.19(+7.88)       78.63(+7.64)
+
+
+
+
+Figure 3. Robustness evaluation of proposed methods. We test the robustness of the proposed method against four disturbances of various
+intensities, and all models were trained on FF++.
+
+
+RSEF-FDD and outperforms other methods in terms of ro-                                        4.4. Visualization Study
+bustness. The robustness experiments conducted on the DFD
+and DFDC datasets are presented in the Appendix B.                                            To better illustrate the effectiveness of our method, we visu-
+                                                                                              alize the Grad-CAM [38] results for Ori, DAW-FDD [20],
+                                                                                              PG-FDD [24], RSEF-FDD [18] and our method, as shown
+
+
+
+                                                                                      32710
+Figure 4. Grad-CAM visualization of ours and other methods on the intra-domain dataset (F++), and cross-domain datasets (DFDC,
+Celeb-DF, and DFD).
+
+in Fig. 4. The Grad-CAM results reveal that Ori, in the ab-
+sence of constraints, tends to overfit to small local regions
+or focus on background noise outside the facial area. Due
+to insufficient generalization, DAW-FDD performs similarly
+to Ori on cross-domain datasets. PG-FDD and RSEF-FDD
+boost fairness generalization and reduce local overfitting,
+but they are still vulnerable to non-facial background noise.
+In contrast, the activation maps of our method demonstrate
+that the model consistently attends to salient facial features
+across different datasets.
+
+4.5. Ablation Study
+To thoroughly analyze the effectiveness of our proposed mod-
+ules, we conduct systematic ablation studies from both struc-
+                                                                   Figure 5. Analysis on the FF++ test set illustrating the impact of
+tural and parametric perspectives. As illustrated in Fig. 5,
+                                                                   different decoupling iterations and decoupling ratios on the fairness
+we first investigate the influence of different decoupling         performance (FF P R ) for Xception backnone.
+ratios and iteration numbers within the structural fairness
+decoupling module on fairness performance. The results
+show that increasing the number of decoupling iterations           accuracy, both models achieved significant AUC improve-
+initially improves the fairness performance (measured by           ments (Xception: +5.02%; ResNet-50: +1.24%), indicating
+FF P R ), but excessive decoupling leads to degradation. Em-       that the global optimization by GDA and the local fairness
+pirically, the optimal trade-off is achieved when decoupling       enhancement by SFD jointly suppress bias while preserving
+2% of channels during the third iteration, which results in the    crucial forgery features.
+best balance between fairness and robustness. The fairness
+performance of the ResNet-50 backbone is analyzed in the
+Appendix C.
+                                                                   5. Conclusion
+   Building upon this, Table 4 and Table 5 further reveal the     This paper proposes a dual-mechanism collaborative opti-
+collaborative optimization mechanism between the two key          mization framework that combines structural fairness decou-
+modules: Global Distribution Alignment (GDA) and Struc-           pling and global distribution alignment, effectively address-
+tural Fairness Decoupling (SFD). For instance, on the FF++        ing the issue of fairness in deepfake detection. Experimental
+dataset, the gender prediction disparity (FDP ) of ResNet-50      results demonstrate that the proposed method successfully
+improved from 9.27% (Ori) to 5.54% (GDA). With the inclu-         reduces misclassification differences for sensitive attributes
+sion of the SFD module, the gender FFPR of Xception was           across multiple datasets, while maintaining excellent detec-
+further reduced to 0.53% (↓87.1%). In terms of detection          tion performance.
+
+
+
+                                                              32711
+Acknowledgments                                                                ACM Transactions on Multimedia Computing, Communica-
+                                                                               tions and Applications. 1
+This work was supported in part by the National Natural                 [13]   Google and Jigsaw. Deepfakes dataset by google & jig-
+Science Foundation of China under Grant 62262041, and in                       saw. https://ai.googleblog.com/2019/09/
+part by the Jiangxi Provincial Natural Science Foundation                      contributing - data - to - deepfakedetection .
+under Grant 20232BAB202011.                                                    html, 2019. 4
+                                                                     [14]      Hui Guo, Shu Hu, Xin Wang, Ming-Ching Chang, and Siwei
+References                                                                     Lyu. Robust attentive deep neural network for detecting gan-
+                                                                               generated faces. IEEE Access, 10:32574–32583, 2022. 2
+ [1] Vítor Albiero, Kai Zhang, Michael C King, and Kevin W              [15]   Moritz Hardt, Eric Price, and Nati Srebro. Equality of oppor-
+     Bowyer. Gendered differences in face recognition accu-                    tunity in supervised learning. Advances in neural information
+     racy explained by hairstyles, makeup, and facial morphology.              processing systems, 29, 2016. 2
+     IEEE Transactions on Information Forensics and Security,
+                                                                        [16]   Caner Hazirbas, Joanna Bitton, Brian Dolhansky, Jacqueline
+     17:127–137, 2021. 1
+                                                                               Pan, Albert Gordo, and Cristian Canton Ferrer. Towards
+ [2] benpflaum, Brian G, djdj, Irina Kofman, JE Tester, JLEl-                  measuring fairness in ai: the casual conversations dataset.
+     liott, Joshua Metherd, Julia Elliott, Mozaic, Phil Culli-                 IEEE Transactions on Biometrics, Behavior, and Identity
+     ton, Sohier Dane, and Woo Kim. Deepfake detection                         Science, 4(3):324–332, 2021. 2
+     challenge. https://kaggle.com/competitions/
+                                                                     [17]      Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
+     deepfake-detection-challenge, 2019. Kaggle. 4
+                                                                               Deep residual learning for image recognition. In Proceed-
+ [3] Junyi Cao, Chao Ma, Taiping Yao, Shen Chen, Shouhong                      ings of the IEEE conference on computer vision and pattern
+     Ding, and Xiaokang Yang. End-to-end reconstruction-                       recognition, pages 770–778, 2016. 5, 6
+     classification learning for face forgery detection. In Pro-
+                                                                        [18]   Xinan He, Yue Zhou, Shu Hu, Bin Li, Jiwu Huang, and
+     ceedings of the IEEE/CVF conference on computer vision
+                                                                               Feng Ding. Redundant semantic environment filling via
+     and pattern recognition, pages 4113–4122, 2022. 2
+                                                                               misleading-learning for fair deepfake detection. arXiv
+ [4] Harry Cheng, Ming-Hui Liu, Yangyang Guo, Tianyi Wang,                     preprint arXiv:2405.15173, 2024. 2, 5, 6, 7, 13
+     Liqiang Nie, and Mohan Kankanhalli. Fair deepfake detectors        [19]   Xinan He, Yue Zhou, Bing Fan, Bin Li, Guopu Zhu, and
+     can generalize. In NeurIPS, 2025. 2                                       Feng Ding. Vlforgery face triad: Detection, localization
+ [5] François Chollet. Xception: Deep learning with depthwise                  and attribution via multimodal large language models. arXiv
+     separable convolutions. In Proceedings of the IEEE con-                   preprint arXiv:2503.06142, 2025. 2
+     ference on computer vision and pattern recognition, pages          [20]   Yan Ju, Shu Hu, Shan Jia, George H Chen, and Siwei Lyu. Im-
+     1251–1258, 2017. 5                                                        proving fairness in deepfake detection. In Proceedings of the
+ [6] Danielle Keats Citron. How deepfakes undermine truth and                  IEEE/CVF Winter Conference on Applications of Computer
+     threaten democracy. TED, 2019. 1                                          Vision, pages 4655–4665, 2024. 2, 5, 6, 7, 13
+ [7] Feng Ding, Guopu Zhu, Yingcan Li, Xinpeng Zhang,                [21]      Anoop Krishnan, Ali Almadan, and Ajita Rattani. Under-
+     Pradeep K Atrey, and Siwei Lyu. Anti-forensics for face                   standing fairness of gender classification algorithms across
+     swapping videos via adversarial training. IEEE Transactions               gender-race groups. In 2020 19th IEEE international confer-
+     on Multimedia, 24:3429–3441, 2021. 1                                      ence on machine learning and applications (ICMLA), pages
+ [8] Feng Ding, Bing Fan, Zhangyi Shen, Keping Yu, Gautam Sri-                 1028–1035. IEEE, 2020. 1
+     vastava, Kapal Dev, and Shaohua Wan. Securing facial bioin-    [22]       Claire R Leibowicz, Sean McGregor, and Aviv Ovadya. The
+     formation by eliminating adversarial perturbations. IEEE                  deepfake detection dilemma: A multistakeholder exploration
+     Transactions on Industrial Informatics, 19(5):6682–6691,                  of adversarial dynamics in synthetic media. In Proceedings of
+     2022. 1                                                                   the 2021 AAAI/ACM Conference on AI, Ethics, and Society,
+ [9] Feng Ding, Zihan Jiang, Yue Zhou, Jianfeng Xu, and Guopu                  pages 736–744, 2021. 1
+     Zhu. Disrupting anti-spoofing systems by images of consis-         [23]   Yuezun Li, Xin Yang, Pu Sun, Honggang Qi, and Siwei
+     tent identity. IEEE Signal Processing Letters, 2024. 2                    Lyu. Celeb-df: A large-scale challenging dataset for deepfake
+[10] Feng Ding, Jun Zhang, Xinan He, and Jianfeng Xu.                          forensics. In Proceedings of the IEEE/CVF conference on
+     Fairadapter: Detecting ai-generated images with improved                  computer vision and pattern recognition, pages 3207–3216,
+     fairness. In ICASSP 2025-2025 IEEE International Confer-                  2020. 4
+     ence on Acoustics, Speech and Signal Processing (ICASSP),          [24]   Li Lin, Xinan He, Yan Ju, Xin Wang, Feng Ding, and Shu
+     pages 1–5. IEEE, 2025. 2, 5, 6, 13                                        Hu. Preserving fairness generalization in deepfake detection.
+[11] Feng Ding, Wenhui Yi, Xinan He, Mengyao Xiao, Jianfeng                    In Proceedings of the IEEE/CVF Conference on Computer
+     Xu, and Jianqiang Du. Diffface-edit: A diffusion-based fa-                Vision and Pattern Recognition, pages 16815–16825, 2024.
+     cial dataset for forgery-semantic driven deepfake detection               2, 5, 6, 7, 13
+     analysis. arXiv preprint arXiv:2601.13551, 2026. 1                 [25]   Camille Olivia Little, Michael Weylandt, and Genevera I
+[12] Bing Fan, Feng Ding, Guopu Zhu, Jiwu Huang, Sam Kwong,                    Allen. To the fairness frontier and beyond: Identifying, quan-
+     Pradeep K Atrey, and Siwei Lyu. Generating higher-quality                 tifying, and optimizing the fairness-accuracy pareto frontier.
+     anti-forensics deepfakes with adversarial sharpening mask.                arXiv preprint arXiv:2206.00074, 2022. 2
+
+
+
+
+                                                                32712
+[26] Decheng Liu, Zongqi Wang, Chunlei Peng, Nannan Wang,            [39] Alexandru Tifrea, Preethi Lahoti, Ben Packer, Yoni Halpern,
+     Ruimin Hu, and Xinbo Gao. Thinking racial bias in fair               Ahmad Beirami, and Flavien Prost. Frappé: A group fairness
+     forgery detection: Models, datasets and evaluations. In Pro-         framework for post-processing everything. arXiv preprint
+     ceedings of the AAAI Conference on Artificial Intelligence,          arXiv:2312.02592, 2023. 2
+     pages 5379–5387, 2025. 15                                       [40] Ruben Tolosana, Ruben Vera-Rodriguez, Julian Fierrez,
+[27] Siwei Lyu. Deepfake detection. In Multimedia forensics,              Aythami Morales, and Javier Ortega-Garcia. Deepfakes and
+     pages 313–331. Springer Singapore Singapore, 2022. 2                 beyond: A survey of face manipulation and fake detection.
+[28] Momina Masood, Mariam Nawaz, Khalid Mahmood Malik,                   Information Fusion, 64:131–148, 2020. 1
+     Ali Javed, Aun Irtaza, and Hafiz Malik. Deepfakes genera-       [41] Loc Trinh and Yan Liu. An examination of fairness of ai mod-
+     tion and detection: State-of-the-art, open challenges, coun-         els for deepfake detection. arXiv preprint arXiv:2105.00558,
+     termeasures, and way forward. Applied intelligence, 53(4):           2021. 1, 2
+     3974–4026, 2023. 1, 2                                           [42] Tianyi Wang, Ming Liu, Wei Cao, and Kam Pui Chow. Deep-
+[29] Aakash Varma Nadimpalli and Ajita Rattani. Gbdf: Gender              fake noise investigation and detection. Forensic Science In-
+     balanced deepfake dataset towards fair deepfake detection.           ternational: Digital Investigation, 42:301395, 2022. 2
+     In International Conference on Pattern Recognition, pages       [43] Zhibo Wang, Xiaowei Dong, Henry Xue, Zhifei Zhang,
+     320–337. Springer, 2022. 1, 2                                        Weifeng Chiu, Tao Wei, and Kui Ren. Fairness-aware ad-
+[30] Leandro A Passos, Danilo Jodas, Kelton AP Costa, Luis A              versarial perturbation towards bias mitigation for deployed
+     Souza Júnior, Douglas Rodrigues, Javier Del Ser, David Ca-           deep models. In Proceedings of the IEEE/CVF conference on
+     macho, and João Paulo Papa. A review of deep learning-based          computer vision and pattern recognition, pages 10379–10388,
+     approaches for deepfake content detection. Expert Systems,           2022. 1, 2
+     41(8):e13570, 2024. 1                                           [44] Ying Xu, Philipp Terhörst, Marius Pedersen, and Kiran Raja.
+[31] Geoff Pleiss, Manish Raghavan, Felix Wu, Jon Kleinberg, and          Analyzing fairness in deepfake detection with massively an-
+     Kilian Q Weinberger. On fairness and calibration. Advances           notated databases. IEEE Transactions on Technology and
+     in neural information processing systems, 30, 2017. 2                Society, 5(1):93–106, 2024. 2
+[32] Muxin Pu, Meng Yi Kuan, Nyee Thoang Lim, Chun Yong              [45] Wei Ye, Xinan He, and Feng Ding. Decoupling forgery
+     Chong, and Mei Kuan Lim. Fairness evaluation in deepfake             semantics for generalizable deepfake detection. arXiv preprint
+     detection models using metamorphic testing. In Proceedings           arXiv:2406.09739, 2024. 1, 2
+     of the 7th international workshop on metamorphic testing,       [46] Yue Zhou, Xinan He, KaiQing Lin, Bin Fan, Feng Ding, and
+     pages 7–14, 2022. 2                                                  Bin Li. Breaking latent prior bias in detectors for generaliz-
+[33] Wenbo Pu, Jing Hu, Xin Wang, Yuezun Li, Shu Hu, Bin Zhu,             able aigc image detection. arXiv preprint arXiv:2506.00874,
+     Rui Song, Qi Song, Xi Wu, and Siwei Lyu. Learning a deep             2025. 1
+     dual-level network for robust deepfake detection. Pattern       [47] Yue Zhou, Xinan He, Kaiqing Lin, Bing Fan, Feng Ding, and
+     Recognition, 130:108832, 2022. 2                                     Bin Li. Simplicity prevails: The emergence of generalizable
+[34] Sreeraj Ramachandran, Aakash Varma Nadimpalli, and Ajita             aigi detection in visual foundation models. arXiv preprint
+     Rattani. An experimental evaluation on deepfake detection            arXiv:2602.01738, 2026. 1
+     using deep face recognition. In 2021 International Carna-
+     han Conference on Security Technology (ICCST), pages 1–6.
+     IEEE, 2021. 2
+[35] Yuji Roh, Kangwook Lee, Steven Whang, and Changho Suh.
+     Fr-train: A mutual information-based approach to fair and
+     robust training. In International Conference on Machine
+     Learning, pages 8147–8157. PMLR, 2020. 2
+[36] Andreas Rossler, Davide Cozzolino, Luisa Verdoliva, Chris-
+     tian Riess, Justus Thies, and Matthias Nießner. Faceforen-
+     sics++: Learning to detect manipulated facial images. In
+     Proceedings of the IEEE/CVF international conference on
+     computer vision, pages 1–11, 2019. 1, 4
+[37] Mhd Hasan Sarhan, Nassir Navab, Abouzar Eslami, and Shadi
+     Albarqouni. Fairness by learning orthogonal disentangled
+     representations. In Computer Vision–ECCV 2020: 16th Eu-
+     ropean Conference, Glasgow, UK, August 23–28, 2020, Pro-
+     ceedings, Part XXIX 16, pages 746–761. Springer, 2020. 2
+[38] Ramprasaath R Selvaraju, Michael Cogswell, Abhishek Das,
+     Ramakrishna Vedantam, Devi Parikh, and Dhruv Batra. Grad-
+     cam: Visual explanations from deep networks via gradient-
+     based localization. In Proceedings of the IEEE international
+     conference on computer vision, pages 618–626, 2017. 7
+
+
+
+
+                                                                32713
+

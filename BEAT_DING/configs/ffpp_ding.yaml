@@ -1,0 +1,25 @@
+# Ding et al. (CVPR'26) protocol: train on Lin et al.'s FF++ train split (76,139 frames, "Others" kept),
+# validate on FF++ val, test on FF++ test + DFDC + Celeb-DF + DFD (manifests verified against Ding's Table A.1).
+_base_: base.yaml
+
+data:
+  train: {csv: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/ff++_ding/train.csv, scheme: eight}
+  val:
+    csv: [/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/ff++_ding/realval.csv,
+          /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/ff++_ding/fakeval.csv]
+    scheme: eight
+  demographics_reliable: true   # Lin et al.'s per-image annotations (used by every paper on this protocol)
+  pairing: ffpp
+
+cf:
+  face_mask: {cx: 0.5, cy: 0.48, ax: 0.30, ay: 0.38, dilate: 1.15}   # Lin's 380 px crops; check logs/ overlays
+
+pairs:
+  csv: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CFES/data/pairs_ffpp_train.csv
+
+eval:
+  test_sets:
+    ffpp_test: {csv: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/ff++/test.csv, scheme: eight}
+    dfdc:      {csv: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/dfdc/test.csv, scheme: eight}
+    celebdf:   {csv: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/celebdf/test.csv, scheme: six}
+    dfd:       {csv: /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/dfd/test.csv, scheme: six}

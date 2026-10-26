@@ -1,0 +1,3 @@
+# X BD1 = base + A
+_base_: base_E.yaml
+data: {aug: {enabled: true}}

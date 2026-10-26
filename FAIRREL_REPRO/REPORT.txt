@@ -1,0 +1,133 @@
+FAIRREL_REPRO: official FairReL reproduction on Lin et al.'s released FF++ split — SEED 7 ONLY, PAUSED/DEPRIORITIZED
+Written 2026-10-15. R = ~/ICLR_2027/research/cvpr_readiness/r20261009 ; A = R/agents/FAIRREL_REPRO.
+
+VERDICT (seed 7 only; NOT the pre-registered 3-seed design — see "Why this stopped")
+  1. Gate G1 (FAIRREL AUC vs paper Table 1/S3): FAIL on 2/4 datasets.
+     FF++ 90.20 vs paper 96.14 (gap -5.94, tolerance 2.0) — FAIL.
+     DFDC 75.20 vs paper 66.34 (gap +8.86, tolerance 3.0) — FAIL (ours is BETTER, likely different frame mix/
+       difficulty, not a bug in our favor — see caveats).
+     Celeb-DF 79.32 vs paper 80.64 (gap -1.32) — PASS. DFD 83.42 vs paper 86.13 (gap -2.71) — PASS.
+  2. FAIRREL vs CTRL (GCWD+SLMA on vs off), single seed, FF++ test: AUC -0.02 [-0.10,+0.07], F_FPR +4.16
+     [-8.63,+9.35], F_MEO +1.21 [-2.88,+3.19] — all CIs include 0. No measurable effect of FairReL's fairness
+     losses detected at 1 seed. This matches the prior finding in L_fairrel_protocol (our reconstructed split,
+     3 seeds: AUC -1.05, not in FairReL's favor either) and is consistent with the audit's GCWD/SLMA-inactivity
+     hypothesis, but is NOT itself a confirmation — 1 seed has no sampling-noise control over training-run
+     variance, only over data/bootstrap resampling.
+  3. No gradient-norm diagnostic, no demographic probe, no seeds 17/27 were run (coordinator stopped them
+     mid-queue to redeploy GPU slots to the Ding reproduction — see below). Direction A's gate (G2) was never
+     reached.
+
+WHY THIS STOPPED
+  Coordinator instruction (2026-10-15, mid-run): "FairReL is deprioritized for now; Ding et al. is the sole
+  reference going forward." Queued PBS jobs for seeds 17/27 (both arms) and the GRADLOG diagnostic run
+  (job IDs 42038-42042) were qdel'd by the coordinator before they started, to free GPU slots for the Ding
+  reproduction. Seed 7 (FAIRREL_s7 + CTRL_s7), already ~2h16m into training at the time, was let run to
+  completion and fully scored (both best.pt checkpoints, both official test.py + score_eval.py runs, equality
+  asserted) per instruction, since that work was sunk cost and salvageable. This report is that one-seed
+  salvage, explicitly NOT a substitute for the pre-registered 3-seed design in PREREG.txt.
+  Status: PAUSED. Resume by re-submitting seeds 17/27 (`qsub -q gpu -N fr_<ARM>_s<SEED> -v ARM=<ARM>,SEED=<SEED>
+  code/pbs_job.sh`) if FairReL work is reprioritized later; GRADLOG and the probe (code/probe.py) still need
+  seeds 17/27's valfeats_best.npz to run the full pre-registered design, though probe.py already runs on seed 7
+  alone (see "Residual usable artifacts" below) if someone wants that cheap diagnostic without re-litigating G1.
+
+1. WHAT WAS BUILT AND VERIFIED (Step 0 of DIRA_audit/AUDIT_AND_PLAN.md, complete)
+  code/build_data.py extracted Lin's FF++ TRAIN split for the first time (69,791 PNGs, data/extracted/
+  ffpp_train/) directly from ff++.zip's own 5 manifest files (faketrain/realtrain -> train, fakeval/realval ->
+  val, test -> test — Lin's own split, not a reconstruction), and built FairReL-format CSVs (path,label,
+  subgroup,cluster) for ffpp_{train,val,test}, ffpp_test_clean (sensitivity: drops 160 real videos straddling
+  train/test, real test frames 4,206->1,817), celebdf/dfd/dfdc_test (DFDC deduped 20,007->18,851 unique paths,
+  0 label/subgroup conflicts among duplicates). All asserted in logs/build_data.log: raw/kept row counts match
+  the audit's numbers exactly (76,139/25,386/25,401 raw; 69,791/23,078/23,389 kept); every train row verified
+  to come only from faketrain.csv/realtrain.csv; ZERO path/basename overlap between train/val/test (the check
+  TRAIN_ON_LIN lacked — confirmed: TRAIN_ON_LIN's train.csv is 23,389/23,389 our TEST basenames, i.e. 100%
+  train-on-test, matching the audit's finding exactly); zero fake-video overlap across splits; file_size + CRC32
+  checks against the zip for every reused (EM) and newly extracted PNG. DATA_SHA256.txt freezes all 7 CSVs.
+  Estimability (>=5 clusters/class/subgroup; logs/estimability.log): FF++ test 6/6, FF++ clean 3/6 (M-W/F-W/
+  F-A), Celeb-DF 2/3 (M-W has 0 fakes), DFD 0/4 (32 actor-pair clusters, not videos — DFD ships no video id),
+  DFDC 4/6 (M-A/F-A fail).
+  code/train_official_HEAD.py = `git show HEAD:train.py` (sha 59794425...), NOT the repo's locally-modified
+  train.py (which has an opt-in sampler change). code/config_ctrl.yaml is a byte-diff of the official config
+  with only lambda_gcwd/lambda_slma set to 0 (diff checked). code/score_eval.py scores with FairReL's own
+  modules and is asserted equal to official test.py on every run (threshold <1e-6, metrics <1e-3) — this
+  equality held for both seed-7 runs.
+  PREREG.txt hashed (PREREG.sha256) BEFORE any TEST read, including arms, metrics, bootstrap scheme,
+  estimability rule, DFDC dedupe rule, and the G1/G2 gates; run_task.sh refuses to score TEST if the hash
+  changes. code/CODE_SHA256.txt freezes the training/scoring scripts actually used.
+
+2. SEED-7 RESULTS (results/SUMMARY_seed7only.txt, bootstrap_FAIRREL_vs_CTRL_seed7only.csv, per_run_metrics_
+   seed7only.csv — 2,000-rep video-cluster bootstrap over seed 7 only, so the CI reflects cluster-resampling
+   uncertainty but NOT seed-to-seed training variance)
+  Checkpoint: both arms selected epoch 6 (of 10) as best.pt (max val AUC - val F_FPR).
+  Compute used: FAIRREL_s7 2.30 GPU-h (gpu01:4), CTRL_s7 3.25 GPU-h (gpu02:6) — logs/GPU_USE.csv.
+
+  AUC (FAIRREL / CTRL), vs paper's FairReL row:
+    FF++     90.20 [87.95,92.23] / 90.22 [87.99,92.27]   paper 96.14   gap -5.94  (Effort/SVD-baseline row 94.83)
+    Celeb-DF 79.32 [76.60,81.89] / 79.41 [76.72,82.00]   paper 80.64   gap -1.32  (Effort row 78.52)
+    DFD      83.42 [77.01,89.13] / 83.42 [77.05,89.06]   paper 86.13   gap -2.71  (Effort row 84.22)
+    DFDC     75.20 [72.04,78.06] / 75.04 [71.91,77.93]   paper 66.34   gap +8.86  (Effort row 65.08)
+  FAIRREL - CTRL, FF++ test (primary pre-registered contrast): AUC -0.02 [-0.10,+0.07], AUC_avg -0.03
+  [-0.18,+0.10], F_FPR +4.16 [-8.63,+9.35], F_MEO +1.21 [-2.88,+3.19]. All CI include 0.
+  Other datasets, FAIRREL - CTRL: Celeb-DF AUC -0.08 [-0.19,+0.03]; DFD AUC +0.01 [-0.13,+0.15]; DFDC AUC +0.17
+  [+0.08,+0.25] (excludes 0, but tiny and the direction is "FairReL's own losses very slightly beat CTRL on
+  DFDC AUC" — not the fairness claim the paper makes, and this is 1 seed so could easily be run-to-run noise
+  masquerading as a cluster-bootstrap signal). No F_FPR/F_MEO contrast on any dataset excludes 0.
+  FF++-clean sensitivity (drops 160 straddling real videos): FAIRREL AUC 89.61 vs full-test 90.20 — small drop,
+  consistent with a minor overestimate from the stray-frame near-duplicate leak, not enough on its own to
+  explain the 5.94-point gap to the paper.
+  DFDC as-shipped (duplicates counted twice) vs deduped: AUC 75.41 vs 75.20 — negligible difference, dedupe
+  choice does not matter much here.
+
+3. GATE G1 INTERPRETATION (per PREREG section 6 debug order, partially executed — 1 seed only, so this is
+   indicative, not conclusive)
+  FF++ and DFDC both fail the +-2/+-3 point tolerance, in OPPOSITE directions (ours worse on FF++, ours better
+  on DFDC), which argues against a single systematic bug (e.g. a uniformly wrong crop or threshold would move
+  both the same way). Plausible contributors, none isolated in the single seed available:
+    - Different frame population: FairReL's own published counts (FF++ 75,629; DFDC 63,225) do not match Lin's
+      release used here (FF++ 116,258; DFDC 20,007/18,851) — the audit already flagged this as unresolved; we
+      did not get the chance to run the per-method / train-vs-val-AUC debug checks in PREREG section 6 because
+      only one seed was ever going to inform them and the queue was pulled before a second data point existed.
+    - FF++'s selection noise: both arms stopped at epoch 6/10, and L_fairrel_protocol (a different crop/split)
+      saw its selection score swing with the same val F_FPR instability (small F-B/M-B val cells) — the audit's
+      documented risk 4 (checkpoint-selection fragility) is visibly present here too (e.g. CTRL_s7's own
+      history shows score dropping from epoch 1's 21.1 to epoch 2's 11.8 before climbing back to 32.2 by
+      epoch 9 — training log, logs/runs/CTRL_s7.log).
+    - DFDC's higher AUC than the paper could reflect Lin's full released DFDC set (18,851 unique frames) being
+      easier/more favorably distributed than whatever FairReL's own 63,225-frame preprocessing produced; this
+      is exactly the "frame counts differ, exact match not expected" caveat PREREG section 6 pre-registered,
+      just landing in the unexpected (better) direction for DFDC specifically.
+  No conclusion is drawn beyond: the paper's absolute numbers do not reproduce from Lin's released data with
+  the official code, in either direction, on a single seed — consistent with risk R3 in AUDIT_AND_PLAN.md
+  ("beat FairReL may reduce to beat ERM") remaining live, but not more confirmed than it already was.
+
+4. WHAT WAS NOT DONE (blocked by the pause, not by any technical failure)
+  - Seeds 17/27 for both arms (qdel'd before starting; no partial data exists for them).
+  - GRADLOG diagnostic (qdel'd before starting) — Q3 (is GCWD/SLMA active?) was never measured directly here,
+    though the smoke test (work/smoke/run_gl/gradlog.jsonl, tiny 648/470-row train/val subset, 2 epochs) is
+    informative as a METHOD CHECK only, not a result: GCWD's raw gradient norm on the backbone was order
+    1e-5, versus CE's order 1e-2/1e-3 and orth's order 1e-1/1e-2 — i.e. 2-3 orders of magnitude smaller,
+    consistent with (but on toy data, not confirmatory of) the audit's suspicion that GCWD is inactive at
+    default scale. code/gradlog_summary.py is ready to summarize a real GRADLOG run if one is ever resubmitted.
+  - Demographic probe (Q4, Direction-A precondition): code/probe.py is implemented and tested for syntax/
+    dependency readiness but was not run against seed-7 features before the stop instruction arrived (the
+    instruction said "do not launch any further ... diagnostics"); runs/FAIRREL_s7/valfeats_best.npz and
+    runs/CTRL_s7/valfeats_best.npz (FF++-val CLS + residual features, both seed 7) exist on disk and could
+    answer Q4 with a single quick CPU-only run of `python probe.py` if this line of work resumes — flagging
+    this as the single cheapest follow-up available, should the coordinator want it before fully shelving.
+  - Direction-A arms (never in scope for this pause point regardless).
+
+5. FILES
+  PREREG.txt, PREREG.sha256, PREREG_APPENDIX_hashes.txt — pre-registration, hashed before TEST.
+  code/build_data.py, logs/build_data.log — Step 0 data build + asserts.
+  code/train_official_HEAD.py, code/config_ctrl.yaml, code/train_gradlog.py (unused this run), code/score_eval.py,
+  code/run_task.sh, code/pbs_job.sh, code/CODE_SHA256.txt — training/scoring code, hash-checked at run time.
+  code/analyze.py (3-seed design, unusable until seeds 17/27 exist), code/analyze_seed7only.py (this report's
+  analysis, SEEDS=[7] only, otherwise identical logic) — results/seed7only_run.log is its full stdout.
+  results/SUMMARY_seed7only.txt, bootstrap_FAIRREL_vs_CTRL_seed7only.csv, gate_G1_seed7only.csv,
+  per_run_metrics_seed7only.csv, estimability_seed7only.csv, repro_check_seed7only.csv (official test.py ==
+  score_eval.py, confirmed exact for both seed-7 runs).
+  runs/FAIRREL_s7/, runs/CTRL_s7/ — best.pt, history.json, test_best.json, test_best_official.json,
+  scores_best.npz, valfeats_best.npz, DONE.
+  logs/GPU_USE.csv — 2.30 + 3.25 = 5.55 GPU-h spent this run (of the ~10.8 GPU-h the 3-seed FAIRREL+CTRL block
+  would have cost per AUDIT_AND_PLAN.md section 5).
+  work/smoke/ — tiny-subset smoke test (train_gradlog.py, official train.py + CTRL config, score_eval.py vs
+  test.py equality, --init frozen-CLIP features) that validated the pipeline before the real jobs were launched.

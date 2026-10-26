@@ -1,0 +1,3 @@
+# CLIPFAIR baseline ding on FF++ (Lin), Amendment 3
+_base_: ../clipfair_ffpp.yaml
+clipfair: {method: ding}

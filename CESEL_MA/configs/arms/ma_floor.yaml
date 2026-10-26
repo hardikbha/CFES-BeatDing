@@ -1,0 +1,5 @@
+# CESel-MA on the +floor base (used ONLY if the gate's passing arm is +floor and Full does not pass; Amendment 6):
+# L = L_det + 1.0 L_floor-MA + 0.1 L_orth + frequency warm-up; selection val_oppoint_ma.
+loss: {floor: {weight: 0.0}, floor_ma: {weight: 1.0}, freq_aux: {weight: 0.2, epochs: 1}}
+select: {include_init: true, metric: val_oppoint_ma}
+ma: {enabled: true}

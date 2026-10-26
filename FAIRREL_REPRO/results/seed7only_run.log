@@ -1,0 +1,110 @@
+       arm  seed       ds       thr  thr_json  thr_official  max_diff_vs_score_eval  max_diff_vs_official
+0  FAIRREL     7     ffpp  0.611668  0.611668      0.611668                     0.0                   0.0
+1  FAIRREL     7  celebdf  0.611668  0.611668      0.611668                     0.0                   0.0
+2  FAIRREL     7      dfd  0.611668  0.611668      0.611668                     0.0                   0.0
+3  FAIRREL     7     dfdc  0.611668  0.611668      0.611668                     0.0                   0.0
+4     CTRL     7     ffpp  0.576737  0.576737      0.576737                     0.0                   0.0
+5     CTRL     7  celebdf  0.576737  0.576737      0.576737                     0.0                   0.0
+6     CTRL     7      dfd  0.576737  0.576737      0.576737                     0.0                   0.0
+7     CTRL     7     dfdc  0.576737  0.576737      0.576737                     0.0                   0.0
+ffpp done 9s
+ffpp_clean done 16s
+celebdf done 22s
+dfd done 24s
+dfdc done 31s
+dfdc_asshipped done 38s
+FAIRREL_REPRO analysis (2000 reps, cluster x seed paired bootstrap; point = 3-seed mean)
+
+GATE G1 (FAIRREL AUC vs paper): FAIL
+dataset  paper_fairrel_auc  ours_fairrel_auc        ours_ci   gap  tol  within  paper_effort_auc  ours_ctrl_auc
+   ffpp              96.14             90.20 [87.95, 92.23] -5.94 2.00   False             94.83          90.22
+celebdf              80.64             79.32 [76.60, 81.89] -1.32 3.00    True             78.52          79.41
+    dfd              86.13             83.42 [77.01, 89.13] -2.71 3.00    True             84.22          83.42
+   dfdc              66.34             75.20 [72.04, 78.06]  8.86 3.00   False             65.08          75.04
+
+== ffpp (clusters 888; estimable 6/6) ==
+  auc            FAIRREL   90.20 [  87.95,  92.23]  CTRL   90.22 [  87.99,  92.27]  F-C   -0.02 [  -0.10,  +0.07]
+  auc_avg        FAIRREL   92.15 [  89.20,  94.45]  CTRL   92.18 [  89.30,  94.46]  F-C   -0.03 [  -0.18,  +0.10]
+  auc_gap        FAIRREL    9.47 [   7.82,  22.44]  CTRL    9.70 [   7.77,  21.99]  F-C   -0.24 [  -0.46,  +0.78]
+  f_fpr          FAIRREL   67.26 [  43.50, 114.70]  CTRL   63.10 [  42.79, 113.22]  F-C   +4.16 [  -8.63,  +9.35]
+  f_meo          FAIRREL   38.03 [  25.54,  62.05]  CTRL   36.82 [  25.34,  61.13]  F-C   +1.21 [  -2.88,  +3.19]
+  f_fpr_est      FAIRREL   67.26 [  43.50, 114.70]  CTRL   63.10 [  42.79, 113.22]  F-C   +4.16 [  -8.63,  +9.35]
+  f_meo_est      FAIRREL   38.03 [  25.54,  62.05]  CTRL   36.82 [  25.34,  61.13]  F-C   +1.21 [  -2.88,  +3.19]
+  auc_avg_est    FAIRREL   92.15 [  89.20,  94.45]  CTRL   92.18 [  89.30,  94.46]  F-C   -0.03 [  -0.18,  +0.10]
+  auc_worst_est  FAIRREL   87.63 [  76.34,  89.90]  CTRL   87.49 [  76.87,  89.76]  F-C   +0.13 [  -0.69,  +0.39]
+  fpr_overall    FAIRREL   31.95 [  26.50,  37.76]  CTRL   31.79 [  26.38,  37.52]  F-C   +0.17 [  -0.24,  +0.55]
+  tpr_overall    FAIRREL   90.26 [  88.52,  91.98]  CTRL   90.29 [  88.53,  92.00]  F-C   -0.03 [  -0.14,  +0.07]
+== ffpp_clean (clusters 728; estimable 3/6) ==
+  auc            FAIRREL   89.61 [  86.34,  92.37]  CTRL   89.59 [  86.29,  92.38]  F-C   +0.02 [  -0.11,  +0.15]
+  auc_avg        FAIRREL   93.43 [  90.89,  95.53]  CTRL   93.43 [  90.91,  95.51]  F-C   -0.00 [  -0.16,  +0.11]
+  auc_gap        FAIRREL   12.67 [   7.89,  19.83]  CTRL   12.96 [   8.08,  20.01]  F-C   -0.29 [  -0.49,  +0.61]
+  f_fpr          FAIRREL  116.42 [  64.06, 170.96]  CTRL  117.66 [  61.79, 171.30]  F-C   -1.24 [  -4.30,  +5.36]
+  f_meo          FAIRREL   49.15 [  35.98,  78.38]  CTRL   48.02 [  35.44,  77.42]  F-C   +1.13 [  -1.31,  +3.45]
+  f_fpr_est      FAIRREL   31.45 [  10.00,  64.18]  CTRL   31.51 [  10.50,  64.06]  F-C   -0.05 [  -3.40,  +3.23]
+  f_meo_est      FAIRREL   24.41 [   8.58,  56.02]  CTRL   23.86 [   8.88,  54.03]  F-C   +0.54 [  -2.18,  +3.26]
+  auc_avg_est    FAIRREL   89.64 [  86.15,  92.90]  CTRL   89.67 [  86.10,  92.88]  F-C   -0.03 [  -0.18,  +0.13]
+  auc_worst_est  FAIRREL   86.32 [  79.76,  90.57]  CTRL   86.09 [  79.60,  90.49]  F-C   +0.23 [  -0.60,  +0.44]
+  fpr_overall    FAIRREL   34.84 [  25.82,  44.31]  CTRL   34.67 [  25.55,  44.14]  F-C   +0.17 [  -0.29,  +0.64]
+  tpr_overall    FAIRREL   90.26 [  88.59,  92.01]  CTRL   90.29 [  88.59,  92.04]  F-C   -0.03 [  -0.14,  +0.08]
+== celebdf (clusters 950; estimable 2/3) ==
+  auc            FAIRREL   79.32 [  76.60,  81.89]  CTRL   79.41 [  76.72,  82.00]  F-C   -0.08 [  -0.19,  +0.03]
+  auc_avg        FAIRREL   72.25 [  66.92,  77.40]  CTRL   72.36 [  66.99,  77.48]  F-C   -0.11 [  -0.30,  +0.08]
+  auc_gap        FAIRREL   13.74 [   3.34,  24.40]  CTRL   13.60 [   3.19,  24.28]  F-C   +0.14 [  -0.26,  +0.52]
+  f_fpr          FAIRREL   29.94 [  15.34,  48.68]  CTRL   30.98 [  16.26,  49.87]  F-C   -1.05 [  -2.22,  +0.71]
+  f_meo          FAIRREL   38.47 [  29.68,  48.34]  CTRL   38.58 [  29.89,  48.43]  F-C   -0.11 [  -0.80,  +0.51]
+  f_fpr_est      FAIRREL   25.32 [  11.10,  38.77]  CTRL   25.88 [  11.96,  39.22]  F-C   -0.56 [  -1.53,  +0.29]
+  f_meo_est      FAIRREL   38.47 [  29.60,  48.33]  CTRL   38.58 [  29.81,  48.40]  F-C   -0.11 [  -0.78,  +0.51]
+  auc_avg_est    FAIRREL   72.25 [  66.92,  77.40]  CTRL   72.36 [  66.99,  77.48]  F-C   -0.11 [  -0.30,  +0.08]
+  auc_worst_est  FAIRREL   65.38 [  55.14,  75.13]  CTRL   65.56 [  55.44,  75.38]  F-C   -0.18 [  -0.54,  +0.17]
+  fpr_overall    FAIRREL   52.78 [  48.07,  57.61]  CTRL   53.15 [  48.33,  58.10]  F-C   -0.38 [  -0.75,  -0.04]  *
+  tpr_overall    FAIRREL   89.14 [  87.91,  90.35]  CTRL   89.50 [  88.28,  90.68]  F-C   -0.35 [  -0.47,  -0.22]  *
+== dfd (clusters 32; estimable 0/4) ==
+  auc            FAIRREL   83.42 [  77.01,  89.13]  CTRL   83.42 [  77.05,  89.06]  F-C   +0.01 [  -0.13,  +0.15]
+  auc_avg        FAIRREL   85.70 [  79.05,  92.26]  CTRL   85.63 [  78.99,  92.21]  F-C   +0.07 [  -0.09,  +0.17]
+  auc_gap        FAIRREL   20.21 [   2.25,  38.50]  CTRL   20.50 [   2.26,  38.63]  F-C   -0.29 [  -0.59,  +0.48]
+  f_fpr          FAIRREL   40.90 [   3.12,  86.95]  CTRL   40.91 [   3.21,  85.74]  F-C   -0.01 [  -1.54,  +1.37]
+  f_meo          FAIRREL   33.28 [  19.60,  61.36]  CTRL   33.60 [  20.21,  61.36]  F-C   -0.32 [  -1.33,  +1.44]
+  f_fpr_est      FAIRREL     nan [    nan,    nan]  CTRL     nan [    nan,    nan]  F-C    +nan [   +nan,   +nan]
+  f_meo_est      FAIRREL     nan [    nan,    nan]  CTRL     nan [    nan,    nan]  F-C    +nan [   +nan,   +nan]
+  auc_avg_est    FAIRREL     nan [    nan,    nan]  CTRL     nan [    nan,    nan]  F-C    +nan [   +nan,   +nan]
+  auc_worst_est  FAIRREL     nan [    nan,    nan]  CTRL     nan [    nan,    nan]  F-C    +nan [   +nan,   +nan]
+  fpr_overall    FAIRREL   32.47 [  22.48,  44.40]  CTRL   32.18 [  22.07,  43.86]  F-C   +0.29 [  -0.12,  +0.67]
+  tpr_overall    FAIRREL   81.17 [  73.44,  88.16]  CTRL   80.96 [  73.11,  87.97]  F-C   +0.22 [  +0.02,  +0.47]  *
+== dfdc (clusters 666; estimable 4/6) ==
+  auc            FAIRREL   75.20 [  72.04,  78.06]  CTRL   75.04 [  71.91,  77.93]  F-C   +0.17 [  +0.08,  +0.25]  *
+  auc_avg        FAIRREL   70.26 [  66.67,  76.87]  CTRL   70.07 [  66.46,  76.70]  F-C   +0.19 [  +0.03,  +0.33]  *
+  auc_gap        FAIRREL   29.67 [  10.23,  42.67]  CTRL   29.66 [  10.12,  42.93]  F-C   +0.01 [  -0.71,  +0.57]
+  f_fpr          FAIRREL   45.74 [  28.88,  67.01]  CTRL   45.71 [  28.13,  66.91]  F-C   +0.03 [  -1.55,  +2.28]
+  f_meo          FAIRREL   75.39 [  34.43,  80.23]  CTRL   75.21 [  34.47,  80.10]  F-C   +0.18 [  -1.41,  +0.88]
+  f_fpr_est      FAIRREL   26.78 [  15.49,  39.70]  CTRL   26.44 [  15.26,  39.38]  F-C   +0.34 [  -0.71,  +0.96]
+  f_meo_est      FAIRREL   36.14 [  27.99,  53.56]  CTRL   36.12 [  28.06,  52.94]  F-C   +0.02 [  -0.59,  +1.45]
+  auc_avg_est    FAIRREL   74.60 [  70.69,  78.22]  CTRL   74.50 [  70.57,  78.17]  F-C   +0.09 [  -0.01,  +0.19]
+  auc_worst_est  FAIRREL   70.03 [  61.68,  73.19]  CTRL   69.94 [  61.62,  73.04]  F-C   +0.09 [  -0.20,  +0.30]
+  fpr_overall    FAIRREL   27.59 [  24.49,  30.68]  CTRL   27.79 [  24.69,  30.93]  F-C   -0.20 [  -0.38,  -0.02]  *
+  tpr_overall    FAIRREL   62.92 [  58.76,  67.10]  CTRL   62.68 [  58.47,  66.91]  F-C   +0.24 [  +0.00,  +0.49]
+== dfdc_asshipped (clusters 666; estimable 4/6) ==
+  auc            FAIRREL   75.41 [  72.40,  78.51]  CTRL   75.24 [  72.24,  78.30]  F-C   +0.17 [  +0.09,  +0.26]  *
+  auc_avg        FAIRREL   70.22 [  66.62,  76.84]  CTRL   70.04 [  66.43,  76.62]  F-C   +0.18 [  +0.04,  +0.32]  *
+  auc_gap        FAIRREL   30.39 [  10.71,  43.10]  CTRL   30.42 [  10.80,  43.23]  F-C   -0.04 [  -0.72,  +0.48]
+  f_fpr          FAIRREL   45.95 [  28.80,  66.57]  CTRL   45.77 [  28.31,  66.35]  F-C   +0.18 [  -1.58,  +2.42]
+  f_meo          FAIRREL   75.62 [  34.01,  80.55]  CTRL   75.45 [  34.45,  80.40]  F-C   +0.18 [  -1.43,  +0.68]
+  f_fpr_est      FAIRREL   27.63 [  16.23,  40.94]  CTRL   27.31 [  16.23,  40.52]  F-C   +0.32 [  -0.84,  +0.93]
+  f_meo_est      FAIRREL   36.38 [  27.21,  52.32]  CTRL   36.36 [  27.22,  51.58]  F-C   +0.02 [  -0.61,  +1.36]
+  auc_avg_est    FAIRREL   75.06 [  71.20,  78.59]  CTRL   74.96 [  71.08,  78.51]  F-C   +0.09 [  -0.01,  +0.19]
+  auc_worst_est  FAIRREL   70.10 [  62.43,  73.30]  CTRL   70.00 [  62.45,  73.22]  F-C   +0.09 [  -0.19,  +0.31]
+  fpr_overall    FAIRREL   27.27 [  24.15,  30.59]  CTRL   27.46 [  24.31,  30.76]  F-C   -0.19 [  -0.37,  -0.01]  *
+  tpr_overall    FAIRREL   63.08 [  58.71,  67.36]  CTRL   62.84 [  58.33,  67.19]  F-C   +0.25 [  +0.01,  +0.49]  *
+
+per-run (dataset, arm, seed, epoch, thr, AUC, AUC_avg, F_FPR, F_MEO):
+  ffpp            FAIRREL  s7   ep6 thr 0.6117 AUC  90.20 AUCavg  92.15 F_FPR  67.26 F_MEO  38.03
+  ffpp            CTRL     s7   ep6 thr 0.5767 AUC  90.22 AUCavg  92.18 F_FPR  63.10 F_MEO  36.82
+  ffpp_clean      FAIRREL  s7   ep6 thr 0.6117 AUC  89.61 AUCavg  93.43 F_FPR 116.42 F_MEO  49.15
+  ffpp_clean      CTRL     s7   ep6 thr 0.5767 AUC  89.59 AUCavg  93.43 F_FPR 117.66 F_MEO  48.02
+  celebdf         FAIRREL  s7   ep6 thr 0.6117 AUC  79.32 AUCavg  72.25 F_FPR  29.94 F_MEO  38.47
+  celebdf         CTRL     s7   ep6 thr 0.5767 AUC  79.41 AUCavg  72.36 F_FPR  30.98 F_MEO  38.58
+  dfd             FAIRREL  s7   ep6 thr 0.6117 AUC  83.42 AUCavg  85.70 F_FPR  40.90 F_MEO  33.28
+  dfd             CTRL     s7   ep6 thr 0.5767 AUC  83.42 AUCavg  85.63 F_FPR  40.91 F_MEO  33.60
+  dfdc            FAIRREL  s7   ep6 thr 0.6117 AUC  75.20 AUCavg  70.26 F_FPR  45.74 F_MEO  75.39
+  dfdc            CTRL     s7   ep6 thr 0.5767 AUC  75.04 AUCavg  70.07 F_FPR  45.71 F_MEO  75.21
+  dfdc_asshipped  FAIRREL  s7   ep6 thr 0.6117 AUC  75.41 AUCavg  70.22 F_FPR  45.95 F_MEO  75.62
+  dfdc_asshipped  CTRL     s7   ep6 thr 0.5767 AUC  75.24 AUCavg  70.04 F_FPR  45.77 F_MEO  75.45

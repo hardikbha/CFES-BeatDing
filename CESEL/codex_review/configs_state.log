@@ -1,0 +1,44 @@
+PASS load configs/arms/B0.yaml
+PASS load configs/arms/B0_cfesD.yaml
+PASS load configs/arms/C_novalid.yaml
+PASS load configs/arms/C_randcue.yaml
+PASS load configs/arms/C_shufgroup.yaml
+PASS load configs/arms/floor.yaml
+PASS load configs/arms/full.yaml
+PASS load configs/arms/inv.yaml
+PASS load configs/arms/sens.yaml
+PASS load configs/ces_ff2.yaml
+PASS load configs/ces_ff2_public.yaml
+PASS load configs/ces_ffpp.yaml
+PASS load configs/cfesd_ff2_public.yaml
+PASS load configs/ff2/B0.yaml
+PASS load configs/ff2/B0_cfesD.yaml
+PASS load configs/ff2/C_novalid.yaml
+PASS load configs/ff2/C_randcue.yaml
+PASS load configs/ff2/C_shufgroup.yaml
+PASS load configs/ff2/floor.yaml
+PASS load configs/ff2/full.yaml
+PASS load configs/ff2/inv.yaml
+PASS load configs/ff2/sens.yaml
+PASS load configs/ff2_public/B0.yaml
+PASS load configs/ff2_public/B0_cfesD.yaml
+PASS load configs/ff2_public/C_novalid.yaml
+PASS load configs/ff2_public/C_randcue.yaml
+PASS load configs/ff2_public/C_shufgroup.yaml
+PASS load configs/ff2_public/floor.yaml
+PASS load configs/ff2_public/full.yaml
+PASS load configs/ff2_public/inv.yaml
+PASS load configs/ff2_public/sens.yaml
+PASS load configs/ffpp/B0.yaml
+PASS load configs/ffpp/B0_cfesD.yaml
+PASS load configs/ffpp/C_novalid.yaml
+PASS load configs/ffpp/C_randcue.yaml
+PASS load configs/ffpp/C_shufgroup.yaml
+PASS load configs/ffpp/floor.yaml
+PASS load configs/ffpp/full.yaml
+PASS load configs/ffpp/inv.yaml
+PASS load configs/ffpp/sens.yaml
+PASS all 40 configs; _base_ composition and FF2-only per_family/public train paths
+PASS FF2-public family mask: synth boundary excluded; reals/unmapped fakes retain global mask
+PASS CES buffers/probe/Adam state save-load-next-update exact on CPU
+Coverage inventory: 80 files

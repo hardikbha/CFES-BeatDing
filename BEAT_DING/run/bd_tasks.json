@@ -1,0 +1,193 @@
+{
+ "doc": "Beat-Ding task list (agents/BEAT_DING, decisions/2026-10-26-beat-ding-plan.md + Amendments 1-2), included by agents/CESEL_MA/run/tasks.yaml at priority 5 (highest; reserve on). File order = launch order among ready BD tasks. bd_smoke first: every other task depends on it (transitively), so nothing else runs unless it passes. bd_winner_* resolve the recipe from results/bd_screen.json (plan section 4); bd_resnet_* use the CLIP screen's winning component set (Amendment 2) and are queued after the CLIP winner seeds. | Amendment 3 (26 Oct): ResNet tasks ordered ahead of CLIP winner seeds 17/27.",
+ "tasks": [
+  {
+   "name": "bd_smoke",
+   "cmd": "bash run/bd_run.sh smoke",
+   "cwd": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING",
+   "done": [
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING/runs/SMOKE_OK.json"
+   ]
+  },
+  {
+   "name": "bd_BD0_s7",
+   "cmd": "bash run/bd_run.sh arm BD0 7",
+   "cwd": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING",
+   "done": [
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING/runs/BD0_s7/TRAINED",
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING/runs/BD0_s7/eval/bd_eval.json"
+   ],
+   "deps": [
+    "bd_smoke"
+   ]
+  },
+  {
+   "name": "bd_BD1_s7",
+   "cmd": "bash run/bd_run.sh arm BD1 7",
+   "cwd": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING",
+   "done": [
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING/runs/BD1_s7/TRAINED",
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING/runs/BD1_s7/eval/bd_eval.json"
+   ],
+   "deps": [
+    "bd_smoke"
+   ]
+  },
+  {
+   "name": "bd_BD2_s7",
+   "cmd": "bash run/bd_run.sh arm BD2 7",
+   "cwd": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING",
+   "done": [
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING/runs/BD2_s7/TRAINED",
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING/runs/BD2_s7/eval/bd_eval.json"
+   ],
+   "deps": [
+    "bd_smoke"
+   ]
+  },
+  {
+   "name": "bd_BD3_s7",
+   "cmd": "bash run/bd_run.sh arm BD3 7",
+   "cwd": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING",
+   "done": [
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING/runs/BD3_s7/TRAINED",
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING/runs/BD3_s7/eval/bd_eval.json"
+   ],
+   "deps": [
+    "bd_smoke"
+   ]
+  },
+  {
+   "name": "bd_BD4_s7",
+   "cmd": "bash run/bd_run.sh arm BD4 7",
+   "cwd": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING",
+   "done": [
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING/runs/BD4_s7/TRAINED",
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING/runs/BD4_s7/eval/bd_eval.json"
+   ],
+   "deps": [
+    "bd_smoke"
+   ]
+  },
+  {
+   "name": "bd_screen",
+   "cmd": "bash run/bd_run.sh screen",
+   "cwd": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING",
+   "done": [
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING/results/bd_screen.json"
+   ],
+   "deps": [
+    "bd_BD0_s7",
+    "bd_BD1_s7",
+    "bd_BD2_s7",
+    "bd_BD3_s7",
+    "bd_BD4_s7"
+   ],
+   "gpu": false
+  },
+  {
+   "name": "bd_resnet_s7",
+   "cmd": "bash run/bd_run.sh resnet 7",
+   "cwd": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING",
+   "done": [
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING/runs/RESNET_s7.DONE"
+   ],
+   "deps": [
+    "bd_screen"
+   ]
+  },
+  {
+   "name": "bd_resnet_s17",
+   "cmd": "bash run/bd_run.sh resnet 17",
+   "cwd": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING",
+   "done": [
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING/runs/RESNET_s17.DONE"
+   ],
+   "deps": [
+    "bd_screen"
+   ]
+  },
+  {
+   "name": "bd_resnet_s27",
+   "cmd": "bash run/bd_run.sh resnet 27",
+   "cwd": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING",
+   "done": [
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING/runs/RESNET_s27.DONE"
+   ],
+   "deps": [
+    "bd_screen"
+   ]
+  },
+  {
+   "name": "bd_resnet_final",
+   "cmd": "bash run/bd_run.sh resnet_final",
+   "cwd": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING",
+   "done": [
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING/results/bd_final_resnet.json"
+   ],
+   "deps": [
+    "bd_resnet_s7",
+    "bd_resnet_s17",
+    "bd_resnet_s27"
+   ],
+   "gpu": false
+  },
+  {
+   "name": "bd_winner_s17",
+   "cmd": "bash run/bd_run.sh winner 17",
+   "cwd": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING",
+   "done": [
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING/runs/WINNER_s17.TRAINED"
+   ],
+   "deps": [
+    "bd_screen"
+   ]
+  },
+  {
+   "name": "bd_winner_s27",
+   "cmd": "bash run/bd_run.sh winner 27",
+   "cwd": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING",
+   "done": [
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING/runs/WINNER_s27.TRAINED"
+   ],
+   "deps": [
+    "bd_screen"
+   ]
+  },
+  {
+   "name": "bd_winner_eval_s17",
+   "cmd": "bash run/bd_run.sh winner_eval 17",
+   "cwd": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING",
+   "done": [
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING/runs/WINNER_s17.EVALED"
+   ],
+   "deps": [
+    "bd_winner_s17"
+   ]
+  },
+  {
+   "name": "bd_winner_eval_s27",
+   "cmd": "bash run/bd_run.sh winner_eval 27",
+   "cwd": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING",
+   "done": [
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING/runs/WINNER_s27.EVALED"
+   ],
+   "deps": [
+    "bd_winner_s27"
+   ]
+  },
+  {
+   "name": "bd_final",
+   "cmd": "bash run/bd_run.sh final",
+   "cwd": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING",
+   "done": [
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/BEAT_DING/results/bd_final.json"
+   ],
+   "deps": [
+    "bd_winner_eval_s17",
+    "bd_winner_eval_s27"
+   ],
+   "gpu": false
+  }
+ ]
+}

@@ -1,0 +1,2 @@
+# +floor: B0 + L_floor (group-robust evidence sufficiency per group x class x manipulation family).
+loss: {floor: {weight: 1.0}}

@@ -1,0 +1,2 @@
+# B0: CES architecture (4 cue branches + additive head) + L_det only (det + pair_det + strat_det). Nothing else.
+# The CES state (EMA baselines, subspaces, probe) is still maintained (no gradient), so later arms can start from it.

@@ -1,0 +1,4 @@
+# Pdet + stability + sensitivity (= study arm B, CFES, with the common gate).
+_base_: clip_Pdet.yaml
+cf: {enabled: true}
+loss: {stab: {weight: 0.5, bg_evidence_weight: 0.0}, sens: {weight: 0.5, map_terms: false}}

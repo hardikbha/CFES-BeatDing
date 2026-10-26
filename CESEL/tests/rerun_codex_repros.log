@@ -1,0 +1,8 @@
+[DEFECT GONE (evaluate_ces.py selects/applies the threshold on logits)] F4 rank threshold
+[DEFECT GONE (Codex REPRO assertion now fails)] F3 validate saturation
+[PASS (formula / A1 oracle still holds)] oracle
+[DEFECT GONE (no silent omission: a set without a scheme raised KeyError: "a1_for: no group scheme for test set 'ff2_test'; pass schemes={set: scheme}"; with schemes it is scored, tests/test_codex_eval_fixes.py)] F7 FF2 A1 omission
+[DEFECT GONE (ces_posteval.intervene: full deletion is an exact constant)] F9 full deletion residual
+[DEFECT GONE (Codex REPRO assertion now fails)] report repro 1: winner=floor promote=['B0', 'B0+CFES-D', '+floor'] unresolved=[]
+[DEFECT GONE (Codex REPRO assertion now fails)] report repro 2: winner=None promote=None unresolved=['drop:C_randcue', 'drop:C_shufgroup', 'drop:C_novalid', 'reference spread']
+ALL_DEFECTS_GONE
