@@ -9,6 +9,8 @@
 !/FAIRREL_REPRO
 !/DINGREPRO_LIN
 !/README.md
+!/decisions
+!/decisions/**
 
 # Within tracked dirs: code/config/docs only, never checkpoints, caches, raw outputs or locks.
 **/runs/
