@@ -1,0 +1,62 @@
+{
+  "version": "CESFL_DIAGRAM_v0.2.1",
+  "script": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/source/ces_fl_diagram_model_v021.py",
+  "script_sha256": "0e001dd1251570ce43fb82bde307c519dea4045d9734506e1ce90d2ed014f8de",
+  "input_sha256": {
+    "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ding_ffpp/train.csv": "6ee9326fe8361dc3aee0f803c49b5eada169be5cf3bc3cb44ad3d934ba5ca657",
+    "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ding_ffpp/val.csv": "52f4844cffe5a03adb08cecde8829244bb50e05eeead36f6d659599f1c24f5b1",
+    "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/approved_pairs.csv": "9bc072d0304e27a5e177cb71c204d30e93ee944a0fb709fc6f12d346a2ae7e99",
+    "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ding_ffpp/protocol_source_overlap.json": "793db56c30c85dd654c6d68745afc926f4b1f8dc8bec749db01b07b3aa306c97"
+  },
+  "weights_sha256": "43020ad2812c333d9f8e202b9fef94e579d07addb6582d69a1f68bbaec21aa90",
+  "parameters": {
+    "total": 21594159,
+    "trainable": 787207
+  },
+  "splits": {
+    "overlap_counts": {
+      "identity_ids": 163,
+      "source_ids": 163
+    },
+    "exact_declared_benchmark_exception": true,
+    "person_ground_truth_verified": false
+  },
+  "approved_pairs": {
+    "approved": 36,
+    "by_attribute": {
+      "age": 12,
+      "gender": 12,
+      "skin": 12
+    }
+  },
+  "test_read_during_training": false,
+  "architecture": "global+patch heads, learned gates, positive fusion",
+  "encoder_policy": "frozen",
+  "bn_policy": "frozen",
+  "encoder_import": {
+    "path": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/full_experiment_runs/P_pretrain/best.pt",
+    "sha256": "484f09d6f826aa4baf1e4d6413813aa8608e320349082be377617c9f943e9dc8",
+    "epoch": 9,
+    "imported": "encoder only; fresh identical downstream heads/gates/fusion"
+  },
+  "controls_manifest_sha256": "42d9110497e42854d0f80943bf29093cd32ca3953da0df578fd899d4f60bb7d6",
+  "optimizer_groups": [
+    {
+      "lr": 0.001,
+      "name": "heads_gates_fusion",
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0.0001,
+      "amsgrad": false,
+      "maximize": false,
+      "foreach": null,
+      "capturable": false,
+      "differentiable": false,
+      "fused": null,
+      "decoupled_weight_decay": true
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+# Keep local execution artifacts and private/heavy inputs outside the review tree.
+/runs/
+/local_runs/
+/local_data/
+/tmp/
+*.tmp
+*.pt
+*.pth
+*.npz
+*.png
+*.jpg
+*.jpeg
+*.webp
+__pycache__/

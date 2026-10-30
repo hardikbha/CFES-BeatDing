@@ -1,0 +1,11 @@
+{
+  "environment_absolute_path": "/home/sachin.chaudhary/.conda/envs/aiface",
+  "packages": {
+    "torch": "2.7.0+cu126",
+    "torchvision": "0.22.0+cu126",
+    "numpy": "2.2.6",
+    "Pillow": "11.3.0",
+    "scikit-learn": "1.7.2"
+  },
+  "install_performed": false
+}

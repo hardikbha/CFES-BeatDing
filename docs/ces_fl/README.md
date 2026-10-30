@@ -2,6 +2,8 @@
 
 The current CES-FL working directory is `/home/sachin.chaudhary/ces_fl_pipeline/`, outside this Git checkout. These documents record verified progress; they do not replace the cluster code, data and checkpoints.
 
+**Current supervisor entry point: [CES_FL/README.md](../../CES_FL/README.md).** A later update added the exact executed model source, completed configurations/results, a timestamped status helper and the supervisor workflow under CES_FL/. The dated handoff below preserves what had been published at the time it was written; use the current entry point for subsequent changes.
+
 ## 31 October 2026 — seed17 Xception controls completed
 
 - [Research handoff and remaining time estimates](2026-10-31/HANDOFF_2026-10-31.md)

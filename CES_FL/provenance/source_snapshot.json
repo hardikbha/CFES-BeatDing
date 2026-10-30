@@ -1,0 +1,11 @@
+{
+  "snapshot_id": "seed17_encoder_controls_20261030",
+  "executed_source_absolute_path": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/source/ces_fl_diagram_model_v021.py",
+  "review_source": "CES_FL/src/ces_fl_diagram_model_v021.py",
+  "tested_source_sha256": "0e001dd1251570ce43fb82bde307c519dea4045d9734506e1ce90d2ed014f8de",
+  "architecture": "CESFL_DIAGRAM_v0.2.1",
+  "unchanged_copy": true,
+  "xception_embedded": true,
+  "external_weights_and_manifests_required": true,
+  "historical_tests": "CPU/CUDA receipts under CES_FL/provenance; these are not tests of arbitrary future code changes"
+}

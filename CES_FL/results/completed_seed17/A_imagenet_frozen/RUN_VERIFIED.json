@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "arm": "A_imagenet_frozen",
+  "optimizer_steps": 47590,
+  "selected_epoch": 8,
+  "validation_auc": 0.6791336478061043,
+  "strict_checkpoint_restore": true,
+  "encoder_and_BN_match_initial_state": true,
+  "checkpoint_sha256": "069c01386bbdd20b4590d7afa3a9d0e5ccad33c5531c19cfc471f4e84efcc5b0",
+  "encoder_state_sha256": "356367a7b9761a40ca800d884b7165540b8c53a23413c9c5c9b565cc86b1785b",
+  "pair_usage": {
+    "unique_pairs_used": 0,
+    "pair_draws": {}
+  },
+  "calibration": {
+    "threshold_logit": 4.60669755935669,
+    "rule": "validation_real_empirical_budget_v1",
+    "requested_fpr": 0.1,
+    "n_validation_real": 4092,
+    "allowed_fp": 409,
+    "achieved_fp": 409,
+    "achieved_fpr": 0.09995112414467253,
+    "test_fpr_guaranteed": false
+  },
+  "test_evaluated": false
+}

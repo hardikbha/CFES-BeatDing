@@ -4,6 +4,10 @@
 !/BEAT_DING
 !/CESEL
 !/CESEL_MA
+!/CES_FL
+!/docs/
+/docs/*
+!/docs/ces_fl/
 !/CLIPFAIR
 !/DEMO_AXES
 !/FAIRREL_REPRO

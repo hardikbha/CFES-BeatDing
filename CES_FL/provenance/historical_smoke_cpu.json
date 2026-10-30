@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "device": "cpu",
+  "torch": "2.7.0+cu126",
+  "checks": {
+    "counts_policies_grads_bn_map_identity": true,
+    "same_ABC_heads_BC_encoder_original_only_pretrain_checkpoint_reload": true,
+    "val_no_grad_TEST_never_opened_during_training": true,
+    "test_score_label_changes_do_not_change_threshold_or_checkpoint": true,
+    "invalid_policy_hash_and_spatial_loss_rejected": true,
+    "legacy_v02_checkpoint_load": true,
+    "matched_resize_controls_and_independent_link_validation": true
+  },
+  "policies": [
+    {
+      "encoder": "frozen",
+      "bn": "frozen",
+      "requires_grad": 787207,
+      "receiving_grad": 787207,
+      "encoder_parameter_tensors_changed": 0,
+      "encoder_buffer_tensors_changed": 0,
+      "one_step_2x96_seconds": 0.1309884050861001
+    },
+    {
+      "encoder": "trainable",
+      "bn": "update",
+      "requires_grad": 21594159,
+      "receiving_grad": 21594159,
+      "encoder_parameter_tensors_changed": 154,
+      "encoder_buffer_tensors_changed": 120,
+      "one_step_2x96_seconds": 0.25732457800768316
+    },
+    {
+      "encoder": "trainable",
+      "bn": "frozen",
+      "requires_grad": 21594159,
+      "receiving_grad": 21594159,
+      "encoder_parameter_tensors_changed": 154,
+      "encoder_buffer_tensors_changed": 0,
+      "one_step_2x96_seconds": 0.2381304521113634
+    }
+  ],
+  "counts": {
+    "encoder": 20806952,
+    "global_head": 262401,
+    "patch_head": 262401,
+    "image_gate": 131201,
+    "patch_gate": 131201
+  },
+  "fusion": 3,
+  "total": 21594159,
+  "frozen_trainable": 787207,
+  "ABC_head_init_sha256": {
+    "A": "32e7535b41c78a7a0b8961d9f95c346d9ceca0ecff0965a1cc72c9f5fa13086e",
+    "B": "32e7535b41c78a7a0b8961d9f95c346d9ceca0ecff0965a1cc72c9f5fa13086e",
+    "C": "32e7535b41c78a7a0b8961d9f95c346d9ceca0ecff0965a1cc72c9f5fa13086e"
+  },
+  "BC_encoder_sha256": {
+    "A": "356367a7b9761a40ca800d884b7165540b8c53a23413c9c5c9b565cc86b1785b",
+    "B": "723eb5e80626818d730f45c1573fa15f373f1aff9e31426155d292cb048be75b",
+    "C": "723eb5e80626818d730f45c1573fa15f373f1aff9e31426155d292cb048be75b"
+  },
+  "core_sha256": "0e001dd1251570ce43fb82bde307c519dea4045d9734506e1ce90d2ed014f8de",
+  "elapsed_seconds": 15.330038926098496,
+  "data": "synthetic; no real training or fairness conclusion"
+}

@@ -1,0 +1,96 @@
+{
+  "written_at": "2026-10-31T03:00:28.268000+05:30",
+  "checks": [
+    {
+      "name": "status_unit_tests",
+      "command": [
+        "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "CES_FL/tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "log": "/home/sachin.chaudhary/cesel_ma_audit_logs/supervisor_setup_20261031T025626/status_unit_tests.log"
+    },
+    {
+      "name": "python_compile",
+      "command": [
+        "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+        "-m",
+        "py_compile",
+        "CES_FL/scripts/refresh_status.py",
+        "CES_FL/tests/test_refresh_status.py",
+        "CES_FL/src/ces_fl_diagram_model_v021.py"
+      ],
+      "exit_code": 0,
+      "log": "/home/sachin.chaudhary/cesel_ma_audit_logs/supervisor_setup_20261031T025626/python_compile.log"
+    },
+    {
+      "name": "pbs_syntax",
+      "command": [
+        "bash",
+        "-n",
+        "CES_FL/cluster/train_one_gpu.pbs"
+      ],
+      "exit_code": 0,
+      "log": "/home/sachin.chaudhary/cesel_ma_audit_logs/supervisor_setup_20261031T025626/pbs_syntax.log"
+    },
+    {
+      "name": "model_cli",
+      "command": [
+        "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+        "CES_FL/src/ces_fl_diagram_model_v021.py",
+        "--help"
+      ],
+      "exit_code": 0,
+      "log": "/home/sachin.chaudhary/cesel_ma_audit_logs/supervisor_setup_20261031T025626/model_cli.log"
+    },
+    {
+      "name": "status_unit_tests_final",
+      "command": [
+        "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "CES_FL/tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "actual_summary": "Ran 11 tests in 0.023s; OK",
+      "log": "/home/sachin.chaudhary/cesel_ma_audit_logs/supervisor_setup_20261031T025626/status_unit_tests_final.log"
+    },
+    {
+      "name": "status_refresh",
+      "command": [
+        "python",
+        "CES_FL/scripts/refresh_status.py",
+        "--resources"
+      ],
+      "exit_code": 0,
+      "log": "/home/sachin.chaudhary/cesel_ma_audit_logs/supervisor_setup_20261031T025626/refresh_status_final.log"
+    }
+  ],
+  "files_sha256": {
+    "src/ces_fl_diagram_model_v021.py": "0e001dd1251570ce43fb82bde307c519dea4045d9734506e1ce90d2ed014f8de",
+    "scripts/refresh_status.py": "9dcdca9d1b13018a276dca0d336f24e3067bb7923bc0ce43e82284e54f8043d7",
+    "tests/test_refresh_status.py": "86fd511159105ff002495977da407e1633aac58e6d939a40bfe883d1bcb512db",
+    "cluster/train_one_gpu.pbs": "ddafd3d6fa0d6408766aee0a02d6dfd572f378f489f5af4867a1bd681f46eedd"
+  },
+  "core_unchanged_from_completed_tested_run": true,
+  "new_model_training": false,
+  "pbs_submitted": false,
+  "unattended_monitor_installed": false,
+  "github_access_verification": {
+    "command": "gh api repos/hardikbha/CFES-BeatDing/collaborators/hardikbha/permission",
+    "user": "hardikbha",
+    "permission": "admin",
+    "role_name": "admin",
+    "access_changed": false
+  },
+  "pbs_validation_scope": "bash -n only; no fresh scheduler allocation or real launcher execution tested",
+  "historical_model_tests": "Existing CPU/CUDA receipts separately retained; not rerun for this unchanged source copy"
+}

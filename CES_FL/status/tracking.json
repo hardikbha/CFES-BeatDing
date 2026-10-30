@@ -1,0 +1,15 @@
+{
+  "experiment_id": "seed17_encoder_controls_20261030",
+  "seed": 17,
+  "audit_root": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634",
+  "launch_root": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/launches/seed17_parallel_20261030T223530",
+  "arms": [
+    "P_pretrain",
+    "A_imagenet_frozen",
+    "B_detection_frozen",
+    "C_detection_invariance"
+  ],
+  "evaluation_records": [],
+  "note": "Current held-out evaluation has not been run. Add explicit real evaluation directories here after execution; never point to synthetic smoke directories.",
+  "run_directories": {}
+}
