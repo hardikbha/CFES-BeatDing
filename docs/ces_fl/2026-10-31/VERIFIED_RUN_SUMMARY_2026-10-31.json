@@ -1,0 +1,154 @@
+{
+  "stages": {
+    "A_imagenet_frozen": {
+      "status": "PASS",
+      "arm": "A_imagenet_frozen",
+      "optimizer_steps": 47590,
+      "selected_epoch": 8,
+      "validation_auc": 0.6791336478061043,
+      "strict_checkpoint_restore": true,
+      "encoder_and_BN_match_initial_state": true,
+      "checkpoint_sha256": "069c01386bbdd20b4590d7afa3a9d0e5ccad33c5531c19cfc471f4e84efcc5b0",
+      "encoder_state_sha256": "356367a7b9761a40ca800d884b7165540b8c53a23413c9c5c9b565cc86b1785b",
+      "pair_usage": {
+        "unique_pairs_used": 0,
+        "pair_draws": {}
+      },
+      "calibration": {
+        "threshold_logit": 4.60669755935669,
+        "rule": "validation_real_empirical_budget_v1",
+        "requested_fpr": 0.1,
+        "n_validation_real": 4092,
+        "allowed_fp": 409,
+        "achieved_fp": 409,
+        "achieved_fpr": 0.09995112414467253,
+        "test_fpr_guaranteed": false
+      },
+      "test_evaluated": false
+    },
+    "P_pretrain": {
+      "status": "PASS",
+      "arm": "P_pretrain",
+      "optimizer_steps": 47590,
+      "selected_epoch": 9,
+      "validation_auc": 0.9817106946449379,
+      "strict_checkpoint_restore": true,
+      "encoder_and_BN_match_initial_state": false,
+      "checkpoint_sha256": "484f09d6f826aa4baf1e4d6413813aa8608e320349082be377617c9f943e9dc8",
+      "encoder_state_sha256": "3244befbd7b9551a75eda51edda205ff82ba00b2cd776ccddfe1f3689624736d",
+      "pair_usage": {
+        "unique_pairs_used": 0,
+        "pair_draws": {}
+      },
+      "calibration": {
+        "threshold_logit": -0.5720323920249938,
+        "rule": "validation_real_empirical_budget_v1",
+        "requested_fpr": 0.1,
+        "n_validation_real": 4092,
+        "allowed_fp": 409,
+        "achieved_fp": 409,
+        "achieved_fpr": 0.09995112414467253,
+        "test_fpr_guaranteed": false
+      },
+      "test_evaluated": false
+    },
+    "B_detection_frozen": {
+      "status": "PASS",
+      "arm": "B_detection_frozen",
+      "optimizer_steps": 47590,
+      "selected_epoch": 7,
+      "validation_auc": 0.9819488709066874,
+      "strict_checkpoint_restore": true,
+      "encoder_and_BN_match_initial_state": true,
+      "checkpoint_sha256": "c3d456a6ce940d8e8aa1dd577001d11efd3bc9ef793a156826b3960c2f4e55c2",
+      "encoder_state_sha256": "3244befbd7b9551a75eda51edda205ff82ba00b2cd776ccddfe1f3689624736d",
+      "pair_usage": {
+        "unique_pairs_used": 0,
+        "pair_draws": {}
+      },
+      "calibration": {
+        "threshold_logit": -0.6314775943756102,
+        "rule": "validation_real_empirical_budget_v1",
+        "requested_fpr": 0.1,
+        "n_validation_real": 4092,
+        "allowed_fp": 409,
+        "achieved_fp": 409,
+        "achieved_fpr": 0.09995112414467253,
+        "test_fpr_guaranteed": false
+      },
+      "test_evaluated": false
+    },
+    "C_detection_invariance": {
+      "status": "PASS",
+      "arm": "C_detection_invariance",
+      "optimizer_steps": 47590,
+      "selected_epoch": 3,
+      "validation_auc": 0.9806606636631451,
+      "strict_checkpoint_restore": true,
+      "encoder_and_BN_match_initial_state": true,
+      "checkpoint_sha256": "3d8f461d5a8bd5a5d36d4cc733317821e5d1bcc454937a7ebc5d7f43bdf138a4",
+      "encoder_state_sha256": "3244befbd7b9551a75eda51edda205ff82ba00b2cd776ccddfe1f3689624736d",
+      "pair_usage": {
+        "unique_pairs_used": 36,
+        "pair_draws": {
+          "real_01_younger": 84,
+          "real_01_gender_feminine": 84,
+          "real_01_skin_lighter": 84,
+          "real_02_older": 11,
+          "real_02_gender_feminine": 11,
+          "real_02_skin_lighter": 11,
+          "real_03_younger": 26,
+          "real_03_gender_masculine": 26,
+          "real_03_skin_lighter": 26,
+          "fake_01_younger": 2,
+          "fake_01_gender_feminine": 2,
+          "fake_01_skin_lighter": 2,
+          "fake_03_older": 2,
+          "fake_03_gender_feminine": 2,
+          "fake_03_skin_lighter": 2,
+          "real_01_older": 84,
+          "real_01_gender_masculine": 84,
+          "real_01_skin_darker": 84,
+          "real_03_older": 24,
+          "real_03_gender_feminine": 24,
+          "real_03_skin_darker": 24,
+          "real_02_younger": 10,
+          "real_02_gender_masculine": 10,
+          "real_02_skin_darker": 10,
+          "fake_01_older": 2,
+          "fake_01_gender_masculine": 2,
+          "fake_01_skin_darker": 2,
+          "fake_02_younger": 3,
+          "fake_02_gender_masculine": 3,
+          "fake_02_skin_lighter": 3,
+          "fake_02_older": 1,
+          "fake_02_gender_feminine": 1,
+          "fake_02_skin_darker": 1,
+          "fake_03_younger": 2,
+          "fake_03_gender_masculine": 2,
+          "fake_03_skin_darker": 2
+        }
+      },
+      "calibration": {
+        "threshold_logit": -1.5438921451568601,
+        "rule": "validation_real_empirical_budget_v1",
+        "requested_fpr": 0.1,
+        "n_validation_real": 4092,
+        "allowed_fp": 409,
+        "achieved_fp": 409,
+        "achieved_fpr": 0.09995112414467253,
+        "test_fpr_guaranteed": false
+      },
+      "test_evaluated": false
+    }
+  },
+  "shared_head_initialization": {
+    "A_imagenet_frozen": "32e7535b41c78a7a0b8961d9f95c346d9ceca0ecff0965a1cc72c9f5fa13086e",
+    "P_pretrain": "32e7535b41c78a7a0b8961d9f95c346d9ceca0ecff0965a1cc72c9f5fa13086e",
+    "B_detection_frozen": "32e7535b41c78a7a0b8961d9f95c346d9ceca0ecff0965a1cc72c9f5fa13086e",
+    "C_detection_invariance": "32e7535b41c78a7a0b8961d9f95c346d9ceca0ecff0965a1cc72c9f5fa13086e"
+  },
+  "failed": {},
+  "test_evaluated": false,
+  "C_scope": "invariance only"
+}
