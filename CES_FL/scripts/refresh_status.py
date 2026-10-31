@@ -104,6 +104,7 @@ def collect(tracking, project=PROJECT, resources=False):
                 "review_code_sha256": current, "completed_run_code_sha256": original["tested_source_sha256"],
                 "review_code_matches_completed_run": current == original["tested_source_sha256"],
                 "stages": stages, "evaluation_records": evaluations,
+                "active_benchmarks": tracking.get("active_benchmarks", []),
                 "freshness": "Point-in-time observation. No monitoring daemon or automatic GitHub publication.",
                 "resources": {"state": "NOT_QUERIED"}}
     if resources:
@@ -134,6 +135,9 @@ def render(snapshot):
               "", "Checkpoint hashes above are from existing verification receipts; checkpoint bytes were not rehashed during this refresh. Recorded progress without verified completion is not proof a process is still alive.",
               "", "## Resource observation", "", "```json", json.dumps(snapshot["resources"], indent=2), "```", "",
               "Read [WORKFLOW.md](WORKFLOW.md) before proposing or launching a run. See [README.md](README.md) for code, configuration and result paths."]
+    for batch in snapshot.get("active_benchmarks", []):
+        lines += ["", "## Additional authorized benchmark batch", "",
+                  "The stage table above describes the original pilot. Current batch: [" + batch["request_id"] + "](" + batch["live_github_url"] + "). Read that separately timestamped page for its submitted jobs and actual progress."]
     return "\n".join(lines) + "\n"
 
 

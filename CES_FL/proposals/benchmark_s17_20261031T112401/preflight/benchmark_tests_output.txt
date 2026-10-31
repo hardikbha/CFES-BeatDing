@@ -1,0 +1,13 @@
+test_bootstrap_is_reproducible (test_benchmark.BenchmarkTests.test_bootstrap_is_reproducible) ... ok
+test_monitor_does_not_claim_training_from_pbs_running_alone (test_benchmark.BenchmarkTests.test_monitor_does_not_claim_training_from_pbs_running_alone) ... ok
+test_monitor_reports_failed_dependency_without_cancelling_jobs (test_benchmark.BenchmarkTests.test_monitor_reports_failed_dependency_without_cancelling_jobs) ... ok
+test_native_adapter_keeps_order_and_training_reader_remains_strict (test_benchmark.BenchmarkTests.test_native_adapter_keeps_order_and_training_reader_remains_strict) ... ok
+test_native_duplicate_test_rows_are_preserved_and_conflicts_rejected (test_benchmark.BenchmarkTests.test_native_duplicate_test_rows_are_preserved_and_conflicts_rejected) ... ok
+test_shared_donor_connects_components_and_blocks_false_ci (test_benchmark.BenchmarkTests.test_shared_donor_connects_components_and_blocks_false_ci) ... ok
+test_weighted_tied_auc_matches_independent_sklearn (test_benchmark.BenchmarkTests.test_weighted_tied_auc_matches_independent_sklearn) ... ok
+test_zero_class_weight_has_no_auc (test_benchmark.BenchmarkTests.test_zero_class_weight_has_no_auc) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 2.456s
+
+OK

@@ -1,0 +1,9 @@
+{
+  "source": "/home/sachin.chaudhary/.cache/torch/hub/checkpoints/resnet50-19c8e357.pth",
+  "source_sha256": "19c8e3572231adff6824a2da93fd67b5986919a2e65f8b6007eab4edee220097",
+  "target": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401/preflight/resnet50_imagenet1k_v1_modern.pth",
+  "target_sha256": "d9ad71c77abfb482d7d9fc338f4536beda71d6ef4b495b7f60aad8f689832d11",
+  "all_tensor_values_and_metadata_identical": true,
+  "tensor_entries": 267,
+  "reason": "PyTorch2.7 weights_only=True cannot load the legacy official V1 tar format; serialization-only compatibility conversion before new training/test scoring"
+}

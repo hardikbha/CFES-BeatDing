@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "device": "cpu",
+  "policies": [
+    {
+      "encoder_policy": "frozen",
+      "bn_policy": "frozen",
+      "parameters": {
+        "total": 24295239,
+        "trainable": 787207
+      },
+      "receiving_grad": 787207,
+      "head_initialization_sha256": "32e7535b41c78a7a0b8961d9f95c346d9ceca0ecff0965a1cc72c9f5fa13086e"
+    },
+    {
+      "encoder_policy": "trainable",
+      "bn_policy": "update",
+      "parameters": {
+        "total": 24295239,
+        "trainable": 24295239
+      },
+      "receiving_grad": 24295239,
+      "head_initialization_sha256": "32e7535b41c78a7a0b8961d9f95c346d9ceca0ecff0965a1cc72c9f5fa13086e"
+    }
+  ],
+  "scope": "Synthetic software checks, not detector/fairness results"
+}

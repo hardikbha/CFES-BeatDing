@@ -1,0 +1,12 @@
+{
+  "request_id": "benchmark_s17_20261031T112401",
+  "state": "USER_AUTHORIZED_READY_TO_SUBMIT",
+  "seed": 17,
+  "purpose": "Complete selected Xception A/B/C benchmark and matched ResNet P/A/B/C benchmark; FairForge2 cross-dataset evaluation",
+  "authorization": "User: why did not you start the experiments; start them now (2026-10-31)",
+  "run_root": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401",
+  "no_ding_retraining": true,
+  "no_new_image_generation": true,
+  "launch_decision_by": "USER_EXPLICIT_CHAT_INSTRUCTION_START_THE_EXPERIMENTS_NOW",
+  "preflight": "Manifest audit,8software tests,compiler checks and ResNet CPU policy/gradient smoke passed; CUDA checked inside allocation before training"
+}
