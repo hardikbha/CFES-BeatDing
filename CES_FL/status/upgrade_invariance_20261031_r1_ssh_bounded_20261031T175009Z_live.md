@@ -1,6 +1,6 @@
 # CES-FL controlled upgrade — direct SSH training
 
-Observed UTC: **2026-10-31T18:18:24.533561+00:00**. Snapshot from actual GPU processes and saved artifacts.
+Observed UTC: **2026-10-31T18:19:00.746711+00:00**. Snapshot from actual GPU processes and saved artifacts.
 
 **CUDA smoke passed on gpu01 and gpu02: eight tests per node.** Each production arm also repeats input preflight and CUDA smoke.
 
@@ -8,7 +8,7 @@ Following the latest direct-SSH instruction, these processes have **no PBS alloc
 
 | Arm | Host | GPU index | Model PID | State | Epochs complete | Best validation AUC (%) |
 |---|---|---:|---:|---|---:|---:|
-| R0_frozen_bce | gpu01 | 2 | 2095157 | TRAINING | 3/10 | 98.1548 |
+| R0_frozen_bce | gpu01 | 2 | 2095157 | TRAINING | 4/10 | 98.1583 |
 | R1_partial_bce | gpu02 | 6 | 3612314 | TRAINING | 5/10 | 98.2215 |
 | R2_partial_dro | gpu01 | 1 | 2095435 | TRAINING | 4/10 | 98.2001 |
 | RN_partial_dro_nochange_pilot | gpu02 | 5 | 3612318 | TRAINING | 2/10 | 97.4730 |
