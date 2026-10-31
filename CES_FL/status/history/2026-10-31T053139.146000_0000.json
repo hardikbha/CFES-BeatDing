@@ -1,0 +1,219 @@
+{
+  "observed_at_utc": "2026-10-31T05:31:39.146000+00:00",
+  "experiment_id": "seed17_encoder_controls_20261030",
+  "seed": 17,
+  "git_head_at_refresh": {
+    "exit_code": 0,
+    "stdout": "99b53c9b2c8b6b9e60bb2fabf847f89c41fa0eab",
+    "stderr": ""
+  },
+  "review_code_sha256": "0e001dd1251570ce43fb82bde307c519dea4045d9734506e1ce90d2ed014f8de",
+  "completed_run_code_sha256": "0e001dd1251570ce43fb82bde307c519dea4045d9734506e1ce90d2ed014f8de",
+  "review_code_matches_completed_run": true,
+  "stages": [
+    {
+      "arm": "P_pretrain",
+      "run_directory": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/full_experiment_runs/P_pretrain",
+      "state": "COMPLETED_VERIFIED",
+      "verification_receipt": {
+        "status": "PASS",
+        "arm": "P_pretrain",
+        "optimizer_steps": 47590,
+        "selected_epoch": 9,
+        "validation_auc": 0.9817106946449379,
+        "strict_checkpoint_restore": true,
+        "encoder_and_BN_match_initial_state": false,
+        "checkpoint_sha256": "484f09d6f826aa4baf1e4d6413813aa8608e320349082be377617c9f943e9dc8",
+        "encoder_state_sha256": "3244befbd7b9551a75eda51edda205ff82ba00b2cd776ccddfe1f3689624736d",
+        "pair_usage": {
+          "unique_pairs_used": 0,
+          "pair_draws": {}
+        },
+        "calibration": {
+          "threshold_logit": -0.5720323920249938,
+          "rule": "validation_real_empirical_budget_v1",
+          "requested_fpr": 0.1,
+          "n_validation_real": 4092,
+          "allowed_fp": 409,
+          "achieved_fp": 409,
+          "achieved_fpr": 0.09995112414467253,
+          "test_fpr_guaranteed": false
+        },
+        "test_evaluated": false
+      },
+      "selected_epoch": 9,
+      "validation_auc": 0.9817106946449379,
+      "test_evaluated": false,
+      "checkpoint_sha256_from_receipt": "484f09d6f826aa4baf1e4d6413813aa8608e320349082be377617c9f943e9dc8",
+      "checkpoint_rehashed_this_refresh": false,
+      "backbone": "xception"
+    },
+    {
+      "arm": "A_imagenet_frozen",
+      "run_directory": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/full_experiment_runs/A_imagenet_frozen",
+      "state": "COMPLETED_VERIFIED",
+      "verification_receipt": {
+        "status": "PASS",
+        "arm": "A_imagenet_frozen",
+        "optimizer_steps": 47590,
+        "selected_epoch": 8,
+        "validation_auc": 0.6791336478061043,
+        "strict_checkpoint_restore": true,
+        "encoder_and_BN_match_initial_state": true,
+        "checkpoint_sha256": "069c01386bbdd20b4590d7afa3a9d0e5ccad33c5531c19cfc471f4e84efcc5b0",
+        "encoder_state_sha256": "356367a7b9761a40ca800d884b7165540b8c53a23413c9c5c9b565cc86b1785b",
+        "pair_usage": {
+          "unique_pairs_used": 0,
+          "pair_draws": {}
+        },
+        "calibration": {
+          "threshold_logit": 4.60669755935669,
+          "rule": "validation_real_empirical_budget_v1",
+          "requested_fpr": 0.1,
+          "n_validation_real": 4092,
+          "allowed_fp": 409,
+          "achieved_fp": 409,
+          "achieved_fpr": 0.09995112414467253,
+          "test_fpr_guaranteed": false
+        },
+        "test_evaluated": false
+      },
+      "selected_epoch": 8,
+      "validation_auc": 0.6791336478061043,
+      "test_evaluated": false,
+      "checkpoint_sha256_from_receipt": "069c01386bbdd20b4590d7afa3a9d0e5ccad33c5531c19cfc471f4e84efcc5b0",
+      "checkpoint_rehashed_this_refresh": false,
+      "backbone": "xception"
+    },
+    {
+      "arm": "B_detection_frozen",
+      "run_directory": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/full_experiment_runs/B_detection_frozen",
+      "state": "COMPLETED_VERIFIED",
+      "verification_receipt": {
+        "status": "PASS",
+        "arm": "B_detection_frozen",
+        "optimizer_steps": 47590,
+        "selected_epoch": 7,
+        "validation_auc": 0.9819488709066874,
+        "strict_checkpoint_restore": true,
+        "encoder_and_BN_match_initial_state": true,
+        "checkpoint_sha256": "c3d456a6ce940d8e8aa1dd577001d11efd3bc9ef793a156826b3960c2f4e55c2",
+        "encoder_state_sha256": "3244befbd7b9551a75eda51edda205ff82ba00b2cd776ccddfe1f3689624736d",
+        "pair_usage": {
+          "unique_pairs_used": 0,
+          "pair_draws": {}
+        },
+        "calibration": {
+          "threshold_logit": -0.6314775943756102,
+          "rule": "validation_real_empirical_budget_v1",
+          "requested_fpr": 0.1,
+          "n_validation_real": 4092,
+          "allowed_fp": 409,
+          "achieved_fp": 409,
+          "achieved_fpr": 0.09995112414467253,
+          "test_fpr_guaranteed": false
+        },
+        "test_evaluated": false
+      },
+      "selected_epoch": 7,
+      "validation_auc": 0.9819488709066874,
+      "test_evaluated": false,
+      "checkpoint_sha256_from_receipt": "c3d456a6ce940d8e8aa1dd577001d11efd3bc9ef793a156826b3960c2f4e55c2",
+      "checkpoint_rehashed_this_refresh": false,
+      "backbone": "xception"
+    },
+    {
+      "arm": "C_detection_invariance",
+      "run_directory": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/full_experiment_runs/C_detection_invariance",
+      "state": "COMPLETED_VERIFIED",
+      "verification_receipt": {
+        "status": "PASS",
+        "arm": "C_detection_invariance",
+        "optimizer_steps": 47590,
+        "selected_epoch": 3,
+        "validation_auc": 0.9806606636631451,
+        "strict_checkpoint_restore": true,
+        "encoder_and_BN_match_initial_state": true,
+        "checkpoint_sha256": "3d8f461d5a8bd5a5d36d4cc733317821e5d1bcc454937a7ebc5d7f43bdf138a4",
+        "encoder_state_sha256": "3244befbd7b9551a75eda51edda205ff82ba00b2cd776ccddfe1f3689624736d",
+        "pair_usage": {
+          "unique_pairs_used": 36,
+          "pair_draws": {
+            "real_01_younger": 84,
+            "real_01_gender_feminine": 84,
+            "real_01_skin_lighter": 84,
+            "real_02_older": 11,
+            "real_02_gender_feminine": 11,
+            "real_02_skin_lighter": 11,
+            "real_03_younger": 26,
+            "real_03_gender_masculine": 26,
+            "real_03_skin_lighter": 26,
+            "fake_01_younger": 2,
+            "fake_01_gender_feminine": 2,
+            "fake_01_skin_lighter": 2,
+            "fake_03_older": 2,
+            "fake_03_gender_feminine": 2,
+            "fake_03_skin_lighter": 2,
+            "real_01_older": 84,
+            "real_01_gender_masculine": 84,
+            "real_01_skin_darker": 84,
+            "real_03_older": 24,
+            "real_03_gender_feminine": 24,
+            "real_03_skin_darker": 24,
+            "real_02_younger": 10,
+            "real_02_gender_masculine": 10,
+            "real_02_skin_darker": 10,
+            "fake_01_older": 2,
+            "fake_01_gender_masculine": 2,
+            "fake_01_skin_darker": 2,
+            "fake_02_younger": 3,
+            "fake_02_gender_masculine": 3,
+            "fake_02_skin_lighter": 3,
+            "fake_02_older": 1,
+            "fake_02_gender_feminine": 1,
+            "fake_02_skin_darker": 1,
+            "fake_03_younger": 2,
+            "fake_03_gender_masculine": 2,
+            "fake_03_skin_darker": 2
+          }
+        },
+        "calibration": {
+          "threshold_logit": -1.5438921451568601,
+          "rule": "validation_real_empirical_budget_v1",
+          "requested_fpr": 0.1,
+          "n_validation_real": 4092,
+          "allowed_fp": 409,
+          "achieved_fp": 409,
+          "achieved_fpr": 0.09995112414467253,
+          "test_fpr_guaranteed": false
+        },
+        "test_evaluated": false
+      },
+      "selected_epoch": 3,
+      "validation_auc": 0.9806606636631451,
+      "test_evaluated": false,
+      "checkpoint_sha256_from_receipt": "3d8f461d5a8bd5a5d36d4cc733317821e5d1bcc454937a7ebc5d7f43bdf138a4",
+      "checkpoint_rehashed_this_refresh": false,
+      "backbone": "xception"
+    }
+  ],
+  "evaluation_records": [],
+  "freshness": "Point-in-time observation. No monitoring daemon or automatic GitHub publication.",
+  "resources": {
+    "scheduler": {
+      "exit_code": 0,
+      "stdout": "mgmt01: \n                                                            Req'd  Req'd   Elap\nJob ID          Username Queue    Jobname    SessID NDS TSK Memory Time  S Time\n--------------- -------- -------- ---------- ------ --- --- ------ ----- - -----\n43937.mgmt01    sachin.* workq    v3_sched2  13813*   1   8    --  240:0 R 162:2\n44835.mgmt01    sachin.* gpu      symtl2     344307   1   8  200gb 10:00 R 06:09\n44836.mgmt01    sachin.* gpu      poolg      21698*   1   8  200gb 12:00 R 03:02\n44842.mgmt01    sachin.* workq    symtl      38286*   1   8  200gb 12:00 R 00:08",
+      "stderr": ""
+    },
+    "gpu01": {
+      "exit_code": 0,
+      "stdout": "0, NVIDIA H100 80GB HBM3, 81559 MiB, 55463 MiB, 100 %\n1, NVIDIA H100 80GB HBM3, 81559 MiB, 24205 MiB, 61 %\n2, NVIDIA H100 80GB HBM3, 81559 MiB, 49867 MiB, 100 %\n3, NVIDIA H100 80GB HBM3, 81559 MiB, 55816 MiB, 89 %\n4, NVIDIA H100 80GB HBM3, 81559 MiB, 66597 MiB, 99 %\n5, NVIDIA H100 80GB HBM3, 81559 MiB, 48401 MiB, 99 %\n6, NVIDIA H100 80GB HBM3, 81559 MiB, 49062 MiB, 0 %\n7, NVIDIA H100 80GB HBM3, 81559 MiB, 76137 MiB, 0 %",
+      "stderr": ""
+    },
+    "gpu02": {
+      "exit_code": 0,
+      "stdout": "0, NVIDIA H100 80GB HBM3, 81559 MiB, 77585 MiB, 0 %\n1, NVIDIA H100 80GB HBM3, 81559 MiB, 76577 MiB, 0 %\n2, NVIDIA H100 80GB HBM3, 81559 MiB, 76577 MiB, 0 %\n3, NVIDIA H100 80GB HBM3, 81559 MiB, 76575 MiB, 0 %\n4, NVIDIA H100 80GB HBM3, 81559 MiB, 54729 MiB, 0 %\n5, NVIDIA H100 80GB HBM3, 81559 MiB, 54711 MiB, 0 %\n6, NVIDIA H100 80GB HBM3, 81559 MiB, 30449 MiB, 65 %\n7, NVIDIA H100 80GB HBM3, 81559 MiB, 56632 MiB, 65 %",
+      "stderr": ""
+    }
+  }
+}

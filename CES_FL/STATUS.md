@@ -1,6 +1,6 @@
 # Current CES-FL status
 
-Last observed (UTC): **2026-10-30T21:29:13.800000+00:00**.
+Last observed (UTC): **2026-10-31T05:31:39.146000+00:00**.
 
 Point-in-time observation. No monitoring daemon or automatic GitHub publication.
 
@@ -36,17 +36,17 @@ Checkpoint hashes above are from existing verification receipts; checkpoint byte
 {
   "scheduler": {
     "exit_code": 0,
-    "stdout": "mgmt01: \n                                                            Req'd  Req'd   Elap\nJob ID          Username Queue    Jobname    SessID NDS TSK Memory Time  S Time\n--------------- -------- -------- ---------- ------ --- --- ------ ----- - -----\n43937.mgmt01    sachin.* workq    v3_sched2  13813*   1   8    --  240:0 R 154:2\n44812.mgmt01    sachin.* gpu      symtl2     12573*   1   8  200gb 10:00 R 08:08\n44821.mgmt01    sachin.* gpu      poolg      24625*   1   8  200gb 12:00 R 07:00\n44827.mgmt01    sachin.* workq    symtl      10685*   1   8  200gb 12:00 R 04:07",
+    "stdout": "mgmt01: \n                                                            Req'd  Req'd   Elap\nJob ID          Username Queue    Jobname    SessID NDS TSK Memory Time  S Time\n--------------- -------- -------- ---------- ------ --- --- ------ ----- - -----\n43937.mgmt01    sachin.* workq    v3_sched2  13813*   1   8    --  240:0 R 162:2\n44835.mgmt01    sachin.* gpu      symtl2     344307   1   8  200gb 10:00 R 06:09\n44836.mgmt01    sachin.* gpu      poolg      21698*   1   8  200gb 12:00 R 03:02\n44842.mgmt01    sachin.* workq    symtl      38286*   1   8  200gb 12:00 R 00:08",
     "stderr": ""
   },
   "gpu01": {
     "exit_code": 0,
-    "stdout": "0, NVIDIA H100 80GB HBM3, 81559 MiB, 29539 MiB, 100 %\n1, NVIDIA H100 80GB HBM3, 81559 MiB, 33855 MiB, 20 %\n2, NVIDIA H100 80GB HBM3, 81559 MiB, 41283 MiB, 100 %\n3, NVIDIA H100 80GB HBM3, 81559 MiB, 24851 MiB, 88 %\n4, NVIDIA H100 80GB HBM3, 81559 MiB, 40640 MiB, 91 %\n5, NVIDIA H100 80GB HBM3, 81559 MiB, 43048 MiB, 82 %\n6, NVIDIA H100 80GB HBM3, 81559 MiB, 24650 MiB, 100 %\n7, NVIDIA H100 80GB HBM3, 81559 MiB, 76137 MiB, 0 %",
+    "stdout": "0, NVIDIA H100 80GB HBM3, 81559 MiB, 55463 MiB, 100 %\n1, NVIDIA H100 80GB HBM3, 81559 MiB, 24205 MiB, 61 %\n2, NVIDIA H100 80GB HBM3, 81559 MiB, 49867 MiB, 100 %\n3, NVIDIA H100 80GB HBM3, 81559 MiB, 55816 MiB, 89 %\n4, NVIDIA H100 80GB HBM3, 81559 MiB, 66597 MiB, 99 %\n5, NVIDIA H100 80GB HBM3, 81559 MiB, 48401 MiB, 99 %\n6, NVIDIA H100 80GB HBM3, 81559 MiB, 49062 MiB, 0 %\n7, NVIDIA H100 80GB HBM3, 81559 MiB, 76137 MiB, 0 %",
     "stderr": ""
   },
   "gpu02": {
     "exit_code": 0,
-    "stdout": "0, NVIDIA H100 80GB HBM3, 81559 MiB, 77585 MiB, 0 %\n1, NVIDIA H100 80GB HBM3, 81559 MiB, 76577 MiB, 0 %\n2, NVIDIA H100 80GB HBM3, 81559 MiB, 76577 MiB, 0 %\n3, NVIDIA H100 80GB HBM3, 81559 MiB, 76575 MiB, 0 %\n4, NVIDIA H100 80GB HBM3, 81559 MiB, 54729 MiB, 0 %\n5, NVIDIA H100 80GB HBM3, 81559 MiB, 54711 MiB, 0 %\n6, NVIDIA H100 80GB HBM3, 81559 MiB, 47067 MiB, 13 %\n7, NVIDIA H100 80GB HBM3, 81559 MiB, 39973 MiB, 95 %",
+    "stdout": "0, NVIDIA H100 80GB HBM3, 81559 MiB, 77585 MiB, 0 %\n1, NVIDIA H100 80GB HBM3, 81559 MiB, 76577 MiB, 0 %\n2, NVIDIA H100 80GB HBM3, 81559 MiB, 76577 MiB, 0 %\n3, NVIDIA H100 80GB HBM3, 81559 MiB, 76575 MiB, 0 %\n4, NVIDIA H100 80GB HBM3, 81559 MiB, 54729 MiB, 0 %\n5, NVIDIA H100 80GB HBM3, 81559 MiB, 54711 MiB, 0 %\n6, NVIDIA H100 80GB HBM3, 81559 MiB, 30449 MiB, 65 %\n7, NVIDIA H100 80GB HBM3, 81559 MiB, 56632 MiB, 65 %",
     "stderr": ""
   }
 }
