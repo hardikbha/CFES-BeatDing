@@ -1,6 +1,6 @@
 # Current CES-FL status
 
-Last observed (UTC): **2026-10-31T05:31:39.146000+00:00**.
+Last observed (UTC): **2026-10-31T06:11:36.029000+00:00**.
 
 Point-in-time observation. No monitoring daemon or automatic GitHub publication.
 
@@ -36,20 +36,24 @@ Checkpoint hashes above are from existing verification receipts; checkpoint byte
 {
   "scheduler": {
     "exit_code": 0,
-    "stdout": "mgmt01: \n                                                            Req'd  Req'd   Elap\nJob ID          Username Queue    Jobname    SessID NDS TSK Memory Time  S Time\n--------------- -------- -------- ---------- ------ --- --- ------ ----- - -----\n43937.mgmt01    sachin.* workq    v3_sched2  13813*   1   8    --  240:0 R 162:2\n44835.mgmt01    sachin.* gpu      symtl2     344307   1   8  200gb 10:00 R 06:09\n44836.mgmt01    sachin.* gpu      poolg      21698*   1   8  200gb 12:00 R 03:02\n44842.mgmt01    sachin.* workq    symtl      38286*   1   8  200gb 12:00 R 00:08",
+    "stdout": "mgmt01: \n                                                            Req'd  Req'd   Elap\nJob ID          Username Queue    Jobname    SessID NDS TSK Memory Time  S Time\n--------------- -------- -------- ---------- ------ --- --- ------ ----- - -----\n43937.mgmt01    sachin.* workq    v3_sched2  13813*   1   8    --  240:0 R 163:0\n44835.mgmt01    sachin.* gpu      symtl2     344307   1   8  200gb 10:00 R 06:49\n44836.mgmt01    sachin.* gpu      poolg      21698*   1   8  200gb 12:00 R 03:42\n44842.mgmt01    sachin.* workq    symtl      38286*   1   8  200gb 12:00 R 00:48\n44847.mgmt01    sachin.* gpu      cesX_s17      --    1   8   32gb 12:00 Q   -- \n44848.mgmt01    sachin.* gpu      cesP_s17      --    1   8   32gb 12:00 Q   -- \n44849.mgmt01    sachin.* gpu      cesB_s17      --    1   8   32gb 12:00 H   -- \n44850.mgmt01    sachin.* gpu      cesC_s17      --    1   8   32gb 12:00 H   -- \n44851.mgmt01    sachin.* gpu      cesA_s17      --    1   8   32gb 12:00 Q   --",
     "stderr": ""
   },
   "gpu01": {
     "exit_code": 0,
-    "stdout": "0, NVIDIA H100 80GB HBM3, 81559 MiB, 55463 MiB, 100 %\n1, NVIDIA H100 80GB HBM3, 81559 MiB, 24205 MiB, 61 %\n2, NVIDIA H100 80GB HBM3, 81559 MiB, 49867 MiB, 100 %\n3, NVIDIA H100 80GB HBM3, 81559 MiB, 55816 MiB, 89 %\n4, NVIDIA H100 80GB HBM3, 81559 MiB, 66597 MiB, 99 %\n5, NVIDIA H100 80GB HBM3, 81559 MiB, 48401 MiB, 99 %\n6, NVIDIA H100 80GB HBM3, 81559 MiB, 49062 MiB, 0 %\n7, NVIDIA H100 80GB HBM3, 81559 MiB, 76137 MiB, 0 %",
+    "stdout": "0, NVIDIA H100 80GB HBM3, 81559 MiB, 33375 MiB, 100 %\n1, NVIDIA H100 80GB HBM3, 81559 MiB, 49629 MiB, 98 %\n2, NVIDIA H100 80GB HBM3, 81559 MiB, 49443 MiB, 89 %\n3, NVIDIA H100 80GB HBM3, 81559 MiB, 26904 MiB, 71 %\n4, NVIDIA H100 80GB HBM3, 81559 MiB, 64777 MiB, 100 %\n5, NVIDIA H100 80GB HBM3, 81559 MiB, 49763 MiB, 100 %\n6, NVIDIA H100 80GB HBM3, 81559 MiB, 49064 MiB, 92 %\n7, NVIDIA H100 80GB HBM3, 81559 MiB, 76137 MiB, 0 %",
     "stderr": ""
   },
   "gpu02": {
     "exit_code": 0,
-    "stdout": "0, NVIDIA H100 80GB HBM3, 81559 MiB, 77585 MiB, 0 %\n1, NVIDIA H100 80GB HBM3, 81559 MiB, 76577 MiB, 0 %\n2, NVIDIA H100 80GB HBM3, 81559 MiB, 76577 MiB, 0 %\n3, NVIDIA H100 80GB HBM3, 81559 MiB, 76575 MiB, 0 %\n4, NVIDIA H100 80GB HBM3, 81559 MiB, 54729 MiB, 0 %\n5, NVIDIA H100 80GB HBM3, 81559 MiB, 54711 MiB, 0 %\n6, NVIDIA H100 80GB HBM3, 81559 MiB, 30449 MiB, 65 %\n7, NVIDIA H100 80GB HBM3, 81559 MiB, 56632 MiB, 65 %",
+    "stdout": "0, NVIDIA H100 80GB HBM3, 81559 MiB, 77585 MiB, 0 %\n1, NVIDIA H100 80GB HBM3, 81559 MiB, 76577 MiB, 0 %\n2, NVIDIA H100 80GB HBM3, 81559 MiB, 76577 MiB, 0 %\n3, NVIDIA H100 80GB HBM3, 81559 MiB, 76575 MiB, 0 %\n4, NVIDIA H100 80GB HBM3, 81559 MiB, 54729 MiB, 0 %\n5, NVIDIA H100 80GB HBM3, 81559 MiB, 54711 MiB, 0 %\n6, NVIDIA H100 80GB HBM3, 81559 MiB, 77028 MiB, 100 %\n7, NVIDIA H100 80GB HBM3, 81559 MiB, 71352 MiB, 100 %",
     "stderr": ""
   }
 }
 ```
 
 Read [WORKFLOW.md](WORKFLOW.md) before proposing or launching a run. See [README.md](README.md) for code, configuration and result paths.
+
+## Additional authorized benchmark batch
+
+The stage table above describes the original pilot. Current batch: [benchmark_s17_20261031T112401](https://github.com/hardikbha/CFES-BeatDing/blob/main/CES_FL/status/benchmark_s17_20261031T112401_live.md). Read that separately timestamped page for its submitted jobs and actual progress.

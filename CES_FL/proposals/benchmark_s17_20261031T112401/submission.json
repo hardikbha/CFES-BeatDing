@@ -1,0 +1,77 @@
+{
+  "request_id": "benchmark_s17_20261031T112401",
+  "source_commit": "a11927affe394daf877e37234c21fea88cc171be",
+  "source_dir": "/home/sachin.chaudhary/ces_fl_sources/benchmark_s17_20261031T112401_a11927affe394daf877e37234c21fea88cc171be",
+  "submitted_at": "2026-10-31T11:40:29.365000+05:30",
+  "jobs": {
+    "X_evaluation": {
+      "job_id": "44847.mgmt01",
+      "command": [
+        "qsub",
+        "-o",
+        "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401/logs/X_evaluation.pbs.log",
+        "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401/runtime/X_evaluation.pbs"
+      ],
+      "dependency_phase": null,
+      "ngpus": 1,
+      "queue": "gpu",
+      "log": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401/logs/X_evaluation.pbs.log"
+    },
+    "P_resnet50": {
+      "job_id": "44848.mgmt01",
+      "command": [
+        "qsub",
+        "-o",
+        "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401/logs/P_resnet50.pbs.log",
+        "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401/runtime/P_resnet50.pbs"
+      ],
+      "dependency_phase": null,
+      "ngpus": 1,
+      "queue": "gpu",
+      "log": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401/logs/P_resnet50.pbs.log"
+    },
+    "B_resnet50": {
+      "job_id": "44849.mgmt01",
+      "command": [
+        "qsub",
+        "-o",
+        "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401/logs/B_resnet50.pbs.log",
+        "-W",
+        "depend=afterok:44848.mgmt01",
+        "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401/runtime/B_resnet50.pbs"
+      ],
+      "dependency_phase": "P_resnet50",
+      "ngpus": 1,
+      "queue": "gpu",
+      "log": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401/logs/B_resnet50.pbs.log"
+    },
+    "C_resnet50": {
+      "job_id": "44850.mgmt01",
+      "command": [
+        "qsub",
+        "-o",
+        "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401/logs/C_resnet50.pbs.log",
+        "-W",
+        "depend=afterok:44848.mgmt01",
+        "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401/runtime/C_resnet50.pbs"
+      ],
+      "dependency_phase": "P_resnet50",
+      "ngpus": 1,
+      "queue": "gpu",
+      "log": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401/logs/C_resnet50.pbs.log"
+    },
+    "A_resnet50": {
+      "job_id": "44851.mgmt01",
+      "command": [
+        "qsub",
+        "-o",
+        "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401/logs/A_resnet50.pbs.log",
+        "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401/runtime/A_resnet50.pbs"
+      ],
+      "dependency_phase": null,
+      "ngpus": 1,
+      "queue": "gpu",
+      "log": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401/logs/A_resnet50.pbs.log"
+    }
+  }
+}

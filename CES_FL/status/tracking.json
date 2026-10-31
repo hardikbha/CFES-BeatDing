@@ -11,5 +11,20 @@
   ],
   "evaluation_records": [],
   "note": "Current held-out evaluation has not been run. Add explicit real evaluation directories here after execution; never point to synthetic smoke directories.",
-  "run_directories": {}
+  "run_directories": {},
+  "active_benchmarks": [
+    {
+      "request_id": "benchmark_s17_20261031T112401",
+      "run_root": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401",
+      "live_github_url": "https://github.com/hardikbha/CFES-BeatDing/blob/main/CES_FL/status/benchmark_s17_20261031T112401_live.md",
+      "source_commit": "a11927affe394daf877e37234c21fea88cc171be",
+      "jobs": {
+        "X_evaluation": "44847.mgmt01",
+        "P_resnet50": "44848.mgmt01",
+        "B_resnet50": "44849.mgmt01",
+        "C_resnet50": "44850.mgmt01",
+        "A_resnet50": "44851.mgmt01"
+      }
+    }
+  ]
 }

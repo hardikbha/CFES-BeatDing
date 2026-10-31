@@ -96,3 +96,7 @@ Keep aggregate metrics, group counts and textual training/evaluation evidence on
 ## 6. Freshness and failure states
 
 The status file has an explicit UTC observation time and append-only dated snapshot. It does not keep itself current. Run the helper and push after milestones; run it manually whenever a fresh snapshot is needed. If the operator/LLM is inactive, no updates are made. Old RUNNING records are explicitly unverified until the process/job is checked; scheduler query failures are displayed. Historical results remain associated with the exact tested hash even after source edits.
+
+## Authorized benchmark monitor exception
+
+The31October2026 start-now batch explicitly launches a finite observation/publication monitor for its already submitted PBS jobs. It publishes only its dedicated generated status page via GitHub file-content updates; it does not change model/configuration files, submit additional jobs, retry failures or cancel jobs. The process runs on the login node, records its PID/log path in the run root, and stops on batch termination or after24h. Do not start a duplicate monitor for that batch. Its state is separate from the generic manual refresh helper; always check timestamps and monitor liveness.

@@ -2,6 +2,12 @@
 
 **Start here.** [Current timestamped status](STATUS.md) · [Review/change/run workflow](WORKFLOW.md) · [Prompt for a supervisor or another LLM](SUPERVISOR_PROMPT.md)
 
+## Authorized benchmark batch — 31 October 2026
+
+Five jobs were submitted under `benchmark_s17_20261031T112401`: Xception A/B/C evaluation44847; ResNet P44848; ResNet B44849 and C44850 after successful P; ResNet A44851. Each requests ngpus=1. [Follow the dedicated batch monitor](https://github.com/hardikbha/CFES-BeatDing/blob/main/CES_FL/status/benchmark_s17_20261031T112401_live.md) for actual scheduler/work states and emerging results. [Request, protocol, preflight and submission evidence](proposals/benchmark_s17_20261031T112401/). The source is pinned to commit `a11927affe394daf877e37234c21fea88cc171be`; no existing experiment is restarted.
+
+This authorized batch has a finite login-node observation/publication monitor, which stops on completion/failure or after24h and never launches extra work. It is separate from the general manual status helper. GPU/queue waits remain possible.
+
 ## What is currently true
 
 The seed17 Xception P/A/B/C experiment completed. B (detection-pretrained encoder plus BCE) reached **98.1949% FF++ validation AUC**. C (the same encoder plus demographic invariance) reached **98.0661% validation AUC**. Fairness outcomes are mixed; a consistent fairness benefit has not been established. **These are not test results and do not establish a win over Ding.** C uses 36 reviewed Qwen variants of only six TRAIN originals and does not test forensic sensitivity.
@@ -46,7 +52,7 @@ git commit -m "Update CES-FL verified status"
 git push origin main
 ```
 
-Run this after a launch, a failure, checkpoint selection, evaluation, review decision or code/config change. Include newly verified result files and request decisions in the same scoped update when needed. The refresh helper does not copy newly created arbitrary outputs into GitHub; select those explicitly after checking their contents. Its run state reflects only the experiments listed in tracking.json. There is **no unattended monitor or publication service**: GitHub shows the last successful push, not a live scheduler. ChatGPT cannot keep updating it while inactive.
+Run this after a launch, a failure, checkpoint selection, evaluation, review decision or code/config change. Include newly verified result files and request decisions in the same scoped update when needed. The refresh helper does not copy newly created arbitrary outputs into GitHub; select those explicitly after checking their contents. Its run state reflects only the experiments listed in tracking.json. The general helper is manual. The explicitly authorized benchmark above has a dedicated finite monitor that can publish while ChatGPT is inactive; it observes only that batch, cannot guarantee uninterrupted updates, and stops after completion/failure or24h. GitHub always shows the latest successful published observation, not direct scheduler access.
 
 ## Reproducibility and external artifacts
 
