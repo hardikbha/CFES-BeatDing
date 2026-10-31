@@ -1,0 +1,1214 @@
+{
+  "observed_utc": "2026-10-31T17:57:20.747332+00:00",
+  "execution_mode": "direct_ssh_bounded_shared_gpu",
+  "pbs_allocation": null,
+  "authorization": {
+    "observed_utc": "2026-10-31T17:50:09.139346+00:00",
+    "execution_mode": "direct_ssh_bounded_shared_gpu",
+    "pbs_allocation": null,
+    "latest_user_instruction": "run it on ssh gpu01 and ssh gpu02",
+    "existing_jobs_44861_44881": "untouched",
+    "source": "/home/sachin.chaudhary/ces_fl_sources/upgrade_875bce025084871438ef799ca9086985c4375672",
+    "commit": "875bce025084871438ef799ca9086985c4375672",
+    "run_root": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z",
+    "supersedes_unstarted_waiter": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_20261031T174437Z",
+    "gpu_memory_fraction": 0.1,
+    "minimum_free_memory_mib": 24576,
+    "model_configuration_changes": false,
+    "source_changes": false,
+    "scope": "Exactly five approved training arms after input guards and both-node CUDA smoke. No generation, tests evaluation, retraining other baselines or killing existing workloads."
+  },
+  "cuda_gate": {
+    "observed_utc": "2026-10-31T17:53:00.692617+00:00",
+    "nodes": [
+      {
+        "host": "gpu01",
+        "cuda_smoke_pass": true,
+        "tests": 8,
+        "exit": {
+          "exit_code": 0,
+          "host": "gpu01",
+          "gpu_uuid": "GPU-6a002609-de85-4949-c707-ee9317b284f0",
+          "worker_pid": 2062039,
+          "elapsed_seconds": 105.87098644301295,
+          "finished_at": 1793468510.6791034,
+          "execution_mode": "direct_ssh"
+        },
+        "binding": {
+          "state": "BOUND",
+          "host": "gpu01",
+          "gpu_uuid": "GPU-6a002609-de85-4949-c707-ee9317b284f0",
+          "physical_index": 3,
+          "free_mib_before_launch": 73140,
+          "execution_mode": "direct_ssh_bounded_shared_gpu",
+          "pbs_allocation": null,
+          "cuda_allocator_fraction": 0.1,
+          "preexisting_compute_processes": 1,
+          "allocator_policy_sha256": "85a7fa7a08fe4b02a85f11236d34189dc63b43305b538f26db7a302e8ec2a048",
+          "worker_pid": 2062039,
+          "time": 1793468405.4022968,
+          "source_commit": "875bce025084871438ef799ca9086985c4375672",
+          "config_sha256": "e5236a5808f73dc72ce0f464aec19684e9faaccd3690c7436bfe1daf5b35a6e7"
+        },
+        "launch": {
+          "git_commit": "875bce025084871438ef799ca9086985c4375672",
+          "sha256": {
+            "CES_FL/src/ces_fl_upgrade.py": "4d8413cbfd8f22c60be8405ee7686dff7745aed134edddecf21e809cf3082ff6",
+            "CES_FL/src/ces_fl_diagram_model_v021.py": "0e001dd1251570ce43fb82bde307c519dea4045d9734506e1ce90d2ed014f8de",
+            "CES_FL/proposals/upgrade_invariance_20261031_r1/configs/R1_partial_bce.json": "e5236a5808f73dc72ce0f464aec19684e9faaccd3690c7436bfe1daf5b35a6e7"
+          },
+          "pbs_jobid": null,
+          "cuda_visible_devices": "GPU-6a002609-de85-4949-c707-ee9317b284f0",
+          "smoke_only": true,
+          "note": "GPU visibility does not establish allocation ownership; operator verifies PBS binding."
+        },
+        "smoke_log_sha256": "194741ac64aee27c87a5c6197ebd29a73879957187fd276fd2fcadc75284fc66",
+        "marker": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/SMOKE_gpu01/CUDA_SMOKE_PASS"
+      },
+      {
+        "host": "gpu02",
+        "cuda_smoke_pass": true,
+        "tests": 8,
+        "exit": {
+          "exit_code": 0,
+          "host": "gpu02",
+          "gpu_uuid": "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb",
+          "worker_pid": 3583152,
+          "elapsed_seconds": 95.65257885679603,
+          "finished_at": 1793468500.9864395,
+          "execution_mode": "direct_ssh"
+        },
+        "binding": {
+          "state": "BOUND",
+          "host": "gpu02",
+          "gpu_uuid": "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb",
+          "physical_index": 6,
+          "free_mib_before_launch": 75295,
+          "execution_mode": "direct_ssh_bounded_shared_gpu",
+          "pbs_allocation": null,
+          "cuda_allocator_fraction": 0.1,
+          "preexisting_compute_processes": 1,
+          "allocator_policy_sha256": "85a7fa7a08fe4b02a85f11236d34189dc63b43305b538f26db7a302e8ec2a048",
+          "worker_pid": 3583152,
+          "time": 1793468405.791774,
+          "source_commit": "875bce025084871438ef799ca9086985c4375672",
+          "config_sha256": "e5236a5808f73dc72ce0f464aec19684e9faaccd3690c7436bfe1daf5b35a6e7"
+        },
+        "launch": {
+          "git_commit": "875bce025084871438ef799ca9086985c4375672",
+          "sha256": {
+            "CES_FL/src/ces_fl_upgrade.py": "4d8413cbfd8f22c60be8405ee7686dff7745aed134edddecf21e809cf3082ff6",
+            "CES_FL/src/ces_fl_diagram_model_v021.py": "0e001dd1251570ce43fb82bde307c519dea4045d9734506e1ce90d2ed014f8de",
+            "CES_FL/proposals/upgrade_invariance_20261031_r1/configs/R1_partial_bce.json": "e5236a5808f73dc72ce0f464aec19684e9faaccd3690c7436bfe1daf5b35a6e7"
+          },
+          "pbs_jobid": null,
+          "cuda_visible_devices": "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb",
+          "smoke_only": true,
+          "note": "GPU visibility does not establish allocation ownership; operator verifies PBS binding."
+        },
+        "smoke_log_sha256": "6dcb7263a863fc65280e6f983c77fdb8d2e8c23a23cf6a981159ee21fb1048f6",
+        "marker": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/SMOKE_gpu02/CUDA_SMOKE_PASS"
+      }
+    ]
+  },
+  "arms": {
+    "R0_frozen_bce": {
+      "state": "TRAINING",
+      "submission": {
+        "worker_pid": 2088892,
+        "host": "gpu01",
+        "stage": "R0_frozen_bce",
+        "command": [
+          "ssh",
+          "-o",
+          "BatchMode=yes",
+          "-o",
+          "ConnectTimeout=10",
+          "gpu01",
+          "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -c 'import subprocess,json,sys,pathlib,os; f=pathlib.Path('\"'\"'/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/logs/R0_frozen_bce.ssh.log'\"'\"').open('\"'\"'xb'\"'\"'); e=dict(os.environ); e['\"'\"'PATH'\"'\"']='\"'\"'/home/sachin.chaudhary/ces_fl_tools/git_cluster_20261031/bin:/opt/pbs/bin:/usr/bin:/bin:'\"'\"'+e.get('\"'\"'PATH'\"'\"','\"'\"''\"'\"'); e.pop('\"'\"'PBS_JOBID'\"'\"',None); child=subprocess.Popen([sys.executable,'\"'\"'-u'\"'\"','\"'\"'/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/runtime/direct_worker.py'\"'\"','\"'\"'--stage'\"'\"','\"'\"'R0_frozen_bce'\"'\"'],stdout=f,stderr=subprocess.STDOUT,stdin=subprocess.DEVNULL,start_new_session=True,env=e); print(json.dumps({'\"'\"'worker_pid'\"'\"':child.pid,'\"'\"'host'\"'\"':'\"'\"'gpu01'\"'\"','\"'\"'stage'\"'\"':'\"'\"'R0_frozen_bce'\"'\"'}))'"
+        ],
+        "log": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/logs/R0_frozen_bce.ssh.log",
+        "execution_mode": "direct_ssh_bounded_shared_gpu",
+        "pbs_allocation": null,
+        "submitted_utc": "2026-10-31T17:53:30.813952+00:00"
+      },
+      "binding": {
+        "state": "BOUND",
+        "host": "gpu01",
+        "gpu_uuid": "GPU-2544ad3e-a8af-7b58-55e6-c24c57497b01",
+        "physical_index": 2,
+        "free_mib_before_launch": 34742,
+        "execution_mode": "direct_ssh_bounded_shared_gpu",
+        "pbs_allocation": null,
+        "cuda_allocator_fraction": 0.1,
+        "allocator_policy_sha256": "85a7fa7a08fe4b02a85f11236d34189dc63b43305b538f26db7a302e8ec2a048",
+        "worker_pid": 2088892,
+        "time": 1793468563.5537431,
+        "source_commit": "875bce025084871438ef799ca9086985c4375672",
+        "config_sha256": "a69bd73ac4690d4ebe36ecd9971c4657598a73103ce71e037ffec05724ed6891",
+        "preexisting_compute_processes_present": true
+      },
+      "model_processes": [
+        {
+          "model_pid": 2095157,
+          "gpu_uuid": "GPU-2544ad3e-a8af-7b58-55e6-c24c57497b01",
+          "used_mib": "1418",
+          "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u CES_FL/src/ces_fl_upgrade.py train-config --config CES_FL/proposals/upgrade_invariance_20261031_r1/configs/R0_frozen_bce.json --out /home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/R0_frozen_bce/training --device cuda "
+        }
+      ],
+      "exit": null,
+      "failure": null,
+      "completed_epochs": 0,
+      "history": [],
+      "training_log": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/R0_frozen_bce/training.log",
+      "launcher_log": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/logs/R0_frozen_bce.ssh.log",
+      "provenance": {
+        "format": "CESFL_UPGRADE_v0.3_experimental",
+        "source_sha256": {
+          "upgrade": "4d8413cbfd8f22c60be8405ee7686dff7745aed134edddecf21e809cf3082ff6",
+          "base": "0e001dd1251570ce43fb82bde307c519dea4045d9734506e1ce90d2ed014f8de"
+        },
+        "input_hashes": {
+          "train": "6ee9326fe8361dc3aee0f803c49b5eada169be5cf3bc3cb44ad3d934ba5ca657",
+          "val": "52f4844cffe5a03adb08cecde8829244bb50e05eeead36f6d659599f1c24f5b1",
+          "protocol_overlap_file": "793db56c30c85dd654c6d68745afc926f4b1f8dc8bec749db01b07b3aa306c97",
+          "weights": "43020ad2812c333d9f8e202b9fef94e579d07addb6582d69a1f68bbaec21aa90",
+          "encoder_checkpoint": "484f09d6f826aa4baf1e4d6413813aa8608e320349082be377617c9f943e9dc8"
+        },
+        "splits": {
+          "overlap_counts": {
+            "identity_ids": 163,
+            "source_ids": 163
+          },
+          "exact_declared_benchmark_exception": true,
+          "person_ground_truth_verified": false
+        },
+        "group_order": [
+          [
+            0,
+            "0"
+          ],
+          [
+            0,
+            "1"
+          ],
+          [
+            0,
+            "2"
+          ],
+          [
+            0,
+            "3"
+          ],
+          [
+            0,
+            "4"
+          ],
+          [
+            0,
+            "5"
+          ],
+          [
+            0,
+            "6"
+          ],
+          [
+            0,
+            "7"
+          ],
+          [
+            1,
+            "0"
+          ],
+          [
+            1,
+            "1"
+          ],
+          [
+            1,
+            "2"
+          ],
+          [
+            1,
+            "3"
+          ],
+          [
+            1,
+            "4"
+          ],
+          [
+            1,
+            "5"
+          ],
+          [
+            1,
+            "6"
+          ],
+          [
+            1,
+            "7"
+          ]
+        ],
+        "group_counts": [
+          388,
+          3580,
+          2161,
+          630,
+          2297,
+          270,
+          869,
+          2731,
+          2006,
+          19222,
+          10142,
+          2050,
+          11566,
+          1379,
+          3725,
+          13123
+        ],
+        "parameters": {
+          "total": 21594159,
+          "trainable": 787207
+        },
+        "selected_encoder_modules": [
+          "block12",
+          "conv3",
+          "bn3",
+          "conv4",
+          "bn4"
+        ],
+        "bn_policy": "all running buffers frozen; selected affine parameters may train",
+        "encoder_import": {
+          "path": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/full_experiment_runs/P_pretrain/best.pt",
+          "sha256": "484f09d6f826aa4baf1e4d6413813aa8608e320349082be377617c9f943e9dc8",
+          "epoch": 9,
+          "imported": "encoder only; fresh identical downstream heads/gates/fusion"
+        },
+        "synthetic_smoke": false,
+        "test_read": false,
+        "pair_sources": 0,
+        "optimizer_groups": [
+          {
+            "lr": 0.001,
+            "name": "heads_gates_fusion",
+            "betas": [
+              0.9,
+              0.999
+            ],
+            "eps": 1e-08,
+            "weight_decay": 0.0001,
+            "amsgrad": false,
+            "maximize": false,
+            "foreach": null,
+            "capturable": false,
+            "differentiable": false,
+            "fused": null,
+            "decoupled_weight_decay": true
+          }
+        ]
+      },
+      "cuda_smoke_pass": true
+    },
+    "R1_partial_bce": {
+      "state": "TRAINING",
+      "submission": {
+        "worker_pid": 3608346,
+        "host": "gpu02",
+        "stage": "R1_partial_bce",
+        "command": [
+          "ssh",
+          "-o",
+          "BatchMode=yes",
+          "-o",
+          "ConnectTimeout=10",
+          "gpu02",
+          "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -c 'import subprocess,json,sys,pathlib,os; f=pathlib.Path('\"'\"'/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/logs/R1_partial_bce.ssh.log'\"'\"').open('\"'\"'xb'\"'\"'); e=dict(os.environ); e['\"'\"'PATH'\"'\"']='\"'\"'/home/sachin.chaudhary/ces_fl_tools/git_cluster_20261031/bin:/opt/pbs/bin:/usr/bin:/bin:'\"'\"'+e.get('\"'\"'PATH'\"'\"','\"'\"''\"'\"'); e.pop('\"'\"'PBS_JOBID'\"'\"',None); child=subprocess.Popen([sys.executable,'\"'\"'-u'\"'\"','\"'\"'/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/runtime/direct_worker.py'\"'\"','\"'\"'--stage'\"'\"','\"'\"'R1_partial_bce'\"'\"'],stdout=f,stderr=subprocess.STDOUT,stdin=subprocess.DEVNULL,start_new_session=True,env=e); print(json.dumps({'\"'\"'worker_pid'\"'\"':child.pid,'\"'\"'host'\"'\"':'\"'\"'gpu02'\"'\"','\"'\"'stage'\"'\"':'\"'\"'R1_partial_bce'\"'\"'}))'"
+        ],
+        "log": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/logs/R1_partial_bce.ssh.log",
+        "execution_mode": "direct_ssh_bounded_shared_gpu",
+        "pbs_allocation": null,
+        "submitted_utc": "2026-10-31T17:53:31.142290+00:00"
+      },
+      "binding": {
+        "state": "BOUND",
+        "host": "gpu02",
+        "gpu_uuid": "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb",
+        "physical_index": 6,
+        "free_mib_before_launch": 75295,
+        "execution_mode": "direct_ssh_bounded_shared_gpu",
+        "pbs_allocation": null,
+        "cuda_allocator_fraction": 0.1,
+        "allocator_policy_sha256": "85a7fa7a08fe4b02a85f11236d34189dc63b43305b538f26db7a302e8ec2a048",
+        "worker_pid": 3608346,
+        "time": 1793468563.7141953,
+        "source_commit": "875bce025084871438ef799ca9086985c4375672",
+        "config_sha256": "e5236a5808f73dc72ce0f464aec19684e9faaccd3690c7436bfe1daf5b35a6e7",
+        "preexisting_compute_processes_present": true
+      },
+      "model_processes": [
+        {
+          "model_pid": 3612314,
+          "gpu_uuid": "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb",
+          "used_mib": "1518",
+          "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u CES_FL/src/ces_fl_upgrade.py train-config --config CES_FL/proposals/upgrade_invariance_20261031_r1/configs/R1_partial_bce.json --out /home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/R1_partial_bce/training --device cuda "
+        }
+      ],
+      "exit": null,
+      "failure": null,
+      "completed_epochs": 0,
+      "history": [],
+      "training_log": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/R1_partial_bce/training.log",
+      "launcher_log": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/logs/R1_partial_bce.ssh.log",
+      "provenance": {
+        "format": "CESFL_UPGRADE_v0.3_experimental",
+        "source_sha256": {
+          "upgrade": "4d8413cbfd8f22c60be8405ee7686dff7745aed134edddecf21e809cf3082ff6",
+          "base": "0e001dd1251570ce43fb82bde307c519dea4045d9734506e1ce90d2ed014f8de"
+        },
+        "input_hashes": {
+          "train": "6ee9326fe8361dc3aee0f803c49b5eada169be5cf3bc3cb44ad3d934ba5ca657",
+          "val": "52f4844cffe5a03adb08cecde8829244bb50e05eeead36f6d659599f1c24f5b1",
+          "protocol_overlap_file": "793db56c30c85dd654c6d68745afc926f4b1f8dc8bec749db01b07b3aa306c97",
+          "weights": "43020ad2812c333d9f8e202b9fef94e579d07addb6582d69a1f68bbaec21aa90",
+          "encoder_checkpoint": "484f09d6f826aa4baf1e4d6413813aa8608e320349082be377617c9f943e9dc8"
+        },
+        "splits": {
+          "overlap_counts": {
+            "identity_ids": 163,
+            "source_ids": 163
+          },
+          "exact_declared_benchmark_exception": true,
+          "person_ground_truth_verified": false
+        },
+        "group_order": [
+          [
+            0,
+            "0"
+          ],
+          [
+            0,
+            "1"
+          ],
+          [
+            0,
+            "2"
+          ],
+          [
+            0,
+            "3"
+          ],
+          [
+            0,
+            "4"
+          ],
+          [
+            0,
+            "5"
+          ],
+          [
+            0,
+            "6"
+          ],
+          [
+            0,
+            "7"
+          ],
+          [
+            1,
+            "0"
+          ],
+          [
+            1,
+            "1"
+          ],
+          [
+            1,
+            "2"
+          ],
+          [
+            1,
+            "3"
+          ],
+          [
+            1,
+            "4"
+          ],
+          [
+            1,
+            "5"
+          ],
+          [
+            1,
+            "6"
+          ],
+          [
+            1,
+            "7"
+          ]
+        ],
+        "group_counts": [
+          388,
+          3580,
+          2161,
+          630,
+          2297,
+          270,
+          869,
+          2731,
+          2006,
+          19222,
+          10142,
+          2050,
+          11566,
+          1379,
+          3725,
+          13123
+        ],
+        "parameters": {
+          "total": 21594159,
+          "trainable": 7575591
+        },
+        "selected_encoder_modules": [
+          "block12",
+          "conv3",
+          "bn3",
+          "conv4",
+          "bn4"
+        ],
+        "bn_policy": "all running buffers frozen; selected affine parameters may train",
+        "encoder_import": {
+          "path": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/full_experiment_runs/P_pretrain/best.pt",
+          "sha256": "484f09d6f826aa4baf1e4d6413813aa8608e320349082be377617c9f943e9dc8",
+          "epoch": 9,
+          "imported": "encoder only; fresh identical downstream heads/gates/fusion"
+        },
+        "synthetic_smoke": false,
+        "test_read": false,
+        "pair_sources": 0,
+        "optimizer_groups": [
+          {
+            "lr": 1e-05,
+            "name": "encoder",
+            "betas": [
+              0.9,
+              0.999
+            ],
+            "eps": 1e-08,
+            "weight_decay": 0.0001,
+            "amsgrad": false,
+            "maximize": false,
+            "foreach": null,
+            "capturable": false,
+            "differentiable": false,
+            "fused": null,
+            "decoupled_weight_decay": true
+          },
+          {
+            "lr": 0.001,
+            "name": "heads_gates_fusion",
+            "betas": [
+              0.9,
+              0.999
+            ],
+            "eps": 1e-08,
+            "weight_decay": 0.0001,
+            "amsgrad": false,
+            "maximize": false,
+            "foreach": null,
+            "capturable": false,
+            "differentiable": false,
+            "fused": null,
+            "decoupled_weight_decay": true
+          }
+        ]
+      },
+      "cuda_smoke_pass": true
+    },
+    "R2_partial_dro": {
+      "state": "TRAINING",
+      "submission": {
+        "worker_pid": 2089029,
+        "host": "gpu01",
+        "stage": "R2_partial_dro",
+        "command": [
+          "ssh",
+          "-o",
+          "BatchMode=yes",
+          "-o",
+          "ConnectTimeout=10",
+          "gpu01",
+          "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -c 'import subprocess,json,sys,pathlib,os; f=pathlib.Path('\"'\"'/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/logs/R2_partial_dro.ssh.log'\"'\"').open('\"'\"'xb'\"'\"'); e=dict(os.environ); e['\"'\"'PATH'\"'\"']='\"'\"'/home/sachin.chaudhary/ces_fl_tools/git_cluster_20261031/bin:/opt/pbs/bin:/usr/bin:/bin:'\"'\"'+e.get('\"'\"'PATH'\"'\"','\"'\"''\"'\"'); e.pop('\"'\"'PBS_JOBID'\"'\"',None); child=subprocess.Popen([sys.executable,'\"'\"'-u'\"'\"','\"'\"'/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/runtime/direct_worker.py'\"'\"','\"'\"'--stage'\"'\"','\"'\"'R2_partial_dro'\"'\"'],stdout=f,stderr=subprocess.STDOUT,stdin=subprocess.DEVNULL,start_new_session=True,env=e); print(json.dumps({'\"'\"'worker_pid'\"'\"':child.pid,'\"'\"'host'\"'\"':'\"'\"'gpu01'\"'\"','\"'\"'stage'\"'\"':'\"'\"'R2_partial_dro'\"'\"'}))'"
+        ],
+        "log": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/logs/R2_partial_dro.ssh.log",
+        "execution_mode": "direct_ssh_bounded_shared_gpu",
+        "pbs_allocation": null,
+        "submitted_utc": "2026-10-31T17:53:31.501714+00:00"
+      },
+      "binding": {
+        "state": "BOUND",
+        "host": "gpu01",
+        "gpu_uuid": "GPU-6cc0a5b3-99ca-13e3-5508-a201a06e82d6",
+        "physical_index": 1,
+        "free_mib_before_launch": 31406,
+        "execution_mode": "direct_ssh_bounded_shared_gpu",
+        "pbs_allocation": null,
+        "cuda_allocator_fraction": 0.1,
+        "allocator_policy_sha256": "85a7fa7a08fe4b02a85f11236d34189dc63b43305b538f26db7a302e8ec2a048",
+        "worker_pid": 2089029,
+        "time": 1793468564.2135127,
+        "source_commit": "875bce025084871438ef799ca9086985c4375672",
+        "config_sha256": "40a5414f5115ae2c7738c22abb1bae802c4aa83f2b557c320c9c0c1481439010",
+        "preexisting_compute_processes_present": true
+      },
+      "model_processes": [
+        {
+          "model_pid": 2095435,
+          "gpu_uuid": "GPU-6cc0a5b3-99ca-13e3-5508-a201a06e82d6",
+          "used_mib": "1516",
+          "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u CES_FL/src/ces_fl_upgrade.py train-config --config CES_FL/proposals/upgrade_invariance_20261031_r1/configs/R2_partial_dro.json --out /home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/R2_partial_dro/training --device cuda "
+        }
+      ],
+      "exit": null,
+      "failure": null,
+      "completed_epochs": 0,
+      "history": [],
+      "training_log": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/R2_partial_dro/training.log",
+      "launcher_log": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/logs/R2_partial_dro.ssh.log",
+      "provenance": {
+        "format": "CESFL_UPGRADE_v0.3_experimental",
+        "source_sha256": {
+          "upgrade": "4d8413cbfd8f22c60be8405ee7686dff7745aed134edddecf21e809cf3082ff6",
+          "base": "0e001dd1251570ce43fb82bde307c519dea4045d9734506e1ce90d2ed014f8de"
+        },
+        "input_hashes": {
+          "train": "6ee9326fe8361dc3aee0f803c49b5eada169be5cf3bc3cb44ad3d934ba5ca657",
+          "val": "52f4844cffe5a03adb08cecde8829244bb50e05eeead36f6d659599f1c24f5b1",
+          "protocol_overlap_file": "793db56c30c85dd654c6d68745afc926f4b1f8dc8bec749db01b07b3aa306c97",
+          "weights": "43020ad2812c333d9f8e202b9fef94e579d07addb6582d69a1f68bbaec21aa90",
+          "encoder_checkpoint": "484f09d6f826aa4baf1e4d6413813aa8608e320349082be377617c9f943e9dc8"
+        },
+        "splits": {
+          "overlap_counts": {
+            "identity_ids": 163,
+            "source_ids": 163
+          },
+          "exact_declared_benchmark_exception": true,
+          "person_ground_truth_verified": false
+        },
+        "group_order": [
+          [
+            0,
+            "0"
+          ],
+          [
+            0,
+            "1"
+          ],
+          [
+            0,
+            "2"
+          ],
+          [
+            0,
+            "3"
+          ],
+          [
+            0,
+            "4"
+          ],
+          [
+            0,
+            "5"
+          ],
+          [
+            0,
+            "6"
+          ],
+          [
+            0,
+            "7"
+          ],
+          [
+            1,
+            "0"
+          ],
+          [
+            1,
+            "1"
+          ],
+          [
+            1,
+            "2"
+          ],
+          [
+            1,
+            "3"
+          ],
+          [
+            1,
+            "4"
+          ],
+          [
+            1,
+            "5"
+          ],
+          [
+            1,
+            "6"
+          ],
+          [
+            1,
+            "7"
+          ]
+        ],
+        "group_counts": [
+          388,
+          3580,
+          2161,
+          630,
+          2297,
+          270,
+          869,
+          2731,
+          2006,
+          19222,
+          10142,
+          2050,
+          11566,
+          1379,
+          3725,
+          13123
+        ],
+        "parameters": {
+          "total": 21594159,
+          "trainable": 7575591
+        },
+        "selected_encoder_modules": [
+          "block12",
+          "conv3",
+          "bn3",
+          "conv4",
+          "bn4"
+        ],
+        "bn_policy": "all running buffers frozen; selected affine parameters may train",
+        "encoder_import": {
+          "path": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/full_experiment_runs/P_pretrain/best.pt",
+          "sha256": "484f09d6f826aa4baf1e4d6413813aa8608e320349082be377617c9f943e9dc8",
+          "epoch": 9,
+          "imported": "encoder only; fresh identical downstream heads/gates/fusion"
+        },
+        "synthetic_smoke": false,
+        "test_read": false,
+        "pair_sources": 0,
+        "optimizer_groups": [
+          {
+            "lr": 1e-05,
+            "name": "encoder",
+            "betas": [
+              0.9,
+              0.999
+            ],
+            "eps": 1e-08,
+            "weight_decay": 0.0001,
+            "amsgrad": false,
+            "maximize": false,
+            "foreach": null,
+            "capturable": false,
+            "differentiable": false,
+            "fused": null,
+            "decoupled_weight_decay": true
+          },
+          {
+            "lr": 0.001,
+            "name": "heads_gates_fusion",
+            "betas": [
+              0.9,
+              0.999
+            ],
+            "eps": 1e-08,
+            "weight_decay": 0.0001,
+            "amsgrad": false,
+            "maximize": false,
+            "foreach": null,
+            "capturable": false,
+            "differentiable": false,
+            "fused": null,
+            "decoupled_weight_decay": true
+          }
+        ]
+      },
+      "cuda_smoke_pass": true
+    },
+    "RN_partial_dro_nochange_pilot": {
+      "state": "TRAINING",
+      "submission": {
+        "worker_pid": 3608456,
+        "host": "gpu02",
+        "stage": "RN_partial_dro_nochange_pilot",
+        "command": [
+          "ssh",
+          "-o",
+          "BatchMode=yes",
+          "-o",
+          "ConnectTimeout=10",
+          "gpu02",
+          "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -c 'import subprocess,json,sys,pathlib,os; f=pathlib.Path('\"'\"'/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/logs/RN_partial_dro_nochange_pilot.ssh.log'\"'\"').open('\"'\"'xb'\"'\"'); e=dict(os.environ); e['\"'\"'PATH'\"'\"']='\"'\"'/home/sachin.chaudhary/ces_fl_tools/git_cluster_20261031/bin:/opt/pbs/bin:/usr/bin:/bin:'\"'\"'+e.get('\"'\"'PATH'\"'\"','\"'\"''\"'\"'); e.pop('\"'\"'PBS_JOBID'\"'\"',None); child=subprocess.Popen([sys.executable,'\"'\"'-u'\"'\"','\"'\"'/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/runtime/direct_worker.py'\"'\"','\"'\"'--stage'\"'\"','\"'\"'RN_partial_dro_nochange_pilot'\"'\"'],stdout=f,stderr=subprocess.STDOUT,stdin=subprocess.DEVNULL,start_new_session=True,env=e); print(json.dumps({'\"'\"'worker_pid'\"'\"':child.pid,'\"'\"'host'\"'\"':'\"'\"'gpu02'\"'\"','\"'\"'stage'\"'\"':'\"'\"'RN_partial_dro_nochange_pilot'\"'\"'}))'"
+        ],
+        "log": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/logs/RN_partial_dro_nochange_pilot.ssh.log",
+        "execution_mode": "direct_ssh_bounded_shared_gpu",
+        "pbs_allocation": null,
+        "submitted_utc": "2026-10-31T17:53:31.832945+00:00"
+      },
+      "binding": {
+        "state": "BOUND",
+        "host": "gpu02",
+        "gpu_uuid": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1",
+        "physical_index": 5,
+        "free_mib_before_launch": 26369,
+        "execution_mode": "direct_ssh_bounded_shared_gpu",
+        "pbs_allocation": null,
+        "cuda_allocator_fraction": 0.1,
+        "allocator_policy_sha256": "85a7fa7a08fe4b02a85f11236d34189dc63b43305b538f26db7a302e8ec2a048",
+        "worker_pid": 3608456,
+        "time": 1793468564.377462,
+        "source_commit": "875bce025084871438ef799ca9086985c4375672",
+        "config_sha256": "d6cf86cfa5016ff5683868c745cb46ba42c48455b6456c0f45ad4893f45f7827",
+        "preexisting_compute_processes_present": true
+      },
+      "model_processes": [
+        {
+          "model_pid": 3612318,
+          "gpu_uuid": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1",
+          "used_mib": "1976",
+          "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u CES_FL/src/ces_fl_upgrade.py train-config --config CES_FL/proposals/upgrade_invariance_20261031_r1/configs/RN_partial_dro_nochange_pilot.json --out /home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/RN_partial_dro_nochange_pilot/training --device cuda "
+        }
+      ],
+      "exit": null,
+      "failure": null,
+      "completed_epochs": 0,
+      "history": [],
+      "training_log": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/RN_partial_dro_nochange_pilot/training.log",
+      "launcher_log": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/logs/RN_partial_dro_nochange_pilot.ssh.log",
+      "provenance": {
+        "format": "CESFL_UPGRADE_v0.3_experimental",
+        "source_sha256": {
+          "upgrade": "4d8413cbfd8f22c60be8405ee7686dff7745aed134edddecf21e809cf3082ff6",
+          "base": "0e001dd1251570ce43fb82bde307c519dea4045d9734506e1ce90d2ed014f8de"
+        },
+        "input_hashes": {
+          "train": "6ee9326fe8361dc3aee0f803c49b5eada169be5cf3bc3cb44ad3d934ba5ca657",
+          "val": "52f4844cffe5a03adb08cecde8829244bb50e05eeead36f6d659599f1c24f5b1",
+          "pairs": "9bc072d0304e27a5e177cb71c204d30e93ee944a0fb709fc6f12d346a2ae7e99",
+          "protocol_overlap_file": "793db56c30c85dd654c6d68745afc926f4b1f8dc8bec749db01b07b3aa306c97",
+          "weights": "43020ad2812c333d9f8e202b9fef94e579d07addb6582d69a1f68bbaec21aa90",
+          "encoder_checkpoint": "484f09d6f826aa4baf1e4d6413813aa8608e320349082be377617c9f943e9dc8",
+          "controls_manifest": "42d9110497e42854d0f80943bf29093cd32ca3953da0df578fd899d4f60bb7d6"
+        },
+        "splits": {
+          "overlap_counts": {
+            "identity_ids": 163,
+            "source_ids": 163
+          },
+          "exact_declared_benchmark_exception": true,
+          "person_ground_truth_verified": false
+        },
+        "group_order": [
+          [
+            0,
+            "0"
+          ],
+          [
+            0,
+            "1"
+          ],
+          [
+            0,
+            "2"
+          ],
+          [
+            0,
+            "3"
+          ],
+          [
+            0,
+            "4"
+          ],
+          [
+            0,
+            "5"
+          ],
+          [
+            0,
+            "6"
+          ],
+          [
+            0,
+            "7"
+          ],
+          [
+            1,
+            "0"
+          ],
+          [
+            1,
+            "1"
+          ],
+          [
+            1,
+            "2"
+          ],
+          [
+            1,
+            "3"
+          ],
+          [
+            1,
+            "4"
+          ],
+          [
+            1,
+            "5"
+          ],
+          [
+            1,
+            "6"
+          ],
+          [
+            1,
+            "7"
+          ]
+        ],
+        "group_counts": [
+          388,
+          3580,
+          2161,
+          630,
+          2297,
+          270,
+          869,
+          2731,
+          2006,
+          19222,
+          10142,
+          2050,
+          11566,
+          1379,
+          3725,
+          13123
+        ],
+        "parameters": {
+          "total": 21594159,
+          "trainable": 7575591
+        },
+        "selected_encoder_modules": [
+          "block12",
+          "conv3",
+          "bn3",
+          "conv4",
+          "bn4"
+        ],
+        "bn_policy": "all running buffers frozen; selected affine parameters may train",
+        "encoder_import": {
+          "path": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/full_experiment_runs/P_pretrain/best.pt",
+          "sha256": "484f09d6f826aa4baf1e4d6413813aa8608e320349082be377617c9f943e9dc8",
+          "epoch": 9,
+          "imported": "encoder only; fresh identical downstream heads/gates/fusion"
+        },
+        "synthetic_smoke": false,
+        "test_read": false,
+        "pair_sources": 6,
+        "optimizer_groups": [
+          {
+            "lr": 1e-05,
+            "name": "encoder",
+            "betas": [
+              0.9,
+              0.999
+            ],
+            "eps": 1e-08,
+            "weight_decay": 0.0001,
+            "amsgrad": false,
+            "maximize": false,
+            "foreach": null,
+            "capturable": false,
+            "differentiable": false,
+            "fused": null,
+            "decoupled_weight_decay": true
+          },
+          {
+            "lr": 0.001,
+            "name": "heads_gates_fusion",
+            "betas": [
+              0.9,
+              0.999
+            ],
+            "eps": 1e-08,
+            "weight_decay": 0.0001,
+            "amsgrad": false,
+            "maximize": false,
+            "foreach": null,
+            "capturable": false,
+            "differentiable": false,
+            "fused": null,
+            "decoupled_weight_decay": true
+          }
+        ]
+      },
+      "cuda_smoke_pass": true
+    },
+    "RD_partial_dro_age_pilot": {
+      "state": "TRAINING",
+      "submission": {
+        "worker_pid": 2089262,
+        "host": "gpu01",
+        "stage": "RD_partial_dro_age_pilot",
+        "command": [
+          "ssh",
+          "-o",
+          "BatchMode=yes",
+          "-o",
+          "ConnectTimeout=10",
+          "gpu01",
+          "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -c 'import subprocess,json,sys,pathlib,os; f=pathlib.Path('\"'\"'/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/logs/RD_partial_dro_age_pilot.ssh.log'\"'\"').open('\"'\"'xb'\"'\"'); e=dict(os.environ); e['\"'\"'PATH'\"'\"']='\"'\"'/home/sachin.chaudhary/ces_fl_tools/git_cluster_20261031/bin:/opt/pbs/bin:/usr/bin:/bin:'\"'\"'+e.get('\"'\"'PATH'\"'\"','\"'\"''\"'\"'); e.pop('\"'\"'PBS_JOBID'\"'\"',None); child=subprocess.Popen([sys.executable,'\"'\"'-u'\"'\"','\"'\"'/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/runtime/direct_worker.py'\"'\"','\"'\"'--stage'\"'\"','\"'\"'RD_partial_dro_age_pilot'\"'\"'],stdout=f,stderr=subprocess.STDOUT,stdin=subprocess.DEVNULL,start_new_session=True,env=e); print(json.dumps({'\"'\"'worker_pid'\"'\"':child.pid,'\"'\"'host'\"'\"':'\"'\"'gpu01'\"'\"','\"'\"'stage'\"'\"':'\"'\"'RD_partial_dro_age_pilot'\"'\"'}))'"
+        ],
+        "log": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/logs/RD_partial_dro_age_pilot.ssh.log",
+        "execution_mode": "direct_ssh_bounded_shared_gpu",
+        "pbs_allocation": null,
+        "submitted_utc": "2026-10-31T17:53:32.161531+00:00"
+      },
+      "binding": {
+        "state": "BOUND",
+        "host": "gpu01",
+        "gpu_uuid": "GPU-9b669a06-9156-a98e-2194-36f2fc11d7ca",
+        "physical_index": 4,
+        "free_mib_before_launch": 30946,
+        "execution_mode": "direct_ssh_bounded_shared_gpu",
+        "pbs_allocation": null,
+        "cuda_allocator_fraction": 0.1,
+        "allocator_policy_sha256": "85a7fa7a08fe4b02a85f11236d34189dc63b43305b538f26db7a302e8ec2a048",
+        "worker_pid": 2089262,
+        "time": 1793468564.7817054,
+        "source_commit": "875bce025084871438ef799ca9086985c4375672",
+        "config_sha256": "843ddd3dcd44fdd119db81fb342ad26b6404085269d8f3e9a002a35b02319e4c",
+        "preexisting_compute_processes_present": true
+      },
+      "model_processes": [
+        {
+          "model_pid": 2094283,
+          "gpu_uuid": "GPU-9b669a06-9156-a98e-2194-36f2fc11d7ca",
+          "used_mib": "1974",
+          "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u CES_FL/src/ces_fl_upgrade.py train-config --config CES_FL/proposals/upgrade_invariance_20261031_r1/configs/RD_partial_dro_age_pilot.json --out /home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/RD_partial_dro_age_pilot/training --device cuda "
+        }
+      ],
+      "exit": null,
+      "failure": null,
+      "completed_epochs": 0,
+      "history": [],
+      "training_log": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/RD_partial_dro_age_pilot/training.log",
+      "launcher_log": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/logs/RD_partial_dro_age_pilot.ssh.log",
+      "provenance": {
+        "format": "CESFL_UPGRADE_v0.3_experimental",
+        "source_sha256": {
+          "upgrade": "4d8413cbfd8f22c60be8405ee7686dff7745aed134edddecf21e809cf3082ff6",
+          "base": "0e001dd1251570ce43fb82bde307c519dea4045d9734506e1ce90d2ed014f8de"
+        },
+        "input_hashes": {
+          "train": "6ee9326fe8361dc3aee0f803c49b5eada169be5cf3bc3cb44ad3d934ba5ca657",
+          "val": "52f4844cffe5a03adb08cecde8829244bb50e05eeead36f6d659599f1c24f5b1",
+          "pairs": "9bc072d0304e27a5e177cb71c204d30e93ee944a0fb709fc6f12d346a2ae7e99",
+          "protocol_overlap_file": "793db56c30c85dd654c6d68745afc926f4b1f8dc8bec749db01b07b3aa306c97",
+          "weights": "43020ad2812c333d9f8e202b9fef94e579d07addb6582d69a1f68bbaec21aa90",
+          "encoder_checkpoint": "484f09d6f826aa4baf1e4d6413813aa8608e320349082be377617c9f943e9dc8",
+          "controls_manifest": "42d9110497e42854d0f80943bf29093cd32ca3953da0df578fd899d4f60bb7d6"
+        },
+        "splits": {
+          "overlap_counts": {
+            "identity_ids": 163,
+            "source_ids": 163
+          },
+          "exact_declared_benchmark_exception": true,
+          "person_ground_truth_verified": false
+        },
+        "group_order": [
+          [
+            0,
+            "0"
+          ],
+          [
+            0,
+            "1"
+          ],
+          [
+            0,
+            "2"
+          ],
+          [
+            0,
+            "3"
+          ],
+          [
+            0,
+            "4"
+          ],
+          [
+            0,
+            "5"
+          ],
+          [
+            0,
+            "6"
+          ],
+          [
+            0,
+            "7"
+          ],
+          [
+            1,
+            "0"
+          ],
+          [
+            1,
+            "1"
+          ],
+          [
+            1,
+            "2"
+          ],
+          [
+            1,
+            "3"
+          ],
+          [
+            1,
+            "4"
+          ],
+          [
+            1,
+            "5"
+          ],
+          [
+            1,
+            "6"
+          ],
+          [
+            1,
+            "7"
+          ]
+        ],
+        "group_counts": [
+          388,
+          3580,
+          2161,
+          630,
+          2297,
+          270,
+          869,
+          2731,
+          2006,
+          19222,
+          10142,
+          2050,
+          11566,
+          1379,
+          3725,
+          13123
+        ],
+        "parameters": {
+          "total": 21594159,
+          "trainable": 7575591
+        },
+        "selected_encoder_modules": [
+          "block12",
+          "conv3",
+          "bn3",
+          "conv4",
+          "bn4"
+        ],
+        "bn_policy": "all running buffers frozen; selected affine parameters may train",
+        "encoder_import": {
+          "path": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/full_experiment_runs/P_pretrain/best.pt",
+          "sha256": "484f09d6f826aa4baf1e4d6413813aa8608e320349082be377617c9f943e9dc8",
+          "epoch": 9,
+          "imported": "encoder only; fresh identical downstream heads/gates/fusion"
+        },
+        "synthetic_smoke": false,
+        "test_read": false,
+        "pair_sources": 6,
+        "optimizer_groups": [
+          {
+            "lr": 1e-05,
+            "name": "encoder",
+            "betas": [
+              0.9,
+              0.999
+            ],
+            "eps": 1e-08,
+            "weight_decay": 0.0001,
+            "amsgrad": false,
+            "maximize": false,
+            "foreach": null,
+            "capturable": false,
+            "differentiable": false,
+            "fused": null,
+            "decoupled_weight_decay": true
+          },
+          {
+            "lr": 0.001,
+            "name": "heads_gates_fusion",
+            "betas": [
+              0.9,
+              0.999
+            ],
+            "eps": 1e-08,
+            "weight_decay": 0.0001,
+            "amsgrad": false,
+            "maximize": false,
+            "foreach": null,
+            "capturable": false,
+            "differentiable": false,
+            "fused": null,
+            "decoupled_weight_decay": true
+          }
+        ]
+      },
+      "cuda_smoke_pass": true
+    }
+  },
+  "initial_cuda_logs": {
+    "gpu01": "test_consistency_gradients_both_paths (test_upgrade.UpgradeTests.test_consistency_gradients_both_paths) ... ok\ntest_dro_numerical_gradient_missing_groups_and_reload (test_upgrade.UpgradeTests.test_dro_numerical_gradient_missing_groups_and_reload) ... ok\ntest_encoder_transfer_preserves_heads_and_rejects_wrong_provenance (test_upgrade.UpgradeTests.test_encoder_transfer_preserves_heads_and_rejects_wrong_provenance) ... ok\ntest_fail_closed_inputs_controls_and_pool_coverage (test_upgrade.UpgradeTests.test_fail_closed_inputs_controls_and_pool_coverage) ... ok\ntest_five_training_arms_reload_and_frozen_threshold (test_upgrade.UpgradeTests.test_five_training_arms_reload_and_frozen_threshold) ... {\"epoch\": 1, \"validation_auc\": 1.0, \"pairs\": 0}\n{\"epoch\": 1, \"validation_auc\": 1.0, \"pairs\": 0}\n{\"epoch\": 1, \"validation_auc\": 1.0, \"pairs\": 0}\n{\"epoch\": 1, \"validation_auc\": 1.0, \"pairs\": 4}\n{\"epoch\": 1, \"validation_auc\": 1.0, \"pairs\": 4}\nok\ntest_frozen_and_identical_initial_heads (test_upgrade.UpgradeTests.test_frozen_and_identical_initial_heads) ... ok\ntest_pair_schedule_balance_control_and_rng_isolation (test_upgrade.UpgradeTests.test_pair_schedule_balance_control_and_rng_isolation) ... ok\ntest_partial_gradients_bn_and_decomposition_both_backbones (test_upgrade.UpgradeTests.test_partial_gradients_bn_and_decomposition_both_backbones) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 49.296s\n\nOK\n",
+    "gpu02": "test_consistency_gradients_both_paths (test_upgrade.UpgradeTests.test_consistency_gradients_both_paths) ... ok\ntest_dro_numerical_gradient_missing_groups_and_reload (test_upgrade.UpgradeTests.test_dro_numerical_gradient_missing_groups_and_reload) ... ok\ntest_encoder_transfer_preserves_heads_and_rejects_wrong_provenance (test_upgrade.UpgradeTests.test_encoder_transfer_preserves_heads_and_rejects_wrong_provenance) ... ok\ntest_fail_closed_inputs_controls_and_pool_coverage (test_upgrade.UpgradeTests.test_fail_closed_inputs_controls_and_pool_coverage) ... ok\ntest_five_training_arms_reload_and_frozen_threshold (test_upgrade.UpgradeTests.test_five_training_arms_reload_and_frozen_threshold) ... {\"epoch\": 1, \"validation_auc\": 1.0, \"pairs\": 0}\n{\"epoch\": 1, \"validation_auc\": 1.0, \"pairs\": 0}\n{\"epoch\": 1, \"validation_auc\": 1.0, \"pairs\": 0}\n{\"epoch\": 1, \"validation_auc\": 1.0, \"pairs\": 4}\n{\"epoch\": 1, \"validation_auc\": 1.0, \"pairs\": 4}\nok\ntest_frozen_and_identical_initial_heads (test_upgrade.UpgradeTests.test_frozen_and_identical_initial_heads) ... ok\ntest_pair_schedule_balance_control_and_rng_isolation (test_upgrade.UpgradeTests.test_pair_schedule_balance_control_and_rng_isolation) ... ok\ntest_partial_gradients_bn_and_decomposition_both_backbones (test_upgrade.UpgradeTests.test_partial_gradients_bn_and_decomposition_both_backbones) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 17.465s\n\nOK\n"
+  },
+  "source_and_configuration_hashes": {
+    "observed_utc": "2026-10-31T16:58:03.764266+00:00",
+    "git_commit": "875bce025084871438ef799ca9086985c4375672",
+    "source": "/home/sachin.chaudhary/ces_fl_sources/upgrade_875bce025084871438ef799ca9086985c4375672",
+    "run_root": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_recovery_20261031T165803Z",
+    "source_clean": true,
+    "detached": true,
+    "sha256": {
+      "CES_FL/AGENTS.md": "c097e68e95bee8fc5af30940eb88f634fe154ced2f897cd3316171cc0e807f6c",
+      "CES_FL/README.md": "679c5500b0fc48a719879c7088348bb48a5f1d21119d631104b96b99bb225867",
+      "CES_FL/STATUS.md": "227a3c09d3f6d9dce09d0978e74eb2e967c0de7e8965515070dfca568df90839",
+      "CES_FL/WORKFLOW.md": "29715807944c8692a757c81aa8e56bff6a2da9e901af6cb8f562deee08461c4d",
+      "CES_FL/proposals/upgrade_invariance_20261031_r1/README.md": "171c9aa30330cc24836dcfdf774ab7bc90845aeda88f99756840ae3c18be6b92",
+      "CES_FL/proposals/upgrade_invariance_20261031_r1/CLUSTER_AGENT_PROMPT.md": "668a156875036f909a10e638134196e371607fb584fda0b7dfba0b15c3018637",
+      "CES_FL/src/ces_fl_upgrade.py": "4d8413cbfd8f22c60be8405ee7686dff7745aed134edddecf21e809cf3082ff6",
+      "CES_FL/src/ces_fl_diagram_model_v021.py": "0e001dd1251570ce43fb82bde307c519dea4045d9734506e1ce90d2ed014f8de",
+      "CES_FL/tests/test_upgrade.py": "84442f92c6ace41c3f7057da9ef126b4bba0e76626a2a39805b551affc5060ad",
+      "CES_FL/cluster/upgrade_one_gpu.pbs": "c2723650c2839e625e286c93e15cd41d18bca5efdc1e3b8924d280e70f9321f3",
+      "CES_FL/proposals/upgrade_invariance_20261031_r1/configs/R0_frozen_bce.json": "a69bd73ac4690d4ebe36ecd9971c4657598a73103ce71e037ffec05724ed6891",
+      "CES_FL/proposals/upgrade_invariance_20261031_r1/configs/R1_partial_bce.json": "e5236a5808f73dc72ce0f464aec19684e9faaccd3690c7436bfe1daf5b35a6e7",
+      "CES_FL/proposals/upgrade_invariance_20261031_r1/configs/R2_partial_dro.json": "40a5414f5115ae2c7738c22abb1bae802c4aa83f2b557c320c9c0c1481439010",
+      "CES_FL/proposals/upgrade_invariance_20261031_r1/configs/RD_partial_dro_age_pilot.json": "843ddd3dcd44fdd119db81fb342ad26b6404085269d8f3e9a002a35b02319e4c",
+      "CES_FL/proposals/upgrade_invariance_20261031_r1/configs/RN_partial_dro_nochange_pilot.json": "d6cf86cfa5016ff5683868c745cb46ba42c48455b6456c0f45ad4893f45f7827"
+    },
+    "authorization": "User authorized exactly five configured arms after successful input preflight and CUDA smoke; no test evaluation or generation.",
+    "recovery_of": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_20261031T135409Z"
+  },
+  "source": "/home/sachin.chaudhary/ces_fl_sources/upgrade_875bce025084871438ef799ca9086985c4375672",
+  "run_root": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z",
+  "test_evaluated": false,
+  "memory_fraction_per_process": 0.1,
+  "minimum_free_mib_at_binding": 24576
+}
