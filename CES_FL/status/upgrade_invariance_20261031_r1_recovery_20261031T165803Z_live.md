@@ -30,3 +30,7 @@ The finite handoff executor submits only the five preauthorized arms after succe
 
 Cluster output root: /home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_recovery_20261031T165803Z.
 Logs: /home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_recovery_20261031T165803Z/logs. Source: /home/sachin.chaudhary/ces_fl_sources/upgrade_875bce025084871438ef799ca9086985c4375672.
+
+## Superseded by direct SSH
+
+This PBS attempt was superseded at17:44UTC following the latest user instruction. Queued smoke44906 was cancelled before execution and its executor was stopped. Existing jobs44861/44881 were preserved. Both-node SSH CUDA smoke subsequently passed and all five approved arms are now training. [Follow the current direct-SSH run](upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z_live.md). The table above is a historical observation.
