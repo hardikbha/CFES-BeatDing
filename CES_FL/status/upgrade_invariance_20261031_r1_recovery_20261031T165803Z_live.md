@@ -1,0 +1,32 @@
+# Controlled CES-FL upgrade: actual execution status
+
+Observed UTC: **2026-10-31T17:05:18.882318+00:00**. Queued/allocated is not proof of training.
+
+Exact source commit: 875bce025084871438ef799ca9086985c4375672 from [the supplied fork](https://github.com/hardiksharma6555/CFES-BeatDing/tree/875bce025084871438ef799ca9086985c4375672).
+
+CPU software suite: **19 tests passed** on this unchanged research source (receipt retained from the initial attempt). External-input preflight: **five exact configurations passed again**.
+TRAIN: 76,139 records; validation: 25,386. The preserved protocol declares 163 overlapping contributor identifiers; this is not an identity-disjoint benchmark.
+
+Recovery smoke job: **44906.mgmt01**; CUDA gate: **PENDING**.
+Prior smoke44880 failed before CUDA because Git was absent on the compute nodes. The separate wrapper now uses a shared Git binary checked on gpu01 and gpu02 and captures output directly to shared storage. Approved model/configurations and input hashes are unchanged.
+
+| Arm | PBS job | Observed status | Epochs recorded | Best observed validation AUC (%) |
+|---|---|---|---:|---:|
+| R0_frozen_bce | — | NOT_SUBMITTED | 0 | — |
+| R1_partial_bce | — | NOT_SUBMITTED | 0 | — |
+| R2_partial_dro | — | NOT_SUBMITTED | 0 | — |
+| RN_partial_dro_nochange_pilot | — | NOT_SUBMITTED | 0 | — |
+| RD_partial_dro_age_pilot | — | NOT_SUBMITTED | 0 | — |
+
+[Aggregate evidence, validation subgroup metrics, exposure and software logs](../../CES_FL/results/upgrade_invariance_20261031_r1_recovery_20261031T165803Z/aggregate.json).
+
+RN/RD are six-source small-pool diagnostics; repeated draws do not establish broader coverage. No expanded300-source study, new images, forensic loss, map consistency, test tuning or test evaluation is authorized here.
+
+Selection is validation AUC only. Calibration remains the selected checkpoint’s validation-real empirical FPR budget. Observed metrics do not establish fairness improvement or a win over Ding.
+
+GPU jobs request ngpus=1. The site exposes an allocated host/count rather than a UUID mapping; the operational wrapper verifies the allocation, binds a verified empty physical UUID under the existing project lock, then invokes the byte-identical approved upgrade_one_gpu.pbs. Allocation/binding evidence is retained.
+
+The finite handoff executor submits only the five preauthorized arms after successful initial CUDA smoke, never retries failures, and observes/publishes for at most24h. It does not cancel other jobs or modify research code/configuration. Checkpoint review confirms strict reload and matching recorded selection/calibration; it is not an independent validation replay.
+
+Cluster output root: /home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_recovery_20261031T165803Z.
+Logs: /home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_recovery_20261031T165803Z/logs. Source: /home/sachin.chaudhary/ces_fl_sources/upgrade_875bce025084871438ef799ca9086985c4375672.
