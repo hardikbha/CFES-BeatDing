@@ -1,6 +1,6 @@
 # Controlled CES-FL upgrade: actual execution status
 
-Observed UTC: **2026-10-31T14:05:18.744658+00:00**. Queued/allocated is not proof of training.
+Observed UTC: **2026-10-31T14:30:52.729716+00:00**. Queued/allocated is not proof of training.
 
 Exact source commit: 875bce025084871438ef799ca9086985c4375672 from [the supplied fork](https://github.com/hardiksharma6555/CFES-BeatDing/tree/875bce025084871438ef799ca9086985c4375672).
 
@@ -16,6 +16,8 @@ Initial smoke job: **44880.mgmt01**; CUDA gate: **PENDING**.
 | R2_partial_dro | — | NOT_SUBMITTED | 0 | — |
 | RN_partial_dro_nochange_pilot | — | NOT_SUBMITTED | 0 | — |
 | RD_partial_dro_age_pilot | — | NOT_SUBMITTED | 0 | — |
+
+**LAUNCH SEQUENCE STOPPED:** RuntimeError('CUDA smoke PBS job failed: {"Job_Name": "cesup_smoke", "job_state": "F", "queue": "gpu", "Exit_status": 1, "exec_host": "gpu01/2*8", "exec_vnode": "(gpu01:ncpus=8:ngpus=1:mem=50331648kb)", "Resource_List": {"mem": "48gb", "ncpus": 8, "ngpus": 1, "nodect": 1, "place": "free", "select": "1:ncpus=8:ngpus=1:mem=48gb", "walltime": "12:00:00"}, "resources_used": {"cpupercent": 0, "cput": "00:00:00", "mem": "0kb", "ncpus": 8, "vmem": "0kb", "walltime": "00:00:01"}, "comment": "Job run at Sat Oct 31 at 19:59 on (gpu01:ncpus=8:ngpus=1:mem=50331648kb) and failed"}')
 
 [Aggregate evidence, validation subgroup metrics, exposure and software logs](../../CES_FL/results/upgrade_invariance_20261031_r1_20261031T135409Z/aggregate.json).
 
