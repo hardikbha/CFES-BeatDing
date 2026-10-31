@@ -1,0 +1,17 @@
+test_complete_smoke_requires_eight_tests_binding_and_marker (__main__.HandoffSafety.test_complete_smoke_requires_eight_tests_binding_and_marker) ... ok
+test_exact_five_unique_mock_submissions_and_no_repeat (__main__.HandoffSafety.test_exact_five_unique_mock_submissions_and_no_repeat) ... TRAINING_JOB_SUBMITTED R0_frozen_bce 99001.mgmt01
+TRAINING_JOB_SUBMITTED R1_partial_bce 99002.mgmt01
+TRAINING_JOB_SUBMITTED R2_partial_dro 99003.mgmt01
+TRAINING_JOB_SUBMITTED RN_partial_dro_nochange_pilot 99004.mgmt01
+TRAINING_JOB_SUBMITTED RD_partial_dro_age_pilot 99005.mgmt01
+ok
+test_existing_scheduler_job_rejects_duplicate (__main__.HandoffSafety.test_existing_scheduler_job_rejects_duplicate) ... ok
+test_failed_smoke_rejects (__main__.HandoffSafety.test_failed_smoke_rejects) ... ok
+test_prior_uncertain_attempt_never_resubmits (__main__.HandoffSafety.test_prior_uncertain_attempt_never_resubmits) ... ok
+test_queued_smoke_does_not_pass (__main__.HandoffSafety.test_queued_smoke_does_not_pass) ... ok
+test_submit_without_cuda_gate_rejects (__main__.HandoffSafety.test_submit_without_cuda_gate_rejects) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.016s
+
+OK

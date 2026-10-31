@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#PBS -N cesup_smoke
+#PBS -q gpu
+#PBS -l select=1:ncpus=8:ngpus=1:mem=48gb
+#PBS -l walltime=12:00:00
+#PBS -j oe
+set -Eeuo pipefail
+exec /home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_20261031T135409Z/runtime/bind_and_run.py

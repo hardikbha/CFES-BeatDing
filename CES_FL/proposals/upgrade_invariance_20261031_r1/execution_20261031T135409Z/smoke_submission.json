@@ -1,0 +1,19 @@
+{
+  "command": [
+    "qsub",
+    "-N",
+    "cesup_smoke",
+    "-o",
+    "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_20261031T135409Z/logs/SMOKE_R1.pbs.log",
+    "-v",
+    "CES_SOURCE_DIR=/home/sachin.chaudhary/ces_fl_sources/upgrade_875bce025084871438ef799ca9086985c4375672,CES_TRAIN_CONFIG=CES_FL/proposals/upgrade_invariance_20261031_r1/configs/R1_partial_bce.json,CES_OUTPUT_DIR=/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_20261031T135409Z/SMOKE_R1,CES_SMOKE_ONLY=1,CES_UPGRADE_STAGE=SMOKE_R1",
+    "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_20261031T135409Z/runtime/allocated_upgrade.pbs"
+  ],
+  "returncode": 0,
+  "stdout": "44880.mgmt01\n",
+  "stderr": "",
+  "submitted_utc": "2026-10-31T13:58:49.093980+00:00",
+  "config_sha256": "e5236a5808f73dc72ce0f464aec19684e9faaccd3690c7436bfe1daf5b35a6e7",
+  "wrapper_sha256": "f928bceed6ce76752525491c83dba8b1d1e4fceb5a1f457ca6a06d458d81f4cd",
+  "job_id": "44880.mgmt01"
+}

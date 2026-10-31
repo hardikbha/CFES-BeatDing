@@ -1,0 +1,26 @@
+{
+  "observed_utc": "2026-10-31T13:54:09.376075+00:00",
+  "git_commit": "875bce025084871438ef799ca9086985c4375672",
+  "source": "/home/sachin.chaudhary/ces_fl_sources/upgrade_875bce025084871438ef799ca9086985c4375672",
+  "run_root": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_20261031T135409Z",
+  "source_clean": true,
+  "detached": true,
+  "sha256": {
+    "CES_FL/AGENTS.md": "c097e68e95bee8fc5af30940eb88f634fe154ced2f897cd3316171cc0e807f6c",
+    "CES_FL/README.md": "679c5500b0fc48a719879c7088348bb48a5f1d21119d631104b96b99bb225867",
+    "CES_FL/STATUS.md": "227a3c09d3f6d9dce09d0978e74eb2e967c0de7e8965515070dfca568df90839",
+    "CES_FL/WORKFLOW.md": "29715807944c8692a757c81aa8e56bff6a2da9e901af6cb8f562deee08461c4d",
+    "CES_FL/proposals/upgrade_invariance_20261031_r1/README.md": "171c9aa30330cc24836dcfdf774ab7bc90845aeda88f99756840ae3c18be6b92",
+    "CES_FL/proposals/upgrade_invariance_20261031_r1/CLUSTER_AGENT_PROMPT.md": "668a156875036f909a10e638134196e371607fb584fda0b7dfba0b15c3018637",
+    "CES_FL/src/ces_fl_upgrade.py": "4d8413cbfd8f22c60be8405ee7686dff7745aed134edddecf21e809cf3082ff6",
+    "CES_FL/src/ces_fl_diagram_model_v021.py": "0e001dd1251570ce43fb82bde307c519dea4045d9734506e1ce90d2ed014f8de",
+    "CES_FL/tests/test_upgrade.py": "84442f92c6ace41c3f7057da9ef126b4bba0e76626a2a39805b551affc5060ad",
+    "CES_FL/cluster/upgrade_one_gpu.pbs": "c2723650c2839e625e286c93e15cd41d18bca5efdc1e3b8924d280e70f9321f3",
+    "CES_FL/proposals/upgrade_invariance_20261031_r1/configs/R0_frozen_bce.json": "a69bd73ac4690d4ebe36ecd9971c4657598a73103ce71e037ffec05724ed6891",
+    "CES_FL/proposals/upgrade_invariance_20261031_r1/configs/R1_partial_bce.json": "e5236a5808f73dc72ce0f464aec19684e9faaccd3690c7436bfe1daf5b35a6e7",
+    "CES_FL/proposals/upgrade_invariance_20261031_r1/configs/R2_partial_dro.json": "40a5414f5115ae2c7738c22abb1bae802c4aa83f2b557c320c9c0c1481439010",
+    "CES_FL/proposals/upgrade_invariance_20261031_r1/configs/RD_partial_dro_age_pilot.json": "843ddd3dcd44fdd119db81fb342ad26b6404085269d8f3e9a002a35b02319e4c",
+    "CES_FL/proposals/upgrade_invariance_20261031_r1/configs/RN_partial_dro_nochange_pilot.json": "d6cf86cfa5016ff5683868c745cb46ba42c48455b6456c0f45ad4893f45f7827"
+  },
+  "authorization": "User authorized exactly five configured arms after successful input preflight and CUDA smoke; no test evaluation or generation."
+}

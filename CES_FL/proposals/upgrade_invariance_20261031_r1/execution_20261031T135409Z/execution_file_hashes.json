@@ -1,0 +1,12 @@
+{
+  "preflight_summary.json": "a5485a8d5852013b10a009a62287c3caf29e8d2f645705436c04e74b59913c38",
+  "bind_and_run.py": "f928bceed6ce76752525491c83dba8b1d1e4fceb5a1f457ca6a06d458d81f4cd",
+  "handoff_verification.json": "b66321d51f7f73f2c9a9aac8c46022018617d6452f3747c5f42021ab9abdc4fc",
+  "cpu_software_tests.log": "4ef4739dda4111c6083781102056ccc99a8d6386df11e9ec3f8ba67e31230b90",
+  "operational_checks.log": "2df77cb419ea0848152a65156fc4c359eca863b96c155ebf1d01bb3af72bf90b",
+  "allocated_upgrade.pbs": "3caa9a192c1fe7d52f23da14a8631a2bde3ee8c55fff6fb63e24fe66cab74e71",
+  "execute_handoff.py": "8bc484ccf6f8e2ad57b8b993e6248d9388015d7cea07cab10e443ba40ab58a33",
+  "smoke_submission.json": "a8b13c645616b618434171f8e4758d199fef52603ba6e555e27aa873457a1e35",
+  "test_handoff_operations.py": "bd2aad1d5ff8c20cfd56c8ea4c19e3bdf21f37e42d244cfbd3282e608b0a5efd",
+  "controller_launch.json": "7ba802a679f27397b877ff743b1b66619d52deb7728f30ea861f2aa7ee4370d2"
+}
