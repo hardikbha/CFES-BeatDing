@@ -2,6 +2,12 @@
 
 **Start here.** [Current timestamped status](STATUS.md) · [Review/change/run workflow](WORKFLOW.md) · [Prompt for a supervisor or another LLM](SUPERVISOR_PROMPT.md)
 
+## Running controlled upgrade — 31 October 2026
+
+The five explicitly approved Xception arms R0/R1/R2/RN/RD are running through direct SSH on gpu01 and gpu02, following the latest user instruction. Both nodes passed eight CUDA software tests before launch; each arm repeats preflight/smoke. [Read current observations](status/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z_live.md) and the [exact execution receipt](proposals/upgrade_invariance_20261031_r1/execution_ssh_20261031T175009Z/README.md). Scientific source/configuration/input hashes remain pinned to the supplied fork commit 875bce025084871438ef799ca9086985c4375672; byte-identical source/configuration copies are now available in this main branch for review.
+
+This uses bounded shared VRAM and no new PBS allocation. No existing training job was terminated. RN/RD remain six-source diagnostics, not expanded coverage. No test evaluation or fairness improvement is claimed. The source proposal and its original request/software-check receipts are historical; use the linked execution evidence for actual current state.
+
 ## Authorized benchmark batch — 31 October 2026
 
 Five jobs were submitted under `benchmark_s17_20261031T112401`: Xception A/B/C evaluation44847; ResNet P44848; ResNet B44849 and C44850 after successful P; ResNet A44851. Each requests ngpus=1. [Follow the dedicated batch monitor](https://github.com/hardikbha/CFES-BeatDing/blob/main/CES_FL/status/benchmark_s17_20261031T112401_live.md) for actual scheduler/work states and emerging results. [Request, protocol, preflight and submission evidence](proposals/benchmark_s17_20261031T112401/). The source is pinned to commit `a11927affe394daf877e37234c21fea88cc171be`; no existing experiment is restarted.

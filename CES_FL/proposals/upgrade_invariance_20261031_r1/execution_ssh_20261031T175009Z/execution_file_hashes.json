@@ -1,0 +1,17 @@
+{
+  "preflight_summary.json": "a39f5cbe0e69296071c2298bc3fda5533f66d15bf18e6b1d88a23c967128220e",
+  "FIVE_ARMS_LAUNCHED.json": "00392dd73af812514ca549423580f46d34c7a70e7ef2663c18fb7b2ad8284b37",
+  "CUDA_GATE_PASSED.json": "405297ed56bfba044b62f54ee35065dc4102d607c1f47531572120609855e607",
+  "published_running_source_hashes.json": "7a6e3df6d494c40a27b8086faa2fc0ad146f34762ba1fe1286863194709f9ad6",
+  "observer_launch.json": "42f11bde6eb8e5c1d452089bd4014ae02d5c7a9d91aff2acebd4c4d76b7812ba",
+  "handoff_verification.json": "f36010b31aa3797d22c299c162125ceef93758a0959d0c0d4a016720606fe6f2",
+  "README.md": "1bb779bbb92eae919846c3cd75c3885b1329d0eb97eea4472cfc7586f56c2c1b",
+  "observe_training.py": "8f62432816ef56340f6729fcc699521fd4217bea2b7de9216429b1f87499875b",
+  "ssh_launch.py": "8db22bb4ffa3faba45fa36469c6b0fcdf5610fc7fae2cda930216459d5e4d428",
+  "SSH_EXECUTION_AUTHORIZATION.json": "88225e6687e41308f4d472cd3d89cfca1b652a77d11185e5945142ab5d4450c3",
+  "smoke_cuda_gpu01.log": "194741ac64aee27c87a5c6197ebd29a73879957187fd276fd2fcadc75284fc66",
+  "CLOCK_OBSERVATIONS.json": "f693a524fe934dcdd9042bc789e1f771db546890c43aeb6e1cc58edf5c964b6a",
+  "direct_worker.py": "7783b72395562d5d9b6391eedd37bc9c4982aa8b4d5048900c22e003533d1ba3",
+  "smoke_cuda_gpu02.log": "6dcb7263a863fc65280e6f983c77fdb8d2e8c23a23cf6a981159ee21fb1048f6",
+  "cuda_policy/sitecustomize.py": "85a7fa7a08fe4b02a85f11236d34189dc63b43305b538f26db7a302e8ec2a048"
+}

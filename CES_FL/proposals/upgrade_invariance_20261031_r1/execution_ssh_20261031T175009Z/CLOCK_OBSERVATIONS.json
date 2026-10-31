@@ -1,0 +1,16 @@
+[
+  {
+    "host": "gpu01",
+    "management_before_utc": "2026-10-31T18:05:10.679898+00:00",
+    "management_after_utc": "2026-10-31T18:05:11.040917+00:00",
+    "node_utc": "2026-10-31T17:54:23+00:00",
+    "node_minus_management_midpoint_seconds": -647.860408
+  },
+  {
+    "host": "gpu02",
+    "management_before_utc": "2026-10-31T18:05:11.040981+00:00",
+    "management_after_utc": "2026-10-31T18:05:11.298950+00:00",
+    "node_utc": "2026-10-31T17:54:23+00:00",
+    "node_minus_management_midpoint_seconds": -648.169965
+  }
+]

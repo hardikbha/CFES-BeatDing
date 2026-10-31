@@ -4,6 +4,8 @@
 
 **[Research updates and reviewer index](RESEARCH_UPDATES.md)** · [Current benchmark observations](CES_FL/status/benchmark_s17_20261031T112401_live.md) · [Verified FairForge-2 in-domain results](FAIRFORGE2_INDOMAIN_RESULTS_20261031.md)
 
+[Current controlled-upgrade training on gpu01/gpu02](CES_FL/status/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z_live.md) · [SSH execution evidence and exact running source](CES_FL/proposals/upgrade_invariance_20261031_r1/execution_ssh_20261031T175009Z/README.md)
+
 This repository is public. Reviewers can read the same versioned code, configurations, aggregate results and progress records without cluster access. Check each status file's observation time. The current benchmark has an existing finite publication monitor; other updates are published after verified milestones.
 
 ## Current supervisor entry point — CES-FL

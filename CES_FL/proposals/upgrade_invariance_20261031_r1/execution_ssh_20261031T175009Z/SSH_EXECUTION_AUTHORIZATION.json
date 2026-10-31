@@ -1,0 +1,16 @@
+{
+  "observed_utc": "2026-10-31T17:50:09.139346+00:00",
+  "execution_mode": "direct_ssh_bounded_shared_gpu",
+  "pbs_allocation": null,
+  "latest_user_instruction": "run it on ssh gpu01 and ssh gpu02",
+  "existing_jobs_44861_44881": "untouched",
+  "source": "/home/sachin.chaudhary/ces_fl_sources/upgrade_875bce025084871438ef799ca9086985c4375672",
+  "commit": "875bce025084871438ef799ca9086985c4375672",
+  "run_root": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z",
+  "supersedes_unstarted_waiter": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_20261031T174437Z",
+  "gpu_memory_fraction": 0.1,
+  "minimum_free_memory_mib": 24576,
+  "model_configuration_changes": false,
+  "source_changes": false,
+  "scope": "Exactly five approved training arms after input guards and both-node CUDA smoke. No generation, tests evaluation, retraining other baselines or killing existing workloads."
+}

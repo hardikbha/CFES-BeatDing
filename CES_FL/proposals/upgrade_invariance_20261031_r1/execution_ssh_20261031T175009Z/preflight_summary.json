@@ -1,0 +1,67 @@
+[
+  {
+    "arm": "R0_frozen_bce",
+    "command": [
+      "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+      "CES_FL/src/ces_fl_upgrade.py",
+      "preflight",
+      "--config",
+      "CES_FL/proposals/upgrade_invariance_20261031_r1/configs/R0_frozen_bce.json"
+    ],
+    "exit_code": 0,
+    "log": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_recovery_20261031T165803Z/preflight/R0_frozen_bce.log",
+    "observed_utc": "2026-10-31T17:01:08.006751+00:00"
+  },
+  {
+    "arm": "R1_partial_bce",
+    "command": [
+      "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+      "CES_FL/src/ces_fl_upgrade.py",
+      "preflight",
+      "--config",
+      "CES_FL/proposals/upgrade_invariance_20261031_r1/configs/R1_partial_bce.json"
+    ],
+    "exit_code": 0,
+    "log": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_recovery_20261031T165803Z/preflight/R1_partial_bce.log",
+    "observed_utc": "2026-10-31T17:01:55.263984+00:00"
+  },
+  {
+    "arm": "R2_partial_dro",
+    "command": [
+      "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+      "CES_FL/src/ces_fl_upgrade.py",
+      "preflight",
+      "--config",
+      "CES_FL/proposals/upgrade_invariance_20261031_r1/configs/R2_partial_dro.json"
+    ],
+    "exit_code": 0,
+    "log": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_recovery_20261031T165803Z/preflight/R2_partial_dro.log",
+    "observed_utc": "2026-10-31T17:02:31.084264+00:00"
+  },
+  {
+    "arm": "RN_partial_dro_nochange_pilot",
+    "command": [
+      "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+      "CES_FL/src/ces_fl_upgrade.py",
+      "preflight",
+      "--config",
+      "CES_FL/proposals/upgrade_invariance_20261031_r1/configs/RN_partial_dro_nochange_pilot.json"
+    ],
+    "exit_code": 0,
+    "log": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_recovery_20261031T165803Z/preflight/RN_partial_dro_nochange_pilot.log",
+    "observed_utc": "2026-10-31T17:02:56.499598+00:00"
+  },
+  {
+    "arm": "RD_partial_dro_age_pilot",
+    "command": [
+      "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+      "CES_FL/src/ces_fl_upgrade.py",
+      "preflight",
+      "--config",
+      "CES_FL/proposals/upgrade_invariance_20261031_r1/configs/RD_partial_dro_age_pilot.json"
+    ],
+    "exit_code": 0,
+    "log": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_recovery_20261031T165803Z/preflight/RD_partial_dro_age_pilot.log",
+    "observed_utc": "2026-10-31T17:03:21.179214+00:00"
+  }
+]

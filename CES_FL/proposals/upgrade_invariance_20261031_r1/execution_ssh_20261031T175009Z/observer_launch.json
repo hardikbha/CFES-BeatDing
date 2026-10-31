@@ -1,0 +1,12 @@
+{
+  "pid": 3109255,
+  "command": [
+    "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+    "-u",
+    "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/runtime/observe_training.py"
+  ],
+  "observed_utc": "2026-10-31T17:57:19.497075+00:00",
+  "read_only": true,
+  "automatic_training": false,
+  "max_hours": 24
+}

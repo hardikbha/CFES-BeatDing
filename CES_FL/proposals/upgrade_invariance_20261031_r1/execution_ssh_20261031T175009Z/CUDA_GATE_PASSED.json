@@ -1,0 +1,93 @@
+{
+  "observed_utc": "2026-10-31T17:53:00.692617+00:00",
+  "nodes": [
+    {
+      "host": "gpu01",
+      "cuda_smoke_pass": true,
+      "tests": 8,
+      "exit": {
+        "exit_code": 0,
+        "host": "gpu01",
+        "gpu_uuid": "GPU-6a002609-de85-4949-c707-ee9317b284f0",
+        "worker_pid": 2062039,
+        "elapsed_seconds": 105.87098644301295,
+        "finished_at": 1793468510.6791034,
+        "execution_mode": "direct_ssh"
+      },
+      "binding": {
+        "state": "BOUND",
+        "host": "gpu01",
+        "gpu_uuid": "GPU-6a002609-de85-4949-c707-ee9317b284f0",
+        "physical_index": 3,
+        "free_mib_before_launch": 73140,
+        "execution_mode": "direct_ssh_bounded_shared_gpu",
+        "pbs_allocation": null,
+        "cuda_allocator_fraction": 0.1,
+        "preexisting_compute_processes": 1,
+        "allocator_policy_sha256": "85a7fa7a08fe4b02a85f11236d34189dc63b43305b538f26db7a302e8ec2a048",
+        "worker_pid": 2062039,
+        "time": 1793468405.4022968,
+        "source_commit": "875bce025084871438ef799ca9086985c4375672",
+        "config_sha256": "e5236a5808f73dc72ce0f464aec19684e9faaccd3690c7436bfe1daf5b35a6e7"
+      },
+      "launch": {
+        "git_commit": "875bce025084871438ef799ca9086985c4375672",
+        "sha256": {
+          "CES_FL/src/ces_fl_upgrade.py": "4d8413cbfd8f22c60be8405ee7686dff7745aed134edddecf21e809cf3082ff6",
+          "CES_FL/src/ces_fl_diagram_model_v021.py": "0e001dd1251570ce43fb82bde307c519dea4045d9734506e1ce90d2ed014f8de",
+          "CES_FL/proposals/upgrade_invariance_20261031_r1/configs/R1_partial_bce.json": "e5236a5808f73dc72ce0f464aec19684e9faaccd3690c7436bfe1daf5b35a6e7"
+        },
+        "pbs_jobid": null,
+        "cuda_visible_devices": "GPU-6a002609-de85-4949-c707-ee9317b284f0",
+        "smoke_only": true,
+        "note": "GPU visibility does not establish allocation ownership; operator verifies PBS binding."
+      },
+      "smoke_log_sha256": "194741ac64aee27c87a5c6197ebd29a73879957187fd276fd2fcadc75284fc66",
+      "marker": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/SMOKE_gpu01/CUDA_SMOKE_PASS"
+    },
+    {
+      "host": "gpu02",
+      "cuda_smoke_pass": true,
+      "tests": 8,
+      "exit": {
+        "exit_code": 0,
+        "host": "gpu02",
+        "gpu_uuid": "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb",
+        "worker_pid": 3583152,
+        "elapsed_seconds": 95.65257885679603,
+        "finished_at": 1793468500.9864395,
+        "execution_mode": "direct_ssh"
+      },
+      "binding": {
+        "state": "BOUND",
+        "host": "gpu02",
+        "gpu_uuid": "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb",
+        "physical_index": 6,
+        "free_mib_before_launch": 75295,
+        "execution_mode": "direct_ssh_bounded_shared_gpu",
+        "pbs_allocation": null,
+        "cuda_allocator_fraction": 0.1,
+        "preexisting_compute_processes": 1,
+        "allocator_policy_sha256": "85a7fa7a08fe4b02a85f11236d34189dc63b43305b538f26db7a302e8ec2a048",
+        "worker_pid": 3583152,
+        "time": 1793468405.791774,
+        "source_commit": "875bce025084871438ef799ca9086985c4375672",
+        "config_sha256": "e5236a5808f73dc72ce0f464aec19684e9faaccd3690c7436bfe1daf5b35a6e7"
+      },
+      "launch": {
+        "git_commit": "875bce025084871438ef799ca9086985c4375672",
+        "sha256": {
+          "CES_FL/src/ces_fl_upgrade.py": "4d8413cbfd8f22c60be8405ee7686dff7745aed134edddecf21e809cf3082ff6",
+          "CES_FL/src/ces_fl_diagram_model_v021.py": "0e001dd1251570ce43fb82bde307c519dea4045d9734506e1ce90d2ed014f8de",
+          "CES_FL/proposals/upgrade_invariance_20261031_r1/configs/R1_partial_bce.json": "e5236a5808f73dc72ce0f464aec19684e9faaccd3690c7436bfe1daf5b35a6e7"
+        },
+        "pbs_jobid": null,
+        "cuda_visible_devices": "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb",
+        "smoke_only": true,
+        "note": "GPU visibility does not establish allocation ownership; operator verifies PBS binding."
+      },
+      "smoke_log_sha256": "6dcb7263a863fc65280e6f983c77fdb8d2e8c23a23cf6a981159ee21fb1048f6",
+      "marker": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/SMOKE_gpu02/CUDA_SMOKE_PASS"
+    }
+  ]
+}
