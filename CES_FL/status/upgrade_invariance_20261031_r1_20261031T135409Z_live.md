@@ -31,3 +31,9 @@ The finite handoff executor submits only the five preauthorized arms after succe
 
 Cluster output root: /home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_20261031T135409Z.
 Logs: /home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_20261031T135409Z/logs. Source: /home/sachin.chaudhary/ces_fl_sources/upgrade_875bce025084871438ef799ca9086985c4375672.
+
+## Diagnosed failure
+
+The batch job failed in the operational binding wrapper at line31 before CUDA smoke: FileNotFoundError for git. The compute nodes lack a Git executable at their usual path. None of the five upgrade training arms was submitted. The executor exited after stopping the sequence.
+
+[Exact recovered traceback and recovery evidence](../../CES_FL/results/upgrade_invariance_20261031_r1_20261031T135409Z/failed_smoke_diagnosis.json). The management-node Git binary has been copied to a user-owned shared tool directory and checked on both compute nodes. A separate recovery attempt will repeat smoke with the same approved source and configurations; CUDA remains unverified until that attempt succeeds.
