@@ -1,6 +1,6 @@
 # CES-FL controlled upgrade — direct SSH training
 
-Observed UTC: **2026-10-31T18:11:13.271533+00:00**. Snapshot from actual GPU processes and saved artifacts.
+Observed UTC: **2026-10-31T18:11:49.606940+00:00**. Snapshot from actual GPU processes and saved artifacts.
 
 **CUDA smoke passed on gpu01 and gpu02: eight tests per node.** Each production arm also repeats input preflight and CUDA smoke.
 
@@ -9,10 +9,10 @@ Following the latest direct-SSH instruction, these processes have **no PBS alloc
 | Arm | Host | GPU index | Model PID | State | Epochs complete | Best validation AUC (%) |
 |---|---|---:|---:|---|---:|---:|
 | R0_frozen_bce | gpu01 | 2 | 2095157 | TRAINING | 2/10 | 98.1548 |
-| R1_partial_bce | gpu02 | 6 | 3612314 | TRAINING | 3/10 | 98.2215 |
+| R1_partial_bce | gpu02 | 6 | 3612314 | TRAINING | 4/10 | 98.2215 |
 | R2_partial_dro | gpu01 | 1 | 2095435 | TRAINING | 2/10 | 98.1984 |
 | RN_partial_dro_nochange_pilot | gpu02 | 5 | 3612318 | TRAINING | 1/10 | 97.4730 |
-| RD_partial_dro_age_pilot | gpu01 | 4 | 2094283 | TRAINING | 0/10 | — |
+| RD_partial_dro_age_pilot | gpu01 | 4 | 2094283 | TRAINING | 1/10 | 97.3652 |
 
 [Aggregate evidence, logs, hashes, validation subgroup metrics and pair exposure](../../CES_FL/results/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/aggregate.json).
 
