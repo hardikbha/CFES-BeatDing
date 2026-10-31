@@ -1,10 +1,16 @@
 # CFES / Beat-Ding: fairness-aware deepfake detection vs Ding et al. (CVPR'26)
 
+## Shared progress and results
+
+**[Research updates and reviewer index](RESEARCH_UPDATES.md)** · [Current benchmark observations](CES_FL/status/benchmark_s17_20261031T112401_live.md) · [Verified FairForge-2 in-domain results](FAIRFORGE2_INDOMAIN_RESULTS_20261031.md)
+
+This repository is public. Reviewers can read the same versioned code, configurations, aggregate results and progress records without cluster access. Check each status file's observation time. The current benchmark has an existing finite publication monitor; other updates are published after verified milestones.
+
 ## Current supervisor entry point — CES-FL
 
 **[Start with CES_FL/README.md](CES_FL/README.md)** · [Current observed status](CES_FL/STATUS.md) · [Supervisor prompt](CES_FL/SUPERVISOR_PROMPT.md) · [Review → push → cluster training workflow](CES_FL/WORKFLOW.md)
 
-The current standalone CES-FL model, actual completed seed17 configurations, validation histories and verification receipts are now versioned under `CES_FL/`. The status page is timestamped; it is not an unattended live monitor. B/C training is completed, fairness findings are mixed, and current Ding-style real-test Tables1–3 remain incomplete. Read that section before using older archived methods or launching anything.
+The standalone CES-FL model, actual completed seed17 configurations, validation histories and verification receipts are versioned under `CES_FL/`. Use the dedicated benchmark observations linked above for that batch's evolving job states and test results; general status pages and handoffs are dated snapshots. Fairness findings remain exploratory. Read the recorded protocol and distinguish current CES-FL from the older archived methods before comparing results or proposing runs.
 
 Historical comparison code plus selected aggregate progress/results; no binary checkpoints or raw images.
 The archived agent paths mirror parts of the cluster. The current CES-FL working directory is outside this checkout;
