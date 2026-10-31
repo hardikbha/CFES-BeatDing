@@ -1,5 +1,5 @@
 {
-  "observed_utc": "2026-10-31T14:05:18.744658+00:00",
+  "observed_utc": "2026-10-31T14:30:52.729716+00:00",
   "run_root": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_20261031T135409Z",
   "source": "/home/sachin.chaudhary/ces_fl_sources/upgrade_875bce025084871438ef799ca9086985c4375672",
   "commit": "875bce025084871438ef799ca9086985c4375672",
@@ -26,8 +26,11 @@
     },
     "scheduler": {
       "Job_Name": "cesup_smoke",
-      "job_state": "Q",
+      "job_state": "F",
       "queue": "gpu",
+      "Exit_status": 1,
+      "exec_host": "gpu01/2*8",
+      "exec_vnode": "(gpu01:ncpus=8:ngpus=1:mem=50331648kb)",
       "Resource_List": {
         "mem": "48gb",
         "ncpus": 8,
@@ -37,11 +40,19 @@
         "select": "1:ncpus=8:ngpus=1:mem=48gb",
         "walltime": "12:00:00"
       },
-      "comment": "Not Running: User has reached queue gpu running job limit."
+      "resources_used": {
+        "cpupercent": 0,
+        "cput": "00:00:00",
+        "mem": "0kb",
+        "ncpus": 8,
+        "vmem": "0kb",
+        "walltime": "00:00:01"
+      },
+      "comment": "Job run at Sat Oct 31 at 19:59 on (gpu01:ncpus=8:ngpus=1:mem=50331648kb) and failed"
     },
     "gate": null
   },
-  "stopped": null,
+  "stopped": "RuntimeError('CUDA smoke PBS job failed: {\"Job_Name\": \"cesup_smoke\", \"job_state\": \"F\", \"queue\": \"gpu\", \"Exit_status\": 1, \"exec_host\": \"gpu01/2*8\", \"exec_vnode\": \"(gpu01:ncpus=8:ngpus=1:mem=50331648kb)\", \"Resource_List\": {\"mem\": \"48gb\", \"ncpus\": 8, \"ngpus\": 1, \"nodect\": 1, \"place\": \"free\", \"select\": \"1:ncpus=8:ngpus=1:mem=48gb\", \"walltime\": \"12:00:00\"}, \"resources_used\": {\"cpupercent\": 0, \"cput\": \"00:00:00\", \"mem\": \"0kb\", \"ncpus\": 8, \"vmem\": \"0kb\", \"walltime\": \"00:00:01\"}, \"comment\": \"Job run at Sat Oct 31 at 19:59 on (gpu01:ncpus=8:ngpus=1:mem=50331648kb) and failed\"}')",
   "arms": {
     "R0_frozen_bce": {
       "submission": null,
