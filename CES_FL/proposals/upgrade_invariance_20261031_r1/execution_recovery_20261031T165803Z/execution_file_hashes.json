@@ -1,0 +1,14 @@
+{
+  "preflight_summary.json": "a39f5cbe0e69296071c2298bc3fda5533f66d15bf18e6b1d88a23c967128220e",
+  "bind_and_run.py": "fcf7cf1d7856b7021f01d506a2970bc6e8648feab51176fbe92997407299ddea",
+  "handoff_verification.json": "f36010b31aa3797d22c299c162125ceef93758a0959d0c0d4a016720606fe6f2",
+  "recovery.json": "0bb95c4a8c4d728f073fb0ae0878798ab88d07a76a4ad9c0d2bcc3389b98009d",
+  "failed_smoke_diagnosis.json": "b86144cb22ef705a85b4216c01c53c942ba9aaa55e5db62257f3db336923b2a9",
+  "operational_checks.log": "631f5fdac0e0f03988f57344cf1ab43230de0ab3b5338f939ebccff2224a214d",
+  "compute_tool_preflight.json": "f68caf6147e263d34388b7d246741d4224ba4ace926a805dc49c382217824840",
+  "allocated_upgrade.pbs": "8b7bc9109f263e892dc1120734db17e4c78a0d6df18d8d9e724f46ceeae8ddb1",
+  "execute_handoff.py": "7e523aee2fdd5095cc7c1fe7a8a029043bb72a3e56b06b60da771d41969afb32",
+  "smoke_submission.json": "05266b1e52c608382e5af3753d3178f16c7e0992ccdb315591ba03dcffdbae1f",
+  "test_handoff_operations.py": "bd2aad1d5ff8c20cfd56c8ea4c19e3bdf21f37e42d244cfbd3282e608b0a5efd",
+  "controller_launch.json": "fd2ed4c3967bd92a3c06600d5f546c597a023820e5e7bc0982979df952aecb11"
+}

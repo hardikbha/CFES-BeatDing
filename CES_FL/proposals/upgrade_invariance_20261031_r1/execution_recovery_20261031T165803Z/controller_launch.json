@@ -1,0 +1,18 @@
+{
+  "pid": 1343127,
+  "command": [
+    "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+    "-u",
+    "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_recovery_20261031T165803Z/runtime/execute_handoff.py"
+  ],
+  "started_utc": "2026-10-31T17:05:18.638445+00:00",
+  "log": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_recovery_20261031T165803Z/logs/handoff_executor.log",
+  "smoke_job_id": "44906.mgmt01",
+  "sha256": {
+    "bind_and_run.py": "fcf7cf1d7856b7021f01d506a2970bc6e8648feab51176fbe92997407299ddea",
+    "allocated_upgrade.pbs": "8b7bc9109f263e892dc1120734db17e4c78a0d6df18d8d9e724f46ceeae8ddb1",
+    "execute_handoff.py": "7e523aee2fdd5095cc7c1fe7a8a029043bb72a3e56b06b60da771d41969afb32",
+    "test_handoff_operations.py": "bd2aad1d5ff8c20cfd56c8ea4c19e3bdf21f37e42d244cfbd3282e608b0a5efd"
+  },
+  "scope": "Previously authorized five exact configurations after successful actual recovery CUDA smoke; no automatic retries, new images, cancellations or test evaluation."
+}

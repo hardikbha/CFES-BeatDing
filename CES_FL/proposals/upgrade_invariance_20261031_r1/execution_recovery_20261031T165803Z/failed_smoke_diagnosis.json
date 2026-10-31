@@ -1,0 +1,18 @@
+{
+  "observed_utc": "2026-10-31T16:58:03.820195+00:00",
+  "failed_job_id": "44880.mgmt01",
+  "failure": "FileNotFoundError: [Errno 2] No such file or directory: git",
+  "failing_wrapper_line": 31,
+  "failure_before_cuda_smoke": true,
+  "original_log": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_20261031T135409Z/logs/SMOKE_R1.recovered.pbs.log",
+  "recovery_root": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_recovery_20261031T165803Z",
+  "git_tool": "/home/sachin.chaudhary/ces_fl_tools/git_cluster_20261031/bin/git",
+  "git_sha256": "d220991337f55201c733e9ad80c11bec384680ec7b927a341a8cf03bb62d19a4",
+  "method_changes": false,
+  "configuration_changes": false,
+  "note": "Management-node Git copied to user-owned shared tool directory; no model weights, packages, source/config/input hashes or historical outputs changed. CPU receipt reused because research source is unchanged; current real-input preflight will be rerun.",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_20261031T135409Z/runtime/bind_and_run.py\", line 107, in <module>\n    main()\n  File \"/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_20261031T135409Z/runtime/bind_and_run.py\", line 31, in main\n    assert capture(['git','-C',str(SOURCE),'rev-parse','HEAD']).strip() == EXPECTED_COMMIT\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_20261031T135409Z/runtime/bind_and_run.py\", line 17, in capture\n    return subprocess.check_output(args, text=True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sachin.chaudhary/.conda/envs/aiface/lib/python3.12/subprocess.py\", line 466, in check_output\n    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sachin.chaudhary/.conda/envs/aiface/lib/python3.12/subprocess.py\", line 548, in run\n    with Popen(*popenargs, **kwargs) as process:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sachin.chaudhary/.conda/envs/aiface/lib/python3.12/subprocess.py\", line 1026, in __init__\n    self._execute_child(args, executable, preexec_fn, close_fds,\n  File \"/home/sachin.chaudhary/.conda/envs/aiface/lib/python3.12/subprocess.py\", line 1955, in _execute_child\n    raise child_exception_type(errno_num, err_msg, err_filename)\nFileNotFoundError: [Errno 2] No such file or directory: 'git'\n",
+  "cuda_tests_executed": false,
+  "training_arms_submitted": 0,
+  "diagnosed_utc": "2026-10-31T17:00:51.483534+00:00"
+}

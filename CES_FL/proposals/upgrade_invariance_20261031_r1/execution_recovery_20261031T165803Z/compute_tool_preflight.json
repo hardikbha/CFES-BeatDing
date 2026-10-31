@@ -1,0 +1,32 @@
+[
+  {
+    "command": [
+      "ssh",
+      "-o",
+      "BatchMode=yes",
+      "-o",
+      "ConnectTimeout=10",
+      "gpu01",
+      "env -i PATH=/home/sachin.chaudhary/ces_fl_tools/git_cluster_20261031/bin:/opt/pbs/bin:/usr/bin:/bin /home/sachin.chaudhary/.conda/envs/aiface/bin/python -c 'import shutil,subprocess;print({x:shutil.which(x) for x in ['\"'\"'git'\"'\"','\"'\"'qstat'\"'\"','\"'\"'bash'\"'\"','\"'\"'nvidia-smi'\"'\"','\"'\"'tee'\"'\"']});s='\"'\"'/home/sachin.chaudhary/ces_fl_sources/upgrade_875bce025084871438ef799ca9086985c4375672'\"'\"';print(subprocess.check_output(['\"'\"'git'\"'\"','\"'\"'-C'\"'\"',s,'\"'\"'rev-parse'\"'\"','\"'\"'HEAD'\"'\"'],text=True));p=subprocess.run(['\"'\"'git'\"'\"','\"'\"'-C'\"'\"',s,'\"'\"'symbolic-ref'\"'\"','\"'\"'-q'\"'\"','\"'\"'HEAD'\"'\"'],capture_output=True,text=True);assert p.returncode==1;assert not subprocess.check_output(['\"'\"'git'\"'\"','\"'\"'-C'\"'\"',s,'\"'\"'status'\"'\"','\"'\"'--porcelain'\"'\"','\"'\"'--'\"'\"','\"'\"'CES_FL'\"'\"'],text=True).strip();print(subprocess.check_output(['\"'\"'git'\"'\"','\"'\"'-C'\"'\"',s,'\"'\"'ls-files'\"'\"','\"'\"'--error-unmatch'\"'\"','\"'\"'CES_FL/proposals/upgrade_invariance_20261031_r1/configs/R1_partial_bce.json'\"'\"'],text=True));print('\"'\"'COMPUTE_NODE_TOOL_PREFLIGHT_PASS'\"'\"')'"
+    ],
+    "returncode": 0,
+    "stdout": "{'git': '/home/sachin.chaudhary/ces_fl_tools/git_cluster_20261031/bin/git', 'qstat': '/opt/pbs/bin/qstat', 'bash': '/usr/bin/bash', 'nvidia-smi': '/usr/bin/nvidia-smi', 'tee': '/usr/bin/tee'}\n875bce025084871438ef799ca9086985c4375672\n\nCES_FL/proposals/upgrade_invariance_20261031_r1/configs/R1_partial_bce.json\n\nCOMPUTE_NODE_TOOL_PREFLIGHT_PASS\n",
+    "stderr": "",
+    "observed_utc": "2026-10-31T17:00:10.140781+00:00"
+  },
+  {
+    "command": [
+      "ssh",
+      "-o",
+      "BatchMode=yes",
+      "-o",
+      "ConnectTimeout=10",
+      "gpu02",
+      "env -i PATH=/home/sachin.chaudhary/ces_fl_tools/git_cluster_20261031/bin:/opt/pbs/bin:/usr/bin:/bin /home/sachin.chaudhary/.conda/envs/aiface/bin/python -c 'import shutil,subprocess;print({x:shutil.which(x) for x in ['\"'\"'git'\"'\"','\"'\"'qstat'\"'\"','\"'\"'bash'\"'\"','\"'\"'nvidia-smi'\"'\"','\"'\"'tee'\"'\"']});s='\"'\"'/home/sachin.chaudhary/ces_fl_sources/upgrade_875bce025084871438ef799ca9086985c4375672'\"'\"';print(subprocess.check_output(['\"'\"'git'\"'\"','\"'\"'-C'\"'\"',s,'\"'\"'rev-parse'\"'\"','\"'\"'HEAD'\"'\"'],text=True));p=subprocess.run(['\"'\"'git'\"'\"','\"'\"'-C'\"'\"',s,'\"'\"'symbolic-ref'\"'\"','\"'\"'-q'\"'\"','\"'\"'HEAD'\"'\"'],capture_output=True,text=True);assert p.returncode==1;assert not subprocess.check_output(['\"'\"'git'\"'\"','\"'\"'-C'\"'\"',s,'\"'\"'status'\"'\"','\"'\"'--porcelain'\"'\"','\"'\"'--'\"'\"','\"'\"'CES_FL'\"'\"'],text=True).strip();print(subprocess.check_output(['\"'\"'git'\"'\"','\"'\"'-C'\"'\"',s,'\"'\"'ls-files'\"'\"','\"'\"'--error-unmatch'\"'\"','\"'\"'CES_FL/proposals/upgrade_invariance_20261031_r1/configs/R1_partial_bce.json'\"'\"'],text=True));print('\"'\"'COMPUTE_NODE_TOOL_PREFLIGHT_PASS'\"'\"')'"
+    ],
+    "returncode": 0,
+    "stdout": "{'git': '/home/sachin.chaudhary/ces_fl_tools/git_cluster_20261031/bin/git', 'qstat': '/opt/pbs/bin/qstat', 'bash': '/usr/bin/bash', 'nvidia-smi': '/usr/bin/nvidia-smi', 'tee': '/usr/bin/tee'}\n875bce025084871438ef799ca9086985c4375672\n\nCES_FL/proposals/upgrade_invariance_20261031_r1/configs/R1_partial_bce.json\n\nCOMPUTE_NODE_TOOL_PREFLIGHT_PASS\n",
+    "stderr": "",
+    "observed_utc": "2026-10-31T17:00:10.803179+00:00"
+  }
+]

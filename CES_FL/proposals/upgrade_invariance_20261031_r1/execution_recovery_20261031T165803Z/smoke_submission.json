@@ -1,0 +1,20 @@
+{
+  "command": [
+    "qsub",
+    "-N",
+    "cesup_smoke",
+    "-o",
+    "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_recovery_20261031T165803Z/logs/SMOKE_R1.pbs.log",
+    "-v",
+    "CES_SOURCE_DIR=/home/sachin.chaudhary/ces_fl_sources/upgrade_875bce025084871438ef799ca9086985c4375672,CES_TRAIN_CONFIG=CES_FL/proposals/upgrade_invariance_20261031_r1/configs/R1_partial_bce.json,CES_OUTPUT_DIR=/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_recovery_20261031T165803Z/SMOKE_R1,CES_SMOKE_ONLY=1,CES_UPGRADE_STAGE=SMOKE_R1,CES_CAPTURE_LOG=/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_recovery_20261031T165803Z/logs/SMOKE_R1.live.log",
+    "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_recovery_20261031T165803Z/runtime/allocated_upgrade.pbs"
+  ],
+  "returncode": 0,
+  "stdout": "44906.mgmt01\n",
+  "stderr": "",
+  "submitted_utc": "2026-10-31T17:03:54.102923+00:00",
+  "config_sha256": "e5236a5808f73dc72ce0f464aec19684e9faaccd3690c7436bfe1daf5b35a6e7",
+  "wrapper_sha256": "fcf7cf1d7856b7021f01d506a2970bc6e8648feab51176fbe92997407299ddea",
+  "previous_failed_job": "44880.mgmt01",
+  "job_id": "44906.mgmt01"
+}
