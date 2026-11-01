@@ -1,0 +1,66 @@
+{
+  "format": "CESFL_MANIPULATION_RESPONSE_v1",
+  "synthetic_fixture": false,
+  "train_sha256": "6ee9326fe8361dc3aee0f803c49b5eada169be5cf3bc3cb44ad3d934ba5ca657",
+  "quartets": [
+    {
+      "id": "UNBOUND_EXAMPLE_ONLY",
+      "source_image": "/absolute/TRAIN/original.png",
+      "source_sha256": "REQUIRED_SHA256",
+      "identity_ids": "ALL_TRAIN_CONTRIBUTORS_SEMICOLON_SEPARATED",
+      "source_ids": "ALL_TRAIN_SOURCE_IDS_SEMICOLON_SEPARATED",
+      "attribute": "age",
+      "direction": "older",
+      "review": {
+        "approved": false,
+        "identity_preserved": false,
+        "attribute_valid": false,
+        "operation_valid": false,
+        "matched_processing": false,
+        "unrelated_changes_assessed": false,
+        "reviewer": "",
+        "evidence": ""
+      },
+      "x0": {
+        "image": "/absolute/PRIVATE_BANK/x0.png",
+        "sha256": "REQUIRED_SHA256",
+        "parent_sha256": "SOURCE_SHA256",
+        "seed": 17,
+        "editor_revision": "PINNED_REVISION",
+        "editor_settings_sha256": "REQUIRED_SHA256",
+        "condition": "nochange"
+      },
+      "xa": {
+        "image": "/absolute/PRIVATE_BANK/xa.png",
+        "sha256": "REQUIRED_SHA256",
+        "parent_sha256": "SOURCE_SHA256",
+        "seed": 17,
+        "editor_revision": "PINNED_REVISION",
+        "editor_settings_sha256": "REQUIRED_SHA256",
+        "condition": "older"
+      },
+      "t0": {
+        "image": "/absolute/PRIVATE_BANK/t0.png",
+        "sha256": "REQUIRED_SHA256",
+        "parent_sha256": "X0_SHA256",
+        "seed": 17,
+        "operator": "KNOWN_FORGERY_PIPELINE_NAME",
+        "operator_code_sha256": "REQUIRED_SHA256",
+        "settings_sha256": "REQUIRED_SHA256",
+        "donor_sha256": "EXACT_DONOR_SHA256_OR_EXPLICIT_NO_DONOR",
+        "operation_receipt": "PRIVATE_RECORD_PATH_OR_URI"
+      },
+      "ta": {
+        "image": "/absolute/PRIVATE_BANK/ta.png",
+        "sha256": "REQUIRED_SHA256",
+        "parent_sha256": "XA_SHA256",
+        "seed": 17,
+        "operator": "KNOWN_FORGERY_PIPELINE_NAME",
+        "operator_code_sha256": "REQUIRED_SHA256",
+        "settings_sha256": "REQUIRED_SHA256",
+        "donor_sha256": "EXACT_DONOR_SHA256_OR_EXPLICIT_NO_DONOR",
+        "operation_receipt": "PRIVATE_RECORD_PATH_OR_URI"
+      }
+    }
+  ]
+}

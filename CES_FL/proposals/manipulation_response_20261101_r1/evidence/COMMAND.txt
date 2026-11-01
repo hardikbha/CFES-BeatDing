@@ -1,0 +1,3 @@
+/tmp/cesfl_response_env/bin/python CES_FL/tests/smoke_manipulation_response.py --device cpu --out /tmp/cesfl_response_smoke_r4
+Exit 0. Python3.12.8, macOS15.6.1 ARM, no CUDA. Temporary synthetic images and random local encoder weights; no real generator or training result.
+The test uses 75px inputs and smaller prediction heads for end-to-end CPU fixtures; actual configured 224px CUDA dry runs remain mandatory.
