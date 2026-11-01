@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-01T12:30:37.435123+00:00",
+  "observed_management_utc": "2026-11-01T12:33:01.476612+00:00",
   "source_commit": "58773bbef9d9fe79dd313610f694ddeea12c6037",
   "run_root": "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z",
   "execution_mode": "user_authorized_direct_ssh_bounded_shared_gpu",
@@ -475,7 +475,7 @@
       "latest_epoch": null,
       "selected_epochs_recorded": [],
       "verified_checkpoint": null,
-      "actual_log_tail": ""
+      "actual_log_tail": "{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 100, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 200, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 300, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 400, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 500, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 600, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 700, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 800, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 900, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 1000, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 1100, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 1200, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 1300, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 1400, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 1500, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 1600, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 1700, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 1800, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 1900, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 2000, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 2100, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 2200, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 2300, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 2400, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 2500, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 2600, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 2700, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 2800, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 2900, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 3000, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 3100, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 3200, \"steps\": 4759}\n"
     },
     "bce": {
       "status": "BLOCKED_INPUTS",
@@ -711,6 +711,6 @@
   "qwen_job_modified": false,
   "test_evaluation_launched": false,
   "FF2_launched": false,
-  "observer_pid": 935880,
+  "observer_pid": 980934,
   "observer_scope": "72h maximum; read/publish only; cannot launch, chain, retry, approve or terminate work"
 }
