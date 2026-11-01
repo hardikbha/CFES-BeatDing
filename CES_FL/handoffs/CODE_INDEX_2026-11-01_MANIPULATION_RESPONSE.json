@@ -1,0 +1,194 @@
+{
+  "created_management_utc": "2026-11-01T14:17:45.308113+00:00",
+  "snapshot_verified_management_utc": "2026-11-01T14:11:36.375633+00:00",
+  "active_scientific_commit": "58773bbef9d9fe79dd313610f694ddeea12c6037",
+  "active_source_worktree": "/home/sachin.chaudhary/ces_fl_sources/cesfl-response-58773bb",
+  "snapshot_P_completed_epochs": 31,
+  "snapshot_best_recorded_epoch": 29,
+  "snapshot_best_validation_auc_pct": 98.40598928688259,
+  "code_files": [
+    {
+      "repository_path": "CES_FL/src/ces_fl_manipulation_response.py",
+      "role": "Current downstream trainer/objectives and quartet audit",
+      "category": "ACTIVE_SCIENCE",
+      "sha256": "0e82a522a22e641dc5588b6a15317e6842896ab2bdcc5364833af25e207f257e",
+      "bytes": 20369,
+      "pinned_to_active_science_commit": true,
+      "url": "https://github.com/hardikbha/CFES-BeatDing/blob/58773bbef9d9fe79dd313610f694ddeea12c6037/CES_FL/src/ces_fl_manipulation_response.py"
+    },
+    {
+      "repository_path": "CES_FL/src/ces_fl_counterfactual_5050.py",
+      "role": "Architecture, pretraining, metrics, calibration, checkpoints and parent generator",
+      "category": "ACTIVE_SCIENCE_DEPENDENCY",
+      "sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+      "bytes": 76882,
+      "pinned_to_active_science_commit": true,
+      "url": "https://github.com/hardikbha/CFES-BeatDing/blob/58773bbef9d9fe79dd313610f694ddeea12c6037/CES_FL/src/ces_fl_counterfactual_5050.py"
+    },
+    {
+      "repository_path": "CES_FL/tests/smoke_manipulation_response.py",
+      "role": "Six target CUDA test groups",
+      "category": "ACTIVE_TEST",
+      "sha256": "748f4a883af8b39b6edd0f992f929f12f3045ba85734fcf1e542b67f61895654",
+      "bytes": 10915,
+      "pinned_to_active_science_commit": true,
+      "url": "https://github.com/hardikbha/CFES-BeatDing/blob/58773bbef9d9fe79dd313610f694ddeea12c6037/CES_FL/tests/smoke_manipulation_response.py"
+    },
+    {
+      "repository_path": "CES_FL/proposals/manipulation_response_20261101_r1/config.json",
+      "role": "Exact scientific configuration",
+      "category": "ACTIVE_CONFIG",
+      "sha256": "d31c78ab2913e629ebbd7e7a860a0dd4bea90d2c920b0d77719b042a7537dab0",
+      "bytes": 1990,
+      "pinned_to_active_science_commit": true,
+      "url": "https://github.com/hardikbha/CFES-BeatDing/blob/58773bbef9d9fe79dd313610f694ddeea12c6037/CES_FL/proposals/manipulation_response_20261101_r1/config.json"
+    },
+    {
+      "repository_path": "CES_FL/proposals/manipulation_response_20261101_r1/request.json",
+      "role": "Hypothesis, development decision rule and restrictions",
+      "category": "ACTIVE_REQUEST",
+      "sha256": "d085515f73324cc88aa3c5a5e5db7caa02e6d6108b50295e0a0e426e8c9ee6d0",
+      "bytes": 3022,
+      "pinned_to_active_science_commit": true,
+      "url": "https://github.com/hardikbha/CFES-BeatDing/blob/58773bbef9d9fe79dd313610f694ddeea12c6037/CES_FL/proposals/manipulation_response_20261101_r1/request.json"
+    },
+    {
+      "repository_path": "CES_FL/proposals/manipulation_response_20261101_r1/GPU_OPERATOR_PROMPT.txt",
+      "role": "Milestone execution instructions",
+      "category": "ACTIVE_HANDOFF",
+      "sha256": "260b2024751b99c75e994542ece046d245a35978b5a52f00800e05bf82dfb88b",
+      "bytes": 7845,
+      "pinned_to_active_science_commit": true,
+      "url": "https://github.com/hardikbha/CFES-BeatDing/blob/58773bbef9d9fe79dd313610f694ddeea12c6037/CES_FL/proposals/manipulation_response_20261101_r1/GPU_OPERATOR_PROMPT.txt"
+    },
+    {
+      "repository_path": "CES_FL/src/ces_fl_diagram_model_v021.py",
+      "role": "Previous P/A/B/C model/trainer",
+      "category": "HISTORICAL_SCIENCE",
+      "sha256": "0e001dd1251570ce43fb82bde307c519dea4045d9734506e1ce90d2ed014f8de",
+      "bytes": 68541,
+      "pinned_to_active_science_commit": false,
+      "url": "https://github.com/hardikbha/CFES-BeatDing/blob/main/CES_FL/src/ces_fl_diagram_model_v021.py"
+    },
+    {
+      "repository_path": "CES_FL/src/ces_fl_upgrade.py",
+      "role": "Previous controlled upgrade trainer",
+      "category": "HISTORICAL_SCIENCE",
+      "sha256": "4d8413cbfd8f22c60be8405ee7686dff7745aed134edddecf21e809cf3082ff6",
+      "bytes": 19214,
+      "pinned_to_active_science_commit": false,
+      "url": "https://github.com/hardikbha/CFES-BeatDing/blob/main/CES_FL/src/ces_fl_upgrade.py"
+    },
+    {
+      "repository_path": "CES_FL/tests/test_upgrade.py",
+      "role": "Previous upgrade software tests",
+      "category": "HISTORICAL_TEST",
+      "sha256": "84442f92c6ace41c3f7057da9ef126b4bba0e76626a2a39805b551affc5060ad",
+      "bytes": 13597,
+      "pinned_to_active_science_commit": false,
+      "url": "https://github.com/hardikbha/CFES-BeatDing/blob/main/CES_FL/tests/test_upgrade.py"
+    },
+    {
+      "repository_path": "CES_FL/proposals/manipulation_response_20261101_r1/execution_manip_response_ssh_20261101T115720Z/runtime/direct_mr.py",
+      "role": "Current direct SSH milestone, data audit, guard, or read-only publication helper",
+      "category": "ACTIVE_OPERATIONS",
+      "sha256": "2368cccbb5006080dd96661c873347e59ddac184c06ea6463d8edc69fc3ff767",
+      "bytes": 13987,
+      "pinned_to_active_science_commit": false,
+      "url": "https://github.com/hardikbha/CFES-BeatDing/blob/main/CES_FL/proposals/manipulation_response_20261101_r1/execution_manip_response_ssh_20261101T115720Z/runtime/direct_mr.py"
+    },
+    {
+      "repository_path": "CES_FL/proposals/manipulation_response_20261101_r1/execution_manip_response_ssh_20261101T115720Z/runtime/launch_stage.py",
+      "role": "Current direct SSH milestone, data audit, guard, or read-only publication helper",
+      "category": "ACTIVE_OPERATIONS",
+      "sha256": "11df7fad058b0dc14bc60c743eb83bc14a4b06ec9f20aa03166be24cf6a10e7e",
+      "bytes": 2761,
+      "pinned_to_active_science_commit": false,
+      "url": "https://github.com/hardikbha/CFES-BeatDing/blob/main/CES_FL/proposals/manipulation_response_20261101_r1/execution_manip_response_ssh_20261101T115720Z/runtime/launch_stage.py"
+    },
+    {
+      "repository_path": "CES_FL/proposals/manipulation_response_20261101_r1/execution_manip_response_ssh_20261101T115720Z/runtime/real_inputs.py",
+      "role": "Current direct SSH milestone, data audit, guard, or read-only publication helper",
+      "category": "ACTIVE_OPERATIONS",
+      "sha256": "32053612db1b5b49c51a72cb838865a54fa2286b8e8f03450149204bce96e5e7",
+      "bytes": 4797,
+      "pinned_to_active_science_commit": false,
+      "url": "https://github.com/hardikbha/CFES-BeatDing/blob/main/CES_FL/proposals/manipulation_response_20261101_r1/execution_manip_response_ssh_20261101T115720Z/runtime/real_inputs.py"
+    },
+    {
+      "repository_path": "CES_FL/proposals/manipulation_response_20261101_r1/execution_manip_response_ssh_20261101T115720Z/runtime/observe_direct.py",
+      "role": "Current direct SSH milestone, data audit, guard, or read-only publication helper",
+      "category": "ACTIVE_OPERATIONS",
+      "sha256": "4eb0462c7cbd28bae5d188cb544c04f64a4d687d2ae3706c6399d2d1cf920a1e",
+      "bytes": 11075,
+      "pinned_to_active_science_commit": false,
+      "url": "https://github.com/hardikbha/CFES-BeatDing/blob/main/CES_FL/proposals/manipulation_response_20261101_r1/execution_manip_response_ssh_20261101T115720Z/runtime/observe_direct.py"
+    },
+    {
+      "repository_path": "CES_FL/proposals/manipulation_response_20261101_r1/execution_manip_response_ssh_20261101T115720Z/runtime/test_direct_guards.py",
+      "role": "Current direct SSH milestone, data audit, guard, or read-only publication helper",
+      "category": "ACTIVE_OPERATIONS",
+      "sha256": "5d75f602bfb721df3027714632566bb95d6a34663c6c32b53499a33db4f4a20e",
+      "bytes": 1848,
+      "pinned_to_active_science_commit": false,
+      "url": "https://github.com/hardikbha/CFES-BeatDing/blob/main/CES_FL/proposals/manipulation_response_20261101_r1/execution_manip_response_ssh_20261101T115720Z/runtime/test_direct_guards.py"
+    },
+    {
+      "repository_path": "CES_FL/proposals/manipulation_response_20261101_r1/execution_manip_response_ssh_20261101T115720Z/runtime/test_observer.py",
+      "role": "Current direct SSH milestone, data audit, guard, or read-only publication helper",
+      "category": "ACTIVE_OPERATIONS",
+      "sha256": "ac3348fc58bb5f3607828c531c98e627c01ab21527d640bafc8d52d59fc999c6",
+      "bytes": 2544,
+      "pinned_to_active_science_commit": false,
+      "url": "https://github.com/hardikbha/CFES-BeatDing/blob/main/CES_FL/proposals/manipulation_response_20261101_r1/execution_manip_response_ssh_20261101T115720Z/runtime/test_observer.py"
+    },
+    {
+      "repository_path": "CES_FL/proposals/manipulation_response_20261101_r1/execution_manip_response_ssh_20261101T115720Z/cuda_policy/sitecustomize.py",
+      "role": "15% per-process CUDA allocator cap for current SSH route",
+      "category": "ACTIVE_OPERATIONS",
+      "sha256": "16fb9d9b9e828617bf251c6679592cf22e7caedbbabab2f60ca97e3418324e1d",
+      "bytes": 209,
+      "pinned_to_active_science_commit": false,
+      "url": "https://github.com/hardikbha/CFES-BeatDing/blob/main/CES_FL/proposals/manipulation_response_20261101_r1/execution_manip_response_ssh_20261101T115720Z/cuda_policy/sitecustomize.py"
+    },
+    {
+      "repository_path": "CES_FL/proposals/qwen_bounded_quality_20261101_r2/runtime/direct_worker.py",
+      "role": "Completed 32-source Qwen quality pilot helper, not classifier training",
+      "category": "COMPLETED_QWEN_QUALITY_OPERATIONS",
+      "sha256": "ffbd28427e8ce8f4a442a7ab3c7dbd3ffaaa508092f0a6724e72e4b28de7afe5",
+      "bytes": 11431,
+      "pinned_to_active_science_commit": false,
+      "url": "https://github.com/hardikbha/CFES-BeatDing/blob/main/CES_FL/proposals/qwen_bounded_quality_20261101_r2/runtime/direct_worker.py"
+    },
+    {
+      "repository_path": "CES_FL/proposals/qwen_bounded_quality_20261101_r2/runtime/pilot_profile.py",
+      "role": "Completed 32-source Qwen quality pilot helper, not classifier training",
+      "category": "COMPLETED_QWEN_QUALITY_OPERATIONS",
+      "sha256": "d4107965e208e125269f4ef3692849435f35962dd1b9c6b597487e192e1ca650",
+      "bytes": 6398,
+      "pinned_to_active_science_commit": false,
+      "url": "https://github.com/hardikbha/CFES-BeatDing/blob/main/CES_FL/proposals/qwen_bounded_quality_20261101_r2/runtime/pilot_profile.py"
+    },
+    {
+      "repository_path": "CES_FL/proposals/qwen_bounded_quality_20261101_r2/runtime/test_quality_selection.py",
+      "role": "Completed 32-source Qwen quality pilot helper, not classifier training",
+      "category": "COMPLETED_QWEN_QUALITY_OPERATIONS",
+      "sha256": "9a51aba56853a1d00ac3fcd0c17ae2a048fe716de3da52c8848dab5023681d79",
+      "bytes": 6580,
+      "pinned_to_active_science_commit": false,
+      "url": "https://github.com/hardikbha/CFES-BeatDing/blob/main/CES_FL/proposals/qwen_bounded_quality_20261101_r2/runtime/test_quality_selection.py"
+    },
+    {
+      "repository_path": "CES_FL/proposals/qwen_bounded_quality_20261101_r2/runtime/observe_quality.py",
+      "role": "Completed 32-source Qwen quality pilot helper, not classifier training",
+      "category": "COMPLETED_QWEN_QUALITY_OPERATIONS",
+      "sha256": "9bc950ed784ce915ef65d8a1724baa24dde2fbb75bf8f2d29751668a5a3b77d4",
+      "bytes": 8398,
+      "pinned_to_active_science_commit": false,
+      "url": "https://github.com/hardikbha/CFES-BeatDing/blob/main/CES_FL/proposals/qwen_bounded_quality_20261101_r2/runtime/observe_quality.py"
+    }
+  ],
+  "data_and_weights_external": true,
+  "new_training_launched_for_handoff": false,
+  "novelty_or_fairness_gain_established": false
+}

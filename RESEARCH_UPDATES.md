@@ -1,5 +1,7 @@
 # Shared research updates and reviewer index
 
+**[Shareable current supervisor handoff: progress, running jobs and complete code map](CES_FL/handoffs/SUPERVISOR_HANDOFF_2026-11-01_MANIPULATION_RESPONSE.md)** — verified snapshot 1 November 19:41 IST; refresh native/live-status evidence before acting.
+
 ## Direct SSH: new CUDA/input checks passed; P50 running
 
 [Actual manipulation-response stage and arm status](CES_FL/status/manip_response_ssh_20261101T115720Z_live.md): all six CUDA software groups passed, all101,525TRAIN/VALimages decoded/hashed, configured backward PASS. Original-only P50 launched on gpu02GPU5 (training PID1393109); BCE/fair await P50, paired arms await reviewed quartets. Qwen continues separately on gpu01. No test or FairForge-2 launch. This is a dated observation.

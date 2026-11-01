@@ -1,5 +1,9 @@
 # Prompt to share with the supervisor or their LLM
 
+## Current handoff — manipulation-response investigation, 1 November 2026
+
+Use the **[detailed current supervisor/reviewer prompt](handoffs/SUPERVISOR_HANDOFF_2026-11-01_MANIPULATION_RESPONSE.md)**. It covers the actual running P50 experiment, exact source commit, completed Qwen generation, all current model/training/generation code, data/selection/calibration policies, reviewed-quartet blockers and safe continuation commands. [Exact code index/hashes](handoffs/CODE_INDEX_2026-11-01_MANIPULATION_RESPONSE.json). The prompt below is preserved for the older frozen-encoder P/A/B/C pilot; it is not the current response-training handoff.
+
 Repository: https://github.com/hardikbha/CFES-BeatDing
 Start: https://github.com/hardikbha/CFES-BeatDing/tree/main/CES_FL
 

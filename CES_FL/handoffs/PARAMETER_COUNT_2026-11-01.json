@@ -1,0 +1,17 @@
+{
+  "command": "aiface Python: DiagramCES(pretrained=False,encoder_policy=trainable,bn_policy=update,head_seed=17); sum named module parameter numel",
+  "actual_counts": {
+    "encoder": 20806952,
+    "global_head": 262401,
+    "patch_head": 262401,
+    "image_gate": 131201,
+    "patch_gate": 131201,
+    "fusion_parameters": 3,
+    "total": 21594159,
+    "trainable": 21594159
+  },
+  "device": "cpu",
+  "optimizer_steps": 0,
+  "checkpoint_loaded": false,
+  "source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-response-58773bb/CES_FL/src/ces_fl_counterfactual_5050.py"
+}
