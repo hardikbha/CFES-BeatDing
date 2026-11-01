@@ -1,5 +1,5 @@
 {
-  "observed_utc": "2026-11-01T08:34:25.531288+00:00",
+  "observed_utc": "2026-11-01T08:35:31.369548+00:00",
   "source_commit": "fc4e63b8811c5813afa0d298a8172ba9555b7e40",
   "run_root": "/home/sachin.chaudhary/ces_fl_runs/cf5050_registry_recovery_20261101T081523Z",
   "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
@@ -243,10 +243,144 @@
     "gender_feminine": 2,
     "gender_masculine": 2,
     "skin_lighter": 2,
-    "skin_darker": 1
+    "skin_darker": 2
   },
-  "pilot_complete_sources": 1,
-  "pilot_profile": null,
+  "pilot_complete_sources": 2,
+  "pilot_profile": {
+    "status": "PASS",
+    "observed_node_time": "2026-11-01T08:24:23.861354+00:00",
+    "versions": {
+      "torch": "2.8.0",
+      "diffusers": "0.39.0",
+      "transformers": "4.57.6",
+      "accelerate": "1.15.0",
+      "safetensors": "0.8.0",
+      "numpy": "2.4.6",
+      "Pillow": "13.0.0",
+      "scikit-learn": "1.7.2",
+      "scipy": "1.17.1",
+      "python_executable": "/home/sachin.chaudhary/.conda/envs/llada-image/bin/python"
+    },
+    "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+    "config_sha256": "56e77211a966ae12a449c47cdaf8e3fc271f149c6031513747813a1d1abfaef0",
+    "snapshot_inventory_sha256": "7ad7899d5af6a6f4f4550d10024ebdb07da83ba2b7b4c1775ef82066f8f790d9",
+    "generation_call_seconds": 1018.917779315263,
+    "outputs_recorded": 14,
+    "output_records_aggregate": [
+      {
+        "condition": "nochange",
+        "seconds": 73.97672937065363,
+        "bytes": 223448,
+        "label": 1,
+        "independent_from_original": true
+      },
+      {
+        "condition": "younger",
+        "seconds": 72.14400599524379,
+        "bytes": 215328,
+        "label": 1,
+        "independent_from_original": true
+      },
+      {
+        "condition": "older",
+        "seconds": 74.54334318265319,
+        "bytes": 251098,
+        "label": 1,
+        "independent_from_original": true
+      },
+      {
+        "condition": "gender_feminine",
+        "seconds": 74.2728157043457,
+        "bytes": 180140,
+        "label": 1,
+        "independent_from_original": true
+      },
+      {
+        "condition": "gender_masculine",
+        "seconds": 72.86932187154889,
+        "bytes": 217430,
+        "label": 1,
+        "independent_from_original": true
+      },
+      {
+        "condition": "skin_lighter",
+        "seconds": 72.40412724763155,
+        "bytes": 181447,
+        "label": 1,
+        "independent_from_original": true
+      },
+      {
+        "condition": "skin_darker",
+        "seconds": 71.15393819659948,
+        "bytes": 176924,
+        "label": 1,
+        "independent_from_original": true
+      },
+      {
+        "condition": "nochange",
+        "seconds": 90.49850730597973,
+        "bytes": 201373,
+        "label": 0,
+        "independent_from_original": true
+      },
+      {
+        "condition": "younger",
+        "seconds": 64.0161292180419,
+        "bytes": 189063,
+        "label": 0,
+        "independent_from_original": true
+      },
+      {
+        "condition": "older",
+        "seconds": 62.77708277851343,
+        "bytes": 221207,
+        "label": 0,
+        "independent_from_original": true
+      },
+      {
+        "condition": "gender_feminine",
+        "seconds": 58.74691719934344,
+        "bytes": 157012,
+        "label": 0,
+        "independent_from_original": true
+      },
+      {
+        "condition": "gender_masculine",
+        "seconds": 56.740459479391575,
+        "bytes": 183204,
+        "label": 0,
+        "independent_from_original": true
+      },
+      {
+        "condition": "skin_lighter",
+        "seconds": 60.097378611564636,
+        "bytes": 145015,
+        "label": 0,
+        "independent_from_original": true
+      },
+      {
+        "condition": "skin_darker",
+        "seconds": 68.9892915263772,
+        "bytes": 137507,
+        "label": 0,
+        "independent_from_original": true
+      }
+    ],
+    "mean_seconds_per_output_excluding_load": 69.51643197770629,
+    "mean_canonical_png_bytes": 191442.57142857142,
+    "pilot_item_logical_bytes": 2965825,
+    "peak_torch_allocated_bytes": 42042279424,
+    "peak_torch_reserved_bytes": 42687528960,
+    "allocator_fraction": "0.55",
+    "cpu_memory_available_before_load": 689928204288,
+    "execution_mode": "direct_ssh_bounded_shared_gpu",
+    "full_training_started": false,
+    "human_approvals_created": 0,
+    "forensic_or_identity_validity_established": false,
+    "failure": null,
+    "projected_full_generation_gpu_hours": 10291.77258345946,
+    "projection_limitations": "Two sources on a shared GPU; excludes retries, review/rejection, scheduling, model loading and scale-dependent effects."
+  },
   "full_training": "NOT_STARTED",
   "full_generation": "NOT_STARTED",
   "quality_or_full_bank_approval": "NOT_GRANTED",
