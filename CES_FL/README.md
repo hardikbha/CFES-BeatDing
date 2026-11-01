@@ -1,5 +1,11 @@
 # CES-FL — supervisor review and training handoff
 
+## Ding-format Tables 1, 2 and 3 — 2 November 2026
+
+[Table 1: FF++](results/ding_format_tables_s17_20261102/TABLE_1.md) · [Table 2: cross-domain](results/ding_format_tables_s17_20261102/TABLE_2.md) · [Table 3: ResNet-50](results/ding_format_tables_s17_20261102/TABLE_3.md) · [Combined PDF](results/ding_format_tables_s17_20261102/TABLES_1_2_3.pdf).
+
+All published rows are followed by the applicable completed seed17 A/B/C and upgrade test results. [Arm definitions, thresholds, provenance and limitations](results/ding_format_tables_s17_20261102/README.md). The latest 50+50 source `58773bb` has validation results only and is shown separately; it has no TEST row. This reporting update launches no training or evaluation.
+
 ## Completed original-only comparison — 2 November 2026
 
 [Verified P/BCE/fair completion and validation fairness comparison](results/manip_response_originals_s17_20261102/REPORT.md). Both downstream arms completed50epochs with native independent replay. BCE/fair validationAUC98.45/98.49%, but primaryF_FPR and FPRgap are worse for fair; no primary fairness win. Nochange/score/response remain blocked by reviewed manipulation quartets. Qwen224/224generated, no recorded pair approvals. No TEST or FairForge-2 run.

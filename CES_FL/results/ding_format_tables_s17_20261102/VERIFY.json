@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "operation": "Static formatting/numeric verification only",
+  "paper_rows": [
+    21,
+    21,
+    20
+  ],
+  "output_rows": [
+    45,
+    45,
+    32
+  ],
+  "existing_test_records_verified": 44,
+  "score_reports_checked": 88,
+  "ding_style_formula_checks": 792,
+  "source_receipt_manifest_checkpoint_agreement": true,
+  "all_latest_validation_rows_excluded_from_test_tables": true,
+  "training_or_inference_launched": false,
+  "calibration_or_selection_performed": false
+}
