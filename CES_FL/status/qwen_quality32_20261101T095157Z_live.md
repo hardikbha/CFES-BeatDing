@@ -1,13 +1,13 @@
 # Qwen 32-source quality pilot: actual execution snapshot
 
-Observed management UTC: **2026-11-01T10:41:21.173050+00:00**.
+Observed management UTC: **2026-11-01T10:51:31.994759+00:00**.
 
 **State: RUNNING**. Worker liveness: LIVE.
 
 | Item | Actual status |
 |---|---|
-| Completed originals | 5/32 |
-| Generated diffusion outputs | 38/224 |
+| Completed originals | 6/32 |
+| Generated diffusion outputs | 48/224 |
 | Host / worker PID | gpu01 / 3806205 |
 | Bound physical GPU | 3 |
 | Source-selection CPU checks | 6 passed; synthetic stubs do not validate edits |
