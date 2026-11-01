@@ -1,0 +1,11 @@
+{
+  "observed_management_utc": "2026-11-01T09:48:03.630000+00:00",
+  "user_statement": "Reviewed; decisions still need recording",
+  "applies_to": "Current two-source Qwen pilot, including its two no-change controls",
+  "status": "USER_REPORTS_REVIEW_COMPLETED_PAIR_DECISIONS_PENDING",
+  "individual_approval_decisions_supplied": false,
+  "forensic_evidence_preservation_asserted": false,
+  "automatic_approval_created": false,
+  "pending_review_csv_modified": false,
+  "training_or_generation_launched": false
+}

@@ -55,3 +55,7 @@ The ranges are planning allowances, not confidence intervals or promised complet
 **No new training or generation was launched.** The user's request to run the next work was applied to the automatic recheck, actual source selection, private review preparation and versioned revision. It is not recorded as per-pair human validity approval.
 
 The immediate dependency is the completed, evidence-bearing 14-pair human review. The existing handoff explicitly requires stopping if pilot validity/resources do not pass, and per-source reviewed edits plus no-change controls before binding training. After review, choose whether to revise the editor or approve the bounded quality-only scope. No fairness gain, improvement over Ding or successful full selectivity experiment is claimed. **FairForge-2 remains DO NOT RUN** under its independent review. Historical results and the failed preregistered gate are unchanged.
+
+## Later human-review acknowledgement
+
+Observed management UTC: 2026-11-01T09:48:03.630000+00:00. The user reports: “Reviewed; decisions still need recording.” This applies to the current two-source pilot, including controls. No individual pass/fail/uncertain decisions or assertion of forensic preservation were supplied in that response. A follow-up requested those decisions. The original pending review CSV was not modified, no approvals were inferred, and no training or generation was launched. Human review being reported complete is distinct from the required per-pair decisions and substantive forensic-validity evidence being recorded.
