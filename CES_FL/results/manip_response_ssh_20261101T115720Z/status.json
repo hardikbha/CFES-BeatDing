@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-01T16:44:09.641463+00:00",
+  "observed_management_utc": "2026-11-01T16:54:14.541699+00:00",
   "source_commit": "58773bbef9d9fe79dd313610f694ddeea12c6037",
   "run_root": "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z",
   "execution_mode": "user_authorized_direct_ssh_bounded_shared_gpu",
@@ -417,21 +417,49 @@
     },
     "bce": {
       "status": "BLOCKED_INPUTS",
-      "submission": null,
+      "submission": {
+        "pid": 2961788,
+        "host": "gpu02",
+        "stage": "bce",
+        "command": [
+          "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+          "-u",
+          "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z/runtime/direct_mr.py",
+          "--stage",
+          "bce"
+        ],
+        "execution_mode": "direct_ssh_bounded_shared_gpu",
+        "pbs_allocation": null,
+        "restricted_device_uuid": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1"
+      },
       "progress": null,
       "pass": null,
       "failure": null,
       "binding": null,
-      "liveness": "NOT_APPLICABLE"
+      "liveness": "LIVE"
     },
     "fair": {
       "status": "BLOCKED_INPUTS",
-      "submission": null,
+      "submission": {
+        "pid": 2961831,
+        "host": "gpu02",
+        "stage": "fair",
+        "command": [
+          "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+          "-u",
+          "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z/runtime/direct_mr.py",
+          "--stage",
+          "fair"
+        ],
+        "execution_mode": "direct_ssh_bounded_shared_gpu",
+        "pbs_allocation": null,
+        "restricted_device_uuid": "GPU-ee335748-8273-2d67-42a5-d45463027c1b"
+      },
       "progress": null,
       "pass": null,
       "failure": null,
       "binding": null,
-      "liveness": "NOT_APPLICABLE"
+      "liveness": "LIVE"
     }
   },
   "arms": {
@@ -1096,12 +1124,26 @@
     },
     "bce": {
       "status": "BLOCKED_INPUTS",
-      "submission": null,
+      "submission": {
+        "pid": 2961788,
+        "host": "gpu02",
+        "stage": "bce",
+        "command": [
+          "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+          "-u",
+          "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z/runtime/direct_mr.py",
+          "--stage",
+          "bce"
+        ],
+        "execution_mode": "direct_ssh_bounded_shared_gpu",
+        "pbs_allocation": null,
+        "restricted_device_uuid": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1"
+      },
       "progress": null,
       "pass": null,
       "failure": null,
       "binding": null,
-      "liveness": "NOT_APPLICABLE",
+      "liveness": "LIVE",
       "recorded_epochs": 0,
       "budget_epochs": 50,
       "latest_epoch": null,
@@ -1111,12 +1153,26 @@
     },
     "fair": {
       "status": "BLOCKED_INPUTS",
-      "submission": null,
+      "submission": {
+        "pid": 2961831,
+        "host": "gpu02",
+        "stage": "fair",
+        "command": [
+          "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+          "-u",
+          "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z/runtime/direct_mr.py",
+          "--stage",
+          "fair"
+        ],
+        "execution_mode": "direct_ssh_bounded_shared_gpu",
+        "pbs_allocation": null,
+        "restricted_device_uuid": "GPU-ee335748-8273-2d67-42a5-d45463027c1b"
+      },
       "progress": null,
       "pass": null,
       "failure": null,
       "binding": null,
-      "liveness": "NOT_APPLICABLE",
+      "liveness": "LIVE",
       "recorded_epochs": 0,
       "budget_epochs": 50,
       "latest_epoch": null,
