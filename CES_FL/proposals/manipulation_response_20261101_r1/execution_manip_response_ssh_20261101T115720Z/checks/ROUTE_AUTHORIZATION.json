@@ -1,0 +1,41 @@
+{
+  "observed_management_utc": "2026-11-01T11:57:20.746708+00:00",
+  "user_instruction": "run directly on ssh gpu01 and gpu02",
+  "old_job": "44963.mgmt01",
+  "before": {
+    "Job_Name": "mr17_smoke",
+    "job_state": "Q",
+    "queue": "gpu",
+    "Resource_List": {
+      "mem": "48gb",
+      "ncpus": 8,
+      "ngpus": 1,
+      "nodect": 1,
+      "place": "free",
+      "select": "1:host=gpu01:ncpus=8:ngpus=1:mem=48gb",
+      "walltime": "03:00:00"
+    },
+    "comment": "Not Running: User has reached queue gpu running job limit."
+  },
+  "qdel_exit": 0,
+  "stdout": "",
+  "stderr": "",
+  "scope": "Cancel only this unexecuted duplicate queued smoke request after SSH route override; preserve running Qwen and all other jobs",
+  "new_run_root": "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z",
+  "pbs_allocation_claimed_for_new_run": false,
+  "after": {
+    "job_state": "F",
+    "comment": "Not Running: User has reached queue gpu running job limit. and terminated"
+  },
+  "never_executed_verified": true,
+  "retired_observer": {
+    "pid": 3818492,
+    "verified_command": [
+      "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+      "-u",
+      "/home/sachin.chaudhary/ces_fl_runs/manip_response_20261101T104925Z/runtime/observe_smoke.py",
+      ""
+    ],
+    "reason": "Read-only observer for the superseded queued route; avoids stale failure publication. No GPU job was terminated."
+  }
+}

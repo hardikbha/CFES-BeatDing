@@ -1,0 +1,14 @@
+{
+  "pid": 1164269,
+  "host": "gpu02",
+  "stage": "real_preflight",
+  "command": [
+    "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+    "-u",
+    "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z/runtime/direct_mr.py",
+    "--stage",
+    "real_preflight"
+  ],
+  "execution_mode": "direct_ssh_bounded_shared_gpu",
+  "pbs_allocation": null
+}

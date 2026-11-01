@@ -1,0 +1,9 @@
+test_arm_completion_requires_native_replay_and_fifty_epochs (__main__.Status.test_arm_completion_requires_native_replay_and_fifty_epochs) ... ok
+test_failure_is_explicit (__main__.Status.test_failure_is_explicit) ... ok
+test_running_requires_live_worker (__main__.Status.test_running_requires_live_worker) ... ok
+test_smoke_success_never_marks_scientific_arms_completed (__main__.Status.test_smoke_success_never_marks_scientific_arms_completed) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.004s
+
+OK

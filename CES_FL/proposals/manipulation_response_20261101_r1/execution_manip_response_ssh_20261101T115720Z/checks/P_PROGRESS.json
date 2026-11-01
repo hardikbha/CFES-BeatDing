@@ -1,0 +1,19 @@
+{
+  "phase": "RUNNING",
+  "job": "SSH:gpu02:1390084",
+  "host": "gpu02",
+  "command": [
+    "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+    "/home/sachin.chaudhary/ces_fl_sources/cesfl-response-58773bb/CES_FL/src/ces_fl_manipulation_response.py",
+    "pretrain",
+    "--config",
+    "/home/sachin.chaudhary/ces_fl_sources/cesfl-response-58773bb/CES_FL/proposals/manipulation_response_20261101_r1/config.json",
+    "--out",
+    "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z/P",
+    "--device",
+    "cuda"
+  ],
+  "gpu_uuid": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1",
+  "worker_pid": 1390084,
+  "execution_mode": "direct_ssh_bounded_shared_gpu"
+}

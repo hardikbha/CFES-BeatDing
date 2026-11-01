@@ -1,5 +1,9 @@
 # CFES / Beat-Ding: fairness-aware deepfake detection vs Ding et al. (CVPR'26)
 
+## Direct SSH: new CUDA/input checks passed; P50 running
+
+[Actual manipulation-response stage and arm status](CES_FL/status/manip_response_ssh_20261101T115720Z_live.md): all six CUDA software groups passed, all101,525TRAIN/VALimages decoded/hashed, configured backward PASS. Original-only P50 launched on gpu02GPU5 (training PID1393109); BCE/fair await P50, paired arms await reviewed quartets. Qwen continues separately on gpu01. No test or FairForge-2 launch. This is a dated observation.
+
 ## Priority manipulation-response experiment
 
 [Actual per-arm status](CES_FL/status/manip_response_20261101T104925Z_live.md): exact source `58773bb`, new CUDA smoke **44963.mgmt01 queued with ngpus=1**; no new training yet. Original-only P/BCE/fair can proceed after their own checks. No-change/score/response are blocked by the matched manipulation bank. Existing Qwen32 continues separately. This is a timestamped launch observation; follow the linked status for updates.

@@ -1,0 +1,10 @@
+{
+  "command": [
+    "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+    "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z/runtime/test_direct_guards.py"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_low_headroom_and_wrong_binding_rejected (__main__.Guards.test_low_headroom_and_wrong_binding_rejected) ... ok\ntest_paired_arms_have_no_ssh_launch_path (__main__.Guards.test_paired_arms_have_no_ssh_launch_path) ... ok\ntest_pretraining_cannot_start_without_smoke (__main__.Guards.test_pretraining_cannot_start_without_smoke) ... ok\ntest_protected_qwen_device_rejected (__main__.Guards.test_protected_qwen_device_rejected) ... ok\ntest_shared_headroom_does_not_require_killing_existing_work (__main__.Guards.test_shared_headroom_does_not_require_killing_existing_work) ... ok\ntest_uuid_normalization_is_exact (__main__.Guards.test_uuid_normalization_is_exact) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.002s\n\nOK\n",
+  "scope": "Operational software checks; no CUDA experiment or optimizer update"
+}

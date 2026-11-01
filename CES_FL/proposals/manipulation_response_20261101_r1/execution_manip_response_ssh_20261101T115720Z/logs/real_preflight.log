@@ -1,0 +1,73 @@
+DECODED_AND_HASHED {'train': 2000}
+DECODED_AND_HASHED {'train': 4000}
+DECODED_AND_HASHED {'train': 6000}
+DECODED_AND_HASHED {'train': 8000}
+DECODED_AND_HASHED {'train': 10000}
+DECODED_AND_HASHED {'train': 12000}
+DECODED_AND_HASHED {'train': 14000}
+DECODED_AND_HASHED {'train': 16000}
+DECODED_AND_HASHED {'train': 18000}
+DECODED_AND_HASHED {'train': 20000}
+DECODED_AND_HASHED {'train': 22000}
+DECODED_AND_HASHED {'train': 24000}
+DECODED_AND_HASHED {'train': 26000}
+DECODED_AND_HASHED {'train': 28000}
+DECODED_AND_HASHED {'train': 30000}
+DECODED_AND_HASHED {'train': 32000}
+DECODED_AND_HASHED {'train': 34000}
+DECODED_AND_HASHED {'train': 36000}
+DECODED_AND_HASHED {'train': 38000}
+DECODED_AND_HASHED {'train': 40000}
+DECODED_AND_HASHED {'train': 42000}
+DECODED_AND_HASHED {'train': 44000}
+DECODED_AND_HASHED {'train': 46000}
+DECODED_AND_HASHED {'train': 48000}
+DECODED_AND_HASHED {'train': 50000}
+DECODED_AND_HASHED {'train': 52000}
+DECODED_AND_HASHED {'train': 54000}
+DECODED_AND_HASHED {'train': 56000}
+DECODED_AND_HASHED {'train': 58000}
+DECODED_AND_HASHED {'train': 60000}
+DECODED_AND_HASHED {'train': 62000}
+DECODED_AND_HASHED {'train': 64000}
+DECODED_AND_HASHED {'train': 66000}
+DECODED_AND_HASHED {'train': 68000}
+DECODED_AND_HASHED {'train': 70000}
+DECODED_AND_HASHED {'train': 72000}
+DECODED_AND_HASHED {'train': 74000}
+DECODED_AND_HASHED {'train': 76000}
+DECODED_AND_HASHED {'train': 76139, 'val': 1861}
+DECODED_AND_HASHED {'train': 76139, 'val': 3861}
+DECODED_AND_HASHED {'train': 76139, 'val': 5861}
+DECODED_AND_HASHED {'train': 76139, 'val': 7861}
+DECODED_AND_HASHED {'train': 76139, 'val': 9861}
+DECODED_AND_HASHED {'train': 76139, 'val': 11861}
+DECODED_AND_HASHED {'train': 76139, 'val': 13861}
+DECODED_AND_HASHED {'train': 76139, 'val': 15861}
+DECODED_AND_HASHED {'train': 76139, 'val': 17861}
+DECODED_AND_HASHED {'train': 76139, 'val': 19861}
+DECODED_AND_HASHED {'train': 76139, 'val': 21861}
+DECODED_AND_HASHED {'train': 76139, 'val': 23861}
+EXACT_BACKWARD_COMMAND ["/home/sachin.chaudhary/.conda/envs/aiface/bin/python", "/home/sachin.chaudhary/ces_fl_sources/cesfl-response-58773bb/CES_FL/src/ces_fl_counterfactual_5050.py", "dry-run", "--config", "/home/sachin.chaudhary/ces_fl_sources/cesfl-response-58773bb/CES_FL/proposals/counterfactual_5050_20261101_r1/protocol_config.json", "--stage", "pretrain", "--device", "cuda", "--out", "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z/P_real_dry"]
+{
+  "status": "PASS",
+  "stage": "pretrain",
+  "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+  "device": "cuda",
+  "synthetic_fixture": false,
+  "originals": 16,
+  "pairs": 0,
+  "parameters": {
+    "total": 21594159,
+    "trainable": 21594159
+  },
+  "optimizer_steps": 0,
+  "pretrain_bn_buffers_updated_in_discarded_model": true,
+  "peak_cuda_allocated_bytes": 2367416320,
+  "losses": {
+    "total": 0.5129827857017517,
+    "classification": 0.5129827857017517,
+    "invariance": -0.0
+  }
+}
+ORIGINAL_INPUT_AND_REAL_BACKWARD_PASS

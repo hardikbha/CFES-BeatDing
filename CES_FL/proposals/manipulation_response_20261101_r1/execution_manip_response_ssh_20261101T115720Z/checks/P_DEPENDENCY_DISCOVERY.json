@@ -1,0 +1,10 @@
+{
+  "observed_management_utc": "2026-11-01T12:02:01.113612+00:00",
+  "search_roots": [
+    "/home/sachin.chaudhary/ces_fl_runs",
+    "/home/sachin.chaudhary/ces_fl_pipeline/experiments"
+  ],
+  "config_files_examined": 9,
+  "exact_pretrain_config_matches": [],
+  "scope": "Known experiment/run roots; no assertion about arbitrary unrelated locations"
+}

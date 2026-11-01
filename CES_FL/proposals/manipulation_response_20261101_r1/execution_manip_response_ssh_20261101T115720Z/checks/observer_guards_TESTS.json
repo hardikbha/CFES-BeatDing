@@ -1,0 +1,10 @@
+{
+  "command": [
+    "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+    "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z/runtime/test_observer.py"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_arm_completion_requires_native_replay_and_fifty_epochs (__main__.Status.test_arm_completion_requires_native_replay_and_fifty_epochs) ... ok\ntest_failure_is_explicit (__main__.Status.test_failure_is_explicit) ... ok\ntest_running_requires_live_worker (__main__.Status.test_running_requires_live_worker) ... ok\ntest_smoke_success_never_marks_scientific_arms_completed (__main__.Status.test_smoke_success_never_marks_scientific_arms_completed) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.004s\n\nOK\n",
+  "scope": "Operational software checks; no CUDA experiment or optimizer update"
+}

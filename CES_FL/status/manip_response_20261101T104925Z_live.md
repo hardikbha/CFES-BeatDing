@@ -1,3 +1,5 @@
+> Superseded after the user requested direct SSH. Job44963 was cancelled while queued, before execution. [Current direct-SSH checks and P50 status](manip_response_ssh_20261101T115720Z_live.md). The snapshot below is historical.
+
 # Manipulation-response FF++ seed17: actual status
 
 Observed management UTC: **2026-11-01T11:48:16.840465+00:00**.

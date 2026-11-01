@@ -1,0 +1,12 @@
+{
+  "runtime_hashes": {
+    "test_observer.py": "ac3348fc58bb5f3607828c531c98e627c01ab21527d640bafc8d52d59fc999c6",
+    "direct_mr.py": "2368cccbb5006080dd96661c873347e59ddac184c06ea6463d8edc69fc3ff767",
+    "test_direct_guards.py": "5d75f602bfb721df3027714632566bb95d6a34663c6c32b53499a33db4f4a20e",
+    "launch_stage.py": "11df7fad058b0dc14bc60c743eb83bc14a4b06ec9f20aa03166be24cf6a10e7e",
+    "real_inputs.py": "32053612db1b5b49c51a72cb838865a54fa2286b8e8f03450149204bce96e5e7",
+    "observe_direct.py": "4eb0462c7cbd28bae5d188cb544c04f64a4d687d2ae3706c6399d2d1cf920a1e"
+  },
+  "no_scientific_source_change": true,
+  "observed_management_utc": "2026-11-01T12:30:37.089219+00:00"
+}

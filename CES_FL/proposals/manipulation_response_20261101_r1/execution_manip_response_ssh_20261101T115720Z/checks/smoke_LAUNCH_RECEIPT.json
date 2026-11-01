@@ -1,0 +1,17 @@
+{
+  "command": [
+    "ssh",
+    "-o",
+    "BatchMode=yes",
+    "-o",
+    "ConnectTimeout=12",
+    "gpu02",
+    "python - <<'MRLAUNCH'\nimport subprocess,json,socket,os\nfrom pathlib import Path\nr=Path('/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z')\nassert not (r/'checks/smoke_SUBMISSION.json').exists()\nargv=['/home/sachin.chaudhary/.conda/envs/aiface/bin/python','-u',str(r/'runtime/direct_mr.py'),'--stage','smoke']\nwith (r/'logs/smoke_worker.log').open('x') as log:\n p=subprocess.Popen(argv,stdin=subprocess.DEVNULL,stdout=log,stderr=subprocess.STDOUT,start_new_session=True,env=dict(os.environ,PYTHONDONTWRITEBYTECODE='1'))\nd={'pid':p.pid,'host':socket.gethostname().split('.')[0],'stage':'smoke','command':argv,'execution_mode':'direct_ssh_bounded_shared_gpu','pbs_allocation':None}\nwith (r/'checks/smoke_SUBMISSION.json').open('x') as f:json.dump(d,f,indent=2)\nprint(json.dumps(d))\n\nMRLAUNCH"
+  ],
+  "exit_code": 0,
+  "stdout": "{\"pid\": 1125807, \"host\": \"gpu02\", \"stage\": \"smoke\", \"command\": [\"/home/sachin.chaudhary/.conda/envs/aiface/bin/python\", \"-u\", \"/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z/runtime/direct_mr.py\", \"--stage\", \"smoke\"], \"execution_mode\": \"direct_ssh_bounded_shared_gpu\", \"pbs_allocation\": null}\n",
+  "stderr": "",
+  "observed_management_utc": "2026-11-01T12:00:57.518815+00:00",
+  "source_commit": "58773bbef9d9fe79dd313610f694ddeea12c6037",
+  "operator_sha256": "2368cccbb5006080dd96661c873347e59ddac184c06ea6463d8edc69fc3ff767"
+}

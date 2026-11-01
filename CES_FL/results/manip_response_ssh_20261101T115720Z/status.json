@@ -1,0 +1,716 @@
+{
+  "observed_management_utc": "2026-11-01T12:30:37.435123+00:00",
+  "source_commit": "58773bbef9d9fe79dd313610f694ddeea12c6037",
+  "run_root": "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z",
+  "execution_mode": "user_authorized_direct_ssh_bounded_shared_gpu",
+  "pbs_allocation": null,
+  "source_or_scientific_configuration_changed": false,
+  "route_override": {
+    "observed_management_utc": "2026-11-01T11:57:20.746708+00:00",
+    "user_instruction": "run directly on ssh gpu01 and gpu02",
+    "old_job": "44963.mgmt01",
+    "before": {
+      "Job_Name": "mr17_smoke",
+      "job_state": "Q",
+      "queue": "gpu",
+      "Resource_List": {
+        "mem": "48gb",
+        "ncpus": 8,
+        "ngpus": 1,
+        "nodect": 1,
+        "place": "free",
+        "select": "1:host=gpu01:ncpus=8:ngpus=1:mem=48gb",
+        "walltime": "03:00:00"
+      },
+      "comment": "Not Running: User has reached queue gpu running job limit."
+    },
+    "qdel_exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "scope": "Cancel only this unexecuted duplicate queued smoke request after SSH route override; preserve running Qwen and all other jobs",
+    "new_run_root": "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z",
+    "pbs_allocation_claimed_for_new_run": false,
+    "after": {
+      "job_state": "F",
+      "comment": "Not Running: User has reached queue gpu running job limit. and terminated"
+    },
+    "never_executed_verified": true,
+    "retired_observer": {
+      "pid": 3818492,
+      "verified_command": [
+        "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+        "-u",
+        "/home/sachin.chaudhary/ces_fl_runs/manip_response_20261101T104925Z/runtime/observe_smoke.py",
+        ""
+      ],
+      "reason": "Read-only observer for the superseded queued route; avoids stale failure publication. No GPU job was terminated."
+    }
+  },
+  "stages": {
+    "smoke": {
+      "status": "COMPLETED",
+      "submission": {
+        "pid": 1125807,
+        "host": "gpu02",
+        "stage": "smoke",
+        "command": [
+          "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+          "-u",
+          "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z/runtime/direct_mr.py",
+          "--stage",
+          "smoke"
+        ],
+        "execution_mode": "direct_ssh_bounded_shared_gpu",
+        "pbs_allocation": null
+      },
+      "progress": {
+        "phase": "COMPLETED",
+        "job": "SSH:gpu02:1125807",
+        "host": "gpu02"
+      },
+      "pass": {
+        "status": "PASS",
+        "job": "SSH:gpu02:1125807",
+        "stage": "smoke",
+        "elapsed_seconds": 87.33261356316507,
+        "binding": {
+          "job": "SSH:gpu02:1125807",
+          "host": "gpu02",
+          "physical_index": 5,
+          "gpu_uuid": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1",
+          "free_mib_before_launch": 26369,
+          "torch_binding": {
+            "uuid": "bff97893-385b-6f3f-831b-113284c2e1f1",
+            "device": "NVIDIA H100 80GB HBM3",
+            "torch": "2.7.0+cu126"
+          },
+          "source_commit": "58773bbef9d9fe79dd313610f694ddeea12c6037",
+          "source_hashes": {
+            "CES_FL/src/ces_fl_manipulation_response.py": "0e82a522a22e641dc5588b6a15317e6842896ab2bdcc5364833af25e207f257e",
+            "CES_FL/src/ces_fl_counterfactual_5050.py": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+            "CES_FL/tests/smoke_manipulation_response.py": "748f4a883af8b39b6edd0f992f929f12f3045ba85734fcf1e542b67f61895654",
+            "CES_FL/proposals/manipulation_response_20261101_r1/config.json": "d31c78ab2913e629ebbd7e7a860a0dd4bea90d2c920b0d77719b042a7537dab0"
+          },
+          "operator_sha256": "2368cccbb5006080dd96661c873347e59ddac184c06ea6463d8edc69fc3ff767",
+          "registry": "/tmp/scf_gpu_locks/gpu5",
+          "method": "User-authorized direct SSH, cooperative registry/project lease, minimum 20GiB free and 15% Torch allocator cap; existing processes continue",
+          "execution_mode": "direct_ssh_bounded_shared_gpu",
+          "pbs_allocation": null,
+          "cuda_allocator_fraction": 0.15,
+          "preexisting_compute_processes": [
+            "GPU-da9cbc5e-5af7-36d0-efea-fcc1da157861, 2168555, 76534 MiB",
+            "GPU-da9cbc5e-5af7-36d0-efea-fcc1da157861, 235272, 974 MiB",
+            "GPU-4ed8257a-b1a4-0026-ff8f-8a0f42f38902, 2168556, 76506 MiB",
+            "GPU-19db00be-6cc8-242f-6b67-c05487fb2372, 2168557, 76506 MiB",
+            "GPU-4f468707-fed7-a55e-3174-628368d6c379, 2168558, 76504 MiB",
+            "GPU-ee335748-8273-2d67-42a5-d45463027c1b, 2986320, 54636 MiB",
+            "GPU-bff97893-385b-6f3f-831b-113284c2e1f1, 2986321, 54624 MiB",
+            "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb, 3713582, 5774 MiB",
+            "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb, 755752, 41294 MiB",
+            "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb, 1031406, 17206 MiB",
+            "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb, 1049615, 3666 MiB",
+            "GPU-65f63cc5-9366-5c2d-196a-6e7a0a62c1e8, 252955, 612 MiB",
+            "GPU-65f63cc5-9366-5c2d-196a-6e7a0a62c1e8, 253283, 78306 MiB"
+          ],
+          "pbs_assigned_uuid_claimed": false,
+          "qwen_preempted": false
+        },
+        "command": [
+          "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+          "/home/sachin.chaudhary/ces_fl_sources/cesfl-response-58773bb/CES_FL/tests/smoke_manipulation_response.py",
+          "--device",
+          "cuda",
+          "--out",
+          "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z/smoke_cuda"
+        ],
+        "next_milestone_launched": false
+      },
+      "failure": null,
+      "binding": {
+        "job": "SSH:gpu02:1125807",
+        "host": "gpu02",
+        "physical_index": 5,
+        "gpu_uuid": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1",
+        "free_mib_before_launch": 26369,
+        "torch_binding": {
+          "uuid": "bff97893-385b-6f3f-831b-113284c2e1f1",
+          "device": "NVIDIA H100 80GB HBM3",
+          "torch": "2.7.0+cu126"
+        },
+        "source_commit": "58773bbef9d9fe79dd313610f694ddeea12c6037",
+        "source_hashes": {
+          "CES_FL/src/ces_fl_manipulation_response.py": "0e82a522a22e641dc5588b6a15317e6842896ab2bdcc5364833af25e207f257e",
+          "CES_FL/src/ces_fl_counterfactual_5050.py": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+          "CES_FL/tests/smoke_manipulation_response.py": "748f4a883af8b39b6edd0f992f929f12f3045ba85734fcf1e542b67f61895654",
+          "CES_FL/proposals/manipulation_response_20261101_r1/config.json": "d31c78ab2913e629ebbd7e7a860a0dd4bea90d2c920b0d77719b042a7537dab0"
+        },
+        "operator_sha256": "2368cccbb5006080dd96661c873347e59ddac184c06ea6463d8edc69fc3ff767",
+        "registry": "/tmp/scf_gpu_locks/gpu5",
+        "method": "User-authorized direct SSH, cooperative registry/project lease, minimum 20GiB free and 15% Torch allocator cap; existing processes continue",
+        "execution_mode": "direct_ssh_bounded_shared_gpu",
+        "pbs_allocation": null,
+        "cuda_allocator_fraction": 0.15,
+        "preexisting_compute_processes": [
+          "GPU-da9cbc5e-5af7-36d0-efea-fcc1da157861, 2168555, 76534 MiB",
+          "GPU-da9cbc5e-5af7-36d0-efea-fcc1da157861, 235272, 974 MiB",
+          "GPU-4ed8257a-b1a4-0026-ff8f-8a0f42f38902, 2168556, 76506 MiB",
+          "GPU-19db00be-6cc8-242f-6b67-c05487fb2372, 2168557, 76506 MiB",
+          "GPU-4f468707-fed7-a55e-3174-628368d6c379, 2168558, 76504 MiB",
+          "GPU-ee335748-8273-2d67-42a5-d45463027c1b, 2986320, 54636 MiB",
+          "GPU-bff97893-385b-6f3f-831b-113284c2e1f1, 2986321, 54624 MiB",
+          "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb, 3713582, 5774 MiB",
+          "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb, 755752, 41294 MiB",
+          "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb, 1031406, 17206 MiB",
+          "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb, 1049615, 3666 MiB",
+          "GPU-65f63cc5-9366-5c2d-196a-6e7a0a62c1e8, 252955, 612 MiB",
+          "GPU-65f63cc5-9366-5c2d-196a-6e7a0a62c1e8, 253283, 78306 MiB"
+        ],
+        "pbs_assigned_uuid_claimed": false,
+        "qwen_preempted": false
+      },
+      "liveness": "NOT_APPLICABLE"
+    },
+    "real_preflight": {
+      "status": "COMPLETED",
+      "submission": {
+        "pid": 1164269,
+        "host": "gpu02",
+        "stage": "real_preflight",
+        "command": [
+          "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+          "-u",
+          "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z/runtime/direct_mr.py",
+          "--stage",
+          "real_preflight"
+        ],
+        "execution_mode": "direct_ssh_bounded_shared_gpu",
+        "pbs_allocation": null
+      },
+      "progress": {
+        "phase": "COMPLETED",
+        "job": "SSH:gpu02:1164269",
+        "host": "gpu02"
+      },
+      "pass": {
+        "status": "PASS",
+        "job": "SSH:gpu02:1164269",
+        "stage": "real_preflight",
+        "elapsed_seconds": 340.9500896297395,
+        "binding": {
+          "job": "SSH:gpu02:1164269",
+          "host": "gpu02",
+          "physical_index": 5,
+          "gpu_uuid": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1",
+          "free_mib_before_launch": 26369,
+          "torch_binding": {
+            "uuid": "bff97893-385b-6f3f-831b-113284c2e1f1",
+            "device": "NVIDIA H100 80GB HBM3",
+            "torch": "2.7.0+cu126"
+          },
+          "source_commit": "58773bbef9d9fe79dd313610f694ddeea12c6037",
+          "source_hashes": {
+            "CES_FL/src/ces_fl_manipulation_response.py": "0e82a522a22e641dc5588b6a15317e6842896ab2bdcc5364833af25e207f257e",
+            "CES_FL/src/ces_fl_counterfactual_5050.py": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+            "CES_FL/tests/smoke_manipulation_response.py": "748f4a883af8b39b6edd0f992f929f12f3045ba85734fcf1e542b67f61895654",
+            "CES_FL/proposals/manipulation_response_20261101_r1/config.json": "d31c78ab2913e629ebbd7e7a860a0dd4bea90d2c920b0d77719b042a7537dab0"
+          },
+          "operator_sha256": "2368cccbb5006080dd96661c873347e59ddac184c06ea6463d8edc69fc3ff767",
+          "registry": "/tmp/scf_gpu_locks/gpu5",
+          "method": "User-authorized direct SSH, cooperative registry/project lease, minimum 20GiB free and 15% Torch allocator cap; existing processes continue",
+          "execution_mode": "direct_ssh_bounded_shared_gpu",
+          "pbs_allocation": null,
+          "cuda_allocator_fraction": 0.15,
+          "preexisting_compute_processes": [
+            "GPU-da9cbc5e-5af7-36d0-efea-fcc1da157861, 2168555, 76534 MiB",
+            "GPU-da9cbc5e-5af7-36d0-efea-fcc1da157861, 235272, 974 MiB",
+            "GPU-4ed8257a-b1a4-0026-ff8f-8a0f42f38902, 2168556, 76506 MiB",
+            "GPU-19db00be-6cc8-242f-6b67-c05487fb2372, 2168557, 76506 MiB",
+            "GPU-4f468707-fed7-a55e-3174-628368d6c379, 2168558, 76504 MiB",
+            "GPU-ee335748-8273-2d67-42a5-d45463027c1b, 2986320, 54636 MiB",
+            "GPU-bff97893-385b-6f3f-831b-113284c2e1f1, 2986321, 54624 MiB",
+            "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb, 3713582, 5774 MiB",
+            "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb, 1031406, 17206 MiB",
+            "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb, 1133916, 24134 MiB",
+            "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb, 1150958, 3408 MiB",
+            "GPU-65f63cc5-9366-5c2d-196a-6e7a0a62c1e8, 252955, 612 MiB",
+            "GPU-65f63cc5-9366-5c2d-196a-6e7a0a62c1e8, 253283, 78306 MiB"
+          ],
+          "pbs_assigned_uuid_claimed": false,
+          "qwen_preempted": false
+        },
+        "command": [
+          "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+          "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z/runtime/real_inputs.py"
+        ],
+        "next_milestone_launched": false
+      },
+      "failure": null,
+      "binding": {
+        "job": "SSH:gpu02:1164269",
+        "host": "gpu02",
+        "physical_index": 5,
+        "gpu_uuid": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1",
+        "free_mib_before_launch": 26369,
+        "torch_binding": {
+          "uuid": "bff97893-385b-6f3f-831b-113284c2e1f1",
+          "device": "NVIDIA H100 80GB HBM3",
+          "torch": "2.7.0+cu126"
+        },
+        "source_commit": "58773bbef9d9fe79dd313610f694ddeea12c6037",
+        "source_hashes": {
+          "CES_FL/src/ces_fl_manipulation_response.py": "0e82a522a22e641dc5588b6a15317e6842896ab2bdcc5364833af25e207f257e",
+          "CES_FL/src/ces_fl_counterfactual_5050.py": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+          "CES_FL/tests/smoke_manipulation_response.py": "748f4a883af8b39b6edd0f992f929f12f3045ba85734fcf1e542b67f61895654",
+          "CES_FL/proposals/manipulation_response_20261101_r1/config.json": "d31c78ab2913e629ebbd7e7a860a0dd4bea90d2c920b0d77719b042a7537dab0"
+        },
+        "operator_sha256": "2368cccbb5006080dd96661c873347e59ddac184c06ea6463d8edc69fc3ff767",
+        "registry": "/tmp/scf_gpu_locks/gpu5",
+        "method": "User-authorized direct SSH, cooperative registry/project lease, minimum 20GiB free and 15% Torch allocator cap; existing processes continue",
+        "execution_mode": "direct_ssh_bounded_shared_gpu",
+        "pbs_allocation": null,
+        "cuda_allocator_fraction": 0.15,
+        "preexisting_compute_processes": [
+          "GPU-da9cbc5e-5af7-36d0-efea-fcc1da157861, 2168555, 76534 MiB",
+          "GPU-da9cbc5e-5af7-36d0-efea-fcc1da157861, 235272, 974 MiB",
+          "GPU-4ed8257a-b1a4-0026-ff8f-8a0f42f38902, 2168556, 76506 MiB",
+          "GPU-19db00be-6cc8-242f-6b67-c05487fb2372, 2168557, 76506 MiB",
+          "GPU-4f468707-fed7-a55e-3174-628368d6c379, 2168558, 76504 MiB",
+          "GPU-ee335748-8273-2d67-42a5-d45463027c1b, 2986320, 54636 MiB",
+          "GPU-bff97893-385b-6f3f-831b-113284c2e1f1, 2986321, 54624 MiB",
+          "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb, 3713582, 5774 MiB",
+          "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb, 1031406, 17206 MiB",
+          "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb, 1133916, 24134 MiB",
+          "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb, 1150958, 3408 MiB",
+          "GPU-65f63cc5-9366-5c2d-196a-6e7a0a62c1e8, 252955, 612 MiB",
+          "GPU-65f63cc5-9366-5c2d-196a-6e7a0a62c1e8, 253283, 78306 MiB"
+        ],
+        "pbs_assigned_uuid_claimed": false,
+        "qwen_preempted": false
+      },
+      "liveness": "NOT_APPLICABLE"
+    },
+    "P": {
+      "status": "RUNNING",
+      "submission": {
+        "pid": 1390084,
+        "host": "gpu02",
+        "stage": "P",
+        "command": [
+          "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+          "-u",
+          "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z/runtime/direct_mr.py",
+          "--stage",
+          "P"
+        ],
+        "execution_mode": "direct_ssh_bounded_shared_gpu",
+        "pbs_allocation": null
+      },
+      "progress": {
+        "phase": "RUNNING",
+        "job": "SSH:gpu02:1390084",
+        "host": "gpu02",
+        "command": [
+          "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+          "/home/sachin.chaudhary/ces_fl_sources/cesfl-response-58773bb/CES_FL/src/ces_fl_manipulation_response.py",
+          "pretrain",
+          "--config",
+          "/home/sachin.chaudhary/ces_fl_sources/cesfl-response-58773bb/CES_FL/proposals/manipulation_response_20261101_r1/config.json",
+          "--out",
+          "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z/P",
+          "--device",
+          "cuda"
+        ],
+        "gpu_uuid": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1",
+        "worker_pid": 1390084,
+        "execution_mode": "direct_ssh_bounded_shared_gpu"
+      },
+      "pass": null,
+      "failure": null,
+      "binding": {
+        "job": "SSH:gpu02:1390084",
+        "host": "gpu02",
+        "physical_index": 5,
+        "gpu_uuid": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1",
+        "free_mib_before_launch": 26369,
+        "torch_binding": {
+          "uuid": "bff97893-385b-6f3f-831b-113284c2e1f1",
+          "device": "NVIDIA H100 80GB HBM3",
+          "torch": "2.7.0+cu126"
+        },
+        "source_commit": "58773bbef9d9fe79dd313610f694ddeea12c6037",
+        "source_hashes": {
+          "CES_FL/src/ces_fl_manipulation_response.py": "0e82a522a22e641dc5588b6a15317e6842896ab2bdcc5364833af25e207f257e",
+          "CES_FL/src/ces_fl_counterfactual_5050.py": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+          "CES_FL/tests/smoke_manipulation_response.py": "748f4a883af8b39b6edd0f992f929f12f3045ba85734fcf1e542b67f61895654",
+          "CES_FL/proposals/manipulation_response_20261101_r1/config.json": "d31c78ab2913e629ebbd7e7a860a0dd4bea90d2c920b0d77719b042a7537dab0"
+        },
+        "operator_sha256": "2368cccbb5006080dd96661c873347e59ddac184c06ea6463d8edc69fc3ff767",
+        "registry": "/tmp/scf_gpu_locks/gpu5",
+        "method": "User-authorized direct SSH, cooperative registry/project lease, minimum 20GiB free and 15% Torch allocator cap; existing processes continue",
+        "execution_mode": "direct_ssh_bounded_shared_gpu",
+        "pbs_allocation": null,
+        "cuda_allocator_fraction": 0.15,
+        "preexisting_compute_processes": [
+          "GPU-da9cbc5e-5af7-36d0-efea-fcc1da157861, 2168555, 76534 MiB",
+          "GPU-da9cbc5e-5af7-36d0-efea-fcc1da157861, 235272, 974 MiB",
+          "GPU-4ed8257a-b1a4-0026-ff8f-8a0f42f38902, 2168556, 76506 MiB",
+          "GPU-19db00be-6cc8-242f-6b67-c05487fb2372, 2168557, 76506 MiB",
+          "GPU-4f468707-fed7-a55e-3174-628368d6c379, 2168558, 76504 MiB",
+          "GPU-ee335748-8273-2d67-42a5-d45463027c1b, 2986320, 54636 MiB",
+          "GPU-bff97893-385b-6f3f-831b-113284c2e1f1, 2986321, 54624 MiB",
+          "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb, 3713582, 5774 MiB",
+          "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb, 1327480, 25876 MiB",
+          "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb, 1337347, 3314 MiB",
+          "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb, 1341354, 18240 MiB",
+          "GPU-65f63cc5-9366-5c2d-196a-6e7a0a62c1e8, 252955, 612 MiB",
+          "GPU-65f63cc5-9366-5c2d-196a-6e7a0a62c1e8, 253283, 78306 MiB"
+        ],
+        "pbs_assigned_uuid_claimed": false,
+        "qwen_preempted": false
+      },
+      "liveness": "LIVE"
+    },
+    "bce": {
+      "status": "BLOCKED_INPUTS",
+      "submission": null,
+      "progress": null,
+      "pass": null,
+      "failure": null,
+      "binding": null,
+      "liveness": "NOT_APPLICABLE"
+    },
+    "fair": {
+      "status": "BLOCKED_INPUTS",
+      "submission": null,
+      "progress": null,
+      "pass": null,
+      "failure": null,
+      "binding": null,
+      "liveness": "NOT_APPLICABLE"
+    }
+  },
+  "arms": {
+    "P": {
+      "status": "RUNNING",
+      "submission": {
+        "pid": 1390084,
+        "host": "gpu02",
+        "stage": "P",
+        "command": [
+          "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+          "-u",
+          "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z/runtime/direct_mr.py",
+          "--stage",
+          "P"
+        ],
+        "execution_mode": "direct_ssh_bounded_shared_gpu",
+        "pbs_allocation": null
+      },
+      "progress": {
+        "phase": "RUNNING",
+        "job": "SSH:gpu02:1390084",
+        "host": "gpu02",
+        "command": [
+          "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+          "/home/sachin.chaudhary/ces_fl_sources/cesfl-response-58773bb/CES_FL/src/ces_fl_manipulation_response.py",
+          "pretrain",
+          "--config",
+          "/home/sachin.chaudhary/ces_fl_sources/cesfl-response-58773bb/CES_FL/proposals/manipulation_response_20261101_r1/config.json",
+          "--out",
+          "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z/P",
+          "--device",
+          "cuda"
+        ],
+        "gpu_uuid": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1",
+        "worker_pid": 1390084,
+        "execution_mode": "direct_ssh_bounded_shared_gpu"
+      },
+      "pass": null,
+      "failure": null,
+      "binding": {
+        "job": "SSH:gpu02:1390084",
+        "host": "gpu02",
+        "physical_index": 5,
+        "gpu_uuid": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1",
+        "free_mib_before_launch": 26369,
+        "torch_binding": {
+          "uuid": "bff97893-385b-6f3f-831b-113284c2e1f1",
+          "device": "NVIDIA H100 80GB HBM3",
+          "torch": "2.7.0+cu126"
+        },
+        "source_commit": "58773bbef9d9fe79dd313610f694ddeea12c6037",
+        "source_hashes": {
+          "CES_FL/src/ces_fl_manipulation_response.py": "0e82a522a22e641dc5588b6a15317e6842896ab2bdcc5364833af25e207f257e",
+          "CES_FL/src/ces_fl_counterfactual_5050.py": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+          "CES_FL/tests/smoke_manipulation_response.py": "748f4a883af8b39b6edd0f992f929f12f3045ba85734fcf1e542b67f61895654",
+          "CES_FL/proposals/manipulation_response_20261101_r1/config.json": "d31c78ab2913e629ebbd7e7a860a0dd4bea90d2c920b0d77719b042a7537dab0"
+        },
+        "operator_sha256": "2368cccbb5006080dd96661c873347e59ddac184c06ea6463d8edc69fc3ff767",
+        "registry": "/tmp/scf_gpu_locks/gpu5",
+        "method": "User-authorized direct SSH, cooperative registry/project lease, minimum 20GiB free and 15% Torch allocator cap; existing processes continue",
+        "execution_mode": "direct_ssh_bounded_shared_gpu",
+        "pbs_allocation": null,
+        "cuda_allocator_fraction": 0.15,
+        "preexisting_compute_processes": [
+          "GPU-da9cbc5e-5af7-36d0-efea-fcc1da157861, 2168555, 76534 MiB",
+          "GPU-da9cbc5e-5af7-36d0-efea-fcc1da157861, 235272, 974 MiB",
+          "GPU-4ed8257a-b1a4-0026-ff8f-8a0f42f38902, 2168556, 76506 MiB",
+          "GPU-19db00be-6cc8-242f-6b67-c05487fb2372, 2168557, 76506 MiB",
+          "GPU-4f468707-fed7-a55e-3174-628368d6c379, 2168558, 76504 MiB",
+          "GPU-ee335748-8273-2d67-42a5-d45463027c1b, 2986320, 54636 MiB",
+          "GPU-bff97893-385b-6f3f-831b-113284c2e1f1, 2986321, 54624 MiB",
+          "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb, 3713582, 5774 MiB",
+          "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb, 1327480, 25876 MiB",
+          "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb, 1337347, 3314 MiB",
+          "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb, 1341354, 18240 MiB",
+          "GPU-65f63cc5-9366-5c2d-196a-6e7a0a62c1e8, 252955, 612 MiB",
+          "GPU-65f63cc5-9366-5c2d-196a-6e7a0a62c1e8, 253283, 78306 MiB"
+        ],
+        "pbs_assigned_uuid_claimed": false,
+        "qwen_preempted": false
+      },
+      "liveness": "LIVE",
+      "recorded_epochs": 0,
+      "budget_epochs": 50,
+      "latest_epoch": null,
+      "selected_epochs_recorded": [],
+      "verified_checkpoint": null,
+      "actual_log_tail": ""
+    },
+    "bce": {
+      "status": "BLOCKED_INPUTS",
+      "submission": null,
+      "progress": null,
+      "pass": null,
+      "failure": null,
+      "binding": null,
+      "liveness": "NOT_APPLICABLE",
+      "recorded_epochs": 0,
+      "budget_epochs": 50,
+      "latest_epoch": null,
+      "selected_epochs_recorded": [],
+      "verified_checkpoint": null,
+      "actual_log_tail": null
+    },
+    "fair": {
+      "status": "BLOCKED_INPUTS",
+      "submission": null,
+      "progress": null,
+      "pass": null,
+      "failure": null,
+      "binding": null,
+      "liveness": "NOT_APPLICABLE",
+      "recorded_epochs": 0,
+      "budget_epochs": 50,
+      "latest_epoch": null,
+      "selected_epochs_recorded": [],
+      "verified_checkpoint": null,
+      "actual_log_tail": null
+    },
+    "nochange": {
+      "status": "BLOCKED_INPUTS",
+      "reason": "Complete independently reviewed matched manipulation quartet bank, P50, binding and configured per-arm backward checks missing"
+    },
+    "score": {
+      "status": "BLOCKED_INPUTS",
+      "reason": "Complete independently reviewed matched manipulation quartet bank, P50, binding and configured per-arm backward checks missing"
+    },
+    "response": {
+      "status": "BLOCKED_INPUTS",
+      "reason": "Complete independently reviewed matched manipulation quartet bank, P50, binding and configured per-arm backward checks missing"
+    }
+  },
+  "cuda_smoke_result": {
+    "status": "PASS",
+    "device": "cuda",
+    "checks": [
+      "independent_numpy_reference_and_gradients_to_all_four_roles",
+      "additive_offset_cancellation_no_group_cases_and_collapse_penalty",
+      "bank_bytes_roles_training_contributors_review_and_coverage_guards",
+      "pretraining_transfer_identical_initialization_encoder_gradients_frozen_bn",
+      "all_five_arms_real_architecture_backward_update_save_reload_validation_replay",
+      "epoch_resume_bitwise_equivalence_pair_usage_and_tied_threshold"
+    ],
+    "hashes": {
+      "trainer": "0e82a522a22e641dc5588b6a15317e6842896ab2bdcc5364833af25e207f257e",
+      "architecture": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab"
+    },
+    "test_sha256": "748f4a883af8b39b6edd0f992f929f12f3045ba85734fcf1e542b67f61895654",
+    "torch": "2.7.0+cu126",
+    "synthetic_fixture_only": true,
+    "actual_manipulation_pipeline_tested": false,
+    "semantic_validity_verified": false,
+    "fairness_improvement_verified": false
+  },
+  "real_input_audit": {
+    "status": "PASS",
+    "hashes": {
+      "trainer": "0e82a522a22e641dc5588b6a15317e6842896ab2bdcc5364833af25e207f257e",
+      "architecture": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab"
+    },
+    "config_sha256": "d31c78ab2913e629ebbd7e7a860a0dd4bea90d2c920b0d77719b042a7537dab0",
+    "decoded_counts": {
+      "train": 76139,
+      "val": 25386
+    },
+    "dimensions": {
+      "(380, 380)": 101525
+    },
+    "split_protocol": {
+      "overlap_counts": {
+        "identity_ids": 163,
+        "source_ids": 163
+      },
+      "exact_declared_benchmark_exception": true,
+      "person_ground_truth_verified": false
+    },
+    "exact_train_val_byte_overlap": 0,
+    "train_label_counts": {
+      "0": 12926,
+      "1": 63213
+    },
+    "val_label_counts": {
+      "0": 4092,
+      "1": 21294
+    },
+    "train_gender_race_counts": {
+      "Female-Asian": 8013,
+      "Male-White": 25443,
+      "Female-White": 31281,
+      "Female-Others": 2185,
+      "Male-Asian": 2475,
+      "Male-Others": 4163,
+      "Male-Black": 1468,
+      "Female-Black": 1111
+    },
+    "train_label_ids8_counts": {
+      "(0, '7')": 2731,
+      "(0, '2')": 2161,
+      "(0, '4')": 2297,
+      "(0, '1')": 3580,
+      "(0, '5')": 270,
+      "(0, '6')": 869,
+      "(0, '0')": 388,
+      "(0, '3')": 630,
+      "(1, '4')": 11566,
+      "(1, '7')": 13123,
+      "(1, '2')": 10142,
+      "(1, '1')": 19222,
+      "(1, '6')": 3725,
+      "(1, '3')": 2050,
+      "(1, '0')": 2006,
+      "(1, '5')": 1379
+    },
+    "private_inventory_sha256": "02d98ea728288a5219d4e3abfa8fe0c815dc030d34deb110bb7d19f5ee95db43",
+    "test_images_read": false,
+    "optimizer_steps": 0,
+    "semantic_authenticity_or_person_identity_verified": false
+  },
+  "configured_backward": {
+    "status": "PASS",
+    "stage": "pretrain",
+    "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+    "device": "cuda",
+    "synthetic_fixture": false,
+    "originals": 16,
+    "pairs": 0,
+    "parameters": {
+      "total": 21594159,
+      "trainable": 21594159
+    },
+    "optimizer_steps": 0,
+    "pretrain_bn_buffers_updated_in_discarded_model": true,
+    "peak_cuda_allocated_bytes": 2367416320,
+    "losses": {
+      "total": 0.5129827857017517,
+      "classification": 0.5129827857017517,
+      "invariance": -0.0
+    }
+  },
+  "real_input_log_tail": "rain': 68000}\nDECODED_AND_HASHED {'train': 70000}\nDECODED_AND_HASHED {'train': 72000}\nDECODED_AND_HASHED {'train': 74000}\nDECODED_AND_HASHED {'train': 76000}\nDECODED_AND_HASHED {'train': 76139, 'val': 1861}\nDECODED_AND_HASHED {'train': 76139, 'val': 3861}\nDECODED_AND_HASHED {'train': 76139, 'val': 5861}\nDECODED_AND_HASHED {'train': 76139, 'val': 7861}\nDECODED_AND_HASHED {'train': 76139, 'val': 9861}\nDECODED_AND_HASHED {'train': 76139, 'val': 11861}\nDECODED_AND_HASHED {'train': 76139, 'val': 13861}\nDECODED_AND_HASHED {'train': 76139, 'val': 15861}\nDECODED_AND_HASHED {'train': 76139, 'val': 17861}\nDECODED_AND_HASHED {'train': 76139, 'val': 19861}\nDECODED_AND_HASHED {'train': 76139, 'val': 21861}\nDECODED_AND_HASHED {'train': 76139, 'val': 23861}\nEXACT_BACKWARD_COMMAND [\"/home/sachin.chaudhary/.conda/envs/aiface/bin/python\", \"/home/sachin.chaudhary/ces_fl_sources/cesfl-response-58773bb/CES_FL/src/ces_fl_counterfactual_5050.py\", \"dry-run\", \"--config\", \"/home/sachin.chaudhary/ces_fl_sources/cesfl-response-58773bb/CES_FL/proposals/counterfactual_5050_20261101_r1/protocol_config.json\", \"--stage\", \"pretrain\", \"--device\", \"cuda\", \"--out\", \"/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z/P_real_dry\"]\n{\n  \"status\": \"PASS\",\n  \"stage\": \"pretrain\",\n  \"source_sha256\": \"3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab\",\n  \"device\": \"cuda\",\n  \"synthetic_fixture\": false,\n  \"originals\": 16,\n  \"pairs\": 0,\n  \"parameters\": {\n    \"total\": 21594159,\n    \"trainable\": 21594159\n  },\n  \"optimizer_steps\": 0,\n  \"pretrain_bn_buffers_updated_in_discarded_model\": true,\n  \"peak_cuda_allocated_bytes\": 2367416320,\n  \"losses\": {\n    \"total\": 0.5129827857017517,\n    \"classification\": 0.5129827857017517,\n    \"invariance\": -0.0\n  }\n}\nORIGINAL_INPUT_AND_REAL_BACKWARD_PASS\n",
+  "quartet_preparation": {
+    "status": "BLOCKED_INPUTS",
+    "proposed_unique_sources": 16,
+    "expected_groups": [
+      "Female-Asian",
+      "Female-Black",
+      "Female-Others",
+      "Female-White",
+      "Male-Asian",
+      "Male-Black",
+      "Male-Others",
+      "Male-White"
+    ],
+    "directions_per_group": [
+      "older",
+      "younger"
+    ],
+    "eligible_qwen32_real_sources": 15,
+    "eligible_qwen32_real_source_counts_by_gender_race": {
+      "Female-Asian": 2,
+      "Male-White": 6,
+      "Female-White": 5,
+      "Male-Others": 1,
+      "Female-Others": 1
+    },
+    "potentially_reusable_selected_source_count": 8,
+    "currently_generated_selected_x0_xa_pairs_by_group": {
+      "Female-Asian": 2,
+      "Female-White": 2,
+      "Male-Others": 1
+    },
+    "supplementation_sources_needed": 8,
+    "supplementation_counts_by_group": {
+      "Female-Black": 2,
+      "Female-Others": 1,
+      "Male-Asian": 2,
+      "Male-Black": 2,
+      "Male-Others": 1
+    },
+    "real_train_counts_by_group": {
+      "Female-Asian": 1506,
+      "Male-White": 4455,
+      "Female-White": 5190,
+      "Female-Others": 270,
+      "Male-Asian": 486,
+      "Male-Others": 569,
+      "Male-Black": 268,
+      "Female-Black": 182
+    },
+    "eligible_real_train_counts_by_group": {
+      "Female-Asian": 1246,
+      "Male-White": 3618,
+      "Female-White": 4237,
+      "Female-Others": 239,
+      "Male-Asian": 362,
+      "Male-Others": 448,
+      "Male-Black": 209,
+      "Female-Black": 182
+    },
+    "selected_source_and_donor_recorded_val_contributor_overlap": 0,
+    "unique_target_proxies": 16,
+    "unique_donor_proxies": 16,
+    "unique_donor_images": 16,
+    "donor_reuse_max": 1,
+    "prospective_manifest_sha256": "c46674c9e413c179ef947b402b9dbdad47a7c5a6ddeb8485aeed5f5d4d673d35",
+    "real_manipulation_outputs_generated": 0,
+    "approved_quartets": 0,
+    "new_qwen_images_generated": 0,
+    "qwen_running_job_modified": false,
+    "source_selection_depends_on_model_scores": false,
+    "no_population_or_biological_identity_validity_claimed": true,
+    "blocking_dependencies": [
+      "TRAIN-only adaptation of the discovered SimSwap pipeline",
+      "recorded matched manipulation outputs and geometry-only controls",
+      "required supplemental age/no-change candidates, if individually approved for generation",
+      "independent substantive quartet review",
+      "bank audit and allocated per-arm backward PASS",
+      "verified P50 dependency"
+    ]
+  },
+  "qwen_job_modified": false,
+  "test_evaluation_launched": false,
+  "FF2_launched": false,
+  "observer_pid": 935880,
+  "observer_scope": "72h maximum; read/publish only; cannot launch, chain, retry, approve or terminate work"
+}

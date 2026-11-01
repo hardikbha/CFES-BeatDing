@@ -1,0 +1,7 @@
+{
+  "execution_mode": "direct_ssh_bounded_shared_gpu",
+  "pbs_allocation": null,
+  "host": "gpu02",
+  "user_route_override": "run directly on ssh gpu01 and gpu02",
+  "worker_pid": 1125807
+}

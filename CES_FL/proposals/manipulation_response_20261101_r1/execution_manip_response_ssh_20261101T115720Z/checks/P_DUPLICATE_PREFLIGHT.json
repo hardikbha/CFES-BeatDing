@@ -1,0 +1,19 @@
+{
+  "observed_management_utc": "2026-11-01T12:28:40.693811+00:00",
+  "active_pretrain_matches": {
+    "gpu01": [],
+    "gpu02": []
+  },
+  "prior_exact_config_discovery": {
+    "observed_management_utc": "2026-11-01T12:02:01.113612+00:00",
+    "search_roots": [
+      "/home/sachin.chaudhary/ces_fl_runs",
+      "/home/sachin.chaudhary/ces_fl_pipeline/experiments"
+    ],
+    "config_files_examined": 9,
+    "exact_pretrain_config_matches": [],
+    "scope": "Known experiment/run roots; no assertion about arbitrary unrelated locations"
+  },
+  "new_output_root": "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z/P",
+  "no_completed_P50_substituted": true
+}
