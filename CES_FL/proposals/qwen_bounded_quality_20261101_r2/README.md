@@ -35,3 +35,7 @@ Root: `/home/sachin.chaudhary/ces_fl_runs/qwen_quality32_20261101T095157Z`. Gene
 [Timestamped running status](../../status/qwen_quality32_20261101T095157Z_live.md) is updated by a finite read-only observer, normally every ten minutes and on stage changes/termination, for at most eight hours. The observer cannot launch, retry, train, approve, cancel, calibrate or evaluate test. Read timestamps; the page is not a scheduler connection.
 
 **Training and the original full bank remain stopped.** New outputs require independent per-pair review and substantive forensic-validity assessment. Realistic appearance, target appearance or favorable detector scores alone do not establish valid counterfactuals. Any subsequent training study needs an explicit justified configuration, valid source coverage and existing validation-only selection/calibration. No fairness gain or win over Ding is claimed. **FairForge-2 remains DO NOT RUN.**
+
+## Actual launch observed
+
+Management UTC: 2026-11-01T09:59:39.587000+00:00. Worker **3806205** is live on **gpu01**, physical **GPU 3**, H10080GB, UUID `GPU-6a002609-de85-4949-c707-ee9317b284f0`. CUDA UUID binding passed and **73,140 MiB free** was rechecked before loading. Phase: RUNNING. The shared dispatcher exclusion and project lease are held. Operational code was published in `c761b0d` before launch. No training or full-bank generation was started. Expected generation completion approximately **19:30–21:30 IST, 1 November**, subject to actual runtime/failure; human review follows.

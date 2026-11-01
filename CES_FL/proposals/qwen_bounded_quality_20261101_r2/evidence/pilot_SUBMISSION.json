@@ -1,0 +1,17 @@
+{
+  "pid": 3806205,
+  "host": "gpu01",
+  "command": [
+    "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+    "-u",
+    "/home/sachin.chaudhary/ces_fl_runs/qwen_quality32_20261101T095157Z/runtime/direct_worker.py",
+    "--stage",
+    "pilot"
+  ],
+  "execution_mode": "direct_ssh_bounded_shared_gpu",
+  "pbs_jobid": null,
+  "training": false,
+  "quality_only_sources": 32,
+  "diffusion_outputs": 224,
+  "observed_node_epoch": 1793526441.2221348
+}

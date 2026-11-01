@@ -1,0 +1,8 @@
+{
+  "host": "gpu01",
+  "root": "/home/sachin.chaudhary/ces_fl_runs/qwen_quality32_20261101T095157Z",
+  "operational_publication_commit": "c761b0d42ae7a4137d343697630db2967eafa4db",
+  "observed_management_utc": "2026-11-01T09:58:09.168000+00:00",
+  "scope": "32-source quality-only generation; no training",
+  "duplicate_prevention": "Exclusive launch-attempt/log/submission files plus operator lock and source writer locks"
+}

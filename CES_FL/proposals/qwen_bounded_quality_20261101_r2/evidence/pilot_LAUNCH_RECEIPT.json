@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "ssh",
+    "-o",
+    "BatchMode=yes",
+    "-o",
+    "ConnectTimeout=12",
+    "gpu01",
+    "python - <<'CESLAUNCH'\nfrom pathlib import Path\nimport subprocess,json,os,socket,time\nroot=Path('/home/sachin.chaudhary/ces_fl_runs/qwen_quality32_20261101T095157Z')\nassert not (root/'checks/pilot_SUBMISSION.json').exists()\nassert not (root/'checks/pilot_PASS.json').exists()\nassert not (root/'checks/pilot_FAILURE.json').exists()\ncommand=['/home/sachin.chaudhary/.conda/envs/aiface/bin/python','-u',str(root/'runtime/direct_worker.py'),'--stage','pilot']\nenv=dict(os.environ,PYTHONDONTWRITEBYTECODE='1')\nwith (root/'logs/pilot_worker.log').open('x') as log:\n p=subprocess.Popen(command,stdin=subprocess.DEVNULL,stdout=log,stderr=subprocess.STDOUT,start_new_session=True,env=env)\nrecord={'pid':p.pid,'host':socket.gethostname().split('.')[0],'command':command,'execution_mode':'direct_ssh_bounded_shared_gpu','pbs_jobid':None,'training':False,'quality_only_sources':32,'diffusion_outputs':224,'observed_node_epoch':time.time()}\nwith (root/'checks/pilot_SUBMISSION.json').open('x') as f:json.dump(record,f,indent=2)\nprint(json.dumps(record))\n\nCESLAUNCH"
+  ],
+  "returncode": 0,
+  "stdout": "{\"pid\": 3806205, \"host\": \"gpu01\", \"command\": [\"/home/sachin.chaudhary/.conda/envs/aiface/bin/python\", \"-u\", \"/home/sachin.chaudhary/ces_fl_runs/qwen_quality32_20261101T095157Z/runtime/direct_worker.py\", \"--stage\", \"pilot\"], \"execution_mode\": \"direct_ssh_bounded_shared_gpu\", \"pbs_jobid\": null, \"training\": false, \"quality_only_sources\": 32, \"diffusion_outputs\": 224, \"observed_node_epoch\": 1793526441.2221348}\n",
+  "stderr": "",
+  "observed_management_utc": "2026-11-01T09:58:09.803000+00:00"
+}
