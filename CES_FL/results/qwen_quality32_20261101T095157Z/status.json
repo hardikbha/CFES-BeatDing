@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-01T09:59:39.587000+00:00",
+  "observed_management_utc": "2026-11-01T10:00:34.832521+00:00",
   "state": "RUNNING",
   "submission": {
     "pid": 3806205,
@@ -139,6 +139,6 @@
   "forensic_validity_established": false,
   "FF2": "DO NOT RUN",
   "run_root": "/home/sachin.chaudhary/ces_fl_runs/qwen_quality32_20261101T095157Z",
-  "observer_pid": 1190296,
+  "observer_pid": 1251469,
   "observer_scope": "8h maximum; read/publish only; no launch, retry, approval or cancellation"
 }
