@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-01T11:32:18.816352+00:00",
+  "observed_management_utc": "2026-11-01T11:42:30.693619+00:00",
   "state": "RUNNING",
   "submission": {
     "pid": 3806205,
@@ -107,22 +107,22 @@
   "failure": null,
   "pass_receipt": null,
   "profile": null,
-  "complete_sources": 12,
+  "complete_sources": 14,
   "planned_sources": 32,
-  "generated_outputs": 90,
+  "generated_outputs": 100,
   "planned_outputs": 224,
   "condition_counts": {
-    "nochange": 13,
-    "younger": 13,
-    "older": 13,
-    "gender_feminine": 13,
-    "gender_masculine": 13,
-    "skin_lighter": 13,
-    "skin_darker": 12
+    "nochange": 15,
+    "younger": 15,
+    "older": 14,
+    "gender_feminine": 14,
+    "gender_masculine": 14,
+    "skin_lighter": 14,
+    "skin_darker": 14
   },
   "counts_by_original_source_label_not_candidate_ground_truth": {
-    "0": 56,
-    "1": 34
+    "1": 42,
+    "0": 58
   },
   "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
   "selection_tests": {
