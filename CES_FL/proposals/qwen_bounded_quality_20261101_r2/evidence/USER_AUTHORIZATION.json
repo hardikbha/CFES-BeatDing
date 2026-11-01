@@ -1,0 +1,15 @@
+{
+  "observed_management_utc": "2026-11-01T09:52:01.415000+00:00",
+  "user_statements": [
+    "run thsi now tell the tentative time",
+    "Reviewed; decisions still need recording",
+    "yes go ahead with this"
+  ],
+  "interpreted_scope": "Explicitly described 32-source quality-only pilot; generate candidates/controls, no training",
+  "not_interpreted_as": "Per-pair validity approvals or authorization to bypass full-bank training guards",
+  "new_training_authorized": false,
+  "new_quality_generation_authorized": true,
+  "expected_sources": 32,
+  "expected_diffusion_outputs": 224,
+  "parent_14_approvals_not_invented": true
+}

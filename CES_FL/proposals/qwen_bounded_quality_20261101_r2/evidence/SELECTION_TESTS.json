@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "checks": [
+    "real_32_source_exact_stratification_input_bytes_unchanged_config",
+    "real_quality_subset_cannot_bind_full_train_production_study",
+    "fixture_rejected_by_production_loader",
+    "disjoint_shards_original_only_inputs_seven_conditions_controls_zero_approvals_resume",
+    "changed_original_rejected",
+    "changed_source_inventory_rejected"
+  ],
+  "count": 6,
+  "device": "cpu",
+  "real_generation_tested_by_this_command": false,
+  "qwen_called": false,
+  "production_core_changed": false,
+  "training_started": false,
+  "real_quality_selection_validated": true,
+  "production_full_coverage_guard_verified": true
+}

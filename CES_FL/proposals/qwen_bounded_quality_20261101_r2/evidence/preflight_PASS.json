@@ -1,0 +1,10 @@
+{
+  "status": "INHERITED_UNCHANGED_SCIENTIFIC_SOURCE_CHECKS",
+  "original_run": "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z",
+  "original_cuda_receipt": "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z/smoke_cuda/RESULT.json",
+  "original_dry_run_receipt": "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z/dry_pretrain/RESULT.json",
+  "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+  "new_selected_plan_requires_separate_software_checks": true,
+  "generation_only": true,
+  "training_authorized": false
+}

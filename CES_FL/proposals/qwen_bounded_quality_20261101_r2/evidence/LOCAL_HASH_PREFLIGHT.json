@@ -1,0 +1,61 @@
+{
+  "source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-cf5050-fc4e63b",
+  "commit": "fc4e63b8811c5813afa0d298a8172ba9555b7e40",
+  "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+  "config": "/home/sachin.chaudhary/ces_fl_sources/cesfl-cf5050-fc4e63b/CES_FL/proposals/counterfactual_5050_20261101_r1/protocol_config.json",
+  "config_sha256": "56e77211a966ae12a449c47cdaf8e3fc271f149c6031513747813a1d1abfaef0",
+  "inputs": {
+    "train": {
+      "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ding_ffpp/train.csv",
+      "sha256": "6ee9326fe8361dc3aee0f803c49b5eada169be5cf3bc3cb44ad3d934ba5ca657"
+    },
+    "val": {
+      "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ding_ffpp/val.csv",
+      "sha256": "52f4844cffe5a03adb08cecde8829244bb50e05eeead36f6d659599f1c24f5b1"
+    },
+    "protocol_overlap_file": {
+      "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ding_ffpp/protocol_source_overlap.json",
+      "sha256": "793db56c30c85dd654c6d68745afc926f4b1f8dc8bec749db01b07b3aa306c97"
+    },
+    "weights": {
+      "path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/xception-b5690688.pth",
+      "sha256": "43020ad2812c333d9f8e202b9fef94e579d07addb6582d69a1f68bbaec21aa90"
+    },
+    "quality_plan": {
+      "path": "/home/sachin.chaudhary/ces_fl_runs/qwen_quality32_20261101T095157Z/generation/plan.json",
+      "sha256": "31cd90cf4cf32905b4aa98b55c8107b905af2d746025d58cd5e5df06b42adbf1"
+    },
+    "quality_sources": {
+      "path": "/home/sachin.chaudhary/ces_fl_runs/qwen_quality32_20261101T095157Z/generation/sources.json",
+      "sha256": "a2d5b190e23ddbb02ce41391288099b380dc2b73857a900e2936a4dc8773d0d4"
+    },
+    "private_selection": {
+      "path": "/home/sachin.chaudhary/ces_fl_runs/qwen_review_revision_20261101T094302Z/proposed_32_sources_PRIVATE.csv",
+      "sha256": "e7a446bc4e104a155dfd9d2e4fb2dd0d9c11e5422082310ac083911ee8343455"
+    },
+    "worker": {
+      "path": "/home/sachin.chaudhary/ces_fl_runs/qwen_quality32_20261101T095157Z/runtime/direct_worker.py",
+      "sha256": "ffbd28427e8ce8f4a442a7ab3c7dbd3ffaaa508092f0a6724e72e4b28de7afe5"
+    },
+    "profiler": {
+      "path": "/home/sachin.chaudhary/ces_fl_runs/qwen_quality32_20261101T095157Z/runtime/pilot_profile.py",
+      "sha256": "d4107965e208e125269f4ef3692849435f35962dd1b9c6b597487e192e1ca650"
+    },
+    "test_quality_selection.py": {
+      "path": "/home/sachin.chaudhary/ces_fl_runs/qwen_quality32_20261101T095157Z/runtime/test_quality_selection.py",
+      "sha256": "9a51aba56853a1d00ac3fcd0c17ae2a048fe716de3da52c8848dab5023681d79"
+    },
+    "SELECTION_TESTS.json": {
+      "path": "/home/sachin.chaudhary/ces_fl_runs/qwen_quality32_20261101T095157Z/checks/SELECTION_TESTS.json",
+      "sha256": "15ce521a2f8f05a5881a582ce602fbfe0f7085352e12e4907d46bc77c93acb69"
+    },
+    "sitecustomize.py": {
+      "path": "/home/sachin.chaudhary/ces_fl_runs/qwen_quality32_20261101T095157Z/cuda_policy/sitecustomize.py",
+      "sha256": "16fb9d9b9e828617bf251c6679592cf22e7caedbbabab2f60ca97e3418324e1d"
+    }
+  },
+  "status": "PASS_INPUTS_AND_QUALITY_SUBSET_HASHES",
+  "run_root": "/home/sachin.chaudhary/ces_fl_runs/qwen_quality32_20261101T095157Z",
+  "observed_management_utc": "2026-11-01T09:52:01.554000+00:00",
+  "training_authorized": false
+}

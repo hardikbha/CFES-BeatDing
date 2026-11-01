@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "checks": [
+    "unreserved card recognized",
+    "CESFL legacy reservation recognized as non-joinable",
+    "pool admission rejects the reserved card"
+  ],
+  "scope": "Actual pool contract tested with temporary registry only; no other jobs/queues/configuration altered",
+  "pool_source": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/scripts/factmux_pool_v1.py",
+  "pool_source_sha256": "5163065832ecf62541b7e284c81c618f4f000e216aad37407240b67d21dc3543",
+  "previous_failure": "/home/sachin.chaudhary/ces_fl_runs/cf5050_qwen_env_recovery_20261101T075913Z/checks/pilot_FAILURE.json",
+  "new_run_root": "/home/sachin.chaudhary/ces_fl_runs/cf5050_registry_recovery_20261101T081523Z",
+  "scientific_source_changed": false,
+  "dependency_overlay": "/home/sachin.chaudhary/ces_fl_runs/cf5050_qwen_env_recovery_20261101T075913Z/dependencies/py311_cpu",
+  "reuse_reason": "Same pool source and identical registry admission protocol; prior three contract checks still apply, source rehashed now.",
+  "new_quality_run_root": "/home/sachin.chaudhary/ces_fl_runs/qwen_quality32_20261101T095157Z"
+}
