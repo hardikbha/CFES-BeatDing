@@ -1,0 +1,24 @@
+{
+  "hashes": {
+    "trainer": "0e82a522a22e641dc5588b6a15317e6842896ab2bdcc5364833af25e207f257e",
+    "architecture": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab"
+  },
+  "arm": "fair",
+  "coverage": null,
+  "splits": {
+    "overlap_counts": {
+      "identity_ids": 163,
+      "source_ids": 163
+    },
+    "exact_declared_benchmark_exception": true,
+    "person_ground_truth_verified": false
+  },
+  "parameters": {
+    "total": 21594159,
+    "trainable": 21594159
+  },
+  "synthetic_fixture": false,
+  "all_parameters_trainable": true,
+  "bn_buffers_frozen": true,
+  "test_read": false
+}

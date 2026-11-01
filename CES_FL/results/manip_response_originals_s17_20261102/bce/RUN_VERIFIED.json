@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "checkpoint_sha256": "71d9b50377d3e0812c2721d9271ca3f4d59aaeedfa798a69853d9bff769bfb0b",
+  "hashes": {
+    "trainer": "0e82a522a22e641dc5588b6a15317e6842896ab2bdcc5364833af25e207f257e",
+    "architecture": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab"
+  },
+  "completed_epochs": 50,
+  "arm": "bce",
+  "synthetic_fixture": false,
+  "validation_replayed": true,
+  "test_read": false,
+  "fairness_improvement_verified": false
+}

@@ -1,5 +1,9 @@
 # CES-FL — supervisor review and training handoff
 
+## Completed original-only comparison — 2 November 2026
+
+[Verified P/BCE/fair completion and validation fairness comparison](results/manip_response_originals_s17_20261102/REPORT.md). Both downstream arms completed50epochs with native independent replay. BCE/fair validationAUC98.45/98.49%, but primaryF_FPR and FPRgap are worse for fair; no primary fairness win. Nochange/score/response remain blocked by reviewed manipulation quartets. Qwen224/224generated, no recorded pair approvals. No TEST or FairForge-2 run.
+
 ## P50 verified complete; matched original-only baselines launched
 
 [Current per-arm state](status/manip_response_ssh_20261101T115720Z_live.md): P50 selected epoch29, validationAUC98.405989%, exact validation replay. BCE and fairness50epoch arms launched separately on gpu02 GPUs5/4 after actual CUDA backward PASS. Paired arms remain blocked by reviewed manipulation quartets. Qwen224/224generation complete, not independently validated. No test or FairForge-2 launch. This is a dated execution observation.
