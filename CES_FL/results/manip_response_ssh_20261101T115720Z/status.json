@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-01T12:33:01.476612+00:00",
+  "observed_management_utc": "2026-11-01T12:43:11.003536+00:00",
   "source_commit": "58773bbef9d9fe79dd313610f694ddeea12c6037",
   "run_root": "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z",
   "execution_mode": "user_authorized_direct_ssh_bounded_shared_gpu",
@@ -470,12 +470,521 @@
         "qwen_preempted": false
       },
       "liveness": "LIVE",
-      "recorded_epochs": 0,
+      "recorded_epochs": 3,
       "budget_epochs": 50,
-      "latest_epoch": null,
-      "selected_epochs_recorded": [],
+      "latest_epoch": {
+        "epoch": 3,
+        "stage": "pretrain",
+        "steps": 4759,
+        "validation": {
+          "units": "fractions",
+          "threshold_logit": 2.051230907440186,
+          "overall": {
+            "n": 25386,
+            "n_real": 4092,
+            "n_fake": 21294,
+            "auc": 0.9726402170570905,
+            "fpr": 0.09995112414467253,
+            "fnr": 0.07048933972010896,
+            "positive_rate": 0.7957929567478138
+          },
+          "axes": {
+            "gender": {
+              "groups": {
+                "Female": {
+                  "n": 13104,
+                  "n_real": 2147,
+                  "n_fake": 10957,
+                  "auc": 0.9835118685360169,
+                  "fpr": 0.06707033069399161,
+                  "fnr": 0.061695719631285936,
+                  "positive_rate": 0.795558608058608
+                },
+                "Male": {
+                  "n": 12282,
+                  "n_real": 1945,
+                  "n_fake": 10337,
+                  "auc": 0.960690041240031,
+                  "fpr": 0.13624678663239073,
+                  "fnr": 0.07981038986166199,
+                  "positive_rate": 0.7960429897410846
+                }
+              },
+              "eligible_groups": [
+                "Female",
+                "Male"
+              ],
+              "min_support_per_class": 20,
+              "worst_group_auc": 0.960690041240031,
+              "auc_gap": 0.02282182729598592,
+              "fpr_gap": 0.06917645593839912,
+              "fnr_gap": 0.01811467023037605,
+              "ding_style_fractions": {
+                "F_FPR": 0.06917645593839912,
+                "F_DP": 0.00048438168247655344,
+                "es_AUC": 0.9509380725951463
+              }
+            },
+            "race": {
+              "groups": {
+                "Asian": {
+                  "n": 3513,
+                  "n_real": 627,
+                  "n_fake": 2886,
+                  "auc": 0.9780859254543466,
+                  "fpr": 0.11004784688995216,
+                  "fnr": 0.04885654885654886,
+                  "positive_rate": 0.8010247651579846
+                },
+                "Black": {
+                  "n": 630,
+                  "n_real": 120,
+                  "n_fake": 510,
+                  "auc": 0.9366830065359477,
+                  "fpr": 0.175,
+                  "fnr": 0.09019607843137255,
+                  "positive_rate": 0.7698412698412699
+                },
+                "Others": {
+                  "n": 2308,
+                  "n_real": 328,
+                  "n_fake": 1980,
+                  "auc": 0.9567581300813008,
+                  "fpr": 0.12195121951219512,
+                  "fnr": 0.07828282828282829,
+                  "positive_rate": 0.8080589254766031
+                },
+                "White": {
+                  "n": 18935,
+                  "n_real": 3017,
+                  "n_fake": 15918,
+                  "auc": 0.9751838255580898,
+                  "fpr": 0.09247596950613192,
+                  "fnr": 0.07281065460484985,
+                  "positive_rate": 0.7941906522313177
+                }
+              },
+              "eligible_groups": [
+                "Asian",
+                "Black",
+                "Others",
+                "White"
+              ],
+              "min_support_per_class": 20,
+              "worst_group_auc": 0.9366830065359477,
+              "auc_gap": 0.04140291891839887,
+              "fpr_gap": 0.08252403049386807,
+              "fnr_gap": 0.04133952957482369,
+              "ding_style_fractions": {
+                "F_FPR": 0.1146208486066703,
+                "F_DP": 0.03821765563533319,
+                "es_AUC": 0.9177334937424263
+              }
+            },
+            "age_bin": {
+              "groups": {
+                "30-44": {
+                  "n": 7501,
+                  "n_real": 1301,
+                  "n_fake": 6200,
+                  "auc": 0.9634293719471374,
+                  "fpr": 0.1299000768639508,
+                  "fnr": 0.06903225806451613,
+                  "positive_rate": 0.7920277296360485
+                },
+                "45-59": {
+                  "n": 2909,
+                  "n_real": 511,
+                  "n_fake": 2398,
+                  "auc": 0.9686031575562806,
+                  "fpr": 0.06457925636007827,
+                  "fnr": 0.11759799833194329,
+                  "positive_rate": 0.7387418356823651
+                },
+                "60+": {
+                  "n": 303,
+                  "n_real": 63,
+                  "n_fake": 240,
+                  "auc": 0.9625661375661376,
+                  "fpr": 0.1746031746031746,
+                  "fnr": 0.06666666666666667,
+                  "positive_rate": 0.7755775577557755
+                },
+                "<30": {
+                  "n": 14673,
+                  "n_real": 2217,
+                  "n_fake": 12456,
+                  "auc": 0.97905366628919,
+                  "fpr": 0.08840775823184484,
+                  "fnr": 0.062219010918432884,
+                  "positive_rate": 0.8094459210795338
+                }
+              },
+              "eligible_groups": [
+                "30-44",
+                "45-59",
+                "60+",
+                "<30"
+              ],
+              "min_support_per_class": 20,
+              "worst_group_auc": 0.9625661375661376,
+              "auc_gap": 0.01648752872305237,
+              "fpr_gap": 0.11002391824309632,
+              "fnr_gap": 0.055378987413510404,
+              "ding_style_fractions": {
+                "F_FPR": 0.15151623687520227,
+                "F_DP": 0.07070408539716877,
+                "es_AUC": 0.9445535091553794
+              }
+            },
+            "skin_bin": {
+              "groups": {
+                "0": {
+                  "n": 8188,
+                  "n_real": 1161,
+                  "n_fake": 7027,
+                  "auc": 0.9663228347605219,
+                  "fpr": 0.11541774332472007,
+                  "fnr": 0.08225416251600967,
+                  "positive_rate": 0.8039814362481681
+                },
+                "1": {
+                  "n": 6115,
+                  "n_real": 1010,
+                  "n_fake": 5105,
+                  "auc": 0.9750151763462339,
+                  "fpr": 0.11584158415841585,
+                  "fnr": 0.056415279138099905,
+                  "positive_rate": 0.8068683565004088
+                },
+                "2": {
+                  "n": 6132,
+                  "n_real": 1063,
+                  "n_fake": 5069,
+                  "auc": 0.9741532978481156,
+                  "fpr": 0.05644402634054563,
+                  "fnr": 0.07555730913395146,
+                  "positive_rate": 0.773972602739726
+                },
+                "3": {
+                  "n": 4562,
+                  "n_real": 798,
+                  "n_fake": 3764,
+                  "auc": 0.9744259692802676,
+                  "fpr": 0.11904761904761904,
+                  "fnr": 0.061902231668437835,
+                  "positive_rate": 0.7948268303375713
+                },
+                "unknown": {
+                  "n": 389,
+                  "n_real": 60,
+                  "n_fake": 329,
+                  "auc": 0.9896656534954407,
+                  "fpr": 0.05,
+                  "fnr": 0.057750759878419454,
+                  "positive_rate": 0.8046272493573264
+                }
+              },
+              "eligible_groups": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ],
+              "min_support_per_class": 20,
+              "worst_group_auc": 0.9663228347605219,
+              "auc_gap": 0.008692341585711971,
+              "fpr_gap": 0.06260359270707341,
+              "fnr_gap": 0.025838883377909766,
+              "ding_style_fractions": {
+                "F_FPR": 0.09396067190086428,
+                "F_DP": 0.03289575376068277,
+                "es_AUC": 0.9611153154982988
+              }
+            },
+            "gender_race": {
+              "groups": {
+                "Female-Asian": {
+                  "n": 1428,
+                  "n_real": 275,
+                  "n_fake": 1153,
+                  "auc": 0.9586753922573523,
+                  "fpr": 0.15636363636363637,
+                  "fnr": 0.06764960971379011,
+                  "positive_rate": 0.7829131652661064
+                },
+                "Female-Black": {
+                  "n": 150,
+                  "n_real": 30,
+                  "n_fake": 120,
+                  "auc": 0.9616666666666667,
+                  "fpr": 0.23333333333333334,
+                  "fnr": 0.0,
+                  "positive_rate": 0.8466666666666667
+                },
+                "Female-Others": {
+                  "n": 899,
+                  "n_real": 89,
+                  "n_fake": 810,
+                  "auc": 0.9836177000971009,
+                  "fpr": 0.0898876404494382,
+                  "fnr": 0.04814814814814815,
+                  "positive_rate": 0.8665183537263627
+                },
+                "Female-White": {
+                  "n": 10627,
+                  "n_real": 1753,
+                  "n_fake": 8874,
+                  "auc": 0.9877345394951261,
+                  "fpr": 0.04905875641756988,
+                  "fnr": 0.06299301329727293,
+                  "positive_rate": 0.7905335466265173
+                },
+                "Male-Asian": {
+                  "n": 2085,
+                  "n_real": 352,
+                  "n_fake": 1733,
+                  "auc": 0.99035599066254,
+                  "fpr": 0.07386363636363637,
+                  "fnr": 0.0363531448355453,
+                  "positive_rate": 0.8134292565947242
+                },
+                "Male-Black": {
+                  "n": 480,
+                  "n_real": 90,
+                  "n_fake": 390,
+                  "auc": 0.934900284900285,
+                  "fpr": 0.15555555555555556,
+                  "fnr": 0.11794871794871795,
+                  "positive_rate": 0.7458333333333333
+                },
+                "Male-Others": {
+                  "n": 1409,
+                  "n_real": 239,
+                  "n_fake": 1170,
+                  "auc": 0.943443121267389,
+                  "fpr": 0.13389121338912133,
+                  "fnr": 0.09914529914529914,
+                  "positive_rate": 0.7707594038325053
+                },
+                "Male-White": {
+                  "n": 8308,
+                  "n_real": 1264,
+                  "n_fake": 7044,
+                  "auc": 0.9578146676586232,
+                  "fpr": 0.15268987341772153,
+                  "fnr": 0.08517887563884156,
+                  "positive_rate": 0.798868560423688
+                }
+              },
+              "eligible_groups": [
+                "Female-Asian",
+                "Female-Black",
+                "Female-Others",
+                "Female-White",
+                "Male-Asian",
+                "Male-Black",
+                "Male-Others",
+                "Male-White"
+              ],
+              "min_support_per_class": 20,
+              "worst_group_auc": 0.934900284900285,
+              "auc_gap": 0.055455705762255,
+              "fpr_gap": 0.18427457691576346,
+              "fnr_gap": 0.11794871794871795,
+              "ding_style_fractions": {
+                "F_FPR": 0.4191213305393786,
+                "F_DP": 0.12068502039302931,
+                "es_AUC": 0.8454149609719924
+              }
+            },
+            "ids8": {
+              "groups": {
+                "0": {
+                  "n": 809,
+                  "n_real": 151,
+                  "n_fake": 658,
+                  "auc": 0.959389279172286,
+                  "fpr": 0.3443708609271523,
+                  "fnr": 0.030395136778115502,
+                  "positive_rate": 0.8529048207663782
+                },
+                "1": {
+                  "n": 9064,
+                  "n_real": 1415,
+                  "n_fake": 7649,
+                  "auc": 0.9824263963002161,
+                  "fpr": 0.06784452296819787,
+                  "fnr": 0.07634984965354949,
+                  "positive_rate": 0.7900485436893204
+                },
+                "2": {
+                  "n": 4494,
+                  "n_real": 628,
+                  "n_fake": 3866,
+                  "auc": 0.9428378547586175,
+                  "fpr": 0.1178343949044586,
+                  "fnr": 0.11277806518365235,
+                  "positive_rate": 0.7797062750333779
+                },
+                "3": {
+                  "n": 1379,
+                  "n_real": 243,
+                  "n_fake": 1136,
+                  "auc": 0.9975946212252942,
+                  "fpr": 0.02880658436213992,
+                  "fnr": 0.02464788732394366,
+                  "positive_rate": 0.8085569253081943
+                },
+                "4": {
+                  "n": 4706,
+                  "n_real": 750,
+                  "n_fake": 3956,
+                  "auc": 0.9809912369396697,
+                  "fpr": 0.08666666666666667,
+                  "fnr": 0.05283114256825076,
+                  "positive_rate": 0.8100297492562686
+                },
+                "5": {
+                  "n": 599,
+                  "n_real": 89,
+                  "n_fake": 510,
+                  "auc": 0.9803701255783213,
+                  "fpr": 0.10112359550561797,
+                  "fnr": 0.06666666666666667,
+                  "positive_rate": 0.8096828046744574
+                },
+                "6": {
+                  "n": 1706,
+                  "n_real": 299,
+                  "n_fake": 1407,
+                  "auc": 0.9868241211524793,
+                  "fpr": 0.10033444816053512,
+                  "fnr": 0.03980099502487562,
+                  "positive_rate": 0.809495896834701
+                },
+                "7": {
+                  "n": 2629,
+                  "n_real": 517,
+                  "n_fake": 2112,
+                  "auc": 0.9635581516323779,
+                  "fpr": 0.1470019342359768,
+                  "fnr": 0.0634469696969697,
+                  "positive_rate": 0.7812856599467478
+                }
+              },
+              "eligible_groups": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7"
+              ],
+              "min_support_per_class": 20,
+              "worst_group_auc": 0.9428378547586175,
+              "auc_gap": 0.05475676646667671,
+              "fpr_gap": 0.3155642765650124,
+              "fnr_gap": 0.0881301778597087,
+              "ding_style_fractions": {
+                "F_FPR": 0.4274452114473913,
+                "F_DP": 0.07319854573300033,
+                "es_AUC": 0.870651428314156
+              }
+            }
+          },
+          "by_family": {
+            "Deepfakes": {
+              "n": 8121,
+              "n_real": 4092,
+              "n_fake": 4029,
+              "auc": 0.985941246587849,
+              "fpr": 0.09995112414467253,
+              "fnr": 0.039463886820551006,
+              "positive_rate": 0.5269055535032632
+            },
+            "Face2Face": {
+              "n": 8556,
+              "n_real": 4092,
+              "n_fake": 4464,
+              "auc": 0.9754796819215392,
+              "fpr": 0.09995112414467253,
+              "fnr": 0.051075268817204304,
+              "positive_rate": 0.5428938756428238
+            },
+            "FaceShifter": {
+              "n": 8378,
+              "n_real": 4092,
+              "n_fake": 4286,
+              "auc": 0.9873252910542359,
+              "fpr": 0.09995112414467253,
+              "fnr": 0.03663089127391507,
+              "positive_rate": 0.5416567199809024
+            },
+            "FaceSwap": {
+              "n": 8262,
+              "n_real": 4092,
+              "n_fake": 4170,
+              "auc": 0.9604818784268772,
+              "fpr": 0.09995112414467253,
+              "fnr": 0.10647482014388489,
+              "positive_rate": 0.500484144274994
+            },
+            "NeuralTextures": {
+              "n": 8437,
+              "n_real": 4092,
+              "n_fake": 4345,
+              "auc": 0.9545722828342822,
+              "fpr": 0.09995112414467253,
+              "fnr": 0.11806674338319909,
+              "positive_rate": 0.502666824700723
+            },
+            "real": {
+              "n": 4092,
+              "n_real": 4092,
+              "n_fake": 0,
+              "auc": null,
+              "fpr": 0.09995112414467253,
+              "fnr": null,
+              "positive_rate": 0.09995112414467253
+            }
+          }
+        },
+        "calibration": {
+          "threshold_logit": 2.051230907440186,
+          "rule": "validation_real_empirical_budget_v1",
+          "requested_fpr": 0.1,
+          "n_validation_real": 4092,
+          "allowed_fp": 409,
+          "achieved_fp": 409,
+          "achieved_fpr": 0.09995112414467253,
+          "test_fpr_guaranteed": false
+        },
+        "losses": {
+          "total": 0.0687197892535949,
+          "classification": 0.0687197892535949,
+          "invariance": 0.0
+        },
+        "unique_originals": 76139,
+        "originals_once_each": true,
+        "own_source_pair_count": 0,
+        "attributes": {},
+        "scheduled_directions": {},
+        "pair_attribute_by_label_group": {},
+        "image_forwards": 76139,
+        "selection": "validation_auc_only",
+        "selected_this_epoch": true,
+        "elapsed_seconds": 596.9270215723664
+      },
+      "selected_epochs_recorded": [
+        1,
+        2,
+        3
+      ],
       "verified_checkpoint": null,
-      "actual_log_tail": "{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 100, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 200, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 300, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 400, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 500, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 600, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 700, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 800, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 900, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 1000, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 1100, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 1200, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 1300, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 1400, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 1500, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 1600, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 1700, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 1800, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 1900, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 2000, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 2100, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 2200, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 2300, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 2400, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 2500, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 2600, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 2700, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 2800, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 2900, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 3000, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 3100, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 1, \"step\": 3200, \"steps\": 4759}\n"
+      "actual_log_tail": " \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 3, \"step\": 3900, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 3, \"step\": 4000, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 3, \"step\": 4100, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 3, \"step\": 4200, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 3, \"step\": 4300, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 3, \"step\": 4400, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 3, \"step\": 4500, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 3, \"step\": 4600, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 3, \"step\": 4700, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 3, \"val_auc\": 0.9726402170570905, \"pairs\": 0, \"sources\": 76139}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 100, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 200, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 300, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 400, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 500, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 600, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 700, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 800, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 900, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 1000, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 1100, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 1200, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 1300, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 1400, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 1500, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 1600, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 1700, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 1800, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 1900, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 2000, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 2100, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 2200, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 2300, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 2400, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 2500, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 2600, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 2700, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 2800, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 2900, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 3000, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 3100, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 3200, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 3300, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 3400, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 3500, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 3600, \"steps\": 4759}\n{\"stage\": \"pretrain\", \"epoch\": 4, \"step\": 3700, \"steps\": 4759}\n"
     },
     "bce": {
       "status": "BLOCKED_INPUTS",
