@@ -52,3 +52,7 @@ Prepared P command, **not executed**; run only after launch prerequisites and a 
 ```
 
 No proposed_P_training output directory or FF2 job is created by preparing this command. Preserve all existing historical/internal FF2 runs and the current transfer outputs. The exact P checkpoint and final downstream run directories cannot be reported until they exist.
+
+## Ding comparison status checked on 1 November
+
+No completed Ding retrain was found on this exact public split. The historical 99.3573% AUC belongs to the larger internal/full split. [Verified evidence, archived GDA limitation and recommended matched baseline](DING_BASELINE_STATUS_20261101.md). CES-FL architecture/configurations remain unchanged; no new training was launched.
