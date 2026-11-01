@@ -58,3 +58,5 @@ No proposed_P_training output directory or FF2 job is created by preparing this 
 No completed Ding retrain was found on this exact public split. The historical 99.3573% AUC belongs to the larger internal/full split. [Verified evidence, archived GDA limitation and recommended matched baseline](DING_BASELINE_STATUS_20261101.md). CES-FL architecture/configurations remain unchanged; no new training was launched.
 
 [Proposed final comparison tables and reporting rules](FINAL_TABLE_TEMPLATE_20261101.md): unmeasured cells remain Pending; preparing a reporting template does not launch training or change configurations.
+
+[Copy-and-send supervisor review prompt](SUPERVISOR_REVIEW_PROMPT_20261101.md), covering the public-split Ding baseline, code, controls and proposed tables.
