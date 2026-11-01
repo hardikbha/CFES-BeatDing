@@ -1,5 +1,5 @@
 {
-  "observed_utc": "2026-11-01T08:04:48.986556+00:00",
+  "observed_utc": "2026-11-01T08:05:54.954428+00:00",
   "source_commit": "fc4e63b8811c5813afa0d298a8172ba9555b7e40",
   "run_root": "/home/sachin.chaudhary/ces_fl_runs/cf5050_qwen_env_recovery_20261101T075913Z",
   "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
@@ -54,9 +54,15 @@
       "binding": null
     },
     "pilot": {
-      "state": "SUBMITTED_UNVERIFIED",
+      "state": "FAIL",
       "pass": null,
-      "failure": null,
+      "failure": {
+        "stage": "pilot",
+        "exception": "qwen_two_source_pilot failed; preserve its log and stop later stages",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/sachin.chaudhary/ces_fl_runs/cf5050_qwen_env_recovery_20261101T075913Z/runtime/direct_worker.py\", line 148, in <module>\n    main(args.stage)\n  File \"/home/sachin.chaudhary/ces_fl_runs/cf5050_qwen_env_recovery_20261101T075913Z/runtime/direct_worker.py\", line 130, in main\n    run_command(stage, 'qwen_two_source_pilot', ['/home/sachin.chaudhary/.conda/envs/llada-image/bin/python', '-u', str(ROOT / 'runtime/pilot_profile.py')], qwen_env)\n  File \"/home/sachin.chaudhary/ces_fl_runs/cf5050_qwen_env_recovery_20261101T075913Z/runtime/direct_worker.py\", line 47, in run_command\n    raise RuntimeError(name + ' failed; preserve its log and stop later stages')\nRuntimeError: qwen_two_source_pilot failed; preserve its log and stop later stages\n",
+        "host": "gpu01",
+        "full_training_started": false
+      },
       "submission": {
         "pid": 2683551,
         "host": "gpu01",
@@ -221,7 +227,43 @@
   },
   "pilot_generated_counts": {},
   "pilot_complete_sources": 0,
-  "pilot_profile": null,
+  "pilot_profile": {
+    "status": "FAIL",
+    "observed_node_time": "2026-11-01T07:54:37.885126+00:00",
+    "versions": {
+      "torch": "2.8.0",
+      "diffusers": "0.39.0",
+      "transformers": "4.57.6",
+      "accelerate": "1.15.0",
+      "safetensors": "0.8.0",
+      "numpy": "2.4.6",
+      "Pillow": "13.0.0",
+      "scikit-learn": "1.7.2",
+      "scipy": "1.17.1",
+      "python_executable": "/home/sachin.chaudhary/.conda/envs/llada-image/bin/python"
+    },
+    "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+    "config_sha256": "56e77211a966ae12a449c47cdaf8e3fc271f149c6031513747813a1d1abfaef0",
+    "snapshot_inventory_sha256": "7ad7899d5af6a6f4f4550d10024ebdb07da83ba2b7b4c1775ef82066f8f790d9",
+    "generation_call_seconds": 49.85928871110082,
+    "outputs_recorded": 0,
+    "output_records_aggregate": [],
+    "mean_seconds_per_output_excluding_load": null,
+    "mean_canonical_png_bytes": null,
+    "pilot_item_logical_bytes": 0,
+    "peak_torch_allocated_bytes": 40668175872,
+    "peak_torch_reserved_bytes": 40951087104,
+    "allocator_fraction": "0.55",
+    "cpu_memory_available_before_load": 636218478592,
+    "execution_mode": "direct_ssh_bounded_shared_gpu",
+    "full_training_started": false,
+    "human_approvals_created": 0,
+    "forensic_or_identity_validity_established": false,
+    "failure": {
+      "exception": "CUDA out of memory. Tried to allocate 18.00 MiB. GPU 0 has a total capacity of 79.19 GiB of which 39.81 MiB is free. Process 2402839 has 40.33 GiB memory in use. Including non-PyTorch memory, this process has 38.81 GiB memory in use. 43.55 GiB allowed; Of the allocated memory 37.88 GiB is allocated by PyTorch, and 269.81 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)",
+      "traceback": "Traceback (most recent call last):\n  File \"/home/sachin.chaudhary/ces_fl_runs/cf5050_qwen_env_recovery_20261101T075913Z/runtime/pilot_profile.py\", line 70, in main\n    runpy.run_path(str(SCRIPT), run_name='__main__')\n  File \"<frozen runpy>\", line 291, in run_path\n  File \"<frozen runpy>\", line 98, in _run_module_code\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/home/sachin.chaudhary/ces_fl_sources/cesfl-cf5050-fc4e63b/CES_FL/src/ces_fl_counterfactual_5050.py\", line 1245, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"/home/sachin.chaudhary/ces_fl_sources/cesfl-cf5050-fc4e63b/CES_FL/src/ces_fl_counterfactual_5050.py\", line 1232, in main\n    elif a.command=='generate':generate(a.plan,a.shard_index,a.num_shards,a.max_sources)\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sachin.chaudhary/ces_fl_sources/cesfl-cf5050-fc4e63b/CES_FL/src/ces_fl_counterfactual_5050.py\", line 674, in generate\n    native=render(original.copy(),condition,width,height,seed)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sachin.chaudhary/ces_fl_sources/cesfl-cf5050-fc4e63b/CES_FL/src/ces_fl_counterfactual_5050.py\", line 646, in render\n    return pipe(image=source,prompt=PROMPTS[condition],negative_prompt=' ',true_cfg_scale=c['generation_cfg'],\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sachin.chaudhary/.conda/envs/llada-image/lib/python3.11/site-packages/torch/utils/_contextlib.py\", line 120, in decorate_context\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sachin.chaudhary/.conda/envs/llada-image/lib/python3.11/site-packages/diffusers/pipelines/qwenimage/pipeline_qwenimage_edit_plus.py\", line 816, in __call__\n    noise_pred = self.transformer(\n                 ^^^^^^^^^^^^^^^^^\n  File \"/home/sachin.chaudhary/.conda/envs/llada-image/lib/python3.11/site-packages/torch/nn/modules/module.py\", line 1773, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sachin.chaudhary/.conda/envs/llada-image/lib/python3.11/site-packages/torch/nn/modules/module.py\", line 1784, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sachin.chaudhary/.conda/envs/llada-image/lib/python3.11/site-packages/accelerate/hooks.py\", line 187, in new_forward\n    args, kwargs = module._hf_hook.pre_forward(module, *args, **kwargs)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sachin.chaudhary/.conda/envs/llada-image/lib/python3.11/site-packages/accelerate/hooks.py\", line 50, in wrapper\n    return wrapper._compiled_fn(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sachin.chaudhary/.conda/envs/llada-image/lib/python3.11/site-packages/torch/_dynamo/eval_frame.py\", line 929, in _fn\n    return fn(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/home/sachin.chaudhary/.conda/envs/llada-image/lib/python3.11/site-packages/accelerate/hooks.py\", line 763, in pre_forward\n    module.to(self.execution_device)\n  File \"/home/sachin.chaudhary/.conda/envs/llada-image/lib/python3.11/site-packages/diffusers/models/modeling_utils.py\", line 1562, in to\n    return super().to(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sachin.chaudhary/.conda/envs/llada-image/lib/python3.11/site-packages/torch/nn/modules/module.py\", line 1369, in to\n    return self._apply(convert)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/sachin.chaudhary/.conda/envs/llada-image/lib/python3.11/site-packages/torch/nn/modules/module.py\", line 928, in _apply\n    module._apply(fn)\n  File \"/home/sachin.chaudhary/.conda/envs/llada-image/lib/python3.11/site-packages/torch/nn/modules/module.py\", line 928, in _apply\n    module._apply(fn)\n  File \"/home/sachin.chaudhary/.conda/envs/llada-image/lib/python3.11/site-packages/torch/nn/modules/module.py\", line 928, in _apply\n    module._apply(fn)\n  [Previous line repeated 2 more times]\n  File \"/home/sachin.chaudhary/.conda/envs/llada-image/lib/python3.11/site-packages/torch/nn/modules/module.py\", line 955, in _apply\n    param_applied = fn(param)\n                    ^^^^^^^^^\n  File \"/home/sachin.chaudhary/.conda/envs/llada-image/lib/python3.11/site-packages/torch/nn/modules/module.py\", line 1355, in convert\n    return t.to(\n           ^^^^^\ntorch.OutOfMemoryError: CUDA out of memory. Tried to allocate 18.00 MiB. GPU 0 has a total capacity of 79.19 GiB of which 39.81 MiB is free. Process 2402839 has 40.33 GiB memory in use. Including non-PyTorch memory, this process has 38.81 GiB memory in use. 43.55 GiB allowed; Of the allocated memory 37.88 GiB is allocated by PyTorch, and 269.81 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\n"
+    }
+  },
   "full_training": "NOT_STARTED",
   "full_generation": "NOT_STARTED",
   "quality_or_full_bank_approval": "NOT_GRANTED",
