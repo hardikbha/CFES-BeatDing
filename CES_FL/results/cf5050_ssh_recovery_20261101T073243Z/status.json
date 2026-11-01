@@ -1,5 +1,5 @@
 {
-  "observed_utc": "2026-11-01T07:50:25.918683+00:00",
+  "observed_utc": "2026-11-01T07:50:59.655714+00:00",
   "source_commit": "fc4e63b8811c5813afa0d298a8172ba9555b7e40",
   "run_root": "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z",
   "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
@@ -267,7 +267,12 @@
     "sources_sha256": "5f8792a7017346b8205fa4a9b67257d31dc50113f2612a02b2f08506004d5810",
     "auto_approval": false
   },
-  "model_inventory": null,
+  "model_inventory": {
+    "files": 35,
+    "total_bytes": 57720463453,
+    "inventory_sha256": "7ad7899d5af6a6f4f4550d10024ebdb07da83ba2b7b4c1775ef82066f8f790d9",
+    "elapsed_seconds": 49.49975722283125
+  },
   "pilot_generated_counts": {},
   "pilot_complete_sources": 0,
   "pilot_profile": null,
