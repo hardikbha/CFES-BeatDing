@@ -1,5 +1,7 @@
 # FairForge-2 public: separate in-domain study, seed 17
 
+**Superseding supervisor verdict: DO NOT RUN the full FF2 comparison.** Read [the independent review](../ff2_supervisor_review_20261101_r1/REVIEW.md). The historical preparation below is preserved; exact configurations, Ding/evaluation repairs, controls and uncertainty prerequisites require a new versioned proposal.
+
 Observed UTC: 2026-11-01T04:42:46.223256+00:00. **Prepared; no new FF2 training has started.**
 
 Use the existing frozen public TRAIN/VAL/TEST release. Do not randomly reshuffle it. This is separate from FF++-trained transfer evaluation on the same public TEST manifest.

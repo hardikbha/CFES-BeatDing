@@ -2,6 +2,12 @@
 
 **Start here.** [Current timestamped status](STATUS.md) · [Review/change/run workflow](WORKFLOW.md) · [Prompt for a supervisor or another LLM](SUPERVISOR_PROMPT.md)
 
+## New gated FF++ study and independent FF2 stop — 1 November 2026
+
+The pinned counterfactual 50+50 handoff is now on the cluster. Source/configuration and declared input hashes passed; allocated milestone 1 job **44948.mgmt01** is queued behind the GPU user running-job limit. CUDA/real-data smoke and the two-source Qwen pilot remain pending. [Actual job/check status](status/cf5050_20261101T065603Z_live.md) · [Exact execution receipt](proposals/counterfactual_5050_20261101_r1/execution_cf5050_20261101T065603Z/README.md).
+
+**FairForge-2 full comparison: DO NOT RUN.** [Independent supervisor review and required fixes](proposals/ff2_supervisor_review_20261101_r1/REVIEW.md). Its earlier 10-epoch draft is not an approved full comparison, and the FF++ 50+50 protocol does not close its blockers. No new full training or image generation has started.
+
 ## Completed controlled upgrade and separate FairForge-2 plan — 1 November 2026
 
 The five approved Xception arms R0/R1/R2/RN/RD completed ten epochs each, with successful exits and verified checkpoint reloads. All 25 newly authorized frozen-checkpoint evaluations also completed across FF++, DFDC, Celeb-DF, DFD and public FairForge-2. Independent validation replay reproduced each selected checkpoint's recorded AUC exactly. [Results, fairness metrics and limitations](results/upgrade_tests_s17_20261101T040407Z/REPORT.md) · [Full aggregate metrics and confidence intervals](results/upgrade_tests_s17_20261101T040407Z/aggregate.json) · [Evaluation execution evidence](proposals/upgrade_tests_s17_20261101T040407Z/README.md).

@@ -2,6 +2,8 @@
 
 ## Shared progress and results
 
+[New FF++ 50+50 gated execution](CES_FL/status/cf5050_20261101T065603Z_live.md) · [FairForge-2 supervisor verdict: DO NOT RUN](CES_FL/proposals/ff2_supervisor_review_20261101_r1/REVIEW.md)
+
 **[Research updates and reviewer index](RESEARCH_UPDATES.md)** · [Current benchmark observations](CES_FL/status/benchmark_s17_20261031T112401_live.md) · [Verified FairForge-2 in-domain results](FAIRFORGE2_INDOMAIN_RESULTS_20261031.md)
 
 [Completed upgrade: validation, 25 test evaluations and limitations](CES_FL/results/upgrade_tests_s17_20261101T040407Z/REPORT.md) · [Separate FairForge-2 public in-domain split and prepared plan](CES_FL/proposals/ff2_indomain_s17_20261101T042828Z/README.md)

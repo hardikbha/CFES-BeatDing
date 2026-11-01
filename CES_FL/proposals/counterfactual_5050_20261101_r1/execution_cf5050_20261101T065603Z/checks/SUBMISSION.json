@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/opt/pbs/bin/qsub",
+    "-o",
+    "/home/sachin.chaudhary/ces_fl_runs/cf5050_20261101T065603Z/logs/stage1.pbs.log",
+    "/home/sachin.chaudhary/ces_fl_runs/cf5050_20261101T065603Z/runtime/stage1_preflight.pbs"
+  ],
+  "returncode": 0,
+  "stdout": "44948.mgmt01\n",
+  "stderr": "",
+  "observed_utc": "2026-11-01T06:58:24.597152+00:00",
+  "job_id": "44948.mgmt01"
+}

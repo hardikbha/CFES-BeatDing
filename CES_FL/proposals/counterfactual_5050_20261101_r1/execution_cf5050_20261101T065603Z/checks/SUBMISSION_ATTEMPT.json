@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/opt/pbs/bin/qsub",
+    "-o",
+    "/home/sachin.chaudhary/ces_fl_runs/cf5050_20261101T065603Z/logs/stage1.pbs.log",
+    "/home/sachin.chaudhary/ces_fl_runs/cf5050_20261101T065603Z/runtime/stage1_preflight.pbs"
+  ],
+  "observed_utc": "2026-11-01T06:58:24.402362+00:00",
+  "launcher_sha256": "ec56dac4d67972b75437743b91e5d708809bfe9ac4b3db9281e20b2317623afa",
+  "runner_sha256": "ca106d0b745fa418b47716b5c0fba6fa27e466ba98c8f441568e79fb89089a64",
+  "cuda_binding_provided_at_submission": false,
+  "scope": "Milestone1 only: source/input/allocated-CUDA verification, synthetic smoke, full original hash plan, one real batch backward without optimizer step"
+}
