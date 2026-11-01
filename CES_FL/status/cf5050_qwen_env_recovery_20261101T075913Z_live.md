@@ -1,6 +1,6 @@
 # FF++ 50+50: direct SSH checks and two-source pilot
 
-Observed UTC: **2026-11-01T08:04:48.986556+00:00**.
+Observed UTC: **2026-11-01T08:05:54.954428+00:00**.
 
 The user explicitly superseded the queued PBS route with direct SSH. Job44948 was cancelled before execution. This route uses bounded shared VRAM and claims no PBS allocation or exclusive GPU ownership.
 
@@ -9,7 +9,7 @@ Source commit: `fc4e63b8811c5813afa0d298a8172ba9555b7e40`. Scientific source/con
 | Milestone | Actual status |
 |---|---|
 | preflight | PASS |
-| pilot | SUBMITTED_UNVERIFIED / RUNNING |
+| pilot | FAIL / RUNNING |
 | CUDA software smoke | PASS, 7 actual checks on cuda |
 | Real configured batch backward | PASS, zero optimizer steps |
 | Full P / generation / downstream B,N,C | NOT STARTED |
@@ -31,3 +31,5 @@ Training preflight receipts are reused from the verified unchanged aiface run; s
 Cluster root: `/home/sachin.chaudhary/ces_fl_runs/cf5050_qwen_env_recovery_20261101T075913Z`. Logs: `logs/preflight_worker.log`, `logs/smoke_cuda.log`, `logs/generation_plan.log`, `logs/dry_pretrain.log`, `logs/qwen_two_source_pilot.log`.
 
 A finite24h observer publishes these already explicitly launched milestones. It cannot launch, retry, cancel, approve edits, change settings or evaluate test data. Source inventories, face images, weights and per-image reviews remain private. Read the observation timestamp.
+
+Failure in pilot: `qwen_two_source_pilot failed; preserve its log and stop later stages`. Later milestones remain stopped.
