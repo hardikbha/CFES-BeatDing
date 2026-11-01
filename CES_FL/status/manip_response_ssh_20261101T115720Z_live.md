@@ -1,6 +1,6 @@
 # Manipulation-response seed17: direct SSH execution
 
-Observed management UTC: **2026-11-01T13:03:27.313690+00:00**.
+Observed management UTC: **2026-11-01T13:13:34.865279+00:00**.
 
 The user superseded PBS with SSH to gpu01/gpu02. Queued smoke44963 was cancelled **before execution**; its records are preserved. No PBS allocation or exclusive ownership is claimed. The existing Qwen pilot is untouched.
 
@@ -13,7 +13,7 @@ Exact scientific source: `58773bbef9d9fe79dd313610f694ddeea12c6037`. Architectur
 
 | Arm | Actual status | Recorded epochs |
 |---|---|---|
-| P | RUNNING | 10/50 |
+| P | RUNNING | 13/50 |
 | bce | BLOCKED_INPUTS | 0/50 |
 | fair | BLOCKED_INPUTS | 0/50 |
 | nochange | BLOCKED_INPUTS | 0/50 |
