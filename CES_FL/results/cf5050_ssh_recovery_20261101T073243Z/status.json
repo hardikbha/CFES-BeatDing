@@ -1,5 +1,5 @@
 {
-  "observed_utc": "2026-11-01T07:35:08.224398+00:00",
+  "observed_utc": "2026-11-01T07:47:12.528561+00:00",
   "source_commit": "fc4e63b8811c5813afa0d298a8172ba9555b7e40",
   "run_root": "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z",
   "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
@@ -51,7 +51,7 @@
         "runner_sha256": "f741dbc18cc7c9a2ba7d1f189c8e556af30c1e23713fd6020f3d782117a1faac"
       },
       "progress": {
-        "phase": "generation_plan",
+        "phase": "dry_pretrain",
         "host": "gpu02",
         "gpu_uuid": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1"
       },
@@ -132,7 +132,12 @@
     "fairness_improvement_verified": false
   },
   "real_data_dry_run": null,
-  "generation_plan": null,
+  "generation_plan": {
+    "source_count": 76139,
+    "generated_outputs": 532973,
+    "sources_sha256": "5f8792a7017346b8205fa4a9b67257d31dc50113f2612a02b2f08506004d5810",
+    "auto_approval": false
+  },
   "model_inventory": null,
   "pilot_generated_counts": {},
   "pilot_complete_sources": 0,
