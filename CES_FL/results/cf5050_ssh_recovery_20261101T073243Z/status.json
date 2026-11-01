@@ -1,5 +1,5 @@
 {
-  "observed_utc": "2026-11-01T07:48:17.160992+00:00",
+  "observed_utc": "2026-11-01T07:49:52.190547+00:00",
   "source_commit": "fc4e63b8811c5813afa0d298a8172ba9555b7e40",
   "run_root": "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z",
   "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
@@ -108,10 +108,29 @@
       }
     },
     "pilot": {
-      "state": "NOT_STARTED",
+      "state": "SUBMITTED_UNVERIFIED",
       "pass": null,
       "failure": null,
-      "submission": null,
+      "submission": {
+        "pid": 2541498,
+        "host": "gpu01",
+        "stage": "pilot",
+        "command": [
+          "ssh",
+          "-o",
+          "BatchMode=yes",
+          "-o",
+          "ConnectTimeout=10",
+          "gpu01",
+          "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -c 'import subprocess,sys,json,pathlib; f=pathlib.Path('\"'\"'/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z/logs/pilot_worker.log'\"'\"').open('\"'\"'xb'\"'\"'); p=subprocess.Popen([sys.executable,'\"'\"'-u'\"'\"','\"'\"'/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z/runtime/direct_worker.py'\"'\"','\"'\"'--stage'\"'\"','\"'\"'pilot'\"'\"'],stdin=subprocess.DEVNULL,stdout=f,stderr=subprocess.STDOUT,start_new_session=True); print(json.dumps({'\"'\"'pid'\"'\"':p.pid,'\"'\"'host'\"'\"':'\"'\"'gpu01'\"'\"','\"'\"'stage'\"'\"':'\"'\"'pilot'\"'\"'}))'"
+        ],
+        "execution_mode": "direct_ssh",
+        "pbs_allocation": null,
+        "observed_utc": "2026-11-01T07:49:47.525722+00:00",
+        "log": "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z/logs/pilot_worker.log",
+        "runner_sha256": "f741dbc18cc7c9a2ba7d1f189c8e556af30c1e23713fd6020f3d782117a1faac",
+        "pilot_profiler_sha256": "b05125bc4fbaf3f2b45391a95d6982b6aa4ef9a75022ba79d47c755610231a94"
+      },
       "progress": null,
       "binding": null
     }
