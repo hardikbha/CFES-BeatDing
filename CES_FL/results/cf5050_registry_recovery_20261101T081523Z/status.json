@@ -1,5 +1,5 @@
 {
-  "observed_utc": "2026-11-01T08:22:40.104967+00:00",
+  "observed_utc": "2026-11-01T08:23:48.201259+00:00",
   "source_commit": "fc4e63b8811c5813afa0d298a8172ba9555b7e40",
   "run_root": "/home/sachin.chaudhary/ces_fl_runs/cf5050_registry_recovery_20261101T081523Z",
   "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
@@ -239,7 +239,8 @@
   "pilot_generated_counts": {
     "nochange": 1,
     "younger": 1,
-    "older": 1
+    "older": 1,
+    "gender_feminine": 1
   },
   "pilot_complete_sources": 0,
   "pilot_profile": null,
