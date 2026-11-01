@@ -1,5 +1,7 @@
 # FF++ 50+50: direct SSH checks and two-source pilot
 
+**Pilot completed; audit decision: REVISE / DO NOT SCALE.** Fourteen outputs completed. Full-bank projection is approximately 10,292 GPU-hours; counterfactual validity and fairness benefit remain unverified. No full training was launched. [Measured report, review artifact paths and preserved failures](../results/cf5050_registry_recovery_20261101T081523Z/REPORT_QWEN_PILOT.md). The finite observer completed after pilot success; this is a timestamped completed record.
+
 Observed UTC: **2026-11-01T08:36:07.324228+00:00**.
 
 The user explicitly superseded the queued PBS route with direct SSH. Job44948 was cancelled before execution. This route uses bounded shared VRAM and claims no PBS allocation or exclusive GPU ownership.

@@ -1,0 +1,3 @@
+# FairForge-2: separate status after the Qwen FF++ pilot
+
+**DO NOT RUN.** No new FF2 experiment, training, generation or configuration substitution occurred. The independent supervisor review under CES_FL/proposals/ff2_supervisor_review_20261101_r1/REVIEW.md remains binding. Required work: exact versioned FF2 configurations and exposure budgets; tested class-conditioned Ding adaptations; common two-logit score adapter; reviewed matched controls; paired/per-group uncertainty; group/label provenance and allocated/device checks. The completed FF++ pilot does not resolve these items. Prior CESel-MA gate remains FAIL.

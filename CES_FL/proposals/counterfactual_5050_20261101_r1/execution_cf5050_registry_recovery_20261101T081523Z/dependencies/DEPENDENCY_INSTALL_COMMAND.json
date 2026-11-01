@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/home/sachin.chaudhary/.conda/envs/llada-image/bin/python",
+    "-m",
+    "pip",
+    "install",
+    "--target",
+    "/home/sachin.chaudhary/ces_fl_runs/cf5050_qwen_env_recovery_20261101T075913Z/dependencies/py311_cpu",
+    "--only-binary=:all:",
+    "--no-deps",
+    "--require-hashes",
+    "--disable-pip-version-check",
+    "--report",
+    "/home/sachin.chaudhary/ces_fl_runs/cf5050_qwen_env_recovery_20261101T075913Z/dependencies/install_report.json",
+    "-r",
+    "/home/sachin.chaudhary/ces_fl_runs/cf5050_qwen_env_recovery_20261101T075913Z/dependencies/requirements.lock"
+  ],
+  "observed_utc": "2026-11-01T08:01:15.707715+00:00",
+  "existing_environments_modified": false,
+  "model_weights_downloaded": false
+}

@@ -1,0 +1,7 @@
+{
+  "stage": "pilot",
+  "exception": "qwen_two_source_pilot failed; preserve its log and stop later stages",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/sachin.chaudhary/ces_fl_runs/cf5050_qwen_env_recovery_20261101T075913Z/runtime/direct_worker.py\", line 148, in <module>\n    main(args.stage)\n  File \"/home/sachin.chaudhary/ces_fl_runs/cf5050_qwen_env_recovery_20261101T075913Z/runtime/direct_worker.py\", line 130, in main\n    run_command(stage, 'qwen_two_source_pilot', ['/home/sachin.chaudhary/.conda/envs/llada-image/bin/python', '-u', str(ROOT / 'runtime/pilot_profile.py')], qwen_env)\n  File \"/home/sachin.chaudhary/ces_fl_runs/cf5050_qwen_env_recovery_20261101T075913Z/runtime/direct_worker.py\", line 47, in run_command\n    raise RuntimeError(name + ' failed; preserve its log and stop later stages')\nRuntimeError: qwen_two_source_pilot failed; preserve its log and stop later stages\n",
+  "host": "gpu01",
+  "full_training_started": false
+}

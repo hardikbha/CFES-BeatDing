@@ -1,0 +1,4 @@
+START qwen_two_source_pilot ["/home/sachin.chaudhary/.conda/envs/llada-image/bin/python", "-u", "/home/sachin.chaudhary/ces_fl_runs/cf5050_registry_recovery_20261101T081523Z/runtime/pilot_profile.py"]
+PASS qwen_two_source_pilot
+START pilot_review_template ["/home/sachin.chaudhary/.conda/envs/aiface/bin/python", "-u", "/home/sachin.chaudhary/ces_fl_sources/cesfl-cf5050-fc4e63b/CES_FL/src/ces_fl_counterfactual_5050.py", "review-template", "--plan", "/home/sachin.chaudhary/ces_fl_runs/cf5050_registry_recovery_20261101T081523Z/generation", "--out", "/home/sachin.chaudhary/ces_fl_runs/cf5050_registry_recovery_20261101T081523Z/pilot_review_pending.csv"]
+PASS pilot_review_template

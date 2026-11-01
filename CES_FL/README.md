@@ -2,6 +2,10 @@
 
 **Start here.** [Current timestamped status](STATUS.md) · [Review/change/run workflow](WORKFLOW.md) · [Prompt for a supervisor or another LLM](SUPERVISOR_PROMPT.md)
 
+## Completed Qwen pilot — full scaling held, 1 November 2026
+
+All 14 outputs completed for two FF++ TRAIN originals. Measured generation 69.5 seconds/output implies approximately 10,292 GPU-hours for the prescribed full bank. No-change controls and edits show substantial reconstruction/score-shift confounds; no candidate is human-approved and no fairness improvement is established. **REVISE / DO NOT SCALE the current recipe.** No full training or full generation was launched. [Report, visual-review paths, actual costs and failures](results/cf5050_registry_recovery_20261101T081523Z/REPORT_QWEN_PILOT.md). FairForge-2 remains DO NOT RUN under its independent review.
+
 ## Direct SSH continuation — 1 November 2026
 
 The user superseded the queued PBS route. Job 44948 was cancelled before execution. The current immutable-source run is on direct SSH: seven CUDA software checks passed on gpu02, and full TRAIN-image hashing is running before the real-batch dry-run and separate two-source Qwen pilot. [Actual current status](status/cf5050_ssh_recovery_20261101T073243Z_live.md) · [CUDA proof, operational UUID recovery and exact wrappers](proposals/counterfactual_5050_20261101_r1/execution_cf5050_ssh_recovery_20261101T073243Z/README.md). This uses bounded shared VRAM and has no claimed PBS allocation. Full training and generation remain gated; FairForge-2 remains DO NOT RUN.

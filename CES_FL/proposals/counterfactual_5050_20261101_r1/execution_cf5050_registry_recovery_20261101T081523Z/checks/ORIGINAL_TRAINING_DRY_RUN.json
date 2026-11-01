@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "stage": "pretrain",
+  "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+  "device": "cuda",
+  "synthetic_fixture": false,
+  "originals": 16,
+  "pairs": 0,
+  "parameters": {
+    "total": 21594159,
+    "trainable": 21594159
+  },
+  "optimizer_steps": 0,
+  "pretrain_bn_buffers_updated_in_discarded_model": true,
+  "peak_cuda_allocated_bytes": 2367416320,
+  "losses": {
+    "total": 0.5129827857017517,
+    "classification": 0.5129827857017517,
+    "invariance": -0.0
+  }
+}

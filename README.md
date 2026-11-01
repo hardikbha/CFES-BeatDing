@@ -2,6 +2,8 @@
 
 ## Shared progress and results
 
+**Latest: [Qwen FF++ pilot completed—cost/validity report and scaling hold](CES_FL/results/cf5050_registry_recovery_20261101T081523Z/REPORT_QWEN_PILOT.md).** Fourteen outputs completed; full-bank projection ≈10,292 GPU-hours, no fairness gain established, no full training launched.
+
 [New FF++ 50+50 gated execution](CES_FL/status/cf5050_20261101T065603Z_live.md) · [FairForge-2 supervisor verdict: DO NOT RUN](CES_FL/proposals/ff2_supervisor_review_20261101_r1/REVIEW.md)
 
 **[Research updates and reviewer index](RESEARCH_UPDATES.md)** · [Current benchmark observations](CES_FL/status/benchmark_s17_20261031T112401_live.md) · [Verified FairForge-2 in-domain results](FAIRFORGE2_INDOMAIN_RESULTS_20261031.md)

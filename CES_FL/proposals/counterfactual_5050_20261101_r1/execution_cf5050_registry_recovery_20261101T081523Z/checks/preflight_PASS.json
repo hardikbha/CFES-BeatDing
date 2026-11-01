@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "scope": "Reuse verified unchanged aiface training preflight; generator environment recovery is separate",
+  "original_run": "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z",
+  "original_preflight_receipt": "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z/checks/preflight_PASS.json",
+  "original_cuda_receipt": "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z/smoke_cuda/RESULT.json",
+  "original_dry_run_receipt": "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z/dry_pretrain/RESULT.json",
+  "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+  "config_sha256": "56e77211a966ae12a449c47cdaf8e3fc271f149c6031513747813a1d1abfaef0",
+  "source_inventory_sha256": "5f8792a7017346b8205fa4a9b67257d31dc50113f2612a02b2f08506004d5810",
+  "inventory_bytes_reused_exactly": true,
+  "training_python": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+  "generator_python": "/home/sachin.chaudhary/.conda/envs/llada-image/bin/python",
+  "full_training_started": false
+}

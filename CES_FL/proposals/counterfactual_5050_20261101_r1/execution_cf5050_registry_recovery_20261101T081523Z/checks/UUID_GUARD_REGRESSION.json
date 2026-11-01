@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "scope": "Operational UUID guard only; no scientific change",
+  "checks": [
+    "Actual PyTorch bare UUID equals NVIDIA GPU-prefixed UUID",
+    "Different physical UUID rejected",
+    "Malformed UUID rejected"
+  ],
+  "actual_gpu_probe": {
+    "host": "gpu02",
+    "cuda_visible_devices": "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb",
+    "torch_uuid": "3a2f4cf3-9b32-14c9-3deb-29e55d1123bb",
+    "device_count": 1
+  },
+  "previous_failure": "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_20261101T072735Z/checks/preflight_FAILURE.json",
+  "prior_run_preserved": true,
+  "source_commit": "fc4e63b8811c5813afa0d298a8172ba9555b7e40",
+  "new_run_root": "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z"
+}

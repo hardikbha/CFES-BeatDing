@@ -1,0 +1,13 @@
+{
+  "status": "CONTACT_SHEETS_AND_DIAGNOSTICS_PREPARED",
+  "contact_sheets": [
+    "/home/sachin.chaudhary/ces_fl_runs/cf5050_registry_recovery_20261101T081523Z/pilot_inspection/source0_fake_contact.png",
+    "/home/sachin.chaudhary/ces_fl_runs/cf5050_registry_recovery_20261101T081523Z/pilot_inspection/source1_real_contact.png"
+  ],
+  "source_count": 2,
+  "generated_outputs": 14,
+  "geometric_controls": 2,
+  "human_review": "/home/sachin.chaudhary/ces_fl_runs/cf5050_registry_recovery_20261101T081523Z/pilot_review_pending.csv",
+  "approvals_written": 0,
+  "limits": "Pixel/sharpness differences do not prove identity, target attainment, authenticity or forensic preservation. Source labels are not ground-truth labels for generated candidates."
+}

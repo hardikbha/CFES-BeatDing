@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "python": "/home/sachin.chaudhary/.conda/envs/llada-image/bin/python",
+  "torch": "2.8.0+cu128",
+  "diffusers": "0.39.0",
+  "diffusers_path": "/home/sachin.chaudhary/.conda/envs/llada-image/lib/python3.11/site-packages/diffusers/__init__.py",
+  "transformers": "4.57.6",
+  "sklearn": "1.7.2",
+  "sklearn_path": "/home/sachin.chaudhary/ces_fl_runs/cf5050_qwen_env_recovery_20261101T075913Z/dependencies/py311_cpu/sklearn/__init__.py",
+  "scipy": "1.17.1",
+  "numpy": "2.4.6",
+  "Pillow": "13.0.0",
+  "QwenImageEditPlusPipeline_import": true,
+  "complete_pinned_source_import": true,
+  "source_hash_unchanged": true
+}

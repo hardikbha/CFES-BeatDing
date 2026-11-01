@@ -1,0 +1,20 @@
+MODEL_BINARY_HASH_INVENTORY_START /home/sachin.chaudhary/.cache/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/snapshots/6f3ccc0b56e431dc6a0c2b2039706d7d26f22cb9
+MODEL_BINARY_HASH_INVENTORY_PASS 7ad7899d5af6a6f4f4550d10024ebdb07da83ba2b7b4c1775ef82066f8f790d9
+PILOT_PROFILE {"status": "FAIL", "observed_node_time": "2026-11-01T07:40:33.759730+00:00", "versions": {"torch": "2.7.0+cu126", "diffusers": "0.35.1", "transformers": "5.15.1", "accelerate": "1.10.1", "safetensors": "0.8.0"}, "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab", "config_sha256": "56e77211a966ae12a449c47cdaf8e3fc271f149c6031513747813a1d1abfaef0", "snapshot_inventory_sha256": "7ad7899d5af6a6f4f4550d10024ebdb07da83ba2b7b4c1775ef82066f8f790d9", "generation_call_seconds": 34.09375377744436, "outputs_recorded": 0, "mean_seconds_per_output_excluding_load": null, "mean_canonical_png_bytes": null, "pilot_item_logical_bytes": 0, "peak_torch_allocated_bytes": 0, "peak_torch_reserved_bytes": 0, "allocator_fraction": "0.55", "cpu_memory_available_before_load": 625212674048, "execution_mode": "direct_ssh_bounded_shared_gpu", "full_training_started": false, "human_approvals_created": 0, "forensic_or_identity_validity_established": false}
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z/runtime/pilot_profile.py", line 101, in <module>
+    main()
+  File "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z/runtime/pilot_profile.py", line 68, in main
+    runpy.run_path(str(SCRIPT), run_name='__main__')
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/sachin.chaudhary/ces_fl_sources/cesfl-cf5050-fc4e63b/CES_FL/src/ces_fl_counterfactual_5050.py", line 1245, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/sachin.chaudhary/ces_fl_sources/cesfl-cf5050-fc4e63b/CES_FL/src/ces_fl_counterfactual_5050.py", line 1232, in main
+    elif a.command=='generate':generate(a.plan,a.shard_index,a.num_shards,a.max_sources)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/ces_fl_sources/cesfl-cf5050-fc4e63b/CES_FL/src/ces_fl_counterfactual_5050.py", line 641, in generate
+    from diffusers import QwenImageEditPlusPipeline
+ImportError: cannot import name 'QwenImageEditPlusPipeline' from 'diffusers' (/home/sachin.chaudhary/.conda/envs/aiface/lib/python3.12/site-packages/diffusers/__init__.py). Did you mean: 'QwenImageEditPipeline'?

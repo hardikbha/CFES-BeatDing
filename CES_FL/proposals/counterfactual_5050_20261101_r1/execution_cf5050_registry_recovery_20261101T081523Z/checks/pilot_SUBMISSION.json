@@ -1,0 +1,20 @@
+{
+  "pid": 2817149,
+  "host": "gpu01",
+  "stage": "pilot",
+  "command": [
+    "ssh",
+    "-o",
+    "BatchMode=yes",
+    "-o",
+    "ConnectTimeout=10",
+    "gpu01",
+    "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -c 'import subprocess,sys,json,pathlib; f=pathlib.Path('\"'\"'/home/sachin.chaudhary/ces_fl_runs/cf5050_registry_recovery_20261101T081523Z/logs/pilot_worker.log'\"'\"').open('\"'\"'xb'\"'\"'); p=subprocess.Popen([sys.executable,'\"'\"'-u'\"'\"','\"'\"'/home/sachin.chaudhary/ces_fl_runs/cf5050_registry_recovery_20261101T081523Z/runtime/direct_worker.py'\"'\"','\"'\"'--stage'\"'\"','\"'\"'pilot'\"'\"'],stdin=subprocess.DEVNULL,stdout=f,stderr=subprocess.STDOUT,start_new_session=True); print(json.dumps({'\"'\"'pid'\"'\"':p.pid,'\"'\"'host'\"'\"':'\"'\"'gpu01'\"'\"','\"'\"'stage'\"'\"':'\"'\"'pilot'\"'\"'}))'"
+  ],
+  "execution_mode": "direct_ssh_registry_coordinated",
+  "pbs_allocation": null,
+  "observed_utc": "2026-11-01T08:16:47.020783+00:00",
+  "log": "/home/sachin.chaudhary/ces_fl_runs/cf5050_registry_recovery_20261101T081523Z/logs/pilot_worker.log",
+  "runner_sha256": "1fe733fd61ac503672162431e5f5bbfe8a703c15acedf152e5565c6e8bd1329b",
+  "generator_overlay": "/home/sachin.chaudhary/ces_fl_runs/cf5050_qwen_env_recovery_20261101T075913Z/dependencies/py311_cpu"
+}

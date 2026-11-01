@@ -1,0 +1,163 @@
+{
+  "observed_utc": "2026-11-01T09:24:53.570761+00:00",
+  "decision": "REVISE_DO_NOT_SCALE",
+  "generation_software": "PASS",
+  "quality_validity": "UNVERIFIED; expert/source review required",
+  "human_approved": 0,
+  "human_rejected": 0,
+  "unreviewed_candidates": 14,
+  "sources": 2,
+  "source_classes": {
+    "real": 1,
+    "fake": 1
+  },
+  "demographic_edits": 12,
+  "nochange_controls": 2,
+  "geometry_controls": 2,
+  "missing_outputs": 0,
+  "source_inventory_count": 76139,
+  "source_inventory_sha256": "5f8792a7017346b8205fa4a9b67257d31dc50113f2612a02b2f08506004d5810",
+  "source_commit": "fc4e63b8811c5813afa0d298a8172ba9555b7e40",
+  "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+  "config_sha256": "56e77211a966ae12a449c47cdaf8e3fc271f149c6031513747813a1d1abfaef0",
+  "model_inventory_sha256": "7ad7899d5af6a6f4f4550d10024ebdb07da83ba2b7b4c1775ef82066f8f790d9",
+  "mean_seconds_per_output": 69.51643197770629,
+  "generation_call_seconds": 1018.917779315263,
+  "peak_torch_allocated_GiB": 39.15492391586304,
+  "peak_torch_reserved_GiB": 39.755859375,
+  "projected_full_gpu_hours": 10291.77258345946,
+  "projected_one_gpu_days": 428.8238576441442,
+  "estimated_full_item_logical_GB": 112.9074748375,
+  "estimate_limits": "Two sources on a shared GPU; excludes retries, review/rejection, scheduling, model loading and scale-dependent effects.",
+  "full_training_started": false,
+  "full_generation_started": false,
+  "FF2": "DO NOT RUN",
+  "reference_detector_checkpoint_sha256": "fbd276362ef31605b63a6dc3a14f52d57626ed48183a27bd8004ab6400d57b3a",
+  "reference_scores_used_for_pair_selection": false,
+  "contact_sheets": [
+    "/home/sachin.chaudhary/ces_fl_runs/cf5050_registry_recovery_20261101T081523Z/pilot_inspection/source0_fake_contact.png",
+    "/home/sachin.chaudhary/ces_fl_runs/cf5050_registry_recovery_20261101T081523Z/pilot_inspection/source1_real_contact.png"
+  ],
+  "private_review_template": "/home/sachin.chaudhary/ces_fl_runs/cf5050_registry_recovery_20261101T081523Z/pilot_review_pending.csv",
+  "private_per_image_results": "/home/sachin.chaudhary/ces_fl_runs/cf5050_registry_recovery_20261101T081523Z/pilot_inspection/per_image_pilot_private.csv",
+  "quality_flags": [
+    "No-change controls visibly reconstruct/sharpen facial details",
+    "Some edits change facial hair, geometry, expression or texture beyond the named attribute",
+    "Generic editor effects and demographic effects remain confounded; label/evidence preservation not established"
+  ],
+  "prior_attempts_preserved": {
+    "cuda_uuid_guard": "cf5050_ssh_20261101T072735Z",
+    "missing_qwen_class": "cf5050_ssh_recovery_20261101T073243Z",
+    "gpu_collision_oom": "cf5050_qwen_env_recovery_20261101T075913Z"
+  },
+  "reference_condition_logits": [
+    {
+      "source_label": 1,
+      "condition": "original",
+      "fake_class_logit": 39.22021484375,
+      "source_label_margin": 39.22021484375
+    },
+    {
+      "source_label": 1,
+      "condition": "nochange",
+      "fake_class_logit": 20.26639747619629,
+      "source_label_margin": 20.26639747619629
+    },
+    {
+      "source_label": 1,
+      "condition": "younger",
+      "fake_class_logit": -9.939398765563965,
+      "source_label_margin": -9.939398765563965
+    },
+    {
+      "source_label": 1,
+      "condition": "older",
+      "fake_class_logit": -16.552196502685547,
+      "source_label_margin": -16.552196502685547
+    },
+    {
+      "source_label": 1,
+      "condition": "gender_feminine",
+      "fake_class_logit": 41.959495544433594,
+      "source_label_margin": 41.959495544433594
+    },
+    {
+      "source_label": 1,
+      "condition": "gender_masculine",
+      "fake_class_logit": -0.9726954698562622,
+      "source_label_margin": -0.9726954698562622
+    },
+    {
+      "source_label": 1,
+      "condition": "skin_lighter",
+      "fake_class_logit": 30.72477912902832,
+      "source_label_margin": 30.72477912902832
+    },
+    {
+      "source_label": 1,
+      "condition": "skin_darker",
+      "fake_class_logit": 43.666099548339844,
+      "source_label_margin": 43.666099548339844
+    },
+    {
+      "source_label": 1,
+      "condition": "resize_geometry",
+      "fake_class_logit": 39.6862678527832,
+      "source_label_margin": 39.6862678527832
+    },
+    {
+      "source_label": 0,
+      "condition": "original",
+      "fake_class_logit": -41.34821701049805,
+      "source_label_margin": 41.34821701049805
+    },
+    {
+      "source_label": 0,
+      "condition": "nochange",
+      "fake_class_logit": 19.01979637145996,
+      "source_label_margin": -19.01979637145996
+    },
+    {
+      "source_label": 0,
+      "condition": "younger",
+      "fake_class_logit": 10.310327529907227,
+      "source_label_margin": -10.310327529907227
+    },
+    {
+      "source_label": 0,
+      "condition": "older",
+      "fake_class_logit": -21.3914794921875,
+      "source_label_margin": 21.3914794921875
+    },
+    {
+      "source_label": 0,
+      "condition": "gender_feminine",
+      "fake_class_logit": 31.299551010131836,
+      "source_label_margin": -31.299551010131836
+    },
+    {
+      "source_label": 0,
+      "condition": "gender_masculine",
+      "fake_class_logit": 12.226778984069824,
+      "source_label_margin": -12.226778984069824
+    },
+    {
+      "source_label": 0,
+      "condition": "skin_lighter",
+      "fake_class_logit": 52.551753997802734,
+      "source_label_margin": -52.551753997802734
+    },
+    {
+      "source_label": 0,
+      "condition": "skin_darker",
+      "fake_class_logit": -7.381822109222412,
+      "source_label_margin": 7.381822109222412
+    },
+    {
+      "source_label": 0,
+      "condition": "resize_geometry",
+      "fake_class_logit": -40.991031646728516,
+      "source_label_margin": 40.991031646728516
+    }
+  ]
+}

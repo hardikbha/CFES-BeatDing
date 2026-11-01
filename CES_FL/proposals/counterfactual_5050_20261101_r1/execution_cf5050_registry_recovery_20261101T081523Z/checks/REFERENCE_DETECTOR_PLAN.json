@@ -1,0 +1,18 @@
+{
+  "created_utc": "2026-11-01T08:28:16.175146+00:00",
+  "checkpoint": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/R0_frozen_bce/training/best.pt",
+  "checkpoint_sha256": "fbd276362ef31605b63a6dc3a14f52d57626ed48183a27bd8004ab6400d57b3a",
+  "reference_name": "Prior FF++ BCE detector R0; not the new 50+50 method",
+  "source": "/home/sachin.chaudhary/ces_fl_sources/upgrade_875bce025084871438ef799ca9086985c4375672",
+  "source_sha256": {
+    "CES_FL/src/ces_fl_upgrade.py": "4d8413cbfd8f22c60be8405ee7686dff7745aed134edddecf21e809cf3082ff6",
+    "CES_FL/src/ces_fl_diagram_model_v021.py": "0e001dd1251570ce43fb82bde307c519dea4045d9734506e1ce90d2ed014f8de",
+    "CES_FL/experiments/benchmark_seed17/uncertainty.py": "a60d58435fe0b46ca9daf686c4bbaa3ab7ef94ce202fb83c04429d4a4f9024fc"
+  },
+  "device": "cpu",
+  "calibration": "Use stored validation calibration unchanged; never recalibrate on edited inputs",
+  "scope": "Only the two TRAIN originals and their generated/no-change/geometry variants",
+  "purpose": "Diagnostic score shifts; no pair acceptance rule or fairness/performance conclusion",
+  "generated_labels_verified": false,
+  "do_not_use_for_pair_selection_or_tuning": true
+}

@@ -1,0 +1,12 @@
+{
+  "stage": "pilot",
+  "command": [
+    "/home/sachin.chaudhary/.conda/envs/llada-image/bin/python",
+    "-u",
+    "/home/sachin.chaudhary/ces_fl_runs/cf5050_registry_recovery_20261101T081523Z/runtime/pilot_profile.py"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 1103.493654768914,
+  "log": "/home/sachin.chaudhary/ces_fl_runs/cf5050_registry_recovery_20261101T081523Z/logs/qwen_two_source_pilot.log",
+  "execution_mode": "direct_ssh"
+}
