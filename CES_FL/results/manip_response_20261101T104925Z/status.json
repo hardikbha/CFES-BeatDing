@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-01T11:16:52.353553+00:00",
+  "observed_management_utc": "2026-11-01T11:25:45.878161+00:00",
   "source_commit": "58773bbef9d9fe79dd313610f694ddeea12c6037",
   "source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-response-58773bb",
   "run_root": "/home/sachin.chaudhary/ces_fl_runs/manip_response_20261101T104925Z",
@@ -87,13 +87,15 @@
         "select": "1:host=gpu01:ncpus=8:ngpus=1:mem=48gb",
         "walltime": "03:00:00"
       },
-      "comment": "Not Running: Insufficient amount of resource: ncpus (R: 8 A: 4 T: 208)"
+      "comment": "Not Running: User has reached queue gpu running job limit."
     },
     "progress": null,
     "binding": null,
     "result": null,
     "pass": null,
-    "failure": null
+    "failure": null,
+    "actual_log_tail": null,
+    "allocation_log_tail": null
   },
   "arms": {
     "P": {
@@ -205,6 +207,6 @@
   "qwen_existing_job_modified": false,
   "FF2_launched": false,
   "test_evaluation_launched": false,
-  "observer_pid": 3478898,
+  "observer_pid": 3818492,
   "observer_scope": "12h maximum; observes this smoke only, stops at completion/failure; cannot launch or chain stages"
 }
