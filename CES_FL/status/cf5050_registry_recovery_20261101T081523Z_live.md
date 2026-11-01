@@ -1,6 +1,6 @@
 # FF++ 50+50: direct SSH checks and two-source pilot
 
-Observed UTC: **2026-11-01T08:16:47.179231+00:00**.
+Observed UTC: **2026-11-01T08:17:21.894568+00:00**.
 
 The user explicitly superseded the queued PBS route with direct SSH. Job44948 was cancelled before execution. This route uses bounded shared VRAM and claims no PBS allocation or exclusive GPU ownership.
 
@@ -9,7 +9,7 @@ Source commit: `fc4e63b8811c5813afa0d298a8172ba9555b7e40`. Scientific source/con
 | Milestone | Actual status |
 |---|---|
 | preflight | PASS |
-| pilot | SUBMITTED_UNVERIFIED |
+| pilot | SUBMITTED_UNVERIFIED / RUNNING |
 | CUDA software smoke | PASS, 7 actual checks on cuda |
 | Real configured batch backward | PASS, zero optimizer steps |
 | Full P / generation / downstream B,N,C | NOT STARTED |
