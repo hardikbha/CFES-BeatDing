@@ -1,0 +1,146 @@
+{
+  "observed_utc": "2026-11-01T07:35:08.224398+00:00",
+  "source_commit": "fc4e63b8811c5813afa0d298a8172ba9555b7e40",
+  "run_root": "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z",
+  "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+  "config_sha256": "56e77211a966ae12a449c47cdaf8e3fc271f149c6031513747813a1d1abfaef0",
+  "execution_mode": "direct_ssh_bounded_shared_gpu",
+  "pbs_allocation": null,
+  "superseded_pbs_job": "44948.mgmt01, cancelled before execution after explicit SSH instruction",
+  "operational_recovery": {
+    "status": "PASS",
+    "scope": "Operational UUID guard only; no scientific change",
+    "checks": [
+      "Actual PyTorch bare UUID equals NVIDIA GPU-prefixed UUID",
+      "Different physical UUID rejected",
+      "Malformed UUID rejected"
+    ],
+    "actual_gpu_probe": {
+      "host": "gpu02",
+      "cuda_visible_devices": "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb",
+      "torch_uuid": "3a2f4cf3-9b32-14c9-3deb-29e55d1123bb",
+      "device_count": 1
+    },
+    "previous_failure": "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_20261101T072735Z/checks/preflight_FAILURE.json",
+    "prior_run_preserved": true,
+    "source_commit": "fc4e63b8811c5813afa0d298a8172ba9555b7e40",
+    "new_run_root": "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z"
+  },
+  "stages": {
+    "preflight": {
+      "state": "SUBMITTED_UNVERIFIED",
+      "pass": null,
+      "failure": null,
+      "submission": {
+        "pid": 2850831,
+        "host": "gpu02",
+        "stage": "preflight",
+        "command": [
+          "ssh",
+          "-o",
+          "BatchMode=yes",
+          "-o",
+          "ConnectTimeout=10",
+          "gpu02",
+          "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -c 'import subprocess,sys,json,pathlib; f=pathlib.Path('\"'\"'/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z/logs/preflight_worker.log'\"'\"').open('\"'\"'xb'\"'\"'); p=subprocess.Popen([sys.executable,'\"'\"'-u'\"'\"','\"'\"'/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z/runtime/direct_worker.py'\"'\"','\"'\"'--stage'\"'\"','\"'\"'preflight'\"'\"'],stdin=subprocess.DEVNULL,stdout=f,stderr=subprocess.STDOUT,start_new_session=True); print(json.dumps({'\"'\"'pid'\"'\"':p.pid,'\"'\"'host'\"'\"':'\"'\"'gpu02'\"'\"','\"'\"'stage'\"'\"':'\"'\"'preflight'\"'\"'}))'"
+        ],
+        "execution_mode": "direct_ssh",
+        "pbs_allocation": null,
+        "observed_utc": "2026-11-01T07:32:43.781335+00:00",
+        "log": "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z/logs/preflight_worker.log",
+        "runner_sha256": "f741dbc18cc7c9a2ba7d1f189c8e556af30c1e23713fd6020f3d782117a1faac"
+      },
+      "progress": {
+        "phase": "generation_plan",
+        "host": "gpu02",
+        "gpu_uuid": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1"
+      },
+      "binding": {
+        "host": "gpu02",
+        "physical_index": 5,
+        "gpu_uuid": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1",
+        "free_mib_before_launch": 26369,
+        "total_mib": 81559,
+        "utilization_percent_before_launch": 0,
+        "worker_pid": 2850831,
+        "cuda_allocator_fraction": 0.2,
+        "execution_mode": "direct_ssh_bounded_shared_gpu",
+        "pbs_allocation": null,
+        "exclusive_ownership_claimed": false,
+        "stage": "preflight",
+        "source_commit": "fc4e63b8811c5813afa0d298a8172ba9555b7e40",
+        "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+        "config_sha256": "56e77211a966ae12a449c47cdaf8e3fc271f149c6031513747813a1d1abfaef0",
+        "runner_sha256": "f741dbc18cc7c9a2ba7d1f189c8e556af30c1e23713fd6020f3d782117a1faac",
+        "observed_node_time": 1793517715.7429643,
+        "preexisting_compute_processes": [
+          "GPU-da9cbc5e-5af7-36d0-efea-fcc1da157861, 2168555, 76534 MiB",
+          "GPU-da9cbc5e-5af7-36d0-efea-fcc1da157861, 235272, 974 MiB",
+          "GPU-4ed8257a-b1a4-0026-ff8f-8a0f42f38902, 2168556, 76506 MiB",
+          "GPU-19db00be-6cc8-242f-6b67-c05487fb2372, 2168557, 76506 MiB",
+          "GPU-4f468707-fed7-a55e-3174-628368d6c379, 2168558, 76504 MiB",
+          "GPU-ee335748-8273-2d67-42a5-d45463027c1b, 2986320, 54636 MiB",
+          "GPU-bff97893-385b-6f3f-831b-113284c2e1f1, 2986321, 54624 MiB",
+          "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb, 3713582, 5774 MiB",
+          "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb, 2580418, 41294 MiB",
+          "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb, 2804840, 862 MiB",
+          "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb, 2829929, 13206 MiB",
+          "GPU-65f63cc5-9366-5c2d-196a-6e7a0a62c1e8, 252955, 612 MiB",
+          "GPU-65f63cc5-9366-5c2d-196a-6e7a0a62c1e8, 253283, 78306 MiB"
+        ],
+        "torch_binding": {
+          "device": "NVIDIA H100 80GB HBM3",
+          "uuid": "bff97893-385b-6f3f-831b-113284c2e1f1",
+          "torch": "2.7.0+cu126",
+          "total_vram": 85017493504
+        }
+      }
+    },
+    "pilot": {
+      "state": "NOT_STARTED",
+      "pass": null,
+      "failure": null,
+      "submission": null,
+      "progress": null,
+      "binding": null
+    }
+  },
+  "cuda_smoke": {
+    "status": "PASS",
+    "device": "cuda",
+    "checks": [
+      "full_epoch_no_replacement_singleton_tail_and_independent_paired_loss_reference",
+      "independent_original_generation_shards_resume_shared_source_seed_and_no_auto_approval",
+      "reject_missing_per_source_attributes_wrong_original_chained_edit_and_invalid_review",
+      "every_original_gets_its_own_edit_all_attributes_and_directions_rotate",
+      "pretraining_transfer_identical_heads_full_trainability_frozen_downstream_bn_and_224px_ebox",
+      "all_three_training_arms_full_exposure_independent_replay_and_exact_resume",
+      "frozen_test_threshold_label_flip_rejection_of_val_as_test_and_evidence_export"
+    ],
+    "check_count": 7,
+    "parameters": {
+      "total": 21594159,
+      "trainable": 21594159
+    },
+    "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+    "torch": "2.7.0+cu126",
+    "python": "3.12.11",
+    "synthetic_fixture_only": true,
+    "real_qwen_generation_tested": false,
+    "real_training_tested": false,
+    "cuda_tested": true,
+    "fairness_improvement_verified": false
+  },
+  "real_data_dry_run": null,
+  "generation_plan": null,
+  "model_inventory": null,
+  "pilot_generated_counts": {},
+  "pilot_complete_sources": 0,
+  "pilot_profile": null,
+  "full_training": "NOT_STARTED",
+  "full_generation": "NOT_STARTED",
+  "quality_or_full_bank_approval": "NOT_GRANTED",
+  "FF2": "DO NOT RUN",
+  "observer_pid": 1061367,
+  "observer_scope": "24h maximum, read-only; no launch/retry/kill/approval operations"
+}
