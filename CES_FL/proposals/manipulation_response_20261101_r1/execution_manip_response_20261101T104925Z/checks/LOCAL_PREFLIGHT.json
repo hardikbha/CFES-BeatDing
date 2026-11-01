@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "observed_management_utc": "2026-11-01T10:58:55.730336+00:00",
+  "source_commit": "58773bbef9d9fe79dd313610f694ddeea12c6037",
+  "source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-response-58773bb",
+  "source_hashes": {
+    "CES_FL/src/ces_fl_manipulation_response.py": "0e82a522a22e641dc5588b6a15317e6842896ab2bdcc5364833af25e207f257e",
+    "CES_FL/src/ces_fl_counterfactual_5050.py": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+    "CES_FL/tests/smoke_manipulation_response.py": "748f4a883af8b39b6edd0f992f929f12f3045ba85734fcf1e542b67f61895654",
+    "CES_FL/proposals/manipulation_response_20261101_r1/config.json": "d31c78ab2913e629ebbd7e7a860a0dd4bea90d2c920b0d77719b042a7537dab0"
+  },
+  "external_input_hashes": {
+    "train": {
+      "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ding_ffpp/train.csv",
+      "sha256": "6ee9326fe8361dc3aee0f803c49b5eada169be5cf3bc3cb44ad3d934ba5ca657",
+      "bytes": 32388814
+    },
+    "val": {
+      "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ding_ffpp/val.csv",
+      "sha256": "52f4844cffe5a03adb08cecde8829244bb50e05eeead36f6d659599f1c24f5b1",
+      "bytes": 10811726
+    },
+    "protocol_overlap_file": {
+      "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ding_ffpp/protocol_source_overlap.json",
+      "sha256": "793db56c30c85dd654c6d68745afc926f4b1f8dc8bec749db01b07b3aa306c97",
+      "bytes": 27635
+    },
+    "weights": {
+      "path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/xception-b5690688.pth",
+      "sha256": "43020ad2812c333d9f8e202b9fef94e579d07addb6582d69a1f68bbaec21aa90",
+      "bytes": 91675053
+    }
+  },
+  "environment_versions": {
+    "torch": "2.7.0+cu126",
+    "numpy": "2.2.6",
+    "Pillow": "11.3.0",
+    "scikit-learn": "1.7.2"
+  },
+  "operator_checks": [
+    {
+      "name": "guards",
+      "command": [
+        "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+        "/home/sachin.chaudhary/ces_fl_runs/manip_response_20261101T104925Z/runtime/test_allocation_guards.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_busy_or_protected_card_rejected (__main__.Guards.test_busy_or_protected_card_rejected) ... ok\ntest_headroom_and_site_mapping (__main__.Guards.test_headroom_and_site_mapping) ... ok\ntest_require_running_gpu_allocation (__main__.Guards.test_require_running_gpu_allocation) ... ok\ntest_strict_cuda_uuid_equality (__main__.Guards.test_strict_cuda_uuid_equality) ... ok\ntest_wrong_node_rejected (__main__.Guards.test_wrong_node_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "name": "shell_syntax",
+      "command": [
+        "bash",
+        "-n",
+        "/home/sachin.chaudhary/ces_fl_runs/manip_response_20261101T104925Z/runtime/smoke_one_gpu.pbs"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "cuda_suite_run": false,
+  "real_images_fully_decoded_this_stage": false,
+  "training_launched": false,
+  "qwen_touched": false,
+  "ngpus_allocation_required": true
+}

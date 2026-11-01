@@ -1,0 +1,65 @@
+[
+  {
+    "argv": [
+      "git",
+      "fetch",
+      "https://github.com/hardiksharma6555/CFES-BeatDing.git",
+      "refs/heads/upgrade/manipulation-response-20261101"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "From https://github.com/hardiksharma6555/CFES-BeatDing\n * branch            upgrade/manipulation-response-20261101 -> FETCH_HEAD\nAuto packing the repository in background for optimum performance.\nSee \"git help gc\" for manual housekeeping.\nwarning: The last gc run reported the following. Please correct the root cause\nand remove /home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/.git/worktrees/publish_cf5050_20261101T065603Z/gc.log\nAutomatic cleanup will not be performed until the file is removed.\n\nwarning: There are too many unreachable loose objects; run 'git prune' to remove them.\n\n",
+    "observed_management_utc": "2026-11-01T10:49:27.377000+00:00"
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "FETCH_HEAD"
+    ],
+    "returncode": 0,
+    "stdout": "58773bbef9d9fe79dd313610f694ddeea12c6037\n",
+    "stderr": "",
+    "observed_management_utc": "2026-11-01T10:49:27.555000+00:00"
+  },
+  {
+    "argv": [
+      "git",
+      "cat-file",
+      "-t",
+      "58773bbef9d9fe79dd313610f694ddeea12c6037"
+    ],
+    "returncode": 0,
+    "stdout": "commit\n",
+    "stderr": "",
+    "observed_management_utc": "2026-11-01T10:49:27.676000+00:00"
+  },
+  {
+    "argv": [
+      "git",
+      "worktree",
+      "add",
+      "--detach",
+      "/home/sachin.chaudhary/ces_fl_sources/cesfl-response-58773bb",
+      "58773bbef9d9fe79dd313610f694ddeea12c6037"
+    ],
+    "returncode": 0,
+    "stdout": "HEAD is now at 58773bb Add controlled manipulation-response experiment with tested training arms and priority handoff\n",
+    "stderr": "Preparing worktree (detached HEAD 58773bb)\nUpdating files:  16% (469/2884)\nUpdating files:  17% (491/2884)\nUpdating files:  18% (520/2884)\nUpdating files:  19% (548/2884)\nUpdating files:  20% (577/2884)\nUpdating files:  21% (606/2884)\nUpdating files:  22% (635/2884)\nUpdating files:  23% (664/2884)\nUpdating files:  24% (693/2884)\nUpdating files:  25% (721/2884)\nUpdating files:  25% (737/2884)\nUpdating files:  26% (750/2884)\nUpdating files:  27% (779/2884)\nUpdating files:  28% (808/2884)\nUpdating files:  29% (837/2884)\nUpdating files:  30% (866/2884)\nUpdating files:  31% (895/2884)\nUpdating files:  32% (923/2884)\nUpdating files:  33% (952/2884)\nUpdating files:  34% (981/2884)\nUpdating files:  35% (1010/2884)\nUpdating files:  36% (1039/2884)\nUpdating files:  37% (1068/2884)\nUpdating files:  37% (1082/2884)\nUpdating files:  38% (1096/2884)\nUpdating files:  39% (1125/2884)\nUpdating files:  40% (1154/2884)\nUpdating files:  41% (1183/2884)\nUpdating files:  42% (1212/2884)\nUpdating files:  43% (1241/2884)\nUpdating files:  44% (1269/2884)\nUpdating files:  45% (1298/2884)\nUpdating files:  46% (1327/2884)\nUpdating files:  47% (1356/2884)\nUpdating files:  48% (1385/2884)\nUpdating files:  49% (1414/2884)\nUpdating files:  50% (1442/2884)\nUpdating files:  51% (1471/2884)\nUpdating files:  52% (1500/2884)\nUpdating files:  53% (1529/2884)\nUpdating files:  53% (1547/2884)\nUpdating files:  54% (1558/2884)\nUpdating files:  55% (1587/2884)\nUpdating files:  56% (1616/2884)\nUpdating files:  57% (1644/2884)\nUpdating files:  58% (1673/2884)\nUpdating files:  59% (1702/2884)\nUpdating files:  60% (1731/2884)\nUpdating files:  61% (1760/2884)\nUpdating files:  62% (1789/2884)\nUpdating files:  63% (1817/2884)\nUpdating files:  64% (1846/2884)\nUpdating files:  65% (1875/2884)\nUpdating files:  66% (1904/2884)\nUpdating files:  67% (1933/2884)\nUpdating files:  68% (1962/2884)\nUpdating files:  69% (1990/2884)\nUpdating files:  70% (2019/2884)\nUpdating files:  71% (2048/2884)\nUpdating files:  72% (2077/2884)\nUpdating files:  73% (2106/2884)\nUpdating files:  74% (2135/2884)\nUpdating files:  75% (2163/2884)\nUpdating files:  76% (2192/2884)\nUpdating files:  76% (2208/2884)\nUpdating files:  77% (2221/2884)\nUpdating files:  78% (2250/2884)\nUpdating files:  79% (2279/2884)\nUpdating files:  80% (2308/2884)\nUpdating files:  81% (2337/2884)\nUpdating files:  82% (2365/2884)\nUpdating files:  83% (2394/2884)\nUpdating files:  84% (2423/2884)\nUpdating files:  85% (2452/2884)\nUpdating files:  86% (2481/2884)\nUpdating files:  87% (2510/2884)\nUpdating files:  88% (2538/2884)\nUpdating files:  89% (2567/2884)\nUpdating files:  89% (2580/2884)\nUpdating files:  90% (2596/2884)\nUpdating files:  91% (2625/2884)\nUpdating files:  91% (2635/2884)\nUpdating files:  92% (2654/2884)\nUpdating files:  93% (2683/2884)\nUpdating files:  94% (2711/2884)\nUpdating files:  95% (2740/2884)\nUpdating files:  96% (2769/2884)\nUpdating files:  97% (2798/2884)\nUpdating files:  98% (2827/2884)\nUpdating files:  99% (2856/2884)\nUpdating files: 100% (2884/2884)\nUpdating files: 100% (2884/2884), done.\n",
+    "observed_management_utc": "2026-11-01T10:49:35.576000+00:00"
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/home/sachin.chaudhary/ces_fl_sources/cesfl-response-58773bb",
+      "log",
+      "-1",
+      "--format=%H %cI %s"
+    ],
+    "returncode": 0,
+    "stdout": "58773bbef9d9fe79dd313610f694ddeea12c6037 2026-11-01T16:15:36+05:30 Add controlled manipulation-response experiment with tested training arms and priority handoff\n",
+    "stderr": "",
+    "observed_management_utc": "2026-11-01T10:49:35.708000+00:00"
+  }
+]

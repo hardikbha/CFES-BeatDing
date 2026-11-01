@@ -1,0 +1,48 @@
+{
+  "request_id": "manipulation_response_20261101_r1",
+  "scope": "New FF++ bounded-quartet investigation; not full-coverage CES or FF2",
+  "priority": "Next available authorized GPU allocation; never preempt existing work",
+  "hypothesis": "Matching responses to controlled added manipulation across age appearances improves fairness while retaining manipulation sensitivity better than ordinary score consistency.",
+  "implementation": "CES_FL/src/ces_fl_manipulation_response.py",
+  "dependency": "Adjacent hash-pinned ces_fl_counterfactual_5050.py",
+  "arms": [
+    "bce",
+    "fair",
+    "nochange",
+    "score",
+    "response"
+  ],
+  "budget": "50 original-only P epochs shared, then 50 per downstream arm; 300 epochs total if all five arms run",
+  "changed_factors": [
+    "TRAIN-only real-image soft FPR disparity at fixed logit 0",
+    "Bounded age quartet bank; unique real TRAIN sources only; matched operation after editing",
+    "Response alignment plus positive operation-response margins"
+  ],
+  "original_exposure": "Every original once each epoch, shuffled; inverse label x ids8 cell weights; same head seed and encoder checkpoint",
+  "counterfactual_exposure": "Independent deterministic bank sample of up to four quartets per original minibatch; repetition is logged, NOT full TRAIN coverage",
+  "selection": "Validation AUC only; frozen validation-real 10% FPR threshold and separately reported fixed0.5",
+  "novelty": "Unproven research hypothesis; no 8/10 or SOTA claim",
+  "primary_validation_endpoint": "gender_race Ding-style F_FPR at frozen validation-calibrated operating point; report FNR, F_DP, es-AUC and AUC as well",
+  "proposed_detection_tolerance_pp": 0.5,
+  "decision_rule": "Advance response hypothesis only if validation primary fairness improves against fair AND score arms without >0.5pp AUC degradation relative to fair; prespecified development rule, not significance or test superiority",
+  "external_test_policy": "No test command in this package; existing test results have been viewed. Separate locked evaluation/uncertainty plan and untouched confirmation evidence needed.",
+  "dependencies": [
+    "Cluster CUDA smoke for current hashes",
+    "Original TRAIN/VAL/weights hashes verify",
+    "Completed P50 with replay receipt",
+    "Matched manipulation operator selection, code/settings/donor provenance and real output review",
+    "Reviewed bank covers each real TRAIN gender_race group with older and younger directions using unique non-VAL contributors"
+  ],
+  "training_launched_here": false,
+  "quartet_bank_available_here": false,
+  "manipulation_generation_implemented": false,
+  "FF2_status": "DO NOT RUN; prior review blockers unchanged",
+  "cpu_software_status": "PASS",
+  "cpu_test_groups": 6,
+  "cuda_status": "PENDING",
+  "source_hashes": {
+    "trainer": "0e82a522a22e641dc5588b6a15317e6842896ab2bdcc5364833af25e207f257e",
+    "architecture": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab"
+  },
+  "real_quartet_generation_tested": false
+}

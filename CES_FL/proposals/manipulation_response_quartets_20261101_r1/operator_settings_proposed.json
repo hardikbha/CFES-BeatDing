@@ -1,0 +1,38 @@
+{
+  "purpose": "PROPOSED_MANIPULATION_OPERATOR_QUALIFICATION_NOT_AUTHORIZED_BANK_APPROVAL",
+  "operator_candidate": "SimSwap-224 people",
+  "generator_checkpoint_sha256": "24caf144e9aabd5acd1127b06f13ed3528240adb9e747d77a94ac3f33e672330",
+  "arcface_checkpoint_sha256": "52ea5ce4902017b77a2bb811dd9a82f57dee3883e06c18a42d288437263c7a20",
+  "native_crop": 224,
+  "replicate_padding_fraction": 0.25,
+  "detector_threshold": 0.6,
+  "detector_size": [
+    640,
+    640
+  ],
+  "detector_mode": "None",
+  "paste_back": "fixed full crop mask, erosion 40x40, Gaussian blur 41x41, unchanged source dimensions, PNG; no watermark",
+  "donor_plan": "Same gender_race cell, one fixed donor per quartet for both conditions, all source/donor recorded contributors TRAIN only and exclude VAL",
+  "seed": 17,
+  "controls": [
+    "Existing Qwen editor no-change x0",
+    "Independent Qwen age edit xa from same original and seed/settings",
+    "Matched no-generator alignment/warp/blend sham for each x0/xa; controls diagnostic only, no added loss"
+  ],
+  "operation_receipts_required": [
+    "source and donor hashes",
+    "editor/model/settings/seed hashes",
+    "operator immutable code bundle and checkpoint hashes",
+    "actual target/donor face index, padding, landmarks/affine matrices for both conditions",
+    "sham control outputs and exact encoding history",
+    "failures and independent review evidence"
+  ],
+  "final_operator_code_sha256": null,
+  "operator_adapter_implemented": false,
+  "operator_executed_here": false,
+  "review_approvals_created": 0,
+  "new_training_approved_by_this_record": false,
+  "additional_editor_sources_proposed": 8,
+  "minimum_new_editor_outputs_if_age_only_adapter_validated": 16,
+  "do_not_run_legacy_dataset_drivers": true
+}

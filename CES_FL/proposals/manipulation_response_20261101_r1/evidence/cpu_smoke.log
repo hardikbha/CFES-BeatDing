@@ -1,0 +1,15 @@
+PASS independent_numpy_reference_and_gradients_to_all_four_roles
+PASS additive_offset_cancellation_no_group_cases_and_collapse_penalty
+PASS bank_bytes_roles_training_contributors_review_and_coverage_guards
+{"stage": "pretrain", "epoch": 1, "val_auc": 0.5, "pairs": 0, "sources": 8}
+PASS pretraining_transfer_identical_initialization_encoder_gradients_frozen_bn
+{"arm": "bce", "epoch": 1, "val_auc": 0.5}
+{"arm": "fair", "epoch": 1, "val_auc": 0.5}
+{"arm": "nochange", "epoch": 1, "val_auc": 0.5}
+{"arm": "score", "epoch": 1, "val_auc": 0.5}
+{"arm": "response", "epoch": 1, "val_auc": 0.5}
+PASS all_five_arms_real_architecture_backward_update_save_reload_validation_replay
+{"arm": "response", "epoch": 1, "val_auc": 0.5}
+{"arm": "response", "epoch": 2, "val_auc": 0.5}
+{"arm": "response", "epoch": 2, "val_auc": 0.5}
+PASS epoch_resume_bitwise_equivalence_pair_usage_and_tied_threshold

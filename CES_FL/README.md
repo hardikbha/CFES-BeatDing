@@ -1,5 +1,9 @@
 # CES-FL — supervisor review and training handoff
 
+## Priority manipulation-response experiment
+
+[Actual per-arm status](status/manip_response_20261101T104925Z_live.md): exact source `58773bb`, new CUDA smoke **44963.mgmt01 queued with ngpus=1**; no new training yet. Original-only P/BCE/fair can proceed after their own checks. No-change/score/response are blocked by the matched manipulation bank. Existing Qwen32 continues separately. This is a timestamped launch observation; follow the linked status for updates.
+
 ## Authorized bounded Qwen quality pilot
 
 [Executable 32-source quality diagnostic](proposals/qwen_bounded_quality_20261101_r2/README.md): six selection/isolation checks passed; 224 outputs planned, 4–6 generation hours after GPU binding. Training and full-bank generation remain stopped; no validity approvals are inferred. Actual launch and current state are recorded on its linked status page.

@@ -1,0 +1,80 @@
+{
+  "status": "BLOCKED_INPUTS",
+  "proposed_unique_sources": 16,
+  "expected_groups": [
+    "Female-Asian",
+    "Female-Black",
+    "Female-Others",
+    "Female-White",
+    "Male-Asian",
+    "Male-Black",
+    "Male-Others",
+    "Male-White"
+  ],
+  "directions_per_group": [
+    "older",
+    "younger"
+  ],
+  "eligible_qwen32_real_sources": 15,
+  "eligible_qwen32_real_source_counts_by_gender_race": {
+    "Female-Asian": 2,
+    "Male-White": 6,
+    "Female-White": 5,
+    "Male-Others": 1,
+    "Female-Others": 1
+  },
+  "potentially_reusable_selected_source_count": 8,
+  "currently_generated_selected_x0_xa_pairs_by_group": {
+    "Female-Asian": 2,
+    "Female-White": 2,
+    "Male-Others": 1
+  },
+  "supplementation_sources_needed": 8,
+  "supplementation_counts_by_group": {
+    "Female-Black": 2,
+    "Female-Others": 1,
+    "Male-Asian": 2,
+    "Male-Black": 2,
+    "Male-Others": 1
+  },
+  "real_train_counts_by_group": {
+    "Female-Asian": 1506,
+    "Male-White": 4455,
+    "Female-White": 5190,
+    "Female-Others": 270,
+    "Male-Asian": 486,
+    "Male-Others": 569,
+    "Male-Black": 268,
+    "Female-Black": 182
+  },
+  "eligible_real_train_counts_by_group": {
+    "Female-Asian": 1246,
+    "Male-White": 3618,
+    "Female-White": 4237,
+    "Female-Others": 239,
+    "Male-Asian": 362,
+    "Male-Others": 448,
+    "Male-Black": 209,
+    "Female-Black": 182
+  },
+  "selected_source_and_donor_recorded_val_contributor_overlap": 0,
+  "unique_target_proxies": 16,
+  "unique_donor_proxies": 16,
+  "unique_donor_images": 16,
+  "donor_reuse_max": 1,
+  "prospective_manifest_sha256": "c46674c9e413c179ef947b402b9dbdad47a7c5a6ddeb8485aeed5f5d4d673d35",
+  "real_manipulation_outputs_generated": 0,
+  "approved_quartets": 0,
+  "new_qwen_images_generated": 0,
+  "qwen_running_job_modified": false,
+  "source_selection_depends_on_model_scores": false,
+  "no_population_or_biological_identity_validity_claimed": true,
+  "blocking_dependencies": [
+    "TRAIN-only adaptation of the discovered SimSwap pipeline",
+    "recorded matched manipulation outputs and geometry-only controls",
+    "required supplemental age/no-change candidates, if individually approved for generation",
+    "independent substantive quartet review",
+    "bank audit and allocated per-arm backward PASS",
+    "verified P50 dependency"
+  ]
+}

@@ -1,0 +1,61 @@
+PRIORITY HANDOFF — CONTROLLED MANIPULATION RESPONSE, FF++ SEED17
+
+Use the exact published commit supplied with this prompt in a NEW detached worktree. Read CES_FL/AGENTS.md and this directory's README.md, request.json and config.json. This is a NEW bounded-quartet experiment, not the original full-coverage CES-FL bank and not FairForge-2. Treat priority as the next available authorized GPU resource; do not stop or alter existing jobs. The Qwen32 job stays separate. A push does not launch anything.
+
+1. FIRST PRIORITY: verify code hashes and run target software tests. Obtain ngpus=1 through the approved site allocation and verify actual device binding. A host name or free VRAM is not allocation proof. Use the training aiface environment; do not install over it. Record any isolated environment change. Within the pinned checkout and allocated session:
+
+  MR_PY=/home/sachin.chaudhary/.conda/envs/aiface/bin/python
+  MR_SCRIPT="$PWD/CES_FL/src/ces_fl_manipulation_response.py"
+  MR_CONFIG="$PWD/CES_FL/proposals/manipulation_response_20261101_r1/config.json"
+  MR_RUN="/home/sachin.chaudhary/ces_fl_runs/manipulation_response_$(date -u +%Y%m%dT%H%M%SZ)"
+  mkdir -p "$MR_RUN"
+  "$MR_PY" CES_FL/tests/smoke_manipulation_response.py --device cuda --out "$MR_RUN/smoke_cuda"
+
+Require PASS for the exact source/test/dependency hashes. This is synthetic software evidence, not real manipulation validity. Publish command/environment/job/device/receipt and preserve failures. Save MR_RUN for later allocated stages. Never run the entire handoff unattended.
+
+2. ORIGINAL-ONLY TRACK: verify all pinned FF++ TRAIN/VAL/ImageNet hashes, decode readiness and resource feasibility. Existing CUDA pretraining dry-run evidence applies only to the unchanged base trainer hash; reproduce that real configured dry run when environment/input/binding changes. Use:
+
+  "$MR_PY" CES_FL/src/ces_fl_counterfactual_5050.py dry-run --config CES_FL/proposals/counterfactual_5050_20261101_r1/protocol_config.json --stage pretrain --device cuda --out "$MR_RUN/P_real_dry"
+  "$MR_PY" "$MR_SCRIPT" pretrain --config "$MR_CONFIG" --out "$MR_RUN/P" --device cuda
+
+P performs 50 epochs on original TRAIN only. No bank/generation or test data is used. Do not duplicate an already completed exact-config P: verify its source, config, input hashes, 50 epochs and RUN_VERIFIED.json before reusing it. Record the actual P dependency path. No ten-epoch legacy P substitution.
+
+After verified P completes, original-only comparison arms can start even if the quartet bank is unavailable:
+
+  "$MR_PY" "$MR_SCRIPT" bind --config "$MR_CONFIG" --pretrain-run "$MR_RUN/P" --out "$MR_RUN/bound_originals"
+  MR_ORIGINALS="$MR_RUN/bound_originals/bound_config.json"
+  "$MR_PY" "$MR_SCRIPT" dry-run --config "$MR_ORIGINALS" --arm bce --device cuda --out "$MR_RUN/dry_bce"
+  "$MR_PY" "$MR_SCRIPT" dry-run --config "$MR_ORIGINALS" --arm fair --device cuda --out "$MR_RUN/dry_fair"
+  "$MR_PY" "$MR_SCRIPT" train --config "$MR_ORIGINALS" --arm bce --device cuda --out "$MR_RUN/bce"
+  "$MR_PY" "$MR_SCRIPT" train --config "$MR_ORIGINALS" --arm fair --device cuda --out "$MR_RUN/fair"
+
+Each arm is 50 epochs. Independent validation replay is required for DONE. Same original order/weighting, encoder initialization, fresh head seed and optimizer settings. Epoch-boundary continuation uses --resume with identical config/output; never erase partial outputs to restart silently.
+
+3. DATA DEPENDENCY TRACK: the new quartet generator is NOT implemented here. Identify an existing real face-manipulation pipeline before paired training. Publish its exact operator/code/settings/donor/seed plan and processing controls in a NEW additive request record. Do not claim JPEG, blur, resize or arbitrary pasted pixels are validated face forgery. Produce matched t0=T(x0), ta=T(xa), where x0 is a no-change editor control and xa is an age edit independently generated from the SAME original real TRAIN source. Match editor revision/settings/seed and operator settings/donor/seed. Save actual operation receipts. A no-change Qwen control is not an untouched authentic photograph.
+
+Initial bank: one older and one younger quartet per real TRAIN gender_race group, with unique sources (16 if eight groups). Every source/donor must be TRAIN and have no recorded VAL contributor overlap. The prior Qwen32 diagnostic contains some VAL-overlapping proxies and fake originals; do not blindly reuse it. Reuse only individually eligible/reviewed candidates with full provenance; if quotas are missing, report and prepare a separately recorded bounded supplementation plan. No full 532973-image generation is requested.
+
+Use quartet_schema_example.json only as a schema, never as real data. Keep image assets and per-image records private. Qualified independent review must record identity, intended age change, manipulation validity, matched processing, unrelated changes and substantive evidence. No model-score based cherry-picking, automatic all-approve, or copying old approvals. If the operator, valid assets or review are missing, publish BLOCKED_INPUTS for nochange/score/response and continue only the original-only track. Do not invent missing pairs or report the new response model as running.
+
+4. Once valid bank.json exists, bind and audit it (set MR_BANK to the actual absolute private JSON path):
+
+  "$MR_PY" "$MR_SCRIPT" bind --config "$MR_CONFIG" --pretrain-run "$MR_RUN/P" --bank "$MR_BANK" --out "$MR_RUN/bound_quartets"
+  MR_BOUND="$MR_RUN/bound_quartets/bound_config.json"
+  "$MR_PY" "$MR_SCRIPT" preflight --config "$MR_BOUND" --arm response --out "$MR_RUN/quartet_preflight"
+
+Publish exact bound config/hash, operator provenance and aggregate coverage/review counts before paired launch. Code guards check asserted provenance, not scientific truth. A mismatched or incomplete bank must not be repaired by weakening assertions.
+
+Run these actual configured backward checks separately on the allocated GPU, then the corresponding 50-epoch arms only after PASS:
+
+  "$MR_PY" "$MR_SCRIPT" dry-run --config "$MR_BOUND" --arm nochange --device cuda --out "$MR_RUN/dry_nochange"
+  "$MR_PY" "$MR_SCRIPT" dry-run --config "$MR_BOUND" --arm score --device cuda --out "$MR_RUN/dry_score"
+  "$MR_PY" "$MR_SCRIPT" dry-run --config "$MR_BOUND" --arm response --device cuda --out "$MR_RUN/dry_response"
+  "$MR_PY" "$MR_SCRIPT" train --config "$MR_BOUND" --arm nochange --device cuda --out "$MR_RUN/nochange"
+  "$MR_PY" "$MR_SCRIPT" train --config "$MR_BOUND" --arm score --device cuda --out "$MR_RUN/score"
+  "$MR_PY" "$MR_SCRIPT" train --config "$MR_BOUND" --arm response --device cuda --out "$MR_RUN/response"
+
+5. Publish milestone evidence from a separate publication worktree: actual commit/hashes, scheduler/allocation/device, log path and process/job state, epoch progress, sampled quartet counts/coverage, real-group counts per minibatch, validation AUC/fairness/FNR/support, selected epoch, calibration and RUN_VERIFIED.json. Historical results remain immutable. Call software success software success; do not claim novelty, fairness gains or a win over Ding without comparative evidence.
+
+No test evaluation, new seeds, architecture switches or FF2 launch are attached. Existing tests have already been viewed; a future locked evaluator must include per-group and paired component uncertainty and honest disclosure of development history. Ding archived/corrected baselines and common two-logit adapter remain separate unresolved work; this package does not fix them. The entire five-arm study is 50 shared P +5×50 downstream=300 epochs, not 50 total. There is no promised completion time.
+
+Return a concise status with separate P/BCE/fair/nochange/score/response rows and the quartet-data blocker. Do not leave the user assuming full training is running when only data preparation or smoke is active.

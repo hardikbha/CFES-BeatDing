@@ -1,0 +1,105 @@
+{
+  "observed_management_utc": "2026-11-01T11:06:11.932099+00:00",
+  "candidate_operator": "Existing cached SimSwap-224 people checkpoint",
+  "repository": "/home/sachin.chaudhary/models_external/SimSwap",
+  "files": [
+    {
+      "path": "/home/sachin.chaudhary/models_external/SimSwap/arcface_model/arcface_checkpoint.tar",
+      "exists": true,
+      "bytes": 209280521,
+      "sha256": "52ea5ce4902017b77a2bb811dd9a82f57dee3883e06c18a42d288437263c7a20"
+    },
+    {
+      "path": "/home/sachin.chaudhary/models_external/SimSwap/checkpoints/people/latest_net_G.pth",
+      "exists": true,
+      "bytes": 220243703,
+      "sha256": "24caf144e9aabd5acd1127b06f13ed3528240adb9e747d77a94ac3f33e672330"
+    },
+    {
+      "path": "/home/sachin.chaudhary/models_external/SimSwap/models/fs_model.py",
+      "exists": true,
+      "bytes": 9728,
+      "sha256": "c9f12239da7ffc73ca5947baf7efc2a8e6e8e86523733f9bcb8feeb0fe9f43fd"
+    },
+    {
+      "path": "/home/sachin.chaudhary/models_external/SimSwap/models/models.py",
+      "exists": true,
+      "bytes": 5614,
+      "sha256": "7c4e832ef5619adca93f90bbb544a19b4935288aab6868d2bed9be7ff10b3949"
+    },
+    {
+      "path": "/home/sachin.chaudhary/models_external/SimSwap/models/base_model.py",
+      "exists": true,
+      "bytes": 5818,
+      "sha256": "b01f7ac78c629e21985051f07e206af6d451768e5168678be083bd0966e38d6a"
+    },
+    {
+      "path": "/home/sachin.chaudhary/models_external/SimSwap/insightface_func/face_detect_crop_single.py",
+      "exists": true,
+      "bytes": 3452,
+      "sha256": "8d6aab3c19d5bd31fad8ae7725b4d3e364f620d96821b3e491e2ec3fd646f0ce"
+    },
+    {
+      "path": "/home/sachin.chaudhary/models_external/SimSwap/options/test_options.py",
+      "exists": true,
+      "bytes": 3129,
+      "sha256": "994b3999a80d196ea8505d416e214ea02207180f35171cd36d4c01e71a5e1c3b"
+    },
+    {
+      "path": "/home/sachin.chaudhary/ICLR_2027/fairforge2/src/gen_swap_arm.py",
+      "exists": true,
+      "bytes": 16242,
+      "sha256": "5aa9bd840d9920be8424931075b1f24b290319e96e8468c04563fd520c53f7bc"
+    },
+    {
+      "path": "/home/sachin.chaudhary/ICLR_2027/fairforge2/src/audit_v1/ws3_swapgen.py",
+      "exists": true,
+      "bytes": 6979,
+      "sha256": "7d5d5454b6660971716c0ac88aaa4df16e58158970c095974515997fa079d6a0"
+    },
+    {
+      "path": "/home/sachin.chaudhary/.insightface/models/inswapper_128.onnx",
+      "exists": false
+    },
+    {
+      "path": "/home/sachin.chaudhary/models_external/SimSwap/insightface_func/models/antelope/genderage.onnx",
+      "exists": true,
+      "bytes": 1322532,
+      "sha256": "4fde69b1c810857b88c64a335084f1c3fe8f01246c9a191b48c7bb756d6652fb"
+    },
+    {
+      "path": "/home/sachin.chaudhary/models_external/SimSwap/insightface_func/models/antelope/glintr100.onnx",
+      "exists": true,
+      "bytes": 260665334,
+      "sha256": "4ab1d6435d639628a6f3e5008dd4f929edf4c4124b1a7169e1048f9fef534cdf"
+    },
+    {
+      "path": "/home/sachin.chaudhary/models_external/SimSwap/insightface_func/models/antelope/scrfd_10g_bnkps.onnx",
+      "exists": true,
+      "bytes": 16923827,
+      "sha256": "5838f7fe053675b1c7a08b633df49e7af5495cee0493c7dcf6697200b85b5b91"
+    },
+    {
+      "path": "/home/sachin.chaudhary/models_external/SimSwap/insightface_func/models/antelope/1k3d68.onnx",
+      "exists": true,
+      "bytes": 143607619,
+      "sha256": "df5c06b8a0c12e422b2ed8947b8869faa4105387f199c477af038aa01f9a45cc"
+    },
+    {
+      "path": "/home/sachin.chaudhary/models_external/SimSwap/insightface_func/models/antelope/2d106det.onnx",
+      "exists": true,
+      "bytes": 5030888,
+      "sha256": "f001b856447c413801ef5c42091ed0cd516fcd21f2d6b79635b1e733a7109dbf"
+    }
+  ],
+  "executed": false,
+  "qualified_on_ffpp_qwen_ages": false,
+  "HEAD": "bd7b7686a17f41dd11cfcd5d82f7e4c5eb94b780",
+  "--short": "M insightface_func/face_detect_crop_multi.py\n M insightface_func/face_detect_crop_single.py\n?? insightface_func/face_detect_crop_multi.py.orig_backup\n?? insightface_func/face_detect_crop_single.py.orig_backup\n?? insightface_func/models/",
+  "candidate_environment_metadata": {
+    "python": "/home/sachin.chaudhary/.conda/envs/pulid/bin/python",
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 1, in <dictcomp>\n  File \"/home/sachin.chaudhary/.conda/envs/pulid/lib/python3.10/importlib/metadata/__init__.py\", line 996, in version\n    return distribution(distribution_name).version\n  File \"/home/sachin.chaudhary/.conda/envs/pulid/lib/python3.10/importlib/metadata/__init__.py\", line 969, in distribution\n    return Distribution.from_name(distribution_name)\n  File \"/home/sachin.chaudhary/.conda/envs/pulid/lib/python3.10/importlib/metadata/__init__.py\", line 548, in from_name\n    raise PackageNotFoundError(name)\nimportlib.metadata.PackageNotFoundError: No package metadata was found for opencv-python\n"
+  }
+}

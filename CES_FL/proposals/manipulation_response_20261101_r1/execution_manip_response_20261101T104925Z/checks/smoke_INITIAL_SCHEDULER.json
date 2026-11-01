@@ -1,0 +1,15 @@
+{
+  "Job_Name": "mr17_smoke",
+  "job_state": "Q",
+  "queue": "gpu",
+  "Resource_List": {
+    "mem": "48gb",
+    "ncpus": 8,
+    "ngpus": 1,
+    "nodect": 1,
+    "place": "free",
+    "select": "1:host=gpu01:ncpus=8:ngpus=1:mem=48gb",
+    "walltime": "03:00:00"
+  },
+  "comment": "Not Running: User has reached queue gpu running job limit."
+}

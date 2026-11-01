@@ -1,0 +1,210 @@
+{
+  "observed_management_utc": "2026-11-01T11:16:52.353553+00:00",
+  "source_commit": "58773bbef9d9fe79dd313610f694ddeea12c6037",
+  "source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-response-58773bb",
+  "run_root": "/home/sachin.chaudhary/ces_fl_runs/manip_response_20261101T104925Z",
+  "local_preflight": {
+    "status": "PASS",
+    "observed_management_utc": "2026-11-01T10:58:55.730336+00:00",
+    "source_commit": "58773bbef9d9fe79dd313610f694ddeea12c6037",
+    "source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-response-58773bb",
+    "source_hashes": {
+      "CES_FL/src/ces_fl_manipulation_response.py": "0e82a522a22e641dc5588b6a15317e6842896ab2bdcc5364833af25e207f257e",
+      "CES_FL/src/ces_fl_counterfactual_5050.py": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+      "CES_FL/tests/smoke_manipulation_response.py": "748f4a883af8b39b6edd0f992f929f12f3045ba85734fcf1e542b67f61895654",
+      "CES_FL/proposals/manipulation_response_20261101_r1/config.json": "d31c78ab2913e629ebbd7e7a860a0dd4bea90d2c920b0d77719b042a7537dab0"
+    },
+    "external_input_hashes": {
+      "train": {
+        "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ding_ffpp/train.csv",
+        "sha256": "6ee9326fe8361dc3aee0f803c49b5eada169be5cf3bc3cb44ad3d934ba5ca657",
+        "bytes": 32388814
+      },
+      "val": {
+        "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ding_ffpp/val.csv",
+        "sha256": "52f4844cffe5a03adb08cecde8829244bb50e05eeead36f6d659599f1c24f5b1",
+        "bytes": 10811726
+      },
+      "protocol_overlap_file": {
+        "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ding_ffpp/protocol_source_overlap.json",
+        "sha256": "793db56c30c85dd654c6d68745afc926f4b1f8dc8bec749db01b07b3aa306c97",
+        "bytes": 27635
+      },
+      "weights": {
+        "path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/xception-b5690688.pth",
+        "sha256": "43020ad2812c333d9f8e202b9fef94e579d07addb6582d69a1f68bbaec21aa90",
+        "bytes": 91675053
+      }
+    },
+    "environment_versions": {
+      "torch": "2.7.0+cu126",
+      "numpy": "2.2.6",
+      "Pillow": "11.3.0",
+      "scikit-learn": "1.7.2"
+    },
+    "operator_checks": [
+      {
+        "name": "guards",
+        "command": [
+          "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+          "/home/sachin.chaudhary/ces_fl_runs/manip_response_20261101T104925Z/runtime/test_allocation_guards.py"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "test_busy_or_protected_card_rejected (__main__.Guards.test_busy_or_protected_card_rejected) ... ok\ntest_headroom_and_site_mapping (__main__.Guards.test_headroom_and_site_mapping) ... ok\ntest_require_running_gpu_allocation (__main__.Guards.test_require_running_gpu_allocation) ... ok\ntest_strict_cuda_uuid_equality (__main__.Guards.test_strict_cuda_uuid_equality) ... ok\ntest_wrong_node_rejected (__main__.Guards.test_wrong_node_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.000s\n\nOK\n"
+      },
+      {
+        "name": "shell_syntax",
+        "command": [
+          "bash",
+          "-n",
+          "/home/sachin.chaudhary/ces_fl_runs/manip_response_20261101T104925Z/runtime/smoke_one_gpu.pbs"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      }
+    ],
+    "cuda_suite_run": false,
+    "real_images_fully_decoded_this_stage": false,
+    "training_launched": false,
+    "qwen_touched": false,
+    "ngpus_allocation_required": true
+  },
+  "smoke": {
+    "state": "QUEUED",
+    "job_id": "44963.mgmt01",
+    "scheduler": {
+      "Job_Name": "mr17_smoke",
+      "job_state": "Q",
+      "queue": "gpu",
+      "Resource_List": {
+        "mem": "48gb",
+        "ncpus": 8,
+        "ngpus": 1,
+        "nodect": 1,
+        "place": "free",
+        "select": "1:host=gpu01:ncpus=8:ngpus=1:mem=48gb",
+        "walltime": "03:00:00"
+      },
+      "comment": "Not Running: Insufficient amount of resource: ncpus (R: 8 A: 4 T: 208)"
+    },
+    "progress": null,
+    "binding": null,
+    "result": null,
+    "pass": null,
+    "failure": null
+  },
+  "arms": {
+    "P": {
+      "status": "BLOCKED_INPUTS",
+      "reason": "Allocated new CUDA suite and real-input/configured backward checks must pass first; no P50 launched"
+    },
+    "bce": {
+      "status": "BLOCKED_INPUTS",
+      "reason": "Verified shared P50, exact binding and BCE backward check missing"
+    },
+    "fair": {
+      "status": "BLOCKED_INPUTS",
+      "reason": "Verified shared P50, exact binding and fair backward check missing"
+    },
+    "nochange": {
+      "status": "BLOCKED_INPUTS",
+      "reason": "No validated target manipulation operator/complete independently reviewed matched quartet bank; also requires P50, binding and per-arm backward PASS"
+    },
+    "score": {
+      "status": "BLOCKED_INPUTS",
+      "reason": "No validated target manipulation operator/complete independently reviewed matched quartet bank; also requires P50, binding and per-arm backward PASS"
+    },
+    "response": {
+      "status": "BLOCKED_INPUTS",
+      "reason": "No validated target manipulation operator/complete independently reviewed matched quartet bank; also requires P50, binding and per-arm backward PASS"
+    }
+  },
+  "quartet_preparation": {
+    "status": "BLOCKED_INPUTS",
+    "proposed_unique_sources": 16,
+    "expected_groups": [
+      "Female-Asian",
+      "Female-Black",
+      "Female-Others",
+      "Female-White",
+      "Male-Asian",
+      "Male-Black",
+      "Male-Others",
+      "Male-White"
+    ],
+    "directions_per_group": [
+      "older",
+      "younger"
+    ],
+    "eligible_qwen32_real_sources": 15,
+    "eligible_qwen32_real_source_counts_by_gender_race": {
+      "Female-Asian": 2,
+      "Male-White": 6,
+      "Female-White": 5,
+      "Male-Others": 1,
+      "Female-Others": 1
+    },
+    "potentially_reusable_selected_source_count": 8,
+    "currently_generated_selected_x0_xa_pairs_by_group": {
+      "Female-Asian": 2,
+      "Female-White": 2,
+      "Male-Others": 1
+    },
+    "supplementation_sources_needed": 8,
+    "supplementation_counts_by_group": {
+      "Female-Black": 2,
+      "Female-Others": 1,
+      "Male-Asian": 2,
+      "Male-Black": 2,
+      "Male-Others": 1
+    },
+    "real_train_counts_by_group": {
+      "Female-Asian": 1506,
+      "Male-White": 4455,
+      "Female-White": 5190,
+      "Female-Others": 270,
+      "Male-Asian": 486,
+      "Male-Others": 569,
+      "Male-Black": 268,
+      "Female-Black": 182
+    },
+    "eligible_real_train_counts_by_group": {
+      "Female-Asian": 1246,
+      "Male-White": 3618,
+      "Female-White": 4237,
+      "Female-Others": 239,
+      "Male-Asian": 362,
+      "Male-Others": 448,
+      "Male-Black": 209,
+      "Female-Black": 182
+    },
+    "selected_source_and_donor_recorded_val_contributor_overlap": 0,
+    "unique_target_proxies": 16,
+    "unique_donor_proxies": 16,
+    "unique_donor_images": 16,
+    "donor_reuse_max": 1,
+    "prospective_manifest_sha256": "c46674c9e413c179ef947b402b9dbdad47a7c5a6ddeb8485aeed5f5d4d673d35",
+    "real_manipulation_outputs_generated": 0,
+    "approved_quartets": 0,
+    "new_qwen_images_generated": 0,
+    "qwen_running_job_modified": false,
+    "source_selection_depends_on_model_scores": false,
+    "no_population_or_biological_identity_validity_claimed": true,
+    "blocking_dependencies": [
+      "TRAIN-only adaptation of the discovered SimSwap pipeline",
+      "recorded matched manipulation outputs and geometry-only controls",
+      "required supplemental age/no-change candidates, if individually approved for generation",
+      "independent substantive quartet review",
+      "bank audit and allocated per-arm backward PASS",
+      "verified P50 dependency"
+    ]
+  },
+  "new_training_launched": false,
+  "qwen_existing_job_modified": false,
+  "FF2_launched": false,
+  "test_evaluation_launched": false,
+  "observer_pid": 3478898,
+  "observer_scope": "12h maximum; observes this smoke only, stops at completion/failure; cannot launch or chain stages"
+}

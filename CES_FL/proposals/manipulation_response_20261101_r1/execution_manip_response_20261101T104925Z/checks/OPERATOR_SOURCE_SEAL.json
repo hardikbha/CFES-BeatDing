@@ -1,0 +1,14 @@
+{
+  "observed_management_utc": "2026-11-01T11:19:59.108877+00:00",
+  "runtime_hashes": {
+    "smoke_one_gpu.pbs": "b10a30bc6340963fae9f9121a571a74bf6ae4a613cdaab7b418e61654b2c9328",
+    "allocated_mr.py": "ff7d6fef49cdfa18670b14a26fc9ddc16f061020b89c5d2912b8157d7ef72a10",
+    "real_inputs.py": "4f6ce0b80ad005746abb74ab4da5c2a7cb45fe8db7ec90d70b67332991ee7617",
+    "test_observer_states.py": "6bfb5a9a370db45bbf28aadc9636da7c265f0361f679c7e53006ef6dba7e28af",
+    "observe_smoke.py": "34f32598eef582ca9b4d47a4b1b7e5748e5f449644fb50958062760090554b32",
+    "prepare_quartet_inputs.py": "4f7d6faefddf008451892071cd53809a8c8f474c5c8ded57a9d26b5e9c027a52",
+    "test_allocation_guards.py": "c7ac33308400ce5ec0b611e86b3e9b8116d1e0bf7e64b69aa8a3861eb037cce2"
+  },
+  "runtime_files_readonly": true,
+  "scientific_source_unchanged": true
+}

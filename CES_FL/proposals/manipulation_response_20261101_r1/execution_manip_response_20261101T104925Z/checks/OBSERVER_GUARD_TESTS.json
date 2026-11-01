@@ -1,0 +1,10 @@
+{
+  "command": [
+    "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+    "/home/sachin.chaudhary/ces_fl_runs/manip_response_20261101T104925Z/runtime/test_observer_states.py"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_completion_requires_receipts (__main__.States.test_completion_requires_receipts) ... ok\ntest_failed_job_is_reported (__main__.States.test_failed_job_is_reported) ... ok\ntest_queued_is_not_running (__main__.States.test_queued_is_not_running) ... ok\ntest_running_smoke_is_not_running_real_training (__main__.States.test_running_smoke_is_not_running_real_training) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.002s\n\nOK\n",
+  "scope": "Four synthetic scheduler-state tests; no real CUDA/training executed"
+}

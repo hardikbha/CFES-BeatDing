@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#PBS -N mr17_smoke
+#PBS -q gpu
+#PBS -l select=1:host=gpu01:ncpus=8:ngpus=1:mem=48gb
+#PBS -l walltime=03:00:00
+#PBS -r n
+#PBS -j oe
+set -Eeuo pipefail
+export PATH=/home/sachin.chaudhary/ces_fl_tools/git_cluster_20261031/bin:/opt/pbs/bin:/usr/bin:/bin:$PATH
+export PYTHONDONTWRITEBYTECODE=1
+exec /home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_runs/manip_response_20261101T104925Z/runtime/allocated_mr.py --stage smoke

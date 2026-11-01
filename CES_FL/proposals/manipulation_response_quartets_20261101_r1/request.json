@@ -1,0 +1,22 @@
+{
+  "status": "BLOCKED_INPUTS",
+  "parent_commit": "58773bbef9d9fe79dd313610f694ddeea12c6037",
+  "parent_request": "manipulation_response_20261101_r1",
+  "source_manifest_private": "/home/sachin.chaudhary/ces_fl_runs/manip_response_20261101T104925Z/quartet_preparation/prospective_quartets_PRIVATE.csv",
+  "source_manifest_sha256": "c46674c9e413c179ef947b402b9dbdad47a7c5a6ddeb8485aeed5f5d4d673d35",
+  "target_sources": 16,
+  "donor_sources": 16,
+  "source_and_donor_proxy_val_overlap": 0,
+  "generation_launched": false,
+  "bank_json_created": false,
+  "approved_quartets": 0,
+  "missing_inputs": [
+    "TRAIN-only adaptation of the discovered SimSwap pipeline",
+    "recorded matched manipulation outputs and geometry-only controls",
+    "required supplemental age/no-change candidates, if individually approved for generation",
+    "independent substantive quartet review",
+    "bank audit and allocated per-arm backward PASS",
+    "verified P50 dependency"
+  ],
+  "operator_settings_sha256": "e2406204c24307b0ed7ddc00f716c7ea99dbec10b801fb7a340194733cfc0359"
+}

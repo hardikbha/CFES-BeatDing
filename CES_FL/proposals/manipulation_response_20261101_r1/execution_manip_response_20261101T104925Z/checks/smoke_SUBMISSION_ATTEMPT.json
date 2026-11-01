@@ -1,0 +1,16 @@
+{
+  "command": [
+    "qsub",
+    "-o",
+    "/home/sachin.chaudhary/ces_fl_runs/manip_response_20261101T104925Z/logs/smoke.pbs.log",
+    "-v",
+    "MR_RUN=/home/sachin.chaudhary/ces_fl_runs/manip_response_20261101T104925Z,MR_SOURCE_DIR=/home/sachin.chaudhary/ces_fl_sources/cesfl-response-58773bb",
+    "/home/sachin.chaudhary/ces_fl_runs/manip_response_20261101T104925Z/runtime/smoke_one_gpu.pbs"
+  ],
+  "observed_management_utc": "2026-11-01T10:59:50.838877+00:00",
+  "source_commit": "58773bbef9d9fe79dd313610f694ddeea12c6037",
+  "requested_ngpus": 1,
+  "scope": "new CUDA smoke only; no automatic later milestone",
+  "qwen_preserved": true,
+  "launcher_sha256": "b10a30bc6340963fae9f9121a571a74bf6ae4a613cdaab7b418e61654b2c9328"
+}
