@@ -1,0 +1,18 @@
+{
+  "pid": 2826656,
+  "host": "gpu02",
+  "stage": "preflight",
+  "command": [
+    "ssh",
+    "-o",
+    "BatchMode=yes",
+    "-o",
+    "ConnectTimeout=10",
+    "gpu02",
+    "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -c 'import subprocess,sys,json,pathlib; f=pathlib.Path('\"'\"'/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_20261101T072735Z/logs/preflight_worker.log'\"'\"').open('\"'\"'xb'\"'\"'); p=subprocess.Popen([sys.executable,'\"'\"'-u'\"'\"','\"'\"'/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_20261101T072735Z/runtime/direct_worker.py'\"'\"','\"'\"'--stage'\"'\"','\"'\"'preflight'\"'\"'],stdin=subprocess.DEVNULL,stdout=f,stderr=subprocess.STDOUT,start_new_session=True); print(json.dumps({'\"'\"'pid'\"'\"':p.pid,'\"'\"'host'\"'\"':'\"'\"'gpu02'\"'\"','\"'\"'stage'\"'\"':'\"'\"'preflight'\"'\"'}))'"
+  ],
+  "execution_mode": "direct_ssh",
+  "pbs_allocation": null,
+  "observed_utc": "2026-11-01T07:30:20.476944+00:00",
+  "log": "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_20261101T072735Z/logs/preflight_worker.log"
+}

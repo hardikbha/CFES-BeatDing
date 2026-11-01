@@ -2,6 +2,10 @@
 
 **Start here.** [Current timestamped status](STATUS.md) · [Review/change/run workflow](WORKFLOW.md) · [Prompt for a supervisor or another LLM](SUPERVISOR_PROMPT.md)
 
+## Direct SSH continuation — 1 November 2026
+
+The user superseded the queued PBS route. Job 44948 was cancelled before execution. The current immutable-source run is on direct SSH: seven CUDA software checks passed on gpu02, and full TRAIN-image hashing is running before the real-batch dry-run and separate two-source Qwen pilot. [Actual current status](status/cf5050_ssh_recovery_20261101T073243Z_live.md) · [CUDA proof, operational UUID recovery and exact wrappers](proposals/counterfactual_5050_20261101_r1/execution_cf5050_ssh_recovery_20261101T073243Z/README.md). This uses bounded shared VRAM and has no claimed PBS allocation. Full training and generation remain gated; FairForge-2 remains DO NOT RUN.
+
 ## New gated FF++ study and independent FF2 stop — 1 November 2026
 
 The pinned counterfactual 50+50 handoff is now on the cluster. Source/configuration and declared input hashes passed; allocated milestone 1 job **44948.mgmt01** is queued behind the GPU user running-job limit. CUDA/real-data smoke and the two-source Qwen pilot remain pending. [Actual job/check status](status/cf5050_20261101T065603Z_live.md) · [Exact execution receipt](proposals/counterfactual_5050_20261101_r1/execution_cf5050_20261101T065603Z/README.md).

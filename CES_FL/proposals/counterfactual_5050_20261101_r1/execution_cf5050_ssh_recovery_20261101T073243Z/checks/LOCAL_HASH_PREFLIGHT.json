@@ -1,0 +1,225 @@
+{
+  "status": "PASS",
+  "scope": "Local source/config/declared-input byte hashes and syntax only; no CUDA or real-image byte inventory yet",
+  "observed_utc": "2026-11-01T07:27:35.673745+00:00",
+  "source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-cf5050-fc4e63b",
+  "commit": "fc4e63b8811c5813afa0d298a8172ba9555b7e40",
+  "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+  "config": "/home/sachin.chaudhary/ces_fl_sources/cesfl-cf5050-fc4e63b/CES_FL/proposals/counterfactual_5050_20261101_r1/protocol_config.json",
+  "config_sha256": "56e77211a966ae12a449c47cdaf8e3fc271f149c6031513747813a1d1abfaef0",
+  "inputs": {
+    "train": {
+      "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ding_ffpp/train.csv",
+      "sha256": "6ee9326fe8361dc3aee0f803c49b5eada169be5cf3bc3cb44ad3d934ba5ca657"
+    },
+    "val": {
+      "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ding_ffpp/val.csv",
+      "sha256": "52f4844cffe5a03adb08cecde8829244bb50e05eeead36f6d659599f1c24f5b1"
+    },
+    "protocol_overlap_file": {
+      "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ding_ffpp/protocol_source_overlap.json",
+      "sha256": "793db56c30c85dd654c6d68745afc926f4b1f8dc8bec749db01b07b3aa306c97"
+    },
+    "weights": {
+      "path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/xception-b5690688.pth",
+      "sha256": "43020ad2812c333d9f8e202b9fef94e579d07addb6582d69a1f68bbaec21aa90"
+    }
+  },
+  "environment_versions": {
+    "torch": "2.7.0+cu126",
+    "numpy": "2.2.6",
+    "Pillow": "11.3.0",
+    "scikit-learn": "1.7.2",
+    "diffusers": "0.35.1",
+    "transformers": "5.15.1",
+    "accelerate": "1.10.1",
+    "safetensors": "0.8.0"
+  },
+  "model_snapshot": "/home/sachin.chaudhary/.cache/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/snapshots/6f3ccc0b56e431dc6a0c2b2039706d7d26f22cb9",
+  "model_snapshot_exists": true,
+  "model_snapshot_files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 1580,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/b2ef89be59c5792bf037a43d1bb69d922d28e9d8"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7179,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/277c39d3f5bb2c3908b435727e80c98af75f934a"
+    },
+    {
+      "path": "model_index.json",
+      "bytes": 516,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/a2e083f28f4f6c958c08f3882c89038b8f6da872"
+    },
+    {
+      "path": "processor/added_tokens.json",
+      "bytes": 605,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/482ced4679301bf287ebb310bdd1790eb4514232"
+    },
+    {
+      "path": "processor/chat_template.jinja",
+      "bytes": 1017,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/6c226632394ae7474b0d4b13e15793eac2e21ee9"
+    },
+    {
+      "path": "processor/merges.txt",
+      "bytes": 1671853,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/31349551d90c7606f325fe0f11bbb8bd5fa0d7c7"
+    },
+    {
+      "path": "processor/preprocessor_config.json",
+      "bytes": 826,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/9a24c5165e5de348ba27d0d00dd52b27c6044ab2"
+    },
+    {
+      "path": "processor/special_tokens_map.json",
+      "bytes": 613,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/ac23c0aaa2434523c494330aeb79c58395378103"
+    },
+    {
+      "path": "processor/tokenizer.json",
+      "bytes": 11421896,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa"
+    },
+    {
+      "path": "processor/tokenizer_config.json",
+      "bytes": 4727,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/203eb2267a9b927c93a97b67990818164bf3c692"
+    },
+    {
+      "path": "processor/video_preprocessor_config.json",
+      "bytes": 910,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/ef8f979d86a2255c8fc115327eefce152e5a7cf3"
+    },
+    {
+      "path": "processor/vocab.json",
+      "bytes": 2776833,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/4783fe10ac3adce15ac8f358ef5462739852c569"
+    },
+    {
+      "path": "scheduler/scheduler_config.json",
+      "bytes": 485,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/f400c338630cdaa261c6575648f374eba547b9c6"
+    },
+    {
+      "path": "text_encoder/config.json",
+      "bytes": 3146,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/52b1556c2927e08c13529f2a107b08c87c7a4e65"
+    },
+    {
+      "path": "text_encoder/generation_config.json",
+      "bytes": 244,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/5fdb82f3b3f12d83074ce7b45e330d8ee4efb7d7"
+    },
+    {
+      "path": "text_encoder/model-00001-of-00004.safetensors",
+      "bytes": 4968243304,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/d725335e4ea2399be706469e4b8807716a8fa64bd03468252e9f7acf2415fee4"
+    },
+    {
+      "path": "text_encoder/model-00002-of-00004.safetensors",
+      "bytes": 4991495816,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/b1830db6908dcc76df3a71492acbcf2b8cac130114cf1f3c2d9edae8de8c6de3"
+    },
+    {
+      "path": "text_encoder/model-00003-of-00004.safetensors",
+      "bytes": 4932751040,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/09c1807c6d00d7cab94f7db39d4c02ebb8537225ccde383861ac48db97945aa6"
+    },
+    {
+      "path": "text_encoder/model-00004-of-00004.safetensors",
+      "bytes": 1691924384,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/5dd068336d14d45ffb43cef374d286cc6ba9d8741b028f90a7d040d847961f4a"
+    },
+    {
+      "path": "text_encoder/model.safetensors.index.json",
+      "bytes": 57655,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/92b467639266f4aa72a9b5ab73dbdf5a1f936ee4"
+    },
+    {
+      "path": "tokenizer/added_tokens.json",
+      "bytes": 605,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/482ced4679301bf287ebb310bdd1790eb4514232"
+    },
+    {
+      "path": "tokenizer/chat_template.jinja",
+      "bytes": 2427,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/28028c056af412405debd878cdda0171e35fa5d1"
+    },
+    {
+      "path": "tokenizer/merges.txt",
+      "bytes": 1671853,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/31349551d90c7606f325fe0f11bbb8bd5fa0d7c7"
+    },
+    {
+      "path": "tokenizer/special_tokens_map.json",
+      "bytes": 613,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/ac23c0aaa2434523c494330aeb79c58395378103"
+    },
+    {
+      "path": "tokenizer/tokenizer_config.json",
+      "bytes": 4686,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/eaed590d62aaf0ba31e284b66ddcb18222f066c2"
+    },
+    {
+      "path": "tokenizer/vocab.json",
+      "bytes": 3383407,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/6bce3a0a3866c4791a74d83d78f6824c3af64ec3"
+    },
+    {
+      "path": "transformer/config.json",
+      "bytes": 362,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/199398df180d275eee9da066489f9bb6e2b97609"
+    },
+    {
+      "path": "transformer/diffusion_pytorch_model-00001-of-00005.safetensors",
+      "bytes": 9973578592,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/2a0c30c9ba44a5f11c21ca139e37951430bbde814ff4e0b5b1a68b80530e7a1a"
+    },
+    {
+      "path": "transformer/diffusion_pytorch_model-00002-of-00005.safetensors",
+      "bytes": 9987326072,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/54ec249b07b4376e19cf16b764054f03ca03ae2cfbd9939453e2085f4e9bd259"
+    },
+    {
+      "path": "transformer/diffusion_pytorch_model-00003-of-00005.safetensors",
+      "bytes": 9987307440,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/c55157843525653161e8f6af5acc670ba3aceff04284f7cf657199d24d065e16"
+    },
+    {
+      "path": "transformer/diffusion_pytorch_model-00004-of-00005.safetensors",
+      "bytes": 9930685712,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/ffcfb5a4895702635890a67bad183591e0ae515d794bdcb26e217b27a7f6d12d"
+    },
+    {
+      "path": "transformer/diffusion_pytorch_model-00005-of-00005.safetensors",
+      "bytes": 982130472,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/2b2556b736629e10a5a0dfa14606f2057f4f81c2ba53f94103682c7ac42d4940"
+    },
+    {
+      "path": "transformer/diffusion_pytorch_model.safetensors.index.json",
+      "bytes": 198887,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/2fdb0449e2b2299b77e056c95b1a7caec5a3f438"
+    },
+    {
+      "path": "vae/config.json",
+      "bytes": 730,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/ebc479e2fe5a2265f4bcaf1e1073df64a2d4e33e"
+    },
+    {
+      "path": "vae/diffusion_pytorch_model.safetensors",
+      "bytes": 253806966,
+      "resolved_path": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/model_store/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/blobs/0c8bc8b758c649abef9ea407b95408389a3b2f610d0d10fcb054fe171d0a8344"
+    }
+  ],
+  "model_binary_hashes_verified": false,
+  "run_root": "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z",
+  "cuda_tested": false,
+  "generation_started": false,
+  "full_training_started": false,
+  "ff2_status": "DO NOT RUN; supervisor review blockers remain",
+  "execution_mode": "direct_ssh_bounded_shared_gpu",
+  "pbs_allocation": null
+}

@@ -1,0 +1,17 @@
+{
+  "stage": "preflight",
+  "command": [
+    "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+    "-u",
+    "/home/sachin.chaudhary/ces_fl_sources/cesfl-cf5050-fc4e63b/CES_FL/src/ces_fl_counterfactual_5050.py",
+    "smoke",
+    "--device",
+    "cuda",
+    "--out",
+    "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z/smoke_cuda"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 56.83679927513003,
+  "log": "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z/logs/smoke_cuda.log",
+  "execution_mode": "direct_ssh"
+}

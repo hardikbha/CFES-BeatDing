@@ -1,0 +1,7 @@
+{
+  "stage": "preflight",
+  "exception": "",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_20261101T072735Z/runtime/direct_worker.py\", line 141, in <module>\n    main(args.stage)\n  File \"/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_20261101T072735Z/runtime/direct_worker.py\", line 106, in main\n    assert binding['torch_binding']['uuid'] == uuid\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+  "host": "gpu02",
+  "full_training_started": false
+}

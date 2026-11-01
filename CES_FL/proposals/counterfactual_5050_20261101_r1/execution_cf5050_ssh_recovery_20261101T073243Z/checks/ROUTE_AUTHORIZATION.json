@@ -1,0 +1,14 @@
+{
+  "observed_utc": "2026-11-01T07:27:35.318229+00:00",
+  "authorization": "User explicitly requested direct SSH on gpu01/gpu02 instead of queued allocation",
+  "superseded_pbs_job": "44948.mgmt01",
+  "prior_state_verified": "Q; no exec_vnode, CUDA/dry/P output absent",
+  "cancellation_verified_state": "F; terminated before execution",
+  "old_run_root": "/home/sachin.chaudhary/ces_fl_runs/cf5050_20261101T065603Z",
+  "new_run_root": "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_20261101T072735Z",
+  "execution_mode": "direct_ssh_bounded_shared_gpu",
+  "pbs_allocation": null,
+  "no_other_jobs_terminated": true,
+  "ff2_status": "DO NOT RUN",
+  "run_root": "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z"
+}

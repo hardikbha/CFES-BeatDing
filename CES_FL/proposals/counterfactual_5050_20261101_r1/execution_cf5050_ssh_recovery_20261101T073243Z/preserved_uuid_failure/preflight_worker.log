@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_20261101T072735Z/runtime/direct_worker.py", line 141, in <module>
+    main(args.stage)
+  File "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_20261101T072735Z/runtime/direct_worker.py", line 106, in main
+    assert binding['torch_binding']['uuid'] == uuid
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
