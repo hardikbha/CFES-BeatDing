@@ -1,0 +1,162 @@
+{
+  "observed_utc": "2026-11-01T08:16:47.179231+00:00",
+  "source_commit": "fc4e63b8811c5813afa0d298a8172ba9555b7e40",
+  "run_root": "/home/sachin.chaudhary/ces_fl_runs/cf5050_registry_recovery_20261101T081523Z",
+  "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+  "config_sha256": "56e77211a966ae12a449c47cdaf8e3fc271f149c6031513747813a1d1abfaef0",
+  "execution_mode": "direct_ssh_bounded_shared_gpu",
+  "pbs_allocation": null,
+  "superseded_pbs_job": "44948.mgmt01, cancelled before execution after explicit SSH instruction",
+  "operational_recovery": {
+    "status": "PASS",
+    "scope": "Reuse verified unchanged aiface training preflight; generator environment recovery is separate",
+    "original_run": "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z",
+    "original_preflight_receipt": "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z/checks/preflight_PASS.json",
+    "original_cuda_receipt": "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z/smoke_cuda/RESULT.json",
+    "original_dry_run_receipt": "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z/dry_pretrain/RESULT.json",
+    "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+    "config_sha256": "56e77211a966ae12a449c47cdaf8e3fc271f149c6031513747813a1d1abfaef0",
+    "source_inventory_sha256": "5f8792a7017346b8205fa4a9b67257d31dc50113f2612a02b2f08506004d5810",
+    "inventory_bytes_reused_exactly": true,
+    "training_python": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+    "generator_python": "/home/sachin.chaudhary/.conda/envs/llada-image/bin/python",
+    "full_training_started": false,
+    "previous_pilot_failure": "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z/checks/pilot_FAILURE.json",
+    "previous_generated_outputs": 0,
+    "failure": "aiface diffusers0.35.1 does not expose QwenImageEditPlusPipeline",
+    "recovery": "Use existing Qwen-compatible llada-image env plus an isolated CPU import dependency overlay; no existing environment is modified",
+    "preserve_existing_outputs": true,
+    "model_snapshot_sha256_inventory": "7ad7899d5af6a6f4f4550d10024ebdb07da83ba2b7b4c1775ef82066f8f790d9",
+    "new_run_root": "/home/sachin.chaudhary/ces_fl_runs/cf5050_qwen_env_recovery_20261101T075913Z",
+    "scientific_source_or_config_changed": false
+  },
+  "resource_recovery": {
+    "status": "PASS",
+    "checks": [
+      "unreserved card recognized",
+      "CESFL legacy reservation recognized as non-joinable",
+      "pool admission rejects the reserved card"
+    ],
+    "scope": "Actual pool contract tested with temporary registry only; no other jobs/queues/configuration altered",
+    "pool_source": "/home/sachin.chaudhary/TruFor/formatted_datadeclare/paper/transaction_paper/ICLR_Misinfo/scripts/factmux_pool_v1.py",
+    "pool_source_sha256": "5163065832ecf62541b7e284c81c618f4f000e216aad37407240b67d21dc3543",
+    "previous_failure": "/home/sachin.chaudhary/ces_fl_runs/cf5050_qwen_env_recovery_20261101T075913Z/checks/pilot_FAILURE.json",
+    "new_run_root": "/home/sachin.chaudhary/ces_fl_runs/cf5050_registry_recovery_20261101T081523Z",
+    "scientific_source_changed": false,
+    "dependency_overlay": "/home/sachin.chaudhary/ces_fl_runs/cf5050_qwen_env_recovery_20261101T075913Z/dependencies/py311_cpu"
+  },
+  "stages": {
+    "preflight": {
+      "state": "PASS",
+      "pass": {
+        "status": "PASS",
+        "scope": "Reuse verified unchanged aiface training preflight; generator environment recovery is separate",
+        "original_run": "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z",
+        "original_preflight_receipt": "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z/checks/preflight_PASS.json",
+        "original_cuda_receipt": "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z/smoke_cuda/RESULT.json",
+        "original_dry_run_receipt": "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z/dry_pretrain/RESULT.json",
+        "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+        "config_sha256": "56e77211a966ae12a449c47cdaf8e3fc271f149c6031513747813a1d1abfaef0",
+        "source_inventory_sha256": "5f8792a7017346b8205fa4a9b67257d31dc50113f2612a02b2f08506004d5810",
+        "inventory_bytes_reused_exactly": true,
+        "training_python": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+        "generator_python": "/home/sachin.chaudhary/.conda/envs/llada-image/bin/python",
+        "full_training_started": false
+      },
+      "failure": null,
+      "submission": null,
+      "progress": null,
+      "binding": null
+    },
+    "pilot": {
+      "state": "SUBMITTED_UNVERIFIED",
+      "pass": null,
+      "failure": null,
+      "submission": {
+        "pid": 2817149,
+        "host": "gpu01",
+        "stage": "pilot",
+        "command": [
+          "ssh",
+          "-o",
+          "BatchMode=yes",
+          "-o",
+          "ConnectTimeout=10",
+          "gpu01",
+          "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -c 'import subprocess,sys,json,pathlib; f=pathlib.Path('\"'\"'/home/sachin.chaudhary/ces_fl_runs/cf5050_registry_recovery_20261101T081523Z/logs/pilot_worker.log'\"'\"').open('\"'\"'xb'\"'\"'); p=subprocess.Popen([sys.executable,'\"'\"'-u'\"'\"','\"'\"'/home/sachin.chaudhary/ces_fl_runs/cf5050_registry_recovery_20261101T081523Z/runtime/direct_worker.py'\"'\"','\"'\"'--stage'\"'\"','\"'\"'pilot'\"'\"'],stdin=subprocess.DEVNULL,stdout=f,stderr=subprocess.STDOUT,start_new_session=True); print(json.dumps({'\"'\"'pid'\"'\"':p.pid,'\"'\"'host'\"'\"':'\"'\"'gpu01'\"'\"','\"'\"'stage'\"'\"':'\"'\"'pilot'\"'\"'}))'"
+        ],
+        "execution_mode": "direct_ssh_registry_coordinated",
+        "pbs_allocation": null,
+        "observed_utc": "2026-11-01T08:16:47.020783+00:00",
+        "log": "/home/sachin.chaudhary/ces_fl_runs/cf5050_registry_recovery_20261101T081523Z/logs/pilot_worker.log",
+        "runner_sha256": "1fe733fd61ac503672162431e5f5bbfe8a703c15acedf152e5565c6e8bd1329b",
+        "generator_overlay": "/home/sachin.chaudhary/ces_fl_runs/cf5050_qwen_env_recovery_20261101T075913Z/dependencies/py311_cpu"
+      },
+      "progress": null,
+      "binding": null
+    }
+  },
+  "cuda_smoke": {
+    "status": "PASS",
+    "device": "cuda",
+    "checks": [
+      "full_epoch_no_replacement_singleton_tail_and_independent_paired_loss_reference",
+      "independent_original_generation_shards_resume_shared_source_seed_and_no_auto_approval",
+      "reject_missing_per_source_attributes_wrong_original_chained_edit_and_invalid_review",
+      "every_original_gets_its_own_edit_all_attributes_and_directions_rotate",
+      "pretraining_transfer_identical_heads_full_trainability_frozen_downstream_bn_and_224px_ebox",
+      "all_three_training_arms_full_exposure_independent_replay_and_exact_resume",
+      "frozen_test_threshold_label_flip_rejection_of_val_as_test_and_evidence_export"
+    ],
+    "check_count": 7,
+    "parameters": {
+      "total": 21594159,
+      "trainable": 21594159
+    },
+    "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+    "torch": "2.7.0+cu126",
+    "python": "3.12.11",
+    "synthetic_fixture_only": true,
+    "real_qwen_generation_tested": false,
+    "real_training_tested": false,
+    "cuda_tested": true,
+    "fairness_improvement_verified": false
+  },
+  "real_data_dry_run": {
+    "status": "PASS",
+    "stage": "pretrain",
+    "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+    "device": "cuda",
+    "synthetic_fixture": false,
+    "originals": 16,
+    "pairs": 0,
+    "parameters": {
+      "total": 21594159,
+      "trainable": 21594159
+    },
+    "optimizer_steps": 0,
+    "pretrain_bn_buffers_updated_in_discarded_model": true,
+    "peak_cuda_allocated_bytes": 2367416320,
+    "losses": {
+      "total": 0.5129827857017517,
+      "classification": 0.5129827857017517,
+      "invariance": -0.0
+    }
+  },
+  "generation_plan": {
+    "source_count": 76139,
+    "generated_outputs": 532973,
+    "sources_sha256": "5f8792a7017346b8205fa4a9b67257d31dc50113f2612a02b2f08506004d5810",
+    "auto_approval": false
+  },
+  "model_inventory": null,
+  "pilot_generated_counts": {},
+  "pilot_complete_sources": 0,
+  "pilot_profile": null,
+  "full_training": "NOT_STARTED",
+  "full_generation": "NOT_STARTED",
+  "quality_or_full_bank_approval": "NOT_GRANTED",
+  "FF2": "DO NOT RUN",
+  "observer_pid": 2077569,
+  "observer_scope": "24h maximum, read-only; no launch/retry/kill/approval operations"
+}
