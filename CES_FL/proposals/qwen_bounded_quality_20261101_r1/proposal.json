@@ -1,0 +1,41 @@
+{
+  "proposal_id": "qwen_bounded_quality_20261101_r1",
+  "status": "DRAFT_NOT_APPROVED_FOR_GENERATION_OR_TRAINING",
+  "purpose": "Resolve editor/no-change and validity uncertainty at bounded cost; no fairness efficacy claim.",
+  "selected_private_manifest": "/home/sachin.chaudhary/ces_fl_runs/qwen_review_revision_20261101T094302Z/proposed_32_sources_PRIVATE.csv",
+  "selected_private_manifest_sha256": "e7a446bc4e104a155dfd9d2e4fb2dd0d9c11e5422082310ac083911ee8343455",
+  "seed": 17,
+  "sources": 32,
+  "stratum": "label x ids8",
+  "sources_per_stratum": 2,
+  "source_commit": "fc4e63b8811c5813afa0d298a8172ba9555b7e40",
+  "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+  "parent_protocol_config_sha256": "56e77211a966ae12a449c47cdaf8e3fc271f149c6031513747813a1d1abfaef0",
+  "generator": {
+    "model_snapshot": "/home/sachin.chaudhary/.cache/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/snapshots/6f3ccc0b56e431dc6a0c2b2039706d7d26f22cb9",
+    "generation_steps": 40,
+    "generation_cfg": 4.0,
+    "generation_area": 1048576
+  },
+  "conditions": [
+    "nochange",
+    "younger",
+    "older",
+    "gender_feminine",
+    "gender_masculine",
+    "skin_lighter",
+    "skin_darker"
+  ],
+  "independent_original_inputs": true,
+  "full_train_bank_replaced": false,
+  "training_configuration": null,
+  "launch_prerequisites": [
+    "Complete current 14-pair human decisions with evidence/uncertainty",
+    "Determine whether editor confounds justify any additional same-recipe generation",
+    "Explicit review of bounded-quality scope and resources",
+    "Source/config/input/selected-byte hashes and CUDA binding verified",
+    "Implement and test an explicit selected-source generation interface; do not weaken the production full-coverage guard"
+  ],
+  "training_launch_permitted": false,
+  "training_requires": "A separate explicit reviewed design with appropriate full source coverage, matched B/N/C initialization/budgets, validation-only selection/calibration, and the original approval checks. This sample cannot bind the existing 76,139-original production study."
+}

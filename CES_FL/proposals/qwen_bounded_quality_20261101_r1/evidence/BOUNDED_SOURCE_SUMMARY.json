@@ -1,0 +1,46 @@
+{
+  "selected_originals": 32,
+  "label_counts": {
+    "0": 16,
+    "1": 16
+  },
+  "label_ids8_counts": {
+    "('0', '0')": 2,
+    "('0', '1')": 2,
+    "('0', '2')": 2,
+    "('0', '3')": 2,
+    "('0', '4')": 2,
+    "('0', '5')": 2,
+    "('0', '6')": 2,
+    "('0', '7')": 2,
+    "('1', '0')": 2,
+    "('1', '1')": 2,
+    "('1', '2')": 2,
+    "('1', '3')": 2,
+    "('1', '4')": 2,
+    "('1', '5')": 2,
+    "('1', '6')": 2,
+    "('1', '7')": 2
+  },
+  "family_counts": {
+    "real": 16,
+    "FaceSwap": 6,
+    "Face2Face": 1,
+    "Deepfakes": 3,
+    "NeuralTextures": 3,
+    "FaceShifter": 3
+  },
+  "within_selected_disjoint_contributor_sets": true,
+  "unique_identity_proxies": 48,
+  "unique_source_video_ids": 48,
+  "selected_image_path_overlap_with_validation": 0,
+  "selected_identity_proxy_overlap_with_validation": 8,
+  "selected_source_id_overlap_with_validation": 8,
+  "person_ground_truth_verified": false,
+  "dimensions": {
+    "(380, 380)": 32
+  },
+  "private_manifest_sha256": "e7a446bc4e104a155dfd9d2e4fb2dd0d9c11e5422082310ac083911ee8343455",
+  "selection_rule": "Seed-17 SHA256 image-path order, scarce strata first, two per label x ids8; reject contributors used by any previously selected original",
+  "selection_depends_on_detector_or_test_scores": false
+}

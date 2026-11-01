@@ -1,5 +1,9 @@
 # CES-FL — supervisor review and training handoff
 
+## Latest continuation: pilot review and bounded revision
+
+[New audit and proposed 32-source quality diagnostic](proposals/qwen_bounded_quality_20261101_r1/README.md). All 14 pilot outputs reverified; zero recorded approvals. No new training or generation launched. Proposed generation cost 4.33 GPU-hours before review/retries; this does not replace the full training bank. Observed UTC: 2026-11-01T09:43:09.620570+00:00.
+
 **Start here.** [Current timestamped status](STATUS.md) · [Review/change/run workflow](WORKFLOW.md) · [Prompt for a supervisor or another LLM](SUPERVISOR_PROMPT.md)
 
 ## Completed Qwen pilot — full scaling held, 1 November 2026

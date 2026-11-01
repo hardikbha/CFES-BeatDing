@@ -1,5 +1,9 @@
 # CFES / Beat-Ding: fairness-aware deepfake detection vs Ding et al. (CVPR'26)
 
+## Latest continuation: verified recheck, private review kit and bounded quality proposal
+
+[New audit and proposed 32-source quality diagnostic](CES_FL/proposals/qwen_bounded_quality_20261101_r1/README.md). All 14 pilot outputs reverified; zero recorded approvals. No new training or generation launched. Proposed generation cost 4.33 GPU-hours before review/retries; this does not replace the full training bank. Observed UTC: 2026-11-01T09:43:09.620570+00:00.
+
 ## Shared progress and results
 
 **Latest: [Qwen FF++ pilot completed—cost/validity report and scaling hold](CES_FL/results/cf5050_registry_recovery_20261101T081523Z/REPORT_QWEN_PILOT.md).** Fourteen outputs completed; full-bank projection ≈10,292 GPU-hours, no fairness gain established, no full training launched.

@@ -1,0 +1,17 @@
+{
+  "candidate_sources": 32,
+  "diffusion_outputs": 224,
+  "resize_controls": 32,
+  "projected_gpu_hours_from_existing_two_source_mean": 4.325466878612835,
+  "per_output_observed_range_seconds": [
+    56.740459479391575,
+    90.49850730597973
+  ],
+  "wall_hours_if_one_equivalently_fast_gpu_continuously_available": 4.325466878612835,
+  "planning_allowance_hours_one_gpu_before_review": [
+    4,
+    6
+  ],
+  "training_eta_measured": false,
+  "limits": "Two correlated sources, shared GPU. Not a confidence interval or booking; excludes new setup, queue, retries, rejects, review and training. No full-study or training ETA is established."
+}

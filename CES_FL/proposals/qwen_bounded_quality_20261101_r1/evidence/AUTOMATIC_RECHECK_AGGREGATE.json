@@ -1,0 +1,120 @@
+{
+  "status": "AUTOMATIC_RECHECK_PASS_HUMAN_VALIDITY_PENDING",
+  "observed_management_utc": "2026-11-01T09:43:09.620570+00:00",
+  "run_root": "/home/sachin.chaudhary/ces_fl_runs/qwen_review_revision_20261101T094302Z",
+  "source_commit": "fc4e63b8811c5813afa0d298a8172ba9555b7e40",
+  "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+  "config_sha256": "56e77211a966ae12a449c47cdaf8e3fc271f149c6031513747813a1d1abfaef0",
+  "input_hash_checks": {
+    "train": "6ee9326fe8361dc3aee0f803c49b5eada169be5cf3bc3cb44ad3d934ba5ca657",
+    "val": "52f4844cffe5a03adb08cecde8829244bb50e05eeead36f6d659599f1c24f5b1",
+    "protocol_overlap_file": "793db56c30c85dd654c6d68745afc926f4b1f8dc8bec749db01b07b3aa306c97",
+    "weights": "43020ad2812c333d9f8e202b9fef94e579d07addb6582d69a1f68bbaec21aa90"
+  },
+  "generation_inventory_sha256": "5f8792a7017346b8205fa4a9b67257d31dc50113f2612a02b2f08506004d5810",
+  "attempted_completed_missing": [
+    14,
+    14,
+    0
+  ],
+  "approved_rows_in_current_artifact": 0,
+  "formal_rejections_recorded": 0,
+  "pilot_review_file_unchanged": true,
+  "all_generated_bytes_and_original_associations_reverified": true,
+  "semantic_validity_established": false,
+  "gpu_states": {
+    "gpu01": {
+      "gpu_query_returncode": 0,
+      "gpu_query": "index, uuid, memory.total [MiB], memory.free [MiB], utilization.gpu [%]\n0, GPU-410a5796-06b3-dbe6-5371-5d06a1a53416, 81559 MiB, 46862 MiB, 100 %\n1, GPU-6cc0a5b3-99ca-13e3-5508-a201a06e82d6, 81559 MiB, 22122 MiB, 100 %\n2, GPU-2544ad3e-a8af-7b58-55e6-c24c57497b01, 81559 MiB, 39806 MiB, 87 %\n3, GPU-6a002609-de85-4949-c707-ee9317b284f0, 81559 MiB, 31861 MiB, 100 %\n4, GPU-9b669a06-9156-a98e-2194-36f2fc11d7ca, 81559 MiB, 39808 MiB, 100 %\n5, GPU-789d1ee4-d888-8a11-c94e-3d866900bc4d, 81559 MiB, 39788 MiB, 94 %\n6, GPU-61f54ca7-3cee-1c93-def3-118523e95241, 81559 MiB, 39808 MiB, 79 %\n7, GPU-47332ec9-ecba-0a1b-020e-4a572735cd83, 81559 MiB, 4954 MiB, 0 %\n",
+      "stderr": "",
+      "registry_directories": [
+        "gpu1",
+        "gpu2",
+        "gpu3",
+        "gpu4",
+        "gpu5",
+        "gpu6"
+      ],
+      "matching_python_workers": []
+    },
+    "gpu02": {
+      "gpu_query_returncode": 0,
+      "gpu_query": "index, uuid, memory.total [MiB], memory.free [MiB], utilization.gpu [%]\n0, GPU-da9cbc5e-5af7-36d0-efea-fcc1da157861, 81559 MiB, 3495 MiB, 0 %\n1, GPU-4ed8257a-b1a4-0026-ff8f-8a0f42f38902, 81559 MiB, 4503 MiB, 0 %\n2, GPU-19db00be-6cc8-242f-6b67-c05487fb2372, 81559 MiB, 4503 MiB, 0 %\n3, GPU-4f468707-fed7-a55e-3174-628368d6c379, 81559 MiB, 4505 MiB, 0 %\n4, GPU-ee335748-8273-2d67-42a5-d45463027c1b, 81559 MiB, 26351 MiB, 0 %\n5, GPU-bff97893-385b-6f3f-831b-113284c2e1f1, 81559 MiB, 26369 MiB, 0 %\n6, GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb, 81559 MiB, 12018 MiB, 100 %\n7, GPU-65f63cc5-9366-5c2d-196a-6e7a0a62c1e8, 81559 MiB, 2147 MiB, 0 %\n",
+      "stderr": "",
+      "registry_directories": [
+        "gpu6"
+      ],
+      "matching_python_workers": []
+    }
+  },
+  "new_training_or_generation_launched": false,
+  "automatic_test_evaluation": false,
+  "existing_jobs_modified": false,
+  "ff2": "DO NOT RUN",
+  "proposal_coverage_is_not_full_train_coverage": true,
+  "bound_training_configuration_created": false,
+  "bounded_quality_sample": {
+    "selected_originals": 32,
+    "label_counts": {
+      "0": 16,
+      "1": 16
+    },
+    "label_ids8_counts": {
+      "('0', '0')": 2,
+      "('0', '1')": 2,
+      "('0', '2')": 2,
+      "('0', '3')": 2,
+      "('0', '4')": 2,
+      "('0', '5')": 2,
+      "('0', '6')": 2,
+      "('0', '7')": 2,
+      "('1', '0')": 2,
+      "('1', '1')": 2,
+      "('1', '2')": 2,
+      "('1', '3')": 2,
+      "('1', '4')": 2,
+      "('1', '5')": 2,
+      "('1', '6')": 2,
+      "('1', '7')": 2
+    },
+    "family_counts": {
+      "real": 16,
+      "FaceSwap": 6,
+      "Face2Face": 1,
+      "Deepfakes": 3,
+      "NeuralTextures": 3,
+      "FaceShifter": 3
+    },
+    "within_selected_disjoint_contributor_sets": true,
+    "unique_identity_proxies": 48,
+    "unique_source_video_ids": 48,
+    "selected_image_path_overlap_with_validation": 0,
+    "selected_identity_proxy_overlap_with_validation": 8,
+    "selected_source_id_overlap_with_validation": 8,
+    "person_ground_truth_verified": false,
+    "dimensions": {
+      "(380, 380)": 32
+    },
+    "private_manifest_sha256": "e7a446bc4e104a155dfd9d2e4fb2dd0d9c11e5422082310ac083911ee8343455",
+    "selection_rule": "Seed-17 SHA256 image-path order, scarce strata first, two per label x ids8; reject contributors used by any previously selected original",
+    "selection_depends_on_detector_or_test_scores": false
+  },
+  "tentative_compute": {
+    "candidate_sources": 32,
+    "diffusion_outputs": 224,
+    "resize_controls": 32,
+    "projected_gpu_hours_from_existing_two_source_mean": 4.325466878612835,
+    "per_output_observed_range_seconds": [
+      56.740459479391575,
+      90.49850730597973
+    ],
+    "wall_hours_if_one_equivalently_fast_gpu_continuously_available": 4.325466878612835,
+    "planning_allowance_hours_one_gpu_before_review": [
+      4,
+      6
+    ],
+    "training_eta_measured": false,
+    "limits": "Two correlated sources, shared GPU. Not a confidence interval or booking; excludes new setup, queue, retries, rejects, review and training. No full-study or training ETA is established."
+  },
+  "github_main_before_this_work": "e1501057ac00b16fb5f66ff27d64a095f268a23a\trefs/heads/main"
+}
