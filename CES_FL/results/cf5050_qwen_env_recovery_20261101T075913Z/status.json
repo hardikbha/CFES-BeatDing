@@ -1,5 +1,5 @@
 {
-  "observed_utc": "2026-11-01T08:03:40.260849+00:00",
+  "observed_utc": "2026-11-01T08:04:14.308604+00:00",
   "source_commit": "fc4e63b8811c5813afa0d298a8172ba9555b7e40",
   "run_root": "/home/sachin.chaudhary/ces_fl_runs/cf5050_qwen_env_recovery_20261101T075913Z",
   "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
@@ -77,8 +77,87 @@
         "runner_sha256": "e10226d603f203ff668f0522d10f6deb97e06d4d384da3613e04cf9f52b5416a",
         "generator_python": "/home/sachin.chaudhary/.conda/envs/llada-image/bin/python"
       },
-      "progress": null,
-      "binding": null
+      "progress": {
+        "phase": "RUNNING",
+        "host": "gpu01",
+        "physical_index": 2,
+        "gpu_uuid": "GPU-2544ad3e-a8af-7b58-55e6-c24c57497b01",
+        "free_mib_before_launch": 77084,
+        "total_mib": 81559,
+        "utilization_percent_before_launch": 14,
+        "worker_pid": 2683551,
+        "cuda_allocator_fraction": 0.55,
+        "execution_mode": "direct_ssh_bounded_shared_gpu",
+        "pbs_allocation": null,
+        "exclusive_ownership_claimed": false,
+        "stage": "pilot",
+        "source_commit": "fc4e63b8811c5813afa0d298a8172ba9555b7e40",
+        "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+        "config_sha256": "56e77211a966ae12a449c47cdaf8e3fc271f149c6031513747813a1d1abfaef0",
+        "runner_sha256": "e10226d603f203ff668f0522d10f6deb97e06d4d384da3613e04cf9f52b5416a",
+        "observed_node_time": 1793519573.0062876,
+        "preexisting_compute_processes": [
+          "GPU-410a5796-06b3-dbe6-5371-5d06a1a53416, 3194983, 28678 MiB",
+          "GPU-410a5796-06b3-dbe6-5371-5d06a1a53416, 4183525, 5536 MiB",
+          "GPU-410a5796-06b3-dbe6-5371-5d06a1a53416, 2616562, 26212 MiB",
+          "GPU-6cc0a5b3-99ca-13e3-5508-a201a06e82d6, 2545188, 41272 MiB",
+          "GPU-2544ad3e-a8af-7b58-55e6-c24c57497b01, 2402839, 4896 MiB",
+          "GPU-6a002609-de85-4949-c707-ee9317b284f0, 3329428, 610 MiB",
+          "GPU-6a002609-de85-4949-c707-ee9317b284f0, 3329544, 7324 MiB",
+          "GPU-6a002609-de85-4949-c707-ee9317b284f0, 2172033, 23330 MiB",
+          "GPU-6a002609-de85-4949-c707-ee9317b284f0, 2616563, 24130 MiB",
+          "GPU-9b669a06-9156-a98e-2194-36f2fc11d7ca, 2597806, 41292 MiB",
+          "GPU-789d1ee4-d888-8a11-c94e-3d866900bc4d, 2172034, 23410 MiB",
+          "GPU-61f54ca7-3cee-1c93-def3-118523e95241, 2412648, 41274 MiB",
+          "GPU-47332ec9-ecba-0a1b-020e-4a572735cd83, 1260212, 76124 MiB"
+        ],
+        "torch_binding": {
+          "device": "NVIDIA H100 80GB HBM3",
+          "uuid": "2544ad3e-a8af-7b58-55e6-c24c57497b01",
+          "torch": "2.7.0+cu126",
+          "total_vram": 85029158912
+        }
+      },
+      "binding": {
+        "host": "gpu01",
+        "physical_index": 2,
+        "gpu_uuid": "GPU-2544ad3e-a8af-7b58-55e6-c24c57497b01",
+        "free_mib_before_launch": 77084,
+        "total_mib": 81559,
+        "utilization_percent_before_launch": 14,
+        "worker_pid": 2683551,
+        "cuda_allocator_fraction": 0.55,
+        "execution_mode": "direct_ssh_bounded_shared_gpu",
+        "pbs_allocation": null,
+        "exclusive_ownership_claimed": false,
+        "stage": "pilot",
+        "source_commit": "fc4e63b8811c5813afa0d298a8172ba9555b7e40",
+        "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+        "config_sha256": "56e77211a966ae12a449c47cdaf8e3fc271f149c6031513747813a1d1abfaef0",
+        "runner_sha256": "e10226d603f203ff668f0522d10f6deb97e06d4d384da3613e04cf9f52b5416a",
+        "observed_node_time": 1793519573.0062876,
+        "preexisting_compute_processes": [
+          "GPU-410a5796-06b3-dbe6-5371-5d06a1a53416, 3194983, 28678 MiB",
+          "GPU-410a5796-06b3-dbe6-5371-5d06a1a53416, 4183525, 5536 MiB",
+          "GPU-410a5796-06b3-dbe6-5371-5d06a1a53416, 2616562, 26212 MiB",
+          "GPU-6cc0a5b3-99ca-13e3-5508-a201a06e82d6, 2545188, 41272 MiB",
+          "GPU-2544ad3e-a8af-7b58-55e6-c24c57497b01, 2402839, 4896 MiB",
+          "GPU-6a002609-de85-4949-c707-ee9317b284f0, 3329428, 610 MiB",
+          "GPU-6a002609-de85-4949-c707-ee9317b284f0, 3329544, 7324 MiB",
+          "GPU-6a002609-de85-4949-c707-ee9317b284f0, 2172033, 23330 MiB",
+          "GPU-6a002609-de85-4949-c707-ee9317b284f0, 2616563, 24130 MiB",
+          "GPU-9b669a06-9156-a98e-2194-36f2fc11d7ca, 2597806, 41292 MiB",
+          "GPU-789d1ee4-d888-8a11-c94e-3d866900bc4d, 2172034, 23410 MiB",
+          "GPU-61f54ca7-3cee-1c93-def3-118523e95241, 2412648, 41274 MiB",
+          "GPU-47332ec9-ecba-0a1b-020e-4a572735cd83, 1260212, 76124 MiB"
+        ],
+        "torch_binding": {
+          "device": "NVIDIA H100 80GB HBM3",
+          "uuid": "2544ad3e-a8af-7b58-55e6-c24c57497b01",
+          "torch": "2.7.0+cu126",
+          "total_vram": 85029158912
+        }
+      }
     }
   },
   "cuda_smoke": {
