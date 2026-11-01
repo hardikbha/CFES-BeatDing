@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-01T15:43:38.326285+00:00",
+  "observed_management_utc": "2026-11-01T15:53:43.066313+00:00",
   "source_commit": "58773bbef9d9fe79dd313610f694ddeea12c6037",
   "run_root": "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z",
   "execution_mode": "user_authorized_direct_ssh_bounded_shared_gpu",
