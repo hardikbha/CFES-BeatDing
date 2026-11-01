@@ -1,0 +1,15 @@
+{
+  "pid": 554463,
+  "command": [
+    "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+    "-u",
+    "/home/sachin.chaudhary/ces_fl_runs/cf5050_20261101T065603Z/runtime/observe_stage1.py",
+    "--publish"
+  ],
+  "read_only": true,
+  "max_hours": 24,
+  "scope": "Existing PBS milestone1 only; no launch/retry/cancel/advance commands",
+  "started_utc": "2026-11-01T07:07:50.014419+00:00",
+  "log": "/home/sachin.chaudhary/ces_fl_runs/cf5050_20261101T065603Z/logs/observer.log",
+  "script_sha256": "d07160d694cdd012804c05413ad0310111e3e215b4767b026294091d4b4d1b3f"
+}
