@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-01T10:00:34.832521+00:00",
+  "observed_management_utc": "2026-11-01T10:10:46.134186+00:00",
   "state": "RUNNING",
   "submission": {
     "pid": 3806205,
@@ -107,12 +107,22 @@
   "failure": null,
   "pass_receipt": null,
   "profile": null,
-  "complete_sources": 0,
+  "complete_sources": 1,
   "planned_sources": 32,
-  "generated_outputs": 0,
+  "generated_outputs": 9,
   "planned_outputs": 224,
-  "condition_counts": {},
-  "counts_by_original_source_label_not_candidate_ground_truth": {},
+  "condition_counts": {
+    "nochange": 2,
+    "younger": 2,
+    "older": 1,
+    "gender_feminine": 1,
+    "gender_masculine": 1,
+    "skin_lighter": 1,
+    "skin_darker": 1
+  },
+  "counts_by_original_source_label_not_candidate_ground_truth": {
+    "0": 9
+  },
   "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
   "selection_tests": {
     "status": "PASS",
