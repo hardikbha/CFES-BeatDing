@@ -1,0 +1,15 @@
+{
+  "pid": 2961831,
+  "host": "gpu02",
+  "stage": "fair",
+  "command": [
+    "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+    "-u",
+    "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z/runtime/direct_mr.py",
+    "--stage",
+    "fair"
+  ],
+  "execution_mode": "direct_ssh_bounded_shared_gpu",
+  "pbs_allocation": null,
+  "restricted_device_uuid": "GPU-ee335748-8273-2d67-42a5-d45463027c1b"
+}

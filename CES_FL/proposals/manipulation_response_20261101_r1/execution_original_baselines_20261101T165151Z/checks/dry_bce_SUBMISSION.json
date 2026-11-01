@@ -1,0 +1,15 @@
+{
+  "pid": 2960491,
+  "host": "gpu02",
+  "stage": "dry_bce",
+  "command": [
+    "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+    "-u",
+    "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z/runtime/baseline_dry_worker.py",
+    "--stage",
+    "dry_bce"
+  ],
+  "execution_mode": "direct_ssh_bounded_shared_gpu",
+  "pbs_allocation": null,
+  "restricted_device_uuid": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1"
+}

@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+    "/home/sachin.chaudhary/ces_fl_sources/cesfl-response-58773bb/CES_FL/src/ces_fl_manipulation_response.py",
+    "bind",
+    "--config",
+    "/home/sachin.chaudhary/ces_fl_sources/cesfl-response-58773bb/CES_FL/proposals/manipulation_response_20261101_r1/config.json",
+    "--pretrain-run",
+    "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z/P",
+    "--out",
+    "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z/bound_originals"
+  ],
+  "observed_management_utc": "2026-11-01T16:50:09.280055+00:00",
+  "scope": "Bind same verified P50 for original-only BCE/fair; bank remains null"
+}

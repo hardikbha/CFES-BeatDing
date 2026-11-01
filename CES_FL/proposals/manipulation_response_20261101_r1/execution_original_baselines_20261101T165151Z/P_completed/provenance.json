@@ -1,0 +1,32 @@
+{
+  "format": "CESFL_CF5050_v1",
+  "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+  "stage": "pretrain",
+  "synthetic_fixture": false,
+  "parameters": {
+    "total": 21594159,
+    "trainable": 21594159
+  },
+  "split_audit": {
+    "overlap_counts": {
+      "identity_ids": 163,
+      "source_ids": 163
+    },
+    "exact_declared_benchmark_exception": true,
+    "person_ground_truth_verified": false
+  },
+  "sampling": "shuffled full pass without replacement",
+  "classification": "inverse label x group cell frequency weighting; full-dataset normalization",
+  "encoder_policy": "all parameters trainable",
+  "bn_policy": "update",
+  "pairing": "own-source reviewed variant, rotating age/gender/skin; no separate pair pool",
+  "pretraining_checkpoint": null,
+  "input_hashes": {
+    "train": "6ee9326fe8361dc3aee0f803c49b5eada169be5cf3bc3cb44ad3d934ba5ca657",
+    "val": "52f4844cffe5a03adb08cecde8829244bb50e05eeead36f6d659599f1c24f5b1",
+    "protocol_overlap_file": "793db56c30c85dd654c6d68745afc926f4b1f8dc8bec749db01b07b3aa306c97",
+    "weights": "43020ad2812c333d9f8e202b9fef94e579d07addb6582d69a1f68bbaec21aa90"
+  },
+  "test_read": false,
+  "downstream_inputs_verified": false
+}

@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "command": [
+    "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+    "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z/runtime/test_baseline_launch.py"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_changed_config_or_existing_outputs_blocked (__main__.Gates.test_changed_config_or_existing_outputs_blocked) ... ok\ntest_device_and_host_must_match_backward (__main__.Gates.test_device_and_host_must_match_backward) ... ok\ntest_incomplete_p_or_nonfinite_dry_blocked (__main__.Gates.test_incomplete_p_or_nonfinite_dry_blocked) ... ok\ntest_no_training_before_configured_backward (__main__.Gates.test_no_training_before_configured_backward) ... ok\ntest_paired_arm_not_supported (__main__.Gates.test_paired_arm_not_supported) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.061s\n\nOK\n",
+  "scope": "Five operational gate groups; synthetic metadata fixtures, no real GPU/optimizer updates",
+  "observed_management_utc": "2026-11-01T16:51:50.881671+00:00"
+}

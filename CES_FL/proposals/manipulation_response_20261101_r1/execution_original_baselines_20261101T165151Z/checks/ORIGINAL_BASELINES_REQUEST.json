@@ -1,0 +1,45 @@
+{
+  "observed_management_utc": "2026-11-01T16:52:43.617847+00:00",
+  "parent_source_commit": "58773bbef9d9fe79dd313610f694ddeea12c6037",
+  "authorization": "Original user handoff: start shared50epochP then matched BCE and fairness baselines after checks; later user overrode execution route with direct SSH gpu01/gpu02",
+  "arms": [
+    "bce",
+    "fair"
+  ],
+  "epochs_each": 50,
+  "seed": 17,
+  "head_seed": 17,
+  "pretrain_run": "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z/P",
+  "pretrain_checkpoint_sha256": "3174e5b01a84c91cc70afae538505663ca96454d897e6b793c0672826a8f08b5",
+  "bound_config_path": "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z/bound_originals/bound_config.json",
+  "bound_config_sha256": "b3d19e4937897ca568836dc67587f4d5f3b14222963b9bfb676a19be82627ece",
+  "bank": null,
+  "original_train_only": true,
+  "unchanged_scientific_source_configuration": true,
+  "sampling_preprocessing_selection_calibration_matched": true,
+  "hypothesis_comparison": "Effect of the fixed TRAIN real-group soft-FPR fairness baseline relative to matched BCE; not the proposed response effect",
+  "quality_or_quartet_approval_inferred": false,
+  "paired_arms_authorized_by_this_record": false,
+  "test_evaluation": false,
+  "FF2": false,
+  "old_outputs_preserved": true,
+  "one_milestone_at_a_time": true,
+  "new_operations": [
+    "baseline_dry_worker.py",
+    "launch_baseline.py",
+    "test_baseline_launch.py"
+  ],
+  "dry_device_restriction": {
+    "bce": {
+      "host": "gpu02",
+      "physical_index": 5,
+      "uuid": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1"
+    },
+    "fair": {
+      "host": "gpu02",
+      "physical_index": 4,
+      "uuid": "GPU-ee335748-8273-2d67-42a5-d45463027c1b"
+    }
+  },
+  "parallelism": "Independent original-only arms can run on two separately reserved GPUs; no concurrent writers to one output directory"
+}

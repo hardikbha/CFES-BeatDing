@@ -1,0 +1,19 @@
+{
+  "command": [
+    "ssh",
+    "-o",
+    "BatchMode=yes",
+    "-o",
+    "ConnectTimeout=12",
+    "gpu02",
+    "python - <<'BASELINE'\nimport json,os,socket,subprocess\nfrom pathlib import Path\nr=Path('/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z'); stage='fair'; script='direct_mr.py'; device_uuid='GPU-ee335748-8273-2d67-42a5-d45463027c1b'\nassert not (r/'checks'/(stage+'_SUBMISSION.json')).exists()\nassert not (r/'checks'/(stage+'_PASS.json')).exists()\nassert not (r/'checks'/(stage+'_FAILURE.json')).exists()\nargv=['/home/sachin.chaudhary/.conda/envs/aiface/bin/python','-u',str(r/'runtime'/script),'--stage',stage]\nenvironment=dict(os.environ,PYTHONDONTWRITEBYTECODE='1')\nif device_uuid: environment['CUDA_VISIBLE_DEVICES']=device_uuid\nwith (r/'logs'/(stage+'_worker.log')).open('x') as log:\n p=subprocess.Popen(argv,stdin=subprocess.DEVNULL,stdout=log,stderr=subprocess.STDOUT,start_new_session=True,env=environment)\nresult={'pid':p.pid,'host':socket.gethostname().split('.')[0],'stage':stage,'command':argv,'execution_mode':'direct_ssh_bounded_shared_gpu','pbs_allocation':None,'restricted_device_uuid':device_uuid}\nwith (r/'checks'/(stage+'_SUBMISSION.json')).open('x') as f: json.dump(result,f,indent=2)\nprint(json.dumps(result))\n\nBASELINE"
+  ],
+  "stage": "fair",
+  "phase": "train",
+  "arm": "fair",
+  "observed_management_utc": "2026-11-01T16:54:09.777687+00:00",
+  "scope": "Single original-only baseline milestone; no test/paired data or next-stage launch",
+  "exit_code": 0,
+  "stdout": "{\"pid\": 2961831, \"host\": \"gpu02\", \"stage\": \"fair\", \"command\": [\"/home/sachin.chaudhary/.conda/envs/aiface/bin/python\", \"-u\", \"/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z/runtime/direct_mr.py\", \"--stage\", \"fair\"], \"execution_mode\": \"direct_ssh_bounded_shared_gpu\", \"pbs_allocation\": null, \"restricted_device_uuid\": \"GPU-ee335748-8273-2d67-42a5-d45463027c1b\"}\n",
+  "stderr": ""
+}

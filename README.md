@@ -1,5 +1,9 @@
 # CFES / Beat-Ding: fairness-aware deepfake detection vs Ding et al. (CVPR'26)
 
+## P50 verified complete; matched original-only baselines launched
+
+[Current per-arm state](CES_FL/status/manip_response_ssh_20261101T115720Z_live.md): P50 selected epoch29, validationAUC98.405989%, exact validation replay. BCE and fairness50epoch arms launched separately on gpu02 GPUs5/4 after actual CUDA backward PASS. Paired arms remain blocked by reviewed manipulation quartets. Qwen224/224generation complete, not independently validated. No test or FairForge-2 launch. This is a dated execution observation.
+
 **[Shareable current supervisor handoff: progress, running jobs and complete code map](CES_FL/handoffs/SUPERVISOR_HANDOFF_2026-11-01_MANIPULATION_RESPONSE.md)** — verified snapshot 1 November 19:41 IST; refresh native/live-status evidence before acting.
 
 ## Direct SSH: new CUDA/input checks passed; P50 running

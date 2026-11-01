@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "observed_management_utc": "2026-11-01T16:50:09.233214+00:00",
+  "checkpoint_sha256": "3174e5b01a84c91cc70afae538505663ca96454d897e6b793c0672826a8f08b5",
+  "selected_epoch": 29,
+  "completed_epochs": 50,
+  "validation_auc_pct": 98.40598928688259,
+  "validation_fpr_pct": 9.995112414467252,
+  "validation_fnr_pct": 4.221846529538837,
+  "gender_race_worst_auc_pct": 94.10900118013089,
+  "gender_race_fpr_gap_pp": 30.98484848484848,
+  "native_validation_replay_difference": 0.0,
+  "current_history_config_checkpoint_selection_calibration_match": true,
+  "checkpoint_tensor_finiteness_pass": true,
+  "test_read": false,
+  "new_optimizer_steps": 0
+}

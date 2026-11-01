@@ -1,0 +1,11 @@
+{
+  "status": "COMPLETED_VERIFIED",
+  "stage": "pretrain",
+  "completed_epochs": 50,
+  "best_epoch": 29,
+  "best_validation_auc": 0.9840598928688259,
+  "test_evaluated": false,
+  "synthetic_fixture": false,
+  "unique_variants_used": 0,
+  "total_pair_draws": 0
+}

@@ -1,0 +1,19 @@
+{
+  "pid": 2960602,
+  "host": "gpu02",
+  "command": [
+    "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+    "/home/sachin.chaudhary/ces_fl_sources/cesfl-response-58773bb/CES_FL/src/ces_fl_manipulation_response.py",
+    "dry-run",
+    "--config",
+    "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z/bound_originals/bound_config.json",
+    "--arm",
+    "bce",
+    "--out",
+    "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z/dry_bce",
+    "--device",
+    "cuda"
+  ],
+  "worker_pid": 2960491,
+  "gpu_uuid": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1"
+}

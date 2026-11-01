@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "checkpoint_sha256": "3174e5b01a84c91cc70afae538505663ca96454d897e6b793c0672826a8f08b5",
+  "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+  "max_metric_difference": 0.0,
+  "validation_replayed": true,
+  "test_read": false,
+  "synthetic_fixture": false,
+  "fairness_improvement_verified": false
+}

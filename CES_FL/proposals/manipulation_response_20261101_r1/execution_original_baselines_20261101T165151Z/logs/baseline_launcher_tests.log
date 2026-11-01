@@ -1,0 +1,10 @@
+test_changed_config_or_existing_outputs_blocked (__main__.Gates.test_changed_config_or_existing_outputs_blocked) ... ok
+test_device_and_host_must_match_backward (__main__.Gates.test_device_and_host_must_match_backward) ... ok
+test_incomplete_p_or_nonfinite_dry_blocked (__main__.Gates.test_incomplete_p_or_nonfinite_dry_blocked) ... ok
+test_no_training_before_configured_backward (__main__.Gates.test_no_training_before_configured_backward) ... ok
+test_paired_arm_not_supported (__main__.Gates.test_paired_arm_not_supported) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.061s
+
+OK

@@ -1,0 +1,43 @@
+{
+  "job": "SSH:gpu02:2960491",
+  "host": "gpu02",
+  "physical_index": 5,
+  "gpu_uuid": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1",
+  "free_mib_before_launch": 26369,
+  "torch_binding": {
+    "uuid": "bff97893-385b-6f3f-831b-113284c2e1f1",
+    "device": "NVIDIA H100 80GB HBM3",
+    "torch": "2.7.0+cu126"
+  },
+  "source_commit": "58773bbef9d9fe79dd313610f694ddeea12c6037",
+  "source_hashes": {
+    "CES_FL/src/ces_fl_manipulation_response.py": "0e82a522a22e641dc5588b6a15317e6842896ab2bdcc5364833af25e207f257e",
+    "CES_FL/src/ces_fl_counterfactual_5050.py": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+    "CES_FL/tests/smoke_manipulation_response.py": "748f4a883af8b39b6edd0f992f929f12f3045ba85734fcf1e542b67f61895654",
+    "CES_FL/proposals/manipulation_response_20261101_r1/config.json": "d31c78ab2913e629ebbd7e7a860a0dd4bea90d2c920b0d77719b042a7537dab0"
+  },
+  "operator_sha256": "74c6a4cbee4cc19c9156cf407186c5534c86ee87124fef0e30b9e3493111f1ff",
+  "registry": "/tmp/scf_gpu_locks/gpu5",
+  "method": "User-authorized direct SSH, cooperative registry/project lease, minimum 20GiB free and 15% Torch allocator cap; existing processes continue",
+  "execution_mode": "direct_ssh_bounded_shared_gpu",
+  "pbs_allocation": null,
+  "cuda_allocator_fraction": 0.15,
+  "preexisting_compute_processes": [
+    "GPU-da9cbc5e-5af7-36d0-efea-fcc1da157861, 2168555, 76534 MiB",
+    "GPU-da9cbc5e-5af7-36d0-efea-fcc1da157861, 235272, 974 MiB",
+    "GPU-4ed8257a-b1a4-0026-ff8f-8a0f42f38902, 2168556, 76506 MiB",
+    "GPU-19db00be-6cc8-242f-6b67-c05487fb2372, 2168557, 76506 MiB",
+    "GPU-4f468707-fed7-a55e-3174-628368d6c379, 2168558, 76504 MiB",
+    "GPU-ee335748-8273-2d67-42a5-d45463027c1b, 2986320, 54636 MiB",
+    "GPU-bff97893-385b-6f3f-831b-113284c2e1f1, 2986321, 54624 MiB",
+    "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb, 3713582, 5774 MiB",
+    "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb, 2936296, 41274 MiB",
+    "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb, 2945163, 4086 MiB",
+    "GPU-65f63cc5-9366-5c2d-196a-6e7a0a62c1e8, 2937260, 41294 MiB",
+    "GPU-65f63cc5-9366-5c2d-196a-6e7a0a62c1e8, 2954817, 4034 MiB"
+  ],
+  "pbs_assigned_uuid_claimed": false,
+  "qwen_preempted": false,
+  "bound_config_sha256": "b3d19e4937897ca568836dc67587f4d5f3b14222963b9bfb676a19be82627ece",
+  "pretrain_checkpoint_sha256": "3174e5b01a84c91cc70afae538505663ca96454d897e6b793c0672826a8f08b5"
+}
