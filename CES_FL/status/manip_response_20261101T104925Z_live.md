@@ -1,12 +1,12 @@
 # Manipulation-response FF++ seed17: actual status
 
-Observed management UTC: **2026-11-01T11:16:52.353553+00:00**.
+Observed management UTC: **2026-11-01T11:25:45.878161+00:00**.
 
 Exact source: `58773bbef9d9fe79dd313610f694ddeea12c6037` in its new detached worktree.
 
 **New CUDA smoke: QUEUED, job 44963.mgmt01**. Requests ngpus=1, eight CPUs, 48GB RAM on gpu01. A queued request has no assigned physical GPU. Actual allocation/UUID binding is recorded after dispatch.
 
-Scheduler: Not Running: Insufficient amount of resource: ncpus (R: 8 A: 4 T: 208).
+Scheduler: Not Running: User has reached queue gpu running job limit..
 
 | Arm | Actual status | Remaining dependency |
 |---|---|---|
