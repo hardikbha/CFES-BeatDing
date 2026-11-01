@@ -1,5 +1,5 @@
 {
-  "observed_utc": "2026-11-01T07:47:12.528561+00:00",
+  "observed_utc": "2026-11-01T07:48:17.160992+00:00",
   "source_commit": "fc4e63b8811c5813afa0d298a8172ba9555b7e40",
   "run_root": "/home/sachin.chaudhary/ces_fl_runs/cf5050_ssh_recovery_20261101T073243Z",
   "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
@@ -28,8 +28,19 @@
   },
   "stages": {
     "preflight": {
-      "state": "SUBMITTED_UNVERIFIED",
-      "pass": null,
+      "state": "PASS",
+      "pass": {
+        "status": "PASS",
+        "stage": "preflight",
+        "host": "gpu02",
+        "gpu_uuid": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1",
+        "elapsed_seconds": 908.3546244613826,
+        "source_commit": "fc4e63b8811c5813afa0d298a8172ba9555b7e40",
+        "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+        "config_sha256": "56e77211a966ae12a449c47cdaf8e3fc271f149c6031513747813a1d1abfaef0",
+        "full_training_started": false,
+        "scientific_validity_or_human_approval_implied": false
+      },
       "failure": null,
       "submission": {
         "pid": 2850831,
@@ -51,7 +62,7 @@
         "runner_sha256": "f741dbc18cc7c9a2ba7d1f189c8e556af30c1e23713fd6020f3d782117a1faac"
       },
       "progress": {
-        "phase": "dry_pretrain",
+        "phase": "DONE",
         "host": "gpu02",
         "gpu_uuid": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1"
       },
@@ -131,7 +142,27 @@
     "cuda_tested": true,
     "fairness_improvement_verified": false
   },
-  "real_data_dry_run": null,
+  "real_data_dry_run": {
+    "status": "PASS",
+    "stage": "pretrain",
+    "source_sha256": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+    "device": "cuda",
+    "synthetic_fixture": false,
+    "originals": 16,
+    "pairs": 0,
+    "parameters": {
+      "total": 21594159,
+      "trainable": 21594159
+    },
+    "optimizer_steps": 0,
+    "pretrain_bn_buffers_updated_in_discarded_model": true,
+    "peak_cuda_allocated_bytes": 2367416320,
+    "losses": {
+      "total": 0.5129827857017517,
+      "classification": 0.5129827857017517,
+      "invariance": -0.0
+    }
+  },
   "generation_plan": {
     "source_count": 76139,
     "generated_outputs": 532973,
