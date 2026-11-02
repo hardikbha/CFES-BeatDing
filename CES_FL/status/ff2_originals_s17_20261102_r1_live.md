@@ -1,12 +1,12 @@
 # FairForge-2 original-only CES-FL pretraining — seed17
 
-Observed management UTC: 2026-11-02T06:21:40.945809+00:00.
+Observed management UTC: 2026-11-02T06:29:50.150895+00:00.
 
-Status: **RUNNING**. Completed epochs: **6/10**.
+Status: **RUNNING**. Completed epochs: **7/10**.
 
 Direct SSH host **gpu01**, physical GPU **4**, H10080GB; trainer PID **2525928**, worker PID **2525919**. GPU UUID `GPU-9b669a06-9156-a98e-2194-36f2fc11d7ca`. No PBS allocation is claimed; cooperative locks and20% VRAM cap. Existing jobs preserved.
 
-Actual child process observation: `2525928       50:25 /home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_runs/ff2_originals_s17_20261102_r1/runtime/stage_program.py --stage train`.
+Actual child process observation: `2525928       58:34 /home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_runs/ff2_originals_s17_20261102_r1/runtime/stage_program.py --stage train`.
 
 TRAIN218,266; VAL31,107. TEST87,564 is not evaluated. Original-image BCE; all21,594,159parameters trainable, BNupdates. Validation AUC selects checkpoints; calibration uses validation reals only.
 
@@ -20,16 +20,17 @@ Input hash/reader/path/provenance checks PASS;64TRAIN+64VALimages decoded by str
 | 4 | 99.710703 | 0.03132660 |
 | 5 | 99.735900 | 0.02618677 |
 | 6 | 99.728192 | 0.02164583 |
+| 7 | 99.797400 | 0.01867947 |
 
-Current validation-selected epoch: 5. Achieved VALFPR: 9.967186% (243/2438); no TESTFPR guarantee.
+Current validation-selected epoch: 7. Achieved VALFPR: 9.967186% (243/2438); no TESTFPR guarantee.
 
 | Attribute | F_FPR (%) | F_DP (%) | es-AUC (%) | Worst eligible AUC (%) |
 |---|---:|---:|---:|---:|
-| gender | 3.089534 | 0.092091 | 99.711345 | 99.721582 |
-| race | 10.699709 | 0.904330 | 99.248797 | 99.583948 |
-| gender_race | 27.718613 | 1.166677 | 98.723102 | 99.508128 |
-| age_bin | 5.825345 | 4.422205 | 99.504496 | 99.641719 |
-| skin_bin | 5.565458 | 1.101464 | 99.423286 | 99.560860 |
+| gender | 1.225149 | 0.048869 | 99.741592 | 99.765067 |
+| race | 14.227924 | 1.334368 | 99.434471 | 99.627871 |
+| gender_race | 29.005149 | 1.596209 | 98.960402 | 99.625651 |
+| age_bin | 9.902075 | 4.547330 | 99.595457 | 99.695226 |
+| skin_bin | 5.147218 | 0.842692 | 99.568705 | 99.679743 |
 
 Model source commit `875bce025084871438ef799ca9086985c4375672`; exact fixed FF2P10config SHA256 `db0c886527635295f0394dddbca9da1a8a3c40807609ab78f324b75b382fbee8`. No architecture/loss edits or FF++configuration substitution.
 
