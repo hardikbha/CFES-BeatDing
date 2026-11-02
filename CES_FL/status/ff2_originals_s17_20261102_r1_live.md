@@ -1,12 +1,12 @@
 # FairForge-2 original-only CES-FL pretraining — seed17
 
-Observed management UTC: 2026-11-02T06:29:50.150895+00:00.
+Observed management UTC: 2026-11-02T06:37:29.489595+00:00.
 
-Status: **RUNNING**. Completed epochs: **7/10**.
+Status: **RUNNING**. Completed epochs: **8/10**.
 
 Direct SSH host **gpu01**, physical GPU **4**, H10080GB; trainer PID **2525928**, worker PID **2525919**. GPU UUID `GPU-9b669a06-9156-a98e-2194-36f2fc11d7ca`. No PBS allocation is claimed; cooperative locks and20% VRAM cap. Existing jobs preserved.
 
-Actual child process observation: `2525928       58:34 /home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_runs/ff2_originals_s17_20261102_r1/runtime/stage_program.py --stage train`.
+Actual child process observation: `2525928    01:06:14 /home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_runs/ff2_originals_s17_20261102_r1/runtime/stage_program.py --stage train`.
 
 TRAIN218,266; VAL31,107. TEST87,564 is not evaluated. Original-image BCE; all21,594,159parameters trainable, BNupdates. Validation AUC selects checkpoints; calibration uses validation reals only.
 
@@ -21,6 +21,7 @@ Input hash/reader/path/provenance checks PASS;64TRAIN+64VALimages decoded by str
 | 5 | 99.735900 | 0.02618677 |
 | 6 | 99.728192 | 0.02164583 |
 | 7 | 99.797400 | 0.01867947 |
+| 8 | 99.771616 | 0.01624456 |
 
 Current validation-selected epoch: 7. Achieved VALFPR: 9.967186% (243/2438); no TESTFPR guarantee.
 
