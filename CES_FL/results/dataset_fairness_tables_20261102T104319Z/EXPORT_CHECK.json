@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "tex": "/home/sachin.chaudhary/cesel_ma_audit_logs/dataset_fairness_tables_20261102T104319Z/ding_and_fairforge2_tables.tex",
+  "source_records": 15,
+  "public_axis_rows": 66,
+  "public_group_rows": 341,
+  "existing_CI_rows": 225,
+  "Ding_legacy_exports": 8,
+  "source_metrics_only": true
+}

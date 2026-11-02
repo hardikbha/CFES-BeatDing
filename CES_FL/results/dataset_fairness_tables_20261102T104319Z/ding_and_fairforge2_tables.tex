@@ -1,0 +1,1011 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper,landscape,margin=0.65in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{booktabs,longtable,array,amsmath,hyperref}
+\hypersetup{hidelinks}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+\setlength{\LTcapwidth}{\textwidth}
+\setlength{\LTpre}{8pt}
+\setlength{\LTpost}{8pt}
+\begin{document}
+\raggedbottom
+\title{Verified Dataset Splits and FairForge-2 Fairness Results}
+\author{CES-FL research reporting snapshot}
+\date{2 November 2026}
+\maketitle
+\small
+Reporting only: existing JSON metrics and CSV split metadata were inspected. No new training, detector inference, calibration, score inversion or test-based tuning was performed. Image counts below are frame/image rows, not videos or unique people. No result establishes that the current counterfactual method beats Ding.
+
+\section*{1. Exact current dataset splits}
+\begin{longtable}{@{}lrrrr@{}}
+\caption{Current frozen split sizes; native Ding training/validation/test counts were independently cross-checked.}\\
+\toprule
+Dataset & TRAIN & VAL & TEST & Total \\
+\midrule
+\endfirsthead
+\toprule
+Dataset & TRAIN & VAL & TEST & Total \\
+\midrule
+\endhead
+\midrule
+\multicolumn{5}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Ding FF++ & 76,139 & 25,386 & 25,401 & 126,926 \\
+FairForge-2 public & 218,266 & 31,107 & 87,564 & 336,937 \\
+\end{longtable}
+
+\begin{longtable}{@{}lrrr@{}}
+\caption{Class counts in the exact current manifests.}\\
+\toprule
+Dataset / split & Images & Real & Fake \\
+\midrule
+\endfirsthead
+\toprule
+Dataset / split & Images & Real & Fake \\
+\midrule
+\endhead
+\midrule
+\multicolumn{4}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Ding FF++ / TRAIN & 76,139 & 12,926 & 63,213 \\
+Ding FF++ / VAL & 25,386 & 4,092 & 21,294 \\
+Ding FF++ / TEST & 25,401 & 4,538 & 20,863 \\
+FairForge-2 public / TRAIN & 218,266 & 16,777 & 201,489 \\
+FairForge-2 public / VAL & 31,107 & 2,438 & 28,669 \\
+FairForge-2 public / TEST & 87,564 & 5,441 & 82,123 \\
+\end{longtable}
+
+\begin{longtable}{@{}lrrrrr@{}}
+\caption{Ding-protocol external tests. FF++ supplies training and validation; these domains are test-only in this protocol.}\\
+\toprule
+External dataset & TRAIN used here & VAL used here & TEST & Real & Fake \\
+\midrule
+\endfirsthead
+\toprule
+External dataset & TRAIN used here & VAL used here & TEST & Real & Fake \\
+\midrule
+\endhead
+\midrule
+\multicolumn{6}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+dfdc & -- & -- & 22,857 & 14,699 & 8,158 \\
+celebdf & -- & -- & 28,458 & 5,713 & 22,745 \\
+dfd & -- & -- & 9,385 & 3,092 & 6,293 \\
+\end{longtable}
+
+FairForge-2 public is our current release. Historical internal/full builds and a legacy 57,665-image FF2 evaluation subset are different inventories, retained separately below. Exact paths and SHA256 values are in SPLITS.json. Frame membership matching does not establish true-person/donor disjointness; the Ding benchmark has disclosed contributor overlap.
+
+\section*{2. FairForge-2 public in-domain validation: current CES-FL pretraining}
+\begin{longtable}{@{}lrrrrrrr@{}}
+\caption{Original-only BCE pretraining on public TRAIN; evaluation and selection on public VAL, not TEST.}\\
+\toprule
+Model / seed & Epochs & Selected epoch & VAL images & AUC (\%) & FPR (\%) & FNR (\%) & Logit threshold \\
+\midrule
+\endfirsthead
+\toprule
+Model / seed & Epochs & Selected epoch & VAL images & AUC (\%) & FPR (\%) & FNR (\%) & Logit threshold \\
+\midrule
+\endhead
+\midrule
+\multicolumn{8}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+CES-FL P / 17 & 10 & 9 & 31,107 & 99.8105 & 9.9672 & 0.3802 & -4.2040 \\
+\end{longtable}
+
+Calibration uses this model's VAL real images only: requested FPR 10\%, achieved 243/2438 = 9.967186\%. No TEST result exists for this new in-domain model. It used no counterfactual or fairness training loss; the fairness numbers are measured evaluation outcomes, not proof of a fairness improvement.
+
+\begin{longtable}{@{}lrrrrrrr@{}}
+\caption{Current in-domain validation fairness across every recorded axis.}\\
+\toprule
+Axis & Eligible groups & $F_{\mathrm{FPR}}$ (\%) & $F_{\mathrm{DP}}$ (\%) & $es$-AUC (\%) & FPR gap (pp) & FNR gap (pp) & Worst AUC (\%) \\
+\midrule
+\endfirsthead
+\toprule
+Axis & Eligible groups & $F_{\mathrm{FPR}}$ (\%) & $F_{\mathrm{DP}}$ (\%) & $es$-AUC (\%) & FPR gap (pp) & FNR gap (pp) & Worst AUC (\%) \\
+\midrule
+\endhead
+\midrule
+\multicolumn{8}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Gender & 2 & 3.5980 & 0.2438 & 99.8024 & 3.5980 & 0.1180 & 99.8080 \\
+Race & 4 & 12.1565 & 1.0574 & 99.4374 & 7.5679 & 0.1260 & 99.6840 \\
+Gender x race & 8 & 28.3857 & 1.5308 & 99.0752 & 11.8517 & 0.2848 & 99.5827 \\
+Age bins & 4 & 9.2329 & 4.3313 & 99.6311 & 7.4848 & 0.1737 & 99.6982 \\
+Skin bins (ITA) & 4 & 11.6827 & 0.4047 & 99.6213 & 7.9134 & 0.2700 & 99.6977 \\
+Native ids8 & 8 & 34.8666 & 2.8386 & 98.9305 & 18.1073 & 0.5583 & 99.5209 \\
+\end{longtable}
+
+F\_FPR = 100 times the sum of absolute group FPR deviations from the pooled FPR. F\_DP is 100 times the max-min positive-rate gap. FPR/FNR gaps are percentage-point max-min differences. All AUCs and rates are displayed as percentages. F\_FPR is not a false-positive rate and its scale depends on the number of groups. Age and skin bins are automated proxies, not newly human-reviewed ground truth. Native ids8 is kept as its own grouping; it is not assumed interchangeable with gender x race. Eligible aggregates require at least20real and20fake frames per group; unknown groups remain visible in detailed support tables.
+
+\section*{3. FairForge-2 public TEST: FF++-trained CES-FL transfer results}
+All five models below were trained on FF++, not FairForge-2. Their ten-epoch downstream runs used the existing shared ten-epoch FF++ detection-pretrained encoder. Seed17. R0=frozen BCE; R1=partial BCE; R2=partial group-DRO; RN=no-change diagnostic; RD=age-edit diagnostic. RN/RD use only six reviewed sources and do not establish broad demographic or forensic-selectivity validity. The frozen global threshold comes from FF++ VAL; it was never calibrated on FairForge-2.
+
+\begin{longtable}{@{}lrrrrrrr@{}}
+\caption{Existing public held-out transfer measurements at each stored FF++ validation threshold.}\\
+\toprule
+Arm & TEST images & AUC (\%) & FPR (\%) & FNR (\%) & G$\times$R $F_{\mathrm{FPR}}$ (\%) & G$\times$R FPR gap (pp) & G$\times$R worst AUC (\%) \\
+\midrule
+\endfirsthead
+\toprule
+Arm & TEST images & AUC (\%) & FPR (\%) & FNR (\%) & G$\times$R $F_{\mathrm{FPR}}$ (\%) & G$\times$R FPR gap (pp) & G$\times$R worst AUC (\%) \\
+\midrule
+\endhead
+\midrule
+\multicolumn{8}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+R0 & 87,564 & 41.6819 & 57.1402 & 56.8428 & 73.9917 & 26.6485 & 39.4477 \\
+R1 & 87,564 & 41.8710 & 59.5663 & 52.5468 & 73.9710 & 28.4375 & 39.4298 \\
+R2 & 87,564 & 42.8294 & 60.2463 & 51.5556 & 79.0243 & 29.0497 & 39.9600 \\
+RN & 87,564 & 38.8312 & 59.0700 & 56.6394 & 75.9691 & 28.2139 & 36.5254 \\
+RD & 87,564 & 39.5290 & 58.2981 & 58.0434 & 75.2938 & 29.0560 & 37.2655 \\
+\end{longtable}
+
+Transfer detection is weak: these AUCs are below50\%. Values were not inverted or hidden. They cannot be compared with the99.8105\% in-domain VAL score as if they measured the same experiment.
+
+\begin{longtable}{@{}lrrrrrrrr@{}}
+\caption{All six fairness axes for public TEST transfer: Stored FF++ validation threshold.}\\
+\toprule
+Arm & Axis & Eligible groups & $F_{\mathrm{FPR}}$ (\%) & $F_{\mathrm{DP}}$ (\%) & $es$-AUC (\%) & FPR gap (pp) & FNR gap (pp) & Worst AUC (\%) \\
+\midrule
+\endfirsthead
+\toprule
+Arm & Axis & Eligible groups & $F_{\mathrm{FPR}}$ (\%) & $F_{\mathrm{DP}}$ (\%) & $es$-AUC (\%) & FPR gap (pp) & FNR gap (pp) & Worst AUC (\%) \\
+\midrule
+\endhead
+\midrule
+\multicolumn{9}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+R0 & Gender & 2 & 3.4278 & 1.8642 & 40.6528 & 3.4278 & 2.2746 & 40.6886 \\
+R0 & Race & 4 & 32.9389 & 30.9094 & 38.8022 & 22.6067 & 31.1981 & 40.5765 \\
+R0 & Gender x race & 8 & 73.9917 & 37.0400 & 35.1900 & 26.6485 & 37.6504 & 39.4477 \\
+R0 & Age bins & 4 & 20.4282 & 21.6665 & 40.3061 & 15.5810 & 22.5806 & 40.2755 \\
+R0 & Skin bins (ITA) & 4 & 40.0444 & 21.5825 & 38.5221 & 25.7453 & 21.2067 & 38.9100 \\
+R0 & Native ids8 & 8 & 51.4230 & 15.9850 & 35.7763 & 25.7669 & 15.9663 & 37.7915 \\
+R1 & Gender & 2 & 3.0403 & 2.0682 & 40.8606 & 3.0403 & 2.4579 & 40.9095 \\
+R1 & Race & 4 & 33.1792 & 30.5143 & 38.8016 & 22.7593 & 30.8132 & 40.5486 \\
+R1 & Gender x race & 8 & 73.9710 & 36.3497 & 35.5165 & 28.4375 & 36.8937 & 39.4298 \\
+R1 & Age bins & 4 & 19.3078 & 22.9061 & 40.6328 & 14.6900 & 23.8965 & 40.5898 \\
+R1 & Skin bins (ITA) & 4 & 39.9410 & 22.4024 & 38.7078 & 25.2559 & 22.1283 & 39.0372 \\
+R1 & Native ids8 & 8 & 51.0861 & 16.0845 & 35.8577 & 25.6834 & 15.6259 & 38.1783 \\
+R2 & Gender & 2 & 2.8749 & 3.0886 & 41.7462 & 2.8749 & 3.5329 & 41.7901 \\
+R2 & Race & 4 & 35.6117 & 30.0474 & 39.6081 & 23.8951 & 30.2436 & 41.3256 \\
+R2 & Gender x race & 8 & 79.0243 & 36.3795 & 35.9994 & 29.0497 & 36.7937 & 39.9600 \\
+R2 & Age bins & 4 & 16.0873 & 23.7896 & 40.8845 & 13.8090 & 24.8775 & 41.0193 \\
+R2 & Skin bins (ITA) & 4 & 38.6574 & 22.2196 & 40.3125 & 24.0934 & 22.0166 & 40.4114 \\
+R2 & Native ids8 & 8 & 56.9269 & 16.2747 & 36.8586 & 25.1554 & 16.1382 & 38.9722 \\
+RN & Gender & 2 & 3.2830 & 2.0019 & 37.9325 & 3.2830 & 2.4197 & 37.9121 \\
+RN & Race & 4 & 35.0985 & 31.3196 & 36.3299 & 23.7109 & 31.4985 & 37.7784 \\
+RN & Gender x race & 8 & 75.9691 & 36.6832 & 33.2145 & 28.2139 & 37.1113 & 36.5254 \\
+RN & Age bins & 4 & 17.8747 & 19.0489 & 38.3436 & 13.2009 & 19.6074 & 38.1002 \\
+RN & Skin bins (ITA) & 4 & 39.9569 & 21.0425 & 35.9295 & 24.5657 & 20.6954 & 35.9143 \\
+RN & Native ids8 & 8 & 52.9550 & 14.2133 & 32.5859 & 25.0707 & 14.0512 & 33.9769 \\
+RD & Gender & 2 & 3.1420 & 0.8020 & 39.0095 & 3.1420 & 1.1349 & 39.0113 \\
+RD & Race & 4 & 34.0271 & 30.1257 & 36.6849 & 22.5715 & 30.2900 & 37.8698 \\
+RD & Gender x race & 8 & 75.2938 & 35.5687 & 33.9225 & 29.0560 & 35.9455 & 37.2655 \\
+RD & Age bins & 4 & 14.0979 & 17.9114 & 39.1607 & 12.2438 & 18.4605 & 39.0837 \\
+RD & Skin bins (ITA) & 4 & 38.9827 & 21.0333 & 36.6745 & 24.4169 & 20.6883 & 36.9775 \\
+RD & Native ids8 & 8 & 55.5394 & 14.5354 & 33.9537 & 25.5138 & 14.3752 & 35.1670 \\
+\end{longtable}
+
+\begin{longtable}{@{}lrrrrrrrr@{}}
+\caption{All six fairness axes for public TEST transfer: Fixed probability0.5 (logit0).}\\
+\toprule
+Arm & Axis & Eligible groups & $F_{\mathrm{FPR}}$ (\%) & $F_{\mathrm{DP}}$ (\%) & $es$-AUC (\%) & FPR gap (pp) & FNR gap (pp) & Worst AUC (\%) \\
+\midrule
+\endfirsthead
+\toprule
+Arm & Axis & Eligible groups & $F_{\mathrm{FPR}}$ (\%) & $F_{\mathrm{DP}}$ (\%) & $es$-AUC (\%) & FPR gap (pp) & FNR gap (pp) & Worst AUC (\%) \\
+\midrule
+\endhead
+\midrule
+\multicolumn{9}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+R0 & Gender & 2 & 2.7844 & 1.9150 & 40.6528 & 2.7844 & 2.2844 & 40.6886 \\
+R0 & Race & 4 & 32.7017 & 30.0474 & 38.8022 & 22.6668 & 30.2900 & 40.5765 \\
+R0 & Gender x race & 8 & 72.9349 & 36.6286 & 35.1900 & 27.1095 & 37.1331 & 39.4477 \\
+R0 & Age bins & 4 & 19.5337 & 20.1359 & 40.3061 & 14.5725 & 20.9692 & 40.2755 \\
+R0 & Skin bins (ITA) & 4 & 35.7030 & 19.0476 & 38.5221 & 22.6878 & 18.7060 & 38.9100 \\
+R0 & Native ids8 & 8 & 48.5989 & 15.5452 & 35.7763 & 23.7167 & 15.5421 & 37.7915 \\
+R1 & Gender & 2 & 4.0495 & 1.3198 & 40.8606 & 4.0495 & 1.7323 & 40.9095 \\
+R1 & Race & 4 & 32.5898 & 30.4068 & 38.8016 & 21.8392 & 30.7255 & 40.5486 \\
+R1 & Gender x race & 8 & 71.6326 & 35.9053 & 35.5165 & 26.3856 & 36.5703 & 39.4298 \\
+R1 & Age bins & 4 & 19.2872 & 21.1375 & 40.6328 & 14.5808 & 22.0930 & 40.5898 \\
+R1 & Skin bins (ITA) & 4 & 38.3732 & 20.9002 & 38.7078 & 24.6720 & 20.5517 & 39.0372 \\
+R1 & Native ids8 & 8 & 53.3286 & 15.1523 & 35.8577 & 26.6108 & 14.9758 & 38.1783 \\
+R2 & Gender & 2 & 2.5936 & 3.0609 & 41.7462 & 2.5936 & 3.4867 & 41.7901 \\
+R2 & Race & 4 & 35.5077 & 29.9990 & 39.6081 & 24.3221 & 30.1402 & 41.3256 \\
+R2 & Gender x race & 8 & 77.7994 & 36.4555 & 35.9994 & 29.1480 & 36.8272 & 39.9600 \\
+R2 & Age bins & 4 & 15.2902 & 23.1779 & 40.8845 & 13.0712 & 24.2837 & 41.0193 \\
+R2 & Skin bins (ITA) & 4 & 36.9218 & 21.3619 & 40.3125 & 22.6376 & 21.1957 & 40.4114 \\
+R2 & Native ids8 & 8 & 52.9631 & 16.3288 & 36.8586 & 24.4579 & 16.2553 & 38.9722 \\
+RN & Gender & 2 & 3.9669 & 1.7302 & 37.9325 & 3.9669 & 2.1758 & 37.9121 \\
+RN & Race & 4 & 34.8938 & 31.1033 & 36.3299 & 23.7557 & 31.2638 & 37.7784 \\
+RN & Gender x race & 8 & 76.8140 & 36.4122 & 33.2145 & 28.6614 & 36.8744 & 36.5254 \\
+RN & Age bins & 4 & 16.5625 & 18.5546 & 38.3436 & 13.2076 & 19.0790 & 38.1002 \\
+RN & Skin bins (ITA) & 4 & 38.7656 & 20.3499 & 35.9295 & 24.4247 & 19.9659 & 35.9143 \\
+RN & Native ids8 & 8 & 54.2199 & 13.9549 & 32.5859 & 24.9435 & 13.8315 & 33.9769 \\
+RD & Gender & 2 & 3.1027 & 0.3362 & 39.0095 & 3.1027 & 0.6382 & 39.0113 \\
+RD & Race & 4 & 32.5912 & 30.0242 & 36.6849 & 21.8772 & 30.2221 & 37.8698 \\
+RD & Gender x race & 8 & 74.6641 & 35.4883 & 33.9225 & 28.5694 & 35.8632 & 37.2655 \\
+RD & Age bins & 4 & 13.1994 & 16.9170 & 39.1607 & 11.4555 & 17.4574 & 39.0837 \\
+RD & Skin bins (ITA) & 4 & 37.9273 & 20.2964 & 36.6745 & 23.8949 & 19.9324 & 36.9775 \\
+RD & Native ids8 & 8 & 54.6502 & 14.3473 & 33.9537 & 26.0829 & 14.2090 & 35.1670 \\
+\end{longtable}
+
+\section*{4. Historical CFES-D: public FairForge-2 in-domain TEST}
+Historical CLIP ViT-L/14 CFES-D, seed7, is a different model/configuration from current Xception CES-FL. Public TRAIN lineage is recorded. The full TEST report has87,564images; its leakfree-video companion has the same n and AUC and is not counted as another independent experiment. Age/skin-axis exports were not found in these legacy reports. Threshold conventions differ from current CES-FL, so these rows are contextual records, not matched superiority comparisons.
+
+\begin{longtable}{@{}lrrrr@{}}
+\caption{Historical public-test CFES-D detection at all located operating modes; FNR is the arithmetic complement of stored TPR.}\\
+\toprule
+Stored operating mode & AUC (\%) & FPR (\%) & FNR (\%) & Threshold \\
+\midrule
+\endfirsthead
+\toprule
+Stored operating mode & AUC (\%) & FPR (\%) & FNR (\%) & Threshold \\
+\midrule
+\endhead
+\midrule
+\multicolumn{5}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Native probability0.5 & 98.2598 & 0.0919 & 14.3650 & 0.5 \\
+Stored VAL threshold & 98.2598 & 0.0735 & 15.3745 & 0.5040 \\
+Legacy VAL-intercept calibration & 98.2598 & 3.0693 & 6.6206 & 0.5 after intercept \\
+\end{longtable}
+
+\begin{longtable}{@{}lrrrrrrr@{}}
+\caption{Historical CFES-D fairness exports. Native aggregate entries already use percentage units; they were not multiplied by100 again. Blank entries were not exported.}\\
+\toprule
+Operating mode & Axis & $F_{\mathrm{FPR}}$ (\%) & $F_{\mathrm{DP}}$ (\%) & $es$-AUC (\%) & FPR gap (pp) & FNR gap (pp) & Worst AUC (\%) \\
+\midrule
+\endfirsthead
+\toprule
+Operating mode & Axis & $F_{\mathrm{FPR}}$ (\%) & $F_{\mathrm{DP}}$ (\%) & $es$-AUC (\%) & FPR gap (pp) & FNR gap (pp) & Worst AUC (\%) \\
+\midrule
+\endhead
+\midrule
+\multicolumn{8}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Native0.5 & gender & 0.0004 & 3.4465 & 97.5948 & 0.0004 & 4.0651 & 97.8816 \\
+Native0.5 & race & 0.2747 & 8.6095 & 95.7898 & 0.1887 & 11.5783 & 97.5091 \\
+Native0.5 & intersection & 1.1345 & 10.8742 & 92.9560 & 0.4454 & 14.4908 & 97.0439 \\
+Stored VAL & gender & 0.0303 & 3.4236 & 97.5948 & 0.0303 & 4.0382 & 97.8816 \\
+Stored VAL & race & 0.2029 & 8.7345 & 95.7898 & 0.1708 & 11.6876 & 97.5091 \\
+Stored VAL & intersection & 0.9268 & 12.1464 & 92.9560 & 0.4454 & 15.8115 & 97.0439 \\
+VAL-intercept & gender & 0.1552 & 2.3790 & 97.5948 & -- & -- & -- \\
+VAL-intercept & race & 3.9215 & 3.4274 & 95.7898 & -- & -- & -- \\
+VAL-intercept & intersection & 8.3146 & 4.7137 & 92.9560 & -- & -- & -- \\
+\end{longtable}
+
+Legacy common-intercept calibration reports b=58.04658725, objective: class-balanced validation log loss, common intercept. This stored calibration was not re-fit here. The operating-point trade-off is visible in FPR and FNR; a tiny F\_FPR at a conservative cutoff does not by itself establish strong detection.
+
+\section*{5. Archived Ding FF2 references: different evaluation inventories}
+The archived FF++-trained Ding exports below use either a57,665-row legacy subset or the182,884-row historical internal/full FF2 test. Neither is the current87,564-row public TEST. These native metrics are retained separately. Their original operating/eligibility conventions were not redefined or recalibrated here. Full-stage archive GDA has the documented detached-fairness gradient defect and is not certified as the paper-trained differentiable method. The epoch25 and epoch49 exports are both retained; no test-best checkpoint is selected.
+
+\begin{longtable}{@{}lrrrrrr@{}}
+\caption{Previously calculated Ding transfer fairness; distinct legacy FF2 inventories, not current public in-domain results.}\\
+\toprule
+Archived export & Eval images & Axis & AUC (\%) & $F_{\mathrm{FPR}}$ (\%) & $F_{\mathrm{DP}}$ (\%) & $es$-AUC (\%) \\
+\midrule
+\endfirsthead
+\toprule
+Archived export & Eval images & Axis & AUC (\%) & $F_{\mathrm{FPR}}$ (\%) & $F_{\mathrm{DP}}$ (\%) & $es$-AUC (\%) \\
+\midrule
+\endhead
+\midrule
+\multicolumn{7}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+base\_s17\_ep49\_ff2 & 57,665 & gender & 31.6578 & 3.5777 & 3.2332 & 30.8805 \\
+base\_s17\_ep49\_ff2 & 57,665 & race & 31.6578 & 34.2396 & 36.9786 & 27.2557 \\
+base\_s17\_ep49\_ff2 & 57,665 & intersection & 31.6578 & 84.7080 & 47.7559 & 23.2804 \\
+base\_s17\_ep49\_ff2full & 182,884 & gender & 40.0747 & 3.5837 & 5.8966 & 39.7257 \\
+base\_s17\_ep49\_ff2full & 182,884 & race & 40.0747 & 34.3080 & 22.5971 & 39.4012 \\
+base\_s17\_ep49\_ff2full & 182,884 & intersection & 40.0747 & 84.8232 & 31.3046 & 36.9993 \\
+base\_s27\_ep49\_ff2 & 57,665 & gender & 44.0067 & 1.5590 & 2.0074 & 43.1351 \\
+base\_s27\_ep49\_ff2 & 57,665 & race & 44.0067 & 28.4859 & 31.1967 & 36.1422 \\
+base\_s27\_ep49\_ff2 & 57,665 & intersection & 44.0067 & 63.6064 & 38.4823 & 31.1840 \\
+base\_s27\_ep49\_ff2full & 182,884 & gender & 49.6358 & 1.5209 & 1.2874 & 49.4297 \\
+base\_s27\_ep49\_ff2full & 182,884 & race & 49.6358 & 28.3874 & 20.1892 & 46.1935 \\
+base\_s27\_ep49\_ff2full & 182,884 & intersection & 49.6358 & 63.4008 & 26.0189 & 43.4454 \\
+base\_s7\_ep49\_ff2 & 57,665 & gender & 33.0371 & 3.2270 & 2.8227 & 31.8897 \\
+base\_s7\_ep49\_ff2 & 57,665 & race & 33.0371 & 25.2707 & 34.0582 & 28.8313 \\
+base\_s7\_ep49\_ff2 & 57,665 & intersection & 33.0371 & 69.7866 & 43.6545 & 24.1745 \\
+base\_s7\_ep49\_ff2full & 182,884 & gender & 41.8495 & 3.2270 & 1.0582 & 41.7531 \\
+base\_s7\_ep49\_ff2full & 182,884 & race & 41.8495 & 25.2707 & 17.6361 & 39.7617 \\
+base\_s7\_ep49\_ff2full & 182,884 & intersection & 41.8495 & 69.7866 & 29.7644 & 36.2620 \\
+full\_s7\_ep25\_ff2full & 182,884 & gender & 42.6254 & 1.7690 & 2.9760 & 42.5036 \\
+full\_s7\_ep25\_ff2full & 182,884 & race & 42.6254 & 30.6995 & 21.0323 & 40.8460 \\
+full\_s7\_ep25\_ff2full & 182,884 & intersection & 42.6254 & 76.6802 & 29.3631 & 38.0709 \\
+full\_s7\_ep49\_ff2full & 182,884 & gender & 42.4030 & 2.9952 & 3.9277 & 42.2935 \\
+full\_s7\_ep49\_ff2full & 182,884 & race & 42.4030 & 30.0052 & 21.3940 & 40.6379 \\
+full\_s7\_ep49\_ff2full & 182,884 & intersection & 42.4030 & 79.5770 & 30.2372 & 37.9091 \\
+\end{longtable}
+
+\begin{longtable}{@{}lrrr@{}}
+\caption{Ding trained on the historical larger FF2 build: AUC-only records. No new raw-score evaluation was performed.}\\
+\toprule
+Historical in-domain model & Internal TEST images & AUC (\%) & Fairness export in reused record \\
+\midrule
+\endfirsthead
+\toprule
+Historical in-domain model & Internal TEST images & AUC (\%) & Fairness export in reused record \\
+\midrule
+\endhead
+\midrule
+\multicolumn{4}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Ding classification & 182,884 & 99.2619 & -- \\
+Ding archived SFD+GDA & 182,884 & 99.3573 & -- \\
+\end{longtable}
+
+That historical internal build records502,035TRAIN /74,974VAL /182,884TEST images. These counts and AUC-only values come from the existing baseline evidence record, not the current public split. A matched Ding model trained and evaluated on the current public split remains unavailable in this inspected record. Do not replace that missing row with internal-build or transfer results.
+
+\section*{6. Detailed public demographic group support and errors}
+The following rows retain every recorded group, including unknown/ineligible groups. AUC is undefined for a group lacking either class. Eligibility is the source report status, not a demographic-truth guarantee. All percentages use the stored global operating point; no group-specific threshold was introduced.
+
+\begin{longtable}{@{}lrrrrrrrrr@{}}
+\caption{All available group-wise metrics: current public VAL and both stored transfer TEST operating modes. ModelP17 means in-domain VAL; R0/R1/R2/RN/RD mean FF++-trained TEST transfer.}\\
+\toprule
+Model & Operating mode & Axis & Group & Real n & Fake n & AUC (\%) & FPR (\%) & FNR (\%) & Eligible \\
+\midrule
+\endfirsthead
+\toprule
+Model & Operating mode & Axis & Group & Real n & Fake n & AUC (\%) & FPR (\%) & FNR (\%) & Eligible \\
+\midrule
+\endhead
+\midrule
+\multicolumn{10}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+P17 & VAL\_real\_FPR10 & Gender & Female & 1,001 & 11,613 & 99.8080 & 12.0879 & 0.3100 & yes \\
+P17 & VAL\_real\_FPR10 & Gender & Male & 1,437 & 17,056 & 99.8162 & 8.4899 & 0.4280 & yes \\
+P17 & VAL\_real\_FPR10 & Race & Asian & 524 & 6,326 & 99.7521 & 12.0229 & 0.3952 & yes \\
+P17 & VAL\_real\_FPR10 & Race & Black & 432 & 5,344 & 99.6840 & 12.5000 & 0.4678 & yes \\
+P17 & VAL\_real\_FPR10 & Race & Others & 969 & 10,855 & 99.9157 & 5.8824 & 0.3501 & yes \\
+P17 & VAL\_real\_FPR10 & Race & White & 513 & 6,144 & 99.7255 & 13.4503 & 0.3418 & yes \\
+P17 & VAL\_real\_FPR10 & Gender x race & Female-Asian & 202 & 2,493 & 99.6884 & 17.3267 & 0.4011 & yes \\
+P17 & VAL\_real\_FPR10 & Gender x race & Female-Black & 194 & 2,272 & 99.8019 & 11.8557 & 0.3961 & yes \\
+P17 & VAL\_real\_FPR10 & Gender x race & Female-Others & 348 & 3,882 & 99.9174 & 6.6092 & 0.2576 & yes \\
+P17 & VAL\_real\_FPR10 & Gender x race & Female-White & 257 & 2,966 & 99.7325 & 15.5642 & 0.2360 & yes \\
+P17 & VAL\_real\_FPR10 & Gender x race & Male-Asian & 322 & 3,833 & 99.7895 & 8.6957 & 0.3913 & yes \\
+P17 & VAL\_real\_FPR10 & Gender x race & Male-Black & 238 & 3,072 & 99.5827 & 13.0252 & 0.5208 & yes \\
+P17 & VAL\_real\_FPR10 & Gender x race & Male-Others & 621 & 6,973 & 99.9158 & 5.4750 & 0.4015 & yes \\
+P17 & VAL\_real\_FPR10 & Gender x race & Male-White & 256 & 3,178 & 99.7381 & 11.3281 & 0.4405 & yes \\
+P17 & VAL\_real\_FPR10 & Age bins & 30-44 & 1,142 & 14,025 & 99.8218 & 8.6690 & 0.3922 & yes \\
+P17 & VAL\_real\_FPR10 & Age bins & 45-59 & 662 & 6,686 & 99.8461 & 9.2145 & 0.2842 & yes \\
+P17 & VAL\_real\_FPR10 & Age bins & 60+ & 374 & 3,372 & 99.7896 & 10.9626 & 0.4152 & yes \\
+P17 & VAL\_real\_FPR10 & Age bins & \textless{}30 & 260 & 4,586 & 99.6982 & 16.1538 & 0.4579 & yes \\
+P17 & VAL\_real\_FPR10 & Skin bins (ITA) & 0 & 630 & 7,713 & 99.8496 & 5.8730 & 0.4797 & yes \\
+P17 & VAL\_real\_FPR10 & Skin bins (ITA) & 1 & 584 & 7,238 & 99.8388 & 8.3904 & 0.3316 & yes \\
+P17 & VAL\_real\_FPR10 & Skin bins (ITA) & 2 & 551 & 6,199 & 99.8204 & 12.1597 & 0.2097 & yes \\
+P17 & VAL\_real\_FPR10 & Skin bins (ITA) & 3 & 515 & 5,746 & 99.6977 & 13.7864 & 0.4699 & yes \\
+P17 & VAL\_real\_FPR10 & Skin bins (ITA) & unknown & 158 & 1,773 & 99.8301 & 12.0253 & 0.4512 & no \\
+P17 & VAL\_real\_FPR10 & Native ids8 & 0 & 65 & 779 & 99.6722 & 13.8462 & 0.3851 & yes \\
+P17 & VAL\_real\_FPR10 & Native ids8 & 1 & 128 & 1,536 & 99.5209 & 25.0000 & 0.1302 & yes \\
+P17 & VAL\_real\_FPR10 & Native ids8 & 2 & 253 & 3,499 & 99.7940 & 10.6719 & 0.3430 & yes \\
+P17 & VAL\_real\_FPR10 & Native ids8 & 3 & 156 & 2,134 & 99.9147 & 7.6923 & 0.2812 & yes \\
+P17 & VAL\_real\_FPR10 & Native ids8 & 4 & 885 & 10,547 & 99.8543 & 6.8927 & 0.3887 & yes \\
+P17 & VAL\_real\_FPR10 & Native ids8 & 5 & 474 & 5,324 & 99.8790 & 7.5949 & 0.3381 & yes \\
+P17 & VAL\_real\_FPR10 & Native ids8 & 6 & 231 & 2,324 & 99.7021 & 10.3896 & 0.6885 & yes \\
+P17 & VAL\_real\_FPR10 & Native ids8 & 7 & 246 & 2,526 & 99.6904 & 17.0732 & 0.4355 & yes \\
+R0 & calibrated & Gender & Female & 2,182 & 34,412 & 43.2200 & 55.0871 & 55.5213 & yes \\
+R0 & calibrated & Gender & Male & 3,259 & 47,711 & 40.6886 & 58.5149 & 57.7959 & yes \\
+R0 & calibrated & Race & Asian & 1,171 & 20,284 & 40.5765 & 56.8745 & 59.5297 & yes \\
+R0 & calibrated & Race & Black & 1,060 & 18,653 & 42.7743 & 46.2264 & 68.8361 & yes \\
+R0 & calibrated & Race & Others & 2,031 & 23,184 & 44.7955 & 68.8331 & 37.6380 & yes \\
+R0 & calibrated & Race & White & 1,179 & 20,002 & 43.7921 & 47.0738 & 65.1935 & yes \\
+R0 & calibrated & Gender x race & Female-Asian & 449 & 8,711 & 42.5329 & 52.5612 & 58.2826 & yes \\
+R0 & calibrated & Gender x race & Female-Black & 475 & 8,392 & 44.8059 & 44.8421 & 66.5276 & yes \\
+R0 & calibrated & Gender x race & Female-Others & 691 & 7,961 & 46.0845 & 71.4906 & 33.0737 & yes \\
+R0 & calibrated & Gender x race & Female-White & 567 & 9,348 & 45.3604 & 45.6790 & 62.1844 & yes \\
+R0 & calibrated & Gender x race & Male-Asian & 722 & 11,573 & 39.4477 & 59.5568 & 60.4683 & yes \\
+R0 & calibrated & Gender x race & Male-Black & 585 & 10,261 & 41.1928 & 47.3504 & 70.7241 & yes \\
+R0 & calibrated & Gender x race & Male-Others & 1,340 & 15,223 & 44.1393 & 67.4627 & 40.0250 & yes \\
+R0 & calibrated & Gender x race & Male-White & 612 & 10,654 & 42.8935 & 48.3660 & 67.8337 & yes \\
+R0 & calibrated & Age bins & 30-44 & 2,527 & 38,377 & 41.0992 & 61.4958 & 52.7712 & yes \\
+R0 & calibrated & Age bins & 45-59 & 1,550 & 19,756 & 41.4024 & 55.3548 & 58.6657 & yes \\
+R0 & calibrated & Age bins & 60+ & 869 & 11,672 & 40.2755 & 45.9148 & 73.4493 & yes \\
+R0 & calibrated & Age bins & \textless{}30 & 495 & 12,318 & 42.8267 & 60.2020 & 50.8686 & yes \\
+R0 & calibrated & Skin bins (ITA) & 0 & 1,300 & 18,119 & 40.1824 & 70.0000 & 44.3899 & yes \\
+R0 & calibrated & Skin bins (ITA) & 1 & 1,247 & 19,287 & 38.9100 & 65.0361 & 52.9268 & yes \\
+R0 & calibrated & Skin bins (ITA) & 2 & 1,289 & 19,740 & 42.5498 & 50.7370 & 62.9889 & yes \\
+R0 & calibrated & Skin bins (ITA) & 3 & 1,288 & 20,309 & 44.7452 & 44.2547 & 65.5965 & yes \\
+R0 & calibrated & Skin bins (ITA) & unknown & 317 & 4,668 & 45.7667 & 51.7350 & 57.2836 & no \\
+R0 & calibrated & Native ids8 & 0 & 198 & 2,645 & 41.6112 & 55.5556 & 60.0756 & yes \\
+R0 & calibrated & Native ids8 & 1 & 296 & 5,177 & 48.9261 & 40.2027 & 60.3825 & yes \\
+R0 & calibrated & Native ids8 & 2 & 585 & 11,472 & 42.3511 & 50.0855 & 67.5471 & yes \\
+R0 & calibrated & Native ids8 & 3 & 361 & 6,947 & 43.2238 & 50.1385 & 61.5949 & yes \\
+R0 & calibrated & Native ids8 & 4 & 1,940 & 27,483 & 41.8622 & 59.3299 & 54.5137 & yes \\
+R0 & calibrated & Native ids8 & 5 & 1,041 & 14,740 & 41.5084 & 61.6715 & 51.5807 & yes \\
+R0 & calibrated & Native ids8 & 6 & 526 & 6,239 & 37.7915 & 65.9696 & 52.4122 & yes \\
+R0 & calibrated & Native ids8 & 7 & 494 & 7,420 & 44.4188 & 53.8462 & 55.0270 & yes \\
+R1 & calibrated & Gender & Female & 2,182 & 34,412 & 43.3824 & 57.7452 & 51.1188 & yes \\
+R1 & calibrated & Gender & Male & 3,259 & 47,711 & 40.9095 & 60.7855 & 53.5767 & yes \\
+R1 & calibrated & Race & Asian & 1,171 & 20,284 & 40.5486 & 59.0094 & 55.5808 & yes \\
+R1 & calibrated & Race & Black & 1,060 & 18,653 & 43.4278 & 48.5849 & 64.4829 & yes \\
+R1 & calibrated & Race & Others & 2,031 & 23,184 & 44.7370 & 71.3442 & 33.6698 & yes \\
+R1 & calibrated & Race & White & 1,179 & 20,002 & 44.0365 & 49.7031 & 60.2190 & yes \\
+R1 & calibrated & Gender x race & Female-Asian & 449 & 8,711 & 42.4845 & 55.0111 & 54.1729 & yes \\
+R1 & calibrated & Gender x race & Female-Black & 475 & 8,392 & 45.3741 & 46.5263 & 62.2617 & yes \\
+R1 & calibrated & Gender x race & Female-Others & 691 & 7,961 & 45.8730 & 74.9638 & 29.4059 & yes \\
+R1 & calibrated & Gender x race & Female-White & 567 & 9,348 & 45.6054 & 48.3245 & 56.7608 & yes \\
+R1 & calibrated & Gender x race & Male-Asian & 722 & 11,573 & 39.4298 & 61.4958 & 56.6405 & yes \\
+R1 & calibrated & Gender x race & Male-Black & 585 & 10,261 & 41.9304 & 50.2564 & 66.2996 & yes \\
+R1 & calibrated & Gender x race & Male-Others & 1,340 & 15,223 & 44.1657 & 69.4776 & 35.8996 & yes \\
+R1 & calibrated & Gender x race & Male-White & 612 & 10,654 & 43.1146 & 50.9804 & 63.2532 & yes \\
+R1 & calibrated & Age bins & 30-44 & 2,527 & 38,377 & 41.3149 & 63.7119 & 48.1564 & yes \\
+R1 & calibrated & Age bins & 45-59 & 1,550 & 19,756 & 41.5935 & 57.8065 & 54.7125 & yes \\
+R1 & calibrated & Age bins & 60+ & 869 & 11,672 & 40.5898 & 49.0219 & 70.0565 & yes \\
+R1 & calibrated & Age bins & \textless{}30 & 495 & 12,318 & 42.8035 & 62.4242 & 46.1601 & yes \\
+R1 & calibrated & Skin bins (ITA) & 0 & 1,300 & 18,119 & 40.4220 & 72.5385 & 39.4503 & yes \\
+R1 & calibrated & Skin bins (ITA) & 1 & 1,247 & 19,287 & 39.0372 & 67.3617 & 48.4782 & yes \\
+R1 & calibrated & Skin bins (ITA) & 2 & 1,289 & 19,740 & 42.7095 & 52.6765 & 59.1591 & yes \\
+R1 & calibrated & Skin bins (ITA) & 3 & 1,288 & 20,309 & 44.9219 & 47.2826 & 61.5786 & yes \\
+R1 & calibrated & Skin bins (ITA) & unknown & 317 & 4,668 & 46.1469 & 53.6278 & 52.9349 & no \\
+R1 & calibrated & Native ids8 & 0 & 198 & 2,645 & 42.0865 & 57.0707 & 55.3497 & yes \\
+R1 & calibrated & Native ids8 & 1 & 296 & 5,177 & 49.4989 & 42.5676 & 54.9546 & yes \\
+R1 & calibrated & Native ids8 & 2 & 585 & 11,472 & 42.4199 & 52.6496 & 63.1015 & yes \\
+R1 & calibrated & Native ids8 & 3 & 361 & 6,947 & 43.1648 & 54.2936 & 56.9310 & yes \\
+R1 & calibrated & Native ids8 & 4 & 1,940 & 27,483 & 42.0618 & 61.4948 & 50.5294 & yes \\
+R1 & calibrated & Native ids8 & 5 & 1,041 & 14,740 & 41.5133 & 64.4573 & 47.7544 & yes \\
+R1 & calibrated & Native ids8 & 6 & 526 & 6,239 & 38.1783 & 68.2510 & 47.4756 & yes \\
+R1 & calibrated & Native ids8 & 7 & 494 & 7,420 & 44.7139 & 55.6680 & 50.7008 & yes \\
+R2 & calibrated & Gender & Female & 2,182 & 34,412 & 44.3846 & 58.5243 & 49.5031 & yes \\
+R2 & calibrated & Gender & Male & 3,259 & 47,711 & 41.7901 & 61.3992 & 53.0360 & yes \\
+R2 & calibrated & Race & Asian & 1,171 & 20,284 & 41.3256 & 59.4364 & 54.5060 & yes \\
+R2 & calibrated & Race & Black & 1,060 & 18,653 & 44.0901 & 49.3396 & 63.3785 & yes \\
+R2 & calibrated & Race & Others & 2,031 & 23,184 & 46.3297 & 72.9197 & 33.1349 & yes \\
+R2 & calibrated & Race & White & 1,179 & 20,002 & 44.6973 & 49.0246 & 58.8891 & yes \\
+R2 & calibrated & Gender x race & Female-Asian & 449 & 8,711 & 43.5766 & 55.0111 & 52.1410 & yes \\
+R2 & calibrated & Gender x race & Female-Black & 475 & 8,392 & 46.0040 & 48.0000 & 60.7126 & yes \\
+R2 & calibrated & Gender x race & Female-Others & 691 & 7,961 & 47.5491 & 76.8452 & 28.7652 & yes \\
+R2 & calibrated & Gender x race & Female-White & 567 & 9,348 & 46.3822 & 47.7954 & 54.6427 & yes \\
+R2 & calibrated & Gender x race & Male-Asian & 722 & 11,573 & 39.9600 & 62.1884 & 56.2862 & yes \\
+R2 & calibrated & Gender x race & Male-Black & 585 & 10,261 & 42.6105 & 50.4274 & 65.5589 & yes \\
+R2 & calibrated & Gender x race & Male-Others & 1,340 & 15,223 & 45.6975 & 70.8955 & 35.4201 & yes \\
+R2 & calibrated & Gender x race & Male-White & 612 & 10,654 & 43.6510 & 50.1634 & 62.6150 & yes \\
+R2 & calibrated & Age bins & 30-44 & 2,527 & 38,377 & 42.5888 & 63.7515 & 47.2809 & yes \\
+R2 & calibrated & Age bins & 45-59 & 1,550 & 19,756 & 42.0834 & 59.7419 & 53.6850 & yes \\
+R2 & calibrated & Age bins & 60+ & 869 & 11,672 & 41.0193 & 49.9425 & 69.4140 & yes \\
+R2 & calibrated & Age bins & \textless{}30 & 495 & 12,318 & 44.7897 & 62.0202 & 44.5365 & yes \\
+R2 & calibrated & Skin bins (ITA) & 0 & 1,300 & 18,119 & 42.0213 & 72.3077 & 38.5231 & yes \\
+R2 & calibrated & Skin bins (ITA) & 1 & 1,247 & 19,287 & 40.4114 & 68.4042 & 47.4776 & yes \\
+R2 & calibrated & Skin bins (ITA) & 2 & 1,289 & 19,740 & 43.4378 & 53.8402 & 58.0699 & yes \\
+R2 & calibrated & Skin bins (ITA) & 3 & 1,288 & 20,309 & 45.2382 & 48.2143 & 60.5397 & yes \\
+R2 & calibrated & Skin bins (ITA) & unknown & 317 & 4,668 & 47.2264 & 53.6278 & 52.3565 & no \\
+R2 & calibrated & Native ids8 & 0 & 198 & 2,645 & 42.4336 & 56.0606 & 55.1229 & yes \\
+R2 & calibrated & Native ids8 & 1 & 296 & 5,177 & 50.0955 & 42.9054 & 52.2890 & yes \\
+R2 & calibrated & Native ids8 & 2 & 585 & 11,472 & 43.2631 & 51.7949 & 62.6308 & yes \\
+R2 & calibrated & Native ids8 & 3 & 361 & 6,947 & 43.8065 & 54.0166 & 55.1893 & yes \\
+R2 & calibrated & Native ids8 & 4 & 1,940 & 27,483 & 43.0616 & 62.8351 & 49.8854 & yes \\
+R2 & calibrated & Native ids8 & 5 & 1,041 & 14,740 & 42.8723 & 66.1864 & 46.4925 & yes \\
+R2 & calibrated & Native ids8 & 6 & 526 & 6,239 & 38.9722 & 68.0608 & 47.2191 & yes \\
+R2 & calibrated & Native ids8 & 7 & 494 & 7,420 & 45.8234 & 55.8704 & 49.1375 & yes \\
+RN & calibrated & Gender & Female & 2,182 & 34,412 & 40.2815 & 57.1036 & 55.2336 & yes \\
+RN & calibrated & Gender & Male & 3,259 & 47,711 & 37.9121 & 60.3866 & 57.6534 & yes \\
+RN & calibrated & Race & Asian & 1,171 & 20,284 & 37.7784 & 57.6430 & 60.6488 & yes \\
+RN & calibrated & Race & Black & 1,060 & 18,653 & 39.8843 & 47.8302 & 68.9165 & yes \\
+RN & calibrated & Race & Others & 2,031 & 23,184 & 40.9774 & 71.5411 & 37.4180 & yes \\
+RN & calibrated & Race & White & 1,179 & 20,002 & 41.4641 & 49.1094 & 63.4037 & yes \\
+RN & calibrated & Gender x race & Female-Asian & 449 & 8,711 & 39.9627 & 53.4521 & 59.1092 & yes \\
+RN & calibrated & Gender x race & Female-Black & 475 & 8,392 & 41.5156 & 46.3158 & 67.2426 & yes \\
+RN & calibrated & Gender x race & Female-Others & 691 & 7,961 & 41.5395 & 74.5297 & 33.1742 & yes \\
+RN & calibrated & Gender x race & Female-White & 567 & 9,348 & 43.5327 & 47.7954 & 59.6277 & yes \\
+RN & calibrated & Gender x race & Male-Asian & 722 & 11,573 & 36.5254 & 60.2493 & 61.8077 & yes \\
+RN & calibrated & Gender x race & Male-Black & 585 & 10,261 & 38.6135 & 49.0598 & 70.2855 & yes \\
+RN & calibrated & Gender x race & Male-Others & 1,340 & 15,223 & 40.6743 & 70.0000 & 39.6374 & yes \\
+RN & calibrated & Gender x race & Male-White & 612 & 10,654 & 40.1491 & 50.3268 & 66.7167 & yes \\
+RN & calibrated & Age bins & 30-44 & 2,527 & 38,377 & 38.4209 & 62.6830 & 52.5653 & yes \\
+RN & calibrated & Age bins & 45-59 & 1,550 & 19,756 & 38.9204 & 57.5484 & 57.7293 & yes \\
+RN & calibrated & Age bins & 60+ & 869 & 11,672 & 38.1002 & 49.4822 & 72.1727 & yes \\
+RN & calibrated & Age bins & \textless{}30 & 495 & 12,318 & 38.7901 & 62.2222 & 52.8657 & yes \\
+RN & calibrated & Skin bins (ITA) & 0 & 1,300 & 18,119 & 37.3282 & 71.6154 & 44.2905 & yes \\
+RN & calibrated & Skin bins (ITA) & 1 & 1,247 & 19,287 & 35.9143 & 67.6022 & 52.6987 & yes \\
+RN & calibrated & Skin bins (ITA) & 2 & 1,289 & 19,740 & 39.3832 & 52.2110 & 63.0851 & yes \\
+RN & calibrated & Skin bins (ITA) & 3 & 1,288 & 20,309 & 41.9354 & 47.0497 & 64.9860 & yes \\
+RN & calibrated & Skin bins (ITA) & unknown & 317 & 4,668 & 43.8464 & 50.7886 & 57.2836 & no \\
+RN & calibrated & Native ids8 & 0 & 198 & 2,645 & 38.3182 & 55.0505 & 60.7561 & yes \\
+RN & calibrated & Native ids8 & 1 & 296 & 5,177 & 46.4614 & 42.2297 & 57.7168 & yes \\
+RN & calibrated & Native ids8 & 2 & 585 & 11,472 & 39.7341 & 52.4786 & 66.1001 & yes \\
+RN & calibrated & Native ids8 & 3 & 361 & 6,947 & 41.2913 & 54.2936 & 59.6229 & yes \\
+RN & calibrated & Native ids8 & 4 & 1,940 & 27,483 & 39.1462 & 61.3402 & 54.4446 & yes \\
+RN & calibrated & Native ids8 & 5 & 1,041 & 14,740 & 38.2255 & 64.0730 & 52.0488 & yes \\
+RN & calibrated & Native ids8 & 6 & 526 & 6,239 & 33.9769 & 67.3004 & 53.9990 & yes \\
+RN & calibrated & Native ids8 & 7 & 494 & 7,420 & 40.7155 & 53.8462 & 56.4690 & yes \\
+RD & calibrated & Gender & Female & 2,182 & 34,412 & 40.3430 & 56.4161 & 57.3841 & yes \\
+RD & calibrated & Gender & Male & 3,259 & 47,711 & 39.0113 & 59.5581 & 58.5190 & yes \\
+RD & calibrated & Race & Asian & 1,171 & 20,284 & 37.8698 & 57.2161 & 61.8813 & yes \\
+RD & calibrated & Race & Black & 1,060 & 18,653 & 40.2051 & 47.9245 & 69.4205 & yes \\
+RD & calibrated & Race & Others & 2,031 & 23,184 & 42.4481 & 70.4087 & 39.1304 & yes \\
+RD & calibrated & Race & White & 1,179 & 20,002 & 42.0273 & 47.8372 & 65.4635 & yes \\
+RD & calibrated & Gender x race & Female-Asian & 449 & 8,711 & 39.1381 & 53.0067 & 62.1398 & yes \\
+RD & calibrated & Gender x race & Female-Black & 475 & 8,392 & 41.5794 & 45.4737 & 68.1602 & yes \\
+RD & calibrated & Gender x race & Female-Others & 691 & 7,961 & 42.8573 & 74.5297 & 34.5057 & yes \\
+RD & calibrated & Gender x race & Female-White & 567 & 9,348 & 43.0592 & 46.2081 & 62.7621 & yes \\
+RD & calibrated & Gender x race & Male-Asian & 722 & 11,573 & 37.2655 & 59.8338 & 61.6867 & yes \\
+RD & calibrated & Gender x race & Male-Black & 585 & 10,261 & 39.1105 & 49.9145 & 70.4512 & yes \\
+RD & calibrated & Gender x race & Male-Others & 1,340 & 15,223 & 42.2175 & 68.2836 & 41.5490 & yes \\
+RD & calibrated & Gender x race & Male-White & 612 & 10,654 & 41.3860 & 49.3464 & 67.8337 & yes \\
+RD & calibrated & Age bins & 30-44 & 2,527 & 38,377 & 39.1938 & 61.4958 & 54.2434 & yes \\
+RD & calibrated & Age bins & 45-59 & 1,550 & 19,756 & 39.6292 & 57.7419 & 58.3165 & yes \\
+RD & calibrated & Age bins & 60+ & 869 & 11,672 & 39.4693 & 49.2520 & 72.7039 & yes \\
+RD & calibrated & Age bins & \textless{}30 & 495 & 12,318 & 39.0837 & 59.5960 & 55.5528 & yes \\
+RD & calibrated & Skin bins (ITA) & 0 & 1,300 & 18,119 & 37.9333 & 70.9231 & 45.8635 & yes \\
+RD & calibrated & Skin bins (ITA) & 1 & 1,247 & 19,287 & 36.9775 & 66.0786 & 54.3527 & yes \\
+RD & calibrated & Skin bins (ITA) & 2 & 1,289 & 19,740 & 40.2246 & 51.5128 & 64.0527 & yes \\
+RD & calibrated & Skin bins (ITA) & 3 & 1,288 & 20,309 & 42.4696 & 46.5062 & 66.5518 & yes \\
+RD & calibrated & Skin bins (ITA) & unknown & 317 & 4,668 & 44.0002 & 51.4196 & 58.1405 & no \\
+RD & calibrated & Native ids8 & 0 & 198 & 2,645 & 39.1577 & 53.0303 & 61.8526 & yes \\
+RD & calibrated & Native ids8 & 1 & 296 & 5,177 & 45.8261 & 41.2162 & 62.0050 & yes \\
+RD & calibrated & Native ids8 & 2 & 585 & 11,472 & 40.9161 & 52.3077 & 67.1025 & yes \\
+RD & calibrated & Native ids8 & 3 & 361 & 6,947 & 41.1687 & 52.0776 & 62.1851 & yes \\
+RD & calibrated & Native ids8 & 4 & 1,940 & 27,483 & 40.2838 & 60.3093 & 55.1577 & yes \\
+RD & calibrated & Native ids8 & 5 & 1,041 & 14,740 & 38.8024 & 63.9769 & 52.7273 & yes \\
+RD & calibrated & Native ids8 & 6 & 526 & 6,239 & 35.1670 & 66.7300 & 55.3134 & yes \\
+RD & calibrated & Native ids8 & 7 & 494 & 7,420 & 40.4106 & 53.4413 & 59.5822 & yes \\
+R0 & fixed\_probability\_0\_5 & Gender & Female & 2,182 & 34,412 & 43.2200 & 51.7415 & 58.7644 & yes \\
+R0 & fixed\_probability\_0\_5 & Gender & Male & 3,259 & 47,711 & 40.6886 & 54.5259 & 61.0488 & yes \\
+R0 & fixed\_probability\_0\_5 & Race & Asian & 1,171 & 20,284 & 40.5765 & 53.8856 & 62.3003 & yes \\
+R0 & fixed\_probability\_0\_5 & Race & Black & 1,060 & 18,653 & 42.7743 & 41.9811 & 71.8919 & yes \\
+R0 & fixed\_probability\_0\_5 & Race & Others & 2,031 & 23,184 & 44.7955 & 64.6480 & 41.6020 & yes \\
+R0 & fixed\_probability\_0\_5 & Race & White & 1,179 & 20,002 & 43.7921 & 43.8507 & 68.2782 & yes \\
+R0 & fixed\_probability\_0\_5 & Gender x race & Female-Asian & 449 & 8,711 & 42.5329 & 49.8886 & 61.2559 & yes \\
+R0 & fixed\_probability\_0\_5 & Gender x race & Female-Black & 475 & 8,392 & 44.8059 & 41.0526 & 69.4828 & yes \\
+R0 & fixed\_probability\_0\_5 & Gender x race & Female-Others & 691 & 7,961 & 46.0845 & 68.1621 & 36.7291 & yes \\
+R0 & fixed\_probability\_0\_5 & Gender x race & Female-White & 567 & 9,348 & 45.3604 & 42.1517 & 65.5862 & yes \\
+R0 & fixed\_probability\_0\_5 & Gender x race & Male-Asian & 722 & 11,573 & 39.4477 & 56.3712 & 63.0865 & yes \\
+R0 & fixed\_probability\_0\_5 & Gender x race & Male-Black & 585 & 10,261 & 41.1928 & 42.7350 & 73.8622 & yes \\
+R0 & fixed\_probability\_0\_5 & Gender x race & Male-Others & 1,340 & 15,223 & 44.1393 & 62.8358 & 44.1503 & yes \\
+R0 & fixed\_probability\_0\_5 & Gender x race & Male-White & 612 & 10,654 & 42.8935 & 45.4248 & 70.6401 & yes \\
+R0 & fixed\_probability\_0\_5 & Age bins & 30-44 & 2,527 & 38,377 & 41.0992 & 57.3803 & 56.5547 & yes \\
+R0 & fixed\_probability\_0\_5 & Age bins & 45-59 & 1,550 & 19,756 & 41.4024 & 51.8065 & 61.2776 & yes \\
+R0 & fixed\_probability\_0\_5 & Age bins & 60+ & 869 & 11,672 & 40.2755 & 42.8078 & 75.5398 & yes \\
+R0 & fixed\_probability\_0\_5 & Age bins & \textless{}30 & 495 & 12,318 & 42.8267 & 56.7677 & 54.5705 & yes \\
+R0 & fixed\_probability\_0\_5 & Skin bins (ITA) & 0 & 1,300 & 18,119 & 40.1824 & 64.8462 & 49.4067 & yes \\
+R0 & fixed\_probability\_0\_5 & Skin bins (ITA) & 1 & 1,247 & 19,287 & 38.9100 & 61.3472 & 55.8407 & yes \\
+R0 & fixed\_probability\_0\_5 & Skin bins (ITA) & 2 & 1,289 & 19,740 & 42.5498 & 48.3320 & 65.3546 & yes \\
+R0 & fixed\_probability\_0\_5 & Skin bins (ITA) & 3 & 1,288 & 20,309 & 44.7452 & 42.1584 & 68.1127 & yes \\
+R0 & fixed\_probability\_0\_5 & Skin bins (ITA) & unknown & 317 & 4,668 & 45.7667 & 41.6404 & 61.9751 & no \\
+R0 & fixed\_probability\_0\_5 & Native ids8 & 0 & 198 & 2,645 & 41.6112 & 51.0101 & 63.7807 & yes \\
+R0 & fixed\_probability\_0\_5 & Native ids8 & 1 & 296 & 5,177 & 48.9261 & 37.5000 & 64.2650 & yes \\
+R0 & fixed\_probability\_0\_5 & Native ids8 & 2 & 585 & 11,472 & 42.3511 & 47.3504 & 70.1621 & yes \\
+R0 & fixed\_probability\_0\_5 & Native ids8 & 3 & 361 & 6,947 & 43.2238 & 47.0914 & 64.5171 & yes \\
+R0 & fixed\_probability\_0\_5 & Native ids8 & 4 & 1,940 & 27,483 & 41.8622 & 55.2062 & 57.9231 & yes \\
+R0 & fixed\_probability\_0\_5 & Native ids8 & 5 & 1,041 & 14,740 & 41.5084 & 58.3093 & 54.6201 & yes \\
+R0 & fixed\_probability\_0\_5 & Native ids8 & 6 & 526 & 6,239 & 37.7915 & 61.2167 & 56.1789 & yes \\
+R0 & fixed\_probability\_0\_5 & Native ids8 & 7 & 494 & 7,420 & 44.4188 & 50.0000 & 58.3423 & yes \\
+R1 & fixed\_probability\_0\_5 & Gender & Female & 2,182 & 34,412 & 43.3824 & 53.3914 & 56.5268 & yes \\
+R1 & fixed\_probability\_0\_5 & Gender & Male & 3,259 & 47,711 & 40.9095 & 57.4409 & 58.2591 & yes \\
+R1 & fixed\_probability\_0\_5 & Race & Asian & 1,171 & 20,284 & 40.5486 & 55.1665 & 60.3431 & yes \\
+R1 & fixed\_probability\_0\_5 & Race & Black & 1,060 & 18,653 & 43.4278 & 45.5660 & 69.2650 & yes \\
+R1 & fixed\_probability\_0\_5 & Race & Others & 2,031 & 23,184 & 44.7370 & 67.4052 & 38.5395 & yes \\
+R1 & fixed\_probability\_0\_5 & Race & White & 1,179 & 20,002 & 44.0365 & 45.7167 & 65.7584 & yes \\
+R1 & fixed\_probability\_0\_5 & Gender x race & Female-Asian & 449 & 8,711 & 42.4845 & 51.4477 & 59.1781 & yes \\
+R1 & fixed\_probability\_0\_5 & Gender x race & Female-Black & 475 & 8,392 & 45.3741 & 43.3684 & 67.5882 & yes \\
+R1 & fixed\_probability\_0\_5 & Gender x race & Female-Others & 691 & 7,961 & 45.8730 & 69.7540 & 34.0661 & yes \\
+R1 & fixed\_probability\_0\_5 & Gender x race & Female-White & 567 & 9,348 & 45.6054 & 43.3862 & 63.2542 & yes \\
+R1 & fixed\_probability\_0\_5 & Gender x race & Male-Asian & 722 & 11,573 & 39.4298 & 57.4792 & 61.2201 & yes \\
+R1 & fixed\_probability\_0\_5 & Gender x race & Male-Black & 585 & 10,261 & 41.9304 & 47.3504 & 70.6364 & yes \\
+R1 & fixed\_probability\_0\_5 & Gender x race & Male-Others & 1,340 & 15,223 & 44.1657 & 66.1940 & 40.8789 & yes \\
+R1 & fixed\_probability\_0\_5 & Gender x race & Male-White & 612 & 10,654 & 43.1146 & 47.8758 & 67.9557 & yes \\
+R1 & fixed\_probability\_0\_5 & Age bins & 30-44 & 2,527 & 38,377 & 41.3149 & 60.1504 & 53.4565 & yes \\
+R1 & fixed\_probability\_0\_5 & Age bins & 45-59 & 1,550 & 19,756 & 41.5935 & 53.6774 & 59.3491 & yes \\
+R1 & fixed\_probability\_0\_5 & Age bins & 60+ & 869 & 11,672 & 40.5898 & 45.5696 & 73.9034 & yes \\
+R1 & fixed\_probability\_0\_5 & Age bins & \textless{}30 & 495 & 12,318 & 42.8035 & 58.3838 & 51.8104 & yes \\
+R1 & fixed\_probability\_0\_5 & Skin bins (ITA) & 0 & 1,300 & 18,119 & 40.4220 & 68.5385 & 45.5323 & yes \\
+R1 & fixed\_probability\_0\_5 & Skin bins (ITA) & 1 & 1,247 & 19,287 & 39.0372 & 63.3520 & 53.4972 & yes \\
+R1 & fixed\_probability\_0\_5 & Skin bins (ITA) & 2 & 1,289 & 19,740 & 42.7095 & 49.6509 & 63.4701 & yes \\
+R1 & fixed\_probability\_0\_5 & Skin bins (ITA) & 3 & 1,288 & 20,309 & 44.9219 & 43.8665 & 66.0840 & yes \\
+R1 & fixed\_probability\_0\_5 & Skin bins (ITA) & unknown & 317 & 4,668 & 46.1469 & 47.6341 & 58.4833 & no \\
+R1 & fixed\_probability\_0\_5 & Native ids8 & 0 & 198 & 2,645 & 42.0865 & 52.5253 & 60.3403 & yes \\
+R1 & fixed\_probability\_0\_5 & Native ids8 & 1 & 296 & 5,177 & 49.4989 & 37.8378 & 61.4449 & yes \\
+R1 & fixed\_probability\_0\_5 & Native ids8 & 2 & 585 & 11,472 & 42.4199 & 50.2564 & 67.6081 & yes \\
+R1 & fixed\_probability\_0\_5 & Native ids8 & 3 & 361 & 6,947 & 43.1648 & 49.0305 & 62.5450 & yes \\
+R1 & fixed\_probability\_0\_5 & Native ids8 & 4 & 1,940 & 27,483 & 42.0618 & 58.0928 & 55.1505 & yes \\
+R1 & fixed\_probability\_0\_5 & Native ids8 & 5 & 1,041 & 14,740 & 41.5133 & 60.4227 & 52.6323 & yes \\
+R1 & fixed\_probability\_0\_5 & Native ids8 & 6 & 526 & 6,239 & 38.1783 & 64.4487 & 52.9412 & yes \\
+R1 & fixed\_probability\_0\_5 & Native ids8 & 7 & 494 & 7,420 & 44.7139 & 51.6194 & 55.9569 & yes \\
+R2 & fixed\_probability\_0\_5 & Gender & Female & 2,182 & 34,412 & 44.3846 & 57.3327 & 51.2554 & yes \\
+R2 & fixed\_probability\_0\_5 & Gender & Male & 3,259 & 47,711 & 41.7901 & 59.9264 & 54.7421 & yes \\
+R2 & fixed\_probability\_0\_5 & Race & Asian & 1,171 & 20,284 & 41.3256 & 58.2408 & 56.1181 & yes \\
+R2 & fixed\_probability\_0\_5 & Race & Black & 1,060 & 18,653 & 44.0901 & 47.1698 & 65.0566 & yes \\
+R2 & fixed\_probability\_0\_5 & Race & Others & 2,031 & 23,184 & 46.3297 & 71.4919 & 34.9163 & yes \\
+R2 & fixed\_probability\_0\_5 & Race & White & 1,179 & 20,002 & 44.6973 & 48.3461 & 60.7089 & yes \\
+R2 & fixed\_probability\_0\_5 & Gender x race & Female-Asian & 449 & 8,711 & 43.5766 & 54.5657 & 53.7941 & yes \\
+R2 & fixed\_probability\_0\_5 & Gender x race & Female-Black & 475 & 8,392 & 46.0040 & 46.1053 & 62.4047 & yes \\
+R2 & fixed\_probability\_0\_5 & Gender x race & Female-Others & 691 & 7,961 & 47.5491 & 75.2533 & 30.3982 & yes \\
+R2 & fixed\_probability\_0\_5 & Gender x race & Female-White & 567 & 9,348 & 46.3822 & 47.0899 & 56.6431 & yes \\
+R2 & fixed\_probability\_0\_5 & Gender x race & Male-Asian & 722 & 11,573 & 39.9600 & 60.5263 & 57.8675 & yes \\
+R2 & fixed\_probability\_0\_5 & Gender x race & Male-Black & 585 & 10,261 & 42.6105 & 48.0342 & 67.2254 & yes \\
+R2 & fixed\_probability\_0\_5 & Gender x race & Male-Others & 1,340 & 15,223 & 45.6975 & 69.5522 & 37.2791 & yes \\
+R2 & fixed\_probability\_0\_5 & Gender x race & Male-White & 612 & 10,654 & 43.6510 & 49.5098 & 64.2763 & yes \\
+R2 & fixed\_probability\_0\_5 & Age bins & 30-44 & 2,527 & 38,377 & 42.5888 & 62.2082 & 49.1154 & yes \\
+R2 & fixed\_probability\_0\_5 & Age bins & 45-59 & 1,550 & 19,756 & 42.0834 & 58.3871 & 55.2592 & yes \\
+R2 & fixed\_probability\_0\_5 & Age bins & 60+ & 869 & 11,672 & 41.0193 & 49.1369 & 70.7848 & yes \\
+R2 & fixed\_probability\_0\_5 & Age bins & \textless{}30 & 495 & 12,318 & 44.7897 & 60.6061 & 46.5011 & yes \\
+R2 & fixed\_probability\_0\_5 & Skin bins (ITA) & 0 & 1,300 & 18,119 & 42.0213 & 70.2308 & 40.7473 & yes \\
+R2 & fixed\_probability\_0\_5 & Skin bins (ITA) & 1 & 1,247 & 19,287 & 40.4114 & 66.9607 & 49.2871 & yes \\
+R2 & fixed\_probability\_0\_5 & Skin bins (ITA) & 2 & 1,289 & 19,740 & 43.4378 & 52.6765 & 59.5947 & yes \\
+R2 & fixed\_probability\_0\_5 & Skin bins (ITA) & 3 & 1,288 & 20,309 & 45.2382 & 47.5932 & 61.9430 & yes \\
+R2 & fixed\_probability\_0\_5 & Skin bins (ITA) & unknown & 317 & 4,668 & 47.2264 & 51.7350 & 54.0488 & no \\
+R2 & fixed\_probability\_0\_5 & Native ids8 & 0 & 198 & 2,645 & 42.4336 & 55.5556 & 56.3327 & yes \\
+R2 & fixed\_probability\_0\_5 & Native ids8 & 1 & 296 & 5,177 & 50.0955 & 41.8919 & 54.5683 & yes \\
+R2 & fixed\_probability\_0\_5 & Native ids8 & 2 & 585 & 11,472 & 43.2631 & 51.4530 & 64.3218 & yes \\
+R2 & fixed\_probability\_0\_5 & Native ids8 & 3 & 361 & 6,947 & 43.8065 & 53.7396 & 56.8879 & yes \\
+R2 & fixed\_probability\_0\_5 & Native ids8 & 4 & 1,940 & 27,483 & 43.0616 & 61.0825 & 51.5919 & yes \\
+R2 & fixed\_probability\_0\_5 & Native ids8 & 5 & 1,041 & 14,740 & 42.8723 & 64.6494 & 48.0665 & yes \\
+R2 & fixed\_probability\_0\_5 & Native ids8 & 6 & 526 & 6,239 & 38.9722 & 66.3498 & 49.0944 & yes \\
+R2 & fixed\_probability\_0\_5 & Native ids8 & 7 & 494 & 7,420 & 45.8234 & 54.2510 & 50.9838 & yes \\
+RN & fixed\_probability\_0\_5 & Gender & Female & 2,182 & 34,412 & 40.2815 & 55.5912 & 56.6576 & yes \\
+RN & fixed\_probability\_0\_5 & Gender & Male & 3,259 & 47,711 & 37.9121 & 59.5581 & 58.8334 & yes \\
+RN & fixed\_probability\_0\_5 & Race & Asian & 1,171 & 20,284 & 37.7784 & 56.8745 & 61.9010 & yes \\
+RN & fixed\_probability\_0\_5 & Race & Black & 1,060 & 18,653 & 39.8843 & 46.6038 & 69.9887 & yes \\
+RN & fixed\_probability\_0\_5 & Race & Others & 2,031 & 23,184 & 40.9774 & 70.3594 & 38.7250 & yes \\
+RN & fixed\_probability\_0\_5 & Race & White & 1,179 & 20,002 & 41.4641 & 47.9220 & 64.8835 & yes \\
+RN & fixed\_probability\_0\_5 & Gender x race & Female-Asian & 449 & 8,711 & 39.9627 & 52.3385 & 60.6245 & yes \\
+RN & fixed\_probability\_0\_5 & Gender x race & Female-Black & 475 & 8,392 & 41.5156 & 44.4211 & 68.4104 & yes \\
+RN & fixed\_probability\_0\_5 & Gender x race & Female-Others & 691 & 7,961 & 41.5395 & 73.0825 & 34.4052 & yes \\
+RN & fixed\_probability\_0\_5 & Gender x race & Female-White & 567 & 9,348 & 43.5327 & 46.2081 & 61.3607 & yes \\
+RN & fixed\_probability\_0\_5 & Gender x race & Male-Asian & 722 & 11,573 & 36.5254 & 59.6953 & 62.8618 & yes \\
+RN & fixed\_probability\_0\_5 & Gender x race & Male-Black & 585 & 10,261 & 38.6135 & 48.3761 & 71.2796 & yes \\
+RN & fixed\_probability\_0\_5 & Gender x race & Male-Others & 1,340 & 15,223 & 40.6743 & 68.9552 & 40.9840 & yes \\
+RN & fixed\_probability\_0\_5 & Gender x race & Male-White & 612 & 10,654 & 40.1491 & 49.5098 & 67.9745 & yes \\
+RN & fixed\_probability\_0\_5 & Age bins & 30-44 & 2,527 & 38,377 & 38.4209 & 61.6541 & 53.9933 & yes \\
+RN & fixed\_probability\_0\_5 & Age bins & 45-59 & 1,550 & 19,756 & 38.9204 & 56.6452 & 58.9289 & yes \\
+RN & fixed\_probability\_0\_5 & Age bins & 60+ & 869 & 11,672 & 38.1002 & 48.4465 & 73.0723 & yes \\
+RN & fixed\_probability\_0\_5 & Age bins & \textless{}30 & 495 & 12,318 & 38.7901 & 60.0000 & 54.1890 & yes \\
+RN & fixed\_probability\_0\_5 & Skin bins (ITA) & 0 & 1,300 & 18,119 & 37.3282 & 70.0769 & 46.0787 & yes \\
+RN & fixed\_probability\_0\_5 & Skin bins (ITA) & 1 & 1,247 & 19,287 & 35.9143 & 66.3192 & 54.0779 & yes \\
+RN & fixed\_probability\_0\_5 & Skin bins (ITA) & 2 & 1,289 & 19,740 & 39.3832 & 51.9783 & 64.0729 & yes \\
+RN & fixed\_probability\_0\_5 & Skin bins (ITA) & 3 & 1,288 & 20,309 & 41.9354 & 45.6522 & 66.0446 & yes \\
+RN & fixed\_probability\_0\_5 & Skin bins (ITA) & unknown & 317 & 4,668 & 43.8464 & 49.8423 & 58.4190 & no \\
+RN & fixed\_probability\_0\_5 & Native ids8 & 0 & 198 & 2,645 & 38.3182 & 53.5354 & 62.0794 & yes \\
+RN & fixed\_probability\_0\_5 & Native ids8 & 1 & 296 & 5,177 & 46.4614 & 41.2162 & 59.5712 & yes \\
+RN & fixed\_probability\_0\_5 & Native ids8 & 2 & 585 & 11,472 & 39.7341 & 52.1368 & 67.1897 & yes \\
+RN & fixed\_probability\_0\_5 & Native ids8 & 3 & 361 & 6,947 & 41.2913 & 51.8006 & 61.0479 & yes \\
+RN & fixed\_probability\_0\_5 & Native ids8 & 4 & 1,940 & 27,483 & 39.1462 & 60.5155 & 55.6526 & yes \\
+RN & fixed\_probability\_0\_5 & Native ids8 & 5 & 1,041 & 14,740 & 38.2255 & 62.7281 & 53.3582 & yes \\
+RN & fixed\_probability\_0\_5 & Native ids8 & 6 & 526 & 6,239 & 33.9769 & 66.1597 & 55.2012 & yes \\
+RN & fixed\_probability\_0\_5 & Native ids8 & 7 & 494 & 7,420 & 40.7155 & 52.4291 & 57.7898 & yes \\
+RD & fixed\_probability\_0\_5 & Gender & Female & 2,182 & 34,412 & 40.3430 & 54.3996 & 60.1738 & yes \\
+RD & fixed\_probability\_0\_5 & Gender & Male & 3,259 & 47,711 & 39.0113 & 57.5023 & 60.8120 & yes \\
+RD & fixed\_probability\_0\_5 & Race & Asian & 1,171 & 20,284 & 37.8698 & 55.7643 & 64.1195 & yes \\
+RD & fixed\_probability\_0\_5 & Race & Black & 1,060 & 18,653 & 40.2051 & 46.0377 & 71.8758 & yes \\
+RD & fixed\_probability\_0\_5 & Race & Others & 2,031 & 23,184 & 42.4481 & 67.8484 & 41.6537 & yes \\
+RD & fixed\_probability\_0\_5 & Race & White & 1,179 & 20,002 & 42.0273 & 45.9712 & 68.2482 & yes \\
+RD & fixed\_probability\_0\_5 & Gender x race & Female-Asian & 449 & 8,711 & 39.1381 & 51.0022 & 64.7342 & yes \\
+RD & fixed\_probability\_0\_5 & Gender x race & Female-Black & 475 & 8,392 & 41.5794 & 43.7895 & 70.8770 & yes \\
+RD & fixed\_probability\_0\_5 & Gender x race & Female-Others & 691 & 7,961 & 42.8573 & 72.3589 & 36.8295 & yes \\
+RD & fixed\_probability\_0\_5 & Gender x race & Female-White & 567 & 9,348 & 43.0592 & 44.0917 & 66.1960 & yes \\
+RD & fixed\_probability\_0\_5 & Gender x race & Male-Asian & 722 & 11,573 & 37.2655 & 58.7258 & 63.6568 & yes \\
+RD & fixed\_probability\_0\_5 & Gender x race & Male-Black & 585 & 10,261 & 39.1105 & 47.8632 & 72.6927 & yes \\
+RD & fixed\_probability\_0\_5 & Gender x race & Male-Others & 1,340 & 15,223 & 42.2175 & 65.5224 & 44.1766 & yes \\
+RD & fixed\_probability\_0\_5 & Gender x race & Male-White & 612 & 10,654 & 41.3860 & 47.7124 & 70.0488 & yes \\
+RD & fixed\_probability\_0\_5 & Age bins & 30-44 & 2,527 & 38,377 & 39.1938 & 59.5568 & 57.0029 & yes \\
+RD & fixed\_probability\_0\_5 & Age bins & 45-59 & 1,550 & 19,756 & 39.6292 & 55.2258 & 60.5841 & yes \\
+RD & fixed\_probability\_0\_5 & Age bins & 60+ & 869 & 11,672 & 39.4693 & 48.1013 & 74.4602 & yes \\
+RD & fixed\_probability\_0\_5 & Age bins & \textless{}30 & 495 & 12,318 & 39.0837 & 56.9697 & 58.3293 & yes \\
+RD & fixed\_probability\_0\_5 & Skin bins (ITA) & 0 & 1,300 & 18,119 & 37.9333 & 68.6154 & 48.8548 & yes \\
+RD & fixed\_probability\_0\_5 & Skin bins (ITA) & 1 & 1,247 & 19,287 & 36.9775 & 63.9936 & 56.7792 & yes \\
+RD & fixed\_probability\_0\_5 & Skin bins (ITA) & 2 & 1,289 & 19,740 & 40.2246 & 49.9612 & 66.2918 & yes \\
+RD & fixed\_probability\_0\_5 & Skin bins (ITA) & 3 & 1,288 & 20,309 & 42.4696 & 44.7205 & 68.7872 & yes \\
+RD & fixed\_probability\_0\_5 & Skin bins (ITA) & unknown & 317 & 4,668 & 44.0002 & 47.6341 & 61.3111 & no \\
+RD & fixed\_probability\_0\_5 & Native ids8 & 0 & 198 & 2,645 & 39.1577 & 51.0101 & 64.2722 & yes \\
+RD & fixed\_probability\_0\_5 & Native ids8 & 1 & 296 & 5,177 & 45.8261 & 38.1757 & 65.7331 & yes \\
+RD & fixed\_probability\_0\_5 & Native ids8 & 2 & 585 & 11,472 & 40.9161 & 50.9402 & 69.4125 & yes \\
+RD & fixed\_probability\_0\_5 & Native ids8 & 3 & 361 & 6,947 & 41.1687 & 50.6925 & 64.9633 & yes \\
+RD & fixed\_probability\_0\_5 & Native ids8 & 4 & 1,940 & 27,483 & 40.2838 & 58.2474 & 57.3627 & yes \\
+RD & fixed\_probability\_0\_5 & Native ids8 & 5 & 1,041 & 14,740 & 38.8024 & 61.8636 & 55.2035 & yes \\
+RD & fixed\_probability\_0\_5 & Native ids8 & 6 & 526 & 6,239 & 35.1670 & 64.2586 & 57.9420 & yes \\
+RD & fixed\_probability\_0\_5 & Native ids8 & 7 & 494 & 7,420 & 40.4106 & 51.4170 & 62.3315 & yes \\
+\end{longtable}
+
+\section*{7. Previously calculated transfer confidence intervals}
+These are the existing1000-replicate percentile intervals over recorded connected-contributor components, conditional on seed17 and frozen thresholds/checkpoints. They do not measure training-seed variability, paired method differences, hidden-donor uncertainty or label uncertainty. Undefined replicates were omitted by the original calculation; valid counts are shown. No confidence intervals were newly calculated for in-domain P17 or historical CFES-D here. The transfer intervals below apply only to the stored validation-calibrated operating point, not the separate fixed0.5 report.
+
+\begin{longtable}{@{}lrrrrrr@{}}
+\caption{All stored transfer uncertainty intervals. AUC/rates are percent; gap intervals are percentage points; F\_FPR/F\_DP follow the percentage-scaled metric definitions above.}\\
+\toprule
+Arm & Metric & 95\% lower & 95\% upper & Valid reps & Requested & Components \\
+\midrule
+\endfirsthead
+\toprule
+Arm & Metric & 95\% lower & 95\% upper & Valid reps & Requested & Components \\
+\midrule
+\endhead
+\midrule
+\multicolumn{7}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+R0 & overall.auc & 38.8733 & 45.9751 & 1,000 & 1,000 & 6,746 \\
+R0 & overall.fpr & 42.6764 & 69.3982 & 1,000 & 1,000 & 6,746 \\
+R0 & overall.fnr & 44.9103 & 68.8596 & 1,000 & 1,000 & 6,746 \\
+R0 & gender.auc\_gap & 0.1897 & 10.9775 & 1,000 & 1,000 & 6,746 \\
+R0 & gender.fpr\_gap & 0.7513 & 32.4068 & 1,000 & 1,000 & 6,746 \\
+R0 & gender.fnr\_gap & 0.3581 & 24.6828 & 1,000 & 1,000 & 6,746 \\
+R0 & gender.worst\_group\_auc & 34.6820 & 44.6674 & 1,000 & 1,000 & 6,746 \\
+R0 & gender.F\_FPR & 0.7513 & 32.4068 & 1,000 & 1,000 & 6,746 \\
+R0 & gender.F\_DP & 0.3710 & 24.9803 & 1,000 & 1,000 & 6,746 \\
+R0 & gender.es\_AUC & 36.7862 & 44.8126 & 1,000 & 1,000 & 6,746 \\
+R0 & race.auc\_gap & 2.7426 & 28.1797 & 960 & 1,000 & 6,746 \\
+R0 & race.fpr\_gap & 9.0534 & 69.2169 & 960 & 1,000 & 6,746 \\
+R0 & race.fnr\_gap & 18.4064 & 55.8938 & 960 & 1,000 & 6,746 \\
+R0 & race.worst\_group\_auc & 29.1582 & 45.0746 & 960 & 1,000 & 6,746 \\
+R0 & race.F\_FPR & 11.5312 & 100.9123 & 960 & 1,000 & 6,746 \\
+R0 & race.F\_DP & 17.7692 & 56.5748 & 960 & 1,000 & 6,746 \\
+R0 & race.es\_AUC & 29.8463 & 40.8217 & 960 & 1,000 & 6,746 \\
+R0 & age\_bin.auc\_gap & 1.0369 & 7.6853 & 1,000 & 1,000 & 6,746 \\
+R0 & age\_bin.fpr\_gap & 5.9576 & 24.4134 & 1,000 & 1,000 & 6,746 \\
+R0 & age\_bin.fnr\_gap & 12.0109 & 29.2519 & 1,000 & 1,000 & 6,746 \\
+R0 & age\_bin.worst\_group\_auc & 35.7816 & 44.4930 & 1,000 & 1,000 & 6,746 \\
+R0 & age\_bin.F\_FPR & 8.6475 & 33.3092 & 1,000 & 1,000 & 6,746 \\
+R0 & age\_bin.F\_DP & 11.2517 & 28.6181 & 1,000 & 1,000 & 6,746 \\
+R0 & age\_bin.es\_AUC & 36.4976 & 43.3663 & 1,000 & 1,000 & 6,746 \\
+R0 & skin\_bin.auc\_gap & 2.5185 & 13.0215 & 1,000 & 1,000 & 6,746 \\
+R0 & skin\_bin.fpr\_gap & 14.1780 & 36.0658 & 1,000 & 1,000 & 6,746 \\
+R0 & skin\_bin.fnr\_gap & 14.9616 & 27.9567 & 1,000 & 1,000 & 6,746 \\
+R0 & skin\_bin.worst\_group\_auc & 36.2870 & 40.2587 & 1,000 & 1,000 & 6,746 \\
+R0 & skin\_bin.F\_FPR & 23.2587 & 52.8135 & 1,000 & 1,000 & 6,746 \\
+R0 & skin\_bin.F\_DP & 15.3345 & 28.3477 & 1,000 & 1,000 & 6,746 \\
+R0 & skin\_bin.es\_AUC & 36.1867 & 40.0188 & 1,000 & 1,000 & 6,746 \\
+R0 & gender\_race.auc\_gap & 7.5312 & 36.3086 & 502 & 1,000 & 6,746 \\
+R0 & gender\_race.fpr\_gap & 24.0884 & 74.0552 & 502 & 1,000 & 6,746 \\
+R0 & gender\_race.fnr\_gap & 29.4748 & 61.9329 & 502 & 1,000 & 6,746 \\
+R0 & gender\_race.worst\_group\_auc & 30.9519 & 43.7584 & 502 & 1,000 & 6,746 \\
+R0 & gender\_race.F\_FPR & 53.7862 & 226.6544 & 502 & 1,000 & 6,746 \\
+R0 & gender\_race.F\_DP & 29.1698 & 62.1787 & 502 & 1,000 & 6,746 \\
+R0 & gender\_race.es\_AUC & 22.4587 & 35.5161 & 502 & 1,000 & 6,746 \\
+R0 & ids8.auc\_gap & 6.5607 & 32.9987 & 1,000 & 1,000 & 6,746 \\
+R0 & ids8.fpr\_gap & 14.6316 & 63.7151 & 1,000 & 1,000 & 6,746 \\
+R0 & ids8.fnr\_gap & 9.6114 & 40.4137 & 1,000 & 1,000 & 6,746 \\
+R0 & ids8.worst\_group\_auc & 19.4246 & 41.8048 & 1,000 & 1,000 & 6,746 \\
+R0 & ids8.F\_FPR & 30.6093 & 162.5762 & 1,000 & 1,000 & 6,746 \\
+R0 & ids8.F\_DP & 9.6915 & 41.4043 & 1,000 & 1,000 & 6,746 \\
+R0 & ids8.es\_AUC & 23.3338 & 37.2915 & 1,000 & 1,000 & 6,746 \\
+R1 & overall.auc & 39.0332 & 46.1476 & 1,000 & 1,000 & 6,746 \\
+R1 & overall.fpr & 44.8289 & 72.0104 & 1,000 & 1,000 & 6,746 \\
+R1 & overall.fnr & 40.8199 & 64.4681 & 1,000 & 1,000 & 6,746 \\
+R1 & gender.auc\_gap & 0.1409 & 10.9129 & 1,000 & 1,000 & 6,746 \\
+R1 & gender.fpr\_gap & 0.6803 & 32.9648 & 1,000 & 1,000 & 6,746 \\
+R1 & gender.fnr\_gap & 0.2629 & 24.3389 & 1,000 & 1,000 & 6,746 \\
+R1 & gender.worst\_group\_auc & 35.1374 & 44.8391 & 1,000 & 1,000 & 6,746 \\
+R1 & gender.F\_FPR & 0.6803 & 32.9648 & 1,000 & 1,000 & 6,746 \\
+R1 & gender.F\_DP & 0.3159 & 24.6975 & 1,000 & 1,000 & 6,746 \\
+R1 & gender.es\_AUC & 36.9264 & 44.9909 & 1,000 & 1,000 & 6,746 \\
+R1 & race.auc\_gap & 2.7369 & 27.6274 & 960 & 1,000 & 6,746 \\
+R1 & race.fpr\_gap & 9.1465 & 70.6896 & 960 & 1,000 & 6,746 \\
+R1 & race.fnr\_gap & 17.7374 & 55.8573 & 960 & 1,000 & 6,746 \\
+R1 & race.worst\_group\_auc & 29.8007 & 45.0961 & 960 & 1,000 & 6,746 \\
+R1 & race.F\_FPR & 11.8360 & 101.4897 & 960 & 1,000 & 6,746 \\
+R1 & race.F\_DP & 17.4534 & 56.5847 & 960 & 1,000 & 6,746 \\
+R1 & race.es\_AUC & 29.9996 & 41.0054 & 960 & 1,000 & 6,746 \\
+R1 & age\_bin.auc\_gap & 1.0160 & 7.6413 & 1,000 & 1,000 & 6,746 \\
+R1 & age\_bin.fpr\_gap & 4.4533 & 23.8497 & 1,000 & 1,000 & 6,746 \\
+R1 & age\_bin.fnr\_gap & 12.9741 & 30.9134 & 1,000 & 1,000 & 6,746 \\
+R1 & age\_bin.worst\_group\_auc & 35.7728 & 44.7765 & 1,000 & 1,000 & 6,746 \\
+R1 & age\_bin.F\_FPR & 7.0837 & 32.8799 & 1,000 & 1,000 & 6,746 \\
+R1 & age\_bin.F\_DP & 11.9835 & 30.2731 & 1,000 & 1,000 & 6,746 \\
+R1 & age\_bin.es\_AUC & 36.5872 & 43.5646 & 1,000 & 1,000 & 6,746 \\
+R1 & skin\_bin.auc\_gap & 2.6317 & 12.5666 & 1,000 & 1,000 & 6,746 \\
+R1 & skin\_bin.fpr\_gap & 13.2195 & 36.1404 & 1,000 & 1,000 & 6,746 \\
+R1 & skin\_bin.fnr\_gap & 16.3783 & 28.3279 & 1,000 & 1,000 & 6,746 \\
+R1 & skin\_bin.worst\_group\_auc & 36.5194 & 40.5524 & 1,000 & 1,000 & 6,746 \\
+R1 & skin\_bin.F\_FPR & 22.9167 & 53.1940 & 1,000 & 1,000 & 6,746 \\
+R1 & skin\_bin.F\_DP & 16.7772 & 28.5790 & 1,000 & 1,000 & 6,746 \\
+R1 & skin\_bin.es\_AUC & 36.3476 & 40.1755 & 1,000 & 1,000 & 6,746 \\
+R1 & gender\_race.auc\_gap & 7.4848 & 35.6240 & 502 & 1,000 & 6,746 \\
+R1 & gender\_race.fpr\_gap & 24.7753 & 75.5579 & 502 & 1,000 & 6,746 \\
+R1 & gender\_race.fnr\_gap & 28.0030 & 61.4887 & 502 & 1,000 & 6,746 \\
+R1 & gender\_race.worst\_group\_auc & 31.1822 & 43.9777 & 502 & 1,000 & 6,746 \\
+R1 & gender\_race.F\_FPR & 55.3122 & 228.4216 & 502 & 1,000 & 6,746 \\
+R1 & gender\_race.F\_DP & 27.8223 & 61.8441 & 502 & 1,000 & 6,746 \\
+R1 & gender\_race.es\_AUC & 22.7224 & 35.8197 & 502 & 1,000 & 6,746 \\
+R1 & ids8.auc\_gap & 6.8285 & 33.1139 & 1,000 & 1,000 & 6,746 \\
+R1 & ids8.fpr\_gap & 14.3508 & 62.9731 & 1,000 & 1,000 & 6,746 \\
+R1 & ids8.fnr\_gap & 9.6511 & 40.9681 & 1,000 & 1,000 & 6,746 \\
+R1 & ids8.worst\_group\_auc & 19.8067 & 42.0592 & 1,000 & 1,000 & 6,746 \\
+R1 & ids8.F\_FPR & 29.7463 & 160.6658 & 1,000 & 1,000 & 6,746 \\
+R1 & ids8.F\_DP & 9.6200 & 41.4628 & 1,000 & 1,000 & 6,746 \\
+R1 & ids8.es\_AUC & 23.5743 & 37.3311 & 1,000 & 1,000 & 6,746 \\
+R2 & overall.auc & 40.2829 & 46.8104 & 1,000 & 1,000 & 6,746 \\
+R2 & overall.fpr & 45.1481 & 72.5884 & 1,000 & 1,000 & 6,746 \\
+R2 & overall.fnr & 40.0722 & 63.4057 & 1,000 & 1,000 & 6,746 \\
+R2 & gender.auc\_gap & 0.2476 & 10.5523 & 1,000 & 1,000 & 6,746 \\
+R2 & gender.fpr\_gap & 0.6445 & 33.9278 & 1,000 & 1,000 & 6,746 \\
+R2 & gender.fnr\_gap & 0.5194 & 24.0722 & 1,000 & 1,000 & 6,746 \\
+R2 & gender.worst\_group\_auc & 36.1861 & 45.6078 & 1,000 & 1,000 & 6,746 \\
+R2 & gender.F\_FPR & 0.6445 & 33.9278 & 1,000 & 1,000 & 6,746 \\
+R2 & gender.F\_DP & 0.4395 & 24.3974 & 1,000 & 1,000 & 6,746 \\
+R2 & gender.es\_AUC & 37.9455 & 45.5400 & 1,000 & 1,000 & 6,746 \\
+R2 & race.auc\_gap & 3.0220 & 26.7334 & 960 & 1,000 & 6,746 \\
+R2 & race.fpr\_gap & 9.7627 & 71.3381 & 960 & 1,000 & 6,746 \\
+R2 & race.fnr\_gap & 17.0280 & 55.2342 & 960 & 1,000 & 6,746 \\
+R2 & race.worst\_group\_auc & 30.9148 & 46.2876 & 960 & 1,000 & 6,746 \\
+R2 & race.F\_FPR & 13.3154 & 103.2540 & 960 & 1,000 & 6,746 \\
+R2 & race.F\_DP & 16.9468 & 56.0276 & 960 & 1,000 & 6,746 \\
+R2 & race.es\_AUC & 30.9406 & 41.7880 & 960 & 1,000 & 6,746 \\
+R2 & age\_bin.auc\_gap & 1.2086 & 8.5179 & 1,000 & 1,000 & 6,746 \\
+R2 & age\_bin.fpr\_gap & 4.0298 & 22.7371 & 1,000 & 1,000 & 6,746 \\
+R2 & age\_bin.fnr\_gap & 13.8113 & 31.3991 & 1,000 & 1,000 & 6,746 \\
+R2 & age\_bin.worst\_group\_auc & 36.6279 & 45.3094 & 1,000 & 1,000 & 6,746 \\
+R2 & age\_bin.F\_FPR & 5.2581 & 29.0949 & 1,000 & 1,000 & 6,746 \\
+R2 & age\_bin.F\_DP & 12.5534 & 30.5370 & 1,000 & 1,000 & 6,746 \\
+R2 & age\_bin.es\_AUC & 37.5172 & 43.8111 & 1,000 & 1,000 & 6,746 \\
+R2 & skin\_bin.auc\_gap & 2.0354 & 11.8731 & 1,000 & 1,000 & 6,746 \\
+R2 & skin\_bin.fpr\_gap & 12.4638 & 35.5136 & 1,000 & 1,000 & 6,746 \\
+R2 & skin\_bin.fnr\_gap & 16.6626 & 27.9788 & 1,000 & 1,000 & 6,746 \\
+R2 & skin\_bin.worst\_group\_auc & 37.4938 & 41.8251 & 1,000 & 1,000 & 6,746 \\
+R2 & skin\_bin.F\_FPR & 20.6904 & 53.5496 & 1,000 & 1,000 & 6,746 \\
+R2 & skin\_bin.F\_DP & 16.7008 & 28.1908 & 1,000 & 1,000 & 6,746 \\
+R2 & skin\_bin.es\_AUC & 37.1556 & 41.5958 & 1,000 & 1,000 & 6,746 \\
+R2 & gender\_race.auc\_gap & 8.0054 & 34.9908 & 502 & 1,000 & 6,746 \\
+R2 & gender\_race.fpr\_gap & 26.7338 & 75.6219 & 502 & 1,000 & 6,746 \\
+R2 & gender\_race.fnr\_gap & 26.8794 & 61.3705 & 502 & 1,000 & 6,746 \\
+R2 & gender\_race.worst\_group\_auc & 31.5695 & 44.9383 & 502 & 1,000 & 6,746 \\
+R2 & gender\_race.F\_FPR & 55.5493 & 233.4345 & 502 & 1,000 & 6,746 \\
+R2 & gender\_race.F\_DP & 26.8384 & 61.8825 & 502 & 1,000 & 6,746 \\
+R2 & gender\_race.es\_AUC & 23.2152 & 36.2414 & 502 & 1,000 & 6,746 \\
+R2 & ids8.auc\_gap & 6.9119 & 33.1800 & 1,000 & 1,000 & 6,746 \\
+R2 & ids8.fpr\_gap & 15.1537 & 63.9957 & 1,000 & 1,000 & 6,746 \\
+R2 & ids8.fnr\_gap & 9.2248 & 41.2764 & 1,000 & 1,000 & 6,746 \\
+R2 & ids8.worst\_group\_auc & 20.0299 & 42.8321 & 1,000 & 1,000 & 6,746 \\
+R2 & ids8.F\_FPR & 28.5604 & 160.6482 & 1,000 & 1,000 & 6,746 \\
+R2 & ids8.F\_DP & 9.2139 & 41.8743 & 1,000 & 1,000 & 6,746 \\
+R2 & ids8.es\_AUC & 24.2457 & 38.1446 & 1,000 & 1,000 & 6,746 \\
+RN & overall.auc & 35.7912 & 43.4209 & 1,000 & 1,000 & 6,746 \\
+RN & overall.fpr & 43.9994 & 71.6631 & 1,000 & 1,000 & 6,746 \\
+RN & overall.fnr & 44.8854 & 68.5813 & 1,000 & 1,000 & 6,746 \\
+RN & gender.auc\_gap & 0.1653 & 11.6278 & 1,000 & 1,000 & 6,746 \\
+RN & gender.fpr\_gap & 0.6676 & 33.8121 & 1,000 & 1,000 & 6,746 \\
+RN & gender.fnr\_gap & 0.2638 & 24.3961 & 1,000 & 1,000 & 6,746 \\
+RN & gender.worst\_group\_auc & 31.8027 & 42.0420 & 1,000 & 1,000 & 6,746 \\
+RN & gender.F\_FPR & 0.6676 & 33.8121 & 1,000 & 1,000 & 6,746 \\
+RN & gender.F\_DP & 0.3326 & 25.1336 & 1,000 & 1,000 & 6,746 \\
+RN & gender.es\_AUC & 33.8925 & 42.4315 & 1,000 & 1,000 & 6,746 \\
+RN & race.auc\_gap & 2.6114 & 27.0911 & 960 & 1,000 & 6,746 \\
+RN & race.fpr\_gap & 8.4003 & 71.6856 & 960 & 1,000 & 6,746 \\
+RN & race.fnr\_gap & 17.9394 & 55.6530 & 960 & 1,000 & 6,746 \\
+RN & race.worst\_group\_auc & 26.7253 & 41.5712 & 960 & 1,000 & 6,746 \\
+RN & race.F\_FPR & 9.9338 & 104.3904 & 960 & 1,000 & 6,746 \\
+RN & race.F\_DP & 17.4963 & 56.5305 & 960 & 1,000 & 6,746 \\
+RN & race.es\_AUC & 28.1877 & 38.5009 & 960 & 1,000 & 6,746 \\
+RN & age\_bin.auc\_gap & 0.8856 & 7.1304 & 1,000 & 1,000 & 6,746 \\
+RN & age\_bin.fpr\_gap & 3.7429 & 23.6279 & 1,000 & 1,000 & 6,746 \\
+RN & age\_bin.fnr\_gap & 10.4239 & 26.2696 & 1,000 & 1,000 & 6,746 \\
+RN & age\_bin.worst\_group\_auc & 32.1963 & 41.9357 & 1,000 & 1,000 & 6,746 \\
+RN & age\_bin.F\_FPR & 5.4686 & 31.8341 & 1,000 & 1,000 & 6,746 \\
+RN & age\_bin.F\_DP & 9.6817 & 25.6875 & 1,000 & 1,000 & 6,746 \\
+RN & age\_bin.es\_AUC & 33.5719 & 41.3391 & 1,000 & 1,000 & 6,746 \\
+RN & skin\_bin.auc\_gap & 2.7789 & 13.0803 & 1,000 & 1,000 & 6,746 \\
+RN & skin\_bin.fpr\_gap & 12.9457 & 35.6316 & 1,000 & 1,000 & 6,746 \\
+RN & skin\_bin.fnr\_gap & 15.4807 & 26.6910 & 1,000 & 1,000 & 6,746 \\
+RN & skin\_bin.worst\_group\_auc & 33.1786 & 37.4280 & 1,000 & 1,000 & 6,746 \\
+RN & skin\_bin.F\_FPR & 22.4483 & 53.8192 & 1,000 & 1,000 & 6,746 \\
+RN & skin\_bin.F\_DP & 15.7317 & 27.0001 & 1,000 & 1,000 & 6,746 \\
+RN & skin\_bin.es\_AUC & 32.9878 & 37.3837 & 1,000 & 1,000 & 6,746 \\
+RN & gender\_race.auc\_gap & 7.6554 & 33.5339 & 502 & 1,000 & 6,746 \\
+RN & gender\_race.fpr\_gap & 25.3312 & 75.7782 & 502 & 1,000 & 6,746 \\
+RN & gender\_race.fnr\_gap & 27.2893 & 61.3224 & 502 & 1,000 & 6,746 \\
+RN & gender\_race.worst\_group\_auc & 28.4056 & 40.3691 & 502 & 1,000 & 6,746 \\
+RN & gender\_race.F\_FPR & 55.0092 & 234.0434 & 502 & 1,000 & 6,746 \\
+RN & gender\_race.F\_DP & 27.2523 & 61.8881 & 502 & 1,000 & 6,746 \\
+RN & gender\_race.es\_AUC & 21.4589 & 33.4288 & 502 & 1,000 & 6,746 \\
+RN & ids8.auc\_gap & 6.8525 & 32.7257 & 1,000 & 1,000 & 6,746 \\
+RN & ids8.fpr\_gap & 14.8176 & 63.9062 & 1,000 & 1,000 & 6,746 \\
+RN & ids8.fnr\_gap & 8.6150 & 39.7109 & 1,000 & 1,000 & 6,746 \\
+RN & ids8.worst\_group\_auc & 16.9518 & 38.2467 & 1,000 & 1,000 & 6,746 \\
+RN & ids8.F\_FPR & 28.0110 & 165.1525 & 1,000 & 1,000 & 6,746 \\
+RN & ids8.F\_DP & 8.7049 & 40.4665 & 1,000 & 1,000 & 6,746 \\
+RN & ids8.es\_AUC & 21.8316 & 34.5069 & 1,000 & 1,000 & 6,746 \\
+RD & overall.auc & 36.9087 & 43.4783 & 1,000 & 1,000 & 6,746 \\
+RD & overall.fpr & 43.2235 & 70.9271 & 1,000 & 1,000 & 6,746 \\
+RD & overall.fnr & 45.9496 & 70.0442 & 1,000 & 1,000 & 6,746 \\
+RD & gender.auc\_gap & 0.0706 & 9.3651 & 1,000 & 1,000 & 6,746 \\
+RD & gender.fpr\_gap & 0.6429 & 33.6435 & 1,000 & 1,000 & 6,746 \\
+RD & gender.fnr\_gap & 0.5149 & 25.3285 & 1,000 & 1,000 & 6,746 \\
+RD & gender.worst\_group\_auc & 33.1534 & 42.2626 & 1,000 & 1,000 & 6,746 \\
+RD & gender.F\_FPR & 0.6429 & 33.6435 & 1,000 & 1,000 & 6,746 \\
+RD & gender.F\_DP & 0.5879 & 25.9882 & 1,000 & 1,000 & 6,746 \\
+RD & gender.es\_AUC & 35.2532 & 42.4287 & 1,000 & 1,000 & 6,746 \\
+RD & race.auc\_gap & 2.9509 & 26.4964 & 960 & 1,000 & 6,746 \\
+RD & race.fpr\_gap & 8.9991 & 71.2946 & 960 & 1,000 & 6,746 \\
+RD & race.fnr\_gap & 17.3426 & 55.1368 & 960 & 1,000 & 6,746 \\
+RD & race.worst\_group\_auc & 28.2098 & 42.4882 & 960 & 1,000 & 6,746 \\
+RD & race.F\_FPR & 11.9286 & 103.3111 & 960 & 1,000 & 6,746 \\
+RD & race.F\_DP & 17.0072 & 56.1601 & 960 & 1,000 & 6,746 \\
+RD & race.es\_AUC & 28.9672 & 39.0136 & 960 & 1,000 & 6,746 \\
+RD & age\_bin.auc\_gap & 0.9192 & 6.8731 & 1,000 & 1,000 & 6,746 \\
+RD & age\_bin.fpr\_gap & 3.3903 & 21.1559 & 1,000 & 1,000 & 6,746 \\
+RD & age\_bin.fnr\_gap & 9.2417 & 24.8165 & 1,000 & 1,000 & 6,746 \\
+RD & age\_bin.worst\_group\_auc & 33.0943 & 42.1842 & 1,000 & 1,000 & 6,746 \\
+RD & age\_bin.F\_FPR & 4.4869 & 27.9809 & 1,000 & 1,000 & 6,746 \\
+RD & age\_bin.F\_DP & 8.5016 & 24.0998 & 1,000 & 1,000 & 6,746 \\
+RD & age\_bin.es\_AUC & 34.6559 & 41.5638 & 1,000 & 1,000 & 6,746 \\
+RD & skin\_bin.auc\_gap & 2.3223 & 12.3557 & 1,000 & 1,000 & 6,746 \\
+RD & skin\_bin.fpr\_gap & 12.4296 & 35.6739 & 1,000 & 1,000 & 6,746 \\
+RD & skin\_bin.fnr\_gap & 14.3908 & 27.8251 & 1,000 & 1,000 & 6,746 \\
+RD & skin\_bin.worst\_group\_auc & 34.5194 & 38.2071 & 1,000 & 1,000 & 6,746 \\
+RD & skin\_bin.F\_FPR & 21.7898 & 53.4846 & 1,000 & 1,000 & 6,746 \\
+RD & skin\_bin.F\_DP & 14.5694 & 28.1102 & 1,000 & 1,000 & 6,746 \\
+RD & skin\_bin.es\_AUC & 34.4170 & 38.0642 & 1,000 & 1,000 & 6,746 \\
+RD & gender\_race.auc\_gap & 7.2857 & 35.1080 & 502 & 1,000 & 6,746 \\
+RD & gender\_race.fpr\_gap & 25.9832 & 75.6774 & 502 & 1,000 & 6,746 \\
+RD & gender\_race.fnr\_gap & 28.8668 & 59.9906 & 502 & 1,000 & 6,746 \\
+RD & gender\_race.worst\_group\_auc & 28.5501 & 41.0807 & 502 & 1,000 & 6,746 \\
+RD & gender\_race.F\_FPR & 55.6260 & 234.4643 & 502 & 1,000 & 6,746 \\
+RD & gender\_race.F\_DP & 28.9466 & 60.6042 & 502 & 1,000 & 6,746 \\
+RD & gender\_race.es\_AUC & 22.3268 & 34.1124 & 502 & 1,000 & 6,746 \\
+RD & ids8.auc\_gap & 6.5022 & 32.4852 & 1,000 & 1,000 & 6,746 \\
+RD & ids8.fpr\_gap & 14.3881 & 62.8294 & 1,000 & 1,000 & 6,746 \\
+RD & ids8.fnr\_gap & 9.9669 & 39.8459 & 1,000 & 1,000 & 6,746 \\
+RD & ids8.worst\_group\_auc & 17.4737 & 38.9219 & 1,000 & 1,000 & 6,746 \\
+RD & ids8.F\_FPR & 29.5122 & 162.9560 & 1,000 & 1,000 & 6,746 \\
+RD & ids8.F\_DP & 9.9824 & 40.8795 & 1,000 & 1,000 & 6,746 \\
+RD & ids8.es\_AUC & 22.8598 & 35.4415 & 1,000 & 1,000 & 6,746 \\
+\end{longtable}
+
+\section*{8. Source records and remaining missing results}
+There are no trained results for the new three-seed CDF/complete-DRO matrix, no full validated manipulation-response training result, and no public TEST score for the current FF2 P17 run. Missing values mean unavailable or undefined, never zero. This export does not authorize training, generation or held-out evaluation. Further FairForge-2 experiments remain held.
+
+The current models, historical models, thresholds, group labels, training sets and evaluation roles differ. Report each block with its own protocol. Do not rank the mixed blocks as an apples-to-apples model comparison. Full machine-readable snapshots, native source hashes, normalized axis/group CSVs and exact split manifests accompany this standalone TeX file.
+
+\begingroup\footnotesize
+\noindent\textbf{Source 1:}\quad\path{/home/sachin.chaudhary/cesel_ma_audit_logs/dataset_fairness_tables_20261102T104319Z/SPLITS.json}\\
+\texttt{SHA256: d8f7e3dfe6ba74ac300b37d0c4789ec51e3ca4b6a60e053b365f0a4ad07f495e}\par\medskip
+\noindent\textbf{Source 2:}\quad\path{/home/sachin.chaudhary/ces_fl_runs/ff2_originals_s17_20261102_r1/training/RUN_VERIFIED.json}\\
+\texttt{SHA256: 9c4b4a8acf31c4906c64f9f24ab5a6ac4f437bbaaaf14e54d1539cc0e114a34b}\par\medskip
+\noindent\textbf{Source 3:}\quad\path{/home/sachin.chaudhary/ces_fl_sources/cesfl-tail-response-20261102-r1/CES_FL/results/upgrade_tests_s17_20261101T040407Z/aggregate.json}\\
+\texttt{SHA256: cf2fab2c30bd57b7a705a070856e53086a4b235c9b2b61892581ddb2461cb676}\par\medskip
+\noindent\textbf{Source 4:}\quad\path{/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CESEL_MA/runs_ff2public/cfesd_s7/eval/ff2_test.json}\\
+\texttt{SHA256: de1e825130e75cba1b3e99b1323440e95b2831c1312b885b770aebbd09040ba1}\par\medskip
+\noindent\textbf{Source 5:}\quad\path{/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CESEL_MA/runs_ff2public/cfesd_s7/eval/calibration.json}\\
+\texttt{SHA256: f9f3bb6925fdc660c9964b11c7da6384860b530a148ca758941efc017651dfb4}\par\medskip
+\noindent\textbf{Source 6:}\quad\path{/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/CESEL_MA/runs_ff2public/cfesd_s7/eval/ff2_test_leakfree_video.json}\\
+\texttt{SHA256: de1e825130e75cba1b3e99b1323440e95b2831c1312b885b770aebbd09040ba1}\par\medskip
+\noindent\textbf{Source 7:}\quad\path{/home/sachin.chaudhary/ces_fl_sources/cesfl-tail-response-20261102-r1/CES_FL/proposals/ff2_indomain_s17_20261101T042828Z/ding_baseline_evidence_20261101.json}\\
+\texttt{SHA256: 380142c3282b096f11f5c299871ab7245b71ee37214c89624e1fae5c3b3e2b5a}\par\medskip
+\noindent\textbf{Source 8:}\quad\path{/home/sachin.chaudhary/ces_fl_sources/cesfl-tail-response-20261102-r1/DINGREPRO_LIN/results/eval_ding_protocol/base_s17_ep49_ff2.json}\\
+\texttt{SHA256: b9bb6e11edb14c389d99973c488e5b980c9164db6e50b2daf10dff07a2e2fb10}\par\medskip
+\noindent\textbf{Source 9:}\quad\path{/home/sachin.chaudhary/ces_fl_sources/cesfl-tail-response-20261102-r1/DINGREPRO_LIN/results/eval_ding_protocol/base_s17_ep49_ff2full.json}\\
+\texttt{SHA256: 1f62963f6adfc5d588eb64d234ea6b30a74fb0583d3ba5ec054b42c5ce35dcdd}\par\medskip
+\noindent\textbf{Source 10:}\quad\path{/home/sachin.chaudhary/ces_fl_sources/cesfl-tail-response-20261102-r1/DINGREPRO_LIN/results/eval_ding_protocol/base_s27_ep49_ff2.json}\\
+\texttt{SHA256: 324fa2b9f5a2903963f359842acfdbb991ad7c81c13a57b9542090e1eb8d70a1}\par\medskip
+\noindent\textbf{Source 11:}\quad\path{/home/sachin.chaudhary/ces_fl_sources/cesfl-tail-response-20261102-r1/DINGREPRO_LIN/results/eval_ding_protocol/base_s27_ep49_ff2full.json}\\
+\texttt{SHA256: 6cf7427ba35f729ac2f96e946f3453da74eaa9fb44ac50e00f98deb222a21571}\par\medskip
+\noindent\textbf{Source 12:}\quad\path{/home/sachin.chaudhary/ces_fl_sources/cesfl-tail-response-20261102-r1/DINGREPRO_LIN/results/eval_ding_protocol/base_s7_ep49_ff2.json}\\
+\texttt{SHA256: 6662a0b6aab5020c6c51663fe1b49d16ffbb5822cfbda8b91830b45c11a904c5}\par\medskip
+\noindent\textbf{Source 13:}\quad\path{/home/sachin.chaudhary/ces_fl_sources/cesfl-tail-response-20261102-r1/DINGREPRO_LIN/results/eval_ding_protocol/base_s7_ep49_ff2full.json}\\
+\texttt{SHA256: 0d4325b06ce04ed3c0593626c15b9be1d8dfcd8e287a80697f09421d0a5bda65}\par\medskip
+\noindent\textbf{Source 14:}\quad\path{/home/sachin.chaudhary/ces_fl_sources/cesfl-tail-response-20261102-r1/DINGREPRO_LIN/results/eval_ding_protocol/full_s7_ep25_ff2full.json}\\
+\texttt{SHA256: 9c9fe09d9bfc00d4675d7e7577eedf90caa9fb34fe64bef7348eb66186bb0d1d}\par\medskip
+\noindent\textbf{Source 15:}\quad\path{/home/sachin.chaudhary/ces_fl_sources/cesfl-tail-response-20261102-r1/DINGREPRO_LIN/results/eval_ding_protocol/full_s7_ep49_ff2full.json}\\
+\texttt{SHA256: f1b9e441d0c271aa7a30e2056cf625ce71292a8a5ffd68fbf3fc87ecca39a58c}\par\medskip
+\endgroup
+\end{document}

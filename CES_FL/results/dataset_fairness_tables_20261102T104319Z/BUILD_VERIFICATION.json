@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "observed_management_utc": "2026-11-02T11:06:15.540000+00:00",
+  "compile_command": [
+    "pdflatex",
+    "-no-shell-escape",
+    "-interaction=nonstopmode",
+    "-halt-on-error",
+    "-output-directory",
+    "/home/sachin.chaudhary/cesel_ma_audit_logs/dataset_fairness_tables_20261102T104319Z",
+    "/home/sachin.chaudhary/cesel_ma_audit_logs/dataset_fairness_tables_20261102T104319Z/ding_and_fairforge2_tables.tex"
+  ],
+  "compiler_exit_code": 0,
+  "pdf_pages": 22,
+  "overfull_boxes": false,
+  "local_engine_glue_diagnostics_count": 16,
+  "representative_pages_visually_inspected": [
+    2,
+    12
+  ],
+  "all_exported_group_counts_reconcile": true,
+  "selected_PDF_counts_and_metrics_checked": true,
+  "new_model_evaluation": false,
+  "new_training": false,
+  "sha256": {
+    "ding_and_fairforge2_tables.tex": "8428539d51fbad3cf73b21c4ed06c569353f28137aad1c786648c9a671863045",
+    "ding_and_fairforge2_tables.pdf": "41b2556c3e07f4c4f0bc0855d019131a7058a73479fda4788defdbbe0eb4f6b8",
+    "SNAPSHOT.json": "20968310fcf4d35915440df5215659471e5c467c7ccd81ba6337a7e871b6156e",
+    "SPLITS.json": "d8f7e3dfe6ba74ac300b37d0c4789ec51e3ca4b6a60e053b365f0a4ad07f495e"
+  }
+}

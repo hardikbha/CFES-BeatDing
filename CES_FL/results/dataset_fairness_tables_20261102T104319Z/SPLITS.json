@@ -1,0 +1,126 @@
+{
+  "observed_management_utc": "2026-11-02T10:43:32.517000+00:00",
+  "unit": "image/frame rows;not videos or distinct people",
+  "records": [
+    {
+      "dataset": "Ding FF++",
+      "split": "train",
+      "rows": 76139,
+      "real": 12926,
+      "fake": 63213,
+      "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ding_ffpp/train.csv",
+      "sha256": "6ee9326fe8361dc3aee0f803c49b5eada169be5cf3bc3cb44ad3d934ba5ca657"
+    },
+    {
+      "dataset": "Ding FF++",
+      "split": "val",
+      "rows": 25386,
+      "real": 4092,
+      "fake": 21294,
+      "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ding_ffpp/val.csv",
+      "sha256": "52f4844cffe5a03adb08cecde8829244bb50e05eeead36f6d659599f1c24f5b1"
+    },
+    {
+      "dataset": "Ding FF++",
+      "split": "test",
+      "rows": 25401,
+      "real": 4538,
+      "fake": 20863,
+      "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ding_ffpp/test.csv",
+      "sha256": "7c7a09d5ccab349b1670f357bf7b1498d58af4a6621e8b0469d8d0ea368ccbc0"
+    },
+    {
+      "dataset": "FairForge-2 public",
+      "split": "train",
+      "rows": 218266,
+      "real": 16777,
+      "fake": 201489,
+      "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ff2/train.csv",
+      "sha256": "4f83e7dc8042533329d7047fefd0f30cbd96f45d42bde2666dd0edc7d58f29cc"
+    },
+    {
+      "dataset": "FairForge-2 public",
+      "split": "val",
+      "rows": 31107,
+      "real": 2438,
+      "fake": 28669,
+      "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ff2/val.csv",
+      "sha256": "aeda051259d9e26b07c2810152b601ae115ce7c9e10523f99ea07bbc9f92afa8"
+    },
+    {
+      "dataset": "FairForge-2 public",
+      "split": "test",
+      "rows": 87564,
+      "real": 5441,
+      "fake": 82123,
+      "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ff2/test.csv",
+      "sha256": "dd5eb9ef070f658fe6b7f744c47f73e25ce7c53f948bc272f4f16c69a37d4099"
+    }
+  ],
+  "independent_native_Ding_counts": [
+    {
+      "split": "train",
+      "rows": 76139,
+      "paths": [
+        "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/ff++_ding/realtrain.csv",
+        "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/ff++_ding/faketrain.csv"
+      ],
+      "sha256": [
+        "e62076044042c140a5759874c704480fd36b038fb7f3e57c16d2d4a96de8de4a",
+        "8a7c6e72a967517fe4012f58097f664e4bc82de752e13357c4bdb271eb31af26"
+      ]
+    },
+    {
+      "split": "val",
+      "rows": 25386,
+      "paths": [
+        "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/ff++_ding/realval.csv",
+        "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/ff++_ding/fakeval.csv"
+      ],
+      "sha256": [
+        "ee9f35d134617fcb55c519453a787bc5e245c0c667c49f2685e282ea3c454153",
+        "82f1d0f5ef34de3772841b066b34b4d215cc1b8ceb31619cbbbce24016972380"
+      ]
+    },
+    {
+      "split": "test",
+      "rows": 25401,
+      "paths": [
+        "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/ff++/test.csv"
+      ],
+      "sha256": [
+        "3a87826e6b8bb7df60a86d1594c6ea158d4464ff8a9ddcc31a56d1d6c87aa4b7"
+      ]
+    }
+  ],
+  "external_tests": [
+    {
+      "dataset": "dfdc",
+      "split": "test_only_in_this_protocol",
+      "rows": 22857,
+      "real": 14699,
+      "fake": 8158,
+      "path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/dfdc/test.csv",
+      "sha256": "8bb4cffd76bebe15414e88e0a66c57c7c5616fa24c67c23d15156d8f8f0ede8f"
+    },
+    {
+      "dataset": "celebdf",
+      "split": "test_only_in_this_protocol",
+      "rows": 28458,
+      "real": 5713,
+      "fake": 22745,
+      "path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/celebdf/test.csv",
+      "sha256": "1295b8546d595d5e4fd267bda1ed31af14454789f67c643caa170059214a8f27"
+    },
+    {
+      "dataset": "dfd",
+      "split": "test_only_in_this_protocol",
+      "rows": 9385,
+      "real": 3092,
+      "fake": 6293,
+      "path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/dfd/test.csv",
+      "sha256": "3d26df35ed57495ec72818c55f44e5ae338a689f934b81eeb571d8a46cad5989"
+    }
+  ],
+  "operation": "CSV metadata count only;no detector inference,calibration or training"
+}

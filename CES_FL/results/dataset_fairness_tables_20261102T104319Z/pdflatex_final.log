@@ -1,0 +1,95 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex)
+entering extended mode
+
+(/home/sachin.chaudhary/cesel_ma_audit_logs/dataset_fairness_tables_20261102T10
+4319Z/ding_and_fairforge2_tables.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/size10.clo))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/fontenc.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/tools/array.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+(/usr/local/texlive/2025/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/local/texlive/2025/texmf-dist/tex/generic/infwarerr/infwarerr.sty)))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/gettitlestring/gettitlestring.s
+ty (/usr/local/texlive/2025/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/stringenc/stringenc.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/url/url.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/local/texlive/2025/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty)))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/local/texlive/2025/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+
+(/usr/local/texlive/2025/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+)))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(/home/sachin.chaudhary/cesel_ma_audit_logs/dataset_fairness_tables_20261102T10
+4319Z/ding_and_fairforge2_tables.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+
+(/home/sachin.chaudhary/cesel_ma_audit_logs/dataset_fairness_tables_20261102T10
+4319Z/ding_and_fairforge2_tables.out)
+(/home/sachin.chaudhary/cesel_ma_audit_logs/dataset_fairness_tables_20261102T10
+4319Z/ding_and_fairforge2_tables.out)
+ignored error: Infinite glue shrinkage found in box being split [1{/usr/local/t
+exlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/20
+25/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] [2]
+ignored error: Infinite glue shrinkage found in box being split [3]
+ignored error: Infinite glue shrinkage found in box being split [4] [5]
+[6]
+ignored error: Infinite glue shrinkage found in box being split [7]
+ignored error: Infinite glue shrinkage found in box being split [8]
+ignored error: Infinite glue shrinkage found in box being split [9]
+ignored error: Infinite glue shrinkage found in box being split [10]
+ignored error: Infinite glue shrinkage found in box being split [11]
+ignored error: Infinite glue shrinkage found in box being split [12]
+ignored error: Infinite glue shrinkage found in box being split [13]
+ignored error: Infinite glue shrinkage found in box being split [14] [15]
+ignored error: Infinite glue shrinkage found in box being split [16]
+ignored error: Infinite glue shrinkage found in box being split [17]
+ignored error: Infinite glue shrinkage found in box being split [18]
+ignored error: Infinite glue shrinkage found in box being split [19]
+ignored error: Infinite glue shrinkage found in box being split [20] [21]
+[22]
+(/home/sachin.chaudhary/cesel_ma_audit_logs/dataset_fairness_tables_20261102T10
+4319Z/ding_and_fairforge2_tables.aux) )</usr/local/texlive/2025/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2025/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1
+/public/cm-super/sfbx0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/p
+ublic/cm-super/sfbx1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/pub
+lic/cm-super/sfrm0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/publi
+c/cm-super/sfrm1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/
+cm-super/sfrm1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm
+-super/sfrm1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-s
+uper/sftt0800.pfb>
+Output written on /home/sachin.chaudhary/cesel_ma_audit_logs/dataset_fairness_t
+ables_20261102T104319Z/ding_and_fairforge2_tables.pdf (22 pages, 225162 bytes).
+Transcript written on /home/sachin.chaudhary/cesel_ma_audit_logs/dataset_fairne
+ss_tables_20261102T104319Z/ding_and_fairforge2_tables.log.
