@@ -1,0 +1,7 @@
+test_missing_process_is_not_reported_running (__main__.ObserverFailures.test_missing_process_is_not_reported_running) ... ok
+test_ssh_timeout_is_unverified_and_keeps_observation (__main__.ObserverFailures.test_ssh_timeout_is_unverified_and_keeps_observation) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.003s
+
+OK
