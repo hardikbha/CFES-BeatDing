@@ -1,0 +1,12 @@
+{"status": "PREFLIGHT_PASS", "train": 8, "val": 8}
+{"arm": "A", "epoch": 1, "validation_auc": 0.5625, "paired_sources": 0, "seconds": 4.138080639997497}
+{"arm": "A", "epoch": 2, "validation_auc": 0.625, "paired_sources": 0, "seconds": 5.206133160972968}
+{"arm": "B", "epoch": 1, "validation_auc": 0.5625, "paired_sources": 0, "seconds": 0.6082720779813826}
+{"arm": "B", "epoch": 2, "validation_auc": 0.625, "paired_sources": 0, "seconds": 1.6397369671612978}
+{"arm": "C", "epoch": 1, "validation_auc": 0.625, "paired_sources": 4, "seconds": 1.2177656809799373}
+{"arm": "C", "epoch": 2, "validation_auc": 0.6875, "paired_sources": 4, "seconds": 2.892734810942784}
+{"arm": "D", "epoch": 1, "validation_auc": 0.625, "paired_sources": 4, "seconds": 1.1147990389727056}
+{"arm": "D", "epoch": 2, "validation_auc": 0.75, "paired_sources": 4, "seconds": 2.6621107349637896}
+{"arm": "D", "epoch": 1, "validation_auc": 0.625, "paired_sources": 4, "seconds": 1.0286222719587386}
+{"arm": "D", "epoch": 2, "validation_auc": 0.75, "paired_sources": 4, "seconds": 2.0732015050016344}
+{"status": "PASS", "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b", "device": "cpu", "torch": "2.7.0+cu126", "parameters": {"total": 21594159, "trainable": 7575591}, "checks": ["independent_loss_references_gradients_offset_collapse_and_ties", "operators_reproducible_localized_and_zero_strength_identity", "full_224px_xception_counts_decomposition_gradients_and_frozen_bn", "schema_provenance_split_fixture_and_missing_review_rejections", "C_D_only_alignment_loss_differs_same_views", "all_four_arms_validation_replay_and_bitwise_epoch_resume", "frozen_threshold_test_label_flip_paired_bootstrap_and_map_export"], "scientific_performance_tested": false, "real_interventions_validated": false, "fixture_only": true, "cuda_tested": false}

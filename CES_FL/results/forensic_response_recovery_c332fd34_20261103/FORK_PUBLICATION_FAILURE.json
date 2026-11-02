@@ -1,0 +1,8 @@
+{
+  "observed_management_utc": "2026-11-02T20:55:40.233517+00:00",
+  "requested_fork": "https://github.com/hardiksharma6555/CFES-BeatDing",
+  "branch": "execution/forensic-response-c332fd34-20261103",
+  "attempted_commit": "0f80ffd",
+  "push_result": "FAILED_REMOTE_PERMISSION_DENIED",
+  "fallback": "Try previously user-authorized hardikbha upstream on the same separate evidence branch; no auto-merge and no running source edits"
+}

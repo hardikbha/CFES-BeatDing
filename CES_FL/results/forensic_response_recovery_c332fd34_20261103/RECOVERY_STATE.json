@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-02T20:52:58.644369+00:00",
+  "observed_management_utc": "2026-11-02T20:57:36.380060+00:00",
   "execution_source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
   "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
   "execution_source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-forensic-response-c332fd34",
@@ -48,5 +48,34 @@
   "existing_Ding": "Live controller/torchrun/two CUDA ranks on gpu01 preserved; not the new study",
   "old_failed_preflight": "PRESERVED; bound old-source configs not reused",
   "allocation_blocker": "Inspected running PBS45131 ngpus1 worker: CUDA_VISIBLE_DEVICES/PBS_GPUFILE/NVIDIA_VISIBLE_DEVICES all empty. Need genuine allocated binding before CUDA. No arbitrary free-memory selection.",
-  "test_evaluated": false
+  "test_evaluated": false,
+  "cpu_full_smoke": {
+    "status": "PASS",
+    "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
+    "device": "cpu",
+    "torch": "2.7.0+cu126",
+    "parameters": {
+      "total": 21594159,
+      "trainable": 7575591
+    },
+    "checks": [
+      "independent_loss_references_gradients_offset_collapse_and_ties",
+      "operators_reproducible_localized_and_zero_strength_identity",
+      "full_224px_xception_counts_decomposition_gradients_and_frozen_bn",
+      "schema_provenance_split_fixture_and_missing_review_rejections",
+      "C_D_only_alignment_loss_differs_same_views",
+      "all_four_arms_validation_replay_and_bitwise_epoch_resume",
+      "frozen_threshold_test_label_flip_paired_bootstrap_and_map_export"
+    ],
+    "scientific_performance_tested": false,
+    "real_interventions_validated": false,
+    "fixture_only": true,
+    "cuda_tested": false
+  },
+  "publication": {
+    "fork_push": "REMOTE_PERMISSION_DENIED",
+    "published_repository": "hardikbha/CFES-BeatDing",
+    "branch": "execution/forensic-response-c332fd34-20261103",
+    "confirmed_initial_commit": "0f80ffd"
+  }
 }
