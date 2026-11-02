@@ -1,19 +1,19 @@
 # Corrected-source forensic-response study: actual progress
 
-Observed management UTC: 2026-11-02T21:57:51.013024+00:00
+Observed management UTC: 2026-11-02T22:09:24.774961+00:00
 
 Execution commit `c332fd34fb603b8919b15fee08e8d022fb9f57c8`; script SHA256 `89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b`.
 
-User-authorized direct SSH with explicit shared pool-v2 GPU leases; not PBS allocations. Existing Ding source/jobs preserved. No TEST inference.
+C/D: authorized direct SSH shared GPU leases. A/B: actual PBS ngpus=2 resource-count allocation, distinct pool-v2 UUID bindings under user authorization; scheduler physical mapping unavailable unless recorded. No exclusive GPUs claimed. Existing Ding source/jobs preserved. No TEST inference.
 
-New-study task-held GPU time: **1.2625/24TOTAL GPU-hours**. Unspent conservative reservations: 5.8139hours. Count both GPUs at full task-held wall time, even when shared; not kernel-only/exclusive-H100 utilization. CPU preflight/review are not GPU time.
+New-study task-held GPU time: **1.7552/24TOTAL GPU-hours**. Unspent conservative reservations: 14.3212hours. Count both GPUs at full task-held wall time, even when shared; not kernel-only/exclusive-H100 utilization. CPU preflight/review are not GPU time.
 
 | Dataset | Arm | Verified process/completion state | Complete epochs | Selected so far | VAL AUC (%) | gender×race F_FPR (fraction) | FPR gap (pp) | Worst AUC (%) |
 |---|---|---|---:|---:|---:|---:|---:|---:|
-| ffpp | A | PENDING | 0/10 | — | — | — | — | — |
-| ffpp | B | PENDING | 0/10 | — | — | — | — | — |
-| ffpp | C | RUNNING | 4/10 | 1 | 98.3077 | 0.480534 | 30.9848 | 93.6205 |
-| ffpp | D | RUNNING | 1/10 | 1 | 98.2526 | 0.379345 | 23.8391 | 93.8519 |
+| ffpp | A | RUNNING | 0/10 | — | — | — | — | — |
+| ffpp | B | RUNNING | 0/10 | — | — | — | — | — |
+| ffpp | C | RUNNING | 6/10 | 1 | 98.3077 | 0.480534 | 30.9848 | 93.6205 |
+| ffpp | D | RUNNING | 2/10 | 1 | 98.2526 | 0.379345 | 23.8391 | 93.8519 |
 | ff2 | A | PENDING | 0/10 | — | — | — | — | — |
 | ff2 | B | PENDING | 0/10 | — | — | — | — | — |
 | ff2 | C | PENDING | 0/10 | — | — | — | — | — |
@@ -29,4 +29,6 @@ The original six-key audit is unchanged; two TRAIN/VAL declarations checked, fou
 
 The requested hardiksharma6555 fork rejected the evidence push. This separate branch is published in the previously authorized hardikbha upstream; no automatic merge.
 
-Finite observer: every10minutes for at most48hours, with transient SSH/push errors reported/retried. It cannot launch/retry training, generate reviews or access TEST. Separate explicit study_coordinator.py handles only the already-authorized A-D sequence and hash-matched documented budget resumes.
+Job43937 was stopped at the user request; it had8CPUs and no ngpus request. New PBS job45202 requests12CPUs/ngpus=2 for A/B in parallel with C/D. Exact grant, device UUIDs and overhead accounting are in LIVE_STATE.json.
+
+Finite observer: every10minutes until the original48hour deadline, with transient SSH/push errors reported/retried. It cannot launch/retry training, generate reviews or access TEST. Separate explicit study_coordinator.py handles only the already-authorized A-D sequence and hash-matched documented budget resumes.
