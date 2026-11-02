@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-02T23:09:52.162494+00:00",
+  "observed_management_utc": "2026-11-02T23:19:56.527927+00:00",
   "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
   "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
   "budget": {
@@ -7,8 +7,8 @@
     "source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-forensic-response-c332fd34",
     "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
     "initial_total_gpu_hours": 24,
-    "consumed_gpu_hours": 5.103501465747444,
-    "reserved_gpu_hours": 1.7450146567423104,
+    "consumed_gpu_hours": 5.274713101725922,
+    "reserved_gpu_hours": 1.5738030207638318,
     "gpu_sessions": [
       {
         "id": "ffpp_checks_primary",
@@ -160,7 +160,7 @@
         "id": "ffpp_D_resume3.0",
         "ngpus": 1,
         "reserved_gpu_hours": 1.8411256668494187,
-        "elapsed_seconds": 345.99963638558984,
+        "elapsed_seconds": 962.3615259081125,
         "state": "RUNNING",
         "route": "user_authorized_direct_ssh_pool_v2",
         "pbs_allocation_claimed": false,
@@ -6548,7 +6548,7 @@
               "id": "ffpp_D_resume3.0",
               "ngpus": 1,
               "reserved_gpu_hours": 1.8411256668494187,
-              "elapsed_seconds": 345.99963638558984,
+              "elapsed_seconds": 962.3615259081125,
               "state": "RUNNING",
               "route": "user_authorized_direct_ssh_pool_v2",
               "pbs_allocation_claimed": false,
@@ -6834,7 +6834,7 @@
     }
   },
   "coordinator": {
-    "observed_management_utc": "2026-11-02T23:09:49.114874+00:00",
+    "observed_management_utc": "2026-11-02T23:19:49.261076+00:00",
     "phase": "WAITING_ARM",
     "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
     "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
@@ -6884,7 +6884,7 @@
     },
     "pbs_observation": {
       "returncode": 0,
-      "job_state": "E",
+      "job_state": "F",
       "exec_vnode": "(gpu01:ncpus=12:ngpus=2:mem=25165824kb)"
     },
     "PBS_RESOURCE_GRANT.json": {
