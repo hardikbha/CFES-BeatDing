@@ -1,0 +1,13 @@
+{
+  "host": "gpu01",
+  "worker_pid": 2524844,
+  "command": [
+    "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+    "-u",
+    "/home/sachin.chaudhary/ces_fl_runs/ff2_originals_s17_20261102_r1/runtime/gpu_worker.py",
+    "--stage",
+    "smoke"
+  ],
+  "pbs_jobid": null,
+  "route": "previously authorized direct SSH"
+}

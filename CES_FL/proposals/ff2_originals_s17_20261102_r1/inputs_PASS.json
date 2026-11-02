@@ -1,0 +1,145 @@
+{
+  "status": "PASS",
+  "source_commit": "875bce025084871438ef799ca9086985c4375672",
+  "source_sha256": "0e001dd1251570ce43fb82bde307c519dea4045d9734506e1ce90d2ed014f8de",
+  "config_sha256": "db0c886527635295f0394dddbca9da1a8a3c40807609ab78f324b75b382fbee8",
+  "splits": {
+    "train": {
+      "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ff2/train.csv",
+      "sha256": "4f83e7dc8042533329d7047fefd0f30cbd96f45d42bde2666dd0edc7d58f29cc",
+      "rows": 218266,
+      "labels": {
+        "1": 201489,
+        "0": 16777
+      },
+      "every_image_path_is_file": true,
+      "all_images_decoded": false,
+      "required_columns": [
+        "image",
+        "label",
+        "identity_ids",
+        "source_ids"
+      ],
+      "ids8_label_counts": {
+        "1:7": 16408,
+        "1:5": 37421,
+        "1:3": 15516,
+        "1:1": 11388,
+        "1:6": 16695,
+        "1:0": 6545,
+        "1:4": 72307,
+        "1:2": 25209,
+        "0:7": 1520,
+        "0:5": 3222,
+        "0:1": 936,
+        "0:3": 1144,
+        "0:4": 5880,
+        "0:6": 1727,
+        "0:2": 1750,
+        "0:0": 598
+      },
+      "stratified_decoded_images": 64
+    },
+    "val": {
+      "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ff2/val.csv",
+      "sha256": "aeda051259d9e26b07c2810152b601ae115ce7c9e10523f99ea07bbc9f92afa8",
+      "rows": 31107,
+      "labels": {
+        "0": 2438,
+        "1": 28669
+      },
+      "every_image_path_is_file": true,
+      "all_images_decoded": false,
+      "required_columns": [
+        "image",
+        "label",
+        "identity_ids",
+        "source_ids"
+      ],
+      "ids8_label_counts": {
+        "0:7": 246,
+        "0:5": 474,
+        "0:1": 128,
+        "0:3": 156,
+        "0:4": 885,
+        "0:6": 231,
+        "0:2": 253,
+        "0:0": 65,
+        "1:7": 2526,
+        "1:3": 2134,
+        "1:5": 5324,
+        "1:6": 2324,
+        "1:4": 10547,
+        "1:1": 1536,
+        "1:2": 3499,
+        "1:0": 779
+      },
+      "stratified_decoded_images": 64
+    },
+    "test": {
+      "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ff2/test.csv",
+      "sha256": "dd5eb9ef070f658fe6b7f744c47f73e25ce7c53f948bc272f4f16c69a37d4099",
+      "rows": 87564,
+      "labels": {
+        "1": 82123,
+        "0": 5441
+      },
+      "every_image_path_is_file": true,
+      "all_images_decoded": false,
+      "required_columns": [
+        "image",
+        "label",
+        "identity_ids",
+        "source_ids"
+      ],
+      "ids8_label_counts": {
+        "1:5": 14740,
+        "1:3": 6947,
+        "1:7": 7420,
+        "1:1": 5177,
+        "1:4": 27483,
+        "1:6": 6239,
+        "1:0": 2645,
+        "1:2": 11472,
+        "0:5": 1041,
+        "0:4": 1940,
+        "0:7": 494,
+        "0:3": 361,
+        "0:1": 296,
+        "0:2": 585,
+        "0:6": 526,
+        "0:0": 198
+      }
+    }
+  },
+  "overlaps": {
+    "train:val": {
+      "overlap_counts": {
+        "identity_ids": 0,
+        "source_ids": 0
+      },
+      "exact_declared_benchmark_exception": false,
+      "person_ground_truth_verified": false
+    },
+    "train:test": {
+      "overlap_counts": {
+        "identity_ids": 0,
+        "source_ids": 0
+      },
+      "exact_declared_benchmark_exception": false,
+      "person_ground_truth_verified": false
+    },
+    "val:test": {
+      "overlap_counts": {
+        "identity_ids": 0,
+        "source_ids": 0
+      },
+      "exact_declared_benchmark_exception": false,
+      "person_ground_truth_verified": false
+    }
+  },
+  "true_person_or_hidden_donor_independence_verified": false,
+  "test_images_decoded_or_scored": false,
+  "training_started": false,
+  "counterfactuals_used": 0
+}

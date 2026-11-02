@@ -1,0 +1,15 @@
+{
+  "exit_code": 0,
+  "elapsed_seconds": 120.50569457933307,
+  "host": "gpu01",
+  "worker_pid": 2524844,
+  "root": "/home/sachin.chaudhary/ces_fl_runs/ff2_originals_s17_20261102_r1",
+  "stage": "smoke",
+  "physical_index": 4,
+  "gpu_uuid": "GPU-9b669a06-9156-a98e-2194-36f2fc11d7ca",
+  "free_mib": 81087,
+  "cuda_memory_fraction": 0.2,
+  "execution_mode": "direct_ssh_cooperative_idle_gpu",
+  "pbs_allocation": null,
+  "preexisting_processes_stopped": 0
+}

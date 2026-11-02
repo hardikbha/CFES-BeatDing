@@ -1,0 +1,55 @@
+{
+  "id": "ff2_originals_s17_20261102_r1",
+  "created_management_utc": "2026-11-02T05:19:22.095601+00:00",
+  "authorization": "User 2026-11-02: Also please start the training for Fairforge 2; prior explicit direct SSH gpu01/gpu02 route authorization persists.",
+  "scope": "Original-image CES-FL encoder pretraining P only; seed17; unchanged previously fixed10-epoch configuration. Full Ding/CES comparison and paired arms remain blocked. No test evaluation or image generation.",
+  "old_review": "CES_FL/proposals/ff2_supervisor_review_20261101_r1/REVIEW.md",
+  "old_config_exact_bytes_preserved": true,
+  "original_request_sha256": "2cdf985f1791bd877ed459f8ab204644ae516c213ae86c08b7fbea673d3906d3",
+  "source_dir": "/home/sachin.chaudhary/ces_fl_sources/ff2_p_s17_20261102_875bce0",
+  "source_commit": "875bce025084871438ef799ca9086985c4375672",
+  "source_sha256": "0e001dd1251570ce43fb82bde307c519dea4045d9734506e1ce90d2ed014f8de",
+  "config": "/home/sachin.chaudhary/ces_fl_runs/ff2_originals_s17_20261102_r1/P_ff2_bce_s17.json",
+  "config_sha256": "db0c886527635295f0394dddbca9da1a8a3c40807609ab78f324b75b382fbee8",
+  "weights_sha256": "43020ad2812c333d9f8e202b9fef94e579d07addb6582d69a1f68bbaec21aa90",
+  "splits": {
+    "train": {
+      "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ff2/train.csv",
+      "sha256": "4f83e7dc8042533329d7047fefd0f30cbd96f45d42bde2666dd0edc7d58f29cc",
+      "rows": 218266,
+      "labels": {
+        "1": 201489,
+        "0": 16777
+      }
+    },
+    "val": {
+      "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ff2/val.csv",
+      "sha256": "aeda051259d9e26b07c2810152b601ae115ce7c9e10523f99ea07bbc9f92afa8",
+      "rows": 31107,
+      "labels": {
+        "0": 2438,
+        "1": 28669
+      }
+    },
+    "test": {
+      "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ff2/test.csv",
+      "sha256": "dd5eb9ef070f658fe6b7f744c47f73e25ce7c53f948bc272f4f16c69a37d4099",
+      "rows": 87564,
+      "labels": {
+        "1": 82123,
+        "0": 5441
+      }
+    }
+  },
+  "selection": "earliest highest FF2 validation AUC only",
+  "calibration": "stored validation-real empirical targetFPR0.1; report achieved value",
+  "paired_arms": "BLOCKED_INPUTS; no-control approvals invented",
+  "no_auto_test": true,
+  "no_auto_downstream": true,
+  "execution_route": "direct SSH gpu01/gpu02, cooperative physical-device locks, memory cap, no claimed PBS reservation",
+  "runtime_root": "/home/sachin.chaudhary/ces_fl_runs/ff2_originals_s17_20261102_r1",
+  "runtime_hashes": {
+    "stage_program.py": "cae416cd54bda308797ca62bf3cd5d87231748e01630457949e28862b9e9c5b4",
+    "gpu_worker.py": "74d27950c463515946fb091efd0e6b9343748559890d2f9c727fd0879e8faf55"
+  }
+}

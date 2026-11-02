@@ -1,0 +1,18 @@
+{
+  "stage_program.py": "cae416cd54bda308797ca62bf3cd5d87231748e01630457949e28862b9e9c5b4",
+  "train_CHILD.json": "d0dc3c1a64462bacfc89568e1b3f8b6a2a3bea99575ff496db21ac1b708edff5",
+  "smoke_BINDING.json": "1ceee73114d6757b9e8b2517b4027ca1e27a0de7aee65ef1ea0274608fd73803",
+  "train_BINDING.json": "ed56c473021f88047386120565a3121cd9b12e2aa4bd863731d509e6b4a46531",
+  "smoke_CHILD.json": "01e96cfccbf1d12550bbf24475c204ca058a05b938f959ffe2da0a72ff70c368",
+  "smoke_PASS.json": "f5a39c857e52a52236957fa71c5fe502c685b7b88a42e5807e96901afa301d59",
+  "smoke_SUBMISSION.json": "6cc0e721ba1f4357bae9c89b5421317d27260674842dd415a31b6f90637a87ce",
+  "README.md": "5ba7ed5d5bee356d43fe8dfe4b2cb61e46222985664708ff5fa0d952e8385167",
+  "STATUS.md": "2764b5d911465d838d5dd0cf0ec44c968a2f210807d9ab72fc241825d91327a0",
+  "train_SUBMISSION.json": "fc637df863bffa076dbdaffe793d964da67b6b8d704a00d8b45b4039aaf83ae4",
+  "observe_publish.py": "9c5a59cbef3ed030b606604e65f14b76acf93381b81527af3cc5e18f17daeebb",
+  "smoke_EXIT.json": "2b4b94809b13e24ddb7a73ce72f3264d14ce8d7baa09bc281e9bd15d5c3ca9d9",
+  "P_ff2_bce_s17.json": "db0c886527635295f0394dddbca9da1a8a3c40807609ab78f324b75b382fbee8",
+  "inputs_PASS.json": "6c68103da02d095c9d4471e722939de68cb11c3918fdfaf547dbb1ac9558c64c",
+  "gpu_worker.py": "74d27950c463515946fb091efd0e6b9343748559890d2f9c727fd0879e8faf55",
+  "request.json": "9f48db7293b9e1ae78d578bf2e4b75a570a903c2a463b2685932722a6cfb3d48"
+}

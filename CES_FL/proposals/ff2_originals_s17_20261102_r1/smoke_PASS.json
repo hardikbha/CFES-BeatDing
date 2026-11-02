@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "binding": {
+    "device": "cuda:0",
+    "name": "NVIDIA H100 80GB HBM3",
+    "uuid": "9b669a06-9156-a98e-2194-36f2fc11d7ca",
+    "memory_fraction": 0.2
+  },
+  "source_sha256": "0e001dd1251570ce43fb82bde307c519dea4045d9734506e1ce90d2ed014f8de",
+  "config_sha256": "db0c886527635295f0394dddbca9da1a8a3c40807609ab78f324b75b382fbee8",
+  "synthetic_suite": {
+    "status": "PASS",
+    "device": "cuda",
+    "parameters": {
+      "total": 21594159,
+      "trainable": 787207
+    },
+    "script_sha256": "0e001dd1251570ce43fb82bde307c519dea4045d9734506e1ce90d2ed014f8de",
+    "global_patch_heads_and_gates_receive_finite_nonzero_gradients": true,
+    "encoder_and_bn_frozen": true,
+    "signed_local_map_decomposes_final_logit_with_global_and_bias": true,
+    "mixed_empty_cuda_safe_pair_indices": true,
+    "separate_and_coupled_loss_numerical_reference": true,
+    "invalid_spatial_pairs_excluded": true,
+    "tied_finite_sample_threshold_tested": true,
+    "checkpoint_save_reload": true,
+    "test_not_used_during_training": true,
+    "threshold_unchanged_after_test_label_flip": true,
+    "map_export_executed": true,
+    "data": "synthetic software tests; no fairness/validity/performance conclusion"
+  },
+  "real_train_only_optimizer_steps": 2,
+  "real_losses": [
+    0.7159984707832336,
+    0.7062544226646423
+  ],
+  "parameter_counts": {
+    "total": 21594159,
+    "trainable": 21594159
+  },
+  "parameters_receiving_gradients": {
+    "encoder": 20806952,
+    "global_head": 262401,
+    "patch_head": 262401,
+    "image_gate": 131201,
+    "patch_gate": 131201
+  },
+  "encoder_parameters_changed": true,
+  "BN_buffers_changed": true,
+  "no_counterfactuals": true,
+  "no_real_validation_or_test_gradient_updates": true
+}

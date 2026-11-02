@@ -1,0 +1,13 @@
+{
+  "host": "gpu01",
+  "worker_pid": 2525919,
+  "command": [
+    "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+    "-u",
+    "/home/sachin.chaudhary/ces_fl_runs/ff2_originals_s17_20261102_r1/runtime/gpu_worker.py",
+    "--stage",
+    "train"
+  ],
+  "pbs_jobid": null,
+  "route": "user-authorized direct SSH; current idle GPU selected by guarded worker"
+}

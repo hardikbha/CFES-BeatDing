@@ -1,5 +1,11 @@
 # CES-FL — supervisor review and training handoff
 
+## Actual Ding reproduction and FairForge-2 launch — 2 November 2026
+
+[Our archived Ding reproduction versus CES-FL](results/ding_reproduced_vs_cesfl_20261102/REPORT.md) uses measured local checkpoints rather than the paper's numbers. All four TEST memberships and FF++ TRAIN/VAL memberships match exactly. Full local Ding seed7 AUC97.44/56.05/71.22/72.54%; CES-FL B/C seed17 have higher AUC on all four datasets, with disclosed differences in preprocessing, seeds, optimization, checkpoint selection and archived GDA behavior. Full fairness metrics and native aggregate files are included.
+
+[FairForge-2 original-only pretraining request and actual checks](proposals/ff2_originals_s17_20261102_r1/README.md): original public TRAIN218,266/VAL31,107, seed17, unchanged ten-epoch configuration. Fresh input and CUDA/real backward checks PASS. Actual launch evidence and state: [execution status](proposals/ff2_originals_s17_20261102_r1/STATUS.md). This releases P only; full Ding comparison and paired arms retain their review blockers. No TEST evaluation is attached.
+
 ## Ding-format Tables 1, 2 and 3 — 2 November 2026
 
 [Table 1: FF++](results/ding_format_tables_s17_20261102/TABLE_1.md) · [Table 2: cross-domain](results/ding_format_tables_s17_20261102/TABLE_2.md) · [Table 3: ResNet-50](results/ding_format_tables_s17_20261102/TABLE_3.md) · [Combined PDF](results/ding_format_tables_s17_20261102/TABLES_1_2_3.pdf).
