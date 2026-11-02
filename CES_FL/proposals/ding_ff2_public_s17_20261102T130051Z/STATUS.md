@@ -1,11 +1,23 @@
-# Execution observation
+# Actual execution status
 
-2026-11-02T13:38:34.288483+00:00
+Observed management UTC: **2026-11-02T13:46:44.643760+00:00**.
 
-Input preflight PASS; eight CPU tests PASS. Source freezing for direct SSH two-GPU CUDA smoke. No training launched at this snapshot. GPU0/2 are compatible shared-pool candidates on gpu01; actual claim/binding is rechecked atomically by the operator.
+State: **RUNNING**. Source commit `8487d98303fd5d7766fef2fa3dd32c37f38e5f4b`.
 
-Run: `/home/sachin.chaudhary/ces_fl_runs/ding_ff2_public_s17_20261102T130051Z`
+Host `gpu01`, physical GPUs0/2 in shared pool-v2 mode; no PBS allocation or exclusive CPU/GPU ownership claimed.
+Controller PID `2754578`, training torchrun PID `2754977`.
 
-Master training log: `/home/sachin.chaudhary/ces_fl_runs/ding_ff2_public_s17_20261102T130051Z/logs/training.log`
+Latest recorded event: `TRAIN_STEP`, stage `classification`, epoch `1`, batch `350/3149`, loss `0.4968530535697937`.
 
-User authorizes this original-only Ding-architecture baseline only; corrected GDA deviations are declared in README.md. No automatic TEST evaluation or counterfactual generation/training.
+Eight CPU tests PASS; real-TRAIN full-native-batch two-GPU CUDA smoke PASS. 128classification images/update; 64main+64auxiliary GDA images/update; 224px; seed17;50classification→TRAIN-SFD→50corrected-GDAepochs.
+Corrected differentiable class-conditioned GDA with frozen encoder BN is explicitly distinguished from the detached archived GDA and paper results. No new validation score exists until an epoch finishes. No TEST inference is attached.
+
+Continuous private log: `/home/sachin.chaudhary/ces_fl_runs/ding_ff2_public_s17_20261102T130051Z/logs/training.log`.
+
+Initial launch failed before GPU claim because compute nodes lack Git; a private byte-identical copy of management /usr/bin/git fixed source verification. Its hash and command are in execution_receipt.json. Model code/settings were unchanged.
+
+Compute-node wall clock is approximately649s behind management at launch; preserve both clocks. Elapsed timings are node-local.
+
+Finite observation/publication only, every15min for at most72h; no training retries or new jobs.
+
+See live_status.json for verified process observation, aggregate validation/group metrics, checkpoint hashes and completion/failure state. Review historical PROJECT_BLUEPRINT.md as a dated snapshot; this page is the execution update.
