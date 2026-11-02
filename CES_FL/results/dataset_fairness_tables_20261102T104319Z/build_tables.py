@@ -148,6 +148,6 @@ snapshot={'observed_management_utc':datetime.datetime.now(datetime.timezone.utc)
 for name,records in [('AXIS_METRICS.csv',AXIS_ROWS),('GROUP_METRICS.csv',GROUP_ROWS),('OVERALL_METRICS.csv',OVERALL_ROWS),('TRANSFER_EXISTING_CI.csv',CI_ROWS)]:
  fields=list(dict.fromkeys(k for row in records for k in row))
  with (ROOT/name).open('w',newline='') as f:
-  w=csv.DictWriter(f,fieldnames=fields);w.writeheader();w.writerows(records)
+  w=csv.DictWriter(f,fieldnames=fields,lineterminator="\n");w.writeheader();w.writerows(records)
 summary={'status':'PASS','tex':str(ROOT/'ding_and_fairforge2_tables.tex'),'source_records':len(SOURCES),'public_axis_rows':len(AXIS_ROWS),'public_group_rows':len(GROUP_ROWS),'existing_CI_rows':len(CI_ROWS),'Ding_legacy_exports':len(ding_exports),'source_metrics_only':True}
 (ROOT/'EXPORT_CHECK.json').write_text(json.dumps(summary,indent=2)+'\n');print(json.dumps(summary,indent=2))
