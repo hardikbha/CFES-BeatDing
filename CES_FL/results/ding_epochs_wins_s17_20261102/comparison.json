@@ -1,0 +1,1306 @@
+{
+  "created_management_utc": "2026-11-02T04:54:25.307149+00:00",
+  "snapshot_path": "CES_FL/results/ding_format_tables_s17_20261102/source_snapshot.json",
+  "snapshot_sha256": "ff2e6cf363c0ff2f2999c35a7dbe4ec6c83fe7c1953502eef2775a58fb3cf001",
+  "method": "40 unique cells: four datasets \u00d7 (three attributes \u00d7 three fairness metrics + overall AUC once)",
+  "tie_tolerance_in_percentage_points": 1e-12,
+  "main_operating_point": "Previously stored validation-only calibrated threshold; never selected using test",
+  "first_epoch_to_surpass_ding": "UNAVAILABLE: no TEST comparison evaluated for every epoch",
+  "training_launched": false,
+  "inference_launched": false,
+  "pretraining": {
+    "Xception": {
+      "path": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/full_experiment_runs/P_pretrain",
+      "configured_epochs": 10,
+      "completed_epochs": 10,
+      "selected_epoch": 9,
+      "checkpoint_sha256_from_receipt": "484f09d6f826aa4baf1e4d6413813aa8608e320349082be377617c9f943e9dc8",
+      "config_sha256": "557e7bea31c40c122bc22a5dee4af818d6e2974ab840696e9d29ca465d269b1a",
+      "history_sha256": "fc514ad5777f5fe060cfdbada723ecad141b9cece5eca850a5d6643ce7191fe3",
+      "receipt_path": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/full_experiment_runs/P_pretrain/RUN_VERIFIED.json",
+      "receipt_sha256": "3964799eb7e6401aa03315643474e1a4ed4015aa613acb217891433d112730b8"
+    },
+    "ResNet-50": {
+      "path": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401/full_experiment_runs/P_resnet50",
+      "configured_epochs": 10,
+      "completed_epochs": 10,
+      "selected_epoch": 7,
+      "checkpoint_sha256_from_receipt": "f67d7314f27f8df0940ea4c0b5217b96abcc0e10a76129f097b0674c675ea765",
+      "config_sha256": "db654cc3c7529d5940786bab307d458bc73966737eabf615c0123595aa030414",
+      "history_sha256": "8ddab896f74a0600145e48c0ff96dc5efc25248e11a326ca35513bd7f76a8556",
+      "receipt_path": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401/full_experiment_runs/P_resnet50/RUN_VERIFIED.json",
+      "receipt_sha256": "19d8acc58ce454c533d8f1a2c53d1b532038f178082517f34439a6894af405a5"
+    }
+  },
+  "arms": [
+    {
+      "id": "A_imagenet_frozen",
+      "label": "CES-FL A: ImageNet frozen",
+      "backbone": "Xception",
+      "seed": 17,
+      "training": {
+        "path": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/full_experiment_runs/A_imagenet_frozen",
+        "configured_epochs": 10,
+        "completed_epochs": 10,
+        "selected_epoch": 8,
+        "checkpoint_sha256_from_receipt": "069c01386bbdd20b4590d7afa3a9d0e5ccad33c5531c19cfc471f4e84efcc5b0",
+        "config_sha256": "8ccbcc88070634850710204ddfb502959f046d5de5b95c860e08db0561ba6024",
+        "history_sha256": "7be4839e0859de77b4fbdd0d371eac647ca985375b1fbaad6bb13db56af11e83",
+        "receipt_path": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/full_experiment_runs/A_imagenet_frozen/RUN_VERIFIED.json",
+        "receipt_sha256": "c77ae4b0ed519c97e8c50787b64769d577fc9720d60bbdb7c9f7fdd5da9b3903"
+      },
+      "pretraining": null,
+      "reports": {
+        "calibrated": {
+          "counts": {
+            "loss": 30,
+            "win": 10
+          },
+          "per_dataset": {
+            "ffpp": {
+              "loss": 10
+            },
+            "dfdc": {
+              "loss": 7,
+              "win": 3
+            },
+            "celebdf": {
+              "win": 2,
+              "loss": 8
+            },
+            "dfd": {
+              "win": 5,
+              "loss": 5
+            }
+          },
+          "per_metric": {
+            "F_FPR": {
+              "loss": 7,
+              "win": 5
+            },
+            "F_DP": {
+              "loss": 7,
+              "win": 5
+            },
+            "es_AUC": {
+              "loss": 12
+            },
+            "AUC": {
+              "loss": 4
+            }
+          },
+          "fairness_wins_of_36": 10,
+          "auc_wins_of_4": 0,
+          "table1_raw_wins_of_12": 0
+        },
+        "fixed_probability_0_5": {
+          "counts": {
+            "loss": 27,
+            "win": 13
+          },
+          "per_dataset": {
+            "ffpp": {
+              "loss": 10
+            },
+            "dfdc": {
+              "win": 6,
+              "loss": 4
+            },
+            "celebdf": {
+              "win": 3,
+              "loss": 7
+            },
+            "dfd": {
+              "win": 4,
+              "loss": 6
+            }
+          },
+          "per_metric": {
+            "F_FPR": {
+              "loss": 4,
+              "win": 8
+            },
+            "F_DP": {
+              "loss": 7,
+              "win": 5
+            },
+            "es_AUC": {
+              "loss": 12
+            },
+            "AUC": {
+              "loss": 4
+            }
+          },
+          "fairness_wins_of_36": 13,
+          "auc_wins_of_4": 0,
+          "table1_raw_wins_of_12": 0
+        }
+      }
+    },
+    {
+      "id": "B_detection_frozen",
+      "label": "CES-FL B: detection frozen + BCE",
+      "backbone": "Xception",
+      "seed": 17,
+      "training": {
+        "path": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/full_experiment_runs/B_detection_frozen",
+        "configured_epochs": 10,
+        "completed_epochs": 10,
+        "selected_epoch": 7,
+        "checkpoint_sha256_from_receipt": "c3d456a6ce940d8e8aa1dd577001d11efd3bc9ef793a156826b3960c2f4e55c2",
+        "config_sha256": "624e99df4eea1c4060e0de67930b20475991635c24be436c5113835b57f501a1",
+        "history_sha256": "44d1e908c0013d832b768ffffab47d55e115e4ffc6a45b190692a0b00ab6d4fe",
+        "receipt_path": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/full_experiment_runs/B_detection_frozen/RUN_VERIFIED.json",
+        "receipt_sha256": "97bade8582832c6a7081604d491dc70b2dd1e239fd2e52706ea75aa8870e77ac"
+      },
+      "pretraining": {
+        "path": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/full_experiment_runs/P_pretrain",
+        "configured_epochs": 10,
+        "completed_epochs": 10,
+        "selected_epoch": 9,
+        "checkpoint_sha256_from_receipt": "484f09d6f826aa4baf1e4d6413813aa8608e320349082be377617c9f943e9dc8",
+        "config_sha256": "557e7bea31c40c122bc22a5dee4af818d6e2974ab840696e9d29ca465d269b1a",
+        "history_sha256": "fc514ad5777f5fe060cfdbada723ecad141b9cece5eca850a5d6643ce7191fe3",
+        "receipt_path": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/full_experiment_runs/P_pretrain/RUN_VERIFIED.json",
+        "receipt_sha256": "3964799eb7e6401aa03315643474e1a4ed4015aa613acb217891433d112730b8"
+      },
+      "reports": {
+        "calibrated": {
+          "counts": {
+            "loss": 23,
+            "win": 17
+          },
+          "per_dataset": {
+            "ffpp": {
+              "loss": 4,
+              "win": 6
+            },
+            "dfdc": {
+              "loss": 6,
+              "win": 4
+            },
+            "celebdf": {
+              "loss": 10
+            },
+            "dfd": {
+              "loss": 3,
+              "win": 7
+            }
+          },
+          "per_metric": {
+            "F_FPR": {
+              "loss": 11,
+              "win": 1
+            },
+            "F_DP": {
+              "win": 6,
+              "loss": 6
+            },
+            "es_AUC": {
+              "win": 8,
+              "loss": 4
+            },
+            "AUC": {
+              "win": 2,
+              "loss": 2
+            }
+          },
+          "fairness_wins_of_36": 15,
+          "auc_wins_of_4": 2,
+          "table1_raw_wins_of_12": 8
+        },
+        "fixed_probability_0_5": {
+          "counts": {
+            "win": 17,
+            "loss": 23
+          },
+          "per_dataset": {
+            "ffpp": {
+              "win": 6,
+              "loss": 4
+            },
+            "dfdc": {
+              "loss": 6,
+              "win": 4
+            },
+            "celebdf": {
+              "loss": 10
+            },
+            "dfd": {
+              "loss": 3,
+              "win": 7
+            }
+          },
+          "per_metric": {
+            "F_FPR": {
+              "win": 2,
+              "loss": 10
+            },
+            "F_DP": {
+              "loss": 7,
+              "win": 5
+            },
+            "es_AUC": {
+              "win": 8,
+              "loss": 4
+            },
+            "AUC": {
+              "win": 2,
+              "loss": 2
+            }
+          },
+          "fairness_wins_of_36": 15,
+          "auc_wins_of_4": 2,
+          "table1_raw_wins_of_12": 8
+        }
+      }
+    },
+    {
+      "id": "C_detection_invariance",
+      "label": "CES-FL C: detection frozen + invariance",
+      "backbone": "Xception",
+      "seed": 17,
+      "training": {
+        "path": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/full_experiment_runs/C_detection_invariance",
+        "configured_epochs": 10,
+        "completed_epochs": 10,
+        "selected_epoch": 3,
+        "checkpoint_sha256_from_receipt": "3d8f461d5a8bd5a5d36d4cc733317821e5d1bcc454937a7ebc5d7f43bdf138a4",
+        "config_sha256": "c3cf09626610c6a869f1702353d44961d03891acaa323d0254de8b9531105665",
+        "history_sha256": "58c0f8c4de06241d54c2942b05456561e5664c34ed22bb1eeee8dd45f78471a7",
+        "receipt_path": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/full_experiment_runs/C_detection_invariance/RUN_VERIFIED.json",
+        "receipt_sha256": "59a6020ee57fd30193219a1f40475262b217ffef923b0159a08df5ac48be8008"
+      },
+      "pretraining": {
+        "path": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/full_experiment_runs/P_pretrain",
+        "configured_epochs": 10,
+        "completed_epochs": 10,
+        "selected_epoch": 9,
+        "checkpoint_sha256_from_receipt": "484f09d6f826aa4baf1e4d6413813aa8608e320349082be377617c9f943e9dc8",
+        "config_sha256": "557e7bea31c40c122bc22a5dee4af818d6e2974ab840696e9d29ca465d269b1a",
+        "history_sha256": "fc514ad5777f5fe060cfdbada723ecad141b9cece5eca850a5d6643ce7191fe3",
+        "receipt_path": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/full_experiment_runs/P_pretrain/RUN_VERIFIED.json",
+        "receipt_sha256": "3964799eb7e6401aa03315643474e1a4ed4015aa613acb217891433d112730b8"
+      },
+      "reports": {
+        "calibrated": {
+          "counts": {
+            "loss": 23,
+            "win": 17
+          },
+          "per_dataset": {
+            "ffpp": {
+              "loss": 4,
+              "win": 6
+            },
+            "dfdc": {
+              "loss": 5,
+              "win": 5
+            },
+            "celebdf": {
+              "loss": 10
+            },
+            "dfd": {
+              "loss": 4,
+              "win": 6
+            }
+          },
+          "per_metric": {
+            "F_FPR": {
+              "loss": 11,
+              "win": 1
+            },
+            "F_DP": {
+              "win": 7,
+              "loss": 5
+            },
+            "es_AUC": {
+              "win": 8,
+              "loss": 4
+            },
+            "AUC": {
+              "win": 1,
+              "loss": 3
+            }
+          },
+          "fairness_wins_of_36": 16,
+          "auc_wins_of_4": 1,
+          "table1_raw_wins_of_12": 8
+        },
+        "fixed_probability_0_5": {
+          "counts": {
+            "loss": 23,
+            "win": 17
+          },
+          "per_dataset": {
+            "ffpp": {
+              "loss": 5,
+              "win": 5
+            },
+            "dfdc": {
+              "loss": 6,
+              "win": 4
+            },
+            "celebdf": {
+              "loss": 10
+            },
+            "dfd": {
+              "win": 8,
+              "loss": 2
+            }
+          },
+          "per_metric": {
+            "F_FPR": {
+              "loss": 9,
+              "win": 3
+            },
+            "F_DP": {
+              "loss": 7,
+              "win": 5
+            },
+            "es_AUC": {
+              "win": 8,
+              "loss": 4
+            },
+            "AUC": {
+              "win": 1,
+              "loss": 3
+            }
+          },
+          "fairness_wins_of_36": 16,
+          "auc_wins_of_4": 1,
+          "table1_raw_wins_of_12": 7
+        }
+      }
+    },
+    {
+      "id": "A_resnet50",
+      "label": "CES-FL A: ImageNet frozen",
+      "backbone": "ResNet-50",
+      "seed": 17,
+      "training": {
+        "path": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401/full_experiment_runs/A_resnet50",
+        "configured_epochs": 10,
+        "completed_epochs": 10,
+        "selected_epoch": 9,
+        "checkpoint_sha256_from_receipt": "d7baf4aaefb2902b4b9dba79be08c13fdf9b912b5c0566c0a76b5afc726d436c",
+        "config_sha256": "b74dcd63a5d7b2d8588829412d64756f780f7f5fb731712cd84b31363143d537",
+        "history_sha256": "60d4337d5ad32d00458c0710f70985cd34880c88b942f58c4183a60b0b2236d2",
+        "receipt_path": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401/full_experiment_runs/A_resnet50/RUN_VERIFIED.json",
+        "receipt_sha256": "923e85c94408906ace39f483727dc835694038b418dc64bd1f0a7c123340f0ce"
+      },
+      "pretraining": null,
+      "reports": {
+        "calibrated": {
+          "counts": {
+            "win": 7,
+            "loss": 33
+          },
+          "per_dataset": {
+            "ffpp": {
+              "win": 2,
+              "loss": 8
+            },
+            "dfdc": {
+              "loss": 8,
+              "win": 2
+            },
+            "celebdf": {
+              "loss": 9,
+              "win": 1
+            },
+            "dfd": {
+              "loss": 8,
+              "win": 2
+            }
+          },
+          "per_metric": {
+            "F_FPR": {
+              "win": 3,
+              "loss": 9
+            },
+            "F_DP": {
+              "win": 4,
+              "loss": 8
+            },
+            "es_AUC": {
+              "loss": 12
+            },
+            "AUC": {
+              "loss": 4
+            }
+          },
+          "fairness_wins_of_36": 7,
+          "auc_wins_of_4": 0,
+          "table1_raw_wins_of_12": null
+        },
+        "fixed_probability_0_5": {
+          "counts": {
+            "win": 13,
+            "loss": 27
+          },
+          "per_dataset": {
+            "ffpp": {
+              "win": 2,
+              "loss": 8
+            },
+            "dfdc": {
+              "win": 5,
+              "loss": 5
+            },
+            "celebdf": {
+              "win": 5,
+              "loss": 5
+            },
+            "dfd": {
+              "win": 1,
+              "loss": 9
+            }
+          },
+          "per_metric": {
+            "F_FPR": {
+              "win": 7,
+              "loss": 5
+            },
+            "F_DP": {
+              "win": 6,
+              "loss": 6
+            },
+            "es_AUC": {
+              "loss": 12
+            },
+            "AUC": {
+              "loss": 4
+            }
+          },
+          "fairness_wins_of_36": 13,
+          "auc_wins_of_4": 0,
+          "table1_raw_wins_of_12": null
+        }
+      }
+    },
+    {
+      "id": "B_resnet50",
+      "label": "CES-FL B: detection frozen + BCE",
+      "backbone": "ResNet-50",
+      "seed": 17,
+      "training": {
+        "path": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401/full_experiment_runs/B_resnet50",
+        "configured_epochs": 10,
+        "completed_epochs": 10,
+        "selected_epoch": 3,
+        "checkpoint_sha256_from_receipt": "a9896a3ab829a344d343143d6cc3fcfcb93c48548781e3b3c1694620308562cf",
+        "config_sha256": "ead7d1c568af0c136f6aad5df291e541063fd553ff53bce9a858cb6744302111",
+        "history_sha256": "46da2a5f3f44df59adfe5656853dee5ff3da92b3e3f4b8996b8d778da701fb70",
+        "receipt_path": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401/full_experiment_runs/B_resnet50/RUN_VERIFIED.json",
+        "receipt_sha256": "2fe94dc3902876b89dbdc23ca4592e2f784e99eb1742da296cd5fc81cf2869ff"
+      },
+      "pretraining": {
+        "path": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401/full_experiment_runs/P_resnet50",
+        "configured_epochs": 10,
+        "completed_epochs": 10,
+        "selected_epoch": 7,
+        "checkpoint_sha256_from_receipt": "f67d7314f27f8df0940ea4c0b5217b96abcc0e10a76129f097b0674c675ea765",
+        "config_sha256": "db654cc3c7529d5940786bab307d458bc73966737eabf615c0123595aa030414",
+        "history_sha256": "8ddab896f74a0600145e48c0ff96dc5efc25248e11a326ca35513bd7f76a8556",
+        "receipt_path": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401/full_experiment_runs/P_resnet50/RUN_VERIFIED.json",
+        "receipt_sha256": "19d8acc58ce454c533d8f1a2c53d1b532038f178082517f34439a6894af405a5"
+      },
+      "reports": {
+        "calibrated": {
+          "counts": {
+            "win": 5,
+            "loss": 35
+          },
+          "per_dataset": {
+            "ffpp": {
+              "win": 2,
+              "loss": 8
+            },
+            "dfdc": {
+              "loss": 9,
+              "win": 1
+            },
+            "celebdf": {
+              "loss": 10
+            },
+            "dfd": {
+              "loss": 8,
+              "win": 2
+            }
+          },
+          "per_metric": {
+            "F_FPR": {
+              "win": 1,
+              "loss": 11
+            },
+            "F_DP": {
+              "loss": 11,
+              "win": 1
+            },
+            "es_AUC": {
+              "loss": 10,
+              "win": 2
+            },
+            "AUC": {
+              "win": 1,
+              "loss": 3
+            }
+          },
+          "fairness_wins_of_36": 4,
+          "auc_wins_of_4": 1,
+          "table1_raw_wins_of_12": null
+        },
+        "fixed_probability_0_5": {
+          "counts": {
+            "win": 7,
+            "loss": 33
+          },
+          "per_dataset": {
+            "ffpp": {
+              "win": 3,
+              "loss": 7
+            },
+            "dfdc": {
+              "win": 3,
+              "loss": 7
+            },
+            "celebdf": {
+              "loss": 10
+            },
+            "dfd": {
+              "loss": 9,
+              "win": 1
+            }
+          },
+          "per_metric": {
+            "F_FPR": {
+              "win": 2,
+              "loss": 10
+            },
+            "F_DP": {
+              "win": 2,
+              "loss": 10
+            },
+            "es_AUC": {
+              "loss": 10,
+              "win": 2
+            },
+            "AUC": {
+              "win": 1,
+              "loss": 3
+            }
+          },
+          "fairness_wins_of_36": 6,
+          "auc_wins_of_4": 1,
+          "table1_raw_wins_of_12": null
+        }
+      }
+    },
+    {
+      "id": "C_resnet50",
+      "label": "CES-FL C: detection frozen + invariance",
+      "backbone": "ResNet-50",
+      "seed": 17,
+      "training": {
+        "path": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401/full_experiment_runs/C_resnet50",
+        "configured_epochs": 10,
+        "completed_epochs": 10,
+        "selected_epoch": 3,
+        "checkpoint_sha256_from_receipt": "6be2e37e22b53863fbb00430847e4be72f87724404cfb549ef62b6c9ece92c29",
+        "config_sha256": "3b2cdee054c1d07515a30c8c5f86a2ed9fff63aa7e2c4da6f1263bb1007c4218",
+        "history_sha256": "8f0d41cff7f9e9b0756686741ebf3999cc1289b30995c2e5855ba476ebdb9dc2",
+        "receipt_path": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401/full_experiment_runs/C_resnet50/RUN_VERIFIED.json",
+        "receipt_sha256": "1c09071dc974b88f70a36daf1f5748f510e83857dabab65543b3d2265f5c0a3f"
+      },
+      "pretraining": {
+        "path": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401/full_experiment_runs/P_resnet50",
+        "configured_epochs": 10,
+        "completed_epochs": 10,
+        "selected_epoch": 7,
+        "checkpoint_sha256_from_receipt": "f67d7314f27f8df0940ea4c0b5217b96abcc0e10a76129f097b0674c675ea765",
+        "config_sha256": "db654cc3c7529d5940786bab307d458bc73966737eabf615c0123595aa030414",
+        "history_sha256": "8ddab896f74a0600145e48c0ff96dc5efc25248e11a326ca35513bd7f76a8556",
+        "receipt_path": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401/full_experiment_runs/P_resnet50/RUN_VERIFIED.json",
+        "receipt_sha256": "19d8acc58ce454c533d8f1a2c53d1b532038f178082517f34439a6894af405a5"
+      },
+      "reports": {
+        "calibrated": {
+          "counts": {
+            "win": 5,
+            "loss": 35
+          },
+          "per_dataset": {
+            "ffpp": {
+              "win": 2,
+              "loss": 8
+            },
+            "dfdc": {
+              "loss": 9,
+              "win": 1
+            },
+            "celebdf": {
+              "loss": 10
+            },
+            "dfd": {
+              "loss": 8,
+              "win": 2
+            }
+          },
+          "per_metric": {
+            "F_FPR": {
+              "win": 1,
+              "loss": 11
+            },
+            "F_DP": {
+              "loss": 11,
+              "win": 1
+            },
+            "es_AUC": {
+              "loss": 10,
+              "win": 2
+            },
+            "AUC": {
+              "win": 1,
+              "loss": 3
+            }
+          },
+          "fairness_wins_of_36": 4,
+          "auc_wins_of_4": 1,
+          "table1_raw_wins_of_12": null
+        },
+        "fixed_probability_0_5": {
+          "counts": {
+            "win": 7,
+            "loss": 33
+          },
+          "per_dataset": {
+            "ffpp": {
+              "win": 3,
+              "loss": 7
+            },
+            "dfdc": {
+              "win": 3,
+              "loss": 7
+            },
+            "celebdf": {
+              "loss": 10
+            },
+            "dfd": {
+              "loss": 9,
+              "win": 1
+            }
+          },
+          "per_metric": {
+            "F_FPR": {
+              "win": 2,
+              "loss": 10
+            },
+            "F_DP": {
+              "win": 2,
+              "loss": 10
+            },
+            "es_AUC": {
+              "loss": 10,
+              "win": 2
+            },
+            "AUC": {
+              "win": 1,
+              "loss": 3
+            }
+          },
+          "fairness_wins_of_36": 6,
+          "auc_wins_of_4": 1,
+          "table1_raw_wins_of_12": null
+        }
+      }
+    },
+    {
+      "id": "R0_frozen_bce",
+      "label": "CES-FL upgrade R0: frozen BCE",
+      "backbone": "Xception",
+      "seed": 17,
+      "training": {
+        "path": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/R0_frozen_bce/training",
+        "configured_epochs": 10,
+        "completed_epochs": 10,
+        "selected_epoch": 7,
+        "checkpoint_sha256_from_receipt": "fbd276362ef31605b63a6dc3a14f52d57626ed48183a27bd8004ab6400d57b3a",
+        "config_sha256": "a69bd73ac4690d4ebe36ecd9971c4657598a73103ce71e037ffec05724ed6891",
+        "history_sha256": "4a26da38a346c476a5d35f0df982a4420f498cccb12e16a44fee6b93aeafcba9",
+        "receipt_path": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_tests_s17_20261101T040407Z/validation_audit/R0_frozen_bce/replay.json",
+        "receipt_sha256": "ce759be132240b2a4e217ebeadc83162111cff724114c5aad36647b9c25ff188"
+      },
+      "pretraining": {
+        "path": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/full_experiment_runs/P_pretrain",
+        "configured_epochs": 10,
+        "completed_epochs": 10,
+        "selected_epoch": 9,
+        "checkpoint_sha256_from_receipt": "484f09d6f826aa4baf1e4d6413813aa8608e320349082be377617c9f943e9dc8",
+        "config_sha256": "557e7bea31c40c122bc22a5dee4af818d6e2974ab840696e9d29ca465d269b1a",
+        "history_sha256": "fc514ad5777f5fe060cfdbada723ecad141b9cece5eca850a5d6643ce7191fe3",
+        "receipt_path": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/full_experiment_runs/P_pretrain/RUN_VERIFIED.json",
+        "receipt_sha256": "3964799eb7e6401aa03315643474e1a4ed4015aa613acb217891433d112730b8"
+      },
+      "reports": {
+        "calibrated": {
+          "counts": {
+            "loss": 23,
+            "win": 17
+          },
+          "per_dataset": {
+            "ffpp": {
+              "loss": 4,
+              "win": 6
+            },
+            "dfdc": {
+              "loss": 6,
+              "win": 4
+            },
+            "celebdf": {
+              "loss": 10
+            },
+            "dfd": {
+              "loss": 3,
+              "win": 7
+            }
+          },
+          "per_metric": {
+            "F_FPR": {
+              "loss": 11,
+              "win": 1
+            },
+            "F_DP": {
+              "win": 6,
+              "loss": 6
+            },
+            "es_AUC": {
+              "win": 8,
+              "loss": 4
+            },
+            "AUC": {
+              "win": 2,
+              "loss": 2
+            }
+          },
+          "fairness_wins_of_36": 15,
+          "auc_wins_of_4": 2,
+          "table1_raw_wins_of_12": 8
+        },
+        "fixed_probability_0_5": {
+          "counts": {
+            "win": 17,
+            "loss": 23
+          },
+          "per_dataset": {
+            "ffpp": {
+              "win": 6,
+              "loss": 4
+            },
+            "dfdc": {
+              "loss": 6,
+              "win": 4
+            },
+            "celebdf": {
+              "loss": 10
+            },
+            "dfd": {
+              "loss": 3,
+              "win": 7
+            }
+          },
+          "per_metric": {
+            "F_FPR": {
+              "win": 2,
+              "loss": 10
+            },
+            "F_DP": {
+              "loss": 7,
+              "win": 5
+            },
+            "es_AUC": {
+              "win": 8,
+              "loss": 4
+            },
+            "AUC": {
+              "win": 2,
+              "loss": 2
+            }
+          },
+          "fairness_wins_of_36": 15,
+          "auc_wins_of_4": 2,
+          "table1_raw_wins_of_12": 8
+        }
+      }
+    },
+    {
+      "id": "R1_partial_bce",
+      "label": "CES-FL upgrade R1: partial BCE",
+      "backbone": "Xception",
+      "seed": 17,
+      "training": {
+        "path": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/R1_partial_bce/training",
+        "configured_epochs": 10,
+        "completed_epochs": 10,
+        "selected_epoch": 1,
+        "checkpoint_sha256_from_receipt": "05bf73a544e7b513f6075ff3a70da0a75aeb16ddf70f55c4fff03a45a9e6e517",
+        "config_sha256": "e5236a5808f73dc72ce0f464aec19684e9faaccd3690c7436bfe1daf5b35a6e7",
+        "history_sha256": "3bde7652959a582c009469191514673cdba96ec8c3db0ad62772b00e7957db7f",
+        "receipt_path": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_tests_s17_20261101T040407Z/validation_audit/R1_partial_bce/replay.json",
+        "receipt_sha256": "8c71e0ee0a9aac108aabdb8385b49c86f353f52708aa60fc4d22e040682a0e57"
+      },
+      "pretraining": {
+        "path": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/full_experiment_runs/P_pretrain",
+        "configured_epochs": 10,
+        "completed_epochs": 10,
+        "selected_epoch": 9,
+        "checkpoint_sha256_from_receipt": "484f09d6f826aa4baf1e4d6413813aa8608e320349082be377617c9f943e9dc8",
+        "config_sha256": "557e7bea31c40c122bc22a5dee4af818d6e2974ab840696e9d29ca465d269b1a",
+        "history_sha256": "fc514ad5777f5fe060cfdbada723ecad141b9cece5eca850a5d6643ce7191fe3",
+        "receipt_path": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/full_experiment_runs/P_pretrain/RUN_VERIFIED.json",
+        "receipt_sha256": "3964799eb7e6401aa03315643474e1a4ed4015aa613acb217891433d112730b8"
+      },
+      "reports": {
+        "calibrated": {
+          "counts": {
+            "win": 15,
+            "loss": 25
+          },
+          "per_dataset": {
+            "ffpp": {
+              "win": 7,
+              "loss": 3
+            },
+            "dfdc": {
+              "loss": 9,
+              "win": 1
+            },
+            "celebdf": {
+              "loss": 10
+            },
+            "dfd": {
+              "loss": 3,
+              "win": 7
+            }
+          },
+          "per_metric": {
+            "F_FPR": {
+              "win": 1,
+              "loss": 11
+            },
+            "F_DP": {
+              "win": 5,
+              "loss": 7
+            },
+            "es_AUC": {
+              "win": 7,
+              "loss": 5
+            },
+            "AUC": {
+              "win": 2,
+              "loss": 2
+            }
+          },
+          "fairness_wins_of_36": 13,
+          "auc_wins_of_4": 2,
+          "table1_raw_wins_of_12": 9
+        },
+        "fixed_probability_0_5": {
+          "counts": {
+            "win": 15,
+            "loss": 25
+          },
+          "per_dataset": {
+            "ffpp": {
+              "win": 6,
+              "loss": 4
+            },
+            "dfdc": {
+              "loss": 8,
+              "win": 2
+            },
+            "celebdf": {
+              "loss": 10
+            },
+            "dfd": {
+              "loss": 3,
+              "win": 7
+            }
+          },
+          "per_metric": {
+            "F_FPR": {
+              "win": 1,
+              "loss": 11
+            },
+            "F_DP": {
+              "loss": 7,
+              "win": 5
+            },
+            "es_AUC": {
+              "win": 7,
+              "loss": 5
+            },
+            "AUC": {
+              "win": 2,
+              "loss": 2
+            }
+          },
+          "fairness_wins_of_36": 13,
+          "auc_wins_of_4": 2,
+          "table1_raw_wins_of_12": 8
+        }
+      }
+    },
+    {
+      "id": "R2_partial_dro",
+      "label": "CES-FL upgrade R2: partial DRO",
+      "backbone": "Xception",
+      "seed": 17,
+      "training": {
+        "path": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/R2_partial_dro/training",
+        "configured_epochs": 10,
+        "completed_epochs": 10,
+        "selected_epoch": 5,
+        "checkpoint_sha256_from_receipt": "297ba46139706034bff039ec877dcfb43abb47f8f63adbecc37f7828551bb937",
+        "config_sha256": "40a5414f5115ae2c7738c22abb1bae802c4aa83f2b557c320c9c0c1481439010",
+        "history_sha256": "5953f89e2e18c459deb263cab5bc4d64661129ee5e7660259bd9156e01a5c0c2",
+        "receipt_path": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_tests_s17_20261101T040407Z/validation_audit/R2_partial_dro/replay.json",
+        "receipt_sha256": "6fc3a437fa59813fd51f8a898b1be9074dd681882eabdaa5eecc3a9eb8b1fdae"
+      },
+      "pretraining": {
+        "path": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/full_experiment_runs/P_pretrain",
+        "configured_epochs": 10,
+        "completed_epochs": 10,
+        "selected_epoch": 9,
+        "checkpoint_sha256_from_receipt": "484f09d6f826aa4baf1e4d6413813aa8608e320349082be377617c9f943e9dc8",
+        "config_sha256": "557e7bea31c40c122bc22a5dee4af818d6e2974ab840696e9d29ca465d269b1a",
+        "history_sha256": "fc514ad5777f5fe060cfdbada723ecad141b9cece5eca850a5d6643ce7191fe3",
+        "receipt_path": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/full_experiment_runs/P_pretrain/RUN_VERIFIED.json",
+        "receipt_sha256": "3964799eb7e6401aa03315643474e1a4ed4015aa613acb217891433d112730b8"
+      },
+      "reports": {
+        "calibrated": {
+          "counts": {
+            "loss": 26,
+            "win": 14
+          },
+          "per_dataset": {
+            "ffpp": {
+              "loss": 5,
+              "win": 5
+            },
+            "dfdc": {
+              "loss": 8,
+              "win": 2
+            },
+            "celebdf": {
+              "loss": 10
+            },
+            "dfd": {
+              "loss": 3,
+              "win": 7
+            }
+          },
+          "per_metric": {
+            "F_FPR": {
+              "loss": 12
+            },
+            "F_DP": {
+              "loss": 8,
+              "win": 4
+            },
+            "es_AUC": {
+              "win": 8,
+              "loss": 4
+            },
+            "AUC": {
+              "win": 2,
+              "loss": 2
+            }
+          },
+          "fairness_wins_of_36": 12,
+          "auc_wins_of_4": 2,
+          "table1_raw_wins_of_12": 7
+        },
+        "fixed_probability_0_5": {
+          "counts": {
+            "loss": 25,
+            "win": 15
+          },
+          "per_dataset": {
+            "ffpp": {
+              "loss": 5,
+              "win": 5
+            },
+            "dfdc": {
+              "loss": 7,
+              "win": 3
+            },
+            "celebdf": {
+              "loss": 10
+            },
+            "dfd": {
+              "loss": 3,
+              "win": 7
+            }
+          },
+          "per_metric": {
+            "F_FPR": {
+              "loss": 12
+            },
+            "F_DP": {
+              "loss": 7,
+              "win": 5
+            },
+            "es_AUC": {
+              "win": 8,
+              "loss": 4
+            },
+            "AUC": {
+              "win": 2,
+              "loss": 2
+            }
+          },
+          "fairness_wins_of_36": 13,
+          "auc_wins_of_4": 2,
+          "table1_raw_wins_of_12": 7
+        }
+      }
+    },
+    {
+      "id": "RN_partial_dro_nochange_pilot",
+      "label": "CES-FL upgrade RN: no-change diagnostic",
+      "backbone": "Xception",
+      "seed": 17,
+      "training": {
+        "path": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/RN_partial_dro_nochange_pilot/training",
+        "configured_epochs": 10,
+        "completed_epochs": 10,
+        "selected_epoch": 3,
+        "checkpoint_sha256_from_receipt": "e44d60463e2947e11acb02ac95badcd012fa4b8f03d38480ed4eec719da46703",
+        "config_sha256": "d6cf86cfa5016ff5683868c745cb46ba42c48455b6456c0f45ad4893f45f7827",
+        "history_sha256": "8fad8eede821f83f13bbdd668739e07a58952a0d2f4baecaee67c45365d4dea5",
+        "receipt_path": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_tests_s17_20261101T040407Z/validation_audit/RN_partial_dro_nochange_pilot/replay.json",
+        "receipt_sha256": "cc22f8163d899571863fde009015b8eb974027b06faaa774606af3ab0afac629"
+      },
+      "pretraining": {
+        "path": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/full_experiment_runs/P_pretrain",
+        "configured_epochs": 10,
+        "completed_epochs": 10,
+        "selected_epoch": 9,
+        "checkpoint_sha256_from_receipt": "484f09d6f826aa4baf1e4d6413813aa8608e320349082be377617c9f943e9dc8",
+        "config_sha256": "557e7bea31c40c122bc22a5dee4af818d6e2974ab840696e9d29ca465d269b1a",
+        "history_sha256": "fc514ad5777f5fe060cfdbada723ecad141b9cece5eca850a5d6643ce7191fe3",
+        "receipt_path": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/full_experiment_runs/P_pretrain/RUN_VERIFIED.json",
+        "receipt_sha256": "3964799eb7e6401aa03315643474e1a4ed4015aa613acb217891433d112730b8"
+      },
+      "reports": {
+        "calibrated": {
+          "counts": {
+            "win": 17,
+            "loss": 23
+          },
+          "per_dataset": {
+            "ffpp": {
+              "win": 7,
+              "loss": 3
+            },
+            "dfdc": {
+              "loss": 8,
+              "win": 2
+            },
+            "celebdf": {
+              "loss": 10
+            },
+            "dfd": {
+              "win": 8,
+              "loss": 2
+            }
+          },
+          "per_metric": {
+            "F_FPR": {
+              "win": 3,
+              "loss": 9
+            },
+            "F_DP": {
+              "loss": 8,
+              "win": 4
+            },
+            "es_AUC": {
+              "win": 8,
+              "loss": 4
+            },
+            "AUC": {
+              "win": 2,
+              "loss": 2
+            }
+          },
+          "fairness_wins_of_36": 15,
+          "auc_wins_of_4": 2,
+          "table1_raw_wins_of_12": 9
+        },
+        "fixed_probability_0_5": {
+          "counts": {
+            "win": 18,
+            "loss": 22
+          },
+          "per_dataset": {
+            "ffpp": {
+              "win": 7,
+              "loss": 3
+            },
+            "dfdc": {
+              "loss": 7,
+              "win": 3
+            },
+            "celebdf": {
+              "loss": 10
+            },
+            "dfd": {
+              "win": 8,
+              "loss": 2
+            }
+          },
+          "per_metric": {
+            "F_FPR": {
+              "win": 3,
+              "loss": 9
+            },
+            "F_DP": {
+              "loss": 7,
+              "win": 5
+            },
+            "es_AUC": {
+              "win": 8,
+              "loss": 4
+            },
+            "AUC": {
+              "win": 2,
+              "loss": 2
+            }
+          },
+          "fairness_wins_of_36": 16,
+          "auc_wins_of_4": 2,
+          "table1_raw_wins_of_12": 9
+        }
+      }
+    },
+    {
+      "id": "RD_partial_dro_age_pilot",
+      "label": "CES-FL upgrade RD: age diagnostic",
+      "backbone": "Xception",
+      "seed": 17,
+      "training": {
+        "path": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_invariance_20261031_r1_ssh_bounded_20261031T175009Z/RD_partial_dro_age_pilot/training",
+        "configured_epochs": 10,
+        "completed_epochs": 10,
+        "selected_epoch": 5,
+        "checkpoint_sha256_from_receipt": "a41b3a171730059cef45008791b8264f8c10561e78b4bbeac3e8599a4a96d6e0",
+        "config_sha256": "843ddd3dcd44fdd119db81fb342ad26b6404085269d8f3e9a002a35b02319e4c",
+        "history_sha256": "14d099079c6612bb3fde43ab30185656252290f0bbe49cf2c4a5bee07648a696",
+        "receipt_path": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/upgrade_tests_s17_20261101T040407Z/validation_audit/RD_partial_dro_age_pilot/replay.json",
+        "receipt_sha256": "8937cc89a72d0efbdd29b682c3fe47e8cc4a40da0a953b338cb0234705f3c289"
+      },
+      "pretraining": {
+        "path": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/full_experiment_runs/P_pretrain",
+        "configured_epochs": 10,
+        "completed_epochs": 10,
+        "selected_epoch": 9,
+        "checkpoint_sha256_from_receipt": "484f09d6f826aa4baf1e4d6413813aa8608e320349082be377617c9f943e9dc8",
+        "config_sha256": "557e7bea31c40c122bc22a5dee4af818d6e2974ab840696e9d29ca465d269b1a",
+        "history_sha256": "fc514ad5777f5fe060cfdbada723ecad141b9cece5eca850a5d6643ce7191fe3",
+        "receipt_path": "/home/sachin.chaudhary/ces_fl_pipeline/audits/encoder_controls_20261030T202634/full_experiment_runs/P_pretrain/RUN_VERIFIED.json",
+        "receipt_sha256": "3964799eb7e6401aa03315643474e1a4ed4015aa613acb217891433d112730b8"
+      },
+      "reports": {
+        "calibrated": {
+          "counts": {
+            "loss": 25,
+            "win": 15
+          },
+          "per_dataset": {
+            "ffpp": {
+              "loss": 5,
+              "win": 5
+            },
+            "dfdc": {
+              "loss": 7,
+              "win": 3
+            },
+            "celebdf": {
+              "loss": 10
+            },
+            "dfd": {
+              "loss": 3,
+              "win": 7
+            }
+          },
+          "per_metric": {
+            "F_FPR": {
+              "loss": 12
+            },
+            "F_DP": {
+              "loss": 7,
+              "win": 5
+            },
+            "es_AUC": {
+              "win": 8,
+              "loss": 4
+            },
+            "AUC": {
+              "win": 2,
+              "loss": 2
+            }
+          },
+          "fairness_wins_of_36": 13,
+          "auc_wins_of_4": 2,
+          "table1_raw_wins_of_12": 7
+        },
+        "fixed_probability_0_5": {
+          "counts": {
+            "loss": 23,
+            "win": 17
+          },
+          "per_dataset": {
+            "ffpp": {
+              "loss": 4,
+              "win": 6
+            },
+            "dfdc": {
+              "loss": 6,
+              "win": 4
+            },
+            "celebdf": {
+              "loss": 10
+            },
+            "dfd": {
+              "loss": 3,
+              "win": 7
+            }
+          },
+          "per_metric": {
+            "F_FPR": {
+              "loss": 10,
+              "win": 2
+            },
+            "F_DP": {
+              "loss": 7,
+              "win": 5
+            },
+            "es_AUC": {
+              "win": 8,
+              "loss": 4
+            },
+            "AUC": {
+              "win": 2,
+              "loss": 2
+            }
+          },
+          "fairness_wins_of_36": 15,
+          "auc_wins_of_4": 2,
+          "table1_raw_wins_of_12": 8
+        }
+      }
+    }
+  ]
+}

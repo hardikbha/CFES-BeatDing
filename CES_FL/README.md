@@ -6,6 +6,8 @@
 
 All published rows are followed by the applicable completed seed17 A/B/C and upgrade test results. [Arm definitions, thresholds, provenance and limitations](results/ding_format_tables_s17_20261102/README.md). The latest 50+50 source `58773bb` has validation results only and is shown separately; it has no TEST row. This reporting update launches no training or evaluation.
 
+[Verified epoch budgets and numerical win counts](results/ding_epochs_wins_s17_20261102/REPORT.md): reported models used ten pretraining plus ten downstream epochs; Xception B/C each exceed Ding's displayed numbers on 17/40 unique cells at stored validation thresholds. Selected checkpoint epochs are not measured first-surpass epochs. Full fairness/AUC, dataset and ResNet breakdowns are included; no overall superiority claim or new run.
+
 ## Completed original-only comparison — 2 November 2026
 
 [Verified P/BCE/fair completion and validation fairness comparison](results/manip_response_originals_s17_20261102/REPORT.md). Both downstream arms completed50epochs with native independent replay. BCE/fair validationAUC98.45/98.49%, but primaryF_FPR and FPRgap are worse for fair; no primary fairness win. Nochange/score/response remain blocked by reviewed manipulation quartets. Qwen224/224generated, no recorded pair approvals. No TEST or FairForge-2 run.
