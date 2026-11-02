@@ -1,0 +1,46 @@
+{
+  "cases_inspected": 88,
+  "unique_original_images": 22,
+  "recorded_identity_ids": 18,
+  "recorded_source_ids": 18,
+  "groups_covered": {
+    "gender": [
+      "Female",
+      "Male"
+    ],
+    "race": [
+      "Asian",
+      "Black",
+      "Others",
+      "White"
+    ],
+    "age_bin": [
+      "30-44",
+      "45-59",
+      "60+",
+      "<30"
+    ],
+    "skin_bin": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ],
+    "gender_race": [
+      "Female-Asian",
+      "Female-Black",
+      "Female-Others",
+      "Female-White",
+      "Male-Asian",
+      "Male-Black",
+      "Male-Others",
+      "Male-White"
+    ]
+  },
+  "review_type": "AI visual operator screen; not human annotation",
+  "approved": 88,
+  "rejected": 0,
+  "uncertain": 0,
+  "real_forgery_validity_proven": false,
+  "scope": "Representative visual qualification of the declared procedural recipe only"
+}

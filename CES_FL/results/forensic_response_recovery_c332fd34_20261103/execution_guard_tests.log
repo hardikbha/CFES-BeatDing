@@ -1,0 +1,9 @@
+test_existing_launch_record_does_not_spawn_duplicate (__main__.Guards.test_existing_launch_record_does_not_spawn_duplicate) ... ok
+test_full_dataset_qualification_is_required_for_counterfactual_role (__main__.Guards.test_full_dataset_qualification_is_required_for_counterfactual_role) ... ok
+test_project_budget_rejects_overcommit_without_gpu_or_file_changes (__main__.Guards.test_project_budget_rejects_overcommit_without_gpu_or_file_changes) ... ok
+test_remote_launch_code_is_valid_and_quotes_literal_arguments (__main__.Guards.test_remote_launch_code_is_valid_and_quotes_literal_arguments) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.025s
+
+OK

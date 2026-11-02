@@ -1,0 +1,44 @@
+{
+  "observed_management_utc": "2026-11-02T21:49:33.301069+00:00",
+  "execution_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
+  "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
+  "operator_qualification_sha256": "de08419b9c2d2bf2be9d046e4ef5309301b352a6b94fc1bd99055652fe3235c7",
+  "operator_review_type": "Named AI visual inspection, not human approval; representative procedural probes only",
+  "operator_qualification_reviewers_withheld": true,
+  "route_override": "User explicitly authorized direct SSH gpu01/gpu02 while investigating PBS availability; recorded shared GPU leases, no PBS allocation claimed",
+  "software_command_log": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_overlapfix_20261103_r1_ffpp_s17/software_cuda.log",
+  "real_backward_logs": {
+    "A": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_overlapfix_20261103_r1_ffpp_s17/dry_A.log",
+    "B": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_overlapfix_20261103_r1_ffpp_s17/dry_B.log",
+    "C": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_overlapfix_20261103_r1_ffpp_s17/dry_C.log",
+    "D": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_overlapfix_20261103_r1_ffpp_s17/dry_D.log"
+  },
+  "training_logs": {
+    "C": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_overlapfix_20261103_r1_ffpp_s17/train_C.log",
+    "D": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_overlapfix_20261103_r1_ffpp_s17/train_D.log"
+  },
+  "controllers": {
+    "C": {
+      "host": "gpu01",
+      "controller_pid": 3006784,
+      "training_pid": 3009986
+    },
+    "D": {
+      "host": "gpu02",
+      "controller_pid": 87954,
+      "training_pid": 89578
+    },
+    "coordinator": {
+      "host": "mgmt01",
+      "pid": 1901693
+    }
+  },
+  "execution_glue_hashes": {
+    "allocated_stage.py": "a4e39fb7d726ba33eeb1f0078a7fad120236064423d0d61668f6200aeed74371",
+    "direct_stage.py": "79813d06e563ef7b72b44511b13f044e9cc1c40952fb81f3e69dc3f18dfdc5f8",
+    "followup_stage.py": "fc5ae8c7488a836ad82a6de28c4a2d183830152ebf1633a49e60804e7c4eae92",
+    "study_coordinator.py": "b433b819e5f28f313071b79f4f54131253f39029c36e162f03aa010ffa8eb8a0",
+    "publish_study_progress.py": "d0b2a679281ea74f59b1357881ae6cff209c3fabc63833567ce16890afd3eb02"
+  },
+  "notes": "allocated_stage is imported as budget library; its scheduler launcher was not used. No new PBS job or TEST evaluation. Scientific model file unchanged. CPU/preview/private inventories and row reviews remain on cluster."
+}
