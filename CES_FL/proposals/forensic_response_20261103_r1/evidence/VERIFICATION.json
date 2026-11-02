@@ -1,0 +1,29 @@
+{
+  "status": "CPU_SOFTWARE_VERIFIED_ONLY",
+  "source_sha256": "4be586ba82bcae8fe5ea47f951d9451313bda2587a746b8515733b8aae3d5d72",
+  "environment": {
+    "python": "3.9.23",
+    "torch": "2.8.0",
+    "numpy": "1.26.4",
+    "pillow": "10.4.0",
+    "sklearn": "1.5.2",
+    "platform": "Darwin",
+    "cuda_available": false
+  },
+  "commands": [
+    "/opt/anaconda3/bin/python -m unittest discover -s CES_FL/tests -p test_forensic_response.py -v",
+    "/opt/anaconda3/bin/python -u CES_FL/src/ces_fl_forensic_response.py smoke --device cpu --out /Users/hardiksharma/Downloads/fairness_cvpr/output/forensic_response_smoke_final",
+    "/opt/anaconda3/bin/python CES_FL/src/ces_fl_forensic_response.py --help",
+    "/opt/anaconda3/bin/python CES_FL/src/ces_fl_forensic_response.py train --help"
+  ],
+  "unit_tests_passed": 10,
+  "scientific_results_available": false,
+  "cluster_launched": false,
+  "figure": {
+    "file": "cesfl_forensic_response_diagram.png",
+    "sha256": "6fab038eb6e56b02c16f9cd612c4d9c95c7059d971256991f384f48db26e5bb7",
+    "tool": "built-in imagegen",
+    "portraits_and_heatmaps": "generated illustrations, not data or measured outputs",
+    "review": "Final equations, paired-input paths, branch fusion and C/D ablation checked against source. Generated raster is illustrative; code and README define exact execution."
+  }
+}

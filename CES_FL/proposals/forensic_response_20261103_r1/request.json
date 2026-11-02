@@ -1,0 +1,47 @@
+{
+  "request_id": "forensic_response_20261103_r1",
+  "state": "CPU_VERIFIED_CLUSTER_CHECKS_PENDING",
+  "base_commit": "67d2308225e422a91c715c40427f40c3df6812cf",
+  "purpose": "A original BCE; B adds multi-axis soft error disparity; C adds original-real/auxiliary sensitivity and matched processing-control stability; D adds conditional quantile response alignment.",
+  "scope": "New procedural intervention method, not completion or relabeling of earlier demographic-edit or quartet experiments.",
+  "datasets": [
+    "FFPP_DING_PUBLIC",
+    "FAIRFORGE2_PUBLIC"
+  ],
+  "templates": [
+    "ffpp_template.json",
+    "ff2_template.json"
+  ],
+  "seed": 17,
+  "epochs": 10,
+  "per_arm_epoch_boundary_budget_hours": 2,
+  "total_initial_gpu_hour_budget": 24,
+  "qualification": "Required named stratified operator review before C/D; no approvals supplied",
+  "test_policy": "No automatic TEST. Exact manifest/checkpoint/source binding and fit:test overlap exception required for later explicit evaluation.",
+  "baseline_policy": "A-D share architecture, original order/weights, encoder checkpoint, fresh prediction-head seed, epoch budget, BN policy, selection and calibration. C/D have identical procedural views and source exposure. A/B vs C/D have different forward cost.",
+  "selection": "earliest highest validation AUC; conservative validation-real FPR0.1 threshold",
+  "execution": "GPU operator launches after allocation, fresh CUDA smoke, real input checks, dry runs and operator qualification; source immutable",
+  "remaining": [
+    "real input/weight availability",
+    "all requested axes sufficient support",
+    "operator qualification",
+    "fresh CUDA smoke and real backward on H100",
+    "Ding baselines and later evaluation plan; not provided as reproduced results",
+    "new-variant scientific validation and repeated-seed confirmation"
+  ],
+  "launch": null,
+  "source_sha256": "4be586ba82bcae8fe5ea47f951d9451313bda2587a746b8515733b8aae3d5d72",
+  "primary_ablation": "D minus C; same views and all objectives except response alignment",
+  "primary_fairness_endpoint": "gender_race F_FPR at the checkpoint validation-real FPR0.1 threshold",
+  "validation_progression": "D lower F_FPR than C, at most 0.005 absolute AUC loss, no worst-group AUC collapse; not checkpoint selection or TEST tuning",
+  "cpu_evidence": [
+    "evidence/SMOKE_RESULT_CPU.json",
+    "evidence/unit_tests.log",
+    "evidence/smoke_cpu.log"
+  ],
+  "cuda_verified": false,
+  "real_inputs_verified_locally": false,
+  "operator_qualification_recorded": false,
+  "scientific_results_available": false,
+  "source_commit": "The immutable Git commit containing this proposal; exact SHA in external handoff and cluster source_commit.txt"
+}

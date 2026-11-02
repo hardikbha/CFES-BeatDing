@@ -1,0 +1,205 @@
+Run the new CES-FL forensic-response proposal, not the old demographic-edit or
+quartet launchers. Use the exact commit supplied in the handoff, from:
+  https://github.com/hardiksharma6555/CFES-BeatDing
+  branch: experiment/cesfl-forensic-response-20261103
+Upstream hardikbha/CFES-BeatDing did not grant this authenticated publisher
+write access at preparation time. Do not assume the branch is on upstream.
+
+Source to execute:
+  CES_FL/src/ces_fl_forensic_response.py
+Expected source SHA256:
+  4be586ba82bcae8fe5ea47f951d9451313bda2587a746b8515733b8aae3d5d72
+Read CES_FL/AGENTS.md and this proposal's README.md and request.json first.
+
+OBJECTIVE
+Test whether D improves demographic fairness beyond C while retaining detection
+utility. A=weighted original BCE; B=+soft FPR/FNR disparity; C=+procedural
+sensitivity and processing-control stability; D=+operator/strength-conditioned
+response-distribution alignment. No diffusion editor or demographic edit bank
+is required. All originals receive BCE; every original real gets a procedural
+pair per epoch in C/D. Synthetic views are not given benchmark BCE labels.
+
+SOURCE AND ALLOCATION
+1. Fetch the handoff commit into a NEW immutable checkout/worktree. Record
+   git rev-parse HEAD. Never pull over an active run's source. Do not overwrite
+   historical runs. The single .py has no other project Python imports.
+2. Use the cluster scheduler and request ngpus. Verify actual reservation and
+   CUDA binding. Use one allocated H100 per process, with the scheduler's
+   CUDA_VISIBLE_DEVICES. Do not select an arbitrary apparently idle GPU.
+   Two reserved H100s can execute C and D concurrently; these are independent
+   processes, not a two-GPU DDP job. Count BOTH toward the GPU-hour budget.
+3. Dependencies: Python>=3.10, torch, numpy, Pillow, scikit-learn. Existing
+   /home/sachin.chaudhary/.conda/envs/aiface/bin/python is the candidate
+   interpreter. Confirm versions and CUDA/bfloat16 availability. No package
+   or model downloads are needed. Resolve missing dependencies explicitly.
+
+EXACT COMMAND TEMPLATE (bash, from the immutable checkout root)
+Set FR_RUN to a new private directory for this dataset. Do not use shared
+outputs from an earlier experiment. Keep shell execution logs outside each
+command's output directory, because fresh outputs must be empty.
+
+  set -euo pipefail
+  FR_PY=/home/sachin.chaudhary/.conda/envs/aiface/bin/python
+  FR_SCRIPT="$PWD/CES_FL/src/ces_fl_forensic_response.py"
+  FR_PROPOSAL="$PWD/CES_FL/proposals/forensic_response_20261103_r1"
+  FR_RUN=/home/sachin.chaudhary/ces_fl_runs/forensic_response_20261103_r1_ffpp_s17
+  test ! -e "$FR_RUN"
+  mkdir -p "$FR_RUN"
+  git rev-parse HEAD > "$FR_RUN/source_commit.txt"
+  "$FR_PY" - "$FR_SCRIPT" <<'PY'
+import hashlib, sys, torch
+from pathlib import Path
+expected = '4be586ba82bcae8fe5ea47f951d9451313bda2587a746b8515733b8aae3d5d72'
+assert hashlib.sha256(Path(sys.argv[1]).read_bytes()).hexdigest() == expected
+assert torch.cuda.is_available() and torch.cuda.is_bf16_supported()
+print({'torch': str(torch.__version__), 'cuda': torch.version.cuda,
+       'gpu': torch.cuda.get_device_name(0),
+       'visible_device_count': torch.cuda.device_count()})
+PY
+
+  "$FR_PY" "$FR_SCRIPT" smoke --device cuda --out "$FR_RUN/software_cuda" \
+    > "$FR_RUN/software_cuda.log" 2>&1
+
+Check software_cuda/SMOKE_RESULT.json says PASS, cuda_tested=true and matches
+the exact source hash. The smoke suite includes a production-width 224px
+forward/backward and synthetic all-arm training, reload, resume and reporting.
+It is NOT scientific training or proof of intervention validity.
+
+INPUT BINDING AND REVIEW
+  "$FR_PY" "$FR_SCRIPT" bind \
+    --template "$FR_PROPOSAL/ffpp_template.json" --out "$FR_RUN/config.json"
+  "$FR_PY" "$FR_SCRIPT" preflight \
+    --config "$FR_RUN/config.json" --out "$FR_RUN/preflight"
+  "$FR_PY" "$FR_SCRIPT" preview --config "$FR_RUN/config.json" \
+    --preflight "$FR_RUN/preflight" --out "$FR_RUN/operator_preview"
+
+The templates identify original TRAIN/VAL files, audited overlap exceptions,
+and pretraining checkpoint hashes. bind imports encoder tensors strictly.
+If a file/hash/stage/schema differs, STOP and report the exact mismatch;
+do not replace checkpoints, drop demographic axes, alter splits, infer missing
+labels or create overlap exceptions merely to bypass a check.
+
+For FF++, reuse the recorded P50 encoder. For FairForge-2, reuse its recorded
+P10 encoder. These are intentionally separate datasets/initializations, not
+a single cross-dataset pretrained model or a matched Ding training budget.
+
+Inspect PREFLIGHT.json: every TRAIN/VAL image decoded, no new undeclared
+content leakage, and >=2 supported groups per requested axis. Preserve its
+inventory_PRIVATE.json locally. The operator preview spans supported groups
+and all defined operator/strength combinations. It contains private face data.
+
+A named reviewer must inspect each original/control/treated/difference sheet
+and create an honest completed review file, e.g.
+  $FR_RUN/operator_preview/review_COMPLETED_PRIVATE.json
+based on review_PENDING_PRIVATE.json. Each approval must include face-crop
+suitability, acceptable control processing, the intended local change,
+preserved demographic appearance, reviewer name and substantive notes.
+Do not bulk-set flags without review. If any case fails, record the failure
+and prepare a new recipe/proposal; do not call failed interventions validated.
+This review qualifies the stated procedural probes only, not actual forgery
+validity or individual identity for every future stochastic view.
+
+When that actual review exists:
+  "$FR_PY" "$FR_SCRIPT" qualify --preview "$FR_RUN/operator_preview" \
+    --review "$FR_RUN/operator_preview/review_COMPLETED_PRIVATE.json" \
+    --out "$FR_RUN/qualification.json"
+
+The review gate is explicitly required by CES_FL/AGENTS.md:
+"Forensic sensitivity requires validated forensic interventions".
+A/B can proceed after their checks while C/D await intervention review.
+
+REAL-INPUT BACKWARD AND RESOURCE CHECKS
+Run once per arm on the allocated GPU. Each uses a disposable model and one
+optimizer update; it does not create a selected scientific checkpoint.
+  for FR_ARM in A B C D; do
+    "$FR_PY" "$FR_SCRIPT" dry-run --config "$FR_RUN/config.json" \
+      --preflight "$FR_RUN/preflight" --arm "$FR_ARM" --device cuda \
+      --out "$FR_RUN/dry_$FR_ARM" > "$FR_RUN/dry_$FR_ARM.log" 2>&1
+  done
+
+Check each DRY_RUN.json: PASS, same config/source, finite losses, production
+parameter counts 21,594,159 total / 7,575,591 trainable, and available VRAM.
+The dry run represents one auxiliary axis and one step; it is not a guarantee
+of the worst-case memory or complete-epoch throughput. If memory is too high,
+prepare and record a new dated configuration consistently across A-D and rerun
+checks. Do not silently change batch/group sizes only for one arm.
+
+TRAINING (one arm per reserved GPU process)
+Choose FR_ARM explicitly for each process; run C and D first if both GPUs are
+available and qualification is complete. Run all four arms, including A/B,
+before making an ablation claim. Example for D:
+  FR_ARM=D
+  "$FR_PY" "$FR_SCRIPT" train --config "$FR_RUN/config.json" \
+    --preflight "$FR_RUN/preflight" --arm "$FR_ARM" --device cuda \
+    --software-receipt "$FR_RUN/software_cuda/SMOKE_RESULT.json" \
+    --dry-run-receipt "$FR_RUN/dry_$FR_ARM/DRY_RUN.json" \
+    --qualification "$FR_RUN/qualification.json" \
+    --out "$FR_RUN/$FR_ARM" > "$FR_RUN/train_$FR_ARM.log" 2>&1
+
+For A/B omit --qualification (it is not required or consumed). For another
+reserved GPU run the same immutable source/config with FR_ARM=C and the
+scheduler-provided device binding. Never start two writers for the same arm.
+
+Budget: initially24 TOTAL GPU-hours for checks and both datasets. Default
+max_gpu_hours=2 is a per-arm cumulative epoch-boundary allowance. It is not
+a scheduler hard limit or an assertion ten epochs fit. Measure first-epoch
+cost including I/O and validation; report projected total consumption.
+Reserve scheduler time to finish an epoch and save checkpoints. All arms
+must complete the same planned ten epochs, or be reported as incomplete.
+
+If an arm stops with INCOMPLETE_EPOCH_BOUNDARY_STOP, preserve it and resume
+the SAME command with --resume. A logged increase, e.g. --budget-hours 3,
+permits three cumulative hours for this arm while leaving optimization,
+epochs and selection unchanged. Use a NEW log file for each resume. The
+user permits a modest extension if the direction is supported; report
+measured total cost and the planned extension before exceeding24 GPU-hours.
+Do not continue long jobs on an unreserved device or terminate others' jobs.
+
+FAIRFORGE-2
+After the FF++ paired check and compute audit, repeat the same workflow with
+  FR_RUN=/home/sachin.chaudhary/ces_fl_runs/forensic_response_20261103_r1_ff2_s17
+and ff2_template.json in bind. It needs its OWN preflight, previews, actual
+qualification, all-arm dry runs and run outputs. Use the same source. Missing
+age/skin/group support is a substantive scope blocker, not a license to
+claim all-demographic fairness. Original-data coverage must not be reduced
+to meet a wall-clock target.
+
+CHECKS, EVIDENCE AND REPORTING
+For every arm require DONE and RUN_VERIFIED.json with COMPLETED_VERIFIED,
+ten completed epochs and independent selected-checkpoint validation replay.
+Check original-once coverage, every-real paired counts for C/D, exact C/D
+auxiliary schedules and recorded head/encoder policy. Report all validation
+metrics and support counts, selected epochs, calibration, hashes, elapsed
+time, hardware/environment and whether the run is complete. Fairness
+primary: gender_race F_FPR at validation-calibrated FPR10%; secondary: all
+axes, FPR/FNR gaps, worst-group/overall AUC and attained FPR. Preserve
+negative outcomes. Do not switch primary metrics or tune on TEST.
+
+Publish aggregate RUN_VERIFIED.json/history, textual GPU/check evidence,
+source/config/weight hashes and a timestamped status under a NEW dated
+results directory/branch. Include source commit and GPU-hours for both GPUs.
+Do not publish checkpoints, dataset images, sheets, input inventories,
+reviewer/private row-level data or *_PRIVATE.json files. A push does not
+start a job; report scheduler job IDs and actual running/completed state.
+
+NO AUTOMATIC TEST / NO SOTA CLAIM
+Do not call evaluate on TEST in this training handoff. First freeze the
+selected checkpoints and an explicit test-comparison plan. Existing test
+results have been viewed in the broader project; disclose that context.
+Later explicit evaluation needs exact TEST manifest bytes and a reviewed
+fit:TEST contributor/content exception inventory (TRAIN+VAL union).
+Only then use:
+  python ces_fl_forensic_response.py evaluate --checkpoint .../best.pt \
+    --manifest EXACT_TEST.csv --manifest-sha256 EXACT_SHA256 \
+    --overlap-file AUDITED_FIT_TEST_EXCEPTION.json --out NEW_REPORT \
+    --device cuda --bootstrap 1000
+Omit --overlap-file only when the real fit:TEST audit finds no overlaps.
+Use compare on two matching private scores files for paired intervals;
+never publish those row-level inputs. The final threshold is checkpoint-
+frozen; no TEST recalibration or model selection is permitted.
+
+Matching Ding requires separately audited archived and corrected GDA
+baselines, row/preprocessing/backbone/budget/group/threshold equivalence,
+and uncertainty. This request does not claim those baselines were rerun,
+that procedural probes are true demographic counterfactuals, or that the
+new method has already beaten Ding.
