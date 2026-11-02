@@ -382,16 +382,25 @@ def split_audit(train, val, overlap_file=None, evaluation=False):
     if {r['image'] for r in train} & {r['image'] for r in val}:
         raise ValueError('Original image path leakage')
     declared = json.loads(Path(overlap_file).read_text()).get('declared_overlap_values', {}) if overlap_file else {}
+    if not isinstance(declared, dict): raise ValueError('Overlap declarations must be a mapping')
     result = {}
     suffix = 'fit:test' if evaluation else 'train:val'
     expected_keys = {f'{field}:{suffix}' for field in ('identity_ids', 'source_ids')}
-    if set(declared) - expected_keys: raise ValueError('Unexpected overlap exception keys')
+    # Historical TRAIN/VAL audits also inventory TRAIN/TEST and VAL/TEST.
+    # Recognize those keys without checking or using their values in training.
+    # TEST evaluation still needs an explicit fit:TEST (TRAIN+VAL) inventory.
+    allowed_keys = expected_keys if evaluation else {
+        f'{field}:{pair}' for field in ('identity_ids', 'source_ids')
+        for pair in ('train:val', 'train:test', 'val:test')}
+    if set(declared) - allowed_keys: raise ValueError('Unexpected overlap exception keys')
     for field in ('identity_ids', 'source_ids'):
         overlap = sorted(set().union(*(ids(r[field]) for r in train)) & set().union(*(ids(r[field]) for r in val)))
         if overlap != declared.get(f'{field}:{suffix}', []):
             raise ValueError(f'Unrecorded or changed {field} overlap')
         result[field] = len(overlap)
-    return {'recorded_contributor_overlap': result, 'true_person_separation_verified': False}
+    return {'recorded_contributor_overlap': result, 'true_person_separation_verified': False,
+            'checked_overlap_keys': sorted(expected_keys),
+            'deferred_overlap_keys': sorted(set(declared) - expected_keys)}
 
 
 def calibrate(real, target=0.1):

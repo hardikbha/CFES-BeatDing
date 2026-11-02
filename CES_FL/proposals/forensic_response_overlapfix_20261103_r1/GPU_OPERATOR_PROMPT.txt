@@ -1,0 +1,102 @@
+Apply the FF++ shared-audit compatibility follow-up from the exact commit in
+the handoff, on branch fix/cesfl-overlap-audit-20261103 at:
+https://github.com/hardiksharma6555/CFES-BeatDing
+
+Preserve pinned commit9030dd77d1d93593a4a3808be20b3b903aaeb0da, its checkout,
+failed run, logs and audit file. Use a NEW immutable checkout and output root.
+Do not change the six-key audit or its template hash. Do not touch Ding jobs.
+
+Read CES_FL/AGENTS.md and this follow-up README. Scientific settings and the
+A/B/C/D definitions are unchanged from forensic_response_20261103_r1/README.md.
+Use THESE commands/hash/paths rather than the parent's old source-bound prompt.
+
+FIRST: CPU binding and preflight, without a GPU allocation for this study.
+From the new immutable checkout root, in bash:
+
+  set -euo pipefail
+  FR_PY=/home/sachin.chaudhary/.conda/envs/aiface/bin/python
+  FR_SCRIPT="$PWD/CES_FL/src/ces_fl_forensic_response.py"
+  FR_PROPOSAL="$PWD/CES_FL/proposals/forensic_response_overlapfix_20261103_r1"
+  FR_RUN=/home/sachin.chaudhary/ces_fl_runs/forensic_response_overlapfix_20261103_r1_ffpp_s17
+  test ! -e "$FR_RUN"
+  mkdir -p "$FR_RUN"
+  git rev-parse HEAD > "$FR_RUN/source_commit.txt"
+  "$FR_PY" - "$FR_SCRIPT" <<'PY'
+from pathlib import Path
+import hashlib, sys
+assert hashlib.sha256(Path(sys.argv[1]).read_bytes()).hexdigest() == '89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b'
+PY
+  "$FR_PY" "$FR_SCRIPT" bind --template "$FR_PROPOSAL/ffpp_template.json" \
+    --out "$FR_RUN/config.json" > "$FR_RUN/bind.log" 2>&1
+  "$FR_PY" "$FR_SCRIPT" preflight --config "$FR_RUN/config.json" \
+    --out "$FR_RUN/preflight" > "$FR_RUN/preflight.log" 2>&1
+
+Require PREFLIGHT.json PASS with the new source/config digest. The split audit
+must check exactly identity_ids:train:val and source_ids:train:val and record
+the four train:test/val:test entries as DEFERRED. It does not validate TEST.
+If another check fails, preserve that new failure and stop dependent stages.
+Never bypass source hashes, leakage checks or demographic support requirements.
+
+Then generate CPU preview sheets and obtain a genuine named operator review:
+  "$FR_PY" "$FR_SCRIPT" preview --config "$FR_RUN/config.json" \
+    --preflight "$FR_RUN/preflight" --out "$FR_RUN/operator_preview"
+
+Review each private sheet and complete review_COMPLETED_PRIVATE.json from the
+pending template, with all required flags and substantive notes. No fabricated
+approvals. This is qualification of procedural probes, not proof of actual
+forgery validity. C/D remain blocked if the review is incomplete or rejected.
+Once that actual review exists:
+  "$FR_PY" "$FR_SCRIPT" qualify --preview "$FR_RUN/operator_preview" \
+    --review "$FR_RUN/operator_preview/review_COMPLETED_PRIVATE.json" \
+    --out "$FR_RUN/qualification.json"
+
+NEXT: within an actual scheduler allocation with ngpus and verified binding,
+run one process per allocated H100. Use scheduler-provided CUDA_VISIBLE_DEVICES.
+Do not guess device ownership. Reuse the same immutable source and FR_RUN
+variables in the allocated shell, without re-running its mkdir/test-new block.
+Confirm sufficient disk space: the software smoke alone retains about1.4GiB
+of synthetic checkpoints and needs extra temporary write space. Preserve any
+failure logs and use new output directories for retries.
+  "$FR_PY" "$FR_SCRIPT" smoke --device cuda --out "$FR_RUN/software_cuda" \
+    > "$FR_RUN/software_cuda.log" 2>&1
+  for FR_ARM in A B C D; do
+    "$FR_PY" "$FR_SCRIPT" dry-run --config "$FR_RUN/config.json" \
+      --preflight "$FR_RUN/preflight" --arm "$FR_ARM" --device cuda \
+      --out "$FR_RUN/dry_$FR_ARM" > "$FR_RUN/dry_$FR_ARM.log" 2>&1
+  done
+
+Inspect all new receipts for PASS, matching source/config, finite gradients
+and sufficient memory. CPU checks cannot replace CUDA receipts. Old receipts
+must not be reused. Scientific defaults remain ten epochs, batch32, exit-only
+fine-tuning, fixed BN buffers, validation-AUC selection and validation-real
+FPR10% calibration. No TEST input is required here.
+
+For one arm, e.g. D (C can run concurrently on the OTHER allocated GPU):
+  FR_ARM=D
+  "$FR_PY" "$FR_SCRIPT" train --config "$FR_RUN/config.json" \
+    --preflight "$FR_RUN/preflight" --arm "$FR_ARM" --device cuda \
+    --software-receipt "$FR_RUN/software_cuda/SMOKE_RESULT.json" \
+    --dry-run-receipt "$FR_RUN/dry_$FR_ARM/DRY_RUN.json" \
+    --qualification "$FR_RUN/qualification.json" --out "$FR_RUN/$FR_ARM" \
+    > "$FR_RUN/train_$FR_ARM.log" 2>&1
+
+Complete A/B controls too; omit --qualification for those arms. Never create
+two writers for the same arm. Count both GPUs toward the initial24 TOTAL
+GPU-hour budget. Two hours per arm is an epoch-boundary execution allowance,
+not an ETA. Preserve incomplete runs and use --resume with a logged larger
+cumulative --budget-hours only within the agreed budget; keep all arms at the
+same planned epochs. Record actual first-epoch cost before extending compute.
+
+For FairForge-2 use a separate new root ending _ff2_s17 and ff2_template.json,
+with its own preflight, review and fresh real-input checks. Missing group
+labels/support remain substantive blockers. Do not reduce source coverage.
+
+Publish new aggregate preflight/check/run receipts, code/config hashes and
+timestamped state under a new dated evidence path. Keep private images,
+inventories, reviews, weights and scores on the cluster. Record actual job
+IDs and compute; distinguish operator reports from inspected artifacts.
+Keep historical failure evidence and the existing Ding run untouched.
+
+No automatic TEST evaluation or claim of beating Ding. The parser fix does
+not change novelty, model behavior or the experimental hypothesis. Checkpoint
+and fairness comparisons remain pending until real runs are verified.

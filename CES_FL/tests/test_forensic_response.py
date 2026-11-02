@@ -80,6 +80,56 @@ class ForensicResponseInvariants(unittest.TestCase):
             p=Path(tmp)/'exception.json';m.write_json(p,{'declared_overlap_values':{'identity_ids:fit:test':['a'],'source_ids:fit:test':[]}})
             self.assertEqual(m.split_audit(rows,test,p,evaluation=True)['recorded_contributor_overlap']['identity_ids'],1)
 
+    def test_full_six_key_audit_checks_only_train_val(self):
+        # TEST paths/data are absent; these are declarations in the shared audit.
+        train=[{'image':'train','identity_ids':'a;shared','source_ids':'video'}]
+        val=[{'image':'val','identity_ids':'b;shared','source_ids':'video'}]
+        declarations={f'{field}:{pair}': ['test_only_uninspected']
+                      for field in ('identity_ids','source_ids')
+                      for pair in ('train:val','train:test','val:test')}
+        declarations.update({'identity_ids:train:val':['shared'],'source_ids:train:val':['video']})
+        with tempfile.TemporaryDirectory() as tmp:
+            p=Path(tmp)/'exception.json';m.write_json(p,{'declared_overlap_values':declarations})
+            original_bytes=p.read_bytes()
+            actual=m.split_audit(train,val,p)
+            self.assertEqual(actual['recorded_contributor_overlap'],{'identity_ids':1,'source_ids':1})
+            self.assertEqual(actual['checked_overlap_keys'],['identity_ids:train:val','source_ids:train:val'])
+            self.assertEqual(actual['deferred_overlap_keys'],sorted(k for k in declarations if not k.endswith('train:val')))
+            self.assertEqual(p.read_bytes(),original_bytes)
+            for key in actual['checked_overlap_keys']:
+                with self.subTest(key=key):
+                    changed=dict(declarations);changed[key]=[]
+                    m.write_json(p,{'declared_overlap_values':changed})
+                    with self.assertRaisesRegex(ValueError,'Unrecorded or changed'):
+                        m.split_audit(train,val,p)
+
+    def test_full_audit_rejects_unknown_keys_and_wrong_stage(self):
+        train=[{'image':'train','identity_ids':'a','source_ids':'x'}]
+        val=[{'image':'val','identity_ids':'b','source_ids':'y'}]
+        declarations={f'{field}:{pair}': [] for field in ('identity_ids','source_ids')
+                      for pair in ('train:val','train:test','val:test')}
+        with tempfile.TemporaryDirectory() as tmp:
+            p=Path(tmp)/'exception.json'
+            for key in ('source_ids:trian:test','identity_ids:fit:test','unknown:train:val'):
+                with self.subTest(key=key):
+                    m.write_json(p,{'declared_overlap_values':dict(declarations,**{key:[]})})
+                    with self.assertRaisesRegex(ValueError,'Unexpected overlap'):
+                        m.split_audit(train,val,p)
+            m.write_json(p,{'declared_overlap_values':declarations})
+            with self.assertRaisesRegex(ValueError,'Unexpected overlap'):
+                m.split_audit(train,val,p,evaluation=True)
+            m.write_json(p,{'declared_overlap_values':[]})
+            with self.assertRaisesRegex(ValueError,'must be a mapping'):
+                m.split_audit(train,val,p)
+
+    def test_full_audit_still_rejects_path_leakage(self):
+        row={'image':'same','identity_ids':'a','source_ids':'x'}
+        with tempfile.TemporaryDirectory() as tmp:
+            p=Path(tmp)/'exception.json'
+            m.write_json(p,{'declared_overlap_values':{'identity_ids:train:val':['a'],'source_ids:train:val':['x']}})
+            with self.assertRaisesRegex(ValueError,'image path leakage'):
+                m.split_audit([row],[row],p)
+
 
 if __name__=='__main__':
     torch.set_num_threads(2)

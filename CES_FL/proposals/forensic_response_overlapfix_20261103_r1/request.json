@@ -1,0 +1,44 @@
+{
+  "request_id": "forensic_response_overlapfix_20261103_r1",
+  "parent_commit": "9030dd77d1d93593a4a3808be20b3b903aaeb0da",
+  "state": "CPU_VERIFIED_REAL_PREFLIGHT_PENDING",
+  "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
+  "hypothesis": "Unchanged: conditional forensic-response alignment improves fairness beyond C controls",
+  "changed_production_functions": [
+    "split_audit"
+  ],
+  "configuration_templates_sha256": {
+    "ffpp_template.json": "78db3a18f3c7db1cdaef1edc6f1276ee7462037d11f942d587b34f3724b8cc49",
+    "ff2_template.json": "28dfdeb6b5459cf23c35f0fc4061ace81dd141f50f47190d9e7e559593f8c8f3"
+  },
+  "configuration_changes": [],
+  "operator_report": {
+    "ffpp_preflight": "FAILED on unexpected shared-audit keys",
+    "audit_hash_matches_template": true,
+    "gpu_hours_spent_on_new_study": 0,
+    "existing_ding_run": "untouched",
+    "independently_verified_on_cluster": false
+  },
+  "local_evidence_scope": "Synthetic reproduction, invariant tests and CPU software smoke only; actual cluster audit and manifests unavailable",
+  "required_checks": [
+    "New binding and full real-data CPU preflight",
+    "New source-bound operator review",
+    "Fresh CUDA smoke and real-input backward checks",
+    "Existing dataset/demographic-support requirements"
+  ],
+  "launch": null,
+  "test_read": false,
+  "novelty_changed_by_patch": false,
+  "unit_tests_passed": 13,
+  "cpu_smoke": "PASS",
+  "cuda_verified": false,
+  "evidence": [
+    "evidence/parser_regression.json",
+    "evidence/unit_tests.log",
+    "evidence/SMOKE_RESULT_CPU.json",
+    "evidence/smoke_cpu.log",
+    "evidence/smoke_cpu_attempt1_write_failure.log"
+  ],
+  "local_first_full_smoke": "Checkpoint write failure on nearly full filesystem; traceback retained; fresh retry PASS",
+  "original_pinned_checkout_preserved": true
+}

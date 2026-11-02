@@ -1,0 +1,26 @@
+{
+  "evidence_scope": "Synthetic reproduction of user-reported schema; actual cluster audit file unavailable locally",
+  "pinned_commit": "9030dd77d1d93593a4a3808be20b3b903aaeb0da",
+  "pinned_error": "Unexpected overlap exception keys",
+  "new_source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
+  "fixed_result": {
+    "recorded_contributor_overlap": {
+      "identity_ids": 0,
+      "source_ids": 0
+    },
+    "true_person_separation_verified": false,
+    "checked_overlap_keys": [
+      "identity_ids:train:val",
+      "source_ids:train:val"
+    ],
+    "deferred_overlap_keys": [
+      "identity_ids:train:test",
+      "identity_ids:val:test",
+      "source_ids:train:test",
+      "source_ids:val:test"
+    ]
+  },
+  "audit_bytes_unchanged": true,
+  "real_preflight_verified": false,
+  "test_manifest_read": false
+}

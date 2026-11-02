@@ -1,0 +1,94 @@
+{
+  "scope": "Only temporary binary checkpoints of two superseded synthetic smoke runs created by this assistant; pinned final smoke and all real research runs untouched; receipts/logs retained",
+  "removed": [
+    {
+      "temporary_synthetic_checkpoint": "/Users/hardiksharma/Downloads/fairness_cvpr/output/forensic_response_smoke_r1/A/best.pt",
+      "bytes": 138470926
+    },
+    {
+      "temporary_synthetic_checkpoint": "/Users/hardiksharma/Downloads/fairness_cvpr/output/forensic_response_smoke_r1/A/last.pt",
+      "bytes": 138470990
+    },
+    {
+      "temporary_synthetic_checkpoint": "/Users/hardiksharma/Downloads/fairness_cvpr/output/forensic_response_smoke_r1/B/best.pt",
+      "bytes": 138470926
+    },
+    {
+      "temporary_synthetic_checkpoint": "/Users/hardiksharma/Downloads/fairness_cvpr/output/forensic_response_smoke_r1/B/last.pt",
+      "bytes": 138470990
+    },
+    {
+      "temporary_synthetic_checkpoint": "/Users/hardiksharma/Downloads/fairness_cvpr/output/forensic_response_smoke_r1/C/best.pt",
+      "bytes": 138470926
+    },
+    {
+      "temporary_synthetic_checkpoint": "/Users/hardiksharma/Downloads/fairness_cvpr/output/forensic_response_smoke_r1/C/last.pt",
+      "bytes": 138470990
+    },
+    {
+      "temporary_synthetic_checkpoint": "/Users/hardiksharma/Downloads/fairness_cvpr/output/forensic_response_smoke_r1/D/best.pt",
+      "bytes": 138470926
+    },
+    {
+      "temporary_synthetic_checkpoint": "/Users/hardiksharma/Downloads/fairness_cvpr/output/forensic_response_smoke_r1/D/last.pt",
+      "bytes": 138470990
+    },
+    {
+      "temporary_synthetic_checkpoint": "/Users/hardiksharma/Downloads/fairness_cvpr/output/forensic_response_smoke_r1/fixture_PRIVATE/initial.pt",
+      "bytes": 83738935
+    },
+    {
+      "temporary_synthetic_checkpoint": "/Users/hardiksharma/Downloads/fairness_cvpr/output/forensic_response_smoke_r1/resume_D/best.pt",
+      "bytes": 138471822
+    },
+    {
+      "temporary_synthetic_checkpoint": "/Users/hardiksharma/Downloads/fairness_cvpr/output/forensic_response_smoke_r1/resume_D/last.pt",
+      "bytes": 138471950
+    },
+    {
+      "temporary_synthetic_checkpoint": "/Users/hardiksharma/Downloads/fairness_cvpr/output/forensic_response_smoke_r2/A/best.pt",
+      "bytes": 138472334
+    },
+    {
+      "temporary_synthetic_checkpoint": "/Users/hardiksharma/Downloads/fairness_cvpr/output/forensic_response_smoke_r2/A/last.pt",
+      "bytes": 138472398
+    },
+    {
+      "temporary_synthetic_checkpoint": "/Users/hardiksharma/Downloads/fairness_cvpr/output/forensic_response_smoke_r2/B/best.pt",
+      "bytes": 138472334
+    },
+    {
+      "temporary_synthetic_checkpoint": "/Users/hardiksharma/Downloads/fairness_cvpr/output/forensic_response_smoke_r2/B/last.pt",
+      "bytes": 138472398
+    },
+    {
+      "temporary_synthetic_checkpoint": "/Users/hardiksharma/Downloads/fairness_cvpr/output/forensic_response_smoke_r2/C/best.pt",
+      "bytes": 138469390
+    },
+    {
+      "temporary_synthetic_checkpoint": "/Users/hardiksharma/Downloads/fairness_cvpr/output/forensic_response_smoke_r2/C/last.pt",
+      "bytes": 138472398
+    },
+    {
+      "temporary_synthetic_checkpoint": "/Users/hardiksharma/Downloads/fairness_cvpr/output/forensic_response_smoke_r2/D/best.pt",
+      "bytes": 138469390
+    },
+    {
+      "temporary_synthetic_checkpoint": "/Users/hardiksharma/Downloads/fairness_cvpr/output/forensic_response_smoke_r2/D/last.pt",
+      "bytes": 138472398
+    },
+    {
+      "temporary_synthetic_checkpoint": "/Users/hardiksharma/Downloads/fairness_cvpr/output/forensic_response_smoke_r2/fixture_PRIVATE/initial.pt",
+      "bytes": 83738935
+    },
+    {
+      "temporary_synthetic_checkpoint": "/Users/hardiksharma/Downloads/fairness_cvpr/output/forensic_response_smoke_r2/resume_D/best.pt",
+      "bytes": 138469390
+    },
+    {
+      "temporary_synthetic_checkpoint": "/Users/hardiksharma/Downloads/fairness_cvpr/output/forensic_response_smoke_r2/resume_D/last.pt",
+      "bytes": 138473422
+    }
+  ],
+  "freed_bytes": 2936905158
+}

@@ -1,0 +1,20 @@
+{
+  "recorded_utc": "2026-11-02T20:13:31.999661+00:00",
+  "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
+  "python": "3.9.23",
+  "unit_tests_passed": 13,
+  "cpu_smoke": "PASS",
+  "commands": [
+    "/opt/anaconda3/bin/python -m unittest discover -s CES_FL/tests -p test_forensic_response.py -v",
+    "/opt/anaconda3/bin/python -u CES_FL/src/ces_fl_forensic_response.py smoke --device cpu --out /Users/hardiksharma/Downloads/fairness_cvpr/output/forensic_response_overlapfix_smoke_retry_20261103"
+  ],
+  "cluster_accessed": false,
+  "real_preflight_verified": false,
+  "cuda_tested": false,
+  "original_checkout_commit": "9030dd77d1d93593a4a3808be20b3b903aaeb0da",
+  "original_checkout_source_sha256": "4be586ba82bcae8fe5ea47f951d9451313bda2587a746b8515733b8aae3d5d72",
+  "original_checkout_clean": true,
+  "production_ast_changes": [
+    "split_audit"
+  ]
+}
