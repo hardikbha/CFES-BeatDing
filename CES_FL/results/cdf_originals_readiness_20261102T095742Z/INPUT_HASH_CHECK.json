@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "observed_management_utc": "2026-11-02T10:09:04.805000+00:00",
+  "actual_sha256": {
+    "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ding_ffpp/train.csv": "6ee9326fe8361dc3aee0f803c49b5eada169be5cf3bc3cb44ad3d934ba5ca657",
+    "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ding_ffpp/val.csv": "52f4844cffe5a03adb08cecde8829244bb50e05eeead36f6d659599f1c24f5b1",
+    "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401/preflight/resnet50_imagenet1k_v1_modern.pth": "d9ad71c77abfb482d7d9fc338f4536beda71d6ef4b495b7f60aad8f689832d11",
+    "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ding_ffpp/protocol_source_overlap.json": "793db56c30c85dd654c6d68745afc926f4b1f8dc8bec749db01b07b3aa306c97",
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/xception-b5690688.pth": "43020ad2812c333d9f8e202b9fef94e579d07addb6582d69a1f68bbaec21aa90",
+    "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z/P/best.pt": "3174e5b01a84c91cc70afae538505663ca96454d897e6b793c0672826a8f08b5"
+  },
+  "TEST_data_read": false,
+  "full_image_decoding_performed": false
+}

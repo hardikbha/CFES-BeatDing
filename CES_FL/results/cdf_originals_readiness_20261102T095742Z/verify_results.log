@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "out": "/home/sachin.chaudhary/cesel_ma_audit_logs/cdf_followup_check_20261102T095742Z",
+  "source_files_verified": 55,
+  "epochs": {
+    "bce": 50,
+    "fair": 50
+  },
+  "selected_epochs": {
+    "bce": 22,
+    "fair": 37
+  },
+  "FF2": {
+    "root": "/home/sachin.chaudhary/ces_fl_runs/ff2_originals_s17_20261102_r1/training",
+    "DONE": true,
+    "status": "PASS",
+    "epochs": 10,
+    "selected_epoch": 9,
+    "validation_auc": 0.9981053586334089,
+    "native_validation_replay": true,
+    "test_evaluated": false,
+    "further_work": "HOLD",
+    "checkpoint_hash_from_native_receipt": "43152de1b98dce48801114efb2454cb0bc6aa7400445dd5f139759022229895a",
+    "checkpoint_rehashed_by_this_FF2_check": false
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "observed_management_utc": "2026-11-02T09:57:42.261000+00:00",
+  "queries": {
+    "scheduler": {
+      "command": [
+        "qstat",
+        "-u",
+        "sachin.chaudhary"
+      ],
+      "exit_code": 0,
+      "stdout": "\nmgmt01: \n                                                            Req'd  Req'd   Elap\nJob ID          Username Queue    Jobname    SessID NDS TSK Memory Time  S Time\n--------------- -------- -------- ---------- ------ --- --- ------ ----- - -----\n43937.mgmt01    sachin.* workq    v3_sched2  13813*   1   8    --  240:0 R 214:5\n45032.mgmt01    sachin.* gpu      symtl2     24108*   1   8  280gb 10:00 R 08:57\n45068.mgmt01    sachin.* gpu      poolg      24542*   1   8  280gb 12:00 R 07:22\n45075.mgmt01    sachin.* workq    symtl      25249*   1   8  280gb 12:00 R 04:29\n",
+      "stderr": ""
+    },
+    "gpu01_gpus": {
+      "command": [
+        "ssh",
+        "-o",
+        "BatchMode=yes",
+        "-o",
+        "ConnectTimeout=10",
+        "gpu01",
+        "nvidia-smi --query-gpu=index,uuid,memory.free,utilization.gpu --format=csv,noheader,nounits"
+      ],
+      "exit_code": 0,
+      "stdout": "0, GPU-410a5796-06b3-dbe6-5371-5d06a1a53416, 46862, 100\n1, GPU-6cc0a5b3-99ca-13e3-5508-a201a06e82d6, 81083, 0\n2, GPU-2544ad3e-a8af-7b58-55e6-c24c57497b01, 53040, 48\n3, GPU-6a002609-de85-4949-c707-ee9317b284f0, 81085, 0\n4, GPU-9b669a06-9156-a98e-2194-36f2fc11d7ca, 81087, 0\n5, GPU-789d1ee4-d888-8a11-c94e-3d866900bc4d, 81085, 0\n6, GPU-61f54ca7-3cee-1c93-def3-118523e95241, 81087, 0\n7, GPU-47332ec9-ecba-0a1b-020e-4a572735cd83, 4954, 0\n",
+      "stderr": ""
+    },
+    "gpu01_CES_processes": {
+      "command": [
+        "ssh",
+        "-o",
+        "BatchMode=yes",
+        "-o",
+        "ConnectTimeout=10",
+        "gpu01",
+        "ps -u sachin.chaudhary -o pid=,etime=,comm=,args= | awk '$3 ~ /python/ && /ces_fl_cdf_study.py|ces_fl_manipulation_response.py|ff2_originals_s17_20261102_r1\\/runtime\\/stage_program.py/'"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "gpu02_gpus": {
+      "command": [
+        "ssh",
+        "-o",
+        "BatchMode=yes",
+        "-o",
+        "ConnectTimeout=10",
+        "gpu02",
+        "nvidia-smi --query-gpu=index,uuid,memory.free,utilization.gpu --format=csv,noheader,nounits"
+      ],
+      "exit_code": 0,
+      "stdout": "0, GPU-da9cbc5e-5af7-36d0-efea-fcc1da157861, 3495, 100\n1, GPU-4ed8257a-b1a4-0026-ff8f-8a0f42f38902, 4503, 100\n2, GPU-19db00be-6cc8-242f-6b67-c05487fb2372, 4503, 100\n3, GPU-4f468707-fed7-a55e-3174-628368d6c379, 4505, 100\n4, GPU-ee335748-8273-2d67-42a5-d45463027c1b, 8641, 99\n5, GPU-bff97893-385b-6f3f-831b-113284c2e1f1, 6365, 100\n6, GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb, 13214, 100\n7, GPU-65f63cc5-9366-5c2d-196a-6e7a0a62c1e8, 2147, 92\n",
+      "stderr": ""
+    },
+    "gpu02_CES_processes": {
+      "command": [
+        "ssh",
+        "-o",
+        "BatchMode=yes",
+        "-o",
+        "ConnectTimeout=10",
+        "gpu02",
+        "ps -u sachin.chaudhary -o pid=,etime=,comm=,args= | awk '$3 ~ /python/ && /ces_fl_cdf_study.py|ces_fl_manipulation_response.py|ff2_originals_s17_20261102_r1\\/runtime\\/stage_program.py/'"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  }
+}

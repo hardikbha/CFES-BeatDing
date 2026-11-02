@@ -1,0 +1,44 @@
+[
+  {
+    "path": "/home/sachin.chaudhary/ces_fl_runs/manip_response_ssh_20261101T115720Z",
+    "children": [
+      "CURRENT_STATUS.json",
+      "EXECUTION_REPORT.md",
+      "ORIGINAL_BASELINES_EXECUTION.md",
+      "P",
+      "P_real_dry",
+      "SOURCE.json",
+      "STATUS.md",
+      "bce",
+      "bound_originals",
+      "checks",
+      "cuda_policy",
+      "dry_bce",
+      "dry_fair",
+      "fair",
+      "last_publication.json",
+      "logs",
+      "observer.lock",
+      "observer_launch.json",
+      "real_inputs",
+      "runtime",
+      "smoke_cuda"
+    ]
+  },
+  {
+    "path": "/home/sachin.chaudhary/ces_fl_runs/manip_response_20261101T104925Z",
+    "children": [
+      "CURRENT_STATUS.json",
+      "EXECUTION_REPORT.md",
+      "SOURCE.json",
+      "STATUS.md",
+      "checks",
+      "last_publication.json",
+      "logs",
+      "observer.lock",
+      "observer_launch.json",
+      "quartet_preparation",
+      "runtime"
+    ]
+  }
+]

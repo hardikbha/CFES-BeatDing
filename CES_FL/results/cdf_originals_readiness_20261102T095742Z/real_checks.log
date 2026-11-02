@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/cesel_ma_audit_logs/cdf_followup_check_20261102T095742Z/REAL_CHECK_GUARD.py", line 27, in <module>
+    assert lease is not None,'No idle cooperatively available GPU; no other job modified'
+           ^^^^^^^^^^^^^^^^^
+AssertionError: No idle cooperatively available GPU; no other job modified
