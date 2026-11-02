@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python - (import publish_study_progress_v2; expansion_info; assert actual job, grant and state)",
+  "observed_management_utc": "2026-11-02T22:08:42.430000+00:00",
+  "actual_observation": {
+    "returncode": 0,
+    "job_state": "R",
+    "exec_vnode": "(gpu01:ncpus=12:ngpus=2:mem=25165824kb)"
+  },
+  "test_access": false,
+  "training_modified": false
+}

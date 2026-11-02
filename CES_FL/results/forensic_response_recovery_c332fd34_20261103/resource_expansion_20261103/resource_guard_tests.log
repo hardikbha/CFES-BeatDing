@@ -1,0 +1,10 @@
+test_distinct_additional_devices (__main__.Guards.test_distinct_additional_devices) ... ok
+test_import_does_not_launch (__main__.Guards.test_import_does_not_launch) ... ok
+test_missing_or_wrong_grant_stops (__main__.Guards.test_missing_or_wrong_grant_stops) ... ok
+test_running_two_gpu_grant (__main__.Guards.test_running_two_gpu_grant) ... ok
+test_scheduler_visibility_restricts_candidates (__main__.Guards.test_scheduler_visibility_restricts_candidates) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.002s
+
+OK

@@ -1,3 +1,5 @@
+Resource expansion: [job43937 stopped; actual PBS45202 and four-arm parallel execution](resource_expansion_20261103/README.md). No scientific settings changed.
+
 # Live forensic-response progress
 
 Use [STATUS.md](STATUS.md) and [LIVE_STATE.json](LIVE_STATE.json) for current stages, validation/group support, checkpoint hashes and cumulative GPU-hours. Execution remains pinned to `c332fd34fb603b8919b15fee08e8d022fb9f57c8`; publication uses a separate checkout.

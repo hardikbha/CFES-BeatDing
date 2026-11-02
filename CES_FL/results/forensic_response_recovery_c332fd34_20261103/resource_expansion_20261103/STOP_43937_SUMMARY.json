@@ -1,0 +1,16 @@
+{
+  "observed_management_utc": "2026-11-02T22:02:57.643000+00:00",
+  "command": [
+    "qdel",
+    "43937.mgmt01"
+  ],
+  "returncode": 0,
+  "authorized_by": "User explicitly requested stopping job43937",
+  "verified_owner": "sachin.chaudhary",
+  "job_name": "v3_sched2",
+  "requested_ncpus": 8,
+  "requested_ngpus": 0,
+  "existing_cesfl_and_ding_outside_session": true,
+  "verified_final_pbs_state": "F",
+  "verified_old_pbs_processes_absent": true
+}

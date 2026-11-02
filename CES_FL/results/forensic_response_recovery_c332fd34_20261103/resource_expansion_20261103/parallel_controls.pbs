@@ -1,0 +1,12 @@
+#!/bin/bash
+#PBS -S /bin/bash
+#PBS -N cesfl_AB_s17
+#PBS -q workq
+#PBS -l select=1:ncpus=12:ngpus=2:mem=24gb:host=gpu01
+#PBS -l walltime=04:00:00
+#PBS -j oe
+#PBS -o /home/sachin.chaudhary/ces_fl_runs/forensic_response_c332fd34_20261103/resource_expansion_20261102T220256Z/pbs_AB.log
+set -euo pipefail
+export OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 OPENBLAS_NUM_THREADS=1
+cd /home/sachin.chaudhary/ces_fl_runs/forensic_response_c332fd34_20261103/resource_expansion_20261102T220256Z
+exec /home/sachin.chaudhary/.conda/envs/aiface/bin/python -u parallel_controls_pbs.py

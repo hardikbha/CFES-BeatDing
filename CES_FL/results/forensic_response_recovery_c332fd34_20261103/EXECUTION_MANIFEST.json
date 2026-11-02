@@ -40,5 +40,19 @@
     "study_coordinator.py": "b433b819e5f28f313071b79f4f54131253f39029c36e162f03aa010ffa8eb8a0",
     "publish_study_progress.py": "8c5b58ef04544c8ea28fe5182e1fc2491c249ac6437bed3b488186b2cbda8d67"
   },
-  "notes": "allocated_stage is imported as budget library; its scheduler launcher was not used. No new PBS job or TEST evaluation. Scientific model file unchanged. CPU/preview/private inventories and row reviews remain on cluster."
+  "notes": "allocated_stage is imported as budget library; its scheduler launcher was not used. No new PBS job or TEST evaluation. Scientific model file unchanged. CPU/preview/private inventories and row reviews remain on cluster.",
+  "resource_expansion": {
+    "pbs_job_id": "45202.mgmt01",
+    "stopped_job_id": "43937.mgmt01",
+    "ngpus": 2,
+    "ncpus": 12,
+    "scope": "parallel A/B controls; C/D preserved",
+    "scientific_source_changed": false,
+    "script_hashes": {
+      "parallel_controls_pbs.py": "586d48610063a75ac9ebc3fb4d9fca3d75749d346d66ede79cbf12473e5cba9d",
+      "parallel_controls.pbs": "0aba4648b0129aef077c0e98c87334fbfe3d2e19fb1089559b6e8a0d9d9a2481",
+      "test_parallel_controls.py": "a22932eee623bb82576b2cef39926487a895720581d69ec8c1a1fa237a4f4a11"
+    },
+    "observer_v2_sha256": "339895fbd76dcf48d3e45f2e14d660ba0e69d05e062538fa9bce5019193ca270"
+  }
 }

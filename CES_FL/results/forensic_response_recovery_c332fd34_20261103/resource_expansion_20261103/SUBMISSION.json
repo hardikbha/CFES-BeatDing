@@ -1,0 +1,26 @@
+{
+  "observed_management_utc": "2026-11-02T22:06:13.332000+00:00",
+  "command": [
+    "qsub",
+    "/home/sachin.chaudhary/ces_fl_runs/forensic_response_c332fd34_20261103/resource_expansion_20261102T220256Z/parallel_controls.pbs"
+  ],
+  "returncode": 0,
+  "stdout": "45202.mgmt01\n",
+  "stderr": "",
+  "pbs_job_id": "45202.mgmt01",
+  "requested_ngpus": 2,
+  "requested_ncpus": 12,
+  "requested_mem": "24gb",
+  "walltime": "04:00:00",
+  "arms": [
+    "A",
+    "B"
+  ],
+  "scientific_source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
+  "script_hashes": {
+    "parallel_controls_pbs.py": "586d48610063a75ac9ebc3fb4d9fca3d75749d346d66ede79cbf12473e5cba9d",
+    "parallel_controls.pbs": "0aba4648b0129aef077c0e98c87334fbfe3d2e19fb1089559b6e8a0d9d9a2481",
+    "test_parallel_controls.py": "a22932eee623bb82576b2cef39926487a895720581d69ec8c1a1fa237a4f4a11"
+  },
+  "full_training_protocol_changed": false
+}

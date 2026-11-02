@@ -1,0 +1,37 @@
+{
+  "status": "PBS_RESOURCE_GRANT_VERIFIED",
+  "pbs_job_id": "45202.mgmt01",
+  "allocated_ngpus": 2,
+  "allocated_ncpus": 12,
+  "host": "gpu01",
+  "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
+  "config_digest": "03c96caa44e63562b8d07ee9f8b7ee09b2ff49fb28f63997e96839753cd3bb7f",
+  "arms": [
+    "A",
+    "B"
+  ],
+  "chosen_devices": [
+    {
+      "index": 4,
+      "uuid": "GPU-9b669a06-9156-a98e-2194-36f2fc11d7ca",
+      "free": 81087,
+      "used": 4,
+      "reserved_not_yet_used_mib": 50000,
+      "available_mib": 31087
+    },
+    {
+      "index": 3,
+      "uuid": "GPU-6a002609-de85-4949-c707-ee9317b284f0",
+      "free": 81085,
+      "used": 6,
+      "reserved_not_yet_used_mib": 50000,
+      "available_mib": 31085
+    }
+  ],
+  "scheduler_physical_mapping_available": false,
+  "physical_binding_route": "explicit user-authorized pool-v2 shared leases; PBS physical mapping unavailable",
+  "exclusive_gpus_claimed": false,
+  "batch_size_or_scientific_settings_changed": false,
+  "test_evaluation": false,
+  "prior_c_d_and_ding_preserved": true
+}
