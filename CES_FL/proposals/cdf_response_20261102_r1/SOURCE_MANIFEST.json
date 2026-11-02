@@ -1,0 +1,174 @@
+{
+  "format": "CESFL_CDF_RESPONSE_SOURCE_MANIFEST_R1",
+  "recorded_management_utc": "2026-11-02T07:01:43.170737+00:00",
+  "base_main_commit": "d744851e6fd0c13c2ab7095b47a8b19600008653",
+  "latest_fetched_main": "67d2308225e422a91c715c40427f40c3df6812cf",
+  "protected_source_and_config_sha256": {
+    "CESEL_MA/results/gate.json": "274a2a21963c32637a74277632a3b51f8437fb4ed170ba6f887ddd5b8024bae1",
+    "CES_FL/AGENTS.md": "c097e68e95bee8fc5af30940eb88f634fe154ced2f897cd3316171cc0e807f6c",
+    "CES_FL/README.md": "1dbea7948fe04495a97b1926990199cd953e105bf88a7476b2e2b63167002663",
+    "CES_FL/WORKFLOW.md": "29715807944c8692a757c81aa8e56bff6a2da9e901af6cb8f562deee08461c4d",
+    "CES_FL/experiments/benchmark_seed17/paired_uncertainty.py": "63e4b7e5fb823bfa48fbb8246124a7e597487f02f46bcf6810fe181925f96c31",
+    "CES_FL/experiments/benchmark_seed17/uncertainty.py": "a60d58435fe0b46ca9daf686c4bbaa3ab7ef94ce202fb83c04429d4a4f9024fc",
+    "CES_FL/proposals/cdf_response_20261102_r1/DATA_GATE.md": "6c91a5b37308f513437c21874fe7dde856f95ef8533262f9aa17b1914c3e1f26",
+    "CES_FL/proposals/cdf_response_20261102_r1/DING_BASELINE.md": "6a4cb4b6f159d59f1d16e1e6cd27f6e3d0c4735a48291901a3d5348da978a472",
+    "CES_FL/proposals/cdf_response_20261102_r1/DING_CC_OT_CONFIG.json": "c9c2fe5822d106d6b927e86c59069595e74e949103923da87e9cfe745f3f1815",
+    "CES_FL/proposals/cdf_response_20261102_r1/GPU_OPERATOR_PROMPT.md": "d595ad286cfe3ca05d55ae76ff5316438e9dec5c8b689c38f8e584d8cb1e38e4",
+    "CES_FL/proposals/cdf_response_20261102_r1/LAUNCH_RELEASE_TEMPLATE.json": "c5c887f95516666f26362123c2f0e92fe13e7ec193bf88c04ff052c4b1791fa4",
+    "CES_FL/proposals/cdf_response_20261102_r1/PREREGISTRATION.md": "f0ac7e449fd56b37a54fb3474c601c16c2870e555a83e89dd4824e9fb70f08b2",
+    "CES_FL/proposals/cdf_response_20261102_r1/PROTOCOL.json": "3eaf4fcd0ad81ffdce5200092248fc245695f87590697709b0eca1776cca7e50",
+    "CES_FL/proposals/cdf_response_20261102_r1/README.md": "93848585805148ba997ba88c2f686bd59ec4bdd2871fcb2482acaf8bc1f99fc3",
+    "CES_FL/proposals/cdf_response_20261102_r1/RELATED_WORK.md": "1c2857be04149f05a07467cd322e3894ad79b4f7696571274e545c1b73ded705",
+    "CES_FL/proposals/cdf_response_20261102_r1/SMOKE_AND_EXECUTION.md": "bf988f5a3e408c509a99d6ab1c3194447623c00755e4a7d656a3174a851028d6",
+    "CES_FL/proposals/cdf_response_20261102_r1/configs/resnet50_s17.json": "704cd022b675ffef42ff149286069430865d2d9259c52b41194e9d650674a87f",
+    "CES_FL/proposals/cdf_response_20261102_r1/configs/resnet50_s27.json": "374858ddb947849bdc3a659b9b331b0e3785aa455546233f0f0ad826318a7e3d",
+    "CES_FL/proposals/cdf_response_20261102_r1/configs/resnet50_s37.json": "b7296c83cca7db49cfa013d170fe17c79ededb084e0b2e6a098065c8f12375f0",
+    "CES_FL/proposals/cdf_response_20261102_r1/configs/resnet50_s47.json": "20de8fe463c26ff5cb78dc913709f46c010300269c3e116af90cf02cc1e422d5",
+    "CES_FL/proposals/cdf_response_20261102_r1/configs/resnet50_s57.json": "7d3305a55b14195631a818d68d3fec2dd89cbd118bdbab6e879e2930723e5181",
+    "CES_FL/proposals/cdf_response_20261102_r1/configs/resnet50_s67.json": "095e42b0781421b5293aebde13e51e31909b2bff6873aab15dfb7c94e7542b67",
+    "CES_FL/proposals/cdf_response_20261102_r1/configs/resnet50_s7.json": "930c866e9364475ba0155d79e8edc8a47d6c69425fbe0da5d1e970b60b290bcf",
+    "CES_FL/proposals/cdf_response_20261102_r1/configs/resnet50_s77.json": "f6203018092ec2d036957f362def83dd14be969224d4e3751733a762ac07fb49",
+    "CES_FL/proposals/cdf_response_20261102_r1/configs/xception_s17.json": "a10663bc6749c46591dd9b873b257e1a34d473fb286b88a8f822f2c553d9cf2d",
+    "CES_FL/proposals/cdf_response_20261102_r1/configs/xception_s27.json": "c735a2fdc805e01a1e1586e06a68109bcf388a6af8d1e286f81215de17158820",
+    "CES_FL/proposals/cdf_response_20261102_r1/configs/xception_s37.json": "3f5e418249f6e0eb71a627b20e2ce16697a5f0ab1c3244ca3f5b170d0ef12566",
+    "CES_FL/proposals/cdf_response_20261102_r1/configs/xception_s47.json": "7bcbec926256d011906bfb1e304e3076f716312ea542179a81649c0e18431aa2",
+    "CES_FL/proposals/cdf_response_20261102_r1/configs/xception_s57.json": "736f206b7b45d1abf559a9c12df5cfd4e5d4c0a6f3b365de79342e3d93f4c183",
+    "CES_FL/proposals/cdf_response_20261102_r1/configs/xception_s67.json": "a7976ffed674dc6fd9754d2d0ea46a51bb1151e297f52da0683bcb1c6152ab74",
+    "CES_FL/proposals/cdf_response_20261102_r1/configs/xception_s7.json": "586a3c8611ac63b1a3be56119ac1686c113b10b57ea18a7a84de16bc80e97961",
+    "CES_FL/proposals/cdf_response_20261102_r1/configs/xception_s77.json": "b71e2416111f1a94fb935adfc4e043e35d9937fb30379201469ce5a11d8cf49e",
+    "CES_FL/src/ces_fl_cdf_objectives.py": "3f0f47691667f58f3bba25ae17ec6aa3eb705db84beee06f0f8fbd5638b47175",
+    "CES_FL/src/ces_fl_cdf_study.py": "ed1ebf081ec96fd524088fa13de0af54aa44d905d1b7f7aab1b7815db3a59f20",
+    "CES_FL/src/ces_fl_counterfactual_5050.py": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+    "CES_FL/src/ces_fl_diagram_model_v021.py": "0e001dd1251570ce43fb82bde307c519dea4045d9734506e1ce90d2ed014f8de",
+    "CES_FL/src/ces_fl_manipulation_response.py": "0e82a522a22e641dc5588b6a15317e6842896ab2bdcc5364833af25e207f257e",
+    "CES_FL/src/ces_fl_upgrade.py": "4d8413cbfd8f22c60be8405ee7686dff7745aed134edddecf21e809cf3082ff6",
+    "CES_FL/tests/smoke_cdf_proposal.py": "5594a7d6c9a1ce8125da2e3d4aff89514562e9731b05e8a09efe120327f30737",
+    "DINGREPRO_LIN/PREREG.txt": "98b8ec061bdf9856e56c5fe77b32c6520bf6cff3d6bf1303e60539ba6801d1e8",
+    "DINGREPRO_LIN/code/Ding_mod/GDA.py": "bef29fa69e46c729dc679356d0ac3904ebac6da4c00180350daf282fe94599db",
+    "DINGREPRO_LIN/code/Ding_mod/GDA_fastloader.py": "81216adc480b2402cd9e19f51e701c48c5cf1f2972b110ccf40e6ceab73c7e6b",
+    "DINGREPRO_LIN/code/Ding_mod/SFD.py": "e54c78e2a3413a2af85e361bba5a3fc134b04145df283126b8eb705ab3cd4780",
+    "DINGREPRO_LIN/code/Ding_mod/aux_funcs.py": "e102db44f0c1aeb6e604cd2333ea01c92cedecd3008a9a7bf2b24ed65c28d0f1",
+    "DINGREPRO_LIN/code/Ding_mod/detectors/xception_detector.py": "790b8da4c7d267c89994490960f0a6cd343d4846a932cc006236d39d0c58fd2f",
+    "DINGREPRO_LIN/code/Ding_mod/train_ori_model.py": "ee2d3b3229ed0ce96bf3e5517e488059419d1fae411f9d05739808e81ea6a7d0",
+    "DINGREPRO_LIN/code/Ding_mod/utils/xception.py": "a9262c497f785231c2dcad8f4954c7ac19d5682033cc59d20609b5a6cdf74599",
+    "CES_FL/results/manip_response_originals_s17_20261102/REPORT.md": "e55714140d376f1132856c13dee6f06d12c6f78717155b65044126b36d986b1c",
+    "CES_FL/results/manip_response_originals_s17_20261102/aggregate.json": "5cad8bb624d6438497d595dd70bc7d1f7961f818b693bd3ff0c766daa766a468",
+    "CES_FL/results/ding_reproduced_vs_cesfl_20261102/REPORT.md": "e644bd48cfda9c1856b765c0dacb86e0a824ef27cf3b7953ee1aabfd8c9ad12d",
+    "CES_FL/results/ding_reproduced_vs_cesfl_20261102/comparison.json": "bf4b59dbfa18b69a27e745df512bd2c03cb4681d8576956565a873d88a925134",
+    "CES_FL/results/upgrade_tests_s17_20261101T040407Z/REPORT.md": "fd75ba0a44e36b0283ee70454687c4453fe86eb88f72a73083a046633b217b3f",
+    "CES_FL/proposals/ff2_supervisor_review_20261101_r1/REVIEW.md": "40528c18aaeee1f3de72ceba055cc8f95c12e335d67f6a5061522403e6d37666",
+    "CES_FL/proposals/manipulation_response_20261101_r1/config.json": "d31c78ab2913e629ebbd7e7a860a0dd4bea90d2c920b0d77719b042a7537dab0",
+    "DINGREPRO_LIN/code/run_task_full.sh": "1c97fa74486e2df57743a7ca07d52f5577ff013744e10a4867a88da66199909f"
+  },
+  "actual_verified_input_sha256": {
+    "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ding_ffpp/train.csv": "6ee9326fe8361dc3aee0f803c49b5eada169be5cf3bc3cb44ad3d934ba5ca657",
+    "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ding_ffpp/val.csv": "52f4844cffe5a03adb08cecde8829244bb50e05eeead36f6d659599f1c24f5b1",
+    "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401/preflight/resnet50_imagenet1k_v1_modern.pth": "d9ad71c77abfb482d7d9fc338f4536beda71d6ef4b495b7f60aad8f689832d11",
+    "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ding_ffpp/protocol_source_overlap.json": "793db56c30c85dd654c6d68745afc926f4b1f8dc8bec749db01b07b3aa306c97",
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/xception-b5690688.pth": "43020ad2812c333d9f8e202b9fef94e579d07addb6582d69a1f68bbaec21aa90"
+  },
+  "configs": [
+    {
+      "file": "CES_FL/proposals/cdf_response_20261102_r1/configs/resnet50_s17.json",
+      "seed": 17,
+      "backbone": "resnet50",
+      "sha256": "704cd022b675ffef42ff149286069430865d2d9259c52b41194e9d650674a87f"
+    },
+    {
+      "file": "CES_FL/proposals/cdf_response_20261102_r1/configs/resnet50_s27.json",
+      "seed": 27,
+      "backbone": "resnet50",
+      "sha256": "374858ddb947849bdc3a659b9b331b0e3785aa455546233f0f0ad826318a7e3d"
+    },
+    {
+      "file": "CES_FL/proposals/cdf_response_20261102_r1/configs/resnet50_s37.json",
+      "seed": 37,
+      "backbone": "resnet50",
+      "sha256": "b7296c83cca7db49cfa013d170fe17c79ededb084e0b2e6a098065c8f12375f0"
+    },
+    {
+      "file": "CES_FL/proposals/cdf_response_20261102_r1/configs/resnet50_s47.json",
+      "seed": 47,
+      "backbone": "resnet50",
+      "sha256": "20de8fe463c26ff5cb78dc913709f46c010300269c3e116af90cf02cc1e422d5"
+    },
+    {
+      "file": "CES_FL/proposals/cdf_response_20261102_r1/configs/resnet50_s57.json",
+      "seed": 57,
+      "backbone": "resnet50",
+      "sha256": "7d3305a55b14195631a818d68d3fec2dd89cbd118bdbab6e879e2930723e5181"
+    },
+    {
+      "file": "CES_FL/proposals/cdf_response_20261102_r1/configs/resnet50_s67.json",
+      "seed": 67,
+      "backbone": "resnet50",
+      "sha256": "095e42b0781421b5293aebde13e51e31909b2bff6873aab15dfb7c94e7542b67"
+    },
+    {
+      "file": "CES_FL/proposals/cdf_response_20261102_r1/configs/resnet50_s7.json",
+      "seed": 7,
+      "backbone": "resnet50",
+      "sha256": "930c866e9364475ba0155d79e8edc8a47d6c69425fbe0da5d1e970b60b290bcf"
+    },
+    {
+      "file": "CES_FL/proposals/cdf_response_20261102_r1/configs/resnet50_s77.json",
+      "seed": 77,
+      "backbone": "resnet50",
+      "sha256": "f6203018092ec2d036957f362def83dd14be969224d4e3751733a762ac07fb49"
+    },
+    {
+      "file": "CES_FL/proposals/cdf_response_20261102_r1/configs/xception_s17.json",
+      "seed": 17,
+      "backbone": "xception",
+      "sha256": "a10663bc6749c46591dd9b873b257e1a34d473fb286b88a8f822f2c553d9cf2d"
+    },
+    {
+      "file": "CES_FL/proposals/cdf_response_20261102_r1/configs/xception_s27.json",
+      "seed": 27,
+      "backbone": "xception",
+      "sha256": "c735a2fdc805e01a1e1586e06a68109bcf388a6af8d1e286f81215de17158820"
+    },
+    {
+      "file": "CES_FL/proposals/cdf_response_20261102_r1/configs/xception_s37.json",
+      "seed": 37,
+      "backbone": "xception",
+      "sha256": "3f5e418249f6e0eb71a627b20e2ce16697a5f0ab1c3244ca3f5b170d0ef12566"
+    },
+    {
+      "file": "CES_FL/proposals/cdf_response_20261102_r1/configs/xception_s47.json",
+      "seed": 47,
+      "backbone": "xception",
+      "sha256": "7bcbec926256d011906bfb1e304e3076f716312ea542179a81649c0e18431aa2"
+    },
+    {
+      "file": "CES_FL/proposals/cdf_response_20261102_r1/configs/xception_s57.json",
+      "seed": 57,
+      "backbone": "xception",
+      "sha256": "736f206b7b45d1abf559a9c12df5cfd4e5d4c0a6f3b365de79342e3d93f4c183"
+    },
+    {
+      "file": "CES_FL/proposals/cdf_response_20261102_r1/configs/xception_s67.json",
+      "seed": 67,
+      "backbone": "xception",
+      "sha256": "a7976ffed674dc6fd9754d2d0ea46a51bb1151e297f52da0683bcb1c6152ab74"
+    },
+    {
+      "file": "CES_FL/proposals/cdf_response_20261102_r1/configs/xception_s7.json",
+      "seed": 7,
+      "backbone": "xception",
+      "sha256": "586a3c8611ac63b1a3be56119ac1686c113b10b57ea18a7a84de16bc80e97961"
+    },
+    {
+      "file": "CES_FL/proposals/cdf_response_20261102_r1/configs/xception_s77.json",
+      "seed": 77,
+      "backbone": "xception",
+      "sha256": "b71e2416111f1a94fb935adfc4e043e35d9937fb30379201469ce5a11d8cf49e"
+    }
+  ],
+  "native_Xception_s17_P50_checkpoint_sha256": "3174e5b01a84c91cc70afae538505663ca96454d897e6b793c0672826a8f08b5",
+  "no_native_P50_rerun": true,
+  "missing_binding_policy": "null;never invent hashes",
+  "new_results": "software only;no TEST reading or full experiment",
+  "scientific_source_hashes_match_final_CPU_and_CUDA": true,
+  "final_manifest_recorded_management_utc": "2026-11-02T07:08:44.639000+00:00"
+}

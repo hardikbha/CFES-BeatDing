@@ -1,0 +1,119 @@
+{
+  "id": "cdf_response_20261102_r1",
+  "created_management_utc": "2026-11-02T06:26:55.590425+00:00",
+  "base_main_commit": "d744851e6fd0c13c2ab7095b47a8b19600008653",
+  "new_study_not_amendment_to_existing_gate": true,
+  "primary_hypothesis": "Validated matched manipulation-response alignment added to the same CDF+score-consistency detector lowers gender_race F_FPR at a single validation-calibrated global threshold, with bounded utility/FNR trade-off; response versus score is the primary causal ablation.",
+  "arms": {
+    "bce": "mean BCE",
+    "dro": "complete label\u00d7gender_race group DRO",
+    "mean_fair": "BCE + existing fixed-zero mean-soft-score loss",
+    "cdf_fair": "BCE + new real CDF loss",
+    "nochange": "CDF + original/no-change consistency",
+    "score": "CDF + no-change-versus-demographic score consistency (no original/no-change loss)",
+    "response": "CDF + same score consistency + matched operation-response alignment and sensitivity"
+  },
+  "initial_validation_only_seeds": [
+    7,
+    17,
+    27
+  ],
+  "confirmatory_additional_seeds": [
+    37,
+    47,
+    57,
+    67,
+    77
+  ],
+  "backbones": [
+    "xception",
+    "resnet50"
+  ],
+  "primary_comparison": [
+    "response",
+    "score"
+  ],
+  "secondary_comparisons": [
+    "cdf_fair vs bce",
+    "cdf_fair vs mean_fair",
+    "cdf_fair vs dro",
+    "response vs corrected Ding-CC-OT-r1"
+  ],
+  "no_TEST_until_frozen_8_seed_confirmation_and_independent_holdout_release": true,
+  "development_rule": {
+    "metric_population": "FF++ VAL, gender_race",
+    "max_auc_drop": 0.005,
+    "min_F_FPR_improvement": 0.02,
+    "max_overall_FNR_increase": 0.02,
+    "max_group_FNR_increase": 0.02,
+    "max_worst_group_AUC_drop": 0.01,
+    "all_three_development_seeds_required": true
+  },
+  "final_claim_rule": {
+    "primary_domain": "prospectively frozen FF++-protocol replication; previously viewed benchmarks reported as such",
+    "joint_detection_fairness_claim": "paired AUC delta95% lower>0 AND F_FPR delta95% upper<0 versus corrected Ding; noninferiority alone is not a detection win",
+    "method_increment": "response versus score paired F_FPR reduction with AUC noninferiority and FNR guards",
+    "confidence": "2000 paired seed/component bootstrap draws with fixed selected checkpoints/thresholds;8pairedseeds; exact seed-level signflip and Holm over primary comparisons; no uncorrected blanket multi-dataset SOTA claim",
+    "minimum_valid_bootstrap_fraction": 0.9,
+    "minimum_recorded_components": 20,
+    "minimum_components_per_class_group": 5
+  },
+  "bank_gate": {
+    "minimum_real_TRAIN_originals": 320,
+    "minimum_originals_per_gender_race_group": 40,
+    "directions": [
+      "older",
+      "younger"
+    ],
+    "both_directions_per_original": true,
+    "minimum_complete_quartets": 640,
+    "operator_families": 2,
+    "minimum_originals_per_group_per_operator": 20,
+    "minimum_recorded_components_per_group": 5,
+    "maximum_originals_per_component": 8,
+    "independent_reviewers": 2,
+    "generated_images_are_not_approvals": true,
+    "no_new_generation_authorized": true
+  },
+  "fairforge2": {
+    "further_work": "HOLD",
+    "existing_original_only_PID_2525928": "user explicitly allows completion; no automatic follow-on",
+    "full_review_blockers_remain": true
+  },
+  "production_release": "DO NOT RUN until independent reviewer release, per-seed P binding, real-data dry checks and all arm-specific gates; no release issued in this task",
+  "hyperparameter_status": "Fixed starting choices, not values justified by new pilot evidence; no sweep or test tuning",
+  "TRAIN_inventory_only_not_bank_coverage": {
+    "Female-Asian": {
+      "real_frames": 1506,
+      "recorded_real_identities": 64
+    },
+    "Female-Black": {
+      "real_frames": 182,
+      "recorded_real_identities": 9
+    },
+    "Female-Others": {
+      "real_frames": 270,
+      "recorded_real_identities": 14
+    },
+    "Female-White": {
+      "real_frames": 5190,
+      "recorded_real_identities": 245
+    },
+    "Male-Asian": {
+      "real_frames": 486,
+      "recorded_real_identities": 31
+    },
+    "Male-Black": {
+      "real_frames": 268,
+      "recorded_real_identities": 11
+    },
+    "Male-Others": {
+      "real_frames": 569,
+      "recorded_real_identities": 27
+    },
+    "Male-White": {
+      "real_frames": 4455,
+      "recorded_real_identities": 201
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "arm": "cdf_fair",
+  "device": "cuda",
+  "optimizer_steps": 0,
+  "hashes": {
+    "ces_fl_cdf_study.py": "ed1ebf081ec96fd524088fa13de0af54aa44d905d1b7f7aab1b7815db3a59f20",
+    "ces_fl_cdf_objectives.py": "3f0f47691667f58f3bba25ae17ec6aa3eb705db84beee06f0f8fbd5638b47175",
+    "ces_fl_counterfactual_5050.py": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab"
+  },
+  "losses": {
+    "total": 0.6828703284263611,
+    "classification": 0.6815300583839417,
+    "cdf": 0.013402782380580902,
+    "mean": -0.0,
+    "pair": -0.0,
+    "response": -0.0
+  },
+  "paired_views": 0,
+  "synthetic_fixture": false
+}

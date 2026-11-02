@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "device": "cpu",
+  "tests_run": 15,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 1,
+  "elapsed_seconds": 21.805418950971216,
+  "observed_utc": "2026-11-02T06:43:18.186895+00:00",
+  "environment": {
+    "torch": "2.10.0+cu128",
+    "torchvision": "0.25.0+cu128",
+    "geomloss": "0.3.1"
+  },
+  "hashes": {
+    "src/ces_fl_cdf_objectives.py": "3f0f47691667f58f3bba25ae17ec6aa3eb705db84beee06f0f8fbd5638b47175",
+    "src/ces_fl_cdf_study.py": "ed1ebf081ec96fd524088fa13de0af54aa44d905d1b7f7aab1b7815db3a59f20",
+    "src/ces_fl_counterfactual_5050.py": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab",
+    "experiments/benchmark_seed17/paired_uncertainty.py": "63e4b7e5fb823bfa48fbb8246124a7e597487f02f46bcf6810fe181925f96c31",
+    "tests/smoke_cdf_proposal.py": "5594a7d6c9a1ce8125da2e3d4aff89514562e9731b05e8a09efe120327f30737",
+    "archive_GDA.py": "bef29fa69e46c729dc679356d0ac3904ebac6da4c00180350daf282fe94599db"
+  },
+  "measured_synthetic_fixtures": {
+    "archived_GDA_exact_AST_block": {
+      "fairness_requires_grad": false,
+      "classification_backpropagates": true,
+      "lambda_independent_gradients": true,
+      "source_sha256": "bef29fa69e46c729dc679356d0ac3904ebac6da4c00180350daf282fe94599db"
+    },
+    "xception_parameters": {
+      "total": 21594159,
+      "trainable": 787207
+    },
+    "resnet50_parameters": {
+      "total": 24295239,
+      "trainable": 787207
+    },
+    "corrected_ding_fair_only_gradient_l1": 0.370657354593277,
+    "equal_means_fixture": {
+      "old_mean_loss": 0.0,
+      "cdf_loss": 0.12499846518039703,
+      "hard_FPR_at_1_5": [
+        0.5,
+        0.0
+      ],
+      "fairness_gradient_l1": 0.25000613927841187
+    },
+    "response_offset_fixture": {
+      "response_loss": 0.0,
+      "score_anchor_loss": 0.0,
+      "cdf_loss": 0.25
+    }
+  },
+  "data": "synthetic only; no real TRAIN/VAL/TEST opened; no full training or generation"
+}

@@ -1,0 +1,61 @@
+{
+  "name": "Ding-CC-OT-r1",
+  "status": "LOSS_KERNEL_TESTED; full detector-stage wrapper/SFD binding remains a required release blocker",
+  "backbones": [
+    "xception",
+    "resnet50"
+  ],
+  "seeds": [
+    7,
+    17,
+    27
+  ],
+  "classification": {
+    "initialization": "same cached ImageNet features as CES by backbone",
+    "epochs": 50,
+    "batch_size": 64,
+    "optimizer": "SGD",
+    "lr": 0.001,
+    "momentum": 0.9,
+    "weight_decay": 0.005,
+    "BN": "update",
+    "trainable": "full model"
+  },
+  "SFD": {
+    "ranking": "TRAIN only;512projected channels;lowest batch-mean channel SNNL (no absolute value);n=max(1,round(2%*512));strict mean<sorted[n];ties may yield fewer;no optimizer",
+    "receipt_required": [
+      "classification_checkpoint_sha256",
+      "TRAIN_manifest_sha256",
+      "code_sha256",
+      "channels_sha256"
+    ],
+    "no_fallback_channels": true,
+    "structural_parameter_removal": false,
+    "ties_or_degenerate_channels": "record actual count/ranks;stop and report if degenerate/inadequate;no replacement/fallback channels"
+  },
+  "adaptation": {
+    "epochs": 50,
+    "batch_size": 64,
+    "sampler": "same full label\u00d7gender_race quotas as CES;original draws and optimizer steps reported",
+    "trainable": "last_linear Xception or fc ResNet only",
+    "BN": "frozen running statistics and affine except classifier policy",
+    "optimizer": "SGD",
+    "lr": 0.001,
+    "momentum": 0.9,
+    "weight_decay": 0.005,
+    "fairness_weight": 0.005,
+    "epsilon": 0.0005,
+    "GeomLoss_blur": 0.022360679774997897,
+    "GeomLoss_diameter": 1.0,
+    "GeomLoss_p": 2,
+    "GeomLoss_debias": false,
+    "GeomLoss_backend": "tensorized",
+    "seed": "use declared seed at every stage;no implicit121",
+    "conditioning": "separate y=0 and y=1 fake-probability empirical distributions;sum the two class terms,mean groups",
+    "KDE": "not implemented; disclosed empirical-OT adaptation"
+  },
+  "selection": "same validation AUC-only rule and validation-real global targetFPR.1; report native-final archived reference separately",
+  "calibration": "same scalar fake_logit-real_logit adapter;fixed0.5 supplementary;never test calibration",
+  "not_equivalent_to_archive_or_verified_paper_runs": true,
+  "no_training_authorized": true
+}

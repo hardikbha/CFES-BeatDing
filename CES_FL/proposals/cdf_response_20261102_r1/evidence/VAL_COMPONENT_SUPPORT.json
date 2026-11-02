@@ -1,0 +1,79 @@
+{
+  "role": "VAL metadata-only; no model scores",
+  "rows": 25386,
+  "recorded_components": 209,
+  "largest_component_fraction": 0.014181044670290712,
+  "by_label_group": {
+    "0": {
+      "Female-Asian": {
+        "frames": 275,
+        "recorded_components": 20
+      },
+      "Female-Black": {
+        "frames": 30,
+        "recorded_components": 2
+      },
+      "Female-Others": {
+        "frames": 89,
+        "recorded_components": 4
+      },
+      "Female-White": {
+        "frames": 1753,
+        "recorded_components": 90
+      },
+      "Male-Asian": {
+        "frames": 352,
+        "recorded_components": 14
+      },
+      "Male-Black": {
+        "frames": 90,
+        "recorded_components": 6
+      },
+      "Male-Others": {
+        "frames": 239,
+        "recorded_components": 14
+      },
+      "Male-White": {
+        "frames": 1264,
+        "recorded_components": 69
+      }
+    },
+    "1": {
+      "Female-Asian": {
+        "frames": 1153,
+        "recorded_components": 13
+      },
+      "Female-Black": {
+        "frames": 120,
+        "recorded_components": 2
+      },
+      "Female-Others": {
+        "frames": 810,
+        "recorded_components": 13
+      },
+      "Female-White": {
+        "frames": 8874,
+        "recorded_components": 49
+      },
+      "Male-Asian": {
+        "frames": 1733,
+        "recorded_components": 12
+      },
+      "Male-Black": {
+        "frames": 390,
+        "recorded_components": 4
+      },
+      "Male-Others": {
+        "frames": 1170,
+        "recorded_components": 19
+      },
+      "Male-White": {
+        "frames": 7044,
+        "recorded_components": 39
+      }
+    }
+  },
+  "val_manifest_sha256": "52f4844cffe5a03adb08cecde8829244bb50e05eeead36f6d659599f1c24f5b1",
+  "component_function_source_sha256": "a60d58435fe0b46ca9daf686c4bbaa3ab7ef94ce202fb83c04429d4a4f9024fc",
+  "receipt_recorded_management_utc": "2026-11-02T07:03:59.215000+00:00"
+}

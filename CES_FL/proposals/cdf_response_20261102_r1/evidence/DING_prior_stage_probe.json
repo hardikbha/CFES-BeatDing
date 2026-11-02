@@ -1,0 +1,95 @@
+{
+  "upstream_revision": "059ec37fc969825bab9dc5f79e01c9864d00eaec",
+  "archive_parent_head": "552c3c62f5e0bdb43b7e51a613eebab292761559",
+  "source_sha256": {
+    "utils/xception.py": "a9262c497f785231c2dcad8f4954c7ac19d5682033cc59d20609b5a6cdf74599",
+    "detectors/xception_detector.py": "790b8da4c7d267c89994490960f0a6cd343d4846a932cc006236d39d0c58fd2f",
+    "train_ori_model.py": "ee2d3b3229ed0ce96bf3e5517e488059419d1fae411f9d05739808e81ea6a7d0",
+    "SFD.py": "e54c78e2a3413a2af85e361bba5a3fc134b04145df283126b8eb705ab3cd4780",
+    "GDA.py": "bef29fa69e46c729dc679356d0ac3904ebac6da4c00180350daf282fe94599db",
+    "GDA_fastloader.py": "81216adc480b2402cd9e19f51e701c48c5cf1f2972b110ccf40e6ceab73c7e6b"
+  },
+  "torch": "2.10.0+cu128",
+  "geomloss": "0.3.1",
+  "initial_classification": {
+    "counts": {
+      "total": 21858090,
+      "requires_grad": 21858090,
+      "receiving_grad": 21858090
+    },
+    "bn_buffers_changed": 123
+  },
+  "sfd_scoring": {
+    "counts": {
+      "total": 21858090,
+      "requires_grad": 21858090,
+      "receiving_grad": 0
+    },
+    "training": false,
+    "optimizer": null,
+    "backward_executed": false
+  },
+  "GDA_synthetic_exact_archived_block": {
+    "0.0": {
+      "counts": {
+        "total": 21858090,
+        "requires_grad": 1026,
+        "receiving_grad": 1026
+      },
+      "main_requires_grad": true,
+      "fair_requires_grad": false,
+      "total_requires_grad": true,
+      "fair_gradient": 0,
+      "backward_error": null,
+      "bn_buffers_changed": 123,
+      "head_sha256": "a07c4e30e26ac873a8e18e500ef5f17c768da64d5b844e6f0f0737b0e2f8f2ab"
+    },
+    "0.005": {
+      "counts": {
+        "total": 21858090,
+        "requires_grad": 1026,
+        "receiving_grad": 1026
+      },
+      "main_requires_grad": true,
+      "fair_requires_grad": false,
+      "total_requires_grad": true,
+      "fair_gradient": 0,
+      "backward_error": null,
+      "bn_buffers_changed": 123,
+      "head_sha256": "a07c4e30e26ac873a8e18e500ef5f17c768da64d5b844e6f0f0737b0e2f8f2ab"
+    },
+    "1000.0": {
+      "counts": {
+        "total": 21858090,
+        "requires_grad": 1026,
+        "receiving_grad": 1026
+      },
+      "main_requires_grad": true,
+      "fair_requires_grad": false,
+      "total_requires_grad": true,
+      "fair_gradient": 0,
+      "backward_error": null,
+      "bn_buffers_changed": 123,
+      "head_sha256": "a07c4e30e26ac873a8e18e500ef5f17c768da64d5b844e6f0f0737b0e2f8f2ab"
+    }
+  },
+  "mask": {
+    "channels": [
+      336,
+      35,
+      272,
+      26,
+      255,
+      1,
+      205,
+      371,
+      369,
+      395
+    ],
+    "masked_weight_elements": 20480,
+    "structural_parameters_removed": 0,
+    "mask_buffer_elements": 1048576
+  },
+  "same_head_updates_for_all_lambda": true,
+  "data": "synthetic software probe; no Ding retraining; actual dependency behavior, not a paper result"
+}

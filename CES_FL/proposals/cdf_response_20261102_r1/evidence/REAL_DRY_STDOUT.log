@@ -1,0 +1,1 @@
+BOUND {"host": "gpu01", "physical_index": 6, "gpu_uuid": "GPU-61f54ca7-3cee-1c93-def3-118523e95241", "free_mib": 81087, "memory_fraction": 0.45, "pbs_allocation": null, "execution_route": "user-authorized direct SSH software smoke, cooperative idle GPU", "no_existing_process_stopped": true}

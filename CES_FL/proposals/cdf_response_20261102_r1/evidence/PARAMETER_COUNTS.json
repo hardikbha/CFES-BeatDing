@@ -1,0 +1,30 @@
+{
+  "xception": {
+    "total": 21594159,
+    "trainable_downstream": 21594159,
+    "modules": {
+      "encoder": 20806952,
+      "global_head": 262401,
+      "patch_head": 262401,
+      "image_gate": 131201,
+      "patch_gate": 131201
+    },
+    "fusion_parameters": 3,
+    "execution": "fresh CPU instantiation; gradient behavior covered separately by smoke",
+    "trainable_frozen": 787207
+  },
+  "resnet50": {
+    "total": 24295239,
+    "trainable_downstream": 24295239,
+    "modules": {
+      "encoder": 23508032,
+      "global_head": 262401,
+      "patch_head": 262401,
+      "image_gate": 131201,
+      "patch_gate": 131201
+    },
+    "fusion_parameters": 3,
+    "execution": "fresh CPU instantiation; gradient behavior covered separately by smoke",
+    "trainable_frozen": 787207
+  }
+}

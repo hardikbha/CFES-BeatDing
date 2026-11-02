@@ -1,0 +1,18 @@
+{
+  "exit_code": 0,
+  "elapsed_seconds": 13.397226754575968,
+  "command": [
+    "/home/sachin.chaudhary/.conda/envs/qwen38/bin/python",
+    "-u",
+    "-c",
+    "import runpy,sys,torch;assert torch.cuda.device_count()==1;torch.cuda.set_per_process_memory_fraction(.45,0);sys.argv=['smoke_cdf_proposal.py','--device','cuda','--out','/home/sachin.chaudhary/cesel_ma_audit_logs/cdf_response_20261102_r1_cuda_v6'];runpy.run_path('/home/sachin.chaudhary/ces_fl_sources/cesfl-tail-response-20261102-r1/CES_FL/tests/smoke_cdf_proposal.py',run_name='__main__')"
+  ],
+  "host": "gpu01",
+  "physical_index": 6,
+  "gpu_uuid": "GPU-61f54ca7-3cee-1c93-def3-118523e95241",
+  "free_mib": 81087,
+  "memory_fraction": 0.45,
+  "pbs_allocation": null,
+  "execution_route": "user-authorized direct SSH software smoke, cooperative idle GPU",
+  "no_existing_process_stopped": true
+}

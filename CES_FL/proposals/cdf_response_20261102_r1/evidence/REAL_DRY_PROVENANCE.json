@@ -1,0 +1,70 @@
+{
+  "hashes": {
+    "ces_fl_cdf_study.py": "ed1ebf081ec96fd524088fa13de0af54aa44d905d1b7f7aab1b7815db3a59f20",
+    "ces_fl_cdf_objectives.py": "3f0f47691667f58f3bba25ae17ec6aa3eb705db84beee06f0f8fbd5638b47175",
+    "ces_fl_counterfactual_5050.py": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab"
+  },
+  "parameters": {
+    "total": 21594159,
+    "trainable": 21594159
+  },
+  "splits": {
+    "overlap_counts": {
+      "identity_ids": 163,
+      "source_ids": 163
+    },
+    "exact_declared_benchmark_exception": true,
+    "person_ground_truth_verified": false
+  },
+  "arm": "cdf_fair",
+  "heads_initial_sha256": "84ecacfb973559bdc0ab049b3d5cee18d6a9f450b78d6c48e9efa6a851d26f35",
+  "TRAIN_real_priors": [
+    0.11650936097787405,
+    0.014080148537830729,
+    0.0208881324462324,
+    0.40151632368868945,
+    0.03759863840321832,
+    0.02073340553922327,
+    0.044019805044097166,
+    0.3446541853628346
+  ],
+  "optimizer_groups": [
+    {
+      "lr": 1e-05,
+      "name": "encoder",
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0.0001,
+      "amsgrad": false,
+      "maximize": false,
+      "foreach": null,
+      "capturable": false,
+      "differentiable": false,
+      "fused": null,
+      "decoupled_weight_decay": true
+    },
+    {
+      "lr": 0.001,
+      "name": "heads_gates_fusion",
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0.0001,
+      "amsgrad": false,
+      "maximize": false,
+      "foreach": null,
+      "capturable": false,
+      "differentiable": false,
+      "fused": null,
+      "decoupled_weight_decay": true
+    }
+  ],
+  "synthetic_fixture": false,
+  "test_read": false,
+  "bank_unique_sources": 0
+}

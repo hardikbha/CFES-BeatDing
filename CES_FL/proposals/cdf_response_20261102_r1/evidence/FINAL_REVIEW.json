@@ -1,0 +1,7 @@
+{
+  "observed_management_utc": "2026-11-02T07:07:05.800000+00:00",
+  "status": "PASS",
+  "checked": "all55protected hashes;CPU/CUDA source match;relative proposal links;approval=false;scoped staged files only",
+  "broken_links": [],
+  "full_training_launched": false
+}

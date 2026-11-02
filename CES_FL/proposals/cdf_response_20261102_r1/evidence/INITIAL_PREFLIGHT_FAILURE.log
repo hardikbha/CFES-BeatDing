@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/ces_fl_sources/cesfl-tail-response-20261102-r1/CES_FL/src/ces_fl_cdf_study.py", line 359, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/sachin.chaudhary/ces_fl_sources/cesfl-tail-response-20261102-r1/CES_FL/src/ces_fl_cdf_study.py", line 354, in main
+    if a.arm!='pretrain':load_pretrain(c)
+                         ^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/ces_fl_sources/cesfl-tail-response-20261102-r1/CES_FL/src/ces_fl_cdf_study.py", line 239, in load_pretrain
+    if not (root/'DONE').exists() or receipt['status'] != 'PASS' or receipt['completed_epochs'] != c['pretrain_epochs']:
+                                                                    ~~~~~~~^^^^^^^^^^^^^^^^^^^^
+KeyError: 'completed_epochs'

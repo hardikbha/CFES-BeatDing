@@ -1,0 +1,55 @@
+{
+  "observed_management_utc": "2026-11-02T06:56:11.742000+00:00",
+  "queries": {
+    "final_ff2_process": {
+      "command": [
+        "ssh",
+        "-o",
+        "BatchMode=yes",
+        "-o",
+        "ConnectTimeout=10",
+        "gpu01",
+        "ps -p 2525928 -o pid,etime,stat,args"
+      ],
+      "exit_code": 1,
+      "stdout": "    PID     ELAPSED STAT COMMAND\n",
+      "stderr": ""
+    },
+    "node_clock": {
+      "command": [
+        "ssh",
+        "-o",
+        "BatchMode=yes",
+        "-o",
+        "ConnectTimeout=10",
+        "gpu01",
+        "date -u +%Y-%m-%dT%H:%M:%SZ"
+      ],
+      "exit_code": 0,
+      "stdout": "2026-11-02T06:45:23Z\n",
+      "stderr": ""
+    }
+  },
+  "FF2_decision": "Existing original-only job may finish; all follow-on work HOLD",
+  "ff2_artifacts": {
+    "root": "/home/sachin.chaudhary/ces_fl_runs/ff2_originals_s17_20261102_r1/training",
+    "DONE_exists": true,
+    "RUN_VERIFIED_exists": true,
+    "history_records": 10,
+    "last_recorded_epoch": 10,
+    "native_receipt_sha256": "9c4b4a8acf31c4906c64f9f24ab5a6ac4f437bbaaaf14e54d1539cc0e114a34b",
+    "checkpoint_bytes_rehashed_by_this_check": false,
+    "native_RUN_VERIFIED_summary": {
+      "status": "PASS",
+      "completed_epochs": 10,
+      "selected_epoch": 9,
+      "checkpoint_sha256": "43152de1b98dce48801114efb2454cb0bc6aa7400445dd5f139759022229895a",
+      "config_sha256": "db0c886527635295f0394dddbca9da1a8a3c40807609ab78f324b75b382fbee8",
+      "source_sha256": "0e001dd1251570ce43fb82bde307c519dea4045d9734506e1ce90d2ed014f8de",
+      "strict_checkpoint_restore": true,
+      "native_independent_validation_replay": true,
+      "test_evaluated": false,
+      "counterfactuals": 0
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "status": "PASS",
+  "fixtures": [
+    {
+      "scores": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0
+      ],
+      "target": 0.4,
+      "actual": {
+        "threshold_logit": 2.0000000000000004,
+        "rule": "validation_real_empirical_budget_v1",
+        "requested_fpr": 0.4,
+        "n_validation_real": 5,
+        "allowed_fp": 2,
+        "achieved_fp": 2,
+        "achieved_fpr": 0.4,
+        "test_fpr_guaranteed": false
+      }
+    },
+    {
+      "scores": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "target": 0.4,
+      "actual": {
+        "threshold_logit": 5e-324,
+        "rule": "validation_real_empirical_budget_v1",
+        "requested_fpr": 0.4,
+        "n_validation_real": 5,
+        "allowed_fp": 2,
+        "achieved_fp": 2,
+        "achieved_fpr": 0.4,
+        "test_fpr_guaranteed": false
+      }
+    },
+    {
+      "scores": [
+        0.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "target": 0.4,
+      "actual": {
+        "threshold_logit": 1.0000000000000002,
+        "rule": "validation_real_empirical_budget_v1",
+        "requested_fpr": 0.4,
+        "n_validation_real": 5,
+        "allowed_fp": 2,
+        "achieved_fp": 0,
+        "achieved_fpr": 0.0,
+        "test_fpr_guaranteed": false
+      }
+    },
+    {
+      "scores": [
+        5.0
+      ],
+      "target": 0.1,
+      "actual": {
+        "threshold_logit": 5.000000000000001,
+        "rule": "validation_real_empirical_budget_v1",
+        "requested_fpr": 0.1,
+        "n_validation_real": 1,
+        "allowed_fp": 0,
+        "achieved_fp": 0,
+        "achieved_fpr": 0.0,
+        "test_fpr_guaranteed": false
+      }
+    }
+  ],
+  "test_scores_or_labels_supplied": false
+}

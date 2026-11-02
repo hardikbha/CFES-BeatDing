@@ -1,0 +1,27 @@
+BOUND {"host": "gpu01", "physical_index": 6, "gpu_uuid": "GPU-61f54ca7-3cee-1c93-def3-118523e95241", "free_mib": 81087, "memory_fraction": 0.45, "pbs_allocation": null, "execution_route": "user-authorized direct SSH software smoke, cooperative idle GPU", "no_existing_process_stopped": true}
+test_actual_archived_gda_block_detaches_fairness (__main__.ScientificFixtures.test_actual_archived_gda_block_detaches_fairness) ... ok
+test_all_arms_and_complete_dro_state (__main__.ScientificFixtures.test_all_arms_and_complete_dro_state) ... ok
+test_both_backbones_gradients_frozen_bn_decomposition_reload (__main__.ScientificFixtures.test_both_backbones_gradients_frozen_bn_decomposition_reload) ... ok
+test_corrected_ding_constant_scores_are_finite (__main__.ScientificFixtures.test_corrected_ding_constant_scores_are_finite) ... ok
+test_corrected_ding_lambda_changes_head_updates (__main__.ScientificFixtures.test_corrected_ding_lambda_changes_head_updates) ... ok
+test_demographic_offset_anchor_and_wrong_response (__main__.ScientificFixtures.test_demographic_offset_anchor_and_wrong_response) ... /home/sachin.chaudhary/ces_fl_sources/cesfl-tail-response-20261102-r1/CES_FL/tests/smoke_cdf_proposal.py:127: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  self.assertEqual(float(terms['alignment']), 0.)
+ok
+test_ding_adapter_and_class_conditioning (__main__.ScientificFixtures.test_ding_adapter_and_class_conditioning) ... ok
+test_equal_means_unequal_real_tails (__main__.ScientificFixtures.test_equal_means_unequal_real_tails) ... ok
+test_lambda_changes_updates_and_identical_groups (__main__.ScientificFixtures.test_lambda_changes_updates_and_identical_groups) ... ok
+test_missing_groups_and_nonfinite_rejected (__main__.ScientificFixtures.test_missing_groups_and_nonfinite_rejected) ... ok
+test_production_resolution_cuda_memory_backward (__main__.ScientificFixtures.test_production_resolution_cuda_memory_backward) ... ok
+test_quota_rng_and_paired_cluster_uncertainty (__main__.ScientificFixtures.test_quota_rng_and_paired_cluster_uncertainty) ... ok
+test_real_cdf_does_not_backpropagate_fake_scores (__main__.ScientificFixtures.test_real_cdf_does_not_backpropagate_fake_scores) ... ok
+test_response_cancels_group_offset_but_cdf_detects_it (__main__.ScientificFixtures.test_response_cancels_group_offset_but_cdf_detects_it) ... ok
+test_tiny_pretrain_pair_gate_training_reload_and_val_isolation (__main__.ScientificFixtures.test_tiny_pretrain_pair_gate_training_reload_and_val_isolation) ... {"epoch": 1, "arm": "pretrain", "val_auc": 0.625}
+{"epoch": 1, "arm": "response", "val_auc": 0.6875}
+ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 9.952s
+
+OK
+CDF_PROPOSAL_SMOKE {"status": "PASS", "device": "cuda", "tests_run": 15, "failures": 0, "errors": 0, "skipped": 0, "elapsed_seconds": 9.952165309339762, "observed_utc": "2026-11-02T06:32:13.950177+00:00", "environment": {"torch": "2.10.0+cu128", "torchvision": "0.25.0+cu128", "geomloss": "0.3.1"}, "hashes": {"src/ces_fl_cdf_objectives.py": "3f0f47691667f58f3bba25ae17ec6aa3eb705db84beee06f0f8fbd5638b47175", "src/ces_fl_cdf_study.py": "ed1ebf081ec96fd524088fa13de0af54aa44d905d1b7f7aab1b7815db3a59f20", "src/ces_fl_counterfactual_5050.py": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab", "experiments/benchmark_seed17/paired_uncertainty.py": "63e4b7e5fb823bfa48fbb8246124a7e597487f02f46bcf6810fe181925f96c31", "tests/smoke_cdf_proposal.py": "5594a7d6c9a1ce8125da2e3d4aff89514562e9731b05e8a09efe120327f30737", "archive_GDA.py": "bef29fa69e46c729dc679356d0ac3904ebac6da4c00180350daf282fe94599db"}, "measured_synthetic_fixtures": {"archived_GDA_exact_AST_block": {"fairness_requires_grad": false, "classification_backpropagates": true, "lambda_independent_gradients": true, "source_sha256": "bef29fa69e46c729dc679356d0ac3904ebac6da4c00180350daf282fe94599db"}, "xception_parameters": {"total": 21594159, "trainable": 787207}, "resnet50_parameters": {"total": 24295239, "trainable": 787207}, "corrected_ding_fair_only_gradient_l1": 0.37065842747688293, "equal_means_fixture": {"old_mean_loss": 0.0, "cdf_loss": 0.12499846518039703, "hard_FPR_at_1_5": [0.5, 0.0], "fairness_gradient_l1": 0.25000613927841187}, "xception_production224_batch64_plus24": {"peak_allocated_MiB": 11565.369140625, "forward_backward_seconds": 0.2871161699295044, "optimizer_steps": 0}, "resnet50_production224_batch64_plus24": {"peak_allocated_MiB": 7450.06982421875, "forward_backward_seconds": 0.3486347049474716, "optimizer_steps": 0}, "response_offset_fixture": {"response_loss": 0.0, "score_anchor_loss": 0.0, "cdf_loss": 0.25}}, "data": "synthetic only; no real TRAIN/VAL/TEST opened; no full training or generation"}

@@ -1,0 +1,55 @@
+{
+  "observed_management_utc": "2026-11-02T06:49:23.331000+00:00",
+  "training": {
+    "DING_base_s7": {
+      "path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/results/DING_base_s7",
+      "DONE": true,
+      "FINAL_CKPT": null,
+      "final_checkpoint_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/results/DING_base_s7/49.pth",
+      "final_checkpoint_exists": true
+    },
+    "DING_base_s17": {
+      "path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/results/DING_base_s17",
+      "DONE": true,
+      "FINAL_CKPT": null,
+      "final_checkpoint_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/results/DING_base_s17/49.pth",
+      "final_checkpoint_exists": true
+    },
+    "DING_base_s27": {
+      "path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/results/DING_base_s27",
+      "DONE": true,
+      "FINAL_CKPT": null,
+      "final_checkpoint_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/results/DING_base_s27/49.pth",
+      "final_checkpoint_exists": true
+    },
+    "DING_full_s7": {
+      "path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/results/DING_full_s7",
+      "DONE": true,
+      "FINAL_CKPT": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/results/DING_full_s7/XceptionDetector_prune2%_only_head/lr_1.0e-03_lambda_5.0e-03/49.pth",
+      "final_checkpoint_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/results/DING_full_s7/XceptionDetector_prune2%_only_head/lr_1.0e-03_lambda_5.0e-03/49.pth",
+      "final_checkpoint_exists": true
+    },
+    "DING_full_s17": {
+      "path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/results/DING_full_s17",
+      "DONE": true,
+      "FINAL_CKPT": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/results/DING_full_s17/XceptionDetector_prune2%_only_head/lr_1.0e-03_lambda_5.0e-03/49.pth",
+      "final_checkpoint_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/results/DING_full_s17/XceptionDetector_prune2%_only_head/lr_1.0e-03_lambda_5.0e-03/49.pth",
+      "final_checkpoint_exists": true
+    },
+    "DING_full_s27": {
+      "path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/results/DING_full_s27",
+      "DONE": true,
+      "FINAL_CKPT": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/results/DING_full_s27/XceptionDetector_prune2%_only_head/lr_1.0e-03_lambda_5.0e-03/49.pth",
+      "final_checkpoint_path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/results/DING_full_s27/XceptionDetector_prune2%_only_head/lr_1.0e-03_lambda_5.0e-03/49.pth",
+      "final_checkpoint_exists": true
+    }
+  },
+  "native_final_evaluation_json_names": [
+    "full_s7_ep49_celebdf.json",
+    "full_s7_ep49_dfd.json",
+    "full_s7_ep49_dfdc.json",
+    "full_s7_ep49_ff++.json",
+    "full_s7_ep49_ff2full.json"
+  ],
+  "test_csv_npz_or_scores_opened": false
+}

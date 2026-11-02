@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "hashes": {
+    "ces_fl_cdf_study.py": "ed1ebf081ec96fd524088fa13de0af54aa44d905d1b7f7aab1b7815db3a59f20",
+    "ces_fl_cdf_objectives.py": "3f0f47691667f58f3bba25ae17ec6aa3eb705db84beee06f0f8fbd5638b47175",
+    "ces_fl_counterfactual_5050.py": "3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab"
+  },
+  "config_sha256": "a10663bc6749c46591dd9b873b257e1a34d473fb286b88a8f822f2c553d9cf2d",
+  "train": 76139,
+  "val": 25386,
+  "priors": [
+    0.11650936097787405,
+    0.014080148537830729,
+    0.0208881324462324,
+    0.40151632368868945,
+    0.03759863840321832,
+    0.02073340553922327,
+    0.044019805044097166,
+    0.3446541853628346
+  ],
+  "splits": {
+    "overlap_counts": {
+      "identity_ids": 163,
+      "source_ids": 163
+    },
+    "exact_declared_benchmark_exception": true,
+    "person_ground_truth_verified": false
+  },
+  "quartets": 0
+}

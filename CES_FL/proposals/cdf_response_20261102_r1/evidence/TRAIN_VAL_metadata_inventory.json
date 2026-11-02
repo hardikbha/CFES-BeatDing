@@ -1,0 +1,280 @@
+{
+  "observed_management_utc": "2026-11-02T06:34:59.767000+00:00",
+  "metadata_only": true,
+  "test_csv_or_scores_opened": false,
+  "splits": {
+    "train": {
+      "rows": 76139,
+      "columns": [
+        "image",
+        "label",
+        "gender",
+        "race",
+        "age_bin",
+        "age_estimate",
+        "skin_tone",
+        "skin_bin",
+        "gender_race",
+        "ids8",
+        "identity_ids",
+        "source_ids",
+        "cluster",
+        "family",
+        "method",
+        "label_provenance"
+      ],
+      "sha256": "6ee9326fe8361dc3aee0f803c49b5eada169be5cf3bc3cb44ad3d934ba5ca657",
+      "labels": {
+        "0": 12926,
+        "1": 63213
+      },
+      "labels_by_axis": {
+        "gender": {
+          "0": {
+            "Female": 7148,
+            "Male": 5778
+          },
+          "1": {
+            "Male": 27771,
+            "Female": 35442
+          }
+        },
+        "race": {
+          "0": {
+            "Asian": 1992,
+            "White": 9645,
+            "Others": 839,
+            "Black": 450
+          },
+          "1": {
+            "Others": 5509,
+            "Asian": 8496,
+            "White": 47079,
+            "Black": 2129
+          }
+        },
+        "gender_race": {
+          "0": {
+            "Female-Asian": 1506,
+            "Male-White": 4455,
+            "Female-White": 5190,
+            "Female-Others": 270,
+            "Male-Asian": 486,
+            "Male-Others": 569,
+            "Male-Black": 268,
+            "Female-Black": 182
+          },
+          "1": {
+            "Male-Others": 3594,
+            "Female-Asian": 6507,
+            "Male-White": 20988,
+            "Female-White": 26091,
+            "Male-Asian": 1989,
+            "Male-Black": 1200,
+            "Female-Black": 929,
+            "Female-Others": 1915
+          }
+        },
+        "age_bin": {
+          "0": {
+            "<30": 7330,
+            "60+": 448,
+            "45-59": 1532,
+            "30-44": 3616
+          },
+          "1": {
+            "<30": 39077,
+            "45-59": 7374,
+            "30-44": 15683,
+            "60+": 1079
+          }
+        },
+        "skin_bin": {
+          "0": {
+            "1": 3140,
+            "0": 3062,
+            "2": 3079,
+            "3": 3395,
+            "unknown": 250
+          },
+          "1": {
+            "1": 15417,
+            "0": 16272,
+            "2": 14511,
+            "3": 16062,
+            "unknown": 951
+          }
+        },
+        "ids8": {
+          "0": {
+            "7": 2731,
+            "2": 2161,
+            "4": 2297,
+            "1": 3580,
+            "5": 270,
+            "6": 869,
+            "0": 388,
+            "3": 630
+          },
+          "1": {
+            "4": 11566,
+            "7": 13123,
+            "2": 10142,
+            "1": 19222,
+            "6": 3725,
+            "3": 2050,
+            "0": 2006,
+            "5": 1379
+          }
+        }
+      }
+    },
+    "val": {
+      "rows": 25386,
+      "columns": [
+        "image",
+        "label",
+        "gender",
+        "race",
+        "age_bin",
+        "age_estimate",
+        "skin_tone",
+        "skin_bin",
+        "gender_race",
+        "ids8",
+        "identity_ids",
+        "source_ids",
+        "cluster",
+        "family",
+        "method",
+        "label_provenance"
+      ],
+      "sha256": "52f4844cffe5a03adb08cecde8829244bb50e05eeead36f6d659599f1c24f5b1",
+      "labels": {
+        "0": 4092,
+        "1": 21294
+      },
+      "labels_by_axis": {
+        "gender": {
+          "0": {
+            "Female": 2147,
+            "Male": 1945
+          },
+          "1": {
+            "Female": 10957,
+            "Male": 10337
+          }
+        },
+        "race": {
+          "0": {
+            "White": 3017,
+            "Asian": 627,
+            "Others": 328,
+            "Black": 120
+          },
+          "1": {
+            "Others": 1980,
+            "White": 15918,
+            "Black": 510,
+            "Asian": 2886
+          }
+        },
+        "gender_race": {
+          "0": {
+            "Female-White": 1753,
+            "Male-White": 1264,
+            "Male-Asian": 352,
+            "Male-Others": 239,
+            "Female-Asian": 275,
+            "Male-Black": 90,
+            "Female-Others": 89,
+            "Female-Black": 30
+          },
+          "1": {
+            "Female-Others": 810,
+            "Male-White": 7044,
+            "Female-White": 8874,
+            "Male-Black": 390,
+            "Male-Asian": 1733,
+            "Female-Asian": 1153,
+            "Male-Others": 1170,
+            "Female-Black": 120
+          }
+        },
+        "age_bin": {
+          "0": {
+            "45-59": 511,
+            "30-44": 1301,
+            "<30": 2217,
+            "60+": 63
+          },
+          "1": {
+            "<30": 12456,
+            "30-44": 6200,
+            "60+": 240,
+            "45-59": 2398
+          }
+        },
+        "skin_bin": {
+          "0": {
+            "1": 1010,
+            "2": 1063,
+            "0": 1161,
+            "3": 798,
+            "unknown": 60
+          },
+          "1": {
+            "1": 5105,
+            "0": 7027,
+            "3": 3764,
+            "2": 5069,
+            "unknown": 329
+          }
+        },
+        "ids8": {
+          "0": {
+            "3": 243,
+            "4": 750,
+            "1": 1415,
+            "6": 299,
+            "2": 628,
+            "7": 517,
+            "5": 89,
+            "0": 151
+          },
+          "1": {
+            "1": 7649,
+            "2": 3866,
+            "4": 3956,
+            "5": 510,
+            "7": 2112,
+            "0": 658,
+            "6": 1407,
+            "3": 1136
+          }
+        }
+      }
+    }
+  },
+  "previously_recorded_benchmark_overlaps": {
+    "identity_ids:train:val": 163,
+    "identity_ids:train:test": 174,
+    "identity_ids:val:test": 57,
+    "source_ids:train:val": 163,
+    "source_ids:train:test": 174,
+    "source_ids:val:test": 57
+  },
+  "candidate_edits": {
+    "path": "/home/sachin.chaudhary/ces_fl_runs/qwen_quality32_20261101T095157Z/quality_review_pending.csv",
+    "rows": 224,
+    "sha256": "dc6e85d027c05d0dd849070fcbb8a92fc936dc8757221a309b182b86c7a9db91",
+    "approval_column_counts": {
+      "approved": {
+        "0": 224
+      },
+      "reviewer": {
+        "": 224
+      }
+    }
+  }
+}

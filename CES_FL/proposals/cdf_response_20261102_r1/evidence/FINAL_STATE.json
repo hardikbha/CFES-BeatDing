@@ -1,0 +1,32 @@
+{
+  "observed_management_utc": "2026-11-02T07:01:43.170737+00:00",
+  "base_main_commit": "d744851e6fd0c13c2ab7095b47a8b19600008653",
+  "latest_fetched_main": "67d2308225e422a91c715c40427f40c3df6812cf",
+  "files_changed_on_main_since_base": [
+    "CES_FL/status/ff2_originals_s17_20261102_r1_live.md"
+  ],
+  "full_training_launched_by_this_task": false,
+  "full_generation_launched": false,
+  "TEST_csv_image_score_files_opened": false,
+  "external_release_issued": false,
+  "stage_status": {
+    "bce": "PREPARED_NOT_LAUNCHED",
+    "dro": "PREPARED_NOT_LAUNCHED",
+    "mean_fair": "PREPARED_NOT_LAUNCHED",
+    "cdf_fair": "PREPARED_NOT_LAUNCHED",
+    "nochange": "BLOCKED_INPUTS",
+    "score": "BLOCKED_INPUTS",
+    "response": "BLOCKED_INPUTS",
+    "corrected_Ding": "BLOCKED_PRODUCTION_WRAPPER",
+    "FairForge2_full_comparison": "HOLD"
+  },
+  "checks": {
+    "final_CPU": "14pass+1CUDAonlyskip",
+    "final_CUDA": "15pass",
+    "real_Xception_s17_preflight": "PASS",
+    "real_TRAIN_CDF_backward": "PASS;zero_optimizer_steps",
+    "sixteen_configs": "PARSE_AND_INPUT_HASH_PASS",
+    "semantic_bank_validity": "NOT_ESTABLISHED",
+    "current_VAL_confirmation_group_component_floor": "FAIL"
+  }
+}
