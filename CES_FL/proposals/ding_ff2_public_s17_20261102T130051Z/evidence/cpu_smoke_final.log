@@ -1,0 +1,16 @@
+test_01_native_model_exact (__main__.Audit.test_01_native_model_exact) ... Load pretrained model successfully!!!! missing= ['last_linear.weight', 'last_linear.bias', 'adjust_channel.0.weight', 'adjust_channel.0.bias', 'adjust_channel.1.weight', 'adjust_channel.1.bias', 'adjust_channel.1.running_mean', 'adjust_channel.1.running_var']
+ok
+test_02_sfd_reference (__main__.Audit.test_02_sfd_reference) ... ok
+test_03_gradients_bn_and_reload (__main__.Audit.test_03_gradients_bn_and_reload) ... ok
+test_04_ot_class_conditioning_and_lambda (__main__.Audit.test_04_ot_class_conditioning_and_lambda) ... ok
+test_05_native_sampler_roles_and_alignment (__main__.Audit.test_05_native_sampler_roles_and_alignment) ... ok
+test_06_global_uneven_gradients (__main__.Audit.test_06_global_uneven_gradients) ... [Gloo] Rank 1 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[Gloo] Rank 0 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+ok
+test_07_calibration_finite_ties_no_test (__main__.Audit.test_07_calibration_finite_ties_no_test) ... ok
+test_08_shared_pool_reservations_are_respected (__main__.Audit.test_08_shared_pool_reservations_are_respected) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 8.895s
+
+OK

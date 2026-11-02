@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "tests": 8,
+  "command": "/home/sachin.chaudhary/.conda/envs/qwen38/bin/python -u CES_FL/tests/test_ding_ff2_public.py",
+  "log": "/home/sachin.chaudhary/ces_fl_runs/ding_ff2_public_s17_20261102T130051Z/logs/cpu_smoke_final.log",
+  "log_sha256": "56cc329e3ab467617bf6dbf57901f5b9564349f837bacb4319fa517aa9867ee0",
+  "source_hashes": {
+    "CES_FL/src/ding_ff2_public.py": "c95d5f3354909135a97264225bf7c2023dc0f7db10622390d2328d9c2da90761",
+    "CES_FL/src/ces_fl_diagram_model_v021.py": "0e001dd1251570ce43fb82bde307c519dea4045d9734506e1ce90d2ed014f8de",
+    "DINGREPRO_LIN/code/Ding_mod/utils/xception.py": "a9262c497f785231c2dcad8f4954c7ac19d5682033cc59d20609b5a6cdf74599",
+    "DINGREPRO_LIN/code/Ding_mod/utils/registry.py": "fa2f82246dfe39e49076096fe4db8f1b6cd6a2f553a5e3ba78a72d815007b76f",
+    "DINGREPRO_LIN/code/Ding_mod/SFD.py": "e54c78e2a3413a2af85e361bba5a3fc134b04145df283126b8eb705ab3cd4780",
+    "DINGREPRO_LIN/code/Ding_mod/detectors/xception_detector.py": "790b8da4c7d267c89994490960f0a6cd343d4846a932cc006236d39d0c58fd2f",
+    "CES_FL/scripts/run_ding_ff2_ssh.py": "630bc1811f81a4f9021d84c76ab65aff976e1ffcf93e5faa67a7baac4f547a93",
+    "CES_FL/tests/test_ding_ff2_public.py": "2a0a829ed9e503ad7a3d1a1b37a471230ade78b4fb08b95a2df7649064f17018"
+  },
+  "observed_utc": "2026-11-02T13:38:34.288483+00:00"
+}

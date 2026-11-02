@@ -1,0 +1,49 @@
+{
+  "format": "DING_FF2_PUBLIC_CORRECTED_GDA_20261102",
+  "dataset": "fairforge2_public",
+  "seed": 17,
+  "manifests": {
+    "train": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ff2/train.csv",
+    "val": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ff2/val.csv",
+    "test": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ff2/test.csv"
+  },
+  "native_train": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/data_ding_schema/fairforge2_public/train.csv",
+  "imagenet_weights": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/xception-b5690688.pth",
+  "input_hashes": {
+    "train": "4f83e7dc8042533329d7047fefd0f30cbd96f45d42bde2666dd0edc7d58f29cc",
+    "val": "aeda051259d9e26b07c2810152b601ae115ce7c9e10523f99ea07bbc9f92afa8",
+    "test": "dd5eb9ef070f658fe6b7f744c47f73e25ce7c53f948bc272f4f16c69a37d4099",
+    "native_train": "e93a5f3adabeb728154a909e4431e04a4ab92e3e57d60ba5f477a800d2ebbc36",
+    "imagenet_weights": "43020ad2812c333d9f8e202b9fef94e579d07addb6582d69a1f68bbaec21aa90"
+  },
+  "counts": {
+    "train": 218266,
+    "val": 31107,
+    "test": 87564
+  },
+  "epochs": 50,
+  "classification_pair_batch": 64,
+  "gda_pair_batch": 32,
+  "sfd_batch": 64,
+  "sfd_percent": 2.0,
+  "validation_batch": 128,
+  "lr": 0.001,
+  "momentum": 0.9,
+  "weight_decay": 0.005,
+  "epsilon": 0.0005,
+  "lambda_fair": 0.005,
+  "target_fpr": 0.1,
+  "workers_per_rank": 6,
+  "threads_per_rank": 2,
+  "cuda_memory_fraction": 0.22,
+  "log_every": 50,
+  "training_preprocessing": "RGB direct Resize224x224 ToTensor Normalize mean/std .5",
+  "evaluation_preprocessing": "RGB Resize_short224 CenterCrop224 ToTensor Normalize mean/std .5",
+  "checkpoint_selection": "highest_validation_auc_earliest_tie",
+  "sfd_initialization": "classification final epoch50, not VAL-selected best",
+  "gda_variant": "class_conditioned_empirical_OT_differentiable_head_only_frozen_BN",
+  "test_evaluation": false,
+  "precision": "float32_no_autocast_no_TF32",
+  "device_route": "direct_ssh_shared_pool_v2_two_gpu_DDP_SyncBN_classification",
+  "native_sampling": "each_fake_once_per_epoch_real_with_replacement_aux_uniform_group"
+}
