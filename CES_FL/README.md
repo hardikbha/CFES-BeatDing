@@ -1,5 +1,9 @@
 # CES-FL — supervisor review and training handoff
 
+## Ding architecture on FairForge-2 public — actual direct-SSH run
+
+[Live original-only baseline status](proposals/ding_ff2_public_s17_20261102T130051Z/STATUS.md) · [Exact configuration and declared corrected-GDA deviations](proposals/ding_ff2_public_s17_20261102T130051Z/README.md) · [Project blueprint](proposals/ding_ff2_public_s17_20261102T130051Z/PROJECT_BLUEPRINT.md). Seed17, native224px/global batches,50classification→TRAIN-SFD→50corrected-GDA; input checks,8CPU tests and full-batch two-GPU CUDA smoke passed. Classification training is active on gpu01 GPUs0/2 in shared mode. No new validation/test result or fairness win at launch. Execution source remains immutable8487d98; publication uses a separate worktree. Earlier paragraphs below are historical observations.
+
 ## Actual Ding reproduction and FairForge-2 launch — 2 November 2026
 
 [Our archived Ding reproduction versus CES-FL](results/ding_reproduced_vs_cesfl_20261102/REPORT.md) uses measured local checkpoints rather than the paper's numbers. All four TEST memberships and FF++ TRAIN/VAL memberships match exactly. Full local Ding seed7 AUC97.44/56.05/71.22/72.54%; CES-FL B/C seed17 have higher AUC on all four datasets, with disclosed differences in preprocessing, seeds, optimization, checkpoint selection and archived GDA behavior. Full fairness metrics and native aggregate files are included.

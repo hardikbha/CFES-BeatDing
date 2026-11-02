@@ -1,0 +1,75 @@
+{
+  "commit": "8487d98303fd5d7766fef2fa3dd32c37f38e5f4b",
+  "source_hashes": {
+    "CES_FL/src/ding_ff2_public.py": "c95d5f3354909135a97264225bf7c2023dc0f7db10622390d2328d9c2da90761",
+    "CES_FL/src/ces_fl_diagram_model_v021.py": "0e001dd1251570ce43fb82bde307c519dea4045d9734506e1ce90d2ed014f8de",
+    "DINGREPRO_LIN/code/Ding_mod/utils/xception.py": "a9262c497f785231c2dcad8f4954c7ac19d5682033cc59d20609b5a6cdf74599",
+    "DINGREPRO_LIN/code/Ding_mod/utils/registry.py": "fa2f82246dfe39e49076096fe4db8f1b6cd6a2f553a5e3ba78a72d815007b76f",
+    "DINGREPRO_LIN/code/Ding_mod/SFD.py": "e54c78e2a3413a2af85e361bba5a3fc134b04145df283126b8eb705ab3cd4780",
+    "DINGREPRO_LIN/code/Ding_mod/detectors/xception_detector.py": "790b8da4c7d267c89994490960f0a6cd343d4846a932cc006236d39d0c58fd2f",
+    "CES_FL/scripts/run_ding_ff2_ssh.py": "630bc1811f81a4f9021d84c76ab65aff976e1ffcf93e5faa67a7baac4f547a93",
+    "CES_FL/tests/test_ding_ff2_public.py": "2a0a829ed9e503ad7a3d1a1b37a471230ade78b4fb08b95a2df7649064f17018"
+  },
+  "host": "gpu01",
+  "pid": 2754632,
+  "world_size": 2,
+  "cuda_visible_devices": "GPU-410a5796-06b3-dbe6-5371-5d06a1a53416,GPU-2544ad3e-a8af-7b58-55e6-c24c57497b01",
+  "cuda_name": "NVIDIA H100 80GB HBM3",
+  "input_receipt": {
+    "overlaps": {
+      "train:val:image": 0,
+      "train:val:identity_ids": 0,
+      "train:val:source_ids": 0,
+      "train:test:image": 0,
+      "train:test:identity_ids": 0,
+      "train:test:source_ids": 0,
+      "val:test:image": 0,
+      "val:test:identity_ids": 0,
+      "val:test:source_ids": 0
+    },
+    "native_groups": {
+      "4": [
+        "Female-Asian"
+      ],
+      "0": [
+        "Male-Asian"
+      ],
+      "6": [
+        "Female-Black"
+      ],
+      "2": [
+        "Male-Black"
+      ],
+      "5": [
+        "Female-White"
+      ],
+      "1": [
+        "Male-White"
+      ],
+      "7": [
+        "Female-Others"
+      ],
+      "3": [
+        "Male-Others"
+      ]
+    },
+    "class_counts": {
+      "train": {
+        "1": 201489,
+        "0": 16777
+      },
+      "val": {
+        "0": 2438,
+        "1": 28669
+      },
+      "test": {
+        "1": 82123,
+        "0": 5441
+      }
+    },
+    "hidden_person_or_donor_independence_verified": false,
+    "test_pixels_read": false
+  },
+  "smoke": true,
+  "test_inference": false
+}

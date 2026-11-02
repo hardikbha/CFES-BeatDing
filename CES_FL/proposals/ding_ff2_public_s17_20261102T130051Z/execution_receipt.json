@@ -1,0 +1,155 @@
+{
+  "observed_management_utc": "2026-11-02T13:45:12.193977+00:00",
+  "source_commit": "8487d98303fd5d7766fef2fa3dd32c37f38e5f4b",
+  "execution_source": "/home/sachin.chaudhary/ces_fl_sources/ding_ff2_public_s17_20261102T130051Z",
+  "state": {
+    "utc": "2026-11-02T13:30:03Z",
+    "state": "RUNNING",
+    "commit": "8487d98303fd5d7766fef2fa3dd32c37f38e5f4b",
+    "host": "gpu01",
+    "controller_pid": 2754578,
+    "route": "direct_ssh_shared_pool_v2",
+    "pbs_allocation_claimed": false,
+    "requested_cpus": 16,
+    "exclusive_cpu_reservation": false,
+    "need_mib_each": 20000,
+    "devices": [
+      {
+        "index": 0,
+        "uuid": "GPU-410a5796-06b3-dbe6-5371-5d06a1a53416",
+        "free": 52403,
+        "used": 28688,
+        "reserved_not_yet_used_mib": 0,
+        "available_mib": 52403
+      },
+      {
+        "index": 2,
+        "uuid": "GPU-2544ad3e-a8af-7b58-55e6-c24c57497b01",
+        "free": 53038,
+        "used": 28053,
+        "reserved_not_yet_used_mib": 16000,
+        "available_mib": 37038
+      }
+    ],
+    "torchrun_pid": 2754977,
+    "pgid": 2754977,
+    "command": [
+      "/home/sachin.chaudhary/.conda/envs/qwen38/bin/python",
+      "-u",
+      "-m",
+      "torch.distributed.run",
+      "--standalone",
+      "--nproc-per-node=2",
+      "/home/sachin.chaudhary/ces_fl_sources/ding_ff2_public_s17_20261102T130051Z/CES_FL/src/ding_ff2_public.py",
+      "train",
+      "--config",
+      "/home/sachin.chaudhary/ces_fl_sources/ding_ff2_public_s17_20261102T130051Z/CES_FL/proposals/ding_ff2_public_s17_20261102T130051Z/config.json",
+      "--out",
+      "/home/sachin.chaudhary/ces_fl_runs/ding_ff2_public_s17_20261102T130051Z/training"
+    ],
+    "log": "/home/sachin.chaudhary/ces_fl_runs/ding_ff2_public_s17_20261102T130051Z/logs/training.log"
+  },
+  "training_start": {
+    "commit": "8487d98303fd5d7766fef2fa3dd32c37f38e5f4b",
+    "source_hashes": {
+      "CES_FL/src/ding_ff2_public.py": "c95d5f3354909135a97264225bf7c2023dc0f7db10622390d2328d9c2da90761",
+      "CES_FL/src/ces_fl_diagram_model_v021.py": "0e001dd1251570ce43fb82bde307c519dea4045d9734506e1ce90d2ed014f8de",
+      "DINGREPRO_LIN/code/Ding_mod/utils/xception.py": "a9262c497f785231c2dcad8f4954c7ac19d5682033cc59d20609b5a6cdf74599",
+      "DINGREPRO_LIN/code/Ding_mod/utils/registry.py": "fa2f82246dfe39e49076096fe4db8f1b6cd6a2f553a5e3ba78a72d815007b76f",
+      "DINGREPRO_LIN/code/Ding_mod/SFD.py": "e54c78e2a3413a2af85e361bba5a3fc134b04145df283126b8eb705ab3cd4780",
+      "DINGREPRO_LIN/code/Ding_mod/detectors/xception_detector.py": "790b8da4c7d267c89994490960f0a6cd343d4846a932cc006236d39d0c58fd2f",
+      "CES_FL/scripts/run_ding_ff2_ssh.py": "630bc1811f81a4f9021d84c76ab65aff976e1ffcf93e5faa67a7baac4f547a93",
+      "CES_FL/tests/test_ding_ff2_public.py": "2a0a829ed9e503ad7a3d1a1b37a471230ade78b4fb08b95a2df7649064f17018"
+    },
+    "host": "gpu01",
+    "pid": 2755001,
+    "world_size": 2,
+    "cuda_visible_devices": "GPU-410a5796-06b3-dbe6-5371-5d06a1a53416,GPU-2544ad3e-a8af-7b58-55e6-c24c57497b01",
+    "cuda_name": "NVIDIA H100 80GB HBM3",
+    "input_receipt": {
+      "overlaps": {
+        "train:val:image": 0,
+        "train:val:identity_ids": 0,
+        "train:val:source_ids": 0,
+        "train:test:image": 0,
+        "train:test:identity_ids": 0,
+        "train:test:source_ids": 0,
+        "val:test:image": 0,
+        "val:test:identity_ids": 0,
+        "val:test:source_ids": 0
+      },
+      "native_groups": {
+        "4": [
+          "Female-Asian"
+        ],
+        "0": [
+          "Male-Asian"
+        ],
+        "6": [
+          "Female-Black"
+        ],
+        "2": [
+          "Male-Black"
+        ],
+        "5": [
+          "Female-White"
+        ],
+        "1": [
+          "Male-White"
+        ],
+        "7": [
+          "Female-Others"
+        ],
+        "3": [
+          "Male-Others"
+        ]
+      },
+      "class_counts": {
+        "train": {
+          "1": 201489,
+          "0": 16777
+        },
+        "val": {
+          "0": 2438,
+          "1": 28669
+        },
+        "test": {
+          "1": 82123,
+          "0": 5441
+        }
+      },
+      "hidden_person_or_donor_independence_verified": false,
+      "test_pixels_read": false
+    },
+    "smoke": false,
+    "test_inference": false
+  },
+  "controller_command": {
+    "command": [
+      "/home/sachin.chaudhary/.conda/envs/qwen38/bin/python",
+      "-u",
+      "/home/sachin.chaudhary/ces_fl_sources/ding_ff2_public_s17_20261102T130051Z/CES_FL/scripts/run_ding_ff2_ssh.py",
+      "--source",
+      "/home/sachin.chaudhary/ces_fl_sources/ding_ff2_public_s17_20261102T130051Z",
+      "--config",
+      "/home/sachin.chaudhary/ces_fl_sources/ding_ff2_public_s17_20261102T130051Z/CES_FL/proposals/ding_ff2_public_s17_20261102T130051Z/config.json",
+      "--run",
+      "/home/sachin.chaudhary/ces_fl_runs/ding_ff2_public_s17_20261102T130051Z",
+      "--python",
+      "/home/sachin.chaudhary/.conda/envs/qwen38/bin/python",
+      "--preflight",
+      "preflight_v2"
+    ],
+    "pid": 2754578,
+    "host": "gpu01",
+    "PATH": "/home/sachin.chaudhary/cesel_ma_audit_logs/runtime_tools/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin",
+    "private_git_sha256": "d220991337f55201c733e9ad80c11bec384680ec7b927a341a8cf03bb62d19a4"
+  },
+  "first_failure": "attempt1: FileNotFoundError git before claiming GPUs; preserved logs/controller.log; no CUDA/model failure",
+  "verified_private_git_sha256": "d220991337f55201c733e9ad80c11bec384680ec7b927a341a8cf03bb62d19a4",
+  "cpu_smoke": "8/8 PASS",
+  "cuda_smoke": "PASS, full native global batches, original TRAIN only",
+  "test_evaluation": false,
+  "clock_skew": "gpu01 649seconds behind management in contemporaneous probe",
+  "source_immutable": true
+}
