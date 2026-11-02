@@ -1,0 +1,162 @@
+{
+  "observed_management_utc": "2026-11-02T20:51:44.607628+00:00",
+  "scope": "Metadata-only independent source-function check; full pixel/hash preflight still required",
+  "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
+  "config_digest": "03c96caa44e63562b8d07ee9f8b7ee09b2ff49fb28f63997e96839753cd3bb7f",
+  "rows": {
+    "train": 76139,
+    "val": 25386
+  },
+  "split_audit": {
+    "recorded_contributor_overlap": {
+      "identity_ids": 163,
+      "source_ids": 163
+    },
+    "true_person_separation_verified": false,
+    "checked_overlap_keys": [
+      "identity_ids:train:val",
+      "source_ids:train:val"
+    ],
+    "deferred_overlap_keys": [
+      "identity_ids:train:test",
+      "identity_ids:val:test",
+      "source_ids:train:test",
+      "source_ids:val:test"
+    ]
+  },
+  "group_support": {
+    "gender": {
+      "Female": {
+        "real": 7148,
+        "fake": 35442,
+        "eligible": true
+      },
+      "Male": {
+        "real": 5778,
+        "fake": 27771,
+        "eligible": true
+      }
+    },
+    "race": {
+      "Asian": {
+        "real": 1992,
+        "fake": 8496,
+        "eligible": true
+      },
+      "Black": {
+        "real": 450,
+        "fake": 2129,
+        "eligible": true
+      },
+      "Others": {
+        "real": 839,
+        "fake": 5509,
+        "eligible": true
+      },
+      "White": {
+        "real": 9645,
+        "fake": 47079,
+        "eligible": true
+      }
+    },
+    "age_bin": {
+      "30-44": {
+        "real": 3616,
+        "fake": 15683,
+        "eligible": true
+      },
+      "45-59": {
+        "real": 1532,
+        "fake": 7374,
+        "eligible": true
+      },
+      "60+": {
+        "real": 448,
+        "fake": 1079,
+        "eligible": true
+      },
+      "<30": {
+        "real": 7330,
+        "fake": 39077,
+        "eligible": true
+      }
+    },
+    "skin_bin": {
+      "0": {
+        "real": 3062,
+        "fake": 16272,
+        "eligible": true
+      },
+      "1": {
+        "real": 3140,
+        "fake": 15417,
+        "eligible": true
+      },
+      "2": {
+        "real": 3079,
+        "fake": 14511,
+        "eligible": true
+      },
+      "3": {
+        "real": 3395,
+        "fake": 16062,
+        "eligible": true
+      },
+      "unknown": {
+        "real": 250,
+        "fake": 951,
+        "eligible": false
+      }
+    },
+    "gender_race": {
+      "Female-Asian": {
+        "real": 1506,
+        "fake": 6507,
+        "eligible": true
+      },
+      "Female-Black": {
+        "real": 182,
+        "fake": 929,
+        "eligible": true
+      },
+      "Female-Others": {
+        "real": 270,
+        "fake": 1915,
+        "eligible": true
+      },
+      "Female-White": {
+        "real": 5190,
+        "fake": 26091,
+        "eligible": true
+      },
+      "Male-Asian": {
+        "real": 486,
+        "fake": 1989,
+        "eligible": true
+      },
+      "Male-Black": {
+        "real": 268,
+        "fake": 1200,
+        "eligible": true
+      },
+      "Male-Others": {
+        "real": 569,
+        "fake": 3594,
+        "eligible": true
+      },
+      "Male-White": {
+        "real": 4455,
+        "fake": 20988,
+        "eligible": true
+      }
+    }
+  },
+  "supported_group_counts": {
+    "gender": 2,
+    "race": 4,
+    "age_bin": 4,
+    "skin_bin": 4,
+    "gender_race": 8
+  },
+  "test_data_read": false
+}

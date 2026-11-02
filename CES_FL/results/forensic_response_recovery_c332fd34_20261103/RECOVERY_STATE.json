@@ -1,0 +1,52 @@
+{
+  "observed_management_utc": "2026-11-02T20:52:58.644369+00:00",
+  "execution_source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
+  "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
+  "execution_source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-forensic-response-c332fd34",
+  "cpu_unit_tests": {
+    "passed": 13,
+    "elapsed_seconds": 8.782
+  },
+  "datasets": {
+    "ffpp": {
+      "bound_config": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_overlapfix_20261103_r1_ffpp_s17/config.json",
+      "config_file_sha256": "a49d88ded6ca911f77047893aaae1573ca7c1ffdf5eff32c2f03936b71521f1e",
+      "config_digest": "03c96caa44e63562b8d07ee9f8b7ee09b2ff49fb28f63997e96839753cd3bb7f",
+      "stages": {
+        "bind": "COMPLETED",
+        "preflight": "RUNNING",
+        "preview_review": "PENDING_PREFLIGHT",
+        "CUDA_smoke": "PENDING_ALLOCATED_BINDING",
+        "real_backward": "PENDING_PREFLIGHT_AND_CUDA",
+        "A": "NOT_STARTED",
+        "B": "NOT_STARTED",
+        "C": "NOT_STARTED",
+        "D": "NOT_STARTED"
+      }
+    },
+    "ff2": {
+      "bound_config": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_overlapfix_20261103_r1_ff2_s17/config.json",
+      "config_file_sha256": "94654346db2085a10c2607cd11d5e3ef2651cba35b4c8e8d20e3f6295b27fe97",
+      "config_digest": "212645fe0e196651e0f6728708edfac5f2b87fa7cde508e19f7b799887a1f522",
+      "stages": {
+        "bind": "COMPLETED",
+        "preflight": "PENDING_FFPP_SEQUENCE",
+        "preview_review": "PENDING_PREFLIGHT",
+        "CUDA_smoke": "PENDING_ALLOCATED_BINDING",
+        "real_backward": "PENDING_PREFLIGHT_AND_CUDA",
+        "A": "NOT_STARTED",
+        "B": "NOT_STARTED",
+        "C": "NOT_STARTED",
+        "D": "NOT_STARTED"
+      }
+    }
+  },
+  "initial_total_gpu_budget_hours": 24,
+  "consumed_gpu_hours": 0.0,
+  "new_study_gpu_job_ids": [],
+  "old_study_gpu_consumption": 0.0,
+  "existing_Ding": "Live controller/torchrun/two CUDA ranks on gpu01 preserved; not the new study",
+  "old_failed_preflight": "PRESERVED; bound old-source configs not reused",
+  "allocation_blocker": "Inspected running PBS45131 ngpus1 worker: CUDA_VISIBLE_DEVICES/PBS_GPUFILE/NVIDIA_VISIBLE_DEVICES all empty. Need genuine allocated binding before CUDA. No arbitrary free-memory selection.",
+  "test_evaluated": false
+}
