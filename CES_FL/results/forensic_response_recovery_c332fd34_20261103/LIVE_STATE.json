@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-02T23:30:01.813892+00:00",
+  "observed_management_utc": "2026-11-02T23:40:07.189667+00:00",
   "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
   "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
   "budget": {
@@ -7,8 +7,8 @@
     "source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-forensic-response-c332fd34",
     "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
     "initial_total_gpu_hours": 24,
-    "consumed_gpu_hours": 5.441536599479409,
-    "reserved_gpu_hours": 1.406979523010345,
+    "consumed_gpu_hours": 5.608506687570157,
+    "reserved_gpu_hours": 1.2400094349195974,
     "gpu_sessions": [
       {
         "id": "ffpp_checks_primary",
@@ -160,7 +160,7 @@
         "id": "ffpp_D_resume3.0",
         "ngpus": 1,
         "reserved_gpu_hours": 1.8411256668494187,
-        "elapsed_seconds": 1562.9261178206652,
+        "elapsed_seconds": 2164.0184349473566,
         "state": "RUNNING",
         "route": "user_authorized_direct_ssh_pool_v2",
         "pbs_allocation_claimed": false,
@@ -6577,7 +6577,7 @@
               "id": "ffpp_D_resume3.0",
               "ngpus": 1,
               "reserved_gpu_hours": 1.8411256668494187,
-              "elapsed_seconds": 1562.9261178206652,
+              "elapsed_seconds": 2164.0184349473566,
               "state": "RUNNING",
               "route": "user_authorized_direct_ssh_pool_v2",
               "pbs_allocation_claimed": false,
@@ -6863,7 +6863,7 @@
     }
   },
   "coordinator": {
-    "observed_management_utc": "2026-11-02T23:29:49.344254+00:00",
+    "observed_management_utc": "2026-11-02T23:39:49.451507+00:00",
     "phase": "WAITING_ARM",
     "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
     "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
