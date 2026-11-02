@@ -42,6 +42,12 @@ def observe():
         config=read(run/'config.json');pre=run/'preflight/PREFLIGHT.json'
         data=dict(root=str(run),config_file_sha256=sha(run/'config.json'),config_digest=hashlib.sha256(json.dumps(config,sort_keys=True,allow_nan=False).encode()).hexdigest(),
                   preflight=read(pre) if pre.exists() else None,qualification_recorded=(run/'qualification.json').exists(),arms={})
+        if (run/'qualification.json').exists():
+            q=read(run/'qualification.json')
+            data['qualification_summary']={k:q[k] for k in ('status','source_sha256','config_digest','case_count','real_forgery_validity_proven','scope')}
+            data['qualification_sha256']=sha(run/'qualification.json')
+            summary=run/'operator_preview/REVIEW_SUMMARY.json'
+            if summary.exists():data['operator_review_scope']=read(summary)
         for arm in 'ABCD':
             out=run/arm;records=read(out/'history.json') if (out/'history.json').exists() else []
             result=read(out/'RUN_VERIFIED.json') if (out/'RUN_VERIFIED.json').exists() else None

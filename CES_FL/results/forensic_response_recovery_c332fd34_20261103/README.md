@@ -1,3 +1,11 @@
+# Live forensic-response progress
+
+Use [STATUS.md](STATUS.md) and [LIVE_STATE.json](LIVE_STATE.json) for current stages, validation/group support, checkpoint hashes and cumulative GPU-hours. Execution remains pinned to `c332fd34fb603b8919b15fee08e8d022fb9f57c8`; publication uses a separate checkout.
+
+FF++ CPU preflight, the named AI operator screen, fresh CUDA software smoke and all four real-input backward checks passed. C/D are running on direct SSH under explicit user-authorized shared GPU leases; no PBS allocation claimed. A/B and FairForge-2 retain their documented gates. No TEST inference or superiority claim.
+
+## Preserved initial recovery observation
+
 # Forensic-response corrected-source recovery
 
 Observed management UTC: 2026-11-02T20:52:58.644369+00:00

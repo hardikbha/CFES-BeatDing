@@ -38,7 +38,7 @@
     "direct_stage.py": "79813d06e563ef7b72b44511b13f044e9cc1c40952fb81f3e69dc3f18dfdc5f8",
     "followup_stage.py": "fc5ae8c7488a836ad82a6de28c4a2d183830152ebf1633a49e60804e7c4eae92",
     "study_coordinator.py": "b433b819e5f28f313071b79f4f54131253f39029c36e162f03aa010ffa8eb8a0",
-    "publish_study_progress.py": "d0b2a679281ea74f59b1357881ae6cff209c3fabc63833567ce16890afd3eb02"
+    "publish_study_progress.py": "8c5b58ef04544c8ea28fe5182e1fc2491c249ac6437bed3b488186b2cbda8d67"
   },
   "notes": "allocated_stage is imported as budget library; its scheduler launcher was not used. No new PBS job or TEST evaluation. Scientific model file unchanged. CPU/preview/private inventories and row reviews remain on cluster."
 }
