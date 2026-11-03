@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-03T14:13:10.698380+00:00",
+  "observed_management_utc": "2026-11-03T14:23:16.122860+00:00",
   "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
   "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
   "budget": {
@@ -476,7 +476,8 @@
         "scientific_source_sha256": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
         "route": "PBS_ngpus1_plus_prior_explicit_authorized_pool_v2_UUID",
         "planned_epochs": 3,
-        "no_automatic_extension": true
+        "no_automatic_extension": true,
+        "pbs_job_id": "45321.mgmt01"
       }
     ],
     "prior_study_ledger": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_9030dd77_20261103/budget_ledger.json",
