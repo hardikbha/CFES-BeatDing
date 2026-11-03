@@ -1,10 +1,10 @@
 #!/bin/bash
 #PBS -N lh2abl17
 #PBS -q workq
-#PBS -l select=1:host=gpu01:ncpus=10:ngpus=2:mem=64gb
+#PBS -l select=1:host=gpu02:ncpus=10:ngpus=2:mem=64gb
 #PBS -l walltime=01:30:00
 #PBS -j oe
 #PBS -o /home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/cohort_allocation.log
 set -euo pipefail
 umask 077
-exec /home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-lh-sham-noalign-cohort10-execution-20261104/CES_FL/proposals/lh_sham_noalign_s17_20261103T165600Z/run_cohort.py
+exec /home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-lh-sham-noalign-cohort02-execution-20261104/CES_FL/proposals/lh_sham_noalign_s17_20261103T165600Z/run_cohort.py

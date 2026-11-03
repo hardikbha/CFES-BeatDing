@@ -9,7 +9,7 @@ resource=load('resource',SOURCE/'CES_FL/cluster/run_hierarchical_real.py')
 m=load('model',SOURCE/'CES_FL/src/ces_fl_head_ablation.py')
 lock=(ROOT/'cohort.lock').open('a');fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
 job=os.environ['PBS_JOBID'];q=subprocess.check_output(['qstat','-f',job],text=True)
-assert 'Resource_List.ngpus = 2' in q and 'gpu01:' in q
+assert 'Resource_List.ngpus = 2' in q and 'gpu02:' in q
 for arm in ('SHAM_FIX','NO_ALIGN'):
  c=m.load_config(HERE/(arm+'.json'));m.checked_inputs(c,ROOT/arm/'preflight');m.check_qualification(c,ROOT/arm/'review/qualification.json')
  assert not (ROOT/arm/'training').exists()
