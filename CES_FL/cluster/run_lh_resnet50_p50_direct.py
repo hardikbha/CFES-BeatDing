@@ -96,7 +96,7 @@ def query_gpu(uuid):
     return matches[0], active
 
 
-def reserve_budget(budget, gpu):
+def reserve_budget(budget, gpu, commit):
     with budget.ledger() as data:
         existing = [s for s in data['gpu_sessions'] if s['id'] == SESSION_ID]
         if existing:
@@ -107,9 +107,7 @@ def reserve_budget(budget, gpu):
                     or row.get('scientific_source_sha256') != EXPECTED_P50_SHA):
                 raise RuntimeError('Existing P50 reservation does not match this exact source/device/budget')
             row.update(state='RUNNING', host=os.uname().nodename,
-                       controller_pid=os.getpid(), card=gpu,
-                       scientific_commit=subprocess.check_output(
-                           ['git', '-C', str(SOURCE), 'rev-parse', 'HEAD'], text=True).strip())
+                       controller_pid=os.getpid(), card=gpu, scientific_commit=commit)
             return
         committed = sum(s['reserved_gpu_hours'] if s['state'] in ('QUEUED', 'RUNNING')
                         else s.get('elapsed_seconds', 0) * s['ngpus'] / 3600
@@ -121,7 +119,7 @@ def reserve_budget(budget, gpu):
             'elapsed_seconds': 0., 'state': 'RUNNING', 'route': 'user_authorized_direct_ssh_pool_v2',
             'pbs_allocation_claimed': False, 'host': os.uname().nodename,
             'controller_pid': os.getpid(), 'card': gpu, 'log': str(RUN_ROOT / 'P50.log'),
-            'scientific_commit': subprocess.check_output(['git', '-C', str(SOURCE), 'rev-parse', 'HEAD'], text=True).strip(),
+            'scientific_commit': commit,
             'scientific_source_sha256': EXPECTED_P50_SHA,
             'purpose': 'ResNet-50 seed-17 original-only P50; followed by matched L_A/L_H if validated'
         })
@@ -184,7 +182,7 @@ def main():
     torch.cuda.set_per_process_memory_fraction(.85, 0)
     budget = load('cesfl_shared_budget', LEDGER_MODULE)
     try:
-        reserve_budget(budget, gpu)
+        reserve_budget(budget, gpu, commit)
     except Exception:
         with pool_mutex():
             if lease.exists() and read_json(lease).get('pid') == os.getpid():
