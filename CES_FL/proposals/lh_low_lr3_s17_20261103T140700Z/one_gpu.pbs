@@ -1,0 +1,10 @@
+#!/bin/bash
+#PBS -N lhLR3s17
+#PBS -q workq
+#PBS -l select=1:host=gpu02:ncpus=6:ngpus=1:mem=32gb
+#PBS -l walltime=01:35:00
+#PBS -j oe
+#PBS -o /home/sachin.chaudhary/ces_fl_runs/lh_low_lr3_s17_20261103T140700Z/allocation.log
+set -euo pipefail
+umask 077
+exec /home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-lh-low-lr3-execution-20261103/CES_FL/proposals/lh_low_lr3_s17_20261103T140700Z/run_allocated.py

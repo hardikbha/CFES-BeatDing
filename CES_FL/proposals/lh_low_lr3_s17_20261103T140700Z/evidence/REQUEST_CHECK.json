@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "changes": {
+    "epochs": {
+      "old": 10,
+      "new": 3
+    },
+    "encoder_lr": {
+      "old": 1e-05,
+      "new": 1e-06
+    },
+    "head_lr": {
+      "old": 0.001,
+      "new": 0.0001
+    }
+  },
+  "source_sha256": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
+  "config_sha256": "7ac0d405161210e11846ce24af420a77ebdb16074cf39df8d0f80e5742fe6085",
+  "config_digest": "980e6fe1c994f2beaea674889d5566ea5a045a17003136767999ca0154fc117f",
+  "initial_state_identical_to_original_L_H": true,
+  "linear_head_state_hash": "9600162d7f69931f93d5e9e44ec778cd4e361c9ad0af38b66708508b50d04907",
+  "encoder_state_hash": "28390525d92313ec786b694ce21eef17db9c5157e1b89c37a0ac8071a475dbcb",
+  "optimizer_lrs": [
+    0.0001,
+    1e-06
+  ],
+  "parameters": {
+    "total": 20809001,
+    "trainable": 6790433,
+    "encoder": 20806952,
+    "head": 2049,
+    "encoder_trainable": 6788384,
+    "head_type": "linear",
+    "encoder_policy": "exit"
+  },
+  "encoder_eval": true,
+  "test_read": false
+}
