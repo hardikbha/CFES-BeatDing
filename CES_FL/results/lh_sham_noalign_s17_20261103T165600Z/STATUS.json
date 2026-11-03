@@ -1,13 +1,13 @@
 {
-  "observed_management_utc": "2026-11-03T18:41:22.991175+00:00",
+  "observed_management_utc": "2026-11-03T18:54:36.634683+00:00",
   "execution_commit": "ab7f36798cfa06226e17e31c2171e0c02404a216",
   "source_sha256": "1b6dc1b0e6d2b2220da897500a4d1bffb7764280df642abf6befdd1cf511ed01",
   "arms": {
     "SHAM_FIX": {
       "job_id": "45361.mgmt01",
-      "scheduler_state": "Q",
+      "scheduler_state": "R",
       "scheduler_observation": {
-        "job_state": "Q",
+        "job_state": "R",
         "queue": "workq",
         "Resource_List": {
           "mem": "64gb",
@@ -18,7 +18,18 @@
           "select": "1:host=gpu01:ncpus=10:ngpus=2:mem=64gb",
           "walltime": "01:30:00"
         },
-        "comment": "Not Running: Insufficient amount of resource: host "
+        "resources_used": {
+          "cpupercent": 9,
+          "cput": "00:00:01",
+          "mem": "220356kb",
+          "ncpus": 10,
+          "vmem": "3843316kb",
+          "walltime": "00:00:11"
+        },
+        "exec_host": "gpu01/5*10",
+        "exec_vnode": "(gpu01:ncpus=10:ngpus=2:mem=67108864kb)",
+        "stime": "Wed Nov  4 00:24:16 2026",
+        "comment": "Job run at Wed Nov 04 at 00:24 on (gpu01:ncpus=10:ngpus=2:mem=67108864kb)"
       },
       "completed_epochs": 0,
       "history": [],
@@ -33,9 +44,9 @@
     },
     "NO_ALIGN": {
       "job_id": "45361.mgmt01",
-      "scheduler_state": "Q",
+      "scheduler_state": "R",
       "scheduler_observation": {
-        "job_state": "Q",
+        "job_state": "R",
         "queue": "workq",
         "Resource_List": {
           "mem": "64gb",
@@ -46,7 +57,18 @@
           "select": "1:host=gpu01:ncpus=10:ngpus=2:mem=64gb",
           "walltime": "01:30:00"
         },
-        "comment": "Not Running: Insufficient amount of resource: host "
+        "resources_used": {
+          "cpupercent": 9,
+          "cput": "00:00:01",
+          "mem": "220356kb",
+          "ncpus": 10,
+          "vmem": "3843316kb",
+          "walltime": "00:00:11"
+        },
+        "exec_host": "gpu01/5*10",
+        "exec_vnode": "(gpu01:ncpus=10:ngpus=2:mem=67108864kb)",
+        "stime": "Wed Nov  4 00:24:16 2026",
+        "comment": "Job run at Wed Nov 04 at 00:24 on (gpu01:ncpus=10:ngpus=2:mem=67108864kb)"
       },
       "completed_epochs": 0,
       "history": [],
