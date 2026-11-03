@@ -1,6 +1,6 @@
 {
-  "commit": "35ffbd21cc6a033f9b9bf4cb1f92f5e417debe8d",
-  "source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-lh-sham-noalign-execution-20261103",
+  "commit": "f4e1f72723afd7270b0f45db7b6142433215d500",
+  "source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-lh-sham-noalign-cohort-execution-20261103",
   "source_sha256": "1b6dc1b0e6d2b2220da897500a4d1bffb7764280df642abf6befdd1cf511ed01",
   "git_status_porcelain": "",
   "proposal_file_sha256": {
@@ -8,10 +8,17 @@
     "NO_ALIGN.json": "d910f32843b28e58f56909ffc2446741178f519283e94e5a623e467bcfaf5905",
     "NO_ALIGN.pbs": "bc9cc328c88acc117b012883ec78e5b030f59dced22476d53d799d8dfbeb57dc",
     "report.py": "ef1bb36889950b2f4738649c9592faab1fcad2d95b8c3cb832af365bfd1531ac",
+    "release_after_cpu.py": "06c34b661fa1132e7f9115d49eecd98d9d4d3a6367c306344cd47c5d93b1868b",
     "commands.sh": "734c38b070acf1933a249707157e73265901cb308e3b094dc6a9e57368a4c006",
-    "README.md": "02c9b0688c8504a87329f55291ad4db5352928b783cda28a4587e6d668e3c5a5",
-    "run_allocated.py": "b331ba0d9c0a61324dfc19256b8cb1e0a39d6362e2943ac874d15f6af56c95ad",
+    "README.md": "0d48adb7546cdda0ca75649938021193ebc862c703ee3cefe245afbea70f64bb",
+    "run_cohort.py": "e22dff5f0ca83b6e2f1f154978a23f50e5499a4b467f48e0d47b1693297eb1bf",
+    "run_allocated.py": "db2da71a531c21719c8d067949c5730437e7f81122cf41d2cdc984e977f84545",
     "checks.py": "cd3aa827a8f659c14cd16716882204392da4423ad63a55f189eb0bf2c6ff413b",
-    "SHAM_FIX.pbs": "68524f65725fc0970b9294164452f200ef8c5b4c0fbbba3011bc16664a2612df"
-  }
+    "publish_snapshot.py": "d956d48adc6abd8eeeb8b7bdf4aa92df48e35a0157f673a58ddd5f996d2e5ccc",
+    "SHAM_FIX.pbs": "68524f65725fc0970b9294164452f200ef8c5b4c0fbbba3011bc16664a2612df",
+    "watch_authorized_jobs.py": "44815cda4a2934e3af02669fba0cf3ccfa7d9dedcde5ee7848ff4b1e422a7ed5",
+    "cohort.pbs": "ce4f646f9fdbe3fbf4f975e0e1557daa26beb3134a916b15302e840421477212"
+  },
+  "cpu_checks_source": "35ffbd21cc6a033f9b9bf4cb1f92f5e417debe8d",
+  "cpu_receipt_reuse_basis": "Identical scientific source bytes and exact configuration; allocation-only amendment"
 }

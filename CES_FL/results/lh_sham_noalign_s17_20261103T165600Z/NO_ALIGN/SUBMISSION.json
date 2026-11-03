@@ -2,9 +2,11 @@
   "command": [
     "qsub",
     "-h",
-    "/home/sachin.chaudhary/ces_fl_sources/cesfl-lh-sham-noalign-execution-20261103/CES_FL/proposals/lh_sham_noalign_s17_20261103T165600Z/NO_ALIGN.pbs"
+    "/home/sachin.chaudhary/ces_fl_sources/cesfl-lh-sham-noalign-cohort-execution-20261103/CES_FL/proposals/lh_sham_noalign_s17_20261103T165600Z/cohort.pbs"
   ],
   "returncode": 0,
-  "stdout": "45351.mgmt01\n",
-  "stderr": ""
+  "stdout": "45352.mgmt01\n",
+  "stderr": "",
+  "cohort_ngpus": 2,
+  "per_arm_ngpus": 1
 }

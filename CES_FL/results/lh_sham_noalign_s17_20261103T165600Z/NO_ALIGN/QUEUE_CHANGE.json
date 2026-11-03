@@ -1,0 +1,11 @@
+{
+  "command": [
+    "qalter",
+    "-l",
+    "select=1:host=gpu01:ncpus=6:ngpus=1:mem=32gb",
+    "45351.mgmt01"
+  ],
+  "returncode": 0,
+  "observed_management_utc": "2026-11-03T17:28:32.498621+00:00",
+  "reason": "PBS reports all 8 gpu02 ngpus assigned. Retarget only this unstarted held job to gpu01, which has unassigned ngpus. Scientific source/config, CPU/GPU count, memory, walltime unchanged; no existing jobs modified."
+}
