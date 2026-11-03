@@ -1,0 +1,7 @@
+{
+  "method": "dag",
+  "action": "REUSE_EXISTING_VERIFIED_FF2_50EPOCH_RUN",
+  "source_commit": "815b4d4bc679c55d4ee6323cc7284335ce210568",
+  "original_config": "CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/configs/dag.json",
+  "new_training": false
+}

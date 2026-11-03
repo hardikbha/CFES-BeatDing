@@ -1,0 +1,13 @@
+{
+  "method": "ucf",
+  "training_ready": false,
+  "source_cloned": true,
+  "required": [
+    "canonical TRAIN-specific-label sidecar and provenance",
+    "native paired exposure and matched control policy",
+    "native reconstruction/contrastive loss training adapter"
+  ],
+  "must_not_substitute_plain_BCE": true,
+  "group_counts_from": "TRAIN only",
+  "new_training": false
+}

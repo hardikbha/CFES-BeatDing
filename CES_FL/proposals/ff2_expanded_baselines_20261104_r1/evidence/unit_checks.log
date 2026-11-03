@@ -1,0 +1,18 @@
+test_dropout_resume_is_exact (test_ff2_expanded_suite.Checks) ... {"method": "vit_b16", "epoch": 1, "val_auc": 0.375, "elapsed_seconds": 1.2873670410000004}
+{"method": "vit_b16", "epoch": 2, "val_auc": 0.375, "elapsed_seconds": 1.3231438330000005}
+{"method": "vit_b16", "epoch": 1, "val_auc": 0.375, "elapsed_seconds": 0.04221175000000077}
+{"method": "vit_b16", "epoch": 2, "val_auc": 0.375, "elapsed_seconds": 0.07742850000000079}
+ok
+test_invalid_predictions_fail (test_ff2_expanded_suite.Checks) ... ok
+test_metric_formulas_and_eer_reference (test_ff2_expanded_suite.Checks) ... ok
+test_paired_methods_reject_plain_bce_fallback (test_ff2_expanded_suite.Checks) ... ok
+test_spatial_fft_does_not_mix_images (test_ff2_expanded_suite.Checks) ... ok
+test_threshold_changes_decisions_not_auc (test_ff2_expanded_suite.Checks) ... ok
+test_unknown_and_single_class_not_fabricated (test_ff2_expanded_suite.Checks) ... ok
+test_update_seed_wraps_after_many_steps (test_ff2_expanded_suite.Checks) ... ok
+test_xception_native_initialization_parity (test_ff2_expanded_suite.Checks) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 2.146s
+
+OK

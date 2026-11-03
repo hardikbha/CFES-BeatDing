@@ -1,0 +1,38 @@
+{
+  "method": "srm",
+  "deployed_total_parameters": 53137310,
+  "trainable_parameters": 53129660,
+  "frozen_parameters": 7650,
+  "input_shape": [
+    1,
+    3,
+    224,
+    224
+  ],
+  "scope": "detector inference only; loss, preprocessing and backward excluded",
+  "flop_convention": "fvcore one fused multiply-add counts as one operation",
+  "counted_gflops": 10.713478498,
+  "complete_flop_coverage": false,
+  "unsupported_operations": {
+    "aten::hardtanh": 4,
+    "aten::add": 8,
+    "aten::mean": 1,
+    "aten::sigmoid": 2,
+    "aten::mul": 14,
+    "aten::max_pool2d": 8,
+    "aten::add_": 24,
+    "aten::softmax": 4,
+    "aten::adaptive_max_pool2d": 1,
+    "aten::sub": 1
+  },
+  "uncalled_modules": [
+    "net.backbone_rgb.adjust_channel",
+    "net.backbone_srm.adjust_channel",
+    "net.backbone_srm.last_linear",
+    "net.blur",
+    "net.loss_func",
+    "net.noise"
+  ],
+  "architecture_only_random_weights": true,
+  "accuracy_evaluated": false
+}

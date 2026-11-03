@@ -1,0 +1,61 @@
+{
+  "format": "FF2_EXPANDED_PROTOCOL_v1",
+  "dataset": "FairForge-2 public",
+  "splits": {
+    "train": {
+      "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ff2/train.csv",
+      "sha256": "4f83e7dc8042533329d7047fefd0f30cbd96f45d42bde2666dd0edc7d58f29cc",
+      "rows": 218266,
+      "labels": {
+        "1": 201489,
+        "0": 16777
+      }
+    },
+    "val": {
+      "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ff2/val.csv",
+      "sha256": "aeda051259d9e26b07c2810152b601ae115ce7c9e10523f99ea07bbc9f92afa8",
+      "rows": 31107,
+      "labels": {
+        "0": 2438,
+        "1": 28669
+      }
+    },
+    "test": {
+      "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ff2/test.csv",
+      "sha256": "dd5eb9ef070f658fe6b7f744c47f73e25ce7c53f948bc272f4f16c69a37d4099",
+      "rows": 87564,
+      "labels": {
+        "1": 82123,
+        "0": 5441
+      }
+    }
+  },
+  "seed": 17,
+  "epochs": 50,
+  "batch_size_originals": 128,
+  "train_geometry": "direct bilinear224",
+  "eval_geometry": "shortest-side bilinear224 plus center crop",
+  "optimizer": "SGD",
+  "lr": 0.001,
+  "momentum": 0.9,
+  "weight_decay": 0.005,
+  "precision": "float32; TF32 off",
+  "normalization": "architecture-appropriate; exact values in configs",
+  "selection": "earliest strict maximum validation AUC after full50epochs",
+  "threshold_views": [
+    "fixed probability0.5",
+    "selected FF2 validation-real empirical10%FPR threshold, frozen forTEST"
+  ],
+  "primary_intersection": "gender_race",
+  "minimum_group_support_per_class": 20,
+  "missing_labels": "unknown, never fabricated/rebinned to another paper categories",
+  "additional_gpu_hours_granted": 0,
+  "shared_FF2_cap_gpu_hours": 72,
+  "max_concurrent_gpus": 3,
+  "prior_results_preserved": true,
+  "paired_methods": "UCF/PG blocked until verified Specific labels and native paired/SAM adapter; additional exposure must be declared and controlled",
+  "existing_run_commit": "815b4d4bc679c55d4ee6323cc7284335ce210568",
+  "latest_existing_result_commit": "091a91d9412ff0ef7fca16ab3d811785395918cd",
+  "new_training_launched_here": false,
+  "new_test_inference_launched_here": false
+}

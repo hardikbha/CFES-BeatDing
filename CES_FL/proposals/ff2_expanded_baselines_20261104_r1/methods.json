@@ -1,0 +1,194 @@
+{
+  "format": "FF2_EXPANDED_METHODS_v1",
+  "primary_intersection": "gender_race",
+  "secondary_axes": [
+    "gender",
+    "race",
+    "age_bin",
+    "skin_bin",
+    "ids8",
+    "gender_skin"
+  ],
+  "common_training_recipe": "FF2_public_seed17_50epochs_batch128_SGD0.001_224px",
+  "methods": [
+    {
+      "id": "xception",
+      "name": "Xception",
+      "category": "CNN",
+      "mechanism": "spatial",
+      "source_id": "aiface",
+      "entrypoint": "training/detectors/xception_detector.py",
+      "state": "EXISTING_BCE_RUN_REUSE",
+      "notes": "ImageNet Xception; final ReLU/GAP/linear; full encoder/BN updates",
+      "weight_kind": "xception_imagenet",
+      "weights_automatically_downloaded": false,
+      "backbone": "Xception"
+    },
+    {
+      "id": "efficientnetb4",
+      "name": "EfficientNet-B4",
+      "category": "CNN",
+      "mechanism": "spatial",
+      "source_id": "aiface",
+      "entrypoint": "training/networks/efficientnetb4.py",
+      "state": "ADAPTER_IMPLEMENTED_REQUIRES_BOUND_CHECKS",
+      "notes": "Preserve pretrained stem; upstream AI-Face resets it randomly. Same EfficientNet-PyTorch architecture, explicit correction.",
+      "weight_kind": "efficientnet_pytorch_b4_imagenet",
+      "weights_automatically_downloaded": false,
+      "backbone": "EfficientNet-B4"
+    },
+    {
+      "id": "vit_b16",
+      "name": "ViT-B/16",
+      "category": "Transformer",
+      "mechanism": "spatial",
+      "source_id": "aiface",
+      "entrypoint": "training/train_test_vit.py",
+      "state": "ADAPTER_IMPLEMENTED_REQUIRES_BOUND_CHECKS",
+      "notes": "Torchvision ViT-B/16, full fine-tuning, one-logit head",
+      "weight_kind": "torchvision_vit_b16_imagenet",
+      "weights_automatically_downloaded": false,
+      "backbone": "ViT-B/16"
+    },
+    {
+      "id": "f3net",
+      "name": "F3Net (AI-Face FAD implementation)",
+      "category": "CNN",
+      "mechanism": "frequency",
+      "source_id": "aiface",
+      "entrypoint": "training/detectors/f3net_detector.py",
+      "state": "ADAPTER_IMPLEMENTED_REQUIRES_BOUND_CHECKS",
+      "notes": "AI-Face implementation has FAD branch only; not a claim to reproduce original dual-branch F3Net. DCT dimension adapted256\u2192224.",
+      "weight_kind": "xception_imagenet",
+      "weights_automatically_downloaded": false,
+      "backbone": "Xception"
+    },
+    {
+      "id": "spsl",
+      "name": "SPSL (spatial FFT correction)",
+      "category": "CNN",
+      "mechanism": "frequency",
+      "source_id": "aiface",
+      "entrypoint": "training/detectors/spsl_detector.py",
+      "state": "ADAPTER_IMPLEMENTED_REQUIRES_BOUND_CHECKS",
+      "notes": "FFT restricted to H/W; upstream FFT includes batch/channel dimensions. Require batch-independence test.",
+      "weight_kind": "xception_imagenet",
+      "weights_automatically_downloaded": false,
+      "backbone": "Xception"
+    },
+    {
+      "id": "srm",
+      "name": "SRM (AI-Face, 224px adaptation)",
+      "category": "CNN",
+      "mechanism": "frequency",
+      "source_id": "aiface",
+      "entrypoint": "training/detectors/srm_detector.py",
+      "state": "ADAPTER_IMPLEMENTED_REQUIRES_BOUND_CHECKS",
+      "notes": "Native two-stream SRM+AM-softmax; learned attention grid16\u219214 for224pixels; unused second classifier removed.",
+      "weight_kind": "xception_imagenet",
+      "weights_automatically_downloaded": false,
+      "backbone": "Xception"
+    },
+    {
+      "id": "ucf",
+      "name": "UCF",
+      "category": "CNN",
+      "mechanism": "disentanglement",
+      "source_id": "aiface",
+      "entrypoint": "training/detectors/ucf_detector.py",
+      "state": "BLOCKED_METADATA_AND_PAIR_ADAPTER",
+      "notes": "Needs provenance-verified Specific labels, real/fake paired batches, reconstruction/contrastive losses; no BCE fallback.",
+      "weight_kind": "xception_imagenet",
+      "weights_automatically_downloaded": false,
+      "backbone": "Xception"
+    },
+    {
+      "id": "univfd",
+      "name": "UnivFD",
+      "category": "VLM",
+      "mechanism": "frozen CLIP visual features",
+      "source_id": "aiface",
+      "entrypoint": "training/train_test_clip.py",
+      "state": "ADAPTER_IMPLEMENTED_REQUIRES_BOUND_CHECKS",
+      "notes": "Frozen CLIP ViT-L/14 visual encoder+linear head; unused text tower omitted from deployed parameter/FLOP count.",
+      "weight_kind": "clip_vit_l14",
+      "weights_automatically_downloaded": false,
+      "backbone": "CLIP ViT-L/14"
+    },
+    {
+      "id": "core",
+      "name": "CORE (paired-view adaptation)",
+      "category": "CNN",
+      "mechanism": "consistency",
+      "source_id": "aiface",
+      "entrypoint": "training/detectors/core_detector.py",
+      "state": "ADAPTER_IMPLEMENTED_REQUIRES_BOUND_CHECKS",
+      "notes": "Pairs same-source original and horizontal flip; never treats random batch halves as positive pairs. Two image forwards/original/update.",
+      "weight_kind": "xception_imagenet",
+      "weights_automatically_downloaded": false,
+      "backbone": "Xception"
+    },
+    {
+      "id": "daw",
+      "name": "DAW-FDD",
+      "category": "Fairness",
+      "mechanism": "group/sample CVaR",
+      "source_id": "aiface",
+      "entrypoint": "training/detectors/daw_fdd.py",
+      "state": "EXISTING_COMPLETED_REUSE",
+      "notes": "Preserve original verified fifty-epoch native FF2 result and code",
+      "weight_kind": "xception_imagenet",
+      "weights_automatically_downloaded": false,
+      "backbone": "Xception"
+    },
+    {
+      "id": "dag",
+      "name": "DAG-FDD",
+      "category": "Fairness",
+      "mechanism": "sample CVaR",
+      "source_id": "aiface",
+      "entrypoint": "training/detectors/dag_fdd.py",
+      "state": "EXISTING_COMPLETED_REUSE",
+      "notes": "Preserve original verified fifty-epoch native FF2 result and code",
+      "weight_kind": "xception_imagenet",
+      "weights_automatically_downloaded": false,
+      "backbone": "Xception"
+    },
+    {
+      "id": "pg_fdd",
+      "name": "PG-FDD",
+      "category": "Fairness",
+      "mechanism": "disentanglement+SAM",
+      "source_id": "aiface",
+      "entrypoint": "training/detectors/fair_df_detector.py",
+      "state": "BLOCKED_METADATA_SAM_AND_PAIR_ADAPTER",
+      "notes": "Use official Fairness-Generalization native trainer as reference; FF2 specific labels, group counts and SAM parity required.",
+      "weight_kind": "xception_imagenet",
+      "weights_automatically_downloaded": false,
+      "backbone": "Xception"
+    }
+  ],
+  "optional_reference_methods": [
+    {
+      "id": "fairadapter",
+      "source_id": "fairadapter",
+      "status": "SOURCE_CLONED_ADAPTER_PENDING"
+    },
+    {
+      "id": "fairforensics",
+      "status": "OFFICIAL_SOURCE_NOT_VERIFIED",
+      "paper": "https://arxiv.org/abs/2608.01661"
+    },
+    {
+      "id": "iil",
+      "status": "ANONYMOUS_MATCHING_RELEASE_CLONED_FF2_ADAPTER_PENDING",
+      "repository": "https://github.com/Anonymous-Researcher-Blind/intersectional-invariant-learning",
+      "paper": "https://arxiv.org/abs/2610.37881",
+      "source_id": "iil_candidate"
+    },
+    {
+      "id": "rsef",
+      "status": "OFFICIAL_SOURCE_NOT_VERIFIED"
+    }
+  ]
+}

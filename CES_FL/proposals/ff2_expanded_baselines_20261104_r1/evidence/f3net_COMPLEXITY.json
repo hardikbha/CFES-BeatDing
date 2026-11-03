@@ -1,0 +1,30 @@
+{
+  "method": "f3net",
+  "deployed_total_parameters": 21313353,
+  "trainable_parameters": 21012297,
+  "frozen_parameters": 301056,
+  "input_shape": [
+    1,
+    3,
+    224,
+    224
+  ],
+  "scope": "detector inference only; loss, preprocessing and backward excluded",
+  "flop_convention": "fvcore one fused multiply-add counts as one operation",
+  "counted_gflops": 4.830879552,
+  "complete_flop_coverage": false,
+  "unsupported_operations": {
+    "aten::sigmoid": 4,
+    "aten::mul": 8,
+    "aten::sub": 4,
+    "aten::add": 4,
+    "aten::max_pool2d": 4,
+    "aten::add_": 12
+  },
+  "uncalled_modules": [
+    "net.backbone.adjust_channel",
+    "net.loss_func"
+  ],
+  "architecture_only_random_weights": true,
+  "accuracy_evaluated": false
+}

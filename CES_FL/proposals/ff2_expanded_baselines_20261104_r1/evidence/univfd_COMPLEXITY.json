@@ -1,0 +1,52 @@
+{
+  "method": "univfd",
+  "deployed_total_parameters": 303966977,
+  "trainable_parameters": 769,
+  "frozen_parameters": 303966208,
+  "input_shape": [
+    1,
+    3,
+    224,
+    224
+  ],
+  "scope": "detector inference only; loss, preprocessing and backward excluded",
+  "flop_convention": "fvcore one fused multiply-add counts as one operation",
+  "counted_gflops": 77.830810368,
+  "complete_flop_coverage": false,
+  "unsupported_operations": {
+    "aten::add": 50,
+    "aten::div": 24,
+    "aten::unflatten": 24,
+    "aten::mul": 144,
+    "aten::scaled_dot_product_attention": 24,
+    "aten::sigmoid": 24
+  },
+  "uncalled_modules": [
+    "net.visual.transformer.resblocks.0.attn.out_proj",
+    "net.visual.transformer.resblocks.1.attn.out_proj",
+    "net.visual.transformer.resblocks.10.attn.out_proj",
+    "net.visual.transformer.resblocks.11.attn.out_proj",
+    "net.visual.transformer.resblocks.12.attn.out_proj",
+    "net.visual.transformer.resblocks.13.attn.out_proj",
+    "net.visual.transformer.resblocks.14.attn.out_proj",
+    "net.visual.transformer.resblocks.15.attn.out_proj",
+    "net.visual.transformer.resblocks.16.attn.out_proj",
+    "net.visual.transformer.resblocks.17.attn.out_proj",
+    "net.visual.transformer.resblocks.18.attn.out_proj",
+    "net.visual.transformer.resblocks.19.attn.out_proj",
+    "net.visual.transformer.resblocks.2.attn.out_proj",
+    "net.visual.transformer.resblocks.20.attn.out_proj",
+    "net.visual.transformer.resblocks.21.attn.out_proj",
+    "net.visual.transformer.resblocks.22.attn.out_proj",
+    "net.visual.transformer.resblocks.23.attn.out_proj",
+    "net.visual.transformer.resblocks.3.attn.out_proj",
+    "net.visual.transformer.resblocks.4.attn.out_proj",
+    "net.visual.transformer.resblocks.5.attn.out_proj",
+    "net.visual.transformer.resblocks.6.attn.out_proj",
+    "net.visual.transformer.resblocks.7.attn.out_proj",
+    "net.visual.transformer.resblocks.8.attn.out_proj",
+    "net.visual.transformer.resblocks.9.attn.out_proj"
+  ],
+  "architecture_only_random_weights": true,
+  "accuracy_evaluated": false
+}

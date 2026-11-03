@@ -1,0 +1,43 @@
+{
+  "status": "SOURCE_CLONES_VERIFIED",
+  "repositories": [
+    {
+      "id": "aiface",
+      "commit": "588f80c60a3f6c50253da37cc57104e05e99508d",
+      "repository": "https://github.com/Purdue-M2/AI-Face-FairnessBench.git",
+      "verified_files": 72
+    },
+    {
+      "id": "deepfakebench",
+      "commit": "f188b1c105465e2e5377eb536a95022ae0e4522d",
+      "repository": "https://github.com/SCLBD/DeepfakeBench.git",
+      "verified_files": 219
+    },
+    {
+      "id": "univfd",
+      "commit": "030495aea3300a8b54c0ec37ec7fe1dd7e63c619",
+      "repository": "https://github.com/WisconsinAIVision/UniversalFakeDetect.git",
+      "verified_files": 28
+    },
+    {
+      "id": "pg_fdd",
+      "commit": "e552a5422987897ab747e3b91b4b1b38d6531446",
+      "repository": "https://github.com/Purdue-M2/Fairness-Generalization.git",
+      "verified_files": 42
+    },
+    {
+      "id": "fairadapter",
+      "commit": "b81e1cc0205e79a0393513e72aa0208021452704",
+      "repository": "https://github.com/AppleDogDog/FairnessDetection.git",
+      "verified_files": 96
+    },
+    {
+      "id": "iil_candidate",
+      "commit": "8cd0d685f0262135679973831e8250ace945082d",
+      "repository": "https://github.com/Anonymous-Researcher-Blind/intersectional-invariant-learning.git",
+      "verified_files": 19
+    }
+  ],
+  "upstream_programs_executed": false,
+  "model_weights_requested": false
+}

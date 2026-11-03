@@ -1,0 +1,14 @@
+{
+  "method": "pg_fdd",
+  "training_ready": false,
+  "source_cloned": true,
+  "required": [
+    "canonical TRAIN-specific-label sidecar and provenance",
+    "native paired exposure and matched control policy",
+    "native reconstruction/contrastive loss training adapter",
+    "SAM two-pass optimizer and BN parity; TRAIN-derived group counts"
+  ],
+  "must_not_substitute_plain_BCE": true,
+  "group_counts_from": "TRAIN only",
+  "new_training": false
+}
