@@ -1,0 +1,23 @@
+{
+  "pbs_job_id": "45361.mgmt01",
+  "host": "gpu01",
+  "ngpus": 1,
+  "cohort_allocation_ngpus": 2,
+  "ncpus": 5,
+  "mem_gb": 32,
+  "card": {
+    "index": 3,
+    "uuid": "GPU-6a002609-de85-4949-c707-ee9317b284f0",
+    "free_mib": 71694,
+    "util": 96,
+    "available_mib": 71694
+  },
+  "cuda_visible_devices": "GPU-6a002609-de85-4949-c707-ee9317b284f0",
+  "cohort_supplied_binding": "GPU-6a002609-de85-4949-c707-ee9317b284f0",
+  "physical_binding_route": "explicit_prior_user_authorized_pool_v2_UUID_lease",
+  "exclusive_physical_assignment_claimed": false,
+  "source_commit": "ab7f36798cfa06226e17e31c2171e0c02404a216",
+  "source_sha256": "1b6dc1b0e6d2b2220da897500a4d1bffb7764280df642abf6befdd1cf511ed01",
+  "config_sha256": "acc77b2fbc1d431b18a8fdc44d8401a03f89f9fe1811a6cd6f9399a18da07369",
+  "controller_pid": 3834029
+}

@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-03T18:54:36.634683+00:00",
+  "observed_management_utc": "2026-11-03T18:56:41.957608+00:00",
   "execution_commit": "ab7f36798cfa06226e17e31c2171e0c02404a216",
   "source_sha256": "1b6dc1b0e6d2b2220da897500a4d1bffb7764280df642abf6befdd1cf511ed01",
   "arms": {
@@ -19,12 +19,12 @@
           "walltime": "01:30:00"
         },
         "resources_used": {
-          "cpupercent": 9,
-          "cput": "00:00:01",
-          "mem": "220356kb",
+          "cpupercent": 21,
+          "cput": "00:00:57",
+          "mem": "1544352kb",
           "ncpus": 10,
-          "vmem": "3843316kb",
-          "walltime": "00:00:11"
+          "vmem": "12433304kb",
+          "walltime": "00:01:51"
         },
         "exec_host": "gpu01/5*10",
         "exec_vnode": "(gpu01:ncpus=10:ngpus=2:mem=67108864kb)",
@@ -39,7 +39,8 @@
       },
       "receipts": {
         "preflight/PREFLIGHT.json": "/home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/SHAM_FIX/preflight/PREFLIGHT.json",
-        "review/qualification.json": "/home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/SHAM_FIX/review/qualification.json"
+        "review/qualification.json": "/home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/SHAM_FIX/review/qualification.json",
+        "smoke_cuda/SMOKE_RESULT.json": "/home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/SHAM_FIX/smoke_cuda/SMOKE_RESULT.json"
       }
     },
     "NO_ALIGN": {
@@ -58,12 +59,12 @@
           "walltime": "01:30:00"
         },
         "resources_used": {
-          "cpupercent": 9,
-          "cput": "00:00:01",
-          "mem": "220356kb",
+          "cpupercent": 21,
+          "cput": "00:00:57",
+          "mem": "1544352kb",
           "ncpus": 10,
-          "vmem": "3843316kb",
-          "walltime": "00:00:11"
+          "vmem": "12433304kb",
+          "walltime": "00:01:51"
         },
         "exec_host": "gpu01/5*10",
         "exec_vnode": "(gpu01:ncpus=10:ngpus=2:mem=67108864kb)",
@@ -78,39 +79,64 @@
       },
       "receipts": {
         "preflight/PREFLIGHT.json": "/home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/NO_ALIGN/preflight/PREFLIGHT.json",
-        "review/qualification.json": "/home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/NO_ALIGN/review/qualification.json"
+        "review/qualification.json": "/home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/NO_ALIGN/review/qualification.json",
+        "smoke_cuda/SMOKE_RESULT.json": "/home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/NO_ALIGN/smoke_cuda/SMOKE_RESULT.json"
       }
     }
   },
   "budget": {
     "initial_total_gpu_hours": 24,
-    "consumed_gpu_hours": 15.936613496733413,
-    "reserved_gpu_hours": 3.0
+    "consumed_gpu_hours": 15.97831995149557,
+    "reserved_gpu_hours": 2.958293545237846
   },
   "sessions": [
     {
       "id": "lh_sham_noalign_s17_20261103_SHAM_FIX",
       "ngpus": 1,
       "reserved_gpu_hours": 1.5,
-      "elapsed_seconds": 0.0,
-      "state": "QUEUED",
+      "elapsed_seconds": 75.02029529958963,
+      "state": "RUNNING",
       "scientific_commit": "35ffbd21cc6a033f9b9bf4cb1f92f5e417debe8d",
       "scientific_source_sha256": "1b6dc1b0e6d2b2220da897500a4d1bffb7764280df642abf6befdd1cf511ed01",
       "route": "PBS_ngpus1_plus_prior_explicit_authorized_pool_v2_UUID",
       "planned_epochs": 3,
-      "no_automatic_extension": true
+      "no_automatic_extension": true,
+      "pbs_job_id": "45361.mgmt01",
+      "pid": 3834029,
+      "host": "gpu01",
+      "card": {
+        "index": 3,
+        "uuid": "GPU-6a002609-de85-4949-c707-ee9317b284f0",
+        "free_mib": 71694,
+        "util": 96,
+        "available_mib": 71694
+      },
+      "log": "/home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/SHAM_FIX/allocation.log",
+      "child_pid": 3834165
     },
     {
       "id": "lh_sham_noalign_s17_20261103_NO_ALIGN",
       "ngpus": 1,
       "reserved_gpu_hours": 1.5,
-      "elapsed_seconds": 0.0,
-      "state": "QUEUED",
+      "elapsed_seconds": 75.12294184416533,
+      "state": "RUNNING",
       "scientific_commit": "35ffbd21cc6a033f9b9bf4cb1f92f5e417debe8d",
       "scientific_source_sha256": "1b6dc1b0e6d2b2220da897500a4d1bffb7764280df642abf6befdd1cf511ed01",
       "route": "PBS_ngpus1_plus_prior_explicit_authorized_pool_v2_UUID",
       "planned_epochs": 3,
-      "no_automatic_extension": true
+      "no_automatic_extension": true,
+      "pbs_job_id": "45361.mgmt01",
+      "pid": 3834030,
+      "host": "gpu01",
+      "card": {
+        "index": 1,
+        "uuid": "GPU-6cc0a5b3-99ca-13e3-5508-a201a06e82d6",
+        "free_mib": 66366,
+        "util": 79,
+        "available_mib": 66366
+      },
+      "log": "/home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/NO_ALIGN/allocation.log",
+      "child_pid": 3834160
     }
   ]
 }

@@ -1,6 +1,6 @@
 # SHAM-FIX and NO-ALIGN: observed status
 
-2026-11-03T18:54:36.634683+00:00
+2026-11-03T18:56:41.957608+00:00
 
 Source execution commit: `ab7f36798cfa06226e17e31c2171e0c02404a216`. Independent three-epoch ablations against completed lower-LR L_H; seed17, FF++ TRAIN/VAL only. No TEST.
 
@@ -11,6 +11,6 @@ Source execution commit: `ab7f36798cfa06226e17e31c2171e0c02404a216`. Independent
 
 Completed epochs are recorded history, not proof of a live process. H=held, Q=queued, R=running allocation; GPU checks precede training. Qualification is reused only on exact matching bytes and retains the original AI procedural-review scope. Both runs start from P50 plus the identical fresh head; neither starts from a trained L_H checkpoint.
 
-Budget: {"initial_total_gpu_hours": 24, "consumed_gpu_hours": 15.936613496733413, "reserved_gpu_hours": 3.0}. A maximum 3 GPU-hours is reserved across the two arms.
+Budget: {"initial_total_gpu_hours": 24, "consumed_gpu_hours": 15.97831995149557, "reserved_gpu_hours": 2.958293545237846}. A maximum 3 GPU-hours is reserved across the two arms.
 
 All fairness values are fractions. Keep regressions visible. Single-seed validation findings are not a Ding TEST comparison or proof of generalization. This helper publishes only aggregate evidence and does not control execution.

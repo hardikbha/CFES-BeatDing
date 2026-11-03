@@ -1,0 +1,26 @@
+{
+  "job_id": "45361.mgmt01",
+  "ngpus": 2,
+  "ncpus": 10,
+  "mem_gb": 64,
+  "host": "gpu01",
+  "selected": [
+    {
+      "index": 3,
+      "uuid": "GPU-6a002609-de85-4949-c707-ee9317b284f0",
+      "free_mib": 71694,
+      "util": 0,
+      "available_mib": 71694
+    },
+    {
+      "index": 1,
+      "uuid": "GPU-6cc0a5b3-99ca-13e3-5508-a201a06e82d6",
+      "free_mib": 66366,
+      "util": 87,
+      "available_mib": 66366
+    }
+  ],
+  "commit": "ab7f36798cfa06226e17e31c2171e0c02404a216",
+  "route": "PBS_ngpus2_plus_prior_explicit_shared_pool_UUID_leases",
+  "exclusive_physical_assignment_claimed": false
+}
