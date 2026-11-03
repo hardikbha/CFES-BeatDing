@@ -1,13 +1,13 @@
 {
-  "observed_management_utc": "2026-11-03T18:38:11.577977+00:00",
+  "observed_management_utc": "2026-11-03T18:38:45.108232+00:00",
   "execution_commit": "f4e1f72723afd7270b0f45db7b6142433215d500",
   "source_sha256": "1b6dc1b0e6d2b2220da897500a4d1bffb7764280df642abf6befdd1cf511ed01",
   "arms": {
     "SHAM_FIX": {
       "job_id": "45352.mgmt01",
-      "scheduler_state": "H",
+      "scheduler_state": "Q",
       "scheduler_observation": {
-        "job_state": "H",
+        "job_state": "Q",
         "queue": "workq",
         "Resource_List": {
           "mem": "64gb",
@@ -17,7 +17,8 @@
           "place": "free",
           "select": "1:host=gpu01:ncpus=12:ngpus=2:mem=64gb",
           "walltime": "01:30:00"
-        }
+        },
+        "comment": "Not Running: Insufficient amount of resource: ncpus (R: 12 A: 10 T: 208)"
       },
       "completed_epochs": 0,
       "history": [],
@@ -32,9 +33,9 @@
     },
     "NO_ALIGN": {
       "job_id": "45352.mgmt01",
-      "scheduler_state": "H",
+      "scheduler_state": "Q",
       "scheduler_observation": {
-        "job_state": "H",
+        "job_state": "Q",
         "queue": "workq",
         "Resource_List": {
           "mem": "64gb",
@@ -44,7 +45,8 @@
           "place": "free",
           "select": "1:host=gpu01:ncpus=12:ngpus=2:mem=64gb",
           "walltime": "01:30:00"
-        }
+        },
+        "comment": "Not Running: Insufficient amount of resource: ncpus (R: 12 A: 10 T: 208)"
       },
       "completed_epochs": 0,
       "history": [],

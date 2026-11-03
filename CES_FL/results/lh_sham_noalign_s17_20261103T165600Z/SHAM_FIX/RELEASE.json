@@ -1,0 +1,15 @@
+{
+  "job_id": "45352.mgmt01",
+  "arm": "SHAM_FIX",
+  "source_sha256": "1b6dc1b0e6d2b2220da897500a4d1bffb7764280df642abf6befdd1cf511ed01",
+  "config_digest": "05bd9798ef47a7f425edbdecbfe8f659601897e8542853f5d0155cbdba9f9c74",
+  "qualification_sha256": "914766af7be33da38558d280eeac40c77538643f67b6bc5d7b0fcb7da8714d65",
+  "observed_management_utc": "2026-11-03T18:38:33.374781+00:00",
+  "command": [
+    "qrls",
+    "45352.mgmt01"
+  ],
+  "returncode": 0,
+  "stdout": "",
+  "stderr": ""
+}
