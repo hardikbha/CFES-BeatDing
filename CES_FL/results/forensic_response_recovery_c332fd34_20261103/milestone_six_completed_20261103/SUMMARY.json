@@ -1,0 +1,100 @@
+{
+  "observed_management_utc": "2026-11-03T04:46:38.364000+00:00",
+  "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
+  "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
+  "actual_checkpoint_bytes_reverified": true,
+  "results": [
+    {
+      "dataset": "ffpp",
+      "arm": "A",
+      "status": "COMPLETED_VERIFIED",
+      "epochs": 10,
+      "selected_epoch": 4,
+      "auc_pct": 98.42641103497184,
+      "F_FPR_fraction": 0.5052653022352646,
+      "fpr_gap_pp": 33.83913291500286,
+      "worst_group_auc_pct": 93.95951793441333,
+      "fnr_pct": 4.146707992861839,
+      "selected_checkpoint_sha256": "0fd63d45f22a34e431321d45ad6b26453d21213c368585fea65f8ca5b08ffb7a"
+    },
+    {
+      "dataset": "ffpp",
+      "arm": "B",
+      "status": "COMPLETED_VERIFIED",
+      "epochs": 10,
+      "selected_epoch": 2,
+      "auc_pct": 98.40679722813717,
+      "F_FPR_fraction": 0.46863833845286373,
+      "fpr_gap_pp": 30.416666666666664,
+      "worst_group_auc_pct": 93.96774308908199,
+      "fnr_pct": 4.235935005165774,
+      "selected_checkpoint_sha256": "60d98897583157130de6ad5bf8364c2e8a76a1997a811175f85bfa6eaac2c8d2"
+    },
+    {
+      "dataset": "ffpp",
+      "arm": "C",
+      "status": "COMPLETED_VERIFIED",
+      "epochs": 10,
+      "selected_epoch": 1,
+      "auc_pct": 98.30765916373856,
+      "F_FPR_fraction": 0.48053431300453003,
+      "fpr_gap_pp": 30.98484848484848,
+      "worst_group_auc_pct": 93.620498515896,
+      "fnr_pct": 3.7099652484267867,
+      "selected_checkpoint_sha256": "3ad8d8c9bbe59c633f25f2ec208f67203add637df7f2473d3d2ef1cd22a23c4f"
+    },
+    {
+      "dataset": "ffpp",
+      "arm": "D",
+      "status": "COMPLETED_VERIFIED",
+      "epochs": 10,
+      "selected_epoch": 1,
+      "auc_pct": 98.25256365268773,
+      "F_FPR_fraction": 0.3793453731153111,
+      "fpr_gap_pp": 23.83913291500285,
+      "worst_group_auc_pct": 93.85187569287987,
+      "fnr_pct": 3.9635578097116557,
+      "selected_checkpoint_sha256": "7d9409e2cb6aa00fdd61cd3a072bd5473848be6dd86aafcc3b7b740da9f25d9d"
+    },
+    {
+      "dataset": "ff2",
+      "arm": "A",
+      "status": "COMPLETED_VERIFIED",
+      "epochs": 10,
+      "selected_epoch": 7,
+      "auc_pct": 99.80853572089869,
+      "F_FPR_fraction": 0.29098595650395986,
+      "fpr_gap_pp": 11.660852453150856,
+      "worst_group_auc_pct": 99.60034795168067,
+      "fnr_pct": 0.3313683769925704,
+      "selected_checkpoint_sha256": "3b504d4e038c1ddc266f3e5179cdf78d052176f936705fe94b4c2caf2e227dd6"
+    },
+    {
+      "dataset": "ff2",
+      "arm": "B",
+      "status": "COMPLETED_VERIFIED",
+      "epochs": 10,
+      "selected_epoch": 1,
+      "auc_pct": 99.80745696023962,
+      "F_FPR_fraction": 0.2954589300752697,
+      "fpr_gap_pp": 11.028402789526119,
+      "worst_group_auc_pct": 99.58639705882352,
+      "fnr_pct": 0.36973734696013116,
+      "selected_checkpoint_sha256": "542111034536fc0b35a3e203192d1b377f9477b3c60d593eb28c8d4cd6531bd3"
+    }
+  ],
+  "ffpp_D_minus_C": {
+    "auc_pp": -0.055095511050839985,
+    "F_FPR_delta": -0.10118893988921895,
+    "F_FPR_relative_reduction_pct": 21.057588844496323,
+    "fpr_gap_pp": -7.145715569845631,
+    "worst_group_auc_pp": 0.23137717698387128,
+    "fnr_pp": 0.25359256128486896
+  },
+  "gpu_hours": 10.058886044436239,
+  "gpu_budget": 24,
+  "ff2_C_D": "BLOCKED_INPUTS",
+  "test_evaluation": false,
+  "seed": 17,
+  "scientific_source_or_settings_changed": false
+}

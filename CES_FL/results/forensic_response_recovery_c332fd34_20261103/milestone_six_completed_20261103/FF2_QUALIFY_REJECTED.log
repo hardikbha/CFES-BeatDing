@@ -1,0 +1,11 @@
+{"command": ["/home/sachin.chaudhary/.conda/envs/aiface/bin/python", "-u", "/home/sachin.chaudhary/ces_fl_sources/cesfl-forensic-response-c332fd34/CES_FL/src/ces_fl_forensic_response.py", "qualify", "--preview", "/home/sachin.chaudhary/ces_fl_runs/forensic_response_overlapfix_20261103_r1_ff2_s17/operator_preview", "--review", "/home/sachin.chaudhary/ces_fl_runs/forensic_response_overlapfix_20261103_r1_ff2_s17/operator_preview/review_COMPLETED_PRIVATE.json", "--out", "/home/sachin.chaudhary/ces_fl_runs/forensic_response_overlapfix_20261103_r1_ff2_s17/qualification.json"]}
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/ces_fl_sources/cesfl-forensic-response-c332fd34/CES_FL/src/ces_fl_forensic_response.py", line 1284, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/sachin.chaudhary/ces_fl_sources/cesfl-forensic-response-c332fd34/CES_FL/src/ces_fl_forensic_response.py", line 1267, in main
+    elif args.command=='qualify':qualify(args.preview,args.review,args.out)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/ces_fl_sources/cesfl-forensic-response-c332fd34/CES_FL/src/ces_fl_forensic_response.py", line 840, in qualify
+    raise ValueError('Substantive named operator review incomplete/rejected; revise recipe under new proposal')
+ValueError: Substantive named operator review incomplete/rejected; revise recipe under new proposal

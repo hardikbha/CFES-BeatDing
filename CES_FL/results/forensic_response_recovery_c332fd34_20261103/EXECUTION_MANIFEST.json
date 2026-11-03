@@ -54,5 +54,12 @@
       "test_parallel_controls.py": "a22932eee623bb82576b2cef39926487a895720581d69ec8c1a1fa237a4f4a11"
     },
     "observer_v2_sha256": "339895fbd76dcf48d3e45f2e14d660ba0e69d05e062538fa9bce5019193ca270"
+  },
+  "latest_completed_milestone": {
+    "path": "milestone_six_completed_20261103",
+    "observed_management_utc": "2026-11-03T04:46:38.364000+00:00",
+    "completed_arms": 6,
+    "ff2_C_D": "BLOCKED_INPUTS",
+    "observer_v3_sha256": "13dfe21af9ee0a5f83f77d385d65bc8b6df58ccaa1c2041076ddb1333bed484c"
   }
 }

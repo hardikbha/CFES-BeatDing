@@ -1,0 +1,61 @@
+{
+  "status": "BLOCKED_OPERATOR_REVIEW",
+  "cases_inspected": 88,
+  "unique_original_images": 22,
+  "recorded_identity_ids": 22,
+  "recorded_source_ids": 22,
+  "groups_covered": {
+    "gender": [
+      "Female",
+      "Male"
+    ],
+    "race": [
+      "Asian",
+      "Black",
+      "Others",
+      "White"
+    ],
+    "age_bin": [
+      "30-44",
+      "45-59",
+      "60+",
+      "<30"
+    ],
+    "skin_bin": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "unknown"
+    ],
+    "gender_race": [
+      "Female-Asian",
+      "Female-Black",
+      "Female-Others",
+      "Female-White",
+      "Male-Asian",
+      "Male-Black",
+      "Male-Others",
+      "Male-White"
+    ]
+  },
+  "review_type": "AI visual operator screen; not human annotation",
+  "approved": 72,
+  "rejected": 8,
+  "uncertain": 8,
+  "blocked_sources_count": 4,
+  "blocking_reasons": [
+    "rotation padding intersects the fixed face-region intervention support",
+    "hat occludes upper face and dominates probe",
+    "costume mask confounds facial region",
+    "hand occlusion and severe softness make suitability uncertain"
+  ],
+  "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
+  "config_digest": "212645fe0e196651e0f6728708edfac5f2b87fa7cde508e19f7b799887a1f522",
+  "preview_sha256": "f4fc30cf66df82d7d4e1aac36c14da261c218992714e51dc263f30f3a4270f2e",
+  "review_sha256": "3443a455c72c5d821b818f439ffa55bc0d10e4af7f175d2241b3dded6d69c20a",
+  "real_forgery_validity_proven": false,
+  "qualification_passed": false,
+  "scope": "Representative visual qualification of the declared procedural recipe only",
+  "recovery_requirement": "New dated proposal and fresh qualification if recipe/eligibility changes. Do not silently omit sources, shrink group coverage or manufacture approvals."
+}

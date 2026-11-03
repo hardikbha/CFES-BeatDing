@@ -1,0 +1,9 @@
+test_control_does_not_require_operator_review (__main__.Gates.test_control_does_not_require_operator_review) ... ok
+test_no_preflight_blocks_all (__main__.Gates.test_no_preflight_blocks_all) ... ok
+test_rejected_review_blocks_CD (__main__.Gates.test_rejected_review_blocks_CD) ... ok
+test_review_missing_blocks_CD (__main__.Gates.test_review_missing_blocks_CD) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+OK

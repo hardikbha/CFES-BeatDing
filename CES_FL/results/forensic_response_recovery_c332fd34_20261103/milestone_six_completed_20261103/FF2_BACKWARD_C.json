@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
+  "config_digest": "212645fe0e196651e0f6728708edfac5f2b87fa7cde508e19f7b799887a1f522",
+  "arm": "C",
+  "parameters": {
+    "total": 21594159,
+    "trainable": 7575591
+  },
+  "seconds_one_optimizer_step": 1.425103921443224,
+  "peak_cuda_bytes": 489848832,
+  "losses": {
+    "total": 0.9090529680252075,
+    "classification": 0.6577559113502502,
+    "error_fairness": 0.0012757405638694763,
+    "original_sensitivity": 0.4946289360523224,
+    "aux_sensitivity": 0.5007781982421875,
+    "response_alignment": -0.0,
+    "original_control_stability": 0.001952487975358963,
+    "aux_control_stability": 0.004574991762638092
+  },
+  "real_pair_count": 1,
+  "optimizer_steps_in_discarded_model": 1,
+  "scientific_intervention_validity": false,
+  "device": "cuda",
+  "torch": "2.7.0+cu126"
+}

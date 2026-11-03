@@ -1,3 +1,5 @@
+Latest verified milestone: [six ten-epoch completions and actual failed FairForge-2 operator gate](milestone_six_completed_20261103/REPORT.md). FF2 C/D DO NOT RUN; no TEST.
+
 Resource expansion: [job43937 stopped; actual PBS45202 and four-arm parallel execution](resource_expansion_20261103/README.md). No scientific settings changed.
 
 # Live forensic-response progress
