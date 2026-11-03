@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-03T22:19:39.855667+00:00",
+  "observed_management_utc": "2026-11-03T22:29:44.633321+00:00",
   "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
   "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
   "budget": {
@@ -7,8 +7,8 @@
     "source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-forensic-response-c332fd34",
     "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
     "initial_total_gpu_hours": 24,
-    "consumed_gpu_hours": 17.286613496733413,
-    "reserved_gpu_hours": 0,
+    "consumed_gpu_hours": 17.286613496733416,
+    "reserved_gpu_hours": 0.5,
     "gpu_sessions": [
       {
         "id": "ffpp_checks_primary",
@@ -556,6 +556,21 @@
         "pbs_job_id": "45361.mgmt01",
         "accounting": "2*PBS resources_used.walltime minus sum per-arm monotonic allocation times; includes early-finished arm held allocation and PBS bookends",
         "original_arm_receipts_preserved": true
+      },
+      {
+        "id": "lh_resnet50_cuda_checks_352e837",
+        "ngpus": 1,
+        "reserved_gpu_hours": 0.5,
+        "elapsed_seconds": 0.0,
+        "state": "QUEUED",
+        "scientific_source_sha256": "72d368a439658c601a5fe4d717237b1561190e85c13c70f6db3a441bc5cdbe78",
+        "scientific_commit": "6356cf11aea097c656e2caa21705c41cb591ebd1",
+        "route": "pbs_ngpus_1",
+        "pbs_allocation_claimed": false,
+        "purpose": "source-bound CUDA smoke and real-input pretrain dry backward; zero optimizer updates",
+        "executor_commit": "6356cf11aea097c656e2caa21705c41cb591ebd1",
+        "pbs_job_id": "45387.mgmt01",
+        "log": "/home/sachin.chaudhary/ces_fl_runs/lh_finalization_celebdf_20261104_43c605b/cuda_checks_352e837.pbs.log"
       }
     ],
     "prior_study_ledger": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_9030dd77_20261103/budget_ledger.json",
