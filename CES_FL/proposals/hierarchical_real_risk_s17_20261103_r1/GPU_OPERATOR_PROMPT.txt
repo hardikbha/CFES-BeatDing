@@ -1,0 +1,53 @@
+# Actual execution handoff: one fixed hierarchical-real experiment
+
+Observed2026-11-03T09:21:22.487000+00:00 managementUTC. Refresh actual ledger/processes before acting. H_joint_real ALREADY RUNNING; never launch a duplicate. gpu02 controller963127, scientific child963204, physicalGPU5 UUID GPU-bff97893-385b-6f3f-831b-113284c2e1f1. This is the explicitly authorized pool-v2 shared lease route, NOT a PBS or exclusive GPU allocation. Other jobs and Ding leases untouched.
+
+Scientific commit3f5f3c16839bf4b96209bea3f968255b5f351ebb; sourceSHA2549cb1345d1e2ee617e8a77ca288a0acbbfd05cf480f7b91a46b8627fcb74b2.
+Source: /home/sachin.chaudhary/ces_fl_sources/cesfl-hier-real-execution-20261103
+Config: /home/sachin.chaudhary/ces_fl_runs/hierarchical_real_risk_s17_20261103_r1/H_joint_real/config.json
+Config fileSHA63baed480e251945dba5ebb360e9ac1c7ea9fbc1cebf02acfef6abd6299fb3fd; semanticdigest494137c89d5be613c11782a1ab7589052e734c77ed7dbb752906583f26d3c701.
+Executor commitc8402149c0b8170165995acc4bae362438800378; frozen runtime/run_hierarchical_real.py hash in OPERATOR_CODE_MANIFEST.json. CPUanalysis/publication helper commitcd243de, hashes/PIDs in AUTOMATION_LAUNCH.json. Scientific source is unchanged by publishing.
+
+Actual completed commands (documented, DO NOT rerun into existing paths):
+
+```bash
+/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-hier-real-execution-20261103/CES_FL/src/ces_fl_forensic_response.py preflight --config /home/sachin.chaudhary/ces_fl_runs/hierarchical_real_risk_s17_20261103_r1/H_joint_real/config.json --out /home/sachin.chaudhary/ces_fl_runs/hierarchical_real_risk_s17_20261103_r1/H_joint_real/preflight
+/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-hier-real-execution-20261103/CES_FL/src/ces_fl_forensic_response.py preview --config /home/sachin.chaudhary/ces_fl_runs/hierarchical_real_risk_s17_20261103_r1/H_joint_real/config.json --preflight /home/sachin.chaudhary/ces_fl_runs/hierarchical_real_risk_s17_20261103_r1/H_joint_real/preflight --out /home/sachin.chaudhary/ces_fl_runs/hierarchical_real_risk_s17_20261103_r1/H_joint_real/operator_preview
+/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-hier-real-execution-20261103/CES_FL/src/ces_fl_forensic_response.py qualify --preview /home/sachin.chaudhary/ces_fl_runs/hierarchical_real_risk_s17_20261103_r1/H_joint_real/operator_preview --review /home/sachin.chaudhary/ces_fl_runs/hierarchical_real_risk_s17_20261103_r1/H_joint_real/operator_preview/review_COMPLETED_PRIVATE.json --out /home/sachin.chaudhary/ces_fl_runs/hierarchical_real_risk_s17_20261103_r1/H_joint_real/qualification.json
+```
+
+Actual results:101525images hashed/decoded, TRAIN76139/VAL25386, zeroTRAIN/VALbyteoverlap, known163recorded contributor exceptions matched unchanged six-key audit; four TESTdeclarations deferred. Preview88cases/22originals, all22four-row composites actually inspected with fresh named AI review (not human approval). New qualification binds exact new source/config. Recipe validity remains representative/procedural, not real forgery evidence or demographic counterfactual validity. All original images/provenance are preserved.
+
+CPU commands used explicitaiface/OMP2/MKL2/OPENBLAS1:
+
+```bash
+/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u -m unittest discover -s CES_FL/tests -p test_hierarchical_real.py -v
+/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u -m unittest discover -s CES_FL/tests -p test_forensic_response.py -v
+/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u -m unittest discover -s CES_FL/tests -p test_support_warmup.py -v
+/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u -m unittest discover -s CES_FL/tests -p test_hier_operator.py -v
+/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-hier-real-execution-20261103/CES_FL/src/ces_fl_forensic_response.py smoke --device cpu --out /home/sachin.chaudhary/ces_fl_runs/hierarchical_real_risk_s17_20261103_r1/software_cpu
+```
+
+Finaloutputs:13hierarchical testsPASS2.838s;13legacyPASS7.775s;9supportPASS1.857s;7resourceguardsPASS0.014s. Earlierincorrectfixtureexpectationsandcorrectedtestoutputsarepreserved;scientificlosswasnotalteredtofitfixtures. FullCPU/CUDA smokePASS10checkgroups,production21,594,159total/7,575,591trainable,BN/map/encoder/head/checkpoint/bitwiseresume/masks/validationisolationchecks. SyntheticsoftwareTESTflipdoesnotreadbenchmarkTEST.
+
+Actual GPU dispatcher commands, run only after lease/UUID/CUDA binding:
+
+```bash
+/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_runs/hierarchical_real_risk_s17_20261103_r1/runtime/run_hierarchical_real.py --task smoke
+/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_runs/hierarchical_real_risk_s17_20261103_r1/runtime/run_hierarchical_real.py --task checks --diagnostic-script /home/sachin.chaudhary/ces_fl_runs/hierarchical_real_risk_s17_20261103_r1/runtime/check_hier_real_train.py
+/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_runs/hierarchical_real_risk_s17_20261103_r1/runtime/run_hierarchical_real.py --task train --candidate H_joint_real
+```
+
+Smoke held74.660424s. Checks held120.747042s, bothnowcompleted and charged. NativejointdryPASS8.277407s one discarded optimizerstep,changederrorgradientnorm0.95978,peak1,307,817,472bytes; not steady throughput. Separate TRAIN-threshold diagnosticPASS: threshold−0.04582675546 from2048TRAINreals,204FP(9.9609375%); changedREALcomponent gradientnorm1.023431,finite; fake-logitgradientsmatchD; nonnegative real-logitgradients; BNbuffersunchanged;0optimizersteps;0VAL/TESTgradients. Exact receipts in evidence/.
+
+Dreference predictions were verified against selectedcheckpoint,manifest/metadata,all25386imagehashes,storedthreshold and counts. Private5sheet/40cellfailureauditandnotes: /home/sachin.chaudhary/ces_fl_runs/hierarchical_real_risk_s17_20261103_r1/D_failure_audit/. UserZIPwasunavailable; independentlyauthoredexporterexplicit. Dthreshold−4.397897720336913neverrecalibrated. No new Ding computation.
+
+Training log: /home/sachin.chaudhary/ces_fl_runs/hierarchical_real_risk_s17_20261103_r1/H_joint_real/train_initial.log
+Controller log: /home/sachin.chaudhary/ces_fl_runs/hierarchical_real_risk_s17_20261103_r1/hier_H_joint_real_controller.log
+Nativeout: /home/sachin.chaudhary/ces_fl_runs/hierarchical_real_risk_s17_20261103_r1/H_joint_real/training/
+Sharedoriginal24TOTALGPUhourledger: /home/sachin.chaudhary/ces_fl_runs/forensic_response_c332fd34_20261103/budget_ledger.json
+New-studycap4.0GPUh includeschecks+training+replay; reservation3.5htraining plus0.25eachchecks/smoke,neverresetledger. Native2h epoch-boundary allowance can resume the same10epochs with cumulative3h allowance; same source/config/qhash/output only. Executorhardcapsownprocessgroup before3.5h; no otherjobtermination. Failures/incompleteoutputsstopdependents; nofailedarmretry/newconfiguration. NoDing/FF2/TEST/generation/backbone/seed changes.
+
+FiniteCPUanalysiscontroller3833141 waits nativeDONE/10epochs/replay/selectedhash and successfulGPUrelease, then submits ONE4CPU16GBworkq job(noGPU) for1000pairedcomponentVALbootstrap,frozencriteria,all-axisheatmaps/privateHfailureexport. It cannot train, retry or readTEST. Read-onlypublisher3833210 updates dedicatedbranch aggregates every10min foratmost24h, then stops afterdecisions. It cannot launchjobs or fabricateapproval. Processstatesareactualatthisobservation,notpromisedfuturestates.
+
+Importantpredeclaredlimit: labels-onlyfixedcomponentdraws746/1000usableprimary<900required;PASSstructurallyunavailablewithoutchanginginference,whichisnotauthorized. Ifpointguardsallpass,INCONCLUSIVE; ifanypointguardfails,FAIL. Do not concealthiswithindependentframeresampling. Noautomaticretry/tuning/TEST/finalschedule. Aftercompletionverifyprivatefailureobservationsandreportfinalsource/config/checkpoint/computeandallregressions. Publishedresults are validation only, not a Ding win.

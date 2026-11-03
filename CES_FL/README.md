@@ -1,5 +1,10 @@
 # CES-FL — supervisor review and training handoff
 
+## One hierarchical original-real risk pilot — 3 November 2026
+
+[Current H process/results](results/hierarchical_real_risk_s17_20261103_r1/STATUS.md) · [Failure diagnosis](proposals/hierarchical_real_risk_s17_20261103_r1/FAILURE_DIAGNOSIS.md) · [Frozen single-candidate proposal](proposals/hierarchical_real_risk_s17_20261103_r1/README.md). E/F finished and rejected their fixed guards. H is seed17/FF++ only and changes only the joint-event real fairness summand; no new Ding, FairForge-2 or TEST computation. The retained bootstrap support requirement makes numerical success at best INCONCLUSIVE. Historical snapshots below remain preserved.
+
+
 ## Seed-17 support/error-control pilots — 3 November 2026
 
 Two CES-FL-only candidates are actually training on FF++ TRAIN/validation after fresh CPU/CUDA, real-input and recipe-review gates. [Live process, metric, exposure and budget evidence](results/support_warmup_s17_20261103_r1/STATUS.md) · [Audit and actual execution report](proposals/support_warmup_s17_20261103_r1/AUDIT_AND_RUN_REPORT.md) · [Frozen proposal and decision rules](proposals/support_warmup_s17_20261103_r1/README.md). No new Ding-model computation, new FairForge-2 experiment or TEST inference. This is a separate branch; historical snapshots below remain preserved.

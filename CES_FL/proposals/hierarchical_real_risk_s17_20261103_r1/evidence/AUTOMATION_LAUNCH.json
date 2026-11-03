@@ -1,0 +1,32 @@
+{
+  "management_utc": "2026-11-03T09:19:38.231000+00:00",
+  "helper_commit": "cd243de5c9a5d8c786f77560ba71420b9a777510",
+  "scientific_commit": "3f5f3c16839bf4b96209bea3f968255b5f351ebb",
+  "files": {
+    "analyze_hier_real_validation.py": {
+      "path": "/home/sachin.chaudhary/ces_fl_runs/hierarchical_real_risk_s17_20261103_r1/runtime/analyze_hier_real_validation.py",
+      "sha256": "678beab0cf6a2cebf86778526dc90dc75fb748c6814f095877ee1c65ba1443ed"
+    },
+    "plot_hier_real_metrics.py": {
+      "path": "/home/sachin.chaudhary/ces_fl_runs/hierarchical_real_risk_s17_20261103_r1/runtime/plot_hier_real_metrics.py",
+      "sha256": "e0e9bc1e5c042e0b87fe1cf44d96afb85c6be180b6bc28b6526a60ad007d947a"
+    },
+    "export_cesfl_selected_failure_audit.py": {
+      "path": "/home/sachin.chaudhary/ces_fl_runs/hierarchical_real_risk_s17_20261103_r1/runtime/export_cesfl_selected_failure_audit.py",
+      "sha256": "d5fd83b8090eefa7245946a50ca42d2b5ae2ed4c84204af38c158edd8e78d9e5"
+    },
+    "finish_hier_real_analysis.py": {
+      "path": "/home/sachin.chaudhary/ces_fl_runs/hierarchical_real_risk_s17_20261103_r1/runtime/finish_hier_real_analysis.py",
+      "sha256": "913964de1a34b83361ee40ca4ee5deac7171a9a0c325eff656611798e372d20d",
+      "pid": 3833141,
+      "log": "/home/sachin.chaudhary/ces_fl_runs/hierarchical_real_risk_s17_20261103_r1/finish_hier_real_analysis.log"
+    },
+    "publish_hier_real_progress.py": {
+      "path": "/home/sachin.chaudhary/ces_fl_runs/hierarchical_real_risk_s17_20261103_r1/runtime/publish_hier_real_progress.py",
+      "sha256": "be03a60a13b0bc1ce33e206db47b93c2d63f7e10e5e6128052f4818e334ced71",
+      "pid": 3833210,
+      "log": "/home/sachin.chaudhary/ces_fl_runs/hierarchical_real_risk_s17_20261103_r1/publish_hier_real_progress.log"
+    }
+  },
+  "capabilities": "readonly aggregate publication plus single CPU-only fixed-validation analysis; no training/test/retry"
+}

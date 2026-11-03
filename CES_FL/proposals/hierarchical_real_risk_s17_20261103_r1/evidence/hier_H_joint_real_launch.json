@@ -1,0 +1,14 @@
+{
+  "host": "gpu02",
+  "controller_pid": 963127,
+  "command": [
+    "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+    "-u",
+    "/home/sachin.chaudhary/ces_fl_runs/hierarchical_real_risk_s17_20261103_r1/runtime/run_hierarchical_real.py",
+    "--task",
+    "train",
+    "--candidate",
+    "H_joint_real"
+  ],
+  "node_utc": "2026-11-03T09:08:30.277510+00:00"
+}
