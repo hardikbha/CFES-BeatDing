@@ -1,0 +1,26 @@
+{
+  "observed_utc": "2026-11-03T10:48:04.365819+00:00",
+  "state": "CPU_SOFTWARE_CHECKED_GPU_PREFLIGHT_PENDING",
+  "source_sha256": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
+  "new_runs_launched": false,
+  "local_cuda_available": false,
+  "new_unit_tests": {
+    "passed": 11
+  },
+  "existing_targeted_tests": {
+    "passed": 34,
+    "skipped": 1,
+    "skip_reason": "pinned older source unavailable"
+  },
+  "cpu_native_smoke": "PASS",
+  "full_discovery": "FAILED: two cluster-only imports and one checkpoint writer failure; preserved in evidence/all_tests.log",
+  "publication": "Commit and push pending at document creation; final Git revision and remote confirmation supplied by supervisor",
+  "remaining": [
+    "actual CUDA smoke and real-input backward",
+    "actual TRAIN/VAL/P50 input verification",
+    "source-bound procedural qualification for L_H",
+    "two authorized ten-epoch plain-head runs",
+    "completed gated H reference",
+    "paired VAL-only reporting"
+  ]
+}

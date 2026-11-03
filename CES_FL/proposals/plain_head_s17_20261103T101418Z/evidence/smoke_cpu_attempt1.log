@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/Users/hardiksharma/Downloads/fairness_cvpr/CFES-BeatDing-plain-head-20261103T101418Z/CES_FL/src/ces_fl_head_ablation.py", line 1482, in <module>
+    if __name__=='__main__':main()
+  File "/Users/hardiksharma/Downloads/fairness_cvpr/CFES-BeatDing-plain-head-20261103T101418Z/CES_FL/src/ces_fl_head_ablation.py", line 1463, in main
+    elif args.command=='smoke':smoke(device,args.out,args.head_type)
+  File "/Users/hardiksharma/Downloads/fairness_cvpr/CFES-BeatDing-plain-head-20261103T101418Z/CES_FL/src/ces_fl_head_ablation.py", line 1363, in smoke
+    torch.testing.assert_close(o['logit'], reference, rtol=0, atol=0)
+  File "/opt/anaconda3/lib/python3.9/site-packages/torch/testing/_comparison.py", line 1587, in assert_close
+    raise error_metas[0].to_error(msg)
+AssertionError: Tensor-likes are not equal!
+
+Mismatched elements: 1 / 2 (50.0%)
+Greatest absolute difference: 9.313225746154785e-10 at index (0,)
+Greatest relative difference: 2.1812314798808075e-07 at index (0,)

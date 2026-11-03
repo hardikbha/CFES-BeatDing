@@ -1,0 +1,20 @@
+[
+  {
+    "total": 20809001,
+    "trainable": 6790433,
+    "encoder": 20806952,
+    "head": 2049,
+    "encoder_trainable": 6788384,
+    "head_type": "linear",
+    "encoder_policy": "exit"
+  },
+  {
+    "total": 21594159,
+    "trainable": 7575591,
+    "encoder": 20806952,
+    "head": 787207,
+    "encoder_trainable": 6788384,
+    "head_type": "gated",
+    "encoder_policy": "exit"
+  }
+]

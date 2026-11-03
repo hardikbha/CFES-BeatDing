@@ -1,0 +1,21 @@
+test_architecture_and_original_D_components_ast_unchanged (test_hierarchical_real.HierarchicalReal) ... skipped 'Pinned old source unavailable'
+test_documented_soft_mean_blind_spot_does_not_guarantee_hard_fpr (test_hierarchical_real.HierarchicalReal) ... /Users/hardiksharma/Downloads/fairness_cvpr/CFES-BeatDing-plain-head-20261103T101418Z/CES_FL/tests/test_hierarchical_real.py:82: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  self.assertAlmostEqual(float(loss),0.,places=7)
+ok
+test_exact_independent_reference_normalization (test_hierarchical_real.HierarchicalReal) ... ok
+test_fake_component_gradient_exactly_legacy (test_hierarchical_real.HierarchicalReal) ... ok
+test_group_offset_cancels_response_but_not_original_real_control (test_hierarchical_real.HierarchicalReal) ... ok
+test_joint_order_permutation_preserves_value (test_hierarchical_real.HierarchicalReal) ... ok
+test_lambda_changes_update (test_hierarchical_real.HierarchicalReal) ... ok
+test_layout_counts_and_sparse_cartesian_rejection (test_hierarchical_real.HierarchicalReal) ... ok
+test_missing_class_and_bad_group_rejected (test_hierarchical_real.HierarchicalReal) ... ok
+test_only_joint_real_term_changes_in_native_step (test_hierarchical_real.HierarchicalReal) ... ok
+test_parent_weights_are_real_train_not_uniform_or_fake (test_hierarchical_real.HierarchicalReal) ... ok
+test_real_gradients_do_not_directly_raise_lower_risk (test_hierarchical_real.HierarchicalReal) ... ok
+test_train_group_inventory_fails_instead_of_dropping_sparse_cell (test_hierarchical_real.HierarchicalReal) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 2.432s
+
+OK (skipped=1)

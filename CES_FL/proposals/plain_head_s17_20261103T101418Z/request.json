@@ -1,0 +1,38 @@
+{
+  "request_id": "plain_head_s17_20261103T101418Z",
+  "base_commit": "58ed0cb64341ec1413000eb2266a5846215582b1",
+  "branch": "experiment/cesfl-plain-head-s17-20261103T101418Z",
+  "authorization": "User requested plain Xception plus linear head, parameter count, tested code, GitHub publication and GPU operator prompt; later compact adds comprehensive project memory.",
+  "hypothesis": "Global/local gated head may be unnecessary conditional on fixed P50 encoder and existing BCE/H training recipes.",
+  "new_runs": [
+    {
+      "name": "L_A",
+      "native_arm": "A",
+      "config": "L_A_plain_bce.json",
+      "reference": "completed gated A"
+    },
+    {
+      "name": "L_H",
+      "native_arm": "D",
+      "config": "L_H_plain_hierarchical.json",
+      "reference": "completed gated H, once available"
+    }
+  ],
+  "source": "CES_FL/src/ces_fl_head_ablation.py",
+  "source_sha256": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
+  "real_training_launched": false,
+  "cuda_verified_locally": false,
+  "max_additional_gpu_hours": 6,
+  "must_fit_remaining_original_gpu_hour_ledger": 24,
+  "scope_excludes": [
+    "new Ding computation",
+    "TEST inference",
+    "FairForge-2 experiment",
+    "new seed",
+    "new pretraining",
+    "Qwen generation",
+    "altering completed evidence/preregistration"
+  ],
+  "details": "README.md",
+  "operator_prompt": "GPU_OPERATOR_PROMPT.md"
+}

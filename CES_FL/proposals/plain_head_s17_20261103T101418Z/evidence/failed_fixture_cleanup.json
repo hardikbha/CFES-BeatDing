@@ -1,0 +1,25 @@
+{
+  "reason": "Recover local disk space after concurrent checkpoint writes failed; only this task synthetic failed fixture checkpoints removed. Logs and textual receipts preserved.",
+  "files": [
+    {
+      "path": "/Users/hardiksharma/Downloads/fairness_cvpr/output/plain_head_s17_20261103T101418Z/smoke_cpu_v2/A/last.pt",
+      "bytes": 137892110,
+      "sha256": "44343df589562e032a9823e5743f6f7b6ff559c228ce692990b8d5fb31bdda97"
+    },
+    {
+      "path": "/Users/hardiksharma/Downloads/fairness_cvpr/output/plain_head_s17_20261103T101418Z/smoke_cpu_v2/A/best.pt",
+      "bytes": 137888270,
+      "sha256": "ca1179fdd26cf5fbfd0094a872560d99760eb0b7ce13fbd539452d8ac6d16ccb"
+    },
+    {
+      "path": "/Users/hardiksharma/Downloads/fairness_cvpr/output/plain_head_s17_20261103T101418Z/smoke_cpu_v2/H/best.tmp",
+      "bytes": 68317184,
+      "sha256": "2b9e311104a7165ff78a8e170143f3c9a90f1cd3704486f2d8abc41039a251dc"
+    },
+    {
+      "path": "/Users/hardiksharma/Downloads/fairness_cvpr/output/plain_head_s17_20261103T101418Z/smoke_cpu_v2/fixture_PRIVATE/initial.pt",
+      "bytes": 83545111,
+      "sha256": "c0db0efa2d68323f37552b09d79bd25a21c281f684141240903574ba650de97f"
+    }
+  ]
+}

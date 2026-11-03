@@ -1,0 +1,140 @@
+test_alignment_label_permutation_invariant (test_forensic_response.ForensicResponseInvariants) ... ok
+test_alignment_uses_distribution_not_only_mean (test_forensic_response.ForensicResponseInvariants) ... ok
+test_calibration_ties_and_exact_budget (test_forensic_response.ForensicResponseInvariants) ... ok
+test_contributor_components_are_transitive (test_forensic_response.ForensicResponseInvariants) ... ok
+test_equal_group_errors_have_zero_penalty_and_grad (test_forensic_response.ForensicResponseInvariants) ... ok
+test_fair_loss_rejects_missing_class_in_auxiliary (test_forensic_response.ForensicResponseInvariants) ... ok
+test_fit_test_overlap_is_explicit (test_forensic_response.ForensicResponseInvariants) ... ok
+test_full_audit_rejects_unknown_keys_and_wrong_stage (test_forensic_response.ForensicResponseInvariants) ... ok
+test_full_audit_still_rejects_path_leakage (test_forensic_response.ForensicResponseInvariants) ... ok
+test_full_six_key_audit_checks_only_train_val (test_forensic_response.ForensicResponseInvariants) ... ok
+test_pending_review_cannot_qualify (test_forensic_response.ForensicResponseInvariants) ... ok
+test_processing_control_is_not_zero_or_random_placeholder (test_forensic_response.ForensicResponseInvariants) ... ok
+test_sparse_bootstrap_keeps_declared_groups (test_forensic_response.ForensicResponseInvariants) ... ok
+test_config_requires_explicit_head_and_new_format (test_head_ablation.HeadAblationTests) ... ok
+test_exact_production_parameter_counts (test_head_ablation.HeadAblationTests) ... ok
+test_linear_and_gated_checkpoints_cannot_be_interchanged (test_head_ablation.HeadAblationTests) ... ok
+test_linear_removes_all_old_head_modules (test_head_ablation.HeadAblationTests) ... ok
+test_plain_formula_and_cam_are_independent_reference (test_head_ablation.HeadAblationTests) ... ok
+test_reference_gated_initialization_logits_losses_and_gradients_unchanged (test_head_ablation.HeadAblationTests) ... ok
+test_science_functions_are_ast_identical_to_H (test_head_ablation.HeadAblationTests) ... ok
+test_trainable_policy_and_bn_buffers (test_head_ablation.HeadAblationTests) ... ok
+test_hier_operator (unittest.loader._FailedTest) ... ERROR
+test_architecture_and_original_D_components_ast_unchanged (test_hierarchical_real.HierarchicalReal) ... skipped 'Pinned old source unavailable'
+test_documented_soft_mean_blind_spot_does_not_guarantee_hard_fpr (test_hierarchical_real.HierarchicalReal) ... /Users/hardiksharma/Downloads/fairness_cvpr/CFES-BeatDing-plain-head-20261103T101418Z/CES_FL/tests/test_hierarchical_real.py:82: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  self.assertAlmostEqual(float(loss),0.,places=7)
+ok
+test_exact_independent_reference_normalization (test_hierarchical_real.HierarchicalReal) ... ok
+test_fake_component_gradient_exactly_legacy (test_hierarchical_real.HierarchicalReal) ... ok
+test_group_offset_cancels_response_but_not_original_real_control (test_hierarchical_real.HierarchicalReal) ... ok
+test_joint_order_permutation_preserves_value (test_hierarchical_real.HierarchicalReal) ... ok
+test_lambda_changes_update (test_hierarchical_real.HierarchicalReal) ... ok
+test_layout_counts_and_sparse_cartesian_rejection (test_hierarchical_real.HierarchicalReal) ... ok
+test_missing_class_and_bad_group_rejected (test_hierarchical_real.HierarchicalReal) ... ok
+test_only_joint_real_term_changes_in_native_step (test_hierarchical_real.HierarchicalReal) ... ok
+test_parent_weights_are_real_train_not_uniform_or_fake (test_hierarchical_real.HierarchicalReal) ... ok
+test_real_gradients_do_not_directly_raise_lower_risk (test_hierarchical_real.HierarchicalReal) ... ok
+test_train_group_inventory_fails_instead_of_dropping_sparse_cell (test_hierarchical_real.HierarchicalReal) ... ok
+test_bad_json_cannot_silently_succeed (test_refresh_status.StatusContracts) ... ok
+test_changed_review_source_does_not_inherit_old_test_claim (test_refresh_status.StatusContracts) ... ok
+test_done_without_receipt_is_unverified (test_refresh_status.StatusContracts) ... ok
+test_explicit_template_output_path_is_supported (test_refresh_status.StatusContracts) ... ok
+test_history_without_completion_does_not_claim_running_or_done (test_refresh_status.StatusContracts) ... ok
+test_immutable_snapshot_refuses_same_timestamp_overwrite (test_refresh_status.StatusContracts) ... ok
+test_missing_artifacts_cannot_claim_completion (test_refresh_status.StatusContracts) ... ok
+test_stale_running_record_is_explicitly_unverified (test_refresh_status.StatusContracts) ... ok
+test_synthetic_evaluation_cannot_become_benchmark_evidence (test_refresh_status.StatusContracts) ... ok
+test_verified_complete_and_earliest_auc_tie (test_refresh_status.StatusContracts) ... ok
+test_wrong_selected_epoch_rejected (test_refresh_status.StatusContracts) ... ok
+test_support_operator (unittest.loader._FailedTest) ... ERROR
+test_bad_support_is_rejected (test_support_warmup.SupportWarmup) ... ok
+test_contributor_tuple_normalization_and_missing_ids (test_support_warmup.SupportWarmup) ... ok
+test_equal_errors_zero (test_support_warmup.SupportWarmup) ... ok
+test_equal_mean_logits_unequal_tails_not_zero (test_support_warmup.SupportWarmup) ... ok
+test_exact_reference_and_no_increase_to_better_groups (test_support_warmup.SupportWarmup) ... ok
+test_lambda_changes_optimizer_update (test_support_warmup.SupportWarmup) ... ok
+test_recorded_support_scales_loss (test_support_warmup.SupportWarmup) ... ok
+test_response_offset_cancellation_does_not_imply_equal_errors (test_support_warmup.SupportWarmup) ... ok
+test_schedule_uses_absolute_epoch (test_support_warmup.SupportWarmup) ... ok
+test_consistency_gradients_both_paths (test_upgrade.UpgradeTests) ... ok
+test_dro_numerical_gradient_missing_groups_and_reload (test_upgrade.UpgradeTests) ... ok
+test_encoder_transfer_preserves_heads_and_rejects_wrong_provenance (test_upgrade.UpgradeTests) ... ok
+test_fail_closed_inputs_controls_and_pool_coverage (test_upgrade.UpgradeTests) ... ok
+test_five_training_arms_reload_and_frozen_threshold (test_upgrade.UpgradeTests) ... {"epoch": 1, "validation_auc": 1.0, "pairs": 0}
+{"epoch": 1, "validation_auc": 1.0, "pairs": 0}
+{"epoch": 1, "validation_auc": 1.0, "pairs": 0}
+ERROR
+test_frozen_and_identical_initial_heads (test_upgrade.UpgradeTests) ... ok
+test_pair_schedule_balance_control_and_rng_isolation (test_upgrade.UpgradeTests) ... ok
+test_partial_gradients_bn_and_decomposition_both_backbones (test_upgrade.UpgradeTests) ... ok
+
+======================================================================
+ERROR: test_hier_operator (unittest.loader._FailedTest)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_hier_operator
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.9/unittest/loader.py", line 436, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/opt/anaconda3/lib/python3.9/unittest/loader.py", line 377, in _get_module_from_name
+    __import__(name)
+  File "/Users/hardiksharma/Downloads/fairness_cvpr/CFES-BeatDing-plain-head-20261103T101418Z/CES_FL/tests/test_hier_operator.py", line 5, in <module>
+    p=Path(__file__).resolve().parents[1]/'cluster/run_hierarchical_real.py';s=importlib.util.spec_from_file_location('ho',p);m=importlib.util.module_from_spec(s);s.loader.exec_module(m)
+  File "/Users/hardiksharma/Downloads/fairness_cvpr/CFES-BeatDing-plain-head-20261103T101418Z/CES_FL/cluster/run_hierarchical_real.py", line 25, in <module>
+    budget=load(OLD/'allocated_stage.py','shared_budget_only')
+  File "/Users/hardiksharma/Downloads/fairness_cvpr/CFES-BeatDing-plain-head-20261103T101418Z/CES_FL/cluster/run_hierarchical_real.py", line 24, in load
+    s=importlib.util.spec_from_file_location(name,path);m=importlib.util.module_from_spec(s);s.loader.exec_module(m);return m
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 982, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1039, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '/home/sachin.chaudhary/ces_fl_runs/forensic_response_c332fd34_20261103/allocated_stage.py'
+
+
+======================================================================
+ERROR: test_support_operator (unittest.loader._FailedTest)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_support_operator
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.9/unittest/loader.py", line 436, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/opt/anaconda3/lib/python3.9/unittest/loader.py", line 377, in _get_module_from_name
+    __import__(name)
+  File "/Users/hardiksharma/Downloads/fairness_cvpr/CFES-BeatDing-plain-head-20261103T101418Z/CES_FL/tests/test_support_operator.py", line 4, in <module>
+    p=Path(__file__).resolve().parents[1]/'cluster/run_support_warmup.py';s=importlib.util.spec_from_file_location('cesfl_operator',p);m=importlib.util.module_from_spec(s);s.loader.exec_module(m)
+  File "/Users/hardiksharma/Downloads/fairness_cvpr/CFES-BeatDing-plain-head-20261103T101418Z/CES_FL/cluster/run_support_warmup.py", line 22, in <module>
+    budget=load(OLD/'allocated_stage.py','shared_budget_only')
+  File "/Users/hardiksharma/Downloads/fairness_cvpr/CFES-BeatDing-plain-head-20261103T101418Z/CES_FL/cluster/run_support_warmup.py", line 21, in load
+    s=importlib.util.spec_from_file_location(name,path);m=importlib.util.module_from_spec(s);s.loader.exec_module(m);return m
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 982, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1039, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '/home/sachin.chaudhary/ces_fl_runs/forensic_response_c332fd34_20261103/allocated_stage.py'
+
+
+======================================================================
+ERROR: test_five_training_arms_reload_and_frozen_threshold (test_upgrade.UpgradeTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.9/site-packages/torch/serialization.py", line 967, in save
+    _save(
+  File "/opt/anaconda3/lib/python3.9/site-packages/torch/serialization.py", line 1268, in _save
+    zip_file.write_record(name, storage, num_bytes)
+RuntimeError: [enforce fail at inline_container.cc:863] . PytorchStreamWriter failed writing file data/317: file write failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/hardiksharma/Downloads/fairness_cvpr/CFES-BeatDing-plain-head-20261103T101418Z/CES_FL/tests/test_upgrade.py", line 189, in test_five_training_arms_reload_and_frozen_threshold
+    checkpoint=up.run(config,root/name,DEVICE,_synthetic_smoke=True)
+  File "/Users/hardiksharma/Downloads/fairness_cvpr/CFES-BeatDing-plain-head-20261103T101418Z/CES_FL/src/ces_fl_upgrade.py", line 282, in run
+    best=report['overall']['auc']; torch.save(checkpoint,out/'best.pt')
+  File "/opt/anaconda3/lib/python3.9/site-packages/torch/serialization.py", line 974, in save
+    return
+  File "/opt/anaconda3/lib/python3.9/site-packages/torch/serialization.py", line 798, in __exit__
+    self.file_like.write_end_of_file()
+RuntimeError: [enforce fail at inline_container.cc:664] . unexpected pos 94068160 vs 94068052
+
+----------------------------------------------------------------------
+Ran 64 tests in 66.302s
+
+FAILED (errors=3, skipped=1)

@@ -1,0 +1,33 @@
+usage: ces_fl_head_ablation.py [-h]
+                               {bind,preflight,preview,qualify,smoke,parameters,dry-run,train,evaluate,compare,export}
+                               ...
+
+CES-FL head ablation v1: Xception + GAP + one linear logit, 3 November 2026.
+
+New standalone variant of forensic-response v3 (source SHA256
+2549cb1345d1e2ee617e8a77ca288a0acbbfd05cf480f7b91a46b8627fcb74b2).
+Explicit head_type=linear removes BOTH nonlinear heads, BOTH gates and fusion.
+head_type=gated retains the exact reference architecture for software parity.
+The encoder, losses, data exposure, selection and calibration are unchanged.
+Linear maps are w^T F at each location; their mean plus classifier bias is z.
+No learned reliability, causal localization, fairness or novelty is claimed.
+
+Dependencies: Python>=3.10, torch, numpy, Pillow, scikit-learn. No project
+imports, downloads, diffusion models, automatic cluster jobs or test inference.
+Commands: bind, preflight, preview, qualify, smoke, dry-run, train, evaluate,
+compare, export. Run --help and each subcommand --help for the explicit stages.
+Synthetic local compositing interventions are SBI-inspired engineering probes,
+not an official SBI reproduction or validated demographic counterfactuals.
+All originals get BCE. Synthetic views get response losses only, never assumed
+benchmark authenticity labels. Group fairness is measured, never guaranteed.
+Historical protocols/results remain separate. Encoder checkpoint is required.
+
+Embedded Xception architecture: copied from CES-FL CF5050, SHA256
+3e75192a4261eceda122ccd0c616b82928a25e05bc5173b2f728265b37d811ab;
+original attribution: project's vendored Ding utils/xception.py.
+
+positional arguments:
+  {bind,preflight,preview,qualify,smoke,parameters,dry-run,train,evaluate,compare,export}
+
+optional arguments:
+  -h, --help            show this help message and exit

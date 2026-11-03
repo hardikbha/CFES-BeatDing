@@ -1,0 +1,14 @@
+test_bad_support_is_rejected (test_support_warmup.SupportWarmup) ... ok
+test_contributor_tuple_normalization_and_missing_ids (test_support_warmup.SupportWarmup) ... ok
+test_equal_errors_zero (test_support_warmup.SupportWarmup) ... ok
+test_equal_mean_logits_unequal_tails_not_zero (test_support_warmup.SupportWarmup) ... ok
+test_exact_reference_and_no_increase_to_better_groups (test_support_warmup.SupportWarmup) ... ok
+test_lambda_changes_optimizer_update (test_support_warmup.SupportWarmup) ... ok
+test_recorded_support_scales_loss (test_support_warmup.SupportWarmup) ... ok
+test_response_offset_cancellation_does_not_imply_equal_errors (test_support_warmup.SupportWarmup) ... ok
+test_schedule_uses_absolute_epoch (test_support_warmup.SupportWarmup) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.650s
+
+OK

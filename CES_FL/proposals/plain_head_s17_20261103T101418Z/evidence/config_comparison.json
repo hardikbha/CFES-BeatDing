@@ -1,0 +1,52 @@
+[
+  {
+    "config": "L_A_plain_bce.json",
+    "config_sha256": "ed73a15452c7d0c99281eee2c7b190a053ad6d33f67b26fe029c0b64db86f83a",
+    "reference": "CES_FL/results/forensic_response_recovery_c332fd34_20261103/ffpp_bound_config.json",
+    "reference_sha256": "a49d88ded6ca911f77047893aaae1573ca7c1ffdf5eff32c2f03936b71521f1e",
+    "changed_fields": {
+      "format": {
+        "reference": "CESFL_FORENSIC_RESPONSE_v1",
+        "new": "CESFL_HEAD_ABLATION_v1"
+      },
+      "source_sha256": {
+        "reference": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
+        "new": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177"
+      },
+      "head_type": {
+        "reference": "ABSENT (implicit default)",
+        "new": "linear"
+      },
+      "error_control": {
+        "reference": "ABSENT (implicit default)",
+        "new": "legacy"
+      },
+      "alignment_warmup_epochs": {
+        "reference": "ABSENT (implicit default)",
+        "new": 0
+      }
+    },
+    "cluster_input_bytes_reverified_locally": false
+  },
+  {
+    "config": "L_H_plain_hierarchical.json",
+    "config_sha256": "182c3cb5426a06a58b54d32520e0a1d32fe45ad96d61b720f351e5c17552406c",
+    "reference": "CES_FL/proposals/hierarchical_real_risk_s17_20261103_r1/H_joint_real_bound.json",
+    "reference_sha256": "63baed480e251945dba5ebb360e9ac1c7ea9fbc1cebf02acfef6abd6299fb3fd",
+    "changed_fields": {
+      "format": {
+        "reference": "CESFL_FORENSIC_RESPONSE_v3_HIER_REAL",
+        "new": "CESFL_HEAD_ABLATION_v1"
+      },
+      "source_sha256": {
+        "reference": "2549cb1345d1e2ee617e8a77ca288a0acbbfd05cf480f7b91a46b8627fcb74b2",
+        "new": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177"
+      },
+      "head_type": {
+        "reference": "ABSENT (implicit default)",
+        "new": "linear"
+      }
+    },
+    "cluster_input_bytes_reverified_locally": false
+  }
+]

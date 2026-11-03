@@ -1,5 +1,9 @@
 # CES-FL — supervisor review and training handoff
 
+## Plain Xception head ablation — 3 November 2026
+
+[Project memory and research blueprint](PROJECT_MEMORY.md) · [Two-arm proposal](proposals/plain_head_s17_20261103T101418Z/README.md) · [GPU operator prompt](proposals/plain_head_s17_20261103T101418Z/GPU_OPERATOR_PROMPT.md). New standalone Xception+GAP+linear source:20,809,001 total /6,790,433 exit-policy trainable parameters. CPU synthetic smoke and targeted checks pass; CUDA/input checks and both real-data runs are pending. Existing H and completed results are preserved. This publication launches no jobs.
+
 ## One hierarchical original-real risk pilot — 3 November 2026
 
 [Current H process/results](results/hierarchical_real_risk_s17_20261103_r1/STATUS.md) · [Failure diagnosis](proposals/hierarchical_real_risk_s17_20261103_r1/FAILURE_DIAGNOSIS.md) · [Frozen single-candidate proposal](proposals/hierarchical_real_risk_s17_20261103_r1/README.md). E/F finished and rejected their fixed guards. H is seed17/FF++ only and changes only the joint-event real fairness summand; no new Ding, FairForge-2 or TEST computation. The retained bootstrap support requirement makes numerical success at best INCONCLUSIVE. Historical snapshots below remain preserved.
