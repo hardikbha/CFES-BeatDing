@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-03T05:57:46.197491+00:00",
+  "observed_management_utc": "2026-11-03T06:07:52.386593+00:00",
   "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
   "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
   "budget": {
@@ -7,8 +7,8 @@
     "source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-forensic-response-c332fd34",
     "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
     "initial_total_gpu_hours": 24,
-    "consumed_gpu_hours": 10.095485816426162,
-    "reserved_gpu_hours": 0.4791536223867701,
+    "consumed_gpu_hours": 10.246666907987867,
+    "reserved_gpu_hours": 8.895777716187553,
     "gpu_sessions": [
       {
         "id": "ffpp_checks_primary",
@@ -270,8 +270,8 @@
         "id": "support_checks",
         "ngpus": 1,
         "reserved_gpu_hours": 0.5,
-        "elapsed_seconds": 75.04695940762758,
-        "state": "RUNNING",
+        "elapsed_seconds": 244.09866730496287,
+        "state": "COMPLETED",
         "scientific_source_sha256": "0eeafd838da3ca158336dcfe3b8195842dd15bc9fecd67ebbaf2ea03ba3c2680",
         "scientific_commit": "8d5f0996a3f1cc02fbeaff9d25c1d95f714e8e77",
         "route": "explicit_user_authorized_shared_pool_v2",
@@ -287,6 +287,50 @@
         },
         "child_pid": 3368803,
         "log": "/home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/diagnostics.log"
+      },
+      {
+        "id": "support_E_support",
+        "ngpus": 1,
+        "reserved_gpu_hours": 4.5,
+        "elapsed_seconds": 195.08175836503506,
+        "state": "RUNNING",
+        "scientific_source_sha256": "0eeafd838da3ca158336dcfe3b8195842dd15bc9fecd67ebbaf2ea03ba3c2680",
+        "scientific_commit": "8d5f0996a3f1cc02fbeaff9d25c1d95f714e8e77",
+        "route": "explicit_user_authorized_shared_pool_v2",
+        "pbs_allocation_claimed": false,
+        "host": "gpu01",
+        "controller_pid": 3372062,
+        "card": {
+          "index": 4,
+          "uuid": "GPU-9b669a06-9156-a98e-2194-36f2fc11d7ca",
+          "free_mib": 36842,
+          "util": 100,
+          "available_mib": 31082
+        },
+        "child_pid": 3372134,
+        "log": "/home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/E_support/train_initial.log"
+      },
+      {
+        "id": "support_F_support_ramp3",
+        "ngpus": 1,
+        "reserved_gpu_hours": 4.5,
+        "elapsed_seconds": 180.11846335977316,
+        "state": "RUNNING",
+        "scientific_source_sha256": "0eeafd838da3ca158336dcfe3b8195842dd15bc9fecd67ebbaf2ea03ba3c2680",
+        "scientific_commit": "8d5f0996a3f1cc02fbeaff9d25c1d95f714e8e77",
+        "route": "explicit_user_authorized_shared_pool_v2",
+        "pbs_allocation_claimed": false,
+        "host": "gpu02",
+        "controller_pid": 347471,
+        "card": {
+          "index": 5,
+          "uuid": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1",
+          "free_mib": 26369,
+          "util": 0,
+          "available_mib": 26369
+        },
+        "child_pid": 347559,
+        "log": "/home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/F_support_ramp3/train_initial.log"
       }
     ],
     "prior_study_ledger": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_9030dd77_20261103/budget_ledger.json",
@@ -298,9 +342,15 @@
   },
   "actual_process_observations": {
     "gpu01": {
-      "3368803": {
+      "3372134": {
         "exists": true,
-        "cmdline": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u -c import sys,torch,runpy,json,os;assert torch.cuda.is_available() and torch.cuda.device_count()==1 and torch.cuda.is_bf16_supported();assert 'H100' in torch.cuda.get_device_name(0);torch.cuda.set_per_process_memory_fraction(.16);print(json.dumps(dict(event='CUDA_BINDING',uuid=os.environ['CUDA_VISIBLE_DEVICES'],device=torch.cuda.get_device_name(0),bf16=True,torch=str(torch.__version__))),flush=True);sys.argv=sys.argv[1:];runpy.run_path(sys.argv[0],run_name='__main__') /home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/runtime/diagnose_support_warmup.py --source /home/sachin.chaudhary/ces_fl_sources/cesfl-support-warmup-execution-20261103 --run /home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1 --out /home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/diagnostics "
+        "cmdline": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u -c import sys,torch,runpy,json,os;assert torch.cuda.is_available() and torch.cuda.device_count()==1 and torch.cuda.is_bf16_supported();assert 'H100' in torch.cuda.get_device_name(0);torch.cuda.set_per_process_memory_fraction(.16);print(json.dumps(dict(event='CUDA_BINDING',uuid=os.environ['CUDA_VISIBLE_DEVICES'],device=torch.cuda.get_device_name(0),bf16=True,torch=str(torch.__version__))),flush=True);sys.argv=sys.argv[1:];runpy.run_path(sys.argv[0],run_name='__main__') /home/sachin.chaudhary/ces_fl_sources/cesfl-support-warmup-execution-20261103/CES_FL/src/ces_fl_forensic_response.py train --config /home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/E_support/config.json --preflight /home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/E_support/preflight --arm D --device cuda --software-receipt /home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/software_cuda/SMOKE_RESULT.json --dry-run-receipt /home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/E_support/dry/DRY_RUN.json --qualification /home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/E_support/qualification.json --out /home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/E_support/training "
+      }
+    },
+    "gpu02": {
+      "347559": {
+        "exists": true,
+        "cmdline": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u -c import sys,torch,runpy,json,os;assert torch.cuda.is_available() and torch.cuda.device_count()==1 and torch.cuda.is_bf16_supported();assert 'H100' in torch.cuda.get_device_name(0);torch.cuda.set_per_process_memory_fraction(.16);print(json.dumps(dict(event='CUDA_BINDING',uuid=os.environ['CUDA_VISIBLE_DEVICES'],device=torch.cuda.get_device_name(0),bf16=True,torch=str(torch.__version__))),flush=True);sys.argv=sys.argv[1:];runpy.run_path(sys.argv[0],run_name='__main__') /home/sachin.chaudhary/ces_fl_sources/cesfl-support-warmup-execution-20261103/CES_FL/src/ces_fl_forensic_response.py train --config /home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/F_support_ramp3/config.json --preflight /home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/F_support_ramp3/preflight --arm D --device cuda --software-receipt /home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/software_cuda/SMOKE_RESULT.json --dry-run-receipt /home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/F_support_ramp3/dry/DRY_RUN.json --qualification /home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/F_support_ramp3/qualification.json --out /home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/F_support_ramp3/training "
       }
     }
   },
