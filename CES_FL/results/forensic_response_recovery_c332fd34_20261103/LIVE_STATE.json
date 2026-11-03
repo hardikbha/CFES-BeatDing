@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-03T11:21:17.783775+00:00",
+  "observed_management_utc": "2026-11-03T11:31:24.226502+00:00",
   "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
   "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
   "budget": {
@@ -7,8 +7,8 @@
     "source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-forensic-response-c332fd34",
     "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
     "initial_total_gpu_hours": 24,
-    "consumed_gpu_hours": 13.525502385622305,
-    "reserved_gpu_hours": 5.75,
+    "consumed_gpu_hours": 13.692238251111574,
+    "reserved_gpu_hours": 5.58326413451073,
     "gpu_sessions": [
       {
         "id": "ffpp_checks_primary",
@@ -402,7 +402,7 @@
         "id": "plain_head_0d699d2",
         "ngpus": 1,
         "reserved_gpu_hours": 5.75,
-        "elapsed_seconds": 0.0,
+        "elapsed_seconds": 600.2491157613695,
         "state": "RUNNING",
         "scientific_commit": "0d699d241e27f758ec0990fbe58493a15bdb0ff9",
         "scientific_source_sha256": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
@@ -410,7 +410,16 @@
         "route": "PBS_ngpus1_plus_explicit_prior_user_authorized_shared_pool_v2_UUID_lease",
         "pbs_job_id": "45295.mgmt01",
         "controller_pid": 1116139,
-        "host": "gpu02"
+        "host": "gpu02",
+        "card": {
+          "index": 5,
+          "uuid": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1",
+          "free_mib": 26369,
+          "util": 0,
+          "available_mib": 26369
+        },
+        "log": "/home/sachin.chaudhary/ces_fl_runs/plain_head_s17_20261103T101418Z/allocation.log",
+        "child_pid": 1116371
       }
     ],
     "prior_study_ledger": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_9030dd77_20261103/budget_ledger.json",
@@ -420,7 +429,14 @@
     "state": "ACTIVE_BUDGET_LEDGER; execution state is in per-session records and COORDINATOR_STATUS.json",
     "route_override": "Explicit user-authorized direct SSH with pool-v2 leases; no PBS allocation claimed"
   },
-  "actual_process_observations": {},
+  "actual_process_observations": {
+    "gpu02": {
+      "1116371": {
+        "exists": true,
+        "cmdline": "bash /home/sachin.chaudhary/ces_fl_runs/plain_head_s17_20261103T101418Z/allocated_commands.sh "
+      }
+    }
+  },
   "datasets": {
     "ffpp": {
       "root": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_overlapfix_20261103_r1_ffpp_s17",
