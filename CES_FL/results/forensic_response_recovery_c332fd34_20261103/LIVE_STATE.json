@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-03T22:29:44.633321+00:00",
+  "observed_management_utc": "2026-11-03T22:39:49.503144+00:00",
   "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
   "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
   "budget": {
@@ -8,7 +8,7 @@
     "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
     "initial_total_gpu_hours": 24,
     "consumed_gpu_hours": 17.286613496733416,
-    "reserved_gpu_hours": 0.5,
+    "reserved_gpu_hours": 0,
     "gpu_sessions": [
       {
         "id": "ffpp_checks_primary",
@@ -562,7 +562,7 @@
         "ngpus": 1,
         "reserved_gpu_hours": 0.5,
         "elapsed_seconds": 0.0,
-        "state": "QUEUED",
+        "state": "CANCELLED_BEFORE_START",
         "scientific_source_sha256": "72d368a439658c601a5fe4d717237b1561190e85c13c70f6db3a441bc5cdbe78",
         "scientific_commit": "6356cf11aea097c656e2caa21705c41cb591ebd1",
         "route": "pbs_ngpus_1",
@@ -570,7 +570,9 @@
         "purpose": "source-bound CUDA smoke and real-input pretrain dry backward; zero optimizer updates",
         "executor_commit": "6356cf11aea097c656e2caa21705c41cb591ebd1",
         "pbs_job_id": "45387.mgmt01",
-        "log": "/home/sachin.chaudhary/ces_fl_runs/lh_finalization_celebdf_20261104_43c605b/cuda_checks_352e837.pbs.log"
+        "log": "/home/sachin.chaudhary/ces_fl_runs/lh_finalization_celebdf_20261104_43c605b/cuda_checks_352e837.pbs.log",
+        "cancel_reason": "User explicitly redirected authorized work to direct SSH GPU01/GPU02; qstat confirmed job never started",
+        "qdel_command": "qdel 45387.mgmt01"
       }
     ],
     "prior_study_ledger": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_9030dd77_20261103/budget_ledger.json",
