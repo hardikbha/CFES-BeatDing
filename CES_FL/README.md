@@ -1,5 +1,10 @@
 # CES-FL — supervisor review and training handoff
 
+## Seed-17 support/error-control pilots — 3 November 2026
+
+Two CES-FL-only candidates are actually training on FF++ TRAIN/validation after fresh CPU/CUDA, real-input and recipe-review gates. [Live process, metric, exposure and budget evidence](results/support_warmup_s17_20261103_r1/STATUS.md) · [Audit and actual execution report](proposals/support_warmup_s17_20261103_r1/AUDIT_AND_RUN_REPORT.md) · [Frozen proposal and decision rules](proposals/support_warmup_s17_20261103_r1/README.md). No new Ding-model computation, new FairForge-2 experiment or TEST inference. This is a separate branch; historical snapshots below remain preserved.
+
+
 ## Actual Ding reproduction and FairForge-2 launch — 2 November 2026
 
 [Our archived Ding reproduction versus CES-FL](results/ding_reproduced_vs_cesfl_20261102/REPORT.md) uses measured local checkpoints rather than the paper's numbers. All four TEST memberships and FF++ TRAIN/VAL memberships match exactly. Full local Ding seed7 AUC97.44/56.05/71.22/72.54%; CES-FL B/C seed17 have higher AUC on all four datasets, with disclosed differences in preprocessing, seeds, optimization, checkpoint selection and archived GDA behavior. Full fairness metrics and native aggregate files are included.

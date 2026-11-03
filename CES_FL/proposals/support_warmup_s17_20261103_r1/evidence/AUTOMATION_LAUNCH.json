@@ -1,0 +1,24 @@
+{
+  "observed_management_utc": "2026-11-03T06:13:24.530000+00:00",
+  "helpers": {
+    "publish_support_progress.py": {
+      "path": "/home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/runtime/publish_support_progress.py",
+      "sha256": "a00fb04779e026fc8838acfc42d0c80d697466a86f64cb9f37474a50d78b938d",
+      "operator_commit": "c2f09d349fddeb8b2a2c6d1c4b02e3fc6d4e5ba7",
+      "pid": 3543851
+    },
+    "finish_support_analysis.py": {
+      "path": "/home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/runtime/finish_support_analysis.py",
+      "sha256": "f0147d3cd65b9f6441104c81830756edd3749588c862a2be5a1fb00e68081a06",
+      "operator_commit": "c2f09d349fddeb8b2a2c6d1c4b02e3fc6d4e5ba7",
+      "pid": 3543499
+    },
+    "support_validation_decision.py": {
+      "path": "/home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/runtime/support_validation_decision.py",
+      "sha256": "259c2e10d7d126ede916308e722baeab02ce3e17bc8b6d19f920da9f67978eeb",
+      "operator_commit": "c2f09d349fddeb8b2a2c6d1c4b02e3fc6d4e5ba7"
+    }
+  },
+  "training_source_unchanged": true,
+  "capabilities": "read-only publication plus separately authorized CPU-only fixed-validation analysis; no training/test/generation"
+}

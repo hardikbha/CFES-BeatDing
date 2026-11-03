@@ -1,0 +1,6 @@
+{
+  "observed_management_utc": "2026-11-03T06:17:52.999000+00:00",
+  "main_commit": "67d2308225e422a91c715c40427f40c3df6812cf",
+  "scientific_running_commit": "8d5f0996a3f1cc02fbeaff9d25c1d95f714e8e77",
+  "policy": "Fetched references and read aggregate metadata only; no running source or selected protocol changed"
+}

@@ -1,0 +1,11 @@
+{
+  "observed_management_utc": "2026-11-03T06:18:28.742481+00:00",
+  "purpose": "CPU timing probe only;2replicates not an uncertainty estimate or decision",
+  "command": "OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 OPENBLAS_NUM_THREADS=1 /home/sachin.chaudhary/.conda/envs/aiface/bin/python: m.bootstrap(existing_CESFL_D_VAL, other=existing_CESFL_C_VAL, n=2, seed=17)",
+  "seconds": 4.842805874999613,
+  "replicates": 2,
+  "comparisons_planned": 4,
+  "test_read": false,
+  "training_or_weights_loaded": false,
+  "approximate_1000x4_CPU_seconds": 9685.611749999225
+}

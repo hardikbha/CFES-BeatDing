@@ -1,0 +1,10 @@
+{
+  "purpose": "Optional CPU timing probe before explicit-environment retry",
+  "command": "python: import current CES-FL module;2replicate existing VAL bootstrap",
+  "actual_python": "/home/sachin.chaudhary/.conda/envs/internvl/bin/python",
+  "status": "FAILED_BEFORE_BOOTSTRAP",
+  "exception": "ModuleNotFoundError: No module named numpy.core._multiarray_umath; numpy C-extensions unavailable in default internvl environment",
+  "gpu_hours": 0,
+  "training_affected": false,
+  "fix": "Use explicitly documented aiface executable; analysis controller already uses aiface"
+}
