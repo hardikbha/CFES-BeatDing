@@ -97,9 +97,23 @@ def command(args,log,card,entry,script=SCRIPT):
    session=next(s for s in ledger['gpu_sessions'] if s['id']==entry.stem[5:]);session.update(child_pid=child.pid,log=str(log))
   if child.wait()!=0:raise RuntimeError('Command failed; preserve '+str(log))
 
+def detached_head(source):
+ pointer=Path(source)/'.git'
+ if pointer.is_file():
+  text=pointer.read_text().strip()
+  if not text.startswith('gitdir: '):raise RuntimeError('Invalid worktree pointer')
+  gitdir=Path(text[8:]);gitdir=gitdir if gitdir.is_absolute() else Path(source)/gitdir
+ else:gitdir=pointer
+ head=(gitdir/'HEAD').read_text().strip()
+ if len(head)!=40 or any(ch not in '0123456789abcdef' for ch in head):raise RuntimeError('Execution HEAD is not detached')
+ return head
+
 def verify_source():
- if sha(SCRIPT)!=SHA or subprocess.check_output(['git','rev-parse','HEAD'],cwd=SOURCE,text=True).strip()!=COMMIT:raise RuntimeError('Pinned scientific source mismatch')
- if subprocess.check_output(['git','status','--porcelain'],cwd=SOURCE,text=True).strip():raise RuntimeError('Execution checkout is dirty')
+ if sha(SCRIPT)!=SHA or detached_head(SOURCE)!=COMMIT:raise RuntimeError('Pinned scientific source mismatch')
+ # The nodes lack git. The launch host verified the whole checkout clean;
+ # this node independently checks detached HEAD and the standalone source bytes.
+ receipt=read(ROOT/'SOURCE_CHECKOUT.json')
+ if receipt.get('commit')!=COMMIT or receipt.get('source_sha256')!=SHA or receipt.get('git_status_porcelain')!='':raise RuntimeError('Missing clean-checkout provenance')
 
 def ready(name,qualification=True):
  if name not in NAMES:raise RuntimeError('Only the two preregistered CES-FL candidates are allowed')
