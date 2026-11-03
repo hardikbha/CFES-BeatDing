@@ -57,6 +57,14 @@ PG-FDD/FairAdapter remain blocked on the specific adapter/metadata/entrypoint ga
 
 The authenticated cluster account has verified write/admin access to `hardikbha/CFES-BeatDing`; the preparation environment's old fork-only permission statement is a historical snapshot. Aggregate evidence is published on upstream branch `results/ff2-baselines-815b4d4-20261103` in a separate publication checkout. Private image inventories, row-level scores, review faces and checkpoints remain on the cluster.
 
+## Refresh — 4 November 2026, 22:19 UTC
+
+The latest snapshot and Ding-layout report are in `ding_layout_20261104T2219Z/`. At this observation BCE is actively training at epoch40, with49epochs in its current recorded history; its best AUC checkpoint so far is epoch40,99.804621%. DAG-FDD completed50epochs and independently replayed its selected epoch50 checkpoint at99.813559% AUC. DAW-FDD completed50epochs and replayed selected epoch41 at99.836011%. Their TEST sets have not been evaluated.
+
+F_FPR on gender/race/gender×race/age/skin proxy axes for the selected validation checkpoints is BCE `0.034285 / 0.195413 / 0.405237 / 0.087404 / 0.145671`, DAG `0.042760 / 0.183245 / 0.378911 / 0.104475 / 0.127781`, and DAW `0.034285 / 0.128659 / 0.306953 / 0.104531 / 0.067956`. Lower is better; axis-label quality limits age and skin interpretations. The models trade off detection and group disparity.
+
+The existing Ding FairForge-2 run is still active on two gpu01 GPUs (workers2755001/2755002 observed in process table and nvidia-smi at03:49IST). Classification has38 completed epochs; training log shows epoch39 in progress. Best classification validation AUC is99.810363% at epoch21; latest completed epoch38 AUC is99.723986%. Classification DONE, SFD receipt, GDA directory and overall DONE do not exist. Therefore SFD and corrected GDA remain pending, and Ding's full FairForge-2 run is incomplete. The status renderer verified source/config hashes and matching TRAIN/VAL manifest hashes; no Ding training or inference was performed for this check.
+
 ## Detailed validation tables and existing Ding status — 3 November 2026
 
 User requested Ding-format tables and the existing Ding FairForge-2 status. The dated `ding_layout_20261103T165635Z/` package preserves the actual16:56UTC baseline snapshot: BCE18/50selected17, DAG21/50selected19, DAW17/50selected15. Fifteen demographic/method rows use a single validation-AUC-selected checkpoint per method; all values use100×native fractions. Supplementary outputs include69per-group rows with counts, eligibility and rates, worst-group AUC, FPR/FNR gaps, Markdown, CSV, standalone LaTeX and a successfully compiled one-page PDF. These are interim validation results, with no new model computation or TEST access.
