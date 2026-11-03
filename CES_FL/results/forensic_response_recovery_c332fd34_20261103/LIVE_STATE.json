@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-03T05:37:35.666515+00:00",
+  "observed_management_utc": "2026-11-03T05:47:41.232212+00:00",
   "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
   "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
   "budget": {
@@ -7,7 +7,7 @@
     "source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-forensic-response-c332fd34",
     "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
     "initial_total_gpu_hours": 24,
-    "consumed_gpu_hours": 10.058886044436239,
+    "consumed_gpu_hours": 10.074639438812932,
     "reserved_gpu_hours": 0,
     "gpu_sessions": [
       {
@@ -243,6 +243,28 @@
         },
         "child_pid": 211549,
         "log": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_overlapfix_20261103_r1_ff2_s17/ff2_B_initial.log"
+      },
+      {
+        "id": "support_smoke",
+        "ngpus": 1,
+        "reserved_gpu_hours": 0.5,
+        "elapsed_seconds": 56.7122197560966,
+        "state": "COMPLETED",
+        "scientific_source_sha256": "0eeafd838da3ca158336dcfe3b8195842dd15bc9fecd67ebbaf2ea03ba3c2680",
+        "scientific_commit": "8d5f0996a3f1cc02fbeaff9d25c1d95f714e8e77",
+        "route": "explicit_user_authorized_shared_pool_v2",
+        "pbs_allocation_claimed": false,
+        "host": "gpu01",
+        "controller_pid": 3358539,
+        "card": {
+          "index": 3,
+          "uuid": "GPU-6a002609-de85-4949-c707-ee9317b284f0",
+          "free_mib": 73312,
+          "util": 5,
+          "available_mib": 36360
+        },
+        "child_pid": 3358548,
+        "log": "/home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/software_cuda.log"
       }
     ],
     "prior_study_ledger": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_9030dd77_20261103/budget_ledger.json",
