@@ -1,13 +1,13 @@
 {
-  "observed_management_utc": "2026-11-03T19:34:53.417533+00:00",
+  "observed_management_utc": "2026-11-03T19:35:57.225543+00:00",
   "execution_commit": "ab7f36798cfa06226e17e31c2171e0c02404a216",
   "source_sha256": "1b6dc1b0e6d2b2220da897500a4d1bffb7764280df642abf6befdd1cf511ed01",
   "arms": {
     "SHAM_FIX": {
       "job_id": "45361.mgmt01",
-      "scheduler_state": "E",
+      "scheduler_state": "F",
       "scheduler_observation": {
-        "job_state": "E",
+        "job_state": "F",
         "queue": "workq",
         "Resource_List": {
           "mem": "64gb",
@@ -29,7 +29,7 @@
         "exec_host": "gpu01/5*10",
         "exec_vnode": "(gpu01:ncpus=10:ngpus=2:mem=67108864kb)",
         "stime": "Wed Nov  4 00:24:16 2026",
-        "comment": "Job run at Wed Nov 04 at 00:24 on (gpu01:ncpus=10:ngpus=2:mem=67108864kb)",
+        "comment": "Job run at Wed Nov 04 at 00:24 on (gpu01:ncpus=10:ngpus=2:mem=67108864kb) and finished",
         "Exit_status": 0
       },
       "completed_epochs": 3,
@@ -2237,9 +2237,9 @@
     },
     "NO_ALIGN": {
       "job_id": "45361.mgmt01",
-      "scheduler_state": "E",
+      "scheduler_state": "F",
       "scheduler_observation": {
-        "job_state": "E",
+        "job_state": "F",
         "queue": "workq",
         "Resource_List": {
           "mem": "64gb",
@@ -2261,7 +2261,7 @@
         "exec_host": "gpu01/5*10",
         "exec_vnode": "(gpu01:ncpus=10:ngpus=2:mem=67108864kb)",
         "stime": "Wed Nov  4 00:24:16 2026",
-        "comment": "Job run at Wed Nov 04 at 00:24 on (gpu01:ncpus=10:ngpus=2:mem=67108864kb)",
+        "comment": "Job run at Wed Nov 04 at 00:24 on (gpu01:ncpus=10:ngpus=2:mem=67108864kb) and finished",
         "Exit_status": 0
       },
       "completed_epochs": 3,
