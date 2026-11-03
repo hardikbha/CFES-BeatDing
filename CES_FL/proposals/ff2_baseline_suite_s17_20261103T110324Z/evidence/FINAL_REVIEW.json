@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "checks": [
+    "all new Python sources parse",
+    "PBS shell syntax",
+    "three configs differ only by objective",
+    "config and CPU smoke bind final model/source hashes",
+    "reporter leaves all missing methods pending instead of fabricating scores"
+  ],
+  "source_hashes": {
+    "CES_FL/src/ff2_fairness_baselines.py": "f14b818cad66c92a07f09e0c06767a2980a0b8644e8bb74b33710e142b971904",
+    "CES_FL/src/ces_fl_head_ablation.py": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
+    "CLIPFAIR/cfes/clipfair_losses.py": "daf5cb7538c76fe81abb1af5b35fe851b5a603ca8f812614e4f9673bfd36def3",
+    "CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/upstreams.lock.json": "21b288b77b73b87c6c7536dc1b859a5274acfcda9703a1ae59ca8de3f9f3c69e"
+  },
+  "code_sha256": {
+    "CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/budget.py": "9e3dc0929fb53f606cf0b12e96a85cd41b315101216774282887aad8c26f7f6c",
+    "CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/fetch_sources.py": "86eeb4cb48146bec2021cbec303d543d6677e401e43a835e18f53dda76d26ca9",
+    "CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/run_one.py": "85c4bfe588acf46d38b98493f562daabec09251ea13482a6b7a511969411d202",
+    "CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/report_validation.py": "1785d5574362c85f0ef4909a7af88507ee1c6820c29da5ac6f17ce72f435a75b"
+  },
+  "benchmark_training_executed": false,
+  "cuda_executed": false
+}

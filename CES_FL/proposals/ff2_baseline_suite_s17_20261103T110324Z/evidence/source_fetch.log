@@ -1,0 +1,26 @@
+Cloning into '/Users/hardiksharma/Downloads/fairness_cvpr/output/ff2_suite_pinned_sources_20261103/dag_daw'...
+HEAD is now at 588f80c Update README.md
+Cloning into '/Users/hardiksharma/Downloads/fairness_cvpr/output/ff2_suite_pinned_sources_20261103/pg_fdd'...
+HEAD is now at e552a54 Update README.md
+Cloning into '/Users/hardiksharma/Downloads/fairness_cvpr/output/ff2_suite_pinned_sources_20261103/fairadapter'...
+HEAD is now at b81e1cc Delete training/__pycache__ directory
+[
+  {
+    "id": "dag_daw",
+    "commit": "588f80c60a3f6c50253da37cc57104e05e99508d",
+    "path": "/Users/hardiksharma/Downloads/fairness_cvpr/output/ff2_suite_pinned_sources_20261103/dag_daw",
+    "verified_files": 87
+  },
+  {
+    "id": "pg_fdd",
+    "commit": "e552a5422987897ab747e3b91b4b1b38d6531446",
+    "path": "/Users/hardiksharma/Downloads/fairness_cvpr/output/ff2_suite_pinned_sources_20261103/pg_fdd",
+    "verified_files": 43
+  },
+  {
+    "id": "fairadapter",
+    "commit": "b81e1cc0205e79a0393513e72aa0208021452704",
+    "path": "/Users/hardiksharma/Downloads/fairness_cvpr/output/ff2_suite_pinned_sources_20261103/fairadapter",
+    "verified_files": 97
+  }
+]

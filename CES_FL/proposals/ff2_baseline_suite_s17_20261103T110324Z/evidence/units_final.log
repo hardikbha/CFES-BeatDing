@@ -1,0 +1,15 @@
+test_bce_and_cvar_gradients (test_ff2_baseline_suite.LossTests) ... /Users/hardiksharma/Downloads/fairness_cvpr/CFES-BeatDing-plain-head-20261103T101418Z/CLIPFAIR/cfes/clipfair_losses.py:92: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  return loss, {"dag_lambda": lam, "dag_bce_mean": float(loss_entropy.mean())}
+ok
+test_config_rejects_source_mismatch_before_io (test_ff2_baseline_suite.LossTests) ... ok
+test_daw_group_code_permutation (test_ff2_baseline_suite.LossTests) ... ok
+test_image_hash_change_rejected (test_ff2_baseline_suite.LossTests) ... ok
+test_changed_upstream_rejected (test_ff2_baseline_suite.UpstreamTests) ... ok
+test_full_xception_and_bn_and_checkpoint_loading (test_ff2_baseline_suite.UpstreamTests) ... ok
+test_official_objective_values_and_gradients (test_ff2_baseline_suite.UpstreamTests) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 3.588s
+
+OK

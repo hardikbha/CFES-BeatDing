@@ -1,3 +1,7 @@
+## FairForge-2 baseline preparation — 2026-11-03T11:33:27.003004+00:00
+
+New [baseline suite and operator prompt](proposals/ff2_baseline_suite_s17_20261103T110324Z/GPU_OPERATOR_PROMPT.md): user approved72 additional GPU-hours, maximum3 allocated GPUs. Native BCE/DAG/DAW CPU checks pass; CUDA/input checks and training are pending. PG-FDD/FairAdapter adaptations remain conditional; RSEF source unavailable. No jobs launched here; existing jobs/results preserved. This is a preparation observation, not live cluster status. Published to the writable fork because upstream push permission remains unavailable.
+
 # Current CES-FL status
 
 ## Plain Xception head ablation — 3 November 2026

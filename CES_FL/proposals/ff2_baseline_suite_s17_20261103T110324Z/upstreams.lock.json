@@ -1,0 +1,1309 @@
+{
+  "repositories": [
+    {
+      "id": "dag_daw",
+      "repository": "https://github.com/Purdue-M2/AI-Face-FairnessBench.git",
+      "commit": "588f80c60a3f6c50253da37cc57104e05e99508d",
+      "files": {
+        ".gitignore": {
+          "git_blob": "68bc17f9ff2104a9d7b6777058bb4c343ca72609",
+          "bytes": 3078
+        },
+        "README.md": {
+          "git_blob": "2b34ca6c1e92ddf1d00be9d31b7fe107b6b804c0",
+          "bytes": 14191
+        },
+        "assets/dataset_compare.png": {
+          "git_blob": "c6afb0dcb5f75819680698f0c05b050c44ab7b16",
+          "bytes": 129147
+        },
+        "assets/dataset_overview.png": {
+          "git_blob": "b158a1501e725d55901bf3768f26b3dba1e01327",
+          "bytes": 1954831
+        },
+        "assets/dataset_stas.png": {
+          "git_blob": "9a4465ed61eb61121d295c99665e86bc4f04c6fd",
+          "bytes": 229389
+        },
+        "dataset/readme.md": {
+          "git_blob": "ba9652eb37d1ff3e652a24136a77a9b89398a727",
+          "bytes": 32
+        },
+        "py_utils/DL/__init__.py": {
+          "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+          "bytes": 0
+        },
+        "py_utils/DL/pytorch_utils/models/__init__.py": {
+          "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+          "bytes": 0
+        },
+        "py_utils/DL/pytorch_utils/models/classifier.py": {
+          "git_blob": "4b5eb7fdab137d13c778b641521675768f6b8299",
+          "bytes": 3411
+        },
+        "py_utils/__init__.py": {
+          "git_blob": "4bbe24778b529e477b2b1a89bc84021b1e273ac9",
+          "bytes": 58
+        },
+        "requirements.txt": {
+          "git_blob": "ec7c1426e0647aa094c7d1cf83252c6e1ae5169a",
+          "bytes": 2916
+        },
+        "results/readme.md": {
+          "git_blob": "3ddc262e950152d02cae14674584387d00cb26b5",
+          "bytes": 71
+        },
+        "training/__init__.py": {
+          "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+          "bytes": 0
+        },
+        "training/dataset/__init__.py": {
+          "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+          "bytes": 0
+        },
+        "training/dataset/datasets_train.py": {
+          "git_blob": "a95c876c579d62f92b614f3668dd3cb9bff810a2",
+          "bytes": 3937
+        },
+        "training/dataset/pair_dataset.py": {
+          "git_blob": "896934091d17e9a7446432e2ac78b590cf9ec062",
+          "bytes": 4233
+        },
+        "training/detectors/__init__.py": {
+          "git_blob": "9401ec16cafdd1fee03a82ff7b3217bcd4ffeca3",
+          "bytes": 452
+        },
+        "training/detectors/base_detector.py": {
+          "git_blob": "f4a12560b3de85ab5c37776409027c3a4d63e3f0",
+          "bytes": 1944
+        },
+        "training/detectors/core_detector.py": {
+          "git_blob": "61ab03afdd580ab4c8c2d0cbce7d66c486876f20",
+          "bytes": 3508
+        },
+        "training/detectors/dag_fdd.py": {
+          "git_blob": "8343c26fbde0a9bf5638d5163c41752a82cfbb82",
+          "bytes": 3782
+        },
+        "training/detectors/daw_fdd.py": {
+          "git_blob": "ac2028e2cce801a541e7771a605aec087f501538",
+          "bytes": 4501
+        },
+        "training/detectors/efficientnetb4_detector.py": {
+          "git_blob": "7fe27a2a635fedc02cf6526bf6199fdc08455bb0",
+          "bytes": 2611
+        },
+        "training/detectors/f3net_detector.py": {
+          "git_blob": "556f291081404656a74f6576b0617ec8bf44e12f",
+          "bytes": 6373
+        },
+        "training/detectors/fair_df_detector.py": {
+          "git_blob": "cb6757e5732cba33b5a6578508f1ca0ee889f0d3",
+          "bytes": 17763
+        },
+        "training/detectors/spsl_detector.py": {
+          "git_blob": "45fec3a5a7aa7cc33d88121d50c631637b406aa1",
+          "bytes": 4502
+        },
+        "training/detectors/srm_detector.py": {
+          "git_blob": "d1a68dc16476d2bb034fe67d570c7e427689e72b",
+          "bytes": 22742
+        },
+        "training/detectors/ucf_detector.py": {
+          "git_blob": "8d8705b69f60d02c33b793e22d92e00628a39646",
+          "bytes": 13966
+        },
+        "training/detectors/xception_detector.py": {
+          "git_blob": "9e5628b1714605302cbe63a801309ee962ad7b89",
+          "bytes": 3152
+        },
+        "training/fairness_metrics.py": {
+          "git_blob": "3be54b92509ef7e6a1c0e1a2d743145eede57a9b",
+          "bytes": 15889
+        },
+        "training/fairness_metrics_srm.py": {
+          "git_blob": "c016aae9511f7481f817402af42bdc964743f37b",
+          "bytes": 16387
+        },
+        "training/lib/component/MCT/template0.png": {
+          "git_blob": "bc2b450c2d80980c30aebac10201bda91e9d0e02",
+          "bytes": 96
+        },
+        "training/lib/component/MCT/template1.png": {
+          "git_blob": "ce86a7f4b5b045f3222d43414c8a3a2c0d189a11",
+          "bytes": 106
+        },
+        "training/lib/component/MCT/template2.png": {
+          "git_blob": "4917a2ea0b39dec9ac5f1233b0c7c58d04b681ca",
+          "bytes": 120
+        },
+        "training/lib/component/MCT/template3.png": {
+          "git_blob": "03d3fd0c66ee60474397592feea9835ffe51270a",
+          "bytes": 120
+        },
+        "training/lib/component/MCT/template4.png": {
+          "git_blob": "44701c0a389cf0fa24c3ad770fdecac87317ce96",
+          "bytes": 154
+        },
+        "training/lib/component/MCT/template5.png": {
+          "git_blob": "13e3ee65ad94c455dcadc1f0c75414ee8da9cd6c",
+          "bytes": 150
+        },
+        "training/lib/component/MCT/template6.png": {
+          "git_blob": "dd239d79c99e43be0cdbe0c58b75b03079ee47e8",
+          "bytes": 143
+        },
+        "training/lib/component/MCT/template7.png": {
+          "git_blob": "ee4d7f7d8007319ed756b540af15247d801042c6",
+          "bytes": 129
+        },
+        "training/lib/component/MCT/template8.png": {
+          "git_blob": "0421aed95af01c9dd6d4cd6c2ff58ac70dba9db1",
+          "bytes": 114
+        },
+        "training/lib/component/MCT/template9.png": {
+          "git_blob": "92554ac8cc1eb0bd6be5ea6a85f29ab43febe5d5",
+          "bytes": 140
+        },
+        "training/lib/component/SRM_Kernels.npy": {
+          "git_blob": "29d7cde8456f9c357c73292c0efa3f1b9f5f877c",
+          "bytes": 3080
+        },
+        "training/lib/component/__init__.py": {
+          "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+          "bytes": 0
+        },
+        "training/lib/component/attention.py": {
+          "git_blob": "f74bd67c0364812ffec0d40c0235062a80f206ad",
+          "bytes": 13150
+        },
+        "training/lib/component/gaussian_ops.py": {
+          "git_blob": "57a7dda967810210c2f2ffc2c9ae1b54dca82bcd",
+          "bytes": 3888
+        },
+        "training/lib/component/srm_conv.py": {
+          "git_blob": "2d60a41fd63fca643fae525ec2f6d3ed001b75d2",
+          "bytes": 6591
+        },
+        "training/log_utils.py": {
+          "git_blob": "eefb592272b76a42e973244e10c4d9ba3db2e1da",
+          "bytes": 2048
+        },
+        "training/loss/__init__.py": {
+          "git_blob": "11c1d42e37cd1e2d88cf653deca519fd8d8f9525",
+          "bytes": 349
+        },
+        "training/loss/abstract_loss_func.py": {
+          "git_blob": "45d3324ed53be4310867b326e9eaabd265634138",
+          "bytes": 479
+        },
+        "training/loss/am_softmax.py": {
+          "git_blob": "638df740277c97409a892339c4b18d47dc934702",
+          "bytes": 5724
+        },
+        "training/loss/bal_loss.py": {
+          "git_blob": "390328ceed6e4228d54c6914fd6a484b474946c1",
+          "bytes": 1269
+        },
+        "training/loss/bce_loss.py": {
+          "git_blob": "f11a35daac86da14cfaea9efff2522db7814328b",
+          "bytes": 827
+        },
+        "training/loss/consistency_loss.py": {
+          "git_blob": "3e1fff10bc433e8ca02cb0b30af942e2633ccc44",
+          "bytes": 1833
+        },
+        "training/loss/contrastive_regularization.py": {
+          "git_blob": "4f2b65bb0cf2eca05210694e3698922343191a9f",
+          "bytes": 3232
+        },
+        "training/loss/cross_entropy_loss.py": {
+          "git_blob": "455f90bd5ce3b8576e438596928bb7a9e4ac07a3",
+          "bytes": 894
+        },
+        "training/loss/daw_bce_loss.py": {
+          "git_blob": "e3e48a8b490ed48a61b75850b8c2f2d1d2ffa569",
+          "bytes": 850
+        },
+        "training/loss/l1_loss.py": {
+          "git_blob": "4db12aae3cec995471bfc24b69ba563d49fa6e58",
+          "bytes": 471
+        },
+        "training/metrics/__init__.py": {
+          "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+          "bytes": 0
+        },
+        "training/metrics/base_metrics_class.py": {
+          "git_blob": "aa1db99b53e18aee38b889b7bd92193659e4fdc6",
+          "bytes": 7029
+        },
+        "training/models/__init__.py": {
+          "git_blob": "d7b790b40d29d1f3bf02f398f3522eea8e4c2c22",
+          "bytes": 869
+        },
+        "training/models/clip/__init__.py": {
+          "git_blob": "dcc5619538c0f7c782508bdbd9587259d805e0d9",
+          "bytes": 20
+        },
+        "training/models/clip/bpe_simple_vocab_16e6.txt.gz": {
+          "git_blob": "7b5088a527f720063f044eb928eee315f63b2fc0",
+          "bytes": 1356917
+        },
+        "training/models/clip/clip.py": {
+          "git_blob": "257511e1d40c120e0d64a0f1562d44b2b8a40a17",
+          "bytes": 9396
+        },
+        "training/models/clip/model.py": {
+          "git_blob": "c60bda69ab0d35af0b64517d32595d9c03f8721c",
+          "bytes": 17845
+        },
+        "training/models/clip/simple_tokenizer.py": {
+          "git_blob": "0a66286b7d5019c6e221932a813768038f839c91",
+          "bytes": 4632
+        },
+        "training/models/clip_models.py": {
+          "git_blob": "44de4db8ee4dd77690970fc76eb671b1b3a43882",
+          "bytes": 643
+        },
+        "training/models/imagenet_models.py": {
+          "git_blob": "20a40b916793d926c915aa2f62602651613fec04",
+          "bytes": 942
+        },
+        "training/models/resnet.py": {
+          "git_blob": "a78e3d65e263cb9dbd1afa0e1a88dba9f5ddd164",
+          "bytes": 12741
+        },
+        "training/models/vgg.py": {
+          "git_blob": "a30a1df18a64f9ab2ca309b264cd4e8409b0cf64",
+          "bytes": 3423
+        },
+        "training/models/vision_transformer.py": {
+          "git_blob": "618e9626ca43f1afdb3419e19be11f3a3048f81e",
+          "bytes": 17416
+        },
+        "training/models/vision_transformer_misc.py": {
+          "git_blob": "7915f036c00f0d9c57c176e621afc9f1e69dcb30",
+          "bytes": 6556
+        },
+        "training/models/vision_transformer_utils.py": {
+          "git_blob": "6d3293d103d0e186a1244e7cc0c6e3bde63d1df3",
+          "bytes": 21551
+        },
+        "training/networks/__init__.py": {
+          "git_blob": "426da17e5d197f69902181e124bf45c5710d5e46",
+          "bytes": 215
+        },
+        "training/networks/base_backbone.py": {
+          "git_blob": "8cbb14439c4c8da93d12edd0f0af442d8f460698",
+          "bytes": 873
+        },
+        "training/networks/efficientnetb3.py": {
+          "git_blob": "aeddcd1706036772eb0cb4bd145e39c3acad7783",
+          "bytes": 2250
+        },
+        "training/networks/efficientnetb4.py": {
+          "git_blob": "faf3ae71c6bfe26061fa73cc8758e63bdcf9bd8d",
+          "bytes": 2364
+        },
+        "training/networks/resnet34.py": {
+          "git_blob": "81b21f3f145f45db8ee9a07b22ba000a34cdf85a",
+          "bytes": 1488
+        },
+        "training/networks/resnet50.py": {
+          "git_blob": "e9520c2d7b925fbb18584555ecc141f732780905",
+          "bytes": 1569
+        },
+        "training/networks/xception.py": {
+          "git_blob": "4f29925bde37bd5dcf603ca866a2f529ca768639",
+          "bytes": 7635
+        },
+        "training/networks/xception_ffd.py": {
+          "git_blob": "5f23ddae50da43390081167dd199d31a1118c889",
+          "bytes": 8311
+        },
+        "training/pretrained/readme.md": {
+          "git_blob": "39330d288715e2c82a8d95b62fe739e8627eb1dd",
+          "bytes": 32
+        },
+        "training/train_test.py": {
+          "git_blob": "fba9df9eb7c1decb253dbd08ba1b3b8e9d84d01e",
+          "bytes": 9096
+        },
+        "training/train_test_clip.py": {
+          "git_blob": "a348234902ee6b2b0a648e3babb72e498a331c72",
+          "bytes": 9942
+        },
+        "training/train_test_vit.py": {
+          "git_blob": "da76a3fa7ce9d3387810df9e5505874b77533d3e",
+          "bytes": 8892
+        },
+        "training/transform.py": {
+          "git_blob": "98bc4e23e6b241300afc13e48e04bff304005f0e",
+          "bytes": 5058
+        },
+        "training/utils/bypass_bn.py": {
+          "git_blob": "76e73a134efe5423cdf4bac2fa3277fcc9680eee",
+          "bytes": 522
+        },
+        "training/utils/metrics.py": {
+          "git_blob": "b9c69c71b6be0e26822c313fb52b0893808be1ee",
+          "bytes": 5070
+        },
+        "training/utils/registry.py": {
+          "git_blob": "86e256c18d0ad522de79149a154f676fd0bdb414",
+          "bytes": 498
+        }
+      }
+    },
+    {
+      "id": "pg_fdd",
+      "repository": "https://github.com/Purdue-M2/Fairness-Generalization.git",
+      "commit": "e552a5422987897ab747e3b91b4b1b38d6531446",
+      "files": {
+        ".gitignore": {
+          "git_blob": "68bc17f9ff2104a9d7b6777058bb4c343ca72609",
+          "bytes": 3078
+        },
+        "LICENSE": {
+          "git_blob": "706fe7b361c14d5b295a001a2cb2679f0da2b908",
+          "bytes": 1057
+        },
+        "README.md": {
+          "git_blob": "8978c4a258a360ec826653ee67acc5aa1ec485f0",
+          "bytes": 9296
+        },
+        "dataset/readme.md": {
+          "git_blob": "c13b9cfab0b0cea4b7734f2dd68261e94d486739",
+          "bytes": 22
+        },
+        "py_utils/DL/__init__.py": {
+          "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+          "bytes": 0
+        },
+        "py_utils/DL/pytorch_utils/models/__init__.py": {
+          "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+          "bytes": 0
+        },
+        "py_utils/DL/pytorch_utils/models/classifier.py": {
+          "git_blob": "4b5eb7fdab137d13c778b641521675768f6b8299",
+          "bytes": 3411
+        },
+        "py_utils/__init__.py": {
+          "git_blob": "4bbe24778b529e477b2b1a89bc84021b1e273ac9",
+          "bytes": 58
+        },
+        "training/dataset/__init__.py": {
+          "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+          "bytes": 0
+        },
+        "training/dataset/datasets_train.py": {
+          "git_blob": "d1eb7cd1338d3dc5aa25ece83c0b1f164bf76259",
+          "bytes": 10958
+        },
+        "training/dataset/pair_dataset.py": {
+          "git_blob": "d64cbde5b4e294faafac4f2b09ceef89e0fce8a8",
+          "bytes": 4158
+        },
+        "training/detectors/__init__.py": {
+          "git_blob": "8468213fc477f50e4741f3e037a44bdac62c52a7",
+          "bytes": 79
+        },
+        "training/detectors/base_detector.py": {
+          "git_blob": "f4a12560b3de85ab5c37776409027c3a4d63e3f0",
+          "bytes": 1944
+        },
+        "training/detectors/fair_df_detector.py": {
+          "git_blob": "3787dbdc24d376c4e4f6c7054cd8edad26458893",
+          "bytes": 20927
+        },
+        "training/fairness_metrics.py": {
+          "git_blob": "8437b5a73b04f8e1247c2feea113ac2cfa2e030c",
+          "bytes": 14027
+        },
+        "training/log_utils.py": {
+          "git_blob": "6a80944848803fdd5a684725bea9ec8e3ace1d6a",
+          "bytes": 1459
+        },
+        "training/loss/__init__.py": {
+          "git_blob": "6be9bf9b4371f832f6c525ec9127c81613fbe108",
+          "bytes": 231
+        },
+        "training/loss/abstract_loss_func.py": {
+          "git_blob": "45d3324ed53be4310867b326e9eaabd265634138",
+          "bytes": 479
+        },
+        "training/loss/bal_loss.py": {
+          "git_blob": "7871c8f1ec83a3f11f33e69a565dc5e92ad1e49d",
+          "bytes": 1093
+        },
+        "training/loss/bi_level_CE.py": {
+          "git_blob": "2552bc5fc7863401039b3ceffc32a3ce257fcaf4",
+          "bytes": 827
+        },
+        "training/loss/contrastive_regularization.py": {
+          "git_blob": "4f2b65bb0cf2eca05210694e3698922343191a9f",
+          "bytes": 3232
+        },
+        "training/loss/cross_entropy_loss.py": {
+          "git_blob": "455f90bd5ce3b8576e438596928bb7a9e4ac07a3",
+          "bytes": 894
+        },
+        "training/loss/l1_loss.py": {
+          "git_blob": "4db12aae3cec995471bfc24b69ba563d49fa6e58",
+          "bytes": 471
+        },
+        "training/metrics/__init__.py": {
+          "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+          "bytes": 0
+        },
+        "training/metrics/base_metrics_class.py": {
+          "git_blob": "8cc0eb382e6eeec1df8dd847c94d29b14d7e14e9",
+          "bytes": 5939
+        },
+        "training/networks/__init__.py": {
+          "git_blob": "426da17e5d197f69902181e124bf45c5710d5e46",
+          "bytes": 215
+        },
+        "training/networks/base_backbone.py": {
+          "git_blob": "8cbb14439c4c8da93d12edd0f0af442d8f460698",
+          "bytes": 873
+        },
+        "training/networks/efficientnetb3.py": {
+          "git_blob": "aeddcd1706036772eb0cb4bd145e39c3acad7783",
+          "bytes": 2250
+        },
+        "training/networks/efficientnetb4.py": {
+          "git_blob": "235f5efb3e6c5eb2b225fa2e8d249ad4963f8d24",
+          "bytes": 2250
+        },
+        "training/networks/resnet34.py": {
+          "git_blob": "81b21f3f145f45db8ee9a07b22ba000a34cdf85a",
+          "bytes": 1488
+        },
+        "training/networks/resnet50.py": {
+          "git_blob": "e9520c2d7b925fbb18584555ecc141f732780905",
+          "bytes": 1569
+        },
+        "training/networks/xception.py": {
+          "git_blob": "4f29925bde37bd5dcf603ca866a2f529ca768639",
+          "bytes": 7635
+        },
+        "training/networks/xception_ffd.py": {
+          "git_blob": "5f23ddae50da43390081167dd199d31a1118c889",
+          "bytes": 8311
+        },
+        "training/pretrained/readme.md": {
+          "git_blob": "39330d288715e2c82a8d95b62fe739e8627eb1dd",
+          "bytes": 32
+        },
+        "training/pretrained/resnet34-b627a593.pth": {
+          "git_blob": "1628d37a176f8b7594d2f016d863252b67644ed4",
+          "bytes": 87319819
+        },
+        "training/pretrained/resnet50-19c8e357.pth": {
+          "git_blob": "7e6d8883d6ce621f4f0562d077f9d72c40e22335",
+          "bytes": 102502400
+        },
+        "training/pretrained/xception-b5690688.pth": {
+          "git_blob": "e9d2ee3df2473c79030c223fba85d30fd0c2c21d",
+          "bytes": 91674713
+        },
+        "training/requirements.txt": {
+          "git_blob": "f403cf7b924c2da92f1ec99ab711695d22f4361a",
+          "bytes": 1002
+        },
+        "training/sam.py": {
+          "git_blob": "df9bcb7d97791f2f3036c2b173b12f8c572d0d80",
+          "bytes": 2484
+        },
+        "training/test.py": {
+          "git_blob": "c3c5e73365e0804468f5e874798ce11dc15ba526",
+          "bytes": 4206
+        },
+        "training/train.py": {
+          "git_blob": "50a364ac9de48d95151432721381755dc31d6ff0",
+          "bytes": 13584
+        },
+        "training/train_noSAM.py": {
+          "git_blob": "bc0194012373a56c1ce5a4a254e22008e7a1c6f6",
+          "bytes": 12557
+        },
+        "training/transform.py": {
+          "git_blob": "bf303eef3d65b4ccd83ce0e71c1eb11590c5a046",
+          "bytes": 1600
+        },
+        "training/utils/bypass_bn.py": {
+          "git_blob": "76e73a134efe5423cdf4bac2fa3277fcc9680eee",
+          "bytes": 522
+        },
+        "training/utils/metrics.py": {
+          "git_blob": "b9c69c71b6be0e26822c313fb52b0893808be1ee",
+          "bytes": 5070
+        },
+        "training/utils/registry.py": {
+          "git_blob": "86e256c18d0ad522de79149a154f676fd0bdb414",
+          "bytes": 498
+        }
+      }
+    },
+    {
+      "id": "fairadapter",
+      "repository": "https://github.com/AppleDogDog/FairnessDetection.git",
+      "commit": "b81e1cc0205e79a0393513e72aa0208021452704",
+      "files": {
+        "README.md": {
+          "git_blob": "a61dd23dc06b67354989cceae9620909d70b5c71",
+          "bytes": 47
+        },
+        "data_rec.py": {
+          "git_blob": "dcea4b1a6ef2ec4425fe04b89814c78a81403cbc",
+          "bytes": 1453
+        },
+        "dataprocess.py": {
+          "git_blob": "68d47fa8b8208e51ebe3dd81005755547f60e957",
+          "bytes": 1657
+        },
+        "label.py": {
+          "git_blob": "2de5e448266c4532ae3f4fbdafdaf5725bffb0fb",
+          "bytes": 1485
+        },
+        "main.py": {
+          "git_blob": "3ad25eefbead1057d7c83a0964f2b3216ca89ed3",
+          "bytes": 5833
+        },
+        "my_dataprocess.py": {
+          "git_blob": "b92e6c1995fdd64f56f728948ef6664fe7101537",
+          "bytes": 2960
+        },
+        "prepare_datasets.py": {
+          "git_blob": "7dec14fe3984ecf1eea506ed275993f01e805777",
+          "bytes": 2862
+        },
+        "proxy_config.py": {
+          "git_blob": "176362f8d253659452abe973b66ae3555a562eae",
+          "bytes": 1063
+        },
+        "testdata.py": {
+          "git_blob": "500a089a5613fd7787ec23ecbece36c804b53f04",
+          "bytes": 5267
+        },
+        "training/auto_test.py": {
+          "git_blob": "384bcd9fb21f89760b643f21f62bcdd44d4a01cb",
+          "bytes": 7930
+        },
+        "training/clip/__init__.py": {
+          "git_blob": "dcc5619538c0f7c782508bdbd9587259d805e0d9",
+          "bytes": 20
+        },
+        "training/clip/__pycache__/__init__.cpython-38.pyc": {
+          "git_blob": "4806880df61f869b181b7d341876bf3193cc57e2",
+          "bytes": 172
+        },
+        "training/clip/__pycache__/clip.cpython-38.pyc": {
+          "git_blob": "5ec511fb63df55b99b8d6048a02c17b248793419",
+          "bytes": 8746
+        },
+        "training/clip/__pycache__/model.cpython-38.pyc": {
+          "git_blob": "38c1f4380c85028df83e974d36556a906fe20876",
+          "bytes": 15007
+        },
+        "training/clip/__pycache__/simple_tokenizer.cpython-38.pyc": {
+          "git_blob": "c8d032194392dbbaad7678765c1864746b6d4232",
+          "bytes": 5799
+        },
+        "training/clip/bpe_simple_vocab_16e6.txt.gz": {
+          "git_blob": "7b5088a527f720063f044eb928eee315f63b2fc0",
+          "bytes": 1356917
+        },
+        "training/clip/clip.py": {
+          "git_blob": "1117d57dd8da23f4af69d9858ddf4f97971d8041",
+          "bytes": 9465
+        },
+        "training/clip/model.py": {
+          "git_blob": "252b9c464d7b57709cc2bb99a91f150478e96948",
+          "bytes": 17887
+        },
+        "training/clip/simple_tokenizer.py": {
+          "git_blob": "0a66286b7d5019c6e221932a813768038f839c91",
+          "bytes": 4632
+        },
+        "training/dataset/__init__.py": {
+          "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+          "bytes": 0
+        },
+        "training/dataset/__pycache__/__init__.cpython-38.pyc": {
+          "git_blob": "2b1a948df171f04cb53d869bca83d4e08b5840ea",
+          "bytes": 154
+        },
+        "training/dataset/__pycache__/__init__.cpython-39.pyc": {
+          "git_blob": "9f0ca751a0d2ee631bfbf629ee89692c69c8345b",
+          "bytes": 156
+        },
+        "training/dataset/__pycache__/abstract_dataset.cpython-39.pyc": {
+          "git_blob": "2cbbce5a0bbe1826ad1ff6e0a90069b906336651",
+          "bytes": 11493
+        },
+        "training/dataset/__pycache__/albu.cpython-38.pyc": {
+          "git_blob": "91dabd1d0a5cf0b5eb96f17eb9edfb4aa4e5a9a9",
+          "bytes": 4354
+        },
+        "training/dataset/__pycache__/albu.cpython-39.pyc": {
+          "git_blob": "6230d3c40b1fb40911a11a7d4db1b26c96fc80d2",
+          "bytes": 4354
+        },
+        "training/dataset/__pycache__/datasets_train.cpython-39.pyc": {
+          "git_blob": "f179672be13f1443bba73f472285025e6a4fdabf",
+          "bytes": 1388
+        },
+        "training/dataset/__pycache__/datasets_train_robustness.cpython-39.pyc": {
+          "git_blob": "2f7afeeae2fb3546b5ddcc531266bb9c52718517",
+          "bytes": 6712
+        },
+        "training/dataset/__pycache__/datasets_train_test.cpython-39.pyc": {
+          "git_blob": "22e3df26f343502010e4d8694cd02f63c1305617",
+          "bytes": 4848
+        },
+        "training/dataset/__pycache__/ff_blend.cpython-39.pyc": {
+          "git_blob": "3dbe5d60c0291db611157ef80876e28956b57330",
+          "bytes": 12524
+        },
+        "training/dataset/__pycache__/fwa_blend.cpython-39.pyc": {
+          "git_blob": "8a02fa1330390dc17662d6521451c0d179be1e1b",
+          "bytes": 14959
+        },
+        "training/dataset/__pycache__/mydataset_rec.cpython-38.pyc": {
+          "git_blob": "4eaf42d463299b7570a1899f1be72fa9d0f17732",
+          "bytes": 6629
+        },
+        "training/dataset/__pycache__/mydataset_test.cpython-38.pyc": {
+          "git_blob": "95d830ccff740d6d59b2e08dce41a3666d704adb",
+          "bytes": 1295
+        },
+        "training/dataset/__pycache__/mydataset_train.cpython-38.pyc": {
+          "git_blob": "64144f109fa647f91cd7309f0d3951e255b4591e",
+          "bytes": 6409
+        },
+        "training/dataset/__pycache__/mydataset_val.cpython-38.pyc": {
+          "git_blob": "f37c296239cbf07fddbbb3f11071c6b0b2fb1a2c",
+          "bytes": 4634
+        },
+        "training/dataset/__pycache__/pair_dataset.cpython-39.pyc": {
+          "git_blob": "99d07e4d8d7191c87da88de8d513c06b10e7a9b4",
+          "bytes": 3343
+        },
+        "training/dataset/__pycache__/second_dataset.cpython-39.pyc": {
+          "git_blob": "30aa9814ab9e70d988455132e0921578e45d40ce",
+          "bytes": 3395
+        },
+        "training/dataset/__pycache__/test_dataset.cpython-39.pyc": {
+          "git_blob": "9da36506b4fc563f05df051e8fecae159e40e371",
+          "bytes": 3099
+        },
+        "training/dataset/__pycache__/third_dataset.cpython-39.pyc": {
+          "git_blob": "27447a5d10418636a2280652b55cca34690e471b",
+          "bytes": 3817
+        },
+        "training/dataset/__pycache__/third_dataset_aug.cpython-38.pyc": {
+          "git_blob": "2e3fee8faa000ba9603f11311e2420171d4b078d",
+          "bytes": 5364
+        },
+        "training/dataset/__pycache__/third_dataset_aug.cpython-39.pyc": {
+          "git_blob": "adfce686460f540f6b6de889ac886447aadf556f",
+          "bytes": 5938
+        },
+        "training/dataset/abstract_dataset.py": {
+          "git_blob": "a9e5ed6628aedd587c35f0c2b2b25b5e414ff49f",
+          "bytes": 10128
+        },
+        "training/dataset/albu.py": {
+          "git_blob": "931a1caf95543b5bb73811e718d25d00c9c073e1",
+          "bytes": 3957
+        },
+        "training/dataset/datasets_train.py": {
+          "git_blob": "147e8af6415ffd8fefdb4620baa4c4098d4ca74c",
+          "bytes": 1030
+        },
+        "training/dataset/datasets_train_robustness.py": {
+          "git_blob": "e98fd4510be0efd0ba56295e0d3ff207bdad5d32",
+          "bytes": 6668
+        },
+        "training/dataset/datasets_train_test.py": {
+          "git_blob": "a61960d812c9304844af318497d0e43b3a8710d2",
+          "bytes": 11179
+        },
+        "training/dataset/mydataset_rec.py": {
+          "git_blob": "2f62e87f439f054e3b9246a698ec0d7419c7612f",
+          "bytes": 10563
+        },
+        "training/dataset/mydataset_test.py": {
+          "git_blob": "d46111820be9e0305698f4a5bd77f75503380711",
+          "bytes": 916
+        },
+        "training/dataset/mydataset_train.py": {
+          "git_blob": "357d6c975b569e12397eb114f5cee545e5b51c0b",
+          "bytes": 8404
+        },
+        "training/dataset/mydataset_val.py": {
+          "git_blob": "e4b416a752435fc20de75fde4e9a2119d8a85974",
+          "bytes": 5328
+        },
+        "training/dataset/pair_dataset.py": {
+          "git_blob": "20aa03eaa1cfe5c7c5e38d3414e9fab9399090de",
+          "bytes": 4166
+        },
+        "training/dataset/second_dataset.py": {
+          "git_blob": "20a076593cf93b0ad3d557c78d36ac88d7f6f957",
+          "bytes": 4490
+        },
+        "training/dataset/test_dataset.py": {
+          "git_blob": "74a433edf7ec81693c126272f23d70114ce669ea",
+          "bytes": 5482
+        },
+        "training/dataset/third_dataset.py": {
+          "git_blob": "89bc3f67505fae64ab67312ae347232b696048b9",
+          "bytes": 5024
+        },
+        "training/dataset/third_dataset_aug.py": {
+          "git_blob": "f3bb0ed0db79f4bb3c02b0fd45b95b74cc08802d",
+          "bytes": 8342
+        },
+        "training/dataset/utils/__pycache__/color_transfer.cpython-39.pyc": {
+          "git_blob": "b8db851d7aab4825ae890b8ef600776cacc03b67",
+          "bytes": 13131
+        },
+        "training/dataset/utils/__pycache__/face_align.cpython-39.pyc": {
+          "git_blob": "07371eac480ced2338b41b9d9972c15bee67d888",
+          "bytes": 3314
+        },
+        "training/dataset/utils/__pycache__/face_aug.cpython-39.pyc": {
+          "git_blob": "b0b79965aae97d9dfceb0bb251abc13f7f55e913",
+          "bytes": 2834
+        },
+        "training/dataset/utils/__pycache__/face_blend.cpython-39.pyc": {
+          "git_blob": "b3cecb8254301c72a4735afb9a040648daaea31a",
+          "bytes": 9146
+        },
+        "training/dataset/utils/__pycache__/faceswap.cpython-39.pyc": {
+          "git_blob": "5aa2291205227203a3c97cc0f7bf40aa33af6dcc",
+          "bytes": 7062
+        },
+        "training/dataset/utils/__pycache__/faceswap_utils.cpython-39.pyc": {
+          "git_blob": "d3dfaadb274793ec8743be675874387cf0b5913b",
+          "bytes": 1819
+        },
+        "training/dataset/utils/__pycache__/image_ae.cpython-39.pyc": {
+          "git_blob": "e1e0de14cb0df355a537ca084f9aace766af5651",
+          "bytes": 5134
+        },
+        "training/dataset/utils/__pycache__/umeyama.cpython-39.pyc": {
+          "git_blob": "14cc28b1a83ee9ff8df5b806b505eef9eb14ee13",
+          "bytes": 1743
+        },
+        "training/dataset/utils/__pycache__/warp.cpython-39.pyc": {
+          "git_blob": "0a05ac16ca6b3854dcdbe7b138b32cec81c9f796",
+          "bytes": 3551
+        },
+        "training/dataset/utils/color_transfer.py": {
+          "git_blob": "67065d247ea608e60ee7841b72617745b3b7701b",
+          "bytes": 18656
+        },
+        "training/dataset/utils/face_align.py": {
+          "git_blob": "e3adfbe32e5fb25ec677234da2da905b7f76faa4",
+          "bytes": 7167
+        },
+        "training/dataset/utils/face_aug.py": {
+          "git_blob": "3e116af4bcd3dc9fb1821652ae8d4afe5ce9e6de",
+          "bytes": 4151
+        },
+        "training/dataset/utils/face_blend.py": {
+          "git_blob": "e1761be708c24c996f5482c00b5b989fa2c54a5d",
+          "bytes": 13814
+        },
+        "training/dataset/utils/faceswap.py": {
+          "git_blob": "0dbcb1db91e3d12ab7b0cd82ab0950ef05ad2c82",
+          "bytes": 8252
+        },
+        "training/dataset/utils/faceswap_utils.py": {
+          "git_blob": "33b944a90b015a6f329d054285aa67e927b61b32",
+          "bytes": 2484
+        },
+        "training/dataset/utils/image_ae.py": {
+          "git_blob": "ee0e80701e3b0897a07430191c8ca618f5657a67",
+          "bytes": 4101
+        },
+        "training/dataset/utils/umeyama.py": {
+          "git_blob": "a83548491f16e5e740c1144b9e181fe1587fb5bc",
+          "bytes": 3552
+        },
+        "training/dataset/utils/warp.py": {
+          "git_blob": "dfa8f8f016cc18f3b235ad7fce74c5792be56a92",
+          "bytes": 4073
+        },
+        "training/detectors/__init__.py": {
+          "git_blob": "b7368c863f5778dba936dca830f1ffadb07e052f",
+          "bytes": 393
+        },
+        "training/detectors/__pycache__/__init__.cpython-38.pyc": {
+          "git_blob": "1104ddd9e8a7f9472c42fe21fbcb3aa6afcf4f11",
+          "bytes": 563
+        },
+        "training/detectors/__pycache__/__init__.cpython-39.pyc": {
+          "git_blob": "c69560e4ea6561f8ecefa79b58fbbaa253a5f70f",
+          "bytes": 1647
+        },
+        "training/detectors/__pycache__/attention_module.cpython-39.pyc": {
+          "git_blob": "3caa85ec967800c2c18aa21fcb4bd215467a052d",
+          "bytes": 3742
+        },
+        "training/detectors/__pycache__/base_detector.cpython-38.pyc": {
+          "git_blob": "ceccf3de6b5b3b002ea1caa30fa52b37552231e9",
+          "bytes": 2828
+        },
+        "training/detectors/__pycache__/base_detector.cpython-39.pyc": {
+          "git_blob": "3bf6f74db1f304dea84d99f7cc85c57a42734dfa",
+          "bytes": 2830
+        },
+        "training/detectors/__pycache__/clip_GCN.cpython-38.pyc": {
+          "git_blob": "adac02dfcf59618abd6e5202bb4376392820023e",
+          "bytes": 5812
+        },
+        "training/detectors/__pycache__/clip_vision_test.cpython-38.pyc": {
+          "git_blob": "9c83432e0657b8f2e2ce6e68b140d90601dd18bd",
+          "bytes": 6061
+        },
+        "training/detectors/__pycache__/my_model.cpython-38.pyc": {
+          "git_blob": "bef85cc4e1aa80f3de7d2b57f078ef0568d3b1a5",
+          "bytes": 9951
+        },
+        "training/detectors/__pycache__/my_model_loss.cpython-38.pyc": {
+          "git_blob": "eaa84a1d418413e5d465a3ea49267c58e59bba6d",
+          "bytes": 11213
+        },
+        "training/detectors/__pycache__/my_model_rec.cpython-38.pyc": {
+          "git_blob": "f76def6450c11408b031b0877d6f4a0f6636f394",
+          "bytes": 10200
+        },
+        "training/detectors/__pycache__/my_model_test.cpython-38.pyc": {
+          "git_blob": "bf3a32d9aaa4419446c426322c8911fd2a436ab9",
+          "bytes": 6887
+        },
+        "training/detectors/__pycache__/res50_detector.cpython-38.pyc": {
+          "git_blob": "eebe8b01f68a97a3737ecc187acb491ce514cc6f",
+          "bytes": 5206
+        },
+        "training/detectors/base_detector.py": {
+          "git_blob": "10e7d2c1ad5e7b1b2df92f36fcfe4e7404c01f9c",
+          "bytes": 2098
+        },
+        "training/detectors/clip_GCN.py": {
+          "git_blob": "49c1282c9a5a0b0f604970bcb549d5ceb6cd24b0",
+          "bytes": 6944
+        },
+        "training/detectors/clip_vision_test.py": {
+          "git_blob": "2bbf80903b43193799596c6a38d9efe5986e58bf",
+          "bytes": 6836
+        },
+        "training/detectors/my_model.py": {
+          "git_blob": "825cd55458a11d847e519735e6895e2a54db79b4",
+          "bytes": 11797
+        },
+        "training/detectors/my_model_loss.py": {
+          "git_blob": "3ba517a7f94bb355b89062afa92133e7d8157e1d",
+          "bytes": 14142
+        },
+        "training/detectors/my_model_rec.py": {
+          "git_blob": "b1b8df3617b00e1f8bb3e0c1e9e2afbdf42c69b2",
+          "bytes": 12493
+        },
+        "training/detectors/my_model_test.py": {
+          "git_blob": "a8e42c13d75f8884c7fd58eff674965a402c203e",
+          "bytes": 7511
+        },
+        "training/detectors/res50_detector.py": {
+          "git_blob": "e7ed8b6052458d4320d9803fbe43adc79bde77bf",
+          "bytes": 5596
+        },
+        "training/loss/__init__.py": {
+          "git_blob": "673b0dc5733bc347480a81a1df7ee15fbf497789",
+          "bytes": 697
+        },
+        "training/loss/__pycache__/__init__.cpython-38.pyc": {
+          "git_blob": "3c7d3397b12877f43ab3684c7e26c816f3acaf45",
+          "bytes": 995
+        },
+        "training/loss/__pycache__/__init__.cpython-39.pyc": {
+          "git_blob": "1dac045c27ed33466377809c124897546200fa6c",
+          "bytes": 966
+        },
+        "training/loss/__pycache__/abstract_loss_func.cpython-38.pyc": {
+          "git_blob": "0273ec88d5d6b3b3177acb620de7dd19b0d9fb86",
+          "bytes": 981
+        },
+        "training/loss/__pycache__/abstract_loss_func.cpython-39.pyc": {
+          "git_blob": "c4f3a47ec558f953cf382afa273fb772a36e7d85",
+          "bytes": 983
+        },
+        "training/loss/__pycache__/am_softmax.cpython-38.pyc": {
+          "git_blob": "9c61279515b01ce112b04086bf6cc0e1011574bc",
+          "bytes": 4768
+        },
+        "training/loss/__pycache__/am_softmax.cpython-39.pyc": {
+          "git_blob": "bedb80bf6b6a63c32acc2d3b4b0fb00d746eb44d",
+          "bytes": 4749
+        },
+        "training/loss/__pycache__/bal_loss.cpython-38.pyc": {
+          "git_blob": "b8027def01167f36b794f59adfcd3bce3c026fb0",
+          "bytes": 1542
+        },
+        "training/loss/__pycache__/bal_loss.cpython-39.pyc": {
+          "git_blob": "94ffbb6831047a43b97e1104d247b4c497269eee",
+          "bytes": 1526
+        },
+        "training/loss/__pycache__/bce_loss.cpython-38.pyc": {
+          "git_blob": "5c61c3dda3f057eef6b1a29780e4e79b14c3d03a",
+          "bytes": 1270
+        },
+        "training/loss/__pycache__/bce_loss.cpython-39.pyc": {
+          "git_blob": "eecb149b388d7286d6c34ce1b9888918c5c53dd7",
+          "bytes": 1201
+        },
+        "training/loss/__pycache__/capsule_loss.cpython-38.pyc": {
+          "git_blob": "e4beb105c6880c5d0c4453921efcf865e7b168c5",
+          "bytes": 1358
+        },
+        "training/loss/__pycache__/capsule_loss.cpython-39.pyc": {
+          "git_blob": "fecceb225767b01fa484ac3c07c55a0f72a471d0",
+          "bytes": 1360
+        },
+        "training/loss/__pycache__/consistency_loss.cpython-38.pyc": {
+          "git_blob": "c906bb25545c891ebbadf4986a0f5ed390496f2f",
+          "bytes": 2475
+        },
+        "training/loss/__pycache__/consistency_loss.cpython-39.pyc": {
+          "git_blob": "77a4656f34464a7682fdcd333e7f490531f2694b",
+          "bytes": 2477
+        },
+        "training/loss/__pycache__/contrastive_regularization.cpython-38.pyc": {
+          "git_blob": "b1a78c2ea28f8c672679669f5ffcffd1379e0362",
+          "bytes": 2863
+        },
+        "training/loss/__pycache__/contrastive_regularization.cpython-39.pyc": {
+          "git_blob": "16ccc7b991c67408e2b4085f1ec590edfa57713b",
+          "bytes": 2831
+        },
+        "training/loss/__pycache__/contrastive_regularization_dual.cpython-38.pyc": {
+          "git_blob": "24134ae7ba97baa145fa341ccb297a13108da30d",
+          "bytes": 2437
+        },
+        "training/loss/__pycache__/contrastive_regularization_dual.cpython-39.pyc": {
+          "git_blob": "e75662fdc9fc44b9d7fe2c9f2fe2416ff11e016d",
+          "bytes": 2421
+        },
+        "training/loss/__pycache__/cross_entropy_loss.cpython-38.pyc": {
+          "git_blob": "d68ea2802a185b5f2baf665010bd65ace901669d",
+          "bytes": 1255
+        },
+        "training/loss/__pycache__/cross_entropy_loss.cpython-39.pyc": {
+          "git_blob": "4d019d734545cf738a882677363336ea0b79132e",
+          "bytes": 1257
+        },
+        "training/loss/__pycache__/daw_fdd.cpython-38.pyc": {
+          "git_blob": "16671a733ec7c69c07fff004941dc1f09238a744",
+          "bytes": 1235
+        },
+        "training/loss/__pycache__/daw_fdd.cpython-39.pyc": {
+          "git_blob": "f1c3eb510b8df02352834ec8403ac8ed9a16397d",
+          "bytes": 1237
+        },
+        "training/loss/__pycache__/gcn_loss.cpython-38.pyc": {
+          "git_blob": "9148a42fb850a929d2d9c566153d9815526a40e6",
+          "bytes": 1594
+        },
+        "training/loss/__pycache__/id_loss.cpython-38.pyc": {
+          "git_blob": "fe08cf0a6d979063238492d0e5b0115a3a157aaf",
+          "bytes": 1012
+        },
+        "training/loss/__pycache__/id_loss.cpython-39.pyc": {
+          "git_blob": "c660131587d59a8dd161fb435423bda683a86aaf",
+          "bytes": 1014
+        },
+        "training/loss/__pycache__/l1_loss.cpython-38.pyc": {
+          "git_blob": "a5ee303d824ad468fdcca1b6d70ac0266be75817",
+          "bytes": 889
+        },
+        "training/loss/__pycache__/l1_loss.cpython-39.pyc": {
+          "git_blob": "136ba9cedff5601ef7c4a4c5ebafe908154c8f99",
+          "bytes": 891
+        },
+        "training/loss/__pycache__/label_smooth_loss.cpython-38.pyc": {
+          "git_blob": "1b9b4cdf9fcb523bfc9e5b25c395206f2aa938e9",
+          "bytes": 1201
+        },
+        "training/loss/__pycache__/label_smooth_loss.cpython-39.pyc": {
+          "git_blob": "f7630a19eb6b256770cd7f7e158d8b54c95c24e3",
+          "bytes": 1223
+        },
+        "training/loss/__pycache__/mi_loss.cpython-38.pyc": {
+          "git_blob": "d7b0f35f392b5dfc886043541fe7effca5894bb4",
+          "bytes": 1000
+        },
+        "training/loss/__pycache__/mi_loss.cpython-39.pyc": {
+          "git_blob": "f317b43ca4b4ee9b02fec6787a13d7207307c863",
+          "bytes": 1002
+        },
+        "training/loss/__pycache__/mis_js_loss.cpython-38.pyc": {
+          "git_blob": "44dcb20237ea00667210beb1bd3128209c760b23",
+          "bytes": 1065
+        },
+        "training/loss/__pycache__/mis_js_loss.cpython-39.pyc": {
+          "git_blob": "8c58e0dafcd9a951a3bdc4145354b38fd7d3b820",
+          "bytes": 1067
+        },
+        "training/loss/__pycache__/vgg_loss.cpython-38.pyc": {
+          "git_blob": "3576172cf3ae0a4191092a8f1df821b80204e72d",
+          "bytes": 7121
+        },
+        "training/loss/__pycache__/vgg_loss.cpython-39.pyc": {
+          "git_blob": "f0e72a7cddfe3b57dd8c8311d90c5f2c61d6c76b",
+          "bytes": 7127
+        },
+        "training/loss/abstract_loss_func.py": {
+          "git_blob": "9564b2bdd569c938b9113f06744c8d9da558015c",
+          "bytes": 496
+        },
+        "training/loss/am_softmax.py": {
+          "git_blob": "8a43a4287f7c036392c69c30e1a518a7710b41e1",
+          "bytes": 5868
+        },
+        "training/loss/bal_loss.py": {
+          "git_blob": "834fe48ff3fda96b88d01d7d35cf9d1e29ef1ba5",
+          "bytes": 1152
+        },
+        "training/loss/bce_loss.py": {
+          "git_blob": "06331dd0c8e6c5ac06fdfa7b6504386dace63542",
+          "bytes": 863
+        },
+        "training/loss/capsule_loss.py": {
+          "git_blob": "eac082dca7544c5e48da67fffe7d5402760114e7",
+          "bytes": 986
+        },
+        "training/loss/classNseg_loss.py": {
+          "git_blob": "0a0206e5a9462abadfd1316837d42f5ec765ae92",
+          "bytes": 2257
+        },
+        "training/loss/consistency_loss.py": {
+          "git_blob": "0bf6e7c5af9842896f43f57bc8621272d355e6f9",
+          "bytes": 1890
+        },
+        "training/loss/contrastive_regularization.py": {
+          "git_blob": "6444ff234a70517e76c0f54f56df85981a52efa7",
+          "bytes": 4240
+        },
+        "training/loss/contrastive_regularization_dual.py": {
+          "git_blob": "4494f624787173a57ad96625ec53107a55c8f037",
+          "bytes": 3328
+        },
+        "training/loss/cross_entropy_loss.py": {
+          "git_blob": "7925f253ebb839b487635c7ab750abc3c87a29ab",
+          "bytes": 922
+        },
+        "training/loss/daw_fdd.py": {
+          "git_blob": "917dd5fb8b065f2b6dc6c31743f693a554524a7d",
+          "bytes": 977
+        },
+        "training/loss/det_loss.py": {
+          "git_blob": "175a4a868f371f1faf4c1db2f88830aa1fcb9e74",
+          "bytes": 6810
+        },
+        "training/loss/gcn_loss.py": {
+          "git_blob": "e72aee479471ecc9e42506b92947c3f12cd25015",
+          "bytes": 1389
+        },
+        "training/loss/id_loss.py": {
+          "git_blob": "25fafe3818138505ad0545486a2a9322d84cd4c0",
+          "bytes": 571
+        },
+        "training/loss/l1_loss.py": {
+          "git_blob": "da74e53d9592fcc25bc08b99aea5888831a825e0",
+          "bytes": 489
+        },
+        "training/loss/label_smooth_loss.py": {
+          "git_blob": "e5ff542b6b744f5bd6d250b45407d1ec0221ceb5",
+          "bytes": 849
+        },
+        "training/loss/mi_loss.py": {
+          "git_blob": "694ae16b16fb0be350440dbd61a97cb1deda95e0",
+          "bytes": 792
+        },
+        "training/loss/mis_js_loss.py": {
+          "git_blob": "f5260c7d62c698397dca1e32b321a585d8da3f45",
+          "bytes": 615
+        },
+        "training/loss/vgg_loss.py": {
+          "git_blob": "80e4a219ccdc3268c4db1e40f16d4312570a4519",
+          "bytes": 6471
+        },
+        "training/metrics/__init__.py": {
+          "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+          "bytes": 0
+        },
+        "training/metrics/__pycache__/__init__.cpython-38.pyc": {
+          "git_blob": "4a46da70fd343be093bf666ee5e195908e18a3f3",
+          "bytes": 154
+        },
+        "training/metrics/__pycache__/__init__.cpython-39.pyc": {
+          "git_blob": "cf489916db2cd4fa36c454ae908095f2987da591",
+          "bytes": 156
+        },
+        "training/metrics/__pycache__/base_metrics_class.cpython-38.pyc": {
+          "git_blob": "f1745454f410ec147d6742daab20178e769285d6",
+          "bytes": 6187
+        },
+        "training/metrics/__pycache__/base_metrics_class.cpython-39.pyc": {
+          "git_blob": "1eb5a227dd3b22511a56b843d906ac0efebce618",
+          "bytes": 6150
+        },
+        "training/metrics/base_metrics_class.py": {
+          "git_blob": "df5d174bb8001b71971a6e2be52a8fc58f230ff0",
+          "bytes": 6186
+        },
+        "training/new_metrics.py": {
+          "git_blob": "0d9a9198b5c69400d2b91ae0613fdafde4919637",
+          "bytes": 15014
+        },
+        "training/registry.py": {
+          "git_blob": "dcbcf02de02cc2dbfd40391af89d3ffdfd870038",
+          "bytes": 518
+        },
+        "training/test_clipFairness.py": {
+          "git_blob": "0332d29869772c27ba3c87e622c94bd2275fa719",
+          "bytes": 6855
+        },
+        "training/test_clipFairness_loss.py": {
+          "git_blob": "b24d29f8fa98d941ffeda0376361cb6358c13b25",
+          "bytes": 7418
+        },
+        "training/test_clip_adapter.py": {
+          "git_blob": "0e9760d2ee74f9c842a5337054db07e4e27c5b2b",
+          "bytes": 6881
+        },
+        "training/test_clip_vision.py": {
+          "git_blob": "9dd223046e57a2570c6f6b16289997b25b69934f",
+          "bytes": 6869
+        },
+        "training/test_fairnessLoss_check.py": {
+          "git_blob": "0c2b35b7dc15347f5816c15dea308c3b271707c6",
+          "bytes": 13941
+        },
+        "training/train_clipFairness.py": {
+          "git_blob": "78470aa83d6cd1772fc1ab68509d2dd6178d1b29",
+          "bytes": 15656
+        },
+        "training/train_clip_GCN.py": {
+          "git_blob": "5c32b9dc036cd76b0aad1b715b684881795c6874",
+          "bytes": 14415
+        },
+        "training/train_clip_batchsize.py": {
+          "git_blob": "7983f07175a88657cdef8ffcf84fb8a477343888",
+          "bytes": 17049
+        },
+        "training/train_clip_rec.py": {
+          "git_blob": "9a3190e7cd19d006357be1228fb3b71b7d2f1f10",
+          "bytes": 15858
+        },
+        "training/train_clip_test.py": {
+          "git_blob": "fbd5c32ebaf62066637628e6eb277a5a7251e1f1",
+          "bytes": 13660
+        },
+        "training/train_clip_vision.py": {
+          "git_blob": "169708f397f0b3bbcbc799bf5fb63a764e23ba6d",
+          "bytes": 14370
+        },
+        "training/train_clipfairness_loss.py": {
+          "git_blob": "8d1bba1d7c3fdbdd04696480f41e23bf4bc0e70a",
+          "bytes": 16700
+        },
+        "training/train_res50.py": {
+          "git_blob": "5c4561f08b0ac59fe8d47d1ea171b01129dd2aa1",
+          "bytes": 14815
+        },
+        "training/utils/__init__.py": {
+          "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+          "bytes": 0
+        },
+        "training/utils/__pycache__/__init__.cpython-38.pyc": {
+          "git_blob": "edb39a4ba7647ef1ebcd49dcb5463f1db163b224",
+          "bytes": 152
+        },
+        "training/utils/__pycache__/bypass_bn.cpython-39.pyc": {
+          "git_blob": "3a54f92608f2eff568da20653ebc78ab08007688",
+          "bytes": 937
+        },
+        "training/utils/__pycache__/registry.cpython-38.pyc": {
+          "git_blob": "e5d732d1949e447eae1ecedc562fedb01711c792",
+          "bytes": 1009
+        },
+        "training/utils/__pycache__/registry.cpython-39.pyc": {
+          "git_blob": "6341d0b3b3df45922672037e53f7163347b95827",
+          "bytes": 1011
+        },
+        "training/utils/__pycache__/resnet50.cpython-38.pyc": {
+          "git_blob": "9842a29432c0ac01b6cc2242395bbcb411c32269",
+          "bytes": 1913
+        },
+        "training/utils/__pycache__/utils.cpython-38.pyc": {
+          "git_blob": "f329d0add0ff5af31551de88860a6377c008c8e8",
+          "bytes": 1153
+        },
+        "training/utils/addnoisy.py": {
+          "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+          "bytes": 0
+        },
+        "training/utils/bypass_bn.py": {
+          "git_blob": "e39f686d19efa0a78a9a660b3b3c9a0af26367ad",
+          "bytes": 541
+        },
+        "training/utils/clip_adapter.py": {
+          "git_blob": "440e9780048e38327b7ab5d9436e472807535ac5",
+          "bytes": 3902
+        },
+        "training/utils/clip_models.py": {
+          "git_blob": "657fed88ce629def857f5f160f9b1272179d8b5e",
+          "bytes": 621
+        },
+        "training/utils/metrics.py": {
+          "git_blob": "fa557e8a3944dffbf291748632dce310a019579d",
+          "bytes": 5239
+        },
+        "training/utils/registry.py": {
+          "git_blob": "dcbcf02de02cc2dbfd40391af89d3ffdfd870038",
+          "bytes": 518
+        },
+        "training/utils/resnet50.py": {
+          "git_blob": "25789857fa90de6b73378f837dbc5e27c34ab79e",
+          "bytes": 2032
+        },
+        "training/utils/utils.py": {
+          "git_blob": "c5d24ca1fcb770b04648f2ccdd504d901ce627f4",
+          "bytes": 971
+        },
+        "training/utils1.py": {
+          "git_blob": "8dca95c919eb6be09f2922275b297bfacf116266",
+          "bytes": 1964
+        },
+        "valdata.py": {
+          "git_blob": "b5694461618c2c0c9fee9a8046cd2a5733046d14",
+          "bytes": 1314
+        },
+        "visualize_tsne.py": {
+          "git_blob": "377b2356ed92a3648a222ae9e6eaac684fcdc2e9",
+          "bytes": 1620
+        }
+      }
+    }
+  ],
+  "dag_daw_original_landing_repo": "https://github.com/littlejuyan/DF_Fairness",
+  "landing_commit": "f3587861ce20ea91fb84e2bc5432e8209a6c25f4",
+  "landing_only_readme": true,
+  "rsef_status": "NO_VERIFIED_SOURCE; do not substitute another method"
+}

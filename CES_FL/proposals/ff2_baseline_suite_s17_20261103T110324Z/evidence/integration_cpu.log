@@ -1,0 +1,8 @@
+/Users/hardiksharma/Downloads/fairness_cvpr/CFES-BeatDing-plain-head-20261103T101418Z/CLIPFAIR/cfes/clipfair_losses.py:83: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  stats = {"daw_lambda_outer": lam_o, "daw_bce_mean": float(loss_entropy.mean()),
+{"method": "daw", "epoch": 1, "val_auc": 0.375, "elapsed_seconds": 9.664457166}
+{"method": "daw", "epoch": 2, "val_auc": 0.40625, "elapsed_seconds": 17.742293500000002}
+{"method": "daw", "epoch": 1, "val_auc": 0.375, "elapsed_seconds": 7.073791542000002}
+{"method": "daw", "epoch": 2, "val_auc": 0.40625, "elapsed_seconds": 13.598424834000006}
+{"status": "PASS", "source_hashes": {"CES_FL/src/ff2_fairness_baselines.py": "f14b818cad66c92a07f09e0c06767a2980a0b8644e8bb74b33710e142b971904", "CES_FL/src/ces_fl_head_ablation.py": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177", "CLIPFAIR/cfes/clipfair_losses.py": "daf5cb7538c76fe81abb1af5b35fe851b5a603ca8f812614e4f9673bfd36def3", "CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/upstreams.lock.json": "21b288b77b73b87c6c7536dc1b859a5274acfcda9703a1ae59ca8de3f9f3c69e"}, "device": "cpu", "fixture_only": true, "torch": "2.8.0", "tests": ["native DAW two-epoch training", "mid-epoch stop/resume bitwise identical", "independent selected replay", "original exposure", "frozen selected calibration"], "scientific_results": false, "test_read": false}

@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+#PBS -N ff2_native
+#PBS -q gpu
+#PBS -l select=1:ncpus=8:ngpus=1:mem=64gb
+#PBS -l walltime=18:00:00
+#PBS -j oe
+set -Eeuo pipefail
+: "${FF2_SOURCE:?Immutable detached source checkout}"
+: "${FF2_METHOD:?bce, dag or daw}"
+: "${FF2_WORK:?Shared private run root}"
+: "${FF2_SOURCES:?Pinned source-only upstream root}"
+: "${FF2_LEDGER:?Shared additional72h ledger path}"
+: "${FF2_ALLOCATION_RECORD:?Job-specific verified ownership/binding JSON}"
+: "${CUDA_VISIBLE_DEVICES:?Use the actual allocated GPU binding; never guess}"
+FF2_PY=${FF2_PY:-/home/sachin.chaudhary/.conda/envs/aiface/bin/python}
+FF2_PROPOSAL="$FF2_SOURCE/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z"
+FF2_EXTRA=()
+if [[ ${FF2_RESUME:-0} = 1 ]]; then FF2_EXTRA+=(--resume); fi
+exec "$FF2_PY" -u "$FF2_PROPOSAL/run_one.py" --method "$FF2_METHOD" \
+  --work-root "$FF2_WORK" --sources "$FF2_SOURCES" --ledger "$FF2_LEDGER" \
+  --allocation-record "$FF2_ALLOCATION_RECORD" --session-id "${PBS_JOBID:?PBS allocation required}" \
+  --hours 18 "${FF2_EXTRA[@]}"

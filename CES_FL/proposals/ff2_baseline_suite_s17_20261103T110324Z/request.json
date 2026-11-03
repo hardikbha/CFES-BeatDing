@@ -1,0 +1,47 @@
+{
+  "request_id": "ff2_baseline_suite_s17_20261103T110324Z",
+  "created_utc": "2026-11-03T11:33:27.003004+00:00",
+  "base_commit": "0d699d241e27f758ec0990fbe58493a15bdb0ff9",
+  "branch": "experiment/ff2-baseline-suite-s17-20261103T110324Z",
+  "authorization": "User requested publishing remaining FF2 baselines and approved up to72 additional GPU-hours with2\u20133 allocated GPUs",
+  "max_additional_gpu_hours": 72,
+  "max_concurrent_gpus": 3,
+  "initial_session_hours_per_gpu": 18,
+  "initial_methods": [
+    "bce",
+    "dag",
+    "daw"
+  ],
+  "conditional_methods": [
+    "pg_fdd",
+    "fairadapter"
+  ],
+  "blocked_source": [
+    "rsef_fdd"
+  ],
+  "hypothesis": "DAG/DAW objectives versus a matched native BCE control on the fixed public FF2 split",
+  "changed_factor_within_first_wave": "objective only",
+  "configs": {
+    "configs/bce.json": "4c820dc5b4eb50d024c93f2aa2bda8d176c80a40086691ca90a889b937ad83bd",
+    "configs/dag.json": "9b34ea029575851f2bb8423af185b387d4a87ec2847adfdcc326c3fd27587f6f",
+    "configs/daw.json": "56c622b41d07205a829d39b39ef9e343245cab6128947fa975c51ee3f8378c6d"
+  },
+  "test_inference_authorized": false,
+  "new_ding_training": false,
+  "new_generation": false,
+  "real_training_launched": false,
+  "cuda_checks": "PENDING_OPERATOR",
+  "real_input_checks": "PENDING_OPERATOR",
+  "publication_target": "https://github.com/hardiksharma6555/CFES-BeatDing",
+  "upstream_push_permission": false,
+  "dependencies": "README.md and REMAINING_METHODS.md",
+  "required_checks": [
+    "source/input integrity",
+    "official loss/gradient parity",
+    "native CPU/CUDA lifecycle and resume",
+    "real TRAIN backward",
+    "actual allocation and measured budget",
+    "selected validation replay",
+    "aggregate metrics and uncertainty"
+  ]
+}
