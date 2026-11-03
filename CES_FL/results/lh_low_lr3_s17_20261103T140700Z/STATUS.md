@@ -1,6 +1,6 @@
 # L_H lower LR, seed17, three epochs
 
-2026-11-03T15:01:37.026458+00:00
+2026-11-03T15:06:41.365063+00:00
 
 State: RECORDED_PROGRESS; 2/3epochs recorded. Scheduler observations are in STATUS.json.
 
@@ -15,4 +15,4 @@ Only head_lr1e-4,encoder_lr1e-6,epochs3 differ from original L_H. Same P50/fresh
 
 All axis metrics, group support and exposure remain in the complete saved histories. Interim epochs are not the final selected model. No automatic extension or additional candidate.
 
-Original ledger: 15.810575/24GPUh used. This allocation cap1.5GPUh; CPU checks/reports do not hold a GPU.
+Original ledger: 15.893953/24GPUh used. This allocation cap1.5GPUh; CPU checks/reports do not hold a GPU.
