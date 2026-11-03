@@ -1,0 +1,10 @@
+{
+  "command": [
+    "qmove",
+    "gpu",
+    "45350.mgmt01"
+  ],
+  "returncode": 0,
+  "observed_management_utc": "2026-11-03T17:17:16.144164+00:00",
+  "reason": "workq max_user_run=2 already occupied; gpu queue has one running job. Only this new held job moved; same host/ngpus/CPUs/memory/walltime, no existing job modified."
+}
