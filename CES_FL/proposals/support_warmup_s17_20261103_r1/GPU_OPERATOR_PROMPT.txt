@@ -1,0 +1,41 @@
+# Operator handoff: two fixed CES-FL seed-17 pilots
+
+This proposal authorizes CES-FL only on the fixed FF++ TRAIN/validation inputs. Do not execute Ding models, classification/SFD/GDA, corrected variants, new FairForge-2 work, TEST inference, generation, a third configuration, or another training seed. Preserve existing jobs and all earlier outputs. Native --arm D means our CES-FL all-objective arm.
+
+Scientific commit: 8d5f0996a3f1cc02fbeaff9d25c1d95f714e8e77
+Scientific SHA256: 0eeafd838da3ca158336dcfe3b8195842dd15bc9fecd67ebbaf2ea03ba3c2680
+Immutable execution source: /home/sachin.chaudhary/ces_fl_sources/cesfl-support-warmup-execution-20261103
+Run root: /home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1
+Branch: experiment/cesfl-support-warmup-s17-20261103
+Resource executor commit: ec4305731c4498ff51fbec725dc3810e07dfd996
+Observer / CPU-analysis helpers: c2f09d349fddeb8b2a2c6d1c4b02e3fc6d4e5ba7
+
+Both training arms ALREADY LAUNCHED. Inspect actual processes and current LIVE_STATE.json before any action. Do not duplicate the following launch commands. The commands document actual launches, not an instruction to relaunch:
+
+ssh gpu01 /home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/runtime/run_support_warmup_v2.py --task train --candidate E_support
+ssh gpu02 /home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/runtime/run_support_warmup_v2.py --task train --candidate F_support_ramp3
+
+These were detached with separate preserved controller logs. E controller3372062 / child3372134, physical gpu01:4; F controller347471 / child347559, physical gpu02:5. Actual UUIDs are in launch receipts, CUDA logs and ledger. Explicit user-authorized pool-v2 shared leases are used; no PBS or exclusive-GPU allocation is claimed. Nodes lack git: frozen operator verifies detached HEAD and exact source bytes plus management clean-checkout receipt. The failed pre-GPU git attempt remains preserved.
+
+Fresh gates all PASS: CPU13 legacy+9 new tests, full CPU/CUDA synthetic smoke, full TRAIN/VAL decoding/hash/overlap preflights for BOTH configs, all88 representative FF++ procedural cases freshly AI-reviewed (F checked byte-identical), new source/config-bound native qualifications, CUDA real-input backward for both, TRAIN-only gradient diagnostics, and frozen CES-FL A/C/D VAL replay. See evidence/ and ACTUAL_LAUNCH.md. No human approval or biological/real-forgery validity is implied.
+
+E config file SHA: 0b571d0acd5e8399ee35bf406c61165adf0a18e79b91ef02d27d36fd5f85defd
+E semantic digest: e93f752d9555bc1d891777177500ab6b4013cdac2b3133d33d6bb306992c8848
+F config file SHA: 215dda21719a48b74d6f59af6c1d03376f6096daa7b2124e3ca0e513cea18d27
+F semantic digest: ab29b3b1077152801133eb98815602ec878b84d6c37207adb3f7b852d3fc4093
+
+Both configs and guards were fixed BEFORE training. Both planned10epochs,2380 original minibatches/epoch. Same initialization, all original BCE coverage, auxiliary plan, preprocessing, optimizer, selected-highest-VAL-AUC rule and finite-sample global validation-real FPR10% calibration. E changes the error-control package; F changes only alignment ramp versus E. Keep all supported axis regressions visible. Never switch to a fairness-selected epoch.
+
+Budget: original24 TOTAL GPU-hour ledger, including both GPUs and all new-study GPU checks:
+/home/sachin.chaudhary/ces_fl_runs/forensic_response_c332fd34_20261103/budget_ledger.json
+10.058886h were used before this proposal. New smoke/checks consumed0.083559h; training is charged continuously. Conservative reservation4.5h each. Do not reset or expand budget. Native epoch-boundary allowance2h can be resumed by the existing worker to cumulative3/4h ONLY for the same ten-epoch run/source/config/qualification/output. Failed runs are not retried automatically. For any incompatible checkpoint, stop dependent stages and report rather than transplant a receipt.
+
+Logs:
+<run root>/E_support/train_initial.log
+<run root>/F_support_ramp3/train_initial.log
+<run root>/support_E_support_controller.log
+<run root>/support_F_support_ramp3_controller.log
+
+Management CPU-only analysis execution controller3543499 waits BOTH native10epoch DONE/RUN_VERIFIED and selected checkpoint hashes before one PBS workq CPU job (4CPUs,16GB,noGPU). It performs1000 paired recorded-contributor VAL bootstrap replicates and exact decision_protocol.json guards, then stops. It cannot train/promote or read TEST. Read-only publisher3543851 publishes aggregate state every10minutes for up to24h, stopping after decisions; it cannot submit jobs or approve images. Actual helper hashes/PIDs/logs: <run root>/AUTOMATION_LAUNCH.json. Refresh processes before relying on these PIDs.
+
+After completion: verify native checkpoint/config/source provenance and all original/intervention exposure, review selected VAL metrics on every axis, fixed0.5 diagnostics, paired intervals, usable replicate fraction and compute. Continue only under the prospective numerical and uncertainty guards. Otherwise report revise/reject and stop expansion. A final schedule is NOT automatically authorized by a favorable selected metric; record exact protocol/cost first. No TEST command is attached.
