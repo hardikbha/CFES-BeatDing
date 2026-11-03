@@ -65,13 +65,13 @@ def main():
    for r in rows:content.append('| '+' | '.join([r['block'],r['method'],r['backbone']]+[fmt(v) for v in r['values_pct']])+' |')
    (out/f'TABLE_{table}_{view}.md').write_text('\n'.join(content)+'\n')
    with (out/f'TABLE_{table}_{view}.csv').open('x',newline='') as f:
-    w=csv.writer(f);w.writerow(headers)
+    w=csv.writer(f,lineterminator='\n');w.writerow(headers)
     for r in rows:w.writerow([r['block'],r['method'],r['backbone']]+r['values_pct'])
    def esc(v):return str(v).replace('_',r'\_').replace('%',r'\%').replace('&',r'\&').replace('↓',r'$\downarrow$').replace('↑',r'$\uparrow$')
    tex+=['\\begin{table*}[t]','\\centering',f'\\caption{{Table {table}: {esc(view)}. Published references and CES-FL seed17; protocols differ.}}',r'\resizebox{\textwidth}{!}{%',r'\begin{tabular}{lll'+'r'*(len(headers)-3)+'}',r'\toprule',' & '.join(map(esc,headers))+r' \\',r'\midrule']
    for r in rows:tex.append(' & '.join(map(esc,[r['block'],r['method'],r['backbone']]+[fmt(v) for v in r['values_pct']]))+r' \\')
    tex += [r'\bottomrule',r'\end{tabular}}',r'\end{table*}','']
- (out/'TABLES_1_2.tex').write_text('\n'.join(tex)+'\n')
+ (out/'TABLES_1_2.tex').write_text('\n'.join(tex).rstrip()+'\n')
  lines=['# Complete published baseline rows plus CES-FL L_A/L_H','',note,'',
   '[Table1 fixed0.5](TABLE_1_FIXED05.md) · [Table2 fixed0.5](TABLE_2_FIXED05.md) · [Table1 source-VAL10%](TABLE_1_SOURCE_VAL10.md) · [Table2 source-VAL10%](TABLE_2_SOURCE_VAL10.md) · [LaTeX](TABLES_1_2.tex)','',
   'Every table includes all seven published baseline/method rows in each block followed by L_A and L_H. Historical local Ding experiments and unimplemented rows are deliberately left in the original separate report; these files compare published results with the current two models.','',
