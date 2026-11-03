@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-03T14:03:05.262097+00:00",
+  "observed_management_utc": "2026-11-03T14:13:10.698380+00:00",
   "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
   "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
   "budget": {
@@ -8,7 +8,7 @@
     "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
     "initial_total_gpu_hours": 24,
     "consumed_gpu_hours": 15.364391274511194,
-    "reserved_gpu_hours": 0,
+    "reserved_gpu_hours": 1.5,
     "gpu_sessions": [
       {
         "id": "ffpp_checks_primary",
@@ -465,6 +465,18 @@
         "accounting": "max(0, completed PBS walltime minus original task-held seconds)",
         "original_session": "lh_tables_ee73f2f_eval",
         "original_receipt_preserved": true
+      },
+      {
+        "id": "lh_low_lr3_s17_20261103",
+        "ngpus": 1,
+        "reserved_gpu_hours": 1.5,
+        "elapsed_seconds": 0.0,
+        "state": "QUEUED",
+        "scientific_commit": "29ce92ee8631c9c11ee3649d4f5a1110ecba29fd",
+        "scientific_source_sha256": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
+        "route": "PBS_ngpus1_plus_prior_explicit_authorized_pool_v2_UUID",
+        "planned_epochs": 3,
+        "no_automatic_extension": true
       }
     ],
     "prior_study_ledger": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_9030dd77_20261103/budget_ledger.json",
