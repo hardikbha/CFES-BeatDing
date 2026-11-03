@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""CES-FL forensic response v1: standalone research experiment, 3 November 2026.
+"""CES-FL forensic response v2: support-aware optimization, 3 November 2026.
 
 Dependencies: Python>=3.10, torch, numpy, Pillow, scikit-learn. No project
 imports, downloads, diffusion models, automatic cluster jobs or test inference.
@@ -37,7 +37,7 @@ from torch import nn
 import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
 
-VERSION = 'CESFL_FORENSIC_RESPONSE_v1'
+VERSION = 'CESFL_FORENSIC_RESPONSE_v2_SUPPORT'
 AXES = ('gender', 'race', 'age_bin', 'skin_bin', 'gender_race', 'ids8')
 ARMS = ('A', 'B', 'C', 'D')
 OPERATORS = ('local_warp', 'local_resample')
@@ -562,11 +562,17 @@ def auxiliary(rows, active, c, event, epoch):
     op, strength = OPERATORS[case // len(STRENGTHS)], STRENGTHS[case % len(STRENGTHS)]
     rng = random.Random(seed_for(c['seed'], epoch, event, 'aux'))
     indices, labels, group_codes, originals, sham, treated = [], [], [], [], [], []
+    support_fraction = []
     group_names = list(groups)
     for gi, name in enumerate(group_names):
+        cell_support = []
         for label in (0, 1):
             pool = groups[name][label]
             chosen = rng.sample(pool, n) if len(pool) >= n else rng.choices(pool, k=n)
+            # TRAIN records only. This measures recorded contributor-tuple
+            # diversity, not independent biological identities or components.
+            tokens = {recorded_contributor(rows[ix]) for ix in chosen}
+            cell_support.append(len(tokens) / len(chosen))
             for ix in chosen:
                 x = load_pixels(rows[ix], c['size']); originals.append(normalize(x))
                 indices.append(ix); labels.append(label); group_codes.append(gi)
@@ -574,12 +580,52 @@ def auxiliary(rows, active, c, event, epoch):
                     # Same nominal operator, strength and nuisance/geometry draw across groups.
                     s, t, _, _ = intervention(x, op, strength, seed_for(c['seed'], epoch, event, 'matched-nuisance'))
                     sham.append(normalize(s)); treated.append(normalize(t))
+        support_fraction.append(cell_support)
     counts = torch.tensor([[len(groups[g][label]) for label in (0, 1)] for g in group_names], dtype=torch.float32)
     priors = counts / counts.sum(0)
     return {'x': torch.stack(originals), 's': torch.stack(sham), 't': torch.stack(treated),
             'y': torch.tensor(labels), 'group': torch.tensor(group_codes), 'priors': priors,
+            'support_fraction': torch.tensor(support_fraction, dtype=torch.float32),
             'axis': axis, 'groups': group_names, 'indices': indices, 'case': case,
             'operator': op, 'strength': strength}
+
+
+def recorded_contributor(row):
+    identity = tuple(sorted(ids(row.get('identity_ids', ''))))
+    source = tuple(sorted(ids(row.get('source_ids', ''))))
+    return (identity, source) if identity or source else ('image-fallback', row['image'])
+
+
+def support_upper_error(z, y, group, priors, support_fraction, threshold, temperature):
+    """One-sided soft error control; better groups are never pushed toward error.
+
+    The reference is the detached TRAIN-prior-weighted auxiliary estimate.
+    U/n discounts repeated recorded contributors in each TRAIN-only cell.
+    Factor2 matches the legacy value for uniform priors/full support, since
+    sum positive deviations is half the sum absolute deviations in that case.
+    Small balanced batches and soft/hard tail mismatch remain limitations.
+    """
+    if support_fraction.shape != priors.shape:
+        raise ValueError('Support/prior alignment mismatch')
+    rho = support_fraction.to(device=z.device, dtype=torch.float32)
+    if not torch.isfinite(rho).all() or (rho <= 0).any() or (rho > 1).any():
+        raise ValueError('Invalid TRAIN contributor support fraction')
+    p = torch.sigmoid((z.float() - float(threshold)) / temperature)
+    means = []
+    for g in range(len(priors)):
+        real, fake = (group == g) & (y == 0), (group == g) & (y == 1)
+        if not real.any() or not fake.any():
+            raise ValueError('Missing auxiliary class/group support')
+        means.append(torch.stack((p[real].mean(), (1-p[fake]).mean())))
+    errors = torch.stack(means)
+    reference = (errors * priors.to(z.device)).sum(0).detach()
+    return 2 * (rho * F.relu(errors-reference)).mean()
+
+
+def alignment_multiplier(epoch, warmup_epochs):
+    if type(epoch) is not int or epoch < 0 or type(warmup_epochs) is not int or warmup_epochs < 0:
+        raise ValueError('Invalid alignment schedule')
+    return 1. if warmup_epochs == 0 else min(1., (epoch+1)/warmup_epochs)
 
 
 def soft_error_disparity(z, y, group, priors, threshold, temperature):
@@ -621,7 +667,7 @@ def autocast(device, c):
     return torch.autocast('cuda', dtype=torch.bfloat16) if device.type == 'cuda' and c['amp'] else nullcontext()
 
 
-def train_step(model, b, aux, weights, c, arm, threshold, device):
+def train_step(model, b, aux, weights, c, arm, threshold, device, epoch=0):
     x, y, ix = b['x'].to(device), b['y'].to(device).float(), b['index']
     with autocast(device, c):
         z = model(x)['logit']
@@ -639,7 +685,10 @@ def train_step(model, b, aux, weights, c, arm, threshold, device):
         if aux is not None and arm != 'A':
             za = model(aux['x'].to(device))['logit']
             ay, ag = aux['y'].to(device), aux['group'].to(device)
-            fair = soft_error_disparity(za, ay, ag, aux['priors'], threshold, c['temperature'])
+            if c['error_control'] == 'support_upper':
+                fair = support_upper_error(za, ay, ag, aux['priors'], aux['support_fraction'], threshold, c['temperature'])
+            else:
+                fair = soft_error_disparity(za, ay, ag, aux['priors'], threshold, c['temperature'])
             if arm in ('C', 'D'):
                 zs = model(aux['s'].to(device))['logit']; zt = model(aux['t'].to(device))['logit']
                 rr = response(zs, zt); aux_sens = sensitivity(rr, c['margin'])
@@ -648,7 +697,7 @@ def train_step(model, b, aux, weights, c, arm, threshold, device):
         # aux_every compensates deterministic periodic evaluation frequency.
         total = cls + c['lambda_sensitivity'] * (orig_sens + c['sham_weight'] * orig_control)
         if aux is not None:
-            total = total + c['aux_every'] * (c['lambda_fair'] * fair + c['lambda_sensitivity'] * (aux_sens + c['sham_weight'] * aux_control) + c['lambda_alignment'] * align)
+            total = total + c['aux_every'] * (c['lambda_fair'] * fair + c['lambda_sensitivity'] * (aux_sens + c['sham_weight'] * aux_control) + c['lambda_alignment'] * alignment_multiplier(epoch, c['alignment_warmup_epochs']) * align)
     return {'total': total, 'classification': cls, 'error_fairness': fair,
             'original_sensitivity': orig_sens, 'aux_sensitivity': aux_sens,
             'response_alignment': align, 'original_control_stability': orig_control,
@@ -716,8 +765,13 @@ def check_config(c, fixture=False, bound=True):
             'weight_decay', 'axes', 'balance_axis', 'min_train_support', 'min_eval_support',
             'group_per_class', 'aux_every', 'train_calibration_size', 'target_fpr', 'temperature',
             'margin', 'lambda_fair', 'lambda_sensitivity', 'lambda_alignment', 'sham_weight', 'amp',
-            'max_gpu_hours', 'allowed_content_overlap', 'source_sha256', 'synthetic_fixture'}
+            'max_gpu_hours', 'allowed_content_overlap', 'source_sha256', 'synthetic_fixture',
+            'error_control', 'alignment_warmup_epochs'}
     if set(c) != keys: raise ValueError(f'Config schema differs: missing={keys-set(c)}, extra={set(c)-keys}')
+    if c['error_control'] not in ('legacy', 'support_upper'):
+        raise ValueError('Invalid error-control objective')
+    if type(c['alignment_warmup_epochs']) is not int or not 0 <= c['alignment_warmup_epochs'] <= c['epochs']:
+        raise ValueError('Invalid alignment warmup')
     if c['format'] != VERSION or bool(c['synthetic_fixture']) != fixture: raise ValueError('Config format/fixture mismatch')
     for key in ('seed', 'hidden', 'gate_hidden', 'size', 'epochs', 'batch_size', 'workers', 'min_train_support',
                 'min_eval_support', 'group_per_class', 'aux_every', 'train_calibration_size'):
@@ -919,6 +973,7 @@ def train(c, preflight_dir, out, arm, device, qualification=None, resume=False, 
         # Calibration uses a fixed, naturally sampled TRAIN-real subset, never VAL.
         threshold_record = calibrate(predict(model, real_rows, c, device), c['target_fpr'])
         model.train(); seen = Counter(); paired = 0; sums = Counter(); aux_events = Counter(); aux_draws = Counter(); steps = 0
+        original_pair_groups = defaultdict(Counter); auxiliary_cells = Counter(); support_histogram = Counter()
         auxiliary_event = epoch * math.ceil(math.ceil(len(rows) / c['batch_size']) / c['aux_every'])
         for step, b in enumerate(make_loader(rows, c, epoch, pairs=arm in ('C', 'D'), shuffle=True)):
             aux = None
@@ -927,8 +982,19 @@ def train(c, preflight_dir, out, arm, device, qualification=None, resume=False, 
                 aux = auxiliary(rows, active, c, auxiliary_event, epoch); auxiliary_event += 1
                 aux_events[f"{aux['axis']}:{aux['operator']}:{aux['strength']}"] += 1
                 aux_draws.update(aux['indices'])
-            losses, n_pair = train_step(model, b, aux, weights, c, arm, threshold_record['threshold_logit'], device)
+            losses, n_pair = train_step(model, b, aux, weights, c, arm, threshold_record['threshold_logit'], device, epoch)
             finite_step(losses, model, opt); seen.update(b['index'].tolist()); paired += n_pair; steps += 1
+            if arm in ('C', 'D'):
+                for ix in b['index'].tolist():
+                    if rows[ix]['label'] == 0:
+                        for axis in c['axes']: original_pair_groups[axis][rows[ix][axis]] += 1
+            if aux is not None and arm != 'A':
+                for label, group in zip(aux['y'].tolist(), aux['group'].tolist()):
+                    auxiliary_cells[f"{aux['axis']}:{aux['groups'][group]}:{label}"] += 1
+                for gi, name in enumerate(aux['groups']):
+                    for label in (0, 1):
+                        fraction = float(aux['support_fraction'][gi, label])
+                        support_histogram[f"{aux['axis']}:{name}:{label}:U/n={fraction:.4f}"] += 1
             for key, value in losses.items(): sums[key] += float(value.detach())
             if steps % 100 == 0: print(json.dumps({'arm': arm, 'epoch': epoch + 1, 'step': steps, 'loss': float(losses['total'].detach())}), flush=True)
         if len(seen) != len(rows) or any(v != 1 for v in seen.values()): raise RuntimeError('Original coverage error')
@@ -942,6 +1008,11 @@ def train(c, preflight_dir, out, arm, device, qualification=None, resume=False, 
                   'auxiliary_schedule': dict(aux_events), 'auxiliary_planned_draws': sum(aux_draws.values()),
                   'auxiliary_forwarded_originals': sum(aux_draws.values()) if arm != 'A' else 0,
                   'auxiliary_unique_planned_sources': len(aux_draws),
+                  'original_real_pairs_by_axis_group': {a: dict(v) for a, v in original_pair_groups.items()},
+                  'auxiliary_original_draws_by_axis_group_label': dict(auxiliary_cells),
+                  'auxiliary_real_pair_draws_by_axis_group': {k: v for k, v in auxiliary_cells.items() if k.endswith(':0')} if arm in ('C', 'D') else {},
+                  'recorded_contributor_support_histogram': dict(support_histogram),
+                  'alignment_multiplier': alignment_multiplier(epoch, c['alignment_warmup_epochs']),
                   'train_calibration': threshold_record, 'validation': report, 'calibration': cal,
                   'selected_this_epoch': improved, 'epoch_seconds': time.perf_counter() - epoch_start}
         history.append(record); elapsed = base_elapsed + time.perf_counter() - begin
@@ -957,8 +1028,16 @@ def train(c, preflight_dir, out, arm, device, qualification=None, resume=False, 
     selected = torch.load(out / 'best.pt', map_location='cpu', weights_only=True)
     replay_model = Detector(c['hidden'], c['gate_hidden'], c['encoder_policy']).to(device)
     replay_model.load_state_dict(selected['model'], strict=True)
-    replay = metric_report(val, predict(replay_model, val, c, device), selected['calibration']['threshold_logit'], c['min_eval_support'])
+    replay_logits = predict(replay_model, val, c, device)
+    replay = metric_report(val, replay_logits, selected['calibration']['threshold_logit'], c['min_eval_support'])
     if replay != selected['validation']: raise RuntimeError('Selected checkpoint validation replay mismatch')
+    # Fixed VAL predictions permit paired uncertainty without more GPU inference.
+    # This artifact is private and cannot authorize any TEST access.
+    write_json(out / 'validation_scores_PRIVATE.json', {
+        'rows': val, 'logits': replay_logits.tolist(), 'threshold': selected['calibration']['threshold_logit'],
+        'min_support': c['min_eval_support'], 'manifest_sha256': c['val_sha256'],
+        'checkpoint_sha256': sha(out / 'best.pt'), 'calibration_source': 'selected checkpoint validation only',
+        'split': 'validation', 'test_read': False})
     result = {'status': 'COMPLETED_VERIFIED', 'arm': arm, 'epochs_completed': c['epochs'], 'selected_epoch': selected['epoch'],
               'selected_checkpoint_sha256': sha(out / 'best.pt'), 'source_sha256': sha(__file__), 'config_digest': digest(c),
               'validation': replay, 'test_evaluated': False, 'elapsed_seconds': elapsed, 'synthetic_fixture': fixture}
@@ -979,6 +1058,7 @@ def dry_run(c, preflight_dir, out, arm, device):
     finite_step(losses, model, opt)
     if device.type == 'cuda': torch.cuda.synchronize(device)
     record = {'status': 'PASS', 'source_sha256': sha(__file__), 'config_digest': digest(c), 'arm': arm,
+              'error_control': c['error_control'], 'alignment_multiplier': alignment_multiplier(0, c['alignment_warmup_epochs']),
               'parameters': model.counts(), 'seconds_one_optimizer_step': time.perf_counter() - started,
               'peak_cuda_bytes': torch.cuda.max_memory_allocated(device) if device.type == 'cuda' else None,
               'losses': {k: float(v.detach()) for k, v in losses.items()}, 'real_pair_count': count,
@@ -1126,7 +1206,8 @@ def defaults():
             'min_train_support': 20, 'min_eval_support': 20, 'group_per_class': 4, 'aux_every': 4,
             'train_calibration_size': 2048, 'target_fpr': .1, 'temperature': 1., 'margin': .5,
             'lambda_fair': .1, 'lambda_sensitivity': .1, 'lambda_alignment': .1, 'sham_weight': .5,
-            'amp': True, 'max_gpu_hours': 2., 'allowed_content_overlap': [], 'source_sha256': None, 'synthetic_fixture': False}
+            'amp': True, 'max_gpu_hours': 2., 'allowed_content_overlap': [], 'source_sha256': None, 'synthetic_fixture': False,
+            'error_control': 'legacy', 'alignment_warmup_epochs': 0}
 
 
 def smoke(device, out):
@@ -1149,6 +1230,14 @@ def smoke(device, out):
     assert float(sensitivity(torch.zeros(4, device=device), .5)) == .5
     assert calibrate([.7]*4, .25)['achieved_fp'] == 0
     checks.append('independent_loss_references_gradients_offset_collapse_and_ties')
+    zz = torch.tensor([-2., 2., 2., -2.], device=device, requires_grad=True)
+    cc = torch.tensor([0, 1, 0, 1], device=device); gg = torch.tensor([0, 0, 1, 1], device=device)
+    upper = support_upper_error(zz, cc, gg, torch.ones(2, 2, device=device)/2,
+                                torch.ones(2, 2, device=device), 0., 1.)
+    upper.backward()
+    assert zz.grad[0] == 0 and zz.grad[1] == 0 and zz.grad[2] > 0 and zz.grad[3] < 0
+    assert [alignment_multiplier(e, 3) for e in range(4)] == [1/3, 2/3, 1., 1.]
+    checks.append('support_upper_has_no_harm_direction_and_deterministic_alignment_schedule')
     # Shared nuisances, reproducibility, defined local support and zero-dose sham.
     x = torch.rand(3, 75, 75)
     for op in OPERATORS:
@@ -1218,6 +1307,18 @@ def smoke(device, out):
     assert all(torch.equal(v,b['model'][k]) for k,v in a['model'].items())
     assert a['calibration']==b['calibration']
     checks.append('all_four_arms_validation_replay_and_bitwise_epoch_resume')
+    for name, warmup in (('support', 0), ('support_ramp', 2)):
+        candidate = dict(c, error_control='support_upper', alignment_warmup_epochs=warmup)
+        preflight(candidate, out/('preflight_'+name))
+        train(candidate, out/('preflight_'+name), out/name, 'D', device, fixture=True)
+    candidate = dict(c, error_control='support_upper', alignment_warmup_epochs=2)
+    train(candidate, out/'preflight_support_ramp', out/'resume_support_ramp', 'D', device, fixture=True, stop_after=1)
+    train(candidate, out/'preflight_support_ramp', out/'resume_support_ramp', 'D', device, fixture=True, resume=True)
+    uninterrupted = torch.load(out/'support_ramp/last.pt', map_location='cpu', weights_only=True)
+    resumed = torch.load(out/'resume_support_ramp/last.pt', map_location='cpu', weights_only=True)
+    assert all(torch.equal(v, resumed['model'][k]) for k, v in uninterrupted['model'].items())
+    assert uninterrupted['calibration'] == resumed['calibration']
+    checks.append('both_support_candidates_native_reload_and_bitwise_scheduled_resume')
     rep=evaluate(out/'D/best.pt',manifests['test'],sha(manifests['test']),out/'evaluation',device,replicates=10,fixture=True)
     testrows=read_manifest(manifests['test']);flipped=[{**r,'label':1-r['label']} for r in testrows]
     flip=fixture/'flipped.csv'

@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "source_sha256": "0eeafd838da3ca158336dcfe3b8195842dd15bc9fecd67ebbaf2ea03ba3c2680",
+  "device": "cpu",
+  "torch": "2.7.0+cu126",
+  "parameters": {
+    "total": 21594159,
+    "trainable": 7575591
+  },
+  "checks": [
+    "independent_loss_references_gradients_offset_collapse_and_ties",
+    "support_upper_has_no_harm_direction_and_deterministic_alignment_schedule",
+    "operators_reproducible_localized_and_zero_strength_identity",
+    "full_224px_xception_counts_decomposition_gradients_and_frozen_bn",
+    "schema_provenance_split_fixture_and_missing_review_rejections",
+    "C_D_only_alignment_loss_differs_same_views",
+    "all_four_arms_validation_replay_and_bitwise_epoch_resume",
+    "both_support_candidates_native_reload_and_bitwise_scheduled_resume",
+    "frozen_threshold_test_label_flip_paired_bootstrap_and_map_export"
+  ],
+  "scientific_performance_tested": false,
+  "real_interventions_validated": false,
+  "fixture_only": true,
+  "cuda_tested": false
+}

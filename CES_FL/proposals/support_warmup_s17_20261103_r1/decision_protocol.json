@@ -1,0 +1,44 @@
+{
+  "seed": 17,
+  "candidate_configurations": [
+    "E_support",
+    "F_support_ramp3"
+  ],
+  "planned_epochs": 10,
+  "selection": "earliest strict highest validation AUC; unchanged",
+  "threshold": "one global per-model conservative empirical validation-real FPR10% rule; unchanged; fixed0.5 additionally reported",
+  "primary_reference": "completed source-c332 FF++ D selected epoch1",
+  "primary_F_FPR_max_exclusive": 0.3793453731153111,
+  "auc_reference": "completed FF++ A selected epoch4",
+  "auc_loss_guard_absolute": 0.005,
+  "auc_min_inclusive": 0.9792641103497183,
+  "gender_reference": "completed C",
+  "gender_F_FPR_slack_absolute": 0.005,
+  "gender_F_FPR_max_inclusive": 0.04869892586415193,
+  "age_reference": "completed C",
+  "age_F_FPR_slack_absolute": 0.01,
+  "age_F_FPR_max_inclusive": 0.286732979753881,
+  "worst_group_auc_min_by_axis": {
+    "gender": 0.9654828015666387,
+    "age_bin": 0.9706360894352599,
+    "gender_race": 0.93120498515896
+  },
+  "pooled_fake_FNR_max_inclusive": 0.04209965248426786,
+  "bootstrap": {
+    "replicates": 1000,
+    "seed": 17,
+    "method": "paired connected recorded-contributor percentile; thresholds frozen; fixed eligible groups",
+    "inference": "dataset-sampling uncertainty conditional on one trained seed, not training-seed variability",
+    "required_usable_primary_replicate_fraction": 0.9
+  },
+  "decision": {
+    "reject": "primary or AUC utility guard fails",
+    "revise": "primary/utility pass but any prespecified gender/age/worst-group/FNR guard fails, or bootstrap uninformative",
+    "continue": "all numerical guards pass and primary paired CI entirely below0 against D; only then prepare a separately recorded final-budget schedule; no automatic promotion or TEST"
+  },
+  "tie_break": "if both satisfy continue, lower primary F_FPR; tie higher AUC; no new configs",
+  "all_originals_BCE": true,
+  "no_ding_computation": true,
+  "no_new_ff2": true,
+  "no_test_evaluation": true
+}

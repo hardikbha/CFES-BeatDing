@@ -1,0 +1,696 @@
+{
+  "observed_management_utc": "2026-11-03T05:23:30.071000+00:00",
+  "old_source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
+  "new_source_sha256": "0eeafd838da3ca158336dcfe3b8195842dd15bc9fecd67ebbaf2ea03ba3c2680",
+  "old_control_histories": {
+    "A": [
+      {
+        "epoch": 1,
+        "auc": 0.9838676395748356,
+        "losses": {
+          "total": 0.004333567792279071,
+          "classification": 0.004333567792279071,
+          "error_fairness": 0.0,
+          "original_sensitivity": 0.0,
+          "aux_sensitivity": 0.0,
+          "response_alignment": 0.0,
+          "original_control_stability": 0.0,
+          "aux_control_stability": 0.0
+        },
+        "originals": 76139,
+        "pairs": 0,
+        "seconds": 307.75692830979824
+      },
+      {
+        "epoch": 2,
+        "auc": 0.9841894618569558,
+        "losses": {
+          "total": 0.0017369872952601667,
+          "classification": 0.0017369872952601667,
+          "error_fairness": 0.0,
+          "original_sensitivity": 0.0,
+          "aux_sensitivity": 0.0,
+          "response_alignment": 0.0,
+          "original_control_stability": 0.0,
+          "aux_control_stability": 0.0
+        },
+        "originals": 76139,
+        "pairs": 0,
+        "seconds": 379.6944151930511
+      },
+      {
+        "epoch": 3,
+        "auc": 0.9841646038916511,
+        "losses": {
+          "total": 0.0015046218018027325,
+          "classification": 0.0015046218018027325,
+          "error_fairness": 0.0,
+          "original_sensitivity": 0.0,
+          "aux_sensitivity": 0.0,
+          "response_alignment": 0.0,
+          "original_control_stability": 0.0,
+          "aux_control_stability": 0.0
+        },
+        "originals": 76139,
+        "pairs": 0,
+        "seconds": 238.06089214980602
+      },
+      {
+        "epoch": 4,
+        "auc": 0.9842641103497183,
+        "losses": {
+          "total": 0.0013524574728505177,
+          "classification": 0.0013524574728505177,
+          "error_fairness": 0.0,
+          "original_sensitivity": 0.0,
+          "aux_sensitivity": 0.0,
+          "response_alignment": 0.0,
+          "original_control_stability": 0.0,
+          "aux_control_stability": 0.0
+        },
+        "originals": 76139,
+        "pairs": 0,
+        "seconds": 596.6934542134404
+      },
+      {
+        "epoch": 5,
+        "auc": 0.9840765910865166,
+        "losses": {
+          "total": 0.0011124421555683138,
+          "classification": 0.0011124421555683138,
+          "error_fairness": 0.0,
+          "original_sensitivity": 0.0,
+          "aux_sensitivity": 0.0,
+          "response_alignment": 0.0,
+          "original_control_stability": 0.0,
+          "aux_control_stability": 0.0
+        },
+        "originals": 76139,
+        "pairs": 0,
+        "seconds": 296.6311650387943
+      },
+      {
+        "epoch": 6,
+        "auc": 0.9839604724840456,
+        "losses": {
+          "total": 0.0009974199845887125,
+          "classification": 0.0009974199845887125,
+          "error_fairness": 0.0,
+          "original_sensitivity": 0.0,
+          "aux_sensitivity": 0.0,
+          "response_alignment": 0.0,
+          "original_control_stability": 0.0,
+          "aux_control_stability": 0.0
+        },
+        "originals": 76139,
+        "pairs": 0,
+        "seconds": 486.50528309866786
+      },
+      {
+        "epoch": 7,
+        "auc": 0.9839766772148907,
+        "losses": {
+          "total": 0.0008180787442327083,
+          "classification": 0.0008180787442327083,
+          "error_fairness": 0.0,
+          "original_sensitivity": 0.0,
+          "aux_sensitivity": 0.0,
+          "response_alignment": 0.0,
+          "original_control_stability": 0.0,
+          "aux_control_stability": 0.0
+        },
+        "originals": 76139,
+        "pairs": 0,
+        "seconds": 256.1259438171983
+      },
+      {
+        "epoch": 8,
+        "auc": 0.9838710595534417,
+        "losses": {
+          "total": 0.0010021660984530576,
+          "classification": 0.0010021660984530576,
+          "error_fairness": 0.0,
+          "original_sensitivity": 0.0,
+          "aux_sensitivity": 0.0,
+          "response_alignment": 0.0,
+          "original_control_stability": 0.0,
+          "aux_control_stability": 0.0
+        },
+        "originals": 76139,
+        "pairs": 0,
+        "seconds": 441.6981882080436
+      },
+      {
+        "epoch": 9,
+        "auc": 0.9838438833476054,
+        "losses": {
+          "total": 0.0006588674997017944,
+          "classification": 0.0006588674997017944,
+          "error_fairness": 0.0,
+          "original_sensitivity": 0.0,
+          "aux_sensitivity": 0.0,
+          "response_alignment": 0.0,
+          "original_control_stability": 0.0,
+          "aux_control_stability": 0.0
+        },
+        "originals": 76139,
+        "pairs": 0,
+        "seconds": 231.82532240450382
+      },
+      {
+        "epoch": 10,
+        "auc": 0.9837376115291747,
+        "losses": {
+          "total": 0.0005305563113213762,
+          "classification": 0.0005305563113213762,
+          "error_fairness": 0.0,
+          "original_sensitivity": 0.0,
+          "aux_sensitivity": 0.0,
+          "response_alignment": 0.0,
+          "original_control_stability": 0.0,
+          "aux_control_stability": 0.0
+        },
+        "originals": 76139,
+        "pairs": 0,
+        "seconds": 416.2827793210745
+      }
+    ],
+    "B": [
+      {
+        "epoch": 1,
+        "auc": 0.9838904317812507,
+        "losses": {
+          "total": 0.004624088898505617,
+          "classification": 0.004341702931797239,
+          "error_fairness": 0.0007059649114723967,
+          "original_sensitivity": 0.0,
+          "aux_sensitivity": 0.0,
+          "response_alignment": 0.0,
+          "original_control_stability": 0.0,
+          "aux_control_stability": 0.0
+        },
+        "originals": 76139,
+        "pairs": 0,
+        "seconds": 488.13085648044944
+      },
+      {
+        "epoch": 2,
+        "auc": 0.9840679722813717,
+        "losses": {
+          "total": 0.0037955930985969248,
+          "classification": 0.0027368161722190368,
+          "error_fairness": 0.0026469422630234565,
+          "original_sensitivity": 0.0,
+          "aux_sensitivity": 0.0,
+          "response_alignment": 0.0,
+          "original_control_stability": 0.0,
+          "aux_control_stability": 0.0
+        },
+        "originals": 76139,
+        "pairs": 0,
+        "seconds": 249.32785941660404
+      },
+      {
+        "epoch": 3,
+        "auc": 0.9838238225335,
+        "losses": {
+          "total": 0.004180727946045208,
+          "classification": 0.0028943991000818328,
+          "error_fairness": 0.0032158220755802948,
+          "original_sensitivity": 0.0,
+          "aux_sensitivity": 0.0,
+          "response_alignment": 0.0,
+          "original_control_stability": 0.0,
+          "aux_control_stability": 0.0
+        },
+        "originals": 76139,
+        "pairs": 0,
+        "seconds": 426.1497360058129
+      },
+      {
+        "epoch": 4,
+        "auc": 0.9840269899202903,
+        "losses": {
+          "total": 0.006094803114366864,
+          "classification": 0.004197065241088143,
+          "error_fairness": 0.00474434464195877,
+          "original_sensitivity": 0.0,
+          "aux_sensitivity": 0.0,
+          "response_alignment": 0.0,
+          "original_control_stability": 0.0,
+          "aux_control_stability": 0.0
+        },
+        "originals": 76139,
+        "pairs": 0,
+        "seconds": 243.18552009016275
+      },
+      {
+        "epoch": 5,
+        "auc": 0.9838970307332591,
+        "losses": {
+          "total": 0.00672413655483796,
+          "classification": 0.003379542006751559,
+          "error_fairness": 0.008361486225992408,
+          "original_sensitivity": 0.0,
+          "aux_sensitivity": 0.0,
+          "response_alignment": 0.0,
+          "original_control_stability": 0.0,
+          "aux_control_stability": 0.0
+        },
+        "originals": 76139,
+        "pairs": 0,
+        "seconds": 468.64599100500345
+      },
+      {
+        "epoch": 6,
+        "auc": 0.9837830582247455,
+        "losses": {
+          "total": 0.005401222327144263,
+          "classification": 0.0030083372076457624,
+          "error_fairness": 0.005982212709097799,
+          "original_sensitivity": 0.0,
+          "aux_sensitivity": 0.0,
+          "response_alignment": 0.0,
+          "original_control_stability": 0.0,
+          "aux_control_stability": 0.0
+        },
+        "originals": 76139,
+        "pairs": 0,
+        "seconds": 237.5362053103745
+      },
+      {
+        "epoch": 7,
+        "auc": 0.983799366243535,
+        "losses": {
+          "total": 0.005173176142519655,
+          "classification": 0.0023805711871043287,
+          "error_fairness": 0.006981512252160789,
+          "original_sensitivity": 0.0,
+          "aux_sensitivity": 0.0,
+          "response_alignment": 0.0,
+          "original_control_stability": 0.0,
+          "aux_control_stability": 0.0
+        },
+        "originals": 76139,
+        "pairs": 0,
+        "seconds": 398.8695690743625
+      },
+      {
+        "epoch": 8,
+        "auc": 0.9835835288688888,
+        "losses": {
+          "total": 0.0025695594052444906,
+          "classification": 0.002216704450208241,
+          "error_fairness": 0.0008821373727141308,
+          "original_sensitivity": 0.0,
+          "aux_sensitivity": 0.0,
+          "response_alignment": 0.0,
+          "original_control_stability": 0.0,
+          "aux_control_stability": 0.0
+        },
+        "originals": 76139,
+        "pairs": 0,
+        "seconds": 301.67974357679486
+      },
+      {
+        "epoch": 9,
+        "auc": 0.9838367679558746,
+        "losses": {
+          "total": 0.003813538364383212,
+          "classification": 0.0020072089142707155,
+          "error_fairness": 0.004515823546782796,
+          "original_sensitivity": 0.0,
+          "aux_sensitivity": 0.0,
+          "response_alignment": 0.0,
+          "original_control_stability": 0.0,
+          "aux_control_stability": 0.0
+        },
+        "originals": 76139,
+        "pairs": 0,
+        "seconds": 357.4293108917773
+      },
+      {
+        "epoch": 10,
+        "auc": 0.9839546883591548,
+        "losses": {
+          "total": 0.0049987780848271355,
+          "classification": 0.001576030492647884,
+          "error_fairness": 0.008556868835877217,
+          "original_sensitivity": 0.0,
+          "aux_sensitivity": 0.0,
+          "response_alignment": 0.0,
+          "original_control_stability": 0.0,
+          "aux_control_stability": 0.0
+        },
+        "originals": 76139,
+        "pairs": 0,
+        "seconds": 353.82559594884515
+      }
+    ],
+    "C": [
+      {
+        "epoch": 1,
+        "auc": 0.9830765916373857,
+        "losses": {
+          "total": 0.03797057393169973,
+          "classification": 0.008079078313755777,
+          "error_fairness": 0.0009212845479061881,
+          "original_sensitivity": 0.0872779912346614,
+          "aux_sensitivity": 0.021525021228438416,
+          "response_alignment": 0.0,
+          "original_control_stability": 0.12309877565795822,
+          "aux_control_stability": 0.030151174011436768
+        },
+        "originals": 76139,
+        "pairs": 12926,
+        "seconds": 693.9249941892922
+      },
+      {
+        "epoch": 2,
+        "auc": 0.9826130123896875,
+        "losses": {
+          "total": 0.021169771585854,
+          "classification": 0.004656731759320338,
+          "error_fairness": 0.0018764296151693386,
+          "original_sensitivity": 0.03997570735176423,
+          "aux_sensitivity": 0.009043335709955637,
+          "response_alignment": 0.0,
+          "original_control_stability": 0.08102986301538073,
+          "aux_control_stability": 0.020480347841101535
+        },
+        "originals": 76139,
+        "pairs": 12926,
+        "seconds": 281.7438273727894
+      },
+      {
+        "epoch": 3,
+        "auc": 0.9822761789263029,
+        "losses": {
+          "total": 0.0168588990463499,
+          "classification": 0.003398320346730701,
+          "error_fairness": 0.0020269457963999643,
+          "original_sensitivity": 0.027667861726886334,
+          "aux_sensitivity": 0.007043030360290984,
+          "response_alignment": 0.0,
+          "original_control_stability": 0.070522738941906,
+          "aux_control_stability": 0.017698324548409267
+        },
+        "originals": 76139,
+        "pairs": 12926,
+        "seconds": 384.36993277072906
+      },
+      {
+        "epoch": 4,
+        "auc": 0.9824672271942743,
+        "losses": {
+          "total": 0.014291317296194114,
+          "classification": 0.0036504610170296726,
+          "error_fairness": 0.0013103971998545312,
+          "original_sensitivity": 0.01987648560732071,
+          "aux_sensitivity": 0.004065069231447302,
+          "response_alignment": 0.0,
+          "original_control_stability": 0.061369734850884296,
+          "aux_control_stability": 0.017172670852737267
+        },
+        "originals": 76139,
+        "pairs": 12926,
+        "seconds": 415.37721176072955
+      },
+      {
+        "epoch": 5,
+        "auc": 0.9814017087590288,
+        "losses": {
+          "total": 0.013656278642506996,
+          "classification": 0.0027187942853762843,
+          "error_fairness": 0.003627006705075565,
+          "original_sensitivity": 0.017787796180468333,
+          "aux_sensitivity": 0.004992016312517539,
+          "response_alignment": 0.0,
+          "original_control_stability": 0.057708320711121086,
+          "aux_control_stability": 0.014128396588088083
+        },
+        "originals": 76139,
+        "pairs": 12926,
+        "seconds": 412.54872788488865
+      },
+      {
+        "epoch": 6,
+        "auc": 0.9803204216975929,
+        "losses": {
+          "total": 0.011328636458269982,
+          "classification": 0.003350637229503839,
+          "error_fairness": 0.0008003345151709649,
+          "original_sensitivity": 0.0119340843002081,
+          "aux_sensitivity": 0.0029557121737601878,
+          "response_alignment": 0.0,
+          "original_control_stability": 0.05369209248959987,
+          "aux_control_stability": 0.012987836578688702
+        },
+        "originals": 76139,
+        "pairs": 12926,
+        "seconds": 375.801873780787
+      },
+      {
+        "epoch": 7,
+        "auc": 0.9807370623127447,
+        "losses": {
+          "total": 0.01082442450482723,
+          "classification": 0.0035763063766090218,
+          "error_fairness": 0.0012206039221559265,
+          "original_sensitivity": 0.009524458444465984,
+          "aux_sensitivity": 0.002340191451269163,
+          "response_alignment": 0.0,
+          "original_control_stability": 0.048121400552844834,
+          "aux_control_stability": 0.012326419832451002
+        },
+        "originals": 76139,
+        "pairs": 12926,
+        "seconds": 449.2896548397839
+      },
+      {
+        "epoch": 8,
+        "auc": 0.9809087096618114,
+        "losses": {
+          "total": 0.011857683324084002,
+          "classification": 0.004776314130299428,
+          "error_fairness": 0.0015181625146038077,
+          "original_sensitivity": 0.008483669470003688,
+          "aux_sensitivity": 0.0022443518019085672,
+          "response_alignment": 0.0,
+          "original_control_stability": 0.04589459568168185,
+          "aux_control_stability": 0.012166333045153056
+        },
+        "originals": 76139,
+        "pairs": 12926,
+        "seconds": 348.4686759747565
+      },
+      {
+        "epoch": 9,
+        "auc": 0.9795849656271493,
+        "losses": {
+          "total": 0.011869575368009559,
+          "classification": 0.004985958201986932,
+          "error_fairness": 0.0017849774323227927,
+          "original_sensitivity": 0.0076646662566677804,
+          "aux_sensitivity": 0.001968754724669857,
+          "response_alignment": 0.0,
+          "original_control_stability": 0.048558454552788614,
+          "aux_control_stability": 0.010938674355504894
+        },
+        "originals": 76139,
+        "pairs": 12926,
+        "seconds": 477.7085231691599
+      },
+      {
+        "epoch": 10,
+        "auc": 0.9802418138336252,
+        "losses": {
+          "total": 0.014029413566547628,
+          "classification": 0.006300705896824471,
+          "error_fairness": 0.0018556217234038423,
+          "original_sensitivity": 0.010188164382668197,
+          "aux_sensitivity": 0.00238552554158353,
+          "response_alignment": 0.0,
+          "original_control_stability": 0.04873342447930814,
+          "aux_control_stability": 0.012883804970178284
+        },
+        "originals": 76139,
+        "pairs": 12926,
+        "seconds": 311.1241637095809
+      }
+    ],
+    "D": [
+      {
+        "epoch": 1,
+        "auc": 0.9825256365268773,
+        "losses": {
+          "total": 0.07106462846198025,
+          "classification": 0.009334311728764604,
+          "error_fairness": 0.001518090547929224,
+          "original_sensitivity": 0.09404362910845368,
+          "aux_sensitivity": 0.022710923989452108,
+          "response_alignment": 0.07561973875541114,
+          "original_control_stability": 0.12519759625634727,
+          "aux_control_stability": 0.0306328570945658
+        },
+        "originals": 76139,
+        "pairs": 12926,
+        "seconds": 1170.0304017551243
+      },
+      {
+        "epoch": 2,
+        "auc": 0.9822182343894503,
+        "losses": {
+          "total": 0.0522701468634989,
+          "classification": 0.005866345382360973,
+          "error_fairness": 0.006068370871046781,
+          "original_sensitivity": 0.04040312524072967,
+          "aux_sensitivity": 0.009219341059880598,
+          "response_alignment": 0.0687269437964223,
+          "original_control_stability": 0.0876925954556077,
+          "aux_control_stability": 0.021864980033465795
+        },
+        "originals": 76139,
+        "pairs": 12926,
+        "seconds": 1242.2388125136495
+      },
+      {
+        "epoch": 3,
+        "auc": 0.9811065405048036,
+        "losses": {
+          "total": 0.04535788909053075,
+          "classification": 0.0049952993310321174,
+          "error_fairness": 0.004964820033955748,
+          "original_sensitivity": 0.02412647436859141,
+          "aux_sensitivity": 0.005992289788692313,
+          "response_alignment": 0.06282617626007364,
+          "original_control_stability": 0.08498759266975171,
+          "aux_control_stability": 0.0209362380957904
+        },
+        "originals": 76139,
+        "pairs": 12926,
+        "seconds": 1172.6276924572885
+      },
+      {
+        "epoch": 4,
+        "auc": 0.9809318404231555,
+        "losses": {
+          "total": 0.03985724518848052,
+          "classification": 0.00524066433322294,
+          "error_fairness": 0.004159310271673906,
+          "original_sensitivity": 0.021423928906256724,
+          "aux_sensitivity": 0.005194978901584234,
+          "response_alignment": 0.052198894093392276,
+          "original_control_stability": 0.07754251127886515,
+          "aux_control_stability": 0.01987894284969368
+        },
+        "originals": 76139,
+        "pairs": 12926,
+        "seconds": 1074.7894306648523
+      },
+      {
+        "epoch": 5,
+        "auc": 0.9803722837221598,
+        "losses": {
+          "total": 0.03612731142990906,
+          "classification": 0.0040688964280262965,
+          "error_fairness": 0.0021555205803910397,
+          "original_sensitivity": 0.010808900847714081,
+          "aux_sensitivity": 0.003289844172795405,
+          "response_alignment": 0.05305580415082078,
+          "original_control_stability": 0.07790118144069869,
+          "aux_control_stability": 0.01840998842811384
+        },
+        "originals": 76139,
+        "pairs": 12926,
+        "seconds": 1308.2001154720783
+      },
+      {
+        "epoch": 6,
+        "auc": 0.9790846388240928,
+        "losses": {
+          "total": 0.03440799596834525,
+          "classification": 0.003802396615056154,
+          "error_fairness": 0.0025824612911866792,
+          "original_sensitivity": 0.007591865329314493,
+          "aux_sensitivity": 0.0021823271365538867,
+          "response_alignment": 0.05112925645809214,
+          "original_control_stability": 0.07612484363142495,
+          "aux_control_stability": 0.018412760570019233
+        },
+        "originals": 76139,
+        "pairs": 12926,
+        "seconds": 1214.571402143687
+      },
+      {
+        "epoch": 7,
+        "auc": 0.9785731569230328,
+        "losses": {
+          "total": 0.03392705387729559,
+          "classification": 0.0039030600081935156,
+          "error_fairness": 0.0025857834296448725,
+          "original_sensitivity": 0.006666546898694443,
+          "aux_sensitivity": 0.0017708451573212607,
+          "response_alignment": 0.05039116743044192,
+          "original_control_stability": 0.07478580156697288,
+          "aux_control_stability": 0.018594650736376016
+        },
+        "originals": 76139,
+        "pairs": 12926,
+        "seconds": 990.0187619905919
+      },
+      {
+        "epoch": 8,
+        "auc": 0.9791400470680867,
+        "losses": {
+          "total": 0.03504484246594346,
+          "classification": 0.0043833505708329975,
+          "error_fairness": 0.003220517200504319,
+          "original_sensitivity": 0.006355375029193628,
+          "aux_sensitivity": 0.002019470889403039,
+          "response_alignment": 0.05024539526520657,
+          "original_control_stability": 0.07663433548442612,
+          "aux_control_stability": 0.02000041890795491
+        },
+        "originals": 76139,
+        "pairs": 12926,
+        "seconds": 819.0343628413975
+      },
+      {
+        "epoch": 9,
+        "auc": 0.9779843467808729,
+        "losses": {
+          "total": 0.03428369545481367,
+          "classification": 0.003955637568567326,
+          "error_fairness": 0.003281534488816301,
+          "original_sensitivity": 0.005581490945035764,
+          "aux_sensitivity": 0.0014924566934526968,
+          "response_alignment": 0.049857062909032114,
+          "original_control_stability": 0.07966552275945159,
+          "aux_control_stability": 0.01967105234370512
+        },
+        "originals": 76139,
+        "pairs": 12926,
+        "seconds": 830.0153627768159
+      },
+      {
+        "epoch": 10,
+        "auc": 0.9760040529271298,
+        "losses": {
+          "total": 0.02803332153578694,
+          "classification": 0.002283187138588923,
+          "error_fairness": 0.0004347648342705465,
+          "original_sensitivity": 0.0038769752377088517,
+          "aux_sensitivity": 0.0012474525109434328,
+          "response_alignment": 0.04175486092870476,
+          "original_control_stability": 0.07989964591292273,
+          "aux_control_stability": 0.019963114295436554
+        },
+        "originals": 76139,
+        "pairs": 12926,
+        "seconds": 1015.0056822001934
+      }
+    ]
+  },
+  "gradient_conflict_not_yet_measured": true
+}

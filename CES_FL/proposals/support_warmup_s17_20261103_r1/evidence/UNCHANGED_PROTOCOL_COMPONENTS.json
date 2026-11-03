@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "observed_management_utc": "2026-11-03T05:24:36.928000+00:00",
+  "old_source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
+  "new_source_sha256": "0eeafd838da3ca158336dcfe3b8195842dd15bc9fecd67ebbaf2ea03ba3c2680",
+  "unchanged_AST_definitions": {
+    "Detector": true,
+    "Xception": true,
+    "Originals": true,
+    "intervention": true,
+    "load_pixels": true,
+    "original_weights": true,
+    "calibrate": true,
+    "metric_report": true,
+    "seed_all": true,
+    "build_optimizer": true,
+    "load_initial": true,
+    "split_audit": true
+  },
+  "scientific_changes": [
+    "support_upper_error",
+    "TRAIN-recorded support metadata",
+    "alignment coefficient schedule",
+    "coverage and private selected-VAL reporting"
+  ],
+  "test_data_read": false
+}
