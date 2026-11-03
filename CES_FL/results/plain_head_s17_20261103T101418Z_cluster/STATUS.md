@@ -1,6 +1,6 @@
 # Plain-head comparisons: FF++ validation, seed17
 
-2026-11-03T12:41:13.708711+00:00
+2026-11-03T12:46:19.514190+00:00
 
 Pinned scientific commit `0d699d241e27f758ec0990fbe58493a15bdb0ff9`; source SHA `08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177`.
 
@@ -9,7 +9,7 @@ Pinned scientific commit `0d699d241e27f758ec0990fbe58493a15bdb0ff9`; source SHA 
 |gated_A|10|4|98.426411|9.995112|4.146708|0.043699|0.087846|0.505265|0.228592|0.028039|
 |linear_A|10|3|98.232624|9.995112|4.404997|0.055458|0.070055|0.436857|0.214782|0.028241|
 |gated_H|10|1|98.197763|9.995112|4.132620|0.059377|0.078985|0.421326|0.291921|0.055875|
-|linear_H|6|1|98.200410|9.995112|4.306377|0.031940|0.056300|0.410837|0.239855|0.019498|
+|linear_H|7|1|98.200410|9.995112|4.306377|0.031940|0.056300|0.410837|0.239855|0.019498|
 
 F_FPR is a sum of absolute group-versus-pooled FPR deviations, displayed in fraction units. Lower is better. Reference thresholds are preserved; each new selected model uses its own global VAL-real empirical10%FPR threshold. Selection is earliest highest VAL AUC after ten epochs.
 
