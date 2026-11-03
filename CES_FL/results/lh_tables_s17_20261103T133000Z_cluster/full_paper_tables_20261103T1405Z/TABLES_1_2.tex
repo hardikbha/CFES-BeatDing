@@ -1,0 +1,157 @@
+% Requires booktabs and graphicx. Values are100 x native fractions; distinct threshold views must not be combined.
+\begin{table*}[t]
+\centering
+\caption{Table 1: FIXED05. Published references and CES-FL seed17; protocols differ.}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lllrrrr}
+\toprule
+Attribute & Method & Backbone & F\_FPR $\downarrow$ & F\_DP $\downarrow$ & es-AUC $\uparrow$ & AUC $\uparrow$ \\
+\midrule
+Gender & Ori (published) & Xception & 4.100 & 5.720 & 91.930 & 92.690 \\
+Gender & DAG-FDD WACV’24 [20] & Xception & 1.820 & 4.650 & 94.870 & 96.720 \\
+Gender & DAW-FDD WACV’24 [20] & Xception & 0.780 & 9.520 & 95.760 & 97.460 \\
+Gender & PG-FDD CVPR’24 [24] & Xception & 0.620 & 4.740 & 96.320 & 97.660 \\
+Gender & Fairadapter ICASSP’25 [10] & ViT-L/14 & 4.160 & 12.210 & 67.850 & 71.500 \\
+Gender & RSEF-FDD arxiv’25 [18] & Xception & 0.570 & 8.550 & 94.910 & 97.090 \\
+Gender & Ding et al. (published) & Xception & 0.530 & 3.610 & 96.450 & 97.710 \\
+Gender & CES-FL L\_A [seed17] & Xception & 0.472 & 1.763 & 97.473 & 98.471 \\
+Gender & CES-FL L\_H [seed17] & Xception & 0.239 & 2.413 & 97.440 & 98.489 \\
+Race & Ori (published) & Xception & 19.760 & 4.740 & 82.850 & 92.690 \\
+Race & DAG-FDD WACV’24 [20] & Xception & 5.480 & 9.200 & 93.430 & 96.720 \\
+Race & DAW-FDD WACV’24 [20] & Xception & 5.430 & 14.690 & 94.150 & 97.460 \\
+Race & PG-FDD CVPR’24 [24] & Xception & 11.130 & 4.780 & 94.520 & 97.660 \\
+Race & Fairadapter ICASSP’25 [10] & ViT-L/14 & 43.220 & 20.390 & 56.030 & 71.500 \\
+Race & RSEF-FDD arxiv’25 [18] & Xception & 8.390 & 5.280 & 93.600 & 97.090 \\
+Race & Ding et al. (published) & Xception & 9.290 & 4.350 & 94.860 & 97.710 \\
+Race & CES-FL L\_A [seed17] & Xception & 9.040 & 3.059 & 97.061 & 98.471 \\
+Race & CES-FL L\_H [seed17] & Xception & 8.843 & 3.271 & 97.566 & 98.489 \\
+Intersection & Ori (published) & Xception & 36.030 & 14.640 & 74.430 & 92.690 \\
+Intersection & DAG-FDD WACV’24 [20] & Xception & 24.080 & 26.250 & 85.800 & 96.720 \\
+Intersection & DAW-FDD WACV’24 [20] & Xception & 14.360 & 26.130 & 86.740 & 97.460 \\
+Intersection & PG-FDD CVPR’24 [24] & Xception & 9.190 & 13.390 & 86.830 & 97.660 \\
+Intersection & Fairadapter ICASSP’25 [10] & ViT-L/14 & 86.910 & 42.440 & 45.980 & 71.500 \\
+Intersection & RSEF-FDD arxiv’25 [18] & Xception & 23.640 & 21.740 & 85.770 & 97.090 \\
+Intersection & Ding et al. (published) & Xception & 20.180 & 9.470 & 86.910 & 97.710 \\
+Intersection & CES-FL L\_A [seed17] & Xception & 22.793 & 12.166 & 91.884 & 98.471 \\
+Intersection & CES-FL L\_H [seed17] & Xception & 20.217 & 15.159 & 92.066 & 98.489 \\
+\bottomrule
+\end{tabular}}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\caption{Table 2: FIXED05. Published references and CES-FL seed17; protocols differ.}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lllrrrrrrrrrr}
+\toprule
+Dataset & Method & Backbone & Gender F\_FPR $\downarrow$ & Gender F\_DP $\downarrow$ & Gender es-AUC $\uparrow$ & Race F\_FPR $\downarrow$ & Race F\_DP $\downarrow$ & Race es-AUC $\uparrow$ & Intersection F\_FPR $\downarrow$ & Intersection F\_DP $\downarrow$ & Intersection es-AUC $\uparrow$ & AUC $\uparrow$ \\
+\midrule
+DFDC & Ori (published) & Xception & 8.670 & 6.700 & 54.560 & 19.410 & 7.990 & 47.020 & 53.420 & 17.340 & 36.960 & 56.130 \\
+DFDC & DAG-FDD WACV’24 [20] & Xception & 5.290 & 6.680 & 57.410 & 9.260 & 12.510 & 45.910 & 45.300 & 12.920 & 36.420 & 59.130 \\
+DFDC & DAW-FDD WACV’24 [20] & Xception & 3.600 & 3.670 & 55.880 & 22.360 & 9.720 & 47.770 & 46.800 & 12.690 & 36.630 & 56.900 \\
+DFDC & PG-FDD CVPR’24 [24] & Xception & 2.350 & 2.570 & 57.710 & 10.100 & 11.490 & 50.530 & 32.160 & 17.710 & 37.420 & 59.640 \\
+DFDC & Fairadapter ICASSP’25 [10] & ViT-L/14 & 2.390 & 4.570 & 55.880 & 32.490 & 26.770 & 52.270 & 74.100 & 31.530 & 31.390 & 59.250 \\
+DFDC & RSEF-FDD arxiv’25 [18] & Xception & 2.090 & 3.830 & 57.900 & 12.240 & 7.740 & 50.270 & 38.890 & 12.180 & 37.720 & 59.080 \\
+DFDC & Ding et al. (published) & Xception & 1.760 & 3.670 & 57.940 & 17.930 & 7.580 & 52.330 & 37.370 & 11.920 & 39.030 & 61.860 \\
+DFDC & CES-FL L\_A [seed17] & Xception & 0.004 & 1.416 & 60.692 & 13.351 & 5.391 & 53.488 & 27.840 & 6.773 & 40.283 & 61.769 \\
+DFDC & CES-FL L\_H [seed17] & Xception & 0.307 & 1.754 & 59.732 & 6.406 & 4.514 & 52.376 & 15.022 & 6.629 & 40.014 & 60.456 \\
+Celeb-DF & Ori (published) & Xception & 6.930 & 20.230 & 60.940 & 23.440 & 17.890 & 61.210 & 27.380 & 18.720 & 61.220 & 69.180 \\
+Celeb-DF & DAG-FDD WACV’24 [20] & Xception & 8.700 & 14.250 & 66.230 & 19.440 & 13.260 & 62.610 & 23.600 & 13.800 & 63.080 & 72.290 \\
+Celeb-DF & DAW-FDD WACV’24 [20] & Xception & 8.710 & 12.730 & 68.310 & 14.760 & 7.800 & 66.470 & 24.750 & 13.780 & 59.240 & 74.090 \\
+Celeb-DF & PG-FDD CVPR’24 [24] & Xception & 7.950 & 16.290 & 69.470 & 23.990 & 12.470 & 67.780 & 23.710 & 13.300 & 62.630 & 74.240 \\
+Celeb-DF & Fairadapter ICASSP’25 [10] & ViT-L/14 & 8.590 & 26.840 & 56.840 & 46.140 & 36.350 & 58.340 & 47.030 & 35.690 & 54.770 & 64.940 \\
+Celeb-DF & RSEF-FDD arxiv’25 [18] & Xception & 1.940 & 35.630 & 68.920 & 17.400 & 27.480 & 67.800 & 24.170 & 27.730 & 62.560 & 74.360 \\
+Celeb-DF & Ding et al. (published) & Xception & 6.410 & 10.810 & 69.680 & 16.600 & 7.290 & 69.960 & 23.320 & 12.010 & 63.270 & 76.750 \\
+Celeb-DF & CES-FL L\_A [seed17] & Xception & 6.113 & 23.008 & 61.235 & 37.821 & 29.174 & 50.957 & 40.388 & 30.841 & 48.722 & 70.747 \\
+Celeb-DF & CES-FL L\_H [seed17] & Xception & 4.690 & 28.850 & 61.570 & 41.327 & 32.262 & 51.011 & 47.712 & 37.540 & 48.492 & 71.404 \\
+DFD & Ori (published) & Xception & 9.450 & 6.630 & 72.680 & 7.750 & 22.310 & 69.070 & 35.060 & 25.530 & 59.200 & 74.320 \\
+DFD & DAG-FDD WACV’24 [20] & Xception & 5.410 & 5.600 & 75.870 & 2.560 & 21.340 & 70.140 & 33.000 & 23.020 & 61.090 & 76.290 \\
+DFD & DAW-FDD WACV’24 [20] & Xception & 5.300 & 10.630 & 71.680 & 4.320 & 20.160 & 63.240 & 33.810 & 24.720 & 56.010 & 73.710 \\
+DFD & PG-FDD CVPR’24 [24] & Xception & 5.050 & 1.860 & 76.370 & 5.790 & 19.310 & 74.810 & 28.000 & 23.930 & 66.320 & 80.700 \\
+DFD & Fairadapter ICASSP’25 [10] & ViT-L/14 & 6.320 & 7.550 & 63.280 & 11.290 & 12.280 & 56.280 & 29.560 & 33.110 & 48.630 & 68.120 \\
+DFD & RSEF-FDD arxiv’25 [18] & Xception & 18.500 & 6.110 & 75.970 & 19.450 & 19.400 & 72.650 & 35.340 & 10.970 & 67.240 & 80.540 \\
+DFD & Ding et al. (published) & Xception & 4.720 & 5.490 & 78.980 & 2.090 & 18.660 & 77.440 & 27.320 & 22.810 & 69.730 & 81.460 \\
+DFD & CES-FL L\_A [seed17] & Xception & 2.700 & 2.388 & 80.596 & 10.876 & 1.736 & 79.797 & 34.406 & 5.508 & 68.570 & 81.156 \\
+DFD & CES-FL L\_H [seed17] & Xception & 0.845 & 1.858 & 80.186 & 13.265 & 2.538 & 79.472 & 40.206 & 6.462 & 67.793 & 80.879 \\
+\bottomrule
+\end{tabular}}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\caption{Table 1: SOURCE\_VAL10. Published references and CES-FL seed17; protocols differ.}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lllrrrr}
+\toprule
+Attribute & Method & Backbone & F\_FPR $\downarrow$ & F\_DP $\downarrow$ & es-AUC $\uparrow$ & AUC $\uparrow$ \\
+\midrule
+Gender & Ori (published) & Xception & 4.100 & 5.720 & 91.930 & 92.690 \\
+Gender & DAG-FDD WACV’24 [20] & Xception & 1.820 & 4.650 & 94.870 & 96.720 \\
+Gender & DAW-FDD WACV’24 [20] & Xception & 0.780 & 9.520 & 95.760 & 97.460 \\
+Gender & PG-FDD CVPR’24 [24] & Xception & 0.620 & 4.740 & 96.320 & 97.660 \\
+Gender & Fairadapter ICASSP’25 [10] & ViT-L/14 & 4.160 & 12.210 & 67.850 & 71.500 \\
+Gender & RSEF-FDD arxiv’25 [18] & Xception & 0.570 & 8.550 & 94.910 & 97.090 \\
+Gender & Ding et al. (published) & Xception & 0.530 & 3.610 & 96.450 & 97.710 \\
+Gender & CES-FL L\_A [seed17] & Xception & 0.124 & 1.654 & 97.473 & 98.471 \\
+Gender & CES-FL L\_H [seed17] & Xception & 0.848 & 1.674 & 97.440 & 98.489 \\
+Race & Ori (published) & Xception & 19.760 & 4.740 & 82.850 & 92.690 \\
+Race & DAG-FDD WACV’24 [20] & Xception & 5.480 & 9.200 & 93.430 & 96.720 \\
+Race & DAW-FDD WACV’24 [20] & Xception & 5.430 & 14.690 & 94.150 & 97.460 \\
+Race & PG-FDD CVPR’24 [24] & Xception & 11.130 & 4.780 & 94.520 & 97.660 \\
+Race & Fairadapter ICASSP’25 [10] & ViT-L/14 & 43.220 & 20.390 & 56.030 & 71.500 \\
+Race & RSEF-FDD arxiv’25 [18] & Xception & 8.390 & 5.280 & 93.600 & 97.090 \\
+Race & Ding et al. (published) & Xception & 9.290 & 4.350 & 94.860 & 97.710 \\
+Race & CES-FL L\_A [seed17] & Xception & 10.750 & 2.734 & 97.061 & 98.471 \\
+Race & CES-FL L\_H [seed17] & Xception & 13.736 & 3.049 & 97.566 & 98.489 \\
+Intersection & Ori (published) & Xception & 36.030 & 14.640 & 74.430 & 92.690 \\
+Intersection & DAG-FDD WACV’24 [20] & Xception & 24.080 & 26.250 & 85.800 & 96.720 \\
+Intersection & DAW-FDD WACV’24 [20] & Xception & 14.360 & 26.130 & 86.740 & 97.460 \\
+Intersection & PG-FDD CVPR’24 [24] & Xception & 9.190 & 13.390 & 86.830 & 97.660 \\
+Intersection & Fairadapter ICASSP’25 [10] & ViT-L/14 & 86.910 & 42.440 & 45.980 & 71.500 \\
+Intersection & RSEF-FDD arxiv’25 [18] & Xception & 23.640 & 21.740 & 85.770 & 97.090 \\
+Intersection & Ding et al. (published) & Xception & 20.180 & 9.470 & 86.910 & 97.710 \\
+Intersection & CES-FL L\_A [seed17] & Xception & 24.859 & 11.122 & 91.884 & 98.471 \\
+Intersection & CES-FL L\_H [seed17] & Xception & 31.402 & 11.888 & 92.066 & 98.489 \\
+\bottomrule
+\end{tabular}}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\caption{Table 2: SOURCE\_VAL10. Published references and CES-FL seed17; protocols differ.}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lllrrrrrrrrrr}
+\toprule
+Dataset & Method & Backbone & Gender F\_FPR $\downarrow$ & Gender F\_DP $\downarrow$ & Gender es-AUC $\uparrow$ & Race F\_FPR $\downarrow$ & Race F\_DP $\downarrow$ & Race es-AUC $\uparrow$ & Intersection F\_FPR $\downarrow$ & Intersection F\_DP $\downarrow$ & Intersection es-AUC $\uparrow$ & AUC $\uparrow$ \\
+\midrule
+DFDC & Ori (published) & Xception & 8.670 & 6.700 & 54.560 & 19.410 & 7.990 & 47.020 & 53.420 & 17.340 & 36.960 & 56.130 \\
+DFDC & DAG-FDD WACV’24 [20] & Xception & 5.290 & 6.680 & 57.410 & 9.260 & 12.510 & 45.910 & 45.300 & 12.920 & 36.420 & 59.130 \\
+DFDC & DAW-FDD WACV’24 [20] & Xception & 3.600 & 3.670 & 55.880 & 22.360 & 9.720 & 47.770 & 46.800 & 12.690 & 36.630 & 56.900 \\
+DFDC & PG-FDD CVPR’24 [24] & Xception & 2.350 & 2.570 & 57.710 & 10.100 & 11.490 & 50.530 & 32.160 & 17.710 & 37.420 & 59.640 \\
+DFDC & Fairadapter ICASSP’25 [10] & ViT-L/14 & 2.390 & 4.570 & 55.880 & 32.490 & 26.770 & 52.270 & 74.100 & 31.530 & 31.390 & 59.250 \\
+DFDC & RSEF-FDD arxiv’25 [18] & Xception & 2.090 & 3.830 & 57.900 & 12.240 & 7.740 & 50.270 & 38.890 & 12.180 & 37.720 & 59.080 \\
+DFDC & Ding et al. (published) & Xception & 1.760 & 3.670 & 57.940 & 17.930 & 7.580 & 52.330 & 37.370 & 11.920 & 39.030 & 61.860 \\
+DFDC & CES-FL L\_A [seed17] & Xception & 0.404 & 1.838 & 60.692 & 14.683 & 5.666 & 53.488 & 30.442 & 7.212 & 40.283 & 61.769 \\
+DFDC & CES-FL L\_H [seed17] & Xception & 0.868 & 2.205 & 59.732 & 13.538 & 5.122 & 52.376 & 27.623 & 7.573 & 40.014 & 60.456 \\
+Celeb-DF & Ori (published) & Xception & 6.930 & 20.230 & 60.940 & 23.440 & 17.890 & 61.210 & 27.380 & 18.720 & 61.220 & 69.180 \\
+Celeb-DF & DAG-FDD WACV’24 [20] & Xception & 8.700 & 14.250 & 66.230 & 19.440 & 13.260 & 62.610 & 23.600 & 13.800 & 63.080 & 72.290 \\
+Celeb-DF & DAW-FDD WACV’24 [20] & Xception & 8.710 & 12.730 & 68.310 & 14.760 & 7.800 & 66.470 & 24.750 & 13.780 & 59.240 & 74.090 \\
+Celeb-DF & PG-FDD CVPR’24 [24] & Xception & 7.950 & 16.290 & 69.470 & 23.990 & 12.470 & 67.780 & 23.710 & 13.300 & 62.630 & 74.240 \\
+Celeb-DF & Fairadapter ICASSP’25 [10] & ViT-L/14 & 8.590 & 26.840 & 56.840 & 46.140 & 36.350 & 58.340 & 47.030 & 35.690 & 54.770 & 64.940 \\
+Celeb-DF & RSEF-FDD arxiv’25 [18] & Xception & 1.940 & 35.630 & 68.920 & 17.400 & 27.480 & 67.800 & 24.170 & 27.730 & 62.560 & 74.360 \\
+Celeb-DF & Ding et al. (published) & Xception & 6.410 & 10.810 & 69.680 & 16.600 & 7.290 & 69.960 & 23.320 & 12.010 & 63.270 & 76.750 \\
+Celeb-DF & CES-FL L\_A [seed17] & Xception & 6.077 & 21.197 & 61.235 & 34.847 & 26.575 & 50.957 & 37.192 & 28.241 & 48.722 & 70.747 \\
+Celeb-DF & CES-FL L\_H [seed17] & Xception & 8.037 & 23.258 & 61.570 & 35.272 & 27.268 & 51.011 & 38.765 & 29.490 & 48.492 & 71.404 \\
+DFD & Ori (published) & Xception & 9.450 & 6.630 & 72.680 & 7.750 & 22.310 & 69.070 & 35.060 & 25.530 & 59.200 & 74.320 \\
+DFD & DAG-FDD WACV’24 [20] & Xception & 5.410 & 5.600 & 75.870 & 2.560 & 21.340 & 70.140 & 33.000 & 23.020 & 61.090 & 76.290 \\
+DFD & DAW-FDD WACV’24 [20] & Xception & 5.300 & 10.630 & 71.680 & 4.320 & 20.160 & 63.240 & 33.810 & 24.720 & 56.010 & 73.710 \\
+DFD & PG-FDD CVPR’24 [24] & Xception & 5.050 & 1.860 & 76.370 & 5.790 & 19.310 & 74.810 & 28.000 & 23.930 & 66.320 & 80.700 \\
+DFD & Fairadapter ICASSP’25 [10] & ViT-L/14 & 6.320 & 7.550 & 63.280 & 11.290 & 12.280 & 56.280 & 29.560 & 33.110 & 48.630 & 68.120 \\
+DFD & RSEF-FDD arxiv’25 [18] & Xception & 18.500 & 6.110 & 75.970 & 19.450 & 19.400 & 72.650 & 35.340 & 10.970 & 67.240 & 80.540 \\
+DFD & Ding et al. (published) & Xception & 4.720 & 5.490 & 78.980 & 2.090 & 18.660 & 77.440 & 27.320 & 22.810 & 69.730 & 81.460 \\
+DFD & CES-FL L\_A [seed17] & Xception & 2.783 & 2.167 & 80.596 & 11.328 & 2.236 & 79.797 & 34.135 & 5.036 & 68.570 & 81.156 \\
+DFD & CES-FL L\_H [seed17] & Xception & 3.662 & 2.482 & 80.186 & 11.756 & 3.392 & 79.472 & 33.561 & 7.634 & 67.793 & 80.879 \\
+\bottomrule
+\end{tabular}}
+\end{table*}
+
