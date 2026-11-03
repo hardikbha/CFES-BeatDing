@@ -1,0 +1,15 @@
+{
+  "status": "OPERATOR_REVIEW_RECORDED",
+  "source_sha256": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
+  "config_digest": "980e6fe1c994f2beaea674889d5566ea5a045a17003136767999ca0154fc117f",
+  "preview_sha256": "974705883a557bfe99e585b083044dc0b84050bc8ccb21f0ceadd231cb7c64c7",
+  "review_sha256": "ee2e129448b32487a5de43ad8135258aa3209f86428265a93f01d90b53d29f56",
+  "preview_file": "/home/sachin.chaudhary/ces_fl_runs/lh_low_lr3_s17_20261103T140700Z/preview/preview_PRIVATE.json",
+  "review_file": "/home/sachin.chaudhary/ces_fl_runs/lh_low_lr3_s17_20261103T140700Z/review/review_PRIVATE.json",
+  "case_count": 88,
+  "reviewers": [
+    "Codex AI visual reviewer; fresh inspection 2026-11-03; NOT human approval"
+  ],
+  "real_forgery_validity_proven": false,
+  "scope": "Stratified visual qualification of defined procedural probes; not per-image biological identity or causal validation"
+}
