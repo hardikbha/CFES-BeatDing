@@ -95,7 +95,7 @@ class HeadAblationTests(unittest.TestCase):
         a=functions(SRC/'ces_fl_forensic_response.py');b=functions(SRC/'ces_fl_head_ablation.py')
         for name in ('Xception','Block','SeparableConv2d','intervention','Originals','auxiliary','hierarchy_layout',
                      'hierarchical_real_error','soft_error_disparity','response','sensitivity','response_alignment',
-                     'train_step','original_weights','make_loader','build_optimizer','calibrate','metric_report',
+                     'original_weights','make_loader','build_optimizer','calibrate','metric_report',
                      'bootstrap','components','split_audit','read_manifest','qualify','check_qualification'):
             with self.subTest(function=name): self.assertEqual(a[name],b[name])
 
@@ -124,7 +124,8 @@ class HeadAblationTests(unittest.TestCase):
         for reference, filename in [('A','L_A_plain_bce.json'),('H','L_H_plain_hierarchical.json')]:
             old_c=replay.reference_config(reference)
             c=json.loads((PROPOSAL/filename).read_text())
-            expected=dict(old_c,format=new.VERSION,source_sha256=new.sha(new.__file__),head_type='linear')
+            # Archived configs remain pinned to the original, completed source.
+            expected=dict(old_c,format=new.VERSION,source_sha256='08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177',head_type='linear')
             expected.setdefault('error_control','legacy');expected.setdefault('alignment_warmup_epochs',0)
             self.assertEqual(c,expected)
 

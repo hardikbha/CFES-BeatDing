@@ -758,6 +758,14 @@ def response(sham_logits, treated_logits):
 def sensitivity(r, margin): return F.relu(margin - r).mean() if r.numel() else r.sum() * 0
 
 
+def sham_consistency(sham_logits, original_logits, c):
+    """Prespecified independent ablation; legacy transformation is the default."""
+    zs, zo = sham_logits.float(), original_logits.float()
+    if c.get('sham_transform', 'difference_of_asinh') == 'asinh_of_difference':
+        return torch.asinh(zs - zo).abs().mean()
+    return (torch.asinh(zs) - torch.asinh(zo)).abs().mean()
+
+
 def response_alignment(r, groups):
     """Equal-count 1D quantile alignment within ONE operator/strength stratum.
     Each group contributes equally. This is no same-person demographic edit.
@@ -789,7 +797,7 @@ def train_step(model, b, aux, weights, c, arm, threshold, device, epoch=0):
                 zs = model(b['s'][real.cpu()].to(device))['logit']
                 zt = model(b['t'][real.cpu()].to(device))['logit']
                 orig_sens = sensitivity(response(zs, zt), c['margin']); paired_count = int(real.sum())
-                orig_control = (torch.asinh(zs.float()) - torch.asinh(z[real].float())).abs().mean()
+                orig_control = sham_consistency(zs, z[real], c)
         if aux is not None and arm != 'A':
             za = model(aux['x'].to(device))['logit']
             ay, ag = aux['y'].to(device), aux['group'].to(device)
@@ -802,7 +810,7 @@ def train_step(model, b, aux, weights, c, arm, threshold, device, epoch=0):
             if arm in ('C', 'D'):
                 zs = model(aux['s'].to(device))['logit']; zt = model(aux['t'].to(device))['logit']
                 rr = response(zs, zt); aux_sens = sensitivity(rr, c['margin'])
-                aux_control = (torch.asinh(zs.float()) - torch.asinh(za[ay == 0].float())).abs().mean()
+                aux_control = sham_consistency(zs, za[ay == 0], c)
                 if arm == 'D': align = response_alignment(rr, ag[ay == 0])
         # aux_every compensates deterministic periodic evaluation frequency.
         total = cls + c['lambda_sensitivity'] * (orig_sens + c['sham_weight'] * orig_control)
@@ -877,7 +885,9 @@ def check_config(c, fixture=False, bound=True):
             'margin', 'lambda_fair', 'lambda_sensitivity', 'lambda_alignment', 'sham_weight', 'amp',
             'max_gpu_hours', 'allowed_content_overlap', 'source_sha256', 'synthetic_fixture',
             'error_control', 'alignment_warmup_epochs', 'head_type'}
-    if set(c) != keys: raise ValueError(f'Config schema differs: missing={keys-set(c)}, extra={set(c)-keys}')
+    if set(c) - {'sham_transform'} != keys: raise ValueError(f'Config schema differs: missing={keys-set(c)}, extra={set(c)-keys-{"sham_transform"}}')
+    if c.get('sham_transform', 'difference_of_asinh') not in ('difference_of_asinh', 'asinh_of_difference'):
+        raise ValueError('Invalid sham_transform')
     if c['head_type'] not in ('linear', 'gated'): raise ValueError('Invalid head_type')
     if c['error_control'] not in ('legacy', 'support_upper', 'hierarchical_real'):
         raise ValueError('Invalid error-control objective')
@@ -895,7 +905,7 @@ def check_config(c, fixture=False, bound=True):
     if c['size'] < 71 or (not fixture and c['size'] != 224): raise ValueError('Production preprocessing is fixed224')
     if not fixture and (c['hidden'], c['gate_hidden']) != (128, 64): raise ValueError('Production head widths fixed')
     for key in ('encoder_lr', 'head_lr', 'weight_decay', 'temperature', 'margin', 'lambda_fair', 'lambda_sensitivity', 'lambda_alignment', 'sham_weight', 'max_gpu_hours'):
-        if not isinstance(c[key], (float, int)) or not math.isfinite(c[key]) or c[key] <= 0: raise ValueError(f'Invalid {key}')
+        if not isinstance(c[key], (float, int)) or not math.isfinite(c[key]) or c[key] < 0 or (c[key] == 0 and key != 'lambda_alignment'): raise ValueError(f'Invalid {key}')
     if type(c['amp']) is not bool or not 0 < c['target_fpr'] < 1: raise ValueError('Invalid AMP/FPR')
     if c['balance_axis'] not in AXES or c['encoder_policy'] not in ('frozen', 'exit', 'full'): raise ValueError('Invalid model/sampling policy')
     if not c['axes'] or len(set(c['axes'])) != len(c['axes']) or not set(c['axes']).issubset(AXES): raise ValueError('Invalid axes')

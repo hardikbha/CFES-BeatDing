@@ -1,0 +1,19 @@
+# Two independent L_H loss ablations — 3 November 2026
+
+Authorized explicitly by the user: two three-epoch FF++ TRAIN/VAL runs, seed17, against the completed lower-LR control. No TEST, Ding-model computation, new dataset, generation, or automatic extension.
+
+Control: execution commit 29ce92ee8631c9c11ee3649d4f5a1110ecba29fd; source SHA 08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177. Its three-epoch selected checkpoint is epoch3, SHA 59143159eea223d97bc436b510f13ca90b750f00851071a860f91ec9231d4a06. Validation AUC 98.1856600343%, FNR 4.6116276886%; gender/race/joint/age/skin/ids8 F_FPR = .04369892586/.09455521582/.41893886084/.19272079851/.03687069946/.33745637190. Do not initialize either new model from this trained checkpoint.
+
+SHAM_FIX changes ONLY both original-real and auxiliary-real sham losses from mean |asinh(z_s)-asinh(z_o)| to mean |asinh(z_s-z_o)|. The latter is invariant to a common additive logit offset; it still compresses large differences. This is a hypothesis test, not a confirmed correction or fairness guarantee.
+
+NO_ALIGN keeps the original sham formula and changes ONLY lambda_alignment from .1 to exactly 0. Raw alignment is still computed/logged with identical data exposure; its weighted gradient is zero. Negative and nonfinite coefficients remain invalid. Other coefficients must remain positive. No combination arm is authorized.
+
+Both start independently from the SAME P50 encoder SHA 3174e5b01a84c91cc70afae538505663ca96454d897e6b793c0672826a8f08b5 and fresh seed17 linear head (state hash 9600162d7f69931f93d5e9e44ec778cd4e361c9ad0af38b66708508b50d04907). Xception exit-block policy, frozen BatchNorm, batch32, head_lr1e-4/encoder_lr1e-6, three epochs/7140 updates, AdamW/clipping/AMP, preprocessing and exact original/auxiliary sampling remain unchanged. Configs pin TRAIN/VAL/P50/overlap hashes. Every original retains BCE. All earlier runs/configurations/receipts stay immutable.
+
+Selection: earliest maximum validation AUC, exactly the existing global validation-real target-FPR .1 calibration and achieved-FPR reporting. Never select a fairer nonselected checkpoint. Report every epoch and selected epoch versus the control at matched epochs, all six demographic axes including FPR/FNR/gaps/worst-group AUC, group counts, exposure, checkpoint hashes and runtime. Single-seed descriptive ablations; no significance/SOTA claim or retrospective success threshold. Improvements and regressions both reported. Existing sparse-support, demographic-label and 163 declared contributor-overlap limitations persist.
+
+Gates: focused CPU tests, actual configuration/initialization checks, fresh source/config-bound full TRAIN/VAL byte+decode preflight, fresh procedural preview, and only exact-byte reuse of the genuine named prior AI procedural review (not human approval or proven real-forgery preservation). Then fresh CUDA tests/native smoke and configuration-specific real-input backward checks before each training. Failed gates stop that arm. Native software fixtures include synthetic isolation checks, never benchmark TEST access.
+
+Compute: observed lower-LR control used .572222 GPU-hours including checks/allocation. Expect roughly 35–60 minutes per arm after CPU input audit, depending on sharing; this is an estimate. Reserve at most 1.5 GPU-hours per arm (3 total), charged to the original 24-total ledger, previously 15.936613497 used/8.063386503 remaining. Request ngpus=1 and six CPUs per arm; physical binding via existing explicitly authorized pool-v2 UUID lease on allocated host, preserving other jobs. No exclusivity claim. No automatic retry/extension or additional experiment.
+
+Commands and launch/check status are recorded separately with exact execution commit. Public artifacts exclude faces, review decisions, row-level scores and checkpoints.

@@ -1,0 +1,10 @@
+#!/bin/bash
+#PBS -N lhSHAM17
+#PBS -q workq
+#PBS -l select=1:host=gpu01:ncpus=6:ngpus=1:mem=32gb
+#PBS -l walltime=01:35:00
+#PBS -j oe
+#PBS -o /home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/SHAM_FIX/allocation.log
+set -euo pipefail
+umask 077
+exec /home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-lh-sham-noalign-execution-20261103/CES_FL/proposals/lh_sham_noalign_s17_20261103T165600Z/run_allocated.py SHAM_FIX
