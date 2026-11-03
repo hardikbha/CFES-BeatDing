@@ -1,9 +1,9 @@
 {
-  "observed_management_utc": "2026-11-03T12:54:42.682951+00:00",
-  "observed_gpu01_unix": 1793709832.1876154,
+  "observed_management_utc": "2026-11-03T12:56:19.124863+00:00",
+  "observed_gpu01_unix": 1793709928.6198497,
   "measured_finished_gpu_hours": 0.10703432573212517,
-  "measured_active_gpu_hours": 0.6323281362321642,
-  "measured_total_gpu_hours": 0.7393624619642893,
+  "measured_active_gpu_hours": 0.7126883314715491,
+  "measured_total_gpu_hours": 0.8197226572036742,
   "commit": "815b4d4bc679c55d4ee6323cc7284335ce210568",
   "source_and_config": {
     "status": "SOURCE_AND_CONFIG_HASHES_PASS",
@@ -1619,127 +1619,127 @@
     {
       "pid": 3683232,
       "ppid": 1,
-      "elapsed": "12:40",
+      "elapsed": "14:16",
       "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/launch_pool_method_v2.py --method bce --session ff2_bce_gpu01_20261103T124210Z --hours 24 --gpu-uuid GPU-61f54ca7-3cee-1c93-def3-118523e95241"
     },
     {
       "pid": 3683248,
       "ppid": 1,
-      "elapsed": "12:40",
+      "elapsed": "14:16",
       "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/launch_pool_method_v2.py --method dag --session ff2_dag_gpu01_20261103T124210Z --hours 21 --gpu-uuid GPU-9b669a06-9156-a98e-2194-36f2fc11d7ca"
     },
     {
       "pid": 3683267,
       "ppid": 1,
-      "elapsed": "12:40",
+      "elapsed": "14:16",
       "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/launch_pool_method_v2.py --method daw --session ff2_daw_gpu01_20261103T124210Z --hours 23 --gpu-uuid GPU-789d1ee4-d888-8a11-c94e-3d866900bc4d"
     },
     {
       "pid": 3683278,
       "ppid": 3683232,
-      "elapsed": "12:40",
+      "elapsed": "14:16",
       "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/run_one.py --method bce --work-root /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z --sources /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103 --ledger /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/additional72_gpu_hours.json --allocation-record /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/allocations/ff2_bce_gpu01_20261103T124210Z/ALLOCATION.json --session-id ff2_bce_gpu01_20261103T124210Z --hours 24.0"
     },
     {
       "pid": 3683293,
       "ppid": 3683267,
-      "elapsed": "12:39",
+      "elapsed": "14:15",
       "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/run_one.py --method daw --work-root /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z --sources /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103 --ledger /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/additional72_gpu_hours.json --allocation-record /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/allocations/ff2_daw_gpu01_20261103T124210Z/ALLOCATION.json --session-id ff2_daw_gpu01_20261103T124210Z --hours 23.0"
     },
     {
       "pid": 3683309,
       "ppid": 3683248,
-      "elapsed": "12:39",
+      "elapsed": "14:15",
       "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/run_one.py --method dag --work-root /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z --sources /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103 --ledger /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/additional72_gpu_hours.json --allocation-record /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/allocations/ff2_dag_gpu01_20261103T124210Z/ALLOCATION.json --session-id ff2_dag_gpu01_20261103T124210Z --hours 21.0"
     },
     {
       "pid": 3684934,
       "ppid": 3683278,
-      "elapsed": "11:11",
+      "elapsed": "12:47",
       "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/src/ff2_fairness_baselines.py --config /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/configs/bce.json --preflight /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/preflight_bce --upstream /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103/dag_daw --device cuda train --out /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/bce/training --receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/bce/sessions/ff2_bce_gpu01_20261103T124210Z/dry_run/DRY_RUN.json --software-receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/bce/sessions/ff2_bce_gpu01_20261103T124210Z/software_fixture/SMOKE_RESULT.json --budget-hours 23.9254164459308"
     },
     {
       "pid": 3684936,
       "ppid": 3683309,
-      "elapsed": "11:11",
+      "elapsed": "12:47",
       "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/src/ff2_fairness_baselines.py --config /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/configs/dag.json --preflight /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/preflight_dag --upstream /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103/dag_daw --device cuda train --out /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/dag/training --receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/dag/sessions/ff2_dag_gpu01_20261103T124210Z/dry_run/DRY_RUN.json --software-receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/dag/sessions/ff2_dag_gpu01_20261103T124210Z/software_fixture/SMOKE_RESULT.json --budget-hours 20.925568200747172"
     },
     {
       "pid": 3684959,
       "ppid": 3683293,
-      "elapsed": "11:08",
+      "elapsed": "12:44",
       "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/src/ff2_fairness_baselines.py --config /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/configs/daw.json --preflight /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/preflight_daw --upstream /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103/dag_daw --device cuda train --out /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/daw/training --receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/daw/sessions/ff2_daw_gpu01_20261103T124210Z/dry_run/DRY_RUN.json --software-receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/daw/sessions/ff2_daw_gpu01_20261103T124210Z/software_fixture/SMOKE_RESULT.json --budget-hours 22.92453208989567"
     },
     {
       "pid": 3685101,
       "ppid": 3684936,
-      "elapsed": "10:38",
+      "elapsed": "12:14",
       "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/src/ff2_fairness_baselines.py --config /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/configs/dag.json --preflight /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/preflight_dag --upstream /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103/dag_daw --device cuda train --out /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/dag/training --receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/dag/sessions/ff2_dag_gpu01_20261103T124210Z/dry_run/DRY_RUN.json --software-receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/dag/sessions/ff2_dag_gpu01_20261103T124210Z/software_fixture/SMOKE_RESULT.json --budget-hours 20.925568200747172"
     },
     {
       "pid": 3685105,
       "ppid": 3684936,
-      "elapsed": "10:38",
+      "elapsed": "12:14",
       "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/src/ff2_fairness_baselines.py --config /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/configs/dag.json --preflight /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/preflight_dag --upstream /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103/dag_daw --device cuda train --out /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/dag/training --receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/dag/sessions/ff2_dag_gpu01_20261103T124210Z/dry_run/DRY_RUN.json --software-receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/dag/sessions/ff2_dag_gpu01_20261103T124210Z/software_fixture/SMOKE_RESULT.json --budget-hours 20.925568200747172"
     },
     {
       "pid": 3685109,
       "ppid": 3684936,
-      "elapsed": "10:38",
+      "elapsed": "12:14",
       "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/src/ff2_fairness_baselines.py --config /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/configs/dag.json --preflight /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/preflight_dag --upstream /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103/dag_daw --device cuda train --out /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/dag/training --receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/dag/sessions/ff2_dag_gpu01_20261103T124210Z/dry_run/DRY_RUN.json --software-receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/dag/sessions/ff2_dag_gpu01_20261103T124210Z/software_fixture/SMOKE_RESULT.json --budget-hours 20.925568200747172"
     },
     {
       "pid": 3685113,
       "ppid": 3684936,
-      "elapsed": "10:38",
+      "elapsed": "12:14",
       "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/src/ff2_fairness_baselines.py --config /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/configs/dag.json --preflight /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/preflight_dag --upstream /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103/dag_daw --device cuda train --out /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/dag/training --receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/dag/sessions/ff2_dag_gpu01_20261103T124210Z/dry_run/DRY_RUN.json --software-receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/dag/sessions/ff2_dag_gpu01_20261103T124210Z/software_fixture/SMOKE_RESULT.json --budget-hours 20.925568200747172"
     },
     {
       "pid": 3685154,
       "ppid": 3684959,
-      "elapsed": "10:35",
+      "elapsed": "12:11",
       "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/src/ff2_fairness_baselines.py --config /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/configs/daw.json --preflight /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/preflight_daw --upstream /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103/dag_daw --device cuda train --out /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/daw/training --receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/daw/sessions/ff2_daw_gpu01_20261103T124210Z/dry_run/DRY_RUN.json --software-receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/daw/sessions/ff2_daw_gpu01_20261103T124210Z/software_fixture/SMOKE_RESULT.json --budget-hours 22.92453208989567"
     },
     {
       "pid": 3685158,
       "ppid": 3684959,
-      "elapsed": "10:35",
+      "elapsed": "12:11",
       "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/src/ff2_fairness_baselines.py --config /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/configs/daw.json --preflight /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/preflight_daw --upstream /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103/dag_daw --device cuda train --out /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/daw/training --receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/daw/sessions/ff2_daw_gpu01_20261103T124210Z/dry_run/DRY_RUN.json --software-receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/daw/sessions/ff2_daw_gpu01_20261103T124210Z/software_fixture/SMOKE_RESULT.json --budget-hours 22.92453208989567"
     },
     {
       "pid": 3685162,
       "ppid": 3684959,
-      "elapsed": "10:35",
+      "elapsed": "12:11",
       "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/src/ff2_fairness_baselines.py --config /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/configs/daw.json --preflight /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/preflight_daw --upstream /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103/dag_daw --device cuda train --out /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/daw/training --receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/daw/sessions/ff2_daw_gpu01_20261103T124210Z/dry_run/DRY_RUN.json --software-receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/daw/sessions/ff2_daw_gpu01_20261103T124210Z/software_fixture/SMOKE_RESULT.json --budget-hours 22.92453208989567"
     },
     {
       "pid": 3685166,
       "ppid": 3684959,
-      "elapsed": "10:35",
+      "elapsed": "12:11",
       "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/src/ff2_fairness_baselines.py --config /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/configs/daw.json --preflight /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/preflight_daw --upstream /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103/dag_daw --device cuda train --out /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/daw/training --receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/daw/sessions/ff2_daw_gpu01_20261103T124210Z/dry_run/DRY_RUN.json --software-receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/daw/sessions/ff2_daw_gpu01_20261103T124210Z/software_fixture/SMOKE_RESULT.json --budget-hours 22.92453208989567"
     },
     {
       "pid": 3689638,
       "ppid": 3684934,
-      "elapsed": "01:05",
+      "elapsed": "02:41",
       "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/src/ff2_fairness_baselines.py --config /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/configs/bce.json --preflight /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/preflight_bce --upstream /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103/dag_daw --device cuda train --out /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/bce/training --receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/bce/sessions/ff2_bce_gpu01_20261103T124210Z/dry_run/DRY_RUN.json --software-receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/bce/sessions/ff2_bce_gpu01_20261103T124210Z/software_fixture/SMOKE_RESULT.json --budget-hours 23.9254164459308"
     },
     {
       "pid": 3689642,
       "ppid": 3684934,
-      "elapsed": "01:05",
+      "elapsed": "02:41",
       "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/src/ff2_fairness_baselines.py --config /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/configs/bce.json --preflight /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/preflight_bce --upstream /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103/dag_daw --device cuda train --out /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/bce/training --receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/bce/sessions/ff2_bce_gpu01_20261103T124210Z/dry_run/DRY_RUN.json --software-receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/bce/sessions/ff2_bce_gpu01_20261103T124210Z/software_fixture/SMOKE_RESULT.json --budget-hours 23.9254164459308"
     },
     {
       "pid": 3689646,
       "ppid": 3684934,
-      "elapsed": "01:05",
+      "elapsed": "02:41",
       "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/src/ff2_fairness_baselines.py --config /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/configs/bce.json --preflight /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/preflight_bce --upstream /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103/dag_daw --device cuda train --out /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/bce/training --receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/bce/sessions/ff2_bce_gpu01_20261103T124210Z/dry_run/DRY_RUN.json --software-receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/bce/sessions/ff2_bce_gpu01_20261103T124210Z/software_fixture/SMOKE_RESULT.json --budget-hours 23.9254164459308"
     },
     {
       "pid": 3689650,
       "ppid": 3684934,
-      "elapsed": "01:05",
+      "elapsed": "02:41",
       "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/src/ff2_fairness_baselines.py --config /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/configs/bce.json --preflight /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/preflight_bce --upstream /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103/dag_daw --device cuda train --out /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/bce/training --receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/bce/sessions/ff2_bce_gpu01_20261103T124210Z/dry_run/DRY_RUN.json --software-receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/bce/sessions/ff2_bce_gpu01_20261103T124210Z/software_fixture/SMOKE_RESULT.json --budget-hours 23.9254164459308"
     }
   ],

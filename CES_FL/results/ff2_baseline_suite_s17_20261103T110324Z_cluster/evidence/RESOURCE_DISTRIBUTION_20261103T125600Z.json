@@ -1,0 +1,33 @@
+{
+  "observed_management_utc": "2026-11-03T12:56:17.130482+00:00",
+  "request": "Use separate free GPUs on gpu01/gpu02 for speed",
+  "max_wave_gpus": 3,
+  "existing_methods_running_on_distinct_gpu01_cards": {
+    "bce": 6,
+    "dag": 4,
+    "daw": 5
+  },
+  "nodes": {
+    "gpu01": {
+      "returncode": 0,
+      "eligible_new_leases": [
+        {
+          "index": 3,
+          "uuid": "GPU-6a002609-de85-4949-c707-ee9317b284f0",
+          "name": "NVIDIA H100 80GB HBM3",
+          "free_mib": 49024,
+          "utilization": 98,
+          "available_mib_after_other_leases": 49024
+        }
+      ],
+      "stderr": ""
+    },
+    "gpu02": {
+      "returncode": 0,
+      "eligible_new_leases": [],
+      "stderr": ""
+    }
+  },
+  "action": "Preserve all three active runs; no eligible additional gpu02 card under current lease/memory requirements; no fourth duplicate allocation or forced migration.",
+  "gpu02_eligible": false
+}

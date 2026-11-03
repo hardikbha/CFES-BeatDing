@@ -1,6 +1,6 @@
 # FairForge-2 matched BCE/DAG-FDD/DAW-FDD wave
 
-2026-11-03T12:54:42.682951+00:00 management UTC.
+2026-11-03T12:56:19.124863+00:00 management UTC.
 
 Scientific commit `815b4d4bc679c55d4ee6323cc7284335ce210568`. Dataset:218,266TRAIN /31,107VAL, seed17,50epochs,batch128,float32 full Xception/BN,SGD.
 
@@ -12,7 +12,7 @@ Scientific commit `815b4d4bc679c55d4ee6323cc7284335ce210568`. Dataset:218,266TRA
 
 Additional72h ledger: finished charge 0.107034GPUh; active reservations 68.000GPUh; active GPUs 3/3; uncommitted 3.892966GPUh. Active reservation is not consumed compute. Live held time and allocator bookends are preserved in session/allocation receipts; cleanup overhead is reconciled after allocation release.
 
-Measured held time at the verified gpu01 clock: 0.739362GPUh including 0.632328h in active sessions. These are live elapsed durations, not reservation totals.
+Measured held time at the verified gpu01 clock: 0.819723GPUh including 0.712688h in active sessions. These are live elapsed durations, not reservation totals.
 
 All7 native/parity tests and6 budget tests passed without skips. Each preflight independently hashed/decoded all249,373TRAIN/VAL images; native membership/group mapping, split provenance and byte-overlap checks passed. CUDA fixtures are software tests, not benchmark results.
 
