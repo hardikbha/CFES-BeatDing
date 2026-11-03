@@ -1,0 +1,131 @@
+{
+  "request_id": "lh_finalization_celebdf_20261104_r1",
+  "kind": "IMPLEMENTATION_AND_EXECUTION_HANDOFF_NOT_TRAINER_CONFIG",
+  "created_local_date": "2026-11-04",
+  "state": "CPU_AGGREGATE_AUDIT_EXECUTED_TRAINING_ADAPTERS_PENDING",
+  "scientific_source_unchanged": true,
+  "original_scientific_source_sha256": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
+  "original_L_H_checkpoint_sha256": "6ef2caad3979d101fd94d7350aa3c1a50f95ee8307673cfaae63ac9d89af36f0",
+  "original_L_A_checkpoint_sha256": "aee9670ca011937d457846fbf13717445c5607715064dd6a54da5a82bda580ae",
+  "source_result_commit": "916999c8e54d0eeaa86bd2b09d9d3ceaadea0bb5",
+  "latest_ablation_result_commit": "08726ed2ed21b38099d1ca00f27392405535cb5b",
+  "source_pretest_work_order_commit": "ee73f2fdf5218e440852917e90281818bbe711bb",
+  "train": {
+    "train": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ding_ffpp/train.csv",
+    "train_sha256": "6ee9326fe8361dc3aee0f803c49b5eada169be5cf3bc3cb44ad3d934ba5ca657",
+    "val": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ding_ffpp/val.csv",
+    "val_sha256": "52f4844cffe5a03adb08cecde8829244bb50e05eeead36f6d659599f1c24f5b1",
+    "overlap_file": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ding_ffpp/protocol_source_overlap.json",
+    "overlap_sha256": "793db56c30c85dd654c6d68745afc926f4b1f8dc8bec749db01b07b3aa306c97"
+  },
+  "test_manifests": {
+    "ffpp": {
+      "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ding_ffpp/test.csv",
+      "sha256": "7c7a09d5ccab349b1670f357bf7b1498d58af4a6621e8b0469d8d0ea368ccbc0",
+      "rows": 25401,
+      "native_exact_duplicate_extra_rows": 0
+    },
+    "dfdc": {
+      "path": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401/manifests/dfdc_test.csv",
+      "sha256": "30a5c96a5a8ed06495276050543e3391bd5791281e54c08559f0118bef568c1f",
+      "rows": 22857,
+      "native_exact_duplicate_extra_rows": 1476
+    },
+    "celebdf": {
+      "path": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401/manifests/celebdf_test.csv",
+      "sha256": "5b4c9b3af2589b90e6e3fe9825857eacac9d4c2517f3226feb80fa7d4e0f4873",
+      "rows": 28458,
+      "native_exact_duplicate_extra_rows": 0
+    },
+    "dfd": {
+      "path": "/home/sachin.chaudhary/ces_fl_pipeline/experiments/benchmark_s17_20261031T112401/manifests/dfd_test.csv",
+      "sha256": "a9d89cb3838b72b36c8eaf55c0ae12c165a38ead50d2e18fc1969245a9533e79",
+      "rows": 9385,
+      "native_exact_duplicate_extra_rows": 0
+    }
+  },
+  "resnet": {
+    "adapter_implemented_in_this_commit": false,
+    "backbone": "resnet50",
+    "downstream_head": "GAP + Linear(2048,1)",
+    "pretraining_epochs": 50,
+    "pretraining_config_binding": "derive and hash actual native P50 settings; declare backbone/normalization changes",
+    "pretraining_native_config_verified_locally": false,
+    "downstream_epochs": 10,
+    "downstream_arms": [
+      "L_A",
+      "L_H"
+    ],
+    "seed": 17,
+    "batch_size": 32,
+    "head_lr": 0.001,
+    "encoder_lr": 1e-05,
+    "optimizer": "AdamW",
+    "weight_decay": 0.0001,
+    "clip_norm": 5,
+    "trainable_encoder": "layer4",
+    "bn_running_stats": "frozen",
+    "train_amp": "bfloat16",
+    "eval_dtype": "float32",
+    "normalization_mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "normalization_std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "head_initialization": "fresh identical seeded head, same encoder checkpoint for A and H",
+    "objectives": "original L_A and L_H unchanged",
+    "selection": "earliest strict maximum FF++ validation AUC"
+  },
+  "ding10": {
+    "adapter_implemented_in_this_commit": false,
+    "pretraining_reuse": "verified native classification P50 seed17 final checkpoint",
+    "sfd_reuse": "verified TRAIN-only native 2% mask; no test-derived mask",
+    "downstream_epochs": 10,
+    "seed": 17,
+    "main_images_per_update": 32,
+    "updates_per_epoch": 2380,
+    "each_original_once_per_epoch": true,
+    "optimizer": "SGD",
+    "lr": 0.001,
+    "momentum": 0.9,
+    "weight_decay": 0.005,
+    "fairness_weight": 0.005,
+    "trainable": "native classifier only",
+    "bn_running_stats": "frozen; declared controlled-variant difference from archived GDA",
+    "fairness": "connected-gradient class-conditioned native GDA; epsilon/normalization provenance required",
+    "selection": "earliest strict maximum FF++ validation AUC",
+    "paper_protocol_equivalent": false
+  },
+  "threshold_policy": [
+    "fixed_probability_0_5",
+    "unchanged_selected_FFPP_validation_real_10pct"
+  ],
+  "celebdf_audit": {
+    "new_inference": false,
+    "new_training": false,
+    "threshold_search": false,
+    "private_annotations_verified_locally": false,
+    "private_images_inspected_locally": false,
+    "inputs_sha256": "89aad2cbe12395db22bbae796409f91e88506cd8c4e5235e5ed8b5555d1025b5"
+  },
+  "budget": {
+    "maximum_concurrent_gpus": 2,
+    "original_total_gpu_hours": 24,
+    "last_observed_used_gpu_hours": 17.286613,
+    "last_observed_remaining_gpu_hours": 6.713387,
+    "must_refresh_ledger": true,
+    "extra_gpu_hours_granted": 0,
+    "ff2_budget_transfer": false,
+    "profile_complete_remaining_cohort_before_launch": true
+  },
+  "training_launched_here": false,
+  "test_inference_launched_here": false,
+  "new_model_or_threshold_selected_from_TEST": false,
+  "preserve_completed_outputs": true,
+  "forbid_additional_loss_search": true
+}

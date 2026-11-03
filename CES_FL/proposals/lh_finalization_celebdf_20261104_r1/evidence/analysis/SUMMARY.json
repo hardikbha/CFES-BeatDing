@@ -1,0 +1,259 @@
+{
+  "status": "PUBLISHED_AGGREGATES_RECONCILED",
+  "source_commit": "916999c8e54d0eeaa86bd2b09d9d3ceaadea0bb5",
+  "new_inference": false,
+  "new_training": false,
+  "threshold_search": false,
+  "counts": {
+    "n": 28458,
+    "n_real": 5713,
+    "n_fake": 22745
+  },
+  "female_white_share_of_fakes": 0.9453945922180699,
+  "joint_F_FPR_contributions": [
+    {
+      "group": "Female-Others",
+      "n_real": 90,
+      "n_fake": 30,
+      "absolute_fpr_deviation": 0.34937277554116347,
+      "share_of_reported_joint_F_FPR": 0.7322602809098104
+    },
+    {
+      "group": "Female-White",
+      "n_real": 3929,
+      "n_fake": 21503,
+      "absolute_fpr_deviation": 0.00622354333619185,
+      "share_of_reported_joint_F_FPR": 0.013044100487095001
+    },
+    {
+      "group": "Male-Black",
+      "n_real": 710,
+      "n_fake": 1212,
+      "absolute_fpr_deviation": 0.12151924323817931,
+      "share_of_reported_joint_F_FPR": 0.25469561860309464
+    }
+  ],
+  "real_only_joint_groups": [
+    "Male-Others",
+    "Male-White"
+  ],
+  "hypothetical_perfect_prediction_DP_on_existing_eligible_groups": {
+    "gender": 0.4256447642926495,
+    "gender_race": 0.5955095942120163
+  },
+  "interpretation_of_perfect_DP": "Algebraic base-rate diagnostic, not a trained model or replacement metric.",
+  "overall_reports": {
+    "L_A": {
+      "fixed_probability_0_5": {
+        "n": 28458,
+        "n_real": 5713,
+        "n_fake": 22745,
+        "auc": 0.707474516455145,
+        "fpr": 0.6108874496761771,
+        "fnr": 0.15700153879973622,
+        "positive_rate": 0.7964017148077869
+      },
+      "calibrated": {
+        "n": 28458,
+        "n_real": 5713,
+        "n_fake": 22745,
+        "auc": 0.707474516455145,
+        "fpr": 0.652546823035183,
+        "fnr": 0.13528247966586063,
+        "positive_rate": 0.8221238316114976
+      }
+    },
+    "L_H": {
+      "fixed_probability_0_5": {
+        "n": 28458,
+        "n_real": 5713,
+        "n_fake": 22745,
+        "auc": 0.714039109008364,
+        "fpr": 0.41729389112550325,
+        "fnr": 0.27395031875137393,
+        "positive_rate": 0.6640663433832314
+      },
+      "calibrated": {
+        "n": 28458,
+        "n_real": 5713,
+        "n_fake": 22745,
+        "auc": 0.714039109008364,
+        "fpr": 0.6492210747418169,
+        "fnr": 0.1311057375247307,
+        "positive_rate": 0.8247944339025933
+      }
+    }
+  },
+  "thresholds": {
+    "L_A": {
+      "fixed_probability_0_5": 0.0,
+      "calibrated": -1.5366611480712888
+    },
+    "L_H": {
+      "fixed_probability_0_5": 0.0,
+      "calibrated": -2.550374031066894
+    }
+  },
+  "H_minus_A_auc_percentage_points": 0.6564592553218951,
+  "paired_intervals": [
+    {
+      "analysis": "H_minus_A_celebdf",
+      "dataset": "celebdf",
+      "view": "fixed_probability_0.5",
+      "metric": "overall/auc",
+      "estimate_fraction": "0.006564592553218951",
+      "lower95_fraction": "0.0022731800065129482",
+      "upper95_fraction": "0.010849385609999271",
+      "usable_draws": "1000",
+      "unusable_draws": "0",
+      "meets_900_draw_requirement": "True",
+      "training_seed_count": "1"
+    },
+    {
+      "analysis": "H_minus_A_celebdf",
+      "dataset": "celebdf",
+      "view": "fixed_probability_0.5",
+      "metric": "overall/fpr",
+      "estimate_fraction": "-0.1935935585506739",
+      "lower95_fraction": "-0.20719778222243315",
+      "upper95_fraction": "-0.18035001590124916",
+      "usable_draws": "1000",
+      "unusable_draws": "0",
+      "meets_900_draw_requirement": "True",
+      "training_seed_count": "1"
+    },
+    {
+      "analysis": "H_minus_A_celebdf",
+      "dataset": "celebdf",
+      "view": "fixed_probability_0.5",
+      "metric": "overall/fnr",
+      "estimate_fraction": "0.11694877995163772",
+      "lower95_fraction": "0.11056997057261253",
+      "upper95_fraction": "0.12249500901302579",
+      "usable_draws": "1000",
+      "unusable_draws": "0",
+      "meets_900_draw_requirement": "True",
+      "training_seed_count": "1"
+    },
+    {
+      "analysis": "H_minus_A_celebdf",
+      "dataset": "celebdf",
+      "view": "fixed_probability_0.5",
+      "metric": "gender/F_FPR",
+      "estimate_fraction": "-0.014221262462570772",
+      "lower95_fraction": "-0.0405260015838238",
+      "upper95_fraction": "0.01951577251180219",
+      "usable_draws": "1000",
+      "unusable_draws": "0",
+      "meets_900_draw_requirement": "True",
+      "training_seed_count": "1"
+    },
+    {
+      "analysis": "H_minus_A_celebdf",
+      "dataset": "celebdf",
+      "view": "fixed_probability_0.5",
+      "metric": "race/F_FPR",
+      "estimate_fraction": "0.03505283692163458",
+      "lower95_fraction": "-0.061264775101341096",
+      "upper95_fraction": "0.13503510195547605",
+      "usable_draws": "609",
+      "unusable_draws": "391",
+      "meets_900_draw_requirement": "False",
+      "training_seed_count": "1"
+    },
+    {
+      "analysis": "H_minus_A_celebdf",
+      "dataset": "celebdf",
+      "view": "fixed_probability_0.5",
+      "metric": "gender_race/F_FPR",
+      "estimate_fraction": "0.07323791887284004",
+      "lower95_fraction": "-0.0483921193172478",
+      "upper95_fraction": "0.1810985683438611",
+      "usable_draws": "587",
+      "unusable_draws": "413",
+      "meets_900_draw_requirement": "False",
+      "training_seed_count": "1"
+    },
+    {
+      "analysis": "H_minus_A_celebdf",
+      "dataset": "celebdf",
+      "view": "native_selected_VAL_FPR10",
+      "metric": "overall/auc",
+      "estimate_fraction": "0.006564592553218951",
+      "lower95_fraction": "0.0022731800065129482",
+      "upper95_fraction": "0.010849385609999271",
+      "usable_draws": "1000",
+      "unusable_draws": "0",
+      "meets_900_draw_requirement": "True",
+      "training_seed_count": "1"
+    },
+    {
+      "analysis": "H_minus_A_celebdf",
+      "dataset": "celebdf",
+      "view": "native_selected_VAL_FPR10",
+      "metric": "overall/fpr",
+      "estimate_fraction": "-0.003325748293366071",
+      "lower95_fraction": "-0.013648542457724289",
+      "upper95_fraction": "0.00635752612799964",
+      "usable_draws": "1000",
+      "unusable_draws": "0",
+      "meets_900_draw_requirement": "True",
+      "training_seed_count": "1"
+    },
+    {
+      "analysis": "H_minus_A_celebdf",
+      "dataset": "celebdf",
+      "view": "native_selected_VAL_FPR10",
+      "metric": "overall/fnr",
+      "estimate_fraction": "-0.004176742141129924",
+      "lower95_fraction": "-0.0071150222624090835",
+      "upper95_fraction": "-0.0012113907628594708",
+      "usable_draws": "1000",
+      "unusable_draws": "0",
+      "meets_900_draw_requirement": "True",
+      "training_seed_count": "1"
+    },
+    {
+      "analysis": "H_minus_A_celebdf",
+      "dataset": "celebdf",
+      "view": "native_selected_VAL_FPR10",
+      "metric": "gender/F_FPR",
+      "estimate_fraction": "0.01960742553155881",
+      "lower95_fraction": "-0.008668388643518501",
+      "upper95_fraction": "0.04054379147310199",
+      "usable_draws": "1000",
+      "unusable_draws": "0",
+      "meets_900_draw_requirement": "True",
+      "training_seed_count": "1"
+    },
+    {
+      "analysis": "H_minus_A_celebdf",
+      "dataset": "celebdf",
+      "view": "native_selected_VAL_FPR10",
+      "metric": "race/F_FPR",
+      "estimate_fraction": "0.004251597364024584",
+      "lower95_fraction": "-0.04373546742105059",
+      "upper95_fraction": "0.04975215130130228",
+      "usable_draws": "609",
+      "unusable_draws": "391",
+      "meets_900_draw_requirement": "False",
+      "training_seed_count": "1"
+    },
+    {
+      "analysis": "H_minus_A_celebdf",
+      "dataset": "celebdf",
+      "view": "native_selected_VAL_FPR10",
+      "metric": "gender_race/F_FPR",
+      "estimate_fraction": "0.015730080112737355",
+      "lower95_fraction": "-0.05458529289322852",
+      "upper95_fraction": "0.07091170857631572",
+      "usable_draws": "587",
+      "unusable_draws": "413",
+      "meets_900_draw_requirement": "False",
+      "training_seed_count": "1"
+    }
+  ],
+  "check_scope": "Aggregate arithmetic and published membership counts only; private row alignment, original images and biological identity labels not verified here.",
+  "input_sha256": "89aad2cbe12395db22bbae796409f91e88506cd8c4e5235e5ed8b5555d1025b5",
+  "script_sha256": "a25be748265617f8c1f516a9e5763c3806c1e6a268400d43179f1fc1a7003dba"
+}

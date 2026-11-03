@@ -1,0 +1,8 @@
+PASS: reconciliation of eight published reports (two models, two datasets, two fixed views)
+PASS: independent original group CSV reconstruction gives 5713 real, 22745 fake, 2384 false positives, 6231 false negatives
+PASS: exact class/group counts match the prior frozen benchmark inventory
+PASS: rejected malformed class_count
+PASS: rejected malformed fractional_error
+PASS: rejected malformed threshold_auc
+PASS: existing output is rejected without overwriting evidence
+PASS: original scientific model source unchanged
