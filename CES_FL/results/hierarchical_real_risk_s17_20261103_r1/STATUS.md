@@ -1,16 +1,17 @@
 # CES-FL hierarchical original-real risk
 
-2026-11-03T09:19:38.934935+00:00 management UTC.
+2026-11-03T09:29:41.486816+00:00 management UTC.
 
-**H: RUNNING; 0/10 epochs completed.** No final decision yet.
+**H: RUNNING; 1/10 epochs completed.** No final decision yet.
 
 One seed17 candidate. No new Ding-model computation, FairForge-2 experiment or TEST inference. Existing jobs/results preserved.
 
-Original shared budget12.4904/24GPU-hours; remaining11.5096h. New-study cap4.0h; all held time charged.
+Original shared budget12.6613/24GPU-hours; remaining11.3387h. New-study cap4.0h; all held time charged.
 
 |Arm|Selected epoch|VAL AUC %|Gender F_FPR fraction|Intersection F_FPR fraction|Age F_FPR fraction|
 |---|---:|---:|---:|---:|---:|
 |D|1|98.252564|0.053498|0.379345|0.303616|
+|H|1|98.197763|0.059377|0.421326|0.291921|
 
 H values are selected-so-far until native completion. All axes, group support, FPR/FNR and actual exposure are in LIVE_STATE.json. E/F already completed and rejected; they are not rerun.
 
