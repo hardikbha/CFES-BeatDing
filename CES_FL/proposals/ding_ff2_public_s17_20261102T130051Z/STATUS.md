@@ -1,13 +1,13 @@
 # Actual execution status
 
-Observed management UTC: **2026-11-03T06:35:00.338547+00:00**.
+Observed management UTC: **2026-11-03T06:50:03.623148+00:00**.
 
 State: **RUNNING**. Source commit `8487d98303fd5d7766fef2fa3dd32c37f38e5f4b`.
 
 Host `gpu01`, physical GPUs0/2 in shared pool-v2 mode; no PBS allocation or exclusive CPU/GPU ownership claimed.
 Controller PID `2754578`, training torchrun PID `2754977`.
 
-Latest recorded event: `TRAIN_STEP`, stage `classification`, epoch `21`, batch `2450/3149`, loss `0.041395485401153564`.
+Latest recorded event: `TRAIN_STEP`, stage `classification`, epoch `22`, batch `250/3149`, loss `0.01645880565047264`.
 
 Eight CPU tests PASS; real-TRAIN full-native-batch two-GPU CUDA smoke PASS. 128classification images/update; 64main+64auxiliary GDA images/update; 224px; seed17;50classification→TRAIN-SFD→50corrected-GDAepochs.
 Corrected differentiable class-conditioned GDA with frozen encoder BN is explicitly distinguished from the detached archived GDA and paper results. Values below are completed validation epochs, not TEST scores. No TEST inference is attached.
@@ -22,9 +22,9 @@ Finite observation/publication only, every15min for at most72h; no training retr
 
 See live_status.json for verified process observation, aggregate validation/group metrics, checkpoint hashes and completion/failure state. Review historical PROJECT_BLUEPRINT.md as a dated snapshot; this page is the execution update.
 
-## classification: 20 completed validation epochs
+## classification: 21 completed validation epochs
 
-Best validation AUC: 99.7849% at epoch14 (fixed AUC-only selection).
+Best validation AUC: 99.8104% at epoch21 (fixed AUC-only selection).
 
 | Epoch | Train CE | VAL AUC (%) | Worst gender×race AUC (%) | FPR gap (pp) | F_FPR (Ding scale) |
 |---:|---:|---:|---:|---:|---:|
@@ -48,6 +48,7 @@ Best validation AUC: 99.7849% at epoch14 (fixed AUC-only selection).
 | 18 | 0.042745 | 99.6012 | 99.2505 | 9.0346 | 23.0586 |
 | 19 | 0.043186 | 99.3558 | 97.3877 | 13.6230 | 38.1573 |
 | 20 | 0.042979 | 97.9774 | 95.7355 | 17.2685 | 50.4534 |
+| 21 | 0.044197 | 99.8104 | 99.6370 | 17.2045 | 41.7077 |
 
 ## gda_corrected: 0 completed validation epochs
 
