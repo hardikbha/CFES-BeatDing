@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-03T07:08:25.776665+00:00",
+  "observed_management_utc": "2026-11-03T07:18:31.203529+00:00",
   "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
   "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
   "budget": {
@@ -7,8 +7,8 @@
     "source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-forensic-response-c332fd34",
     "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
     "initial_total_gpu_hours": 24,
-    "consumed_gpu_hours": 12.023748737372355,
-    "reserved_gpu_hours": 3.437052711977934,
+    "consumed_gpu_hours": 12.190480132132459,
+    "reserved_gpu_hours": 3.2703213172178303,
     "gpu_sessions": [
       {
         "id": "ffpp_checks_primary",
@@ -292,7 +292,7 @@
         "id": "support_E_support",
         "ngpus": 1,
         "reserved_gpu_hours": 4.5,
-        "elapsed_seconds": 3826.610236879438,
+        "elapsed_seconds": 4426.843258015811,
         "state": "RUNNING",
         "scientific_source_sha256": "0eeafd838da3ca158336dcfe3b8195842dd15bc9fecd67ebbaf2ea03ba3c2680",
         "scientific_commit": "8d5f0996a3f1cc02fbeaff9d25c1d95f714e8e77",
