@@ -1,12 +1,12 @@
 # Corrected-source forensic-response study: actual progress
 
-Observed management UTC: 2026-11-03T02:23:00.518972+00:00
+Observed management UTC: 2026-11-03T02:33:05.079562+00:00
 
 Execution commit `c332fd34fb603b8919b15fee08e8d022fb9f57c8`; script SHA256 `89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b`.
 
 C/D: authorized direct SSH shared GPU leases. A/B: actual PBS ngpus=2 resource-count allocation, distinct pool-v2 UUID bindings under user authorization; scheduler physical mapping unavailable unless recorded. No exclusive GPUs claimed. Existing Ding source/jobs preserved. No TEST inference.
 
-New-study task-held GPU time: **9.8324/24TOTAL GPU-hours**. Unspent conservative reservations: 1.7845hours. Count both GPUs at full task-held wall time, even when shared; not kernel-only/exclusive-H100 utilization. CPU preflight/review are not GPU time.
+New-study task-held GPU time: **9.9991/24TOTAL GPU-hours**. Unspent conservative reservations: 1.6178hours. Count both GPUs at full task-held wall time, even when shared; not kernel-only/exclusive-H100 utilization. CPU preflight/review are not GPU time.
 
 | Dataset | Arm | Verified process/completion state | Complete epochs | Selected so far | VAL AUC (%) | gender×race F_FPR (fraction) | FPR gap (pp) | Worst AUC (%) |
 |---|---|---|---:|---:|---:|---:|---:|---:|
@@ -15,7 +15,7 @@ New-study task-held GPU time: **9.8324/24TOTAL GPU-hours**. Unspent conservative
 | ffpp | C | COMPLETED_VERIFIED | 10/10 | 1 | 98.3077 | 0.480534 | 30.9848 | 93.6205 |
 | ffpp | D | COMPLETED_VERIFIED | 10/10 | 1 | 98.2526 | 0.379345 | 23.8391 | 93.8519 |
 | ff2 | A | COMPLETED_VERIFIED | 10/10 | 7 | 99.8085 | 0.290986 | 11.6609 | 99.6003 |
-| ff2 | B | RUNNING | 8/10 | 1 | 99.8075 | 0.295459 | 11.0284 | 99.5864 |
+| ff2 | B | RUNNING | 9/10 | 1 | 99.8075 | 0.295459 | 11.0284 | 99.5864 |
 | ff2 | C | PENDING | 0/10 | — | — | — | — | — |
 | ff2 | D | PENDING | 0/10 | — | — | — | — | — |
 
