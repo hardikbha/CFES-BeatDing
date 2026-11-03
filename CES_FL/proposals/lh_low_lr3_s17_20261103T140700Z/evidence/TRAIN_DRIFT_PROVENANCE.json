@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "fixed_TRAIN_examples_verified_against_original_checkpoint_image_hashes": {
+    "best": 64,
+    "last": 64
+  },
+  "no_new_inference": true,
+  "test_read": false
+}
