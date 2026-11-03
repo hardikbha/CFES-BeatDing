@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-03T19:18:53.859153+00:00",
+  "observed_management_utc": "2026-11-03T19:19:27.087308+00:00",
   "execution_commit": "ab7f36798cfa06226e17e31c2171e0c02404a216",
   "source_sha256": "1b6dc1b0e6d2b2220da897500a4d1bffb7764280df642abf6befdd1cf511ed01",
   "arms": {
@@ -24,7 +24,7 @@
           "mem": "1544352kb",
           "ncpus": 10,
           "vmem": "12433304kb",
-          "walltime": "00:24:24"
+          "walltime": "00:24:58"
         },
         "exec_host": "gpu01/5*10",
         "exec_vnode": "(gpu01:ncpus=10:ngpus=2:mem=67108864kb)",
@@ -795,7 +795,7 @@
           "mem": "1544352kb",
           "ncpus": 10,
           "vmem": "12433304kb",
-          "walltime": "00:24:24"
+          "walltime": "00:24:58"
         },
         "exec_host": "gpu01/5*10",
         "exec_vnode": "(gpu01:ncpus=10:ngpus=2:mem=67108864kb)",
@@ -3008,15 +3008,15 @@
   },
   "budget": {
     "initial_total_gpu_hours": 24,
-    "consumed_gpu_hours": 16.711856774542895,
-    "reserved_gpu_hours": 2.224756722190521
+    "consumed_gpu_hours": 16.73186317996329,
+    "reserved_gpu_hours": 1.099890195917752
   },
   "sessions": [
     {
       "id": "lh_sham_noalign_s17_20261103_SHAM_FIX",
       "ngpus": 1,
       "reserved_gpu_hours": 1.5,
-      "elapsed_seconds": 1395.382567834109,
+      "elapsed_seconds": 1440.3952946960926,
       "state": "RUNNING",
       "scientific_commit": "35ffbd21cc6a033f9b9bf4cb1f92f5e417debe8d",
       "scientific_source_sha256": "1b6dc1b0e6d2b2220da897500a4d1bffb7764280df642abf6befdd1cf511ed01",
@@ -3040,8 +3040,8 @@
       "id": "lh_sham_noalign_s17_20261103_NO_ALIGN",
       "ngpus": 1,
       "reserved_gpu_hours": 1.5,
-      "elapsed_seconds": 1395.493232280016,
-      "state": "RUNNING",
+      "elapsed_seconds": 1422.5035649314523,
+      "state": "COMPLETED",
       "scientific_commit": "35ffbd21cc6a033f9b9bf4cb1f92f5e417debe8d",
       "scientific_source_sha256": "1b6dc1b0e6d2b2220da897500a4d1bffb7764280df642abf6befdd1cf511ed01",
       "route": "PBS_ngpus1_plus_prior_explicit_authorized_pool_v2_UUID",

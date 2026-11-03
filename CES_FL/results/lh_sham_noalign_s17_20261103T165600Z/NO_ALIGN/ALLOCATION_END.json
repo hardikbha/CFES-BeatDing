@@ -1,0 +1,7 @@
+{
+  "status": "COMPLETED",
+  "elapsed_seconds": 1422.5035649314523,
+  "gpu_hours": 0.3951398791476256,
+  "pbs_job_id": "45361.mgmt01",
+  "test_read": false
+}
