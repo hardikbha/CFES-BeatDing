@@ -1,0 +1,21 @@
+{
+  "cases_inspected": 88,
+  "unique_originals": 22,
+  "recorded_identity_ids": 18,
+  "recorded_source_ids": 18,
+  "approved": 88,
+  "rejected": 0,
+  "uncertain": 0,
+  "review_type": "Named AI visual operator qualification, not human annotation",
+  "source_sha256": "0eeafd838da3ca158336dcfe3b8195842dd15bc9fecd67ebbaf2ea03ba3c2680",
+  "config_digest": "e93f752d9555bc1d891777177500ab6b4013cdac2b3133d33d6bb306992c8848",
+  "identical_preview_bytes_across_E_F": true,
+  "prior_source_bound_receipts_reused": false,
+  "real_forgery_validity_proven": false,
+  "limitations": [
+    "representative recipe only",
+    "glasses/blur/pose shortcut risks",
+    "no biological identity or label validation",
+    "not verified causal demographic counterfactuals"
+  ]
+}

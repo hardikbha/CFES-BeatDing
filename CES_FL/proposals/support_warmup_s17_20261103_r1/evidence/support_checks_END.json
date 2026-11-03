@@ -1,0 +1,9 @@
+{
+  "status": "COMPLETED",
+  "elapsed_seconds": 244.09866730496287,
+  "gpu_hours": 0.06780518536248968,
+  "source_commit": "8d5f0996a3f1cc02fbeaff9d25c1d95f714e8e77",
+  "source_sha256": "0eeafd838da3ca158336dcfe3b8195842dd15bc9fecd67ebbaf2ea03ba3c2680",
+  "pbs_allocation_claimed": false,
+  "test_read": false
+}

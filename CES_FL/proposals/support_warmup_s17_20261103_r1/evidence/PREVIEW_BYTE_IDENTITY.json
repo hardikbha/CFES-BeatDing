@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "fresh_E_F_cases": 88,
+  "unique_originals": 22,
+  "all_settings_and_source_sheet_bytes_identical_across_E_F": true,
+  "all_source_sheet_bytes_identical_to_prior_genuine_FFPP_review": true,
+  "prior_receipts_reused": false,
+  "new_qualifications_still_required": true,
+  "review_not_yet_recorded": true
+}

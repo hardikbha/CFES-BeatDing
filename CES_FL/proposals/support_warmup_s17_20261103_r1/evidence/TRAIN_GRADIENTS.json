@@ -1,0 +1,477 @@
+{
+  "source_sha256": "0eeafd838da3ca158336dcfe3b8195842dd15bc9fecd67ebbaf2ea03ba3c2680",
+  "status": "PASS",
+  "rows_from": "TRAIN only",
+  "validation_gradients": false,
+  "test_read": false,
+  "optimizer_steps": 0,
+  "diagnostics": [
+    {
+      "initialization": "fresh_p50_heads",
+      "axis": "gender",
+      "weighted_loss": {
+        "classification": 0.751244068145752,
+        "error_control": 0.0003063023032154888,
+        "sensitivity": 0.24953003227710724,
+        "processing_control": 0.0012220724020153284,
+        "alignment": 0.00013427715748548508
+      },
+      "weighted_gradient_norm": {
+        "classification": 1.1408443450927734,
+        "error_control": 0.14760813117027283,
+        "sensitivity": 0.28056052327156067,
+        "processing_control": 0.16649885475635529,
+        "alignment": 0.08981910347938538
+      },
+      "cosine_with_classification": {
+        "classification": 0.9999998807907104,
+        "error_control": 0.7897951006889343,
+        "sensitivity": 0.5952454209327698,
+        "processing_control": -0.46484580636024475,
+        "alignment": -0.4948713779449463
+      },
+      "train_support_fraction": [
+        [
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0
+        ]
+      ],
+      "sampled_rows": 16,
+      "optimizer_steps": 0
+    },
+    {
+      "initialization": "fresh_p50_heads",
+      "axis": "race",
+      "weighted_loss": {
+        "classification": 0.751244068145752,
+        "error_control": 0.0006157070747576654,
+        "sensitivity": 0.24865113198757172,
+        "processing_control": 0.0012279696529731154,
+        "alignment": 0.0003784155996982008
+      },
+      "weighted_gradient_norm": {
+        "classification": 1.1408443450927734,
+        "error_control": 0.25807294249534607,
+        "sensitivity": 0.36485159397125244,
+        "processing_control": 0.13973918557167053,
+        "alignment": 0.16215495765209198
+      },
+      "cosine_with_classification": {
+        "classification": 0.9999998807907104,
+        "error_control": 0.8009361624717712,
+        "sensitivity": 0.6614434719085693,
+        "processing_control": -0.5616918802261353,
+        "alignment": -0.3199688196182251
+      },
+      "train_support_fraction": [
+        [
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          0.75
+        ],
+        [
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0
+        ]
+      ],
+      "sampled_rows": 32,
+      "optimizer_steps": 0
+    },
+    {
+      "initialization": "fresh_p50_heads",
+      "axis": "age_bin",
+      "weighted_loss": {
+        "classification": 0.751244068145752,
+        "error_control": 0.00032222570735029876,
+        "sensitivity": 0.2490539848804474,
+        "processing_control": 0.0011883381521329284,
+        "alignment": 0.000720201525837183
+      },
+      "weighted_gradient_norm": {
+        "classification": 1.1408443450927734,
+        "error_control": 0.4007119834423065,
+        "sensitivity": 0.26083895564079285,
+        "processing_control": 0.10022729635238647,
+        "alignment": 0.07538274675607681
+      },
+      "cosine_with_classification": {
+        "classification": 0.9999998807907104,
+        "error_control": 0.04052193835377693,
+        "sensitivity": 0.7324386835098267,
+        "processing_control": -0.2768305242061615,
+        "alignment": 0.15123769640922546
+      },
+      "train_support_fraction": [
+        [
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          0.75
+        ],
+        [
+          1.0,
+          1.0
+        ]
+      ],
+      "sampled_rows": 32,
+      "optimizer_steps": 0
+    },
+    {
+      "initialization": "fresh_p50_heads",
+      "axis": "skin_bin",
+      "weighted_loss": {
+        "classification": 0.751244068145752,
+        "error_control": 0.00020638406567741185,
+        "sensitivity": 0.24956054985523224,
+        "processing_control": 0.0009081704774871469,
+        "alignment": 0.0003906222409568727
+      },
+      "weighted_gradient_norm": {
+        "classification": 1.1408443450927734,
+        "error_control": 0.23564793169498444,
+        "sensitivity": 0.15490742027759552,
+        "processing_control": 0.13903778791427612,
+        "alignment": 0.17375324666500092
+      },
+      "cosine_with_classification": {
+        "classification": 0.9999998807907104,
+        "error_control": 0.6416784524917603,
+        "sensitivity": 0.5390827655792236,
+        "processing_control": -0.7273603677749634,
+        "alignment": -0.4127598702907562
+      },
+      "train_support_fraction": [
+        [
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0
+        ]
+      ],
+      "sampled_rows": 32,
+      "optimizer_steps": 0
+    },
+    {
+      "initialization": "fresh_p50_heads",
+      "axis": "gender_race",
+      "weighted_loss": {
+        "classification": 0.751244068145752,
+        "error_control": 0.00025360361905768514,
+        "sensitivity": 0.24903564155101776,
+        "processing_control": 0.0007801879546605051,
+        "alignment": 0.0006134000141173601
+      },
+      "weighted_gradient_norm": {
+        "classification": 1.1408443450927734,
+        "error_control": 0.3388688862323761,
+        "sensitivity": 0.3263271152973175,
+        "processing_control": 0.08574860543012619,
+        "alignment": 0.09031155705451965
+      },
+      "cosine_with_classification": {
+        "classification": 0.9999998807907104,
+        "error_control": 0.09881098568439484,
+        "sensitivity": 0.6983003616333008,
+        "processing_control": -0.533661425113678,
+        "alignment": -0.39459797739982605
+      },
+      "train_support_fraction": [
+        [
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          0.75
+        ],
+        [
+          0.75,
+          1.0
+        ],
+        [
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          0.5
+        ],
+        [
+          1.0,
+          0.5
+        ],
+        [
+          0.75,
+          1.0
+        ]
+      ],
+      "sampled_rows": 64,
+      "optimizer_steps": 0
+    },
+    {
+      "initialization": "historical_selected_CESFL_D",
+      "axis": "gender",
+      "weighted_loss": {
+        "classification": 0.00023308396339416504,
+        "error_control": 0.013667006976902485,
+        "sensitivity": 0.04829420521855354,
+        "processing_control": 0.01659299246966839,
+        "alignment": 0.023815330117940903
+      },
+      "weighted_gradient_norm": {
+        "classification": 0.003083476098254323,
+        "error_control": 1.1048219203948975,
+        "sensitivity": 0.14292021095752716,
+        "processing_control": 0.07289488613605499,
+        "alignment": 0.3339478075504303
+      },
+      "cosine_with_classification": {
+        "classification": 1.0000001192092896,
+        "error_control": 0.3144902288913727,
+        "sensitivity": 0.27137306332588196,
+        "processing_control": -0.17119190096855164,
+        "alignment": 0.10506877303123474
+      },
+      "train_support_fraction": [
+        [
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0
+        ]
+      ],
+      "sampled_rows": 16,
+      "optimizer_steps": 0
+    },
+    {
+      "initialization": "historical_selected_CESFL_D",
+      "axis": "race",
+      "weighted_loss": {
+        "classification": 0.00023308396339416504,
+        "error_control": 0.03132718801498413,
+        "sensitivity": 0.03217821568250656,
+        "processing_control": 0.020230382680892944,
+        "alignment": 0.043292637914419174
+      },
+      "weighted_gradient_norm": {
+        "classification": 0.003083476098254323,
+        "error_control": 1.5082591772079468,
+        "sensitivity": 0.06413590908050537,
+        "processing_control": 0.04676878824830055,
+        "alignment": 0.11703747510910034
+      },
+      "cosine_with_classification": {
+        "classification": 1.0000001192092896,
+        "error_control": 0.340684175491333,
+        "sensitivity": 0.09084177017211914,
+        "processing_control": -0.09055738896131516,
+        "alignment": -0.22462749481201172
+      },
+      "train_support_fraction": [
+        [
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          0.75
+        ],
+        [
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0
+        ]
+      ],
+      "sampled_rows": 32,
+      "optimizer_steps": 0
+    },
+    {
+      "initialization": "historical_selected_CESFL_D",
+      "axis": "age_bin",
+      "weighted_loss": {
+        "classification": 0.00023308396339416504,
+        "error_control": 0.035955194383859634,
+        "sensitivity": 0.041561294347047806,
+        "processing_control": 0.01862443797290325,
+        "alignment": 0.046440489590168
+      },
+      "weighted_gradient_norm": {
+        "classification": 0.003083476098254323,
+        "error_control": 1.7555829286575317,
+        "sensitivity": 0.09291113913059235,
+        "processing_control": 0.07220875471830368,
+        "alignment": 0.16883468627929688
+      },
+      "cosine_with_classification": {
+        "classification": 1.0000001192092896,
+        "error_control": 0.30932679772377014,
+        "sensitivity": 0.16289342939853668,
+        "processing_control": -0.1251266449689865,
+        "alignment": -0.4164162576198578
+      },
+      "train_support_fraction": [
+        [
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          0.75
+        ],
+        [
+          1.0,
+          1.0
+        ]
+      ],
+      "sampled_rows": 32,
+      "optimizer_steps": 0
+    },
+    {
+      "initialization": "historical_selected_CESFL_D",
+      "axis": "skin_bin",
+      "weighted_loss": {
+        "classification": 0.00023308396339416504,
+        "error_control": 0.007812866009771824,
+        "sensitivity": 0.090107761323452,
+        "processing_control": 0.018719935789704323,
+        "alignment": 0.11362650245428085
+      },
+      "weighted_gradient_norm": {
+        "classification": 0.003083476098254323,
+        "error_control": 1.3026278018951416,
+        "sensitivity": 0.1435883790254593,
+        "processing_control": 0.07267538458108902,
+        "alignment": 0.22200006246566772
+      },
+      "cosine_with_classification": {
+        "classification": 1.0000001192092896,
+        "error_control": 0.3335488438606262,
+        "sensitivity": -0.0330936461687088,
+        "processing_control": -0.19921240210533142,
+        "alignment": -0.5919093489646912
+      },
+      "train_support_fraction": [
+        [
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0
+        ]
+      ],
+      "sampled_rows": 32,
+      "optimizer_steps": 0
+    },
+    {
+      "initialization": "historical_selected_CESFL_D",
+      "axis": "gender_race",
+      "weighted_loss": {
+        "classification": 0.00023308396339416504,
+        "error_control": 0.01452937163412571,
+        "sensitivity": 0.04181709513068199,
+        "processing_control": 0.012063092552125454,
+        "alignment": 0.08421007543802261
+      },
+      "weighted_gradient_norm": {
+        "classification": 0.003083476098254323,
+        "error_control": 1.1179090738296509,
+        "sensitivity": 0.08695981651544571,
+        "processing_control": 0.04109558090567589,
+        "alignment": 0.1428627371788025
+      },
+      "cosine_with_classification": {
+        "classification": 1.0000001192092896,
+        "error_control": 0.34870079159736633,
+        "sensitivity": 0.16546474397182465,
+        "processing_control": -0.10202501714229584,
+        "alignment": -0.5751063823699951
+      },
+      "train_support_fraction": [
+        [
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          0.75
+        ],
+        [
+          0.75,
+          1.0
+        ],
+        [
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          0.5
+        ],
+        [
+          1.0,
+          0.5
+        ],
+        [
+          0.75,
+          1.0
+        ]
+      ],
+      "sampled_rows": 64,
+      "optimizer_steps": 0
+    }
+  ],
+  "warning": "Gradient cosines are snapshots, not causal evidence or permission to tune hyperparameters"
+}

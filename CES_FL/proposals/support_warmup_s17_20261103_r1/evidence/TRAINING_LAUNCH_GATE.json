@@ -1,0 +1,13 @@
+{
+  "observed_management_utc": "2026-11-03T06:04:26.402000+00:00",
+  "status": "PASS_LAUNCH_TWO_CONFIGURED_CANDIDATES",
+  "source_commit": "8d5f0996a3f1cc02fbeaff9d25c1d95f714e8e77",
+  "source_sha256": "0eeafd838da3ca158336dcfe3b8195842dd15bc9fecd67ebbaf2ea03ba3c2680",
+  "configs_fixed_before_results": true,
+  "old_CESFL_control_VAL_replay_exact": true,
+  "train_gradient_snapshots": 10,
+  "zero_optimizer_steps_in_diagnostics": true,
+  "ding_computation": false,
+  "new_ff2": false,
+  "test_read": false
+}
