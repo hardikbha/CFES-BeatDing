@@ -1,0 +1,9 @@
+test_completion_selection_cache_and_tamper_guards (test_lh_locked_benchmarks.LockedBenchmarkTests) ... ok
+test_reject_changed_plan_source (test_lh_locked_benchmarks.LockedBenchmarkTests) ... ok
+test_reject_test_and_unmarked_threshold_cache (test_lh_locked_benchmarks.LockedBenchmarkTests) ... ok
+test_threshold_scan_does_not_change_auc_or_choose_threshold (test_lh_locked_benchmarks.LockedBenchmarkTests) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.970s
+
+OK

@@ -4,6 +4,8 @@ Updated 3 November 2026 for the plain-head ablation and FairForge-2 baseline sui
 
 ## 1. Recover context immediately
 
+Latest scope clarification (3November2026): “DannyBox” means Ding with the same **ten downstream epochs**. The user now authorizes this new Ding-on-FF++ control, superseding earlier no-new-Ding restrictions for that scope. [Current tables/Ding10/schedule/threshold proposal](proposals/lh_tables_ding10_s17_20261103T133000Z/README.md) and [operator prompt](proposals/lh_tables_ding10_s17_20261103T133000Z/GPU_OPERATOR_PROMPT.md) take precedence over earlier scope notes. Current L_H evaluation is frozen separately from proposed training changes.
+
 Repository: https://github.com/hardikbha/CFES-BeatDing. Read `CES_FL/AGENTS.md`, `README.md`, `STATUS.md`, `WORKFLOW.md`, then this file and the active proposal. `main` has sometimes lagged experimental branches; resolve the exact requested branch/commit, not only `main`.
 
 Latest authorized work: [FairForge-2 baseline suite](proposals/ff2_baseline_suite_s17_20261103T110324Z/README.md), [source](src/ff2_fairness_baselines.py), [GPU prompt](proposals/ff2_baseline_suite_s17_20261103T110324Z/GPU_OPERATOR_PROMPT.md). The user requested external methods compared in Ding's paper, publishing everything required and a2–3GPU operator handoff, then explicitly approved **up to72 additional GPU-hours**. This ledger is separate from prior studies; at most3 GPUs may be allocated concurrently for these new baselines. No actual benchmark training, GPU allocation or TEST inference was launched by this preparation.
@@ -298,3 +300,18 @@ Latest checked upstream result `f980e8a667edea6a1accfade28b5044f3215b6e5`, obser
 This50+50 proposal is DEFERRED following the user's request to assess early-best L_H. No new job, training, model download, TEST read, baseline change or resource reallocation occurred. A/H templates require a newly completed verified P; current gated P50 cannot substitute. Corrected-Ding authorization question remains unanswered; previous no-new-Ding-on-FF++ instruction persists. This new study has no assigned GPU allowance; do not silently draw from the72h specifically authorized for FF2 baselines. Publication is preparation, not launch.
 
 Local outputs: `output/lh_review_20261103/lh_epoch_diagnostics.png/.pdf`, measured9epochH/10epochA histories, and `output/imagegen/l_h_configuration_20261103_v2.png` with initial/edit prompts. Diagram describes current10epochL_H, not the new50+50recipe.
+
+
+## 14. Tables1/2/3, Ding10 and thresholds — latest 3 November clarification
+
+User requests Tables2/3 for current L_H, a remedy for late-epoch deterioration, and thresholding options. Explicit reply confirms Ding with the SAME TEN DOWNSTREAM EPOCHS; new Ding-on-FF++ computation in this scope is authorized, replacing earlier prohibition. It does not authorize labeling a ten-epoch adaptation as the paper's full50epoch method, altering old results or silently reassigning FF2's72hourbudget.
+
+`proposals/lh_tables_ding10_s17_20261103T133000Z/` contains exact frozen evaluation scope and separate training work orders. New `scripts/lh_locked_benchmarks.py` imports the unchanged original head-ablation source, requires complete L_A/L_H10epoch verification and canonical configs, binds private checkpoint/validation caches/manifest and existing overlap inventories, preserves DFDC native duplicates, and separates GPU inference from CPU bootstrap. Four focused CPU guard tests PASS; real binding/CUDA/input checks remain pending. Direct SSH still resets. No TEST inference, training, model download or job submitted here.
+
+Table1 has no current L_H TEST result yet;98.200410%is VAL. Table2 needs frozen Xception inference on DFDC/Celeb-DF/DFD, not target-domain retraining. Table3 needs a NEW ResNet L_H training/implementation and all four evaluations; old ResNet A/B/C do not qualify. Current public snapshot stillf980e8a/H9of10 selected1.
+
+A separate connected-gradient Ding10 adaptation work order matches32main images,10epochs, every original once and2380updates/epoch; native head-only/SGD/BN differences stay disclosed. New implementation and gradient tests needed before launch; cannot merely set archived GDA num_epochs=10. Native P50/SFD may be reused only with matching verified provenance.
+
+Convergence work order is one prospective cosineLR multiplier1→.1 across10epochs, both encoder/head rates, all other current H settings unchanged. Freeze design before new TEST reports; no schedule implementation/training yet. Do not combine loss ablation/sampling/optimizer changes in that test. Previously proposed alignment-off ablation remains separate.
+
+Threshold helper produces VAL-only exploratory curves at1/2/5/10%FPR targets, chooses none and does not alter locked TEST thresholds. Primary evaluation reports fixed.5 and original FF++VAL-calibrated10%FPR separately; transfer retains source threshold. Thresholding changes decisions/FPR/FNR/disparity, not unchanged-score AUC or es-AUC. Group thresholds require metadata at inference and a separately disclosed postprocessor applied equally to baselines. Numerical fairness alone without detection guardrails can be trivial.
