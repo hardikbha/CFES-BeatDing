@@ -34,6 +34,8 @@ The prior P10 checkpoint cannot replace P50. The downstream templates intentiona
 
 The native Ding seed-17 classification epoch-49 checkpoint exists. An independently bound TRAIN-only 2% mask and connected-gradient ten-epoch adapter have not been certified in this execution. Ding-10 remains pending behind both the priority ResNet cohort and the shared budget gate.
 
+The local artifacts do include `DING_base_s17/49.pth` (SHA256 `b2240f157d4f94895f0908ad1a177832d258ab3c0f71ac9e09acc87a333b4e32`) and `DING_full_s17/SFD_channels.txt` (SHA256 `ef9ac134b7564f1d9e78b641291479638c9246bd40772df0d73a8448125bb039`). The mask file has ten channel indices, and the archived run log shows seed-17 SFD used that base checkpoint with `--prc 2.0`. These are reusable candidate dependencies; the connected-gradient ten-epoch adapter and source-bound CUDA checks remain unimplemented. From the completed native seed-17 full run, 49 inter-epoch intervals average 1,827.35 seconds at 1,976 updates/epoch. Scaling to the requested 2,380 updates/epoch gives about 6.114 GPU-hours for ten training epochs alone, before the new adapter's checks/replay. That does not fit with adequate verification margin in the 6.213 GPU-hours currently left after the queued CUDA reservation, so Ding-10 is also held.
+
 ## Current stage states
 
 | Stage | State |
