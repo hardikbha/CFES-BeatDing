@@ -14,7 +14,8 @@ for arm in ('SHAM_FIX','NO_ALIGN'):
  q=subprocess.run(['qstat','-f','-F','json',job],capture_output=True,text=True)
  state='UNVERIFIED';scheduler=None
  if not q.returncode:
-  scheduler=json.loads(q.stdout)['Jobs'][job];state=scheduler['job_state']
+  full=json.loads(q.stdout)['Jobs'][job];state=full['job_state']
+  scheduler={k:full[k] for k in ('job_state','queue','Resource_List','resources_used','exec_host','exec_vnode','stime','comment') if k in full}
  h=read(r/'training/history.json') if (r/'training/history.json').exists() else []
  entry=dict(job_id=job,scheduler_state=state,scheduler_observation=scheduler,completed_epochs=len(h),history=h,paths=dict(root=str(r),training_log=str(r/'train.log')))
  for name in ('REQUEST_CHECK.json','SOURCE_CHECKOUT.json','SUBMISSION.json','ALLOCATION.json','ALLOCATION_END.json','SCHEDULER_ACCOUNTING.json','preflight/PREFLIGHT.json','review/qualification.json','smoke_cuda/SMOKE_RESULT.json','dry/DRY_RUN.json','training/RUN_VERIFIED.json','training/history.json','comparison/COMPARISON.json','comparison/REPORT.md','comparison/ALL_FAIRNESS_METRICS.csv','comparison/GROUP_COUNTS_AND_RATES.csv','loss_tests_cuda.log'):

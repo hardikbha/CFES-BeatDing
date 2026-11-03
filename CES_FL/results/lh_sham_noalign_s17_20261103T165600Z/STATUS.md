@@ -1,6 +1,6 @@
 # SHAM-FIX and NO-ALIGN: observed status
 
-2026-11-03T17:15:47.330977+00:00
+2026-11-03T17:17:55.562044+00:00
 
 Source execution commit: `35ffbd21cc6a033f9b9bf4cb1f92f5e417debe8d`. Independent three-epoch ablations against completed lower-LR L_H; seed17, FF++ TRAIN/VAL only. No TEST.
 
