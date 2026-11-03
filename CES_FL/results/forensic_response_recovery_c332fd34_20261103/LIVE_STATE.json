@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-03T13:42:55.232764+00:00",
+  "observed_management_utc": "2026-11-03T13:53:00.282954+00:00",
   "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
   "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
   "budget": {
@@ -7,8 +7,8 @@
     "source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-forensic-response-c332fd34",
     "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
     "initial_total_gpu_hours": 24,
-    "consumed_gpu_hours": 15.32133462696595,
-    "reserved_gpu_hours": 1.8749494333358274,
+    "consumed_gpu_hours": 15.364391274511194,
+    "reserved_gpu_hours": 0,
     "gpu_sessions": [
       {
         "id": "ffpp_checks_primary",
@@ -425,8 +425,8 @@
         "id": "lh_tables_ee73f2f_eval",
         "ngpus": 1,
         "reserved_gpu_hours": 2.0,
-        "elapsed_seconds": 450.18203999102116,
-        "state": "RUNNING",
+        "elapsed_seconds": 598.6100483946502,
+        "state": "COMPLETED",
         "scientific_commit": "ee73f2fdf5218e440852917e90281818bbe711bb",
         "runner_sha256": "cc21328aed395a3f0e133658341b58ef341f610c71947852bcf5a6806e526a29",
         "purpose": "Locked single evaluation of completed L_A/L_H on four authorized benchmarks; no training",
@@ -442,7 +442,29 @@
           "available_mib": 26369
         },
         "log": "/home/sachin.chaudhary/ces_fl_runs/lh_tables_s17_20261103T133000Z/allocation.log",
-        "child_pid": 1153790
+        "child_pid": 1154196
+      },
+      {
+        "id": "plain_head_0d699d2_pbs_bookend_overhead",
+        "state": "COMPLETED",
+        "ngpus": 1,
+        "reserved_gpu_hours": 0.0,
+        "elapsed_seconds": 3.1859711539000273,
+        "pbs_job_id": "45295.mgmt01",
+        "accounting": "max(0, completed PBS walltime minus original task-held seconds)",
+        "original_session": "plain_head_0d699d2",
+        "original_receipt_preserved": true
+      },
+      {
+        "id": "lh_tables_ee73f2f_eval_pbs_bookend_overhead",
+        "state": "COMPLETED",
+        "ngpus": 1,
+        "reserved_gpu_hours": 0.0,
+        "elapsed_seconds": 3.389951605349779,
+        "pbs_job_id": "45314.mgmt01",
+        "accounting": "max(0, completed PBS walltime minus original task-held seconds)",
+        "original_session": "lh_tables_ee73f2f_eval",
+        "original_receipt_preserved": true
       }
     ],
     "prior_study_ledger": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_9030dd77_20261103/budget_ledger.json",
@@ -452,14 +474,7 @@
     "state": "ACTIVE_BUDGET_LEDGER; execution state is in per-session records and COORDINATOR_STATUS.json",
     "route_override": "Explicit user-authorized direct SSH with pool-v2 leases; no PBS allocation claimed"
   },
-  "actual_process_observations": {
-    "gpu02": {
-      "1153790": {
-        "exists": true,
-        "cmdline": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-lh-tables-ee73f2f/CES_FL/scripts/lh_locked_benchmarks.py infer --plan /home/sachin.chaudhary/ces_fl_runs/lh_tables_s17_20261103T133000Z/LOCKED_PLAN.json --arm L_H --dataset dfdc --out /home/sachin.chaudhary/ces_fl_runs/lh_tables_s17_20261103T133000Z/inference/L_H/dfdc --device cuda "
-      }
-    }
-  },
+  "actual_process_observations": {},
   "datasets": {
     "ffpp": {
       "root": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_overlapfix_20261103_r1_ffpp_s17",
