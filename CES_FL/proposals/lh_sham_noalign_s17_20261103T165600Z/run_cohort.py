@@ -16,7 +16,7 @@ for arm in ('SHAM_FIX','NO_ALIGN'):
 with resource.mutex():
  cards=resource.candidates();assert len(cards)>=2,'Two compatible distinct UUIDs unavailable; no launch/preemption'
  selected=cards[:2];assert selected[0]['uuid']!=selected[1]['uuid']
-resource.write(ROOT/'COHORT_ALLOCATION.json',dict(job_id=job,ngpus=2,ncpus=12,mem_gb=64,host=os.uname().nodename,selected=selected,commit=resource.detached_head(SOURCE),route='PBS_ngpus2_plus_prior_explicit_shared_pool_UUID_leases',exclusive_physical_assignment_claimed=False))
+resource.write(ROOT/'COHORT_ALLOCATION.json',dict(job_id=job,ngpus=2,ncpus=10,mem_gb=64,host=os.uname().nodename,selected=selected,commit=resource.detached_head(SOURCE),route='PBS_ngpus2_plus_prior_explicit_shared_pool_UUID_leases',exclusive_physical_assignment_claimed=False))
 children=[];start=time.monotonic()
 for arm,card in zip(('SHAM_FIX','NO_ALIGN'),selected):
  env=os.environ.copy();env.update(CES_ABLATION_COHORT='SHAM_FIX_NO_ALIGN',CUDA_VISIBLE_DEVICES=card['uuid'])
