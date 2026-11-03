@@ -1,0 +1,9 @@
+{
+  "observed_management_utc": "2026-11-03T11:00:33.975287+00:00",
+  "commit": "0d699d241e27f758ec0990fbe58493a15bdb0ff9",
+  "git_status_porcelain": "",
+  "source_sha256": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
+  "seed": 17,
+  "dataset": "FFPP_DING_PUBLIC",
+  "test_read": false
+}
