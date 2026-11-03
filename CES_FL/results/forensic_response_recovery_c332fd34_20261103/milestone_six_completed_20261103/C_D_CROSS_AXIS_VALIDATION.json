@@ -1,0 +1,87 @@
+{
+  "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
+  "seed": 17,
+  "test_evaluation": false,
+  "rows": [
+    {
+      "axis": "gender",
+      "units": "fractions except *_pp and *_pct",
+      "C": {
+        "F_FPR": 0.04369892586415193,
+        "fpr_gap_pp": 4.369892586415193,
+        "fnr_gap_pp": 3.6003263886728836,
+        "worst_group_auc_pct": 97.04828015666386
+      },
+      "D": {
+        "F_FPR": 0.053497975892708535,
+        "fpr_gap_pp": 5.349797589270853,
+        "fnr_gap_pp": 4.0851205229790555,
+        "worst_group_auc_pct": 96.8559344436948
+      }
+    },
+    {
+      "axis": "race",
+      "units": "fractions except *_pp and *_pct",
+      "C": {
+        "F_FPR": 0.0773731362968412,
+        "fpr_gap_pp": 7.296747967479673,
+        "fnr_gap_pp": 3.400172094103493,
+        "worst_group_auc_pct": 96.12758684405027
+      },
+      "D": {
+        "F_FPR": 0.07290530197744918,
+        "fpr_gap_pp": 6.686991869918699,
+        "fnr_gap_pp": 2.4916524916524923,
+        "worst_group_auc_pct": 96.20565410199558
+      }
+    },
+    {
+      "axis": "gender_race",
+      "units": "fractions except *_pp and *_pct",
+      "C": {
+        "F_FPR": 0.48053431300453003,
+        "fpr_gap_pp": 30.98484848484848,
+        "fnr_gap_pp": 10.76923076923077,
+        "worst_group_auc_pct": 93.620498515896
+      },
+      "D": {
+        "F_FPR": 0.3793453731153111,
+        "fpr_gap_pp": 23.83913291500285,
+        "fnr_gap_pp": 9.572649572649574,
+        "worst_group_auc_pct": 93.85187569287987
+      }
+    },
+    {
+      "axis": "age_bin",
+      "units": "fractions except *_pp and *_pct",
+      "C": {
+        "F_FPR": 0.276732979753881,
+        "fpr_gap_pp": 24.176815516463687,
+        "fnr_gap_pp": 5.338128996385877,
+        "worst_group_auc_pct": 97.56360894352599
+      },
+      "D": {
+        "F_FPR": 0.3036164187372791,
+        "fpr_gap_pp": 29.028932276564213,
+        "fnr_gap_pp": 8.757645259938839,
+        "worst_group_auc_pct": 96.87190401655653
+      }
+    },
+    {
+      "axis": "skin_bin",
+      "units": "fractions except *_pp and *_pct",
+      "C": {
+        "F_FPR": 0.07347548439521176,
+        "fpr_gap_pp": 5.244367954118767,
+        "fnr_gap_pp": 1.2249565206806212,
+        "worst_group_auc_pct": 97.5615341773646
+      },
+      "D": {
+        "F_FPR": 0.05102726287298408,
+        "fpr_gap_pp": 3.7642315355675957,
+        "fnr_gap_pp": 1.601167011193846,
+        "worst_group_auc_pct": 97.56134859169241
+      }
+    }
+  ]
+}

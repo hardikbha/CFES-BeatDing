@@ -21,6 +21,18 @@ FF2 A/B detection AUC is nearly identical (99.808536/99.807457%). B worsens prim
 
 FF++ threshold calibration uses409/4092 validation reals=9.9951124% FPR. FF2 uses243/2438=9.9671862%. One global threshold per selected detector under the same rule; no guarantee of TEST FPR. Native validation reports provide all gender/race/intersection/age/skin/ids8 supports and FPR/FNR. Age and skin inherit manifest proxies. Known FF++ TRAIN/VAL contributor exceptions remain disclosed; no biological person independence certified. No bootstrap or seed-level uncertainty is claimed for this milestone.
 
+### Cross-axis limitations at the fixed AUC-selected checkpoints
+
+| Axis | C F_FPR | D F_FPR | C FPR gap (pp) | D FPR gap (pp) |
+|---|---:|---:|---:|---:|
+| gender | 0.043699 | 0.053498 | 4.369893 | 5.349798 |
+| race | 0.077373 | 0.072905 | 7.296748 | 6.686992 |
+| gender_race | 0.480534 | 0.379345 | 30.984848 | 23.839133 |
+| age_bin | 0.276733 | 0.303616 | 24.176816 | 29.028932 |
+| skin_bin | 0.073475 | 0.051027 | 5.244368 | 3.764232 |
+
+Gender-only and age fairness worsen in D versus C. Age FPR gap rises24.176816→29.028932pp and age worst-group AUC falls97.563609→96.871904%. Skin F_FPR improves, but skin FNR gap rises1.224957→1.601167pp. The intersectional primary improvement therefore does not establish improvement across all demographic axes or error types. Do not select a different epoch to hide these outcomes. No CI or multi-seed significance is claimed.
+
 ## Actual FairForge-2 intervention review outcome
 
 Fresh real FF2 CPU preflight decoded249373 TRAIN+VAL images and PASSed; source-bound CUDA smoke and A/B/C/D backward checks PASSed. Those software checks do not certify intervention validity.
