@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-03T14:33:22.566498+00:00",
+  "observed_management_utc": "2026-11-03T14:43:29.149163+00:00",
   "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
   "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
   "budget": {
@@ -7,8 +7,8 @@
     "source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-forensic-response-c332fd34",
     "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
     "initial_total_gpu_hours": 24,
-    "consumed_gpu_hours": 15.364391274511194,
-    "reserved_gpu_hours": 1.5,
+    "consumed_gpu_hours": 15.506136004592603,
+    "reserved_gpu_hours": 1.3582552699185908,
     "gpu_sessions": [
       {
         "id": "ffpp_checks_primary",
@@ -470,14 +470,25 @@
         "id": "lh_low_lr3_s17_20261103",
         "ngpus": 1,
         "reserved_gpu_hours": 1.5,
-        "elapsed_seconds": 0.0,
-        "state": "QUEUED",
+        "elapsed_seconds": 510.2810282930732,
+        "state": "RUNNING",
         "scientific_commit": "29ce92ee8631c9c11ee3649d4f5a1110ecba29fd",
         "scientific_source_sha256": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
         "route": "PBS_ngpus1_plus_prior_explicit_authorized_pool_v2_UUID",
         "planned_epochs": 3,
         "no_automatic_extension": true,
-        "pbs_job_id": "45321.mgmt01"
+        "pbs_job_id": "45321.mgmt01",
+        "pid": 1171552,
+        "host": "gpu02",
+        "card": {
+          "index": 5,
+          "uuid": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1",
+          "free_mib": 26369,
+          "util": 0,
+          "available_mib": 26369
+        },
+        "log": "/home/sachin.chaudhary/ces_fl_runs/lh_low_lr3_s17_20261103T140700Z/allocation.log",
+        "child_pid": 1171785
       }
     ],
     "prior_study_ledger": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_9030dd77_20261103/budget_ledger.json",
@@ -487,7 +498,14 @@
     "state": "ACTIVE_BUDGET_LEDGER; execution state is in per-session records and COORDINATOR_STATUS.json",
     "route_override": "Explicit user-authorized direct SSH with pool-v2 leases; no PBS allocation claimed"
   },
-  "actual_process_observations": {},
+  "actual_process_observations": {
+    "gpu02": {
+      "1171785": {
+        "exists": true,
+        "cmdline": "bash /home/sachin.chaudhary/ces_fl_sources/cesfl-lh-low-lr3-execution-20261103/CES_FL/proposals/lh_low_lr3_s17_20261103T140700Z/commands.sh gpu "
+      }
+    }
+  },
   "datasets": {
     "ffpp": {
       "root": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_overlapfix_20261103_r1_ffpp_s17",
