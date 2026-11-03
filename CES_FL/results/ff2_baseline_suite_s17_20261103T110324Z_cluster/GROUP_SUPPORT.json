@@ -1,0 +1,354 @@
+{
+  "train": {
+    "n": 218266,
+    "label_counts": {
+      "1": 201489,
+      "0": 16777
+    },
+    "axes": {
+      "gender": {
+        "Female": {
+          "real": 6783,
+          "fake": 81486
+        },
+        "Male": {
+          "real": 9994,
+          "fake": 120003
+        }
+      },
+      "race": {
+        "Asian": {
+          "real": 3552,
+          "fake": 43579
+        },
+        "Black": {
+          "real": 3319,
+          "fake": 41870
+        },
+        "White": {
+          "real": 3583,
+          "fake": 44894
+        },
+        "Others": {
+          "real": 6323,
+          "fake": 71146
+        }
+      },
+      "gender_race": {
+        "Female-Asian": {
+          "real": 1333,
+          "fake": 17079
+        },
+        "Male-Asian": {
+          "real": 2219,
+          "fake": 26500
+        },
+        "Female-Black": {
+          "real": 1524,
+          "fake": 18463
+        },
+        "Male-Black": {
+          "real": 1795,
+          "fake": 23407
+        },
+        "Female-White": {
+          "real": 1774,
+          "fake": 21658
+        },
+        "Male-White": {
+          "real": 1809,
+          "fake": 23236
+        },
+        "Female-Others": {
+          "real": 2152,
+          "fake": 24286
+        },
+        "Male-Others": {
+          "real": 4171,
+          "fake": 46860
+        }
+      },
+      "age_bin": {
+        "30-44": {
+          "real": 7791,
+          "fake": 98387
+        },
+        "45-59": {
+          "real": 4821,
+          "fake": 49181
+        },
+        "<30": {
+          "real": 1661,
+          "fake": 29571
+        },
+        "60+": {
+          "real": 2504,
+          "fake": 24350
+        }
+      },
+      "skin_bin": {
+        "1": {
+          "real": 3833,
+          "fake": 48970
+        },
+        "3": {
+          "real": 3926,
+          "fake": 44056
+        },
+        "2": {
+          "real": 3902,
+          "fake": 45441
+        },
+        "0": {
+          "real": 4042,
+          "fake": 50366
+        },
+        "unknown": {
+          "real": 1074,
+          "fake": 12656
+        }
+      },
+      "ids8": {
+        "7": {
+          "real": 1520,
+          "fake": 16408
+        },
+        "5": {
+          "real": 3222,
+          "fake": 37421
+        },
+        "3": {
+          "real": 1144,
+          "fake": 15516
+        },
+        "1": {
+          "real": 936,
+          "fake": 11388
+        },
+        "6": {
+          "real": 1727,
+          "fake": 16695
+        },
+        "0": {
+          "real": 598,
+          "fake": 6545
+        },
+        "4": {
+          "real": 5880,
+          "fake": 72307
+        },
+        "2": {
+          "real": 1750,
+          "fake": 25209
+        }
+      }
+    },
+    "method_counts": {
+      "arc2face": 882,
+      "blendface": 21103,
+      "codeformer": 15623,
+      "difface": 3091,
+      "eg3d": 2543,
+      "pixart": 6612,
+      "flux": 3237,
+      "gfpgan": 14151,
+      "hart": 2587,
+      "iclight": 19715,
+      "inpaint": 15806,
+      "instantid": 620,
+      "ipadapter": 4432,
+      "liveportrait": 22151,
+      "magicbrush": 3126,
+      "omnigen": 2268,
+      "photomaker": 386,
+      "projgan": 1819,
+      "pulid": 4422,
+      "qwenedit": 7775,
+      "realesrgan": 13982,
+      "reface": 3047,
+      "simswap": 26628,
+      "styleswin": 2603,
+      "tpsmm": 2880,
+      "real": 16777
+    },
+    "label_provenance_counts": {
+      "FF2 source gender/race; auto_if_age; auto_ita; FairFace ids8; not human ground truth": 218266
+    }
+  },
+  "val": {
+    "n": 31107,
+    "label_counts": {
+      "0": 2438,
+      "1": 28669
+    },
+    "axes": {
+      "gender": {
+        "Female": {
+          "real": 1001,
+          "fake": 11613
+        },
+        "Male": {
+          "real": 1437,
+          "fake": 17056
+        }
+      },
+      "race": {
+        "Asian": {
+          "real": 524,
+          "fake": 6326
+        },
+        "Black": {
+          "real": 432,
+          "fake": 5344
+        },
+        "White": {
+          "real": 513,
+          "fake": 6144
+        },
+        "Others": {
+          "real": 969,
+          "fake": 10855
+        }
+      },
+      "gender_race": {
+        "Female-Asian": {
+          "real": 202,
+          "fake": 2493
+        },
+        "Male-Asian": {
+          "real": 322,
+          "fake": 3833
+        },
+        "Female-Black": {
+          "real": 194,
+          "fake": 2272
+        },
+        "Male-Black": {
+          "real": 238,
+          "fake": 3072
+        },
+        "Female-White": {
+          "real": 257,
+          "fake": 2966
+        },
+        "Male-White": {
+          "real": 256,
+          "fake": 3178
+        },
+        "Female-Others": {
+          "real": 348,
+          "fake": 3882
+        },
+        "Male-Others": {
+          "real": 621,
+          "fake": 6973
+        }
+      },
+      "age_bin": {
+        "30-44": {
+          "real": 1142,
+          "fake": 14025
+        },
+        "45-59": {
+          "real": 662,
+          "fake": 6686
+        },
+        "<30": {
+          "real": 260,
+          "fake": 4586
+        },
+        "60+": {
+          "real": 374,
+          "fake": 3372
+        }
+      },
+      "skin_bin": {
+        "unknown": {
+          "real": 158,
+          "fake": 1773
+        },
+        "3": {
+          "real": 515,
+          "fake": 5746
+        },
+        "2": {
+          "real": 551,
+          "fake": 6199
+        },
+        "0": {
+          "real": 630,
+          "fake": 7713
+        },
+        "1": {
+          "real": 584,
+          "fake": 7238
+        }
+      },
+      "ids8": {
+        "7": {
+          "real": 246,
+          "fake": 2526
+        },
+        "5": {
+          "real": 474,
+          "fake": 5324
+        },
+        "1": {
+          "real": 128,
+          "fake": 1536
+        },
+        "3": {
+          "real": 156,
+          "fake": 2134
+        },
+        "4": {
+          "real": 885,
+          "fake": 10547
+        },
+        "6": {
+          "real": 231,
+          "fake": 2324
+        },
+        "2": {
+          "real": 253,
+          "fake": 3499
+        },
+        "0": {
+          "real": 65,
+          "fake": 779
+        }
+      }
+    },
+    "method_counts": {
+      "real": 2438,
+      "arc2face": 55,
+      "blendface": 3004,
+      "codeformer": 2265,
+      "difface": 400,
+      "eg3d": 333,
+      "pixart": 691,
+      "flux": 442,
+      "gfpgan": 2084,
+      "hart": 362,
+      "iclight": 2786,
+      "inpaint": 2251,
+      "instantid": 53,
+      "ipadapter": 646,
+      "liveportrait": 3278,
+      "magicbrush": 435,
+      "omnigen": 355,
+      "photomaker": 35,
+      "projgan": 303,
+      "pulid": 663,
+      "qwenedit": 1113,
+      "realesrgan": 2037,
+      "reface": 401,
+      "simswap": 3942,
+      "styleswin": 324,
+      "tpsmm": 411
+    },
+    "label_provenance_counts": {
+      "FF2 source gender/race; auto_if_age; auto_ita; FairFace ids8; not human ground truth": 31107
+    }
+  }
+}

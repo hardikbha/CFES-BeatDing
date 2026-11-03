@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "source_hashes": {
+    "CES_FL/src/ff2_fairness_baselines.py": "f14b818cad66c92a07f09e0c06767a2980a0b8644e8bb74b33710e142b971904",
+    "CES_FL/src/ces_fl_head_ablation.py": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
+    "CLIPFAIR/cfes/clipfair_losses.py": "daf5cb7538c76fe81abb1af5b35fe851b5a603ca8f812614e4f9673bfd36def3",
+    "CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/upstreams.lock.json": "21b288b77b73b87c6c7536dc1b859a5274acfcda9703a1ae59ca8de3f9f3c69e"
+  },
+  "config_digest": "904ac0b50d745b4ef2f53fa3f84b688cc01c405eb12b0d192ec4f317570827bd",
+  "device": "cuda",
+  "steps": 20,
+  "method": "bce",
+  "last_loss": 0.3431013226509094,
+  "median_step_seconds": 0.2559948582202196,
+  "median_cycle_including_input_seconds": 0.2672193255275488,
+  "estimated_training_only_gpu_hours": 6.33161346319442,
+  "estimate_excludes_validation_checkpoints": true,
+  "parameters": 20809001,
+  "test_read": false
+}

@@ -1,3 +1,7 @@
+## Verified FairForge-2 training launch — 2026-11-03T12:46UTC
+
+[Actual state and all aggregate evidence](results/ff2_baseline_suite_s17_20261103T110324Z_cluster/STATUS.md): BCE,DAG-FDD,DAW-FDD native TRAIN subprocesses observed running on three distinct gpu01UUID leases. Full CPU/input/CUDA/real-backward checks passed. Scientific commit815b4d4; exact50epoch seed17 common recipe unchanged. No completed epoch or benchmark validation score yet. Actual resource reconciliation, private log paths and conditional-method blockers are in the linked operator record. Historical preparation observations below remain preserved.
+
 ## FairForge-2 baseline preparation — 2026-11-03T11:33:27.003004+00:00
 
 New [baseline suite and operator prompt](proposals/ff2_baseline_suite_s17_20261103T110324Z/GPU_OPERATOR_PROMPT.md): user approved72 additional GPU-hours, maximum3 allocated GPUs. Native BCE/DAG/DAW CPU checks pass; CUDA/input checks and training are pending. PG-FDD/FairAdapter adaptations remain conditional; RSEF source unavailable. No jobs launched here; existing jobs/results preserved. This is a preparation observation, not live cluster status. Published to the writable fork because upstream push permission remains unavailable.

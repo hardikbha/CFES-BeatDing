@@ -1,0 +1,24 @@
+{
+  "status": "SOURCE_AND_CONFIG_HASHES_PASS",
+  "observed_management_utc": "2026-11-03T11:50:57.985265+00:00",
+  "commit": "815b4d4bc679c55d4ee6323cc7284335ce210568",
+  "git_status_porcelain": "",
+  "source_hashes": {
+    "CES_FL/src/ff2_fairness_baselines.py": "f14b818cad66c92a07f09e0c06767a2980a0b8644e8bb74b33710e142b971904",
+    "CES_FL/src/ces_fl_head_ablation.py": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
+    "CLIPFAIR/cfes/clipfair_losses.py": "daf5cb7538c76fe81abb1af5b35fe851b5a603ca8f812614e4f9673bfd36def3",
+    "CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/upstreams.lock.json": "21b288b77b73b87c6c7536dc1b859a5274acfcda9703a1ae59ca8de3f9f3c69e"
+  },
+  "config_file_hashes": {
+    "bce": "4c820dc5b4eb50d024c93f2aa2bda8d176c80a40086691ca90a889b937ad83bd",
+    "dag": "9b34ea029575851f2bb8423af185b387d4a87ec2847adfdcc326c3fd27587f6f",
+    "daw": "56c622b41d07205a829d39b39ef9e343245cab6128947fa975c51ee3f8378c6d"
+  },
+  "config_digests": {
+    "bce": "904ac0b50d745b4ef2f53fa3f84b688cc01c405eb12b0d192ec4f317570827bd",
+    "dag": "36dbef68848db48761470018002aeac0fc44c2333a3d0f5709fdecc2c1083163",
+    "daw": "2425e539b1afcf5f5f667fd6e424d8468b62601b4df4fccb966e12e05e8be6cd"
+  },
+  "only_scientific_difference": "method/objective",
+  "test_read": false
+}

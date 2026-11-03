@@ -1,5 +1,9 @@
 # CES-FL — supervisor review and training handoff
 
+## Verified FairForge-2 training launch — 3 November2026
+
+[Actual BCE/DAG-FDD/DAW-FDD state and evidence](results/ff2_baseline_suite_s17_20261103T110324Z_cluster/STATUS.md) · [Launch/check/budget record](results/ff2_baseline_suite_s17_20261103T110324Z_cluster/OPERATOR_RECORD.md). All three native methods are training on the public218,266TRAIN/31,107VAL split after CPU, full image preflight, fresh CUDA/resume and20-step real backward/profile PASS. Pinned science commit815b4d4; seed17,50epochs,batch128. No complete epoch/validation result at the12:46UTC observation. Three verified shared-pool GPU leases;72h additional ledger. PG/FairAdapter remain conditional; RSEF blocked; existing jobs preserved. This is a dated snapshot.
+
 ## FairForge-2 external baselines — 3 November 2026
 
 [Proposal and readiness](proposals/ff2_baseline_suite_s17_20261103T110324Z/README.md) · [GPU operator prompt](proposals/ff2_baseline_suite_s17_20261103T110324Z/GPU_OPERATOR_PROMPT.md). User authorized72 additional aggregate GPU-hours and at most3 allocated GPUs. Matched native Xception BCE/DAG-FDD/DAW-FDD code, configs and CPU checks are prepared; real input/CUDA checks and training remain pending. PG-FDD/FairAdapter source is pinned but adapters remain conditional; RSEF lacks verified source. Existing Ding and plain-head work is preserved. Publish destination is the writable `hardiksharma6555` fork; this is not a training launch.

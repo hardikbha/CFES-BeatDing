@@ -1,0 +1,20 @@
+{
+  "commit": "815b4d4bc679c55d4ee6323cc7284335ce210568",
+  "allocation": {
+    "allocation_id": "pool-v2:gpu01:GPU-6a002609-de85-4949-c707-ee9317b284f0:ff2_bce_gpu01_20261103T123610Z",
+    "gpus": 1,
+    "cuda_visible_devices": "GPU-6a002609-de85-4949-c707-ee9317b284f0",
+    "verified_by": "Codex operator; prior explicit user-authorized direct SSH shared-pool-v2 route",
+    "evidence": "/home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/allocations/ff2_bce_gpu01_20261103T123610Z/OWNERSHIP_PRIVATE.json",
+    "pbs_allocation_claimed": false,
+    "scheduler_supplied_binding": null,
+    "exclusive_physical_ownership_claimed": false
+  },
+  "session_id": "ff2_bce_gpu01_20261103T123610Z",
+  "reservation_gpu_hours": 18.0,
+  "start_unix": 1793708710.9981232,
+  "method": "bce",
+  "resume": false,
+  "test_read": false,
+  "config_sha256": "4c820dc5b4eb50d024c93f2aa2bda8d176c80a40086691ca90a889b937ad83bd"
+}

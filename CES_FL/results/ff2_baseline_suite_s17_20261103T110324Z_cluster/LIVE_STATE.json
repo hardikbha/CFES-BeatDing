@@ -1,0 +1,1755 @@
+{
+  "observed_management_utc": "2026-11-03T12:54:42.682951+00:00",
+  "observed_gpu01_unix": 1793709832.1876154,
+  "measured_finished_gpu_hours": 0.10703432573212517,
+  "measured_active_gpu_hours": 0.6323281362321642,
+  "measured_total_gpu_hours": 0.7393624619642893,
+  "commit": "815b4d4bc679c55d4ee6323cc7284335ce210568",
+  "source_and_config": {
+    "status": "SOURCE_AND_CONFIG_HASHES_PASS",
+    "observed_management_utc": "2026-11-03T11:50:57.985265+00:00",
+    "commit": "815b4d4bc679c55d4ee6323cc7284335ce210568",
+    "git_status_porcelain": "",
+    "source_hashes": {
+      "CES_FL/src/ff2_fairness_baselines.py": "f14b818cad66c92a07f09e0c06767a2980a0b8644e8bb74b33710e142b971904",
+      "CES_FL/src/ces_fl_head_ablation.py": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
+      "CLIPFAIR/cfes/clipfair_losses.py": "daf5cb7538c76fe81abb1af5b35fe851b5a603ca8f812614e4f9673bfd36def3",
+      "CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/upstreams.lock.json": "21b288b77b73b87c6c7536dc1b859a5274acfcda9703a1ae59ca8de3f9f3c69e"
+    },
+    "config_file_hashes": {
+      "bce": "4c820dc5b4eb50d024c93f2aa2bda8d176c80a40086691ca90a889b937ad83bd",
+      "dag": "9b34ea029575851f2bb8423af185b387d4a87ec2847adfdcc326c3fd27587f6f",
+      "daw": "56c622b41d07205a829d39b39ef9e343245cab6128947fa975c51ee3f8378c6d"
+    },
+    "config_digests": {
+      "bce": "904ac0b50d745b4ef2f53fa3f84b688cc01c405eb12b0d192ec4f317570827bd",
+      "dag": "36dbef68848db48761470018002aeac0fc44c2333a3d0f5709fdecc2c1083163",
+      "daw": "2425e539b1afcf5f5f667fd6e424d8468b62601b4df4fccb966e12e05e8be6cd"
+    },
+    "only_scientific_difference": "method/objective",
+    "test_read": false
+  },
+  "dataset": "FairForge-2_public",
+  "train_images": 218266,
+  "val_images": 31107,
+  "train_real": 16777,
+  "train_fake": 201489,
+  "methods": {
+    "bce": {
+      "status": "RUNNING",
+      "phase": "training",
+      "worker_pid": 3683278,
+      "actual_worker_observed": true,
+      "sessions": {
+        "ff2_bce_gpu01_20261103T123610Z": {
+          "LAUNCH.json": {
+            "commit": "815b4d4bc679c55d4ee6323cc7284335ce210568",
+            "allocation": {
+              "allocation_id": "pool-v2:gpu01:GPU-6a002609-de85-4949-c707-ee9317b284f0:ff2_bce_gpu01_20261103T123610Z",
+              "gpus": 1,
+              "cuda_visible_devices": "GPU-6a002609-de85-4949-c707-ee9317b284f0",
+              "verified_by": "Codex operator; prior explicit user-authorized direct SSH shared-pool-v2 route",
+              "evidence": "/home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/allocations/ff2_bce_gpu01_20261103T123610Z/OWNERSHIP_PRIVATE.json",
+              "pbs_allocation_claimed": false,
+              "scheduler_supplied_binding": null,
+              "exclusive_physical_ownership_claimed": false
+            },
+            "session_id": "ff2_bce_gpu01_20261103T123610Z",
+            "reservation_gpu_hours": 18.0,
+            "start_unix": 1793708710.9981232,
+            "method": "bce",
+            "resume": false,
+            "test_read": false,
+            "config_sha256": "4c820dc5b4eb50d024c93f2aa2bda8d176c80a40086691ca90a889b937ad83bd"
+          },
+          "PROJECTION.json": {
+            "training_remaining_with_40percent_margin_hours": 24.796951757940565,
+            "session_remaining_hours": 17.913733253479005,
+            "measured_gpu_hours": 17.712108398528976,
+            "note": "Estimate, not guaranteed. VAL/checkpoint/IO variability can exhaust budget; no silent epoch reduction."
+          },
+          "SESSION_RESULT.json": {
+            "status": "BUDGET_PENDING",
+            "training_launched": false
+          },
+          "BUDGET_FINISH.json": {
+            "charged": 0.10695798065927292,
+            "reserved": 0,
+            "active_gpus": 0,
+            "uncommitted": 71.89304201934073
+          },
+          "software_fixture/SMOKE_RESULT.json": {
+            "status": "PASS",
+            "source_hashes": {
+              "CES_FL/src/ff2_fairness_baselines.py": "f14b818cad66c92a07f09e0c06767a2980a0b8644e8bb74b33710e142b971904",
+              "CES_FL/src/ces_fl_head_ablation.py": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
+              "CLIPFAIR/cfes/clipfair_losses.py": "daf5cb7538c76fe81abb1af5b35fe851b5a603ca8f812614e4f9673bfd36def3",
+              "CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/upstreams.lock.json": "21b288b77b73b87c6c7536dc1b859a5274acfcda9703a1ae59ca8de3f9f3c69e"
+            },
+            "device": "cuda",
+            "fixture_only": true,
+            "torch": "2.7.0+cu126",
+            "tests": [
+              "native DAW two-epoch training",
+              "mid-epoch stop/resume bitwise identical",
+              "independent selected replay",
+              "original exposure",
+              "frozen selected calibration"
+            ],
+            "scientific_results": false,
+            "test_read": false
+          },
+          "dry_run/DRY_RUN.json": {
+            "status": "PASS",
+            "source_hashes": {
+              "CES_FL/src/ff2_fairness_baselines.py": "f14b818cad66c92a07f09e0c06767a2980a0b8644e8bb74b33710e142b971904",
+              "CES_FL/src/ces_fl_head_ablation.py": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
+              "CLIPFAIR/cfes/clipfair_losses.py": "daf5cb7538c76fe81abb1af5b35fe851b5a603ca8f812614e4f9673bfd36def3",
+              "CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/upstreams.lock.json": "21b288b77b73b87c6c7536dc1b859a5274acfcda9703a1ae59ca8de3f9f3c69e"
+            },
+            "config_digest": "904ac0b50d745b4ef2f53fa3f84b688cc01c405eb12b0d192ec4f317570827bd",
+            "device": "cuda",
+            "steps": 20,
+            "method": "bce",
+            "last_loss": 0.3431013226509094,
+            "median_step_seconds": 0.741316694766283,
+            "median_cycle_including_input_seconds": 0.747521573677659,
+            "estimated_training_only_gpu_hours": 17.712108398528976,
+            "estimate_excludes_validation_checkpoints": true,
+            "parameters": 20809001,
+            "test_read": false
+          }
+        },
+        "ff2_bce_gpu01_20261103T124210Z": {
+          "LAUNCH.json": {
+            "commit": "815b4d4bc679c55d4ee6323cc7284335ce210568",
+            "allocation": {
+              "allocation_id": "pool-v2:gpu01:GPU-61f54ca7-3cee-1c93-def3-118523e95241:ff2_bce_gpu01_20261103T124210Z",
+              "gpus": 1,
+              "cuda_visible_devices": "GPU-61f54ca7-3cee-1c93-def3-118523e95241",
+              "verified_by": "Codex operator; prior explicit user-authorized direct SSH shared-pool-v2 route",
+              "evidence": "/home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/allocations/ff2_bce_gpu01_20261103T124210Z/OWNERSHIP_PRIVATE.json",
+              "pbs_allocation_claimed": false,
+              "scheduler_supplied_binding": null,
+              "exclusive_physical_ownership_claimed": false
+            },
+            "session_id": "ff2_bce_gpu01_20261103T124210Z",
+            "reservation_gpu_hours": 24.0,
+            "start_unix": 1793709072.9712024,
+            "method": "bce",
+            "resume": false,
+            "test_read": false,
+            "config_sha256": "4c820dc5b4eb50d024c93f2aa2bda8d176c80a40086691ca90a889b937ad83bd"
+          },
+          "PROJECTION.json": {
+            "training_remaining_with_40percent_margin_hours": 8.864258848472186,
+            "session_remaining_hours": 23.9254164459308,
+            "measured_gpu_hours": 6.33161346319442,
+            "note": "Estimate, not guaranteed. VAL/checkpoint/IO variability can exhaust budget; no silent epoch reduction."
+          },
+          "software_fixture/SMOKE_RESULT.json": {
+            "status": "PASS",
+            "source_hashes": {
+              "CES_FL/src/ff2_fairness_baselines.py": "f14b818cad66c92a07f09e0c06767a2980a0b8644e8bb74b33710e142b971904",
+              "CES_FL/src/ces_fl_head_ablation.py": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
+              "CLIPFAIR/cfes/clipfair_losses.py": "daf5cb7538c76fe81abb1af5b35fe851b5a603ca8f812614e4f9673bfd36def3",
+              "CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/upstreams.lock.json": "21b288b77b73b87c6c7536dc1b859a5274acfcda9703a1ae59ca8de3f9f3c69e"
+            },
+            "device": "cuda",
+            "fixture_only": true,
+            "torch": "2.7.0+cu126",
+            "tests": [
+              "native DAW two-epoch training",
+              "mid-epoch stop/resume bitwise identical",
+              "independent selected replay",
+              "original exposure",
+              "frozen selected calibration"
+            ],
+            "scientific_results": false,
+            "test_read": false
+          },
+          "dry_run/DRY_RUN.json": {
+            "status": "PASS",
+            "source_hashes": {
+              "CES_FL/src/ff2_fairness_baselines.py": "f14b818cad66c92a07f09e0c06767a2980a0b8644e8bb74b33710e142b971904",
+              "CES_FL/src/ces_fl_head_ablation.py": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
+              "CLIPFAIR/cfes/clipfair_losses.py": "daf5cb7538c76fe81abb1af5b35fe851b5a603ca8f812614e4f9673bfd36def3",
+              "CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/upstreams.lock.json": "21b288b77b73b87c6c7536dc1b859a5274acfcda9703a1ae59ca8de3f9f3c69e"
+            },
+            "config_digest": "904ac0b50d745b4ef2f53fa3f84b688cc01c405eb12b0d192ec4f317570827bd",
+            "device": "cuda",
+            "steps": 20,
+            "method": "bce",
+            "last_loss": 0.3431013226509094,
+            "median_step_seconds": 0.2559948582202196,
+            "median_cycle_including_input_seconds": 0.2672193255275488,
+            "estimated_training_only_gpu_hours": 6.33161346319442,
+            "estimate_excludes_validation_checkpoints": true,
+            "parameters": 20809001,
+            "test_read": false
+          }
+        }
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "steps": 1706,
+          "originals_once_each": true,
+          "original_count": 218266,
+          "mean_loss": 0.2365959271972023,
+          "validation": {
+            "units": "fractions",
+            "threshold_logit": 2.58082127571106,
+            "overall": {
+              "n": 31107,
+              "n_real": 2438,
+              "n_fake": 28669,
+              "auc": 0.9045146734484182,
+              "fpr": 0.09967186218211649,
+              "fnr": 0.25030520771565107,
+              "positive_rate": 0.6987494776095413
+            },
+            "axes": {
+              "gender": {
+                "groups": {
+                  "Female": {
+                    "n": 12614,
+                    "n_real": 1001,
+                    "n_fake": 11613,
+                    "auc": 0.8993351864702936,
+                    "fpr": 0.11988011988011989,
+                    "fnr": 0.23973133557220355,
+                    "positive_rate": 0.7094498176629143
+                  },
+                  "Male": {
+                    "n": 18493,
+                    "n_real": 1437,
+                    "n_fake": 17056,
+                    "auc": 0.9085462958973576,
+                    "fpr": 0.08559498956158663,
+                    "fnr": 0.2575046904315197,
+                    "positive_rate": 0.6914508192288974
+                  }
+                },
+                "eligible_groups": [
+                  "Female",
+                  "Male"
+                ],
+                "min_support_per_class": 20,
+                "worst_group_auc": 0.8993351864702936,
+                "fpr_gap": 0.03428513031853325,
+                "fnr_gap": 0.017773354859316137,
+                "auc_gap": 0.009211109427063935,
+                "F_FPR": 0.03428513031853325,
+                "F_DP": 0.017998998434016866,
+                "es_AUC": 0.8962591325039192
+              },
+              "race": {
+                "groups": {
+                  "Asian": {
+                    "n": 6850,
+                    "n_real": 524,
+                    "n_fake": 6326,
+                    "auc": 0.9015106081046836,
+                    "fpr": 0.1183206106870229,
+                    "fnr": 0.22731583939298133,
+                    "positive_rate": 0.7226277372262774
+                  },
+                  "Black": {
+                    "n": 5776,
+                    "n_real": 432,
+                    "n_fake": 5344,
+                    "auc": 0.8913626739576402,
+                    "fpr": 0.14814814814814814,
+                    "fnr": 0.24756736526946108,
+                    "positive_rate": 0.7072368421052632
+                  },
+                  "Others": {
+                    "n": 11824,
+                    "n_real": 969,
+                    "n_fake": 10855,
+                    "auc": 0.9151895779766972,
+                    "fpr": 0.06707946336429309,
+                    "fnr": 0.2583141409488715,
+                    "positive_rate": 0.6864005412719891
+                  },
+                  "White": {
+                    "n": 6657,
+                    "n_real": 513,
+                    "n_fake": 6144,
+                    "auc": 0.9002986161874594,
+                    "fpr": 0.10136452241715399,
+                    "fnr": 0.26220703125,
+                    "positive_rate": 0.6887486855941115
+                  }
+                },
+                "eligible_groups": [
+                  "Asian",
+                  "Black",
+                  "Others",
+                  "White"
+                ],
+                "min_support_per_class": 20,
+                "worst_group_auc": 0.8913626739576402,
+                "fpr_gap": 0.08106868478385505,
+                "fnr_gap": 0.034891191857018666,
+                "auc_gap": 0.02382690401905696,
+                "F_FPR": 0.10141009352379897,
+                "F_DP": 0.03622719595428825,
+                "es_AUC": 0.8772778060476321
+              },
+              "age_bin": {
+                "groups": {
+                  "30-44": {
+                    "n": 15167,
+                    "n_real": 1142,
+                    "n_fake": 14025,
+                    "auc": 0.9026427039530984,
+                    "fpr": 0.0989492119089317,
+                    "fnr": 0.25361853832442066,
+                    "positive_rate": 0.6976330190545262
+                  },
+                  "45-59": {
+                    "n": 7348,
+                    "n_real": 662,
+                    "n_fake": 6686,
+                    "auc": 0.9082546566618439,
+                    "fpr": 0.07854984894259819,
+                    "fnr": 0.2693688303918636,
+                    "positive_rate": 0.6718835057158411
+                  },
+                  "60+": {
+                    "n": 3746,
+                    "n_real": 374,
+                    "n_fake": 3372,
+                    "auc": 0.9031771556891925,
+                    "fpr": 0.10160427807486631,
+                    "fnr": 0.2609727164887307,
+                    "positive_rate": 0.6753870795515217
+                  },
+                  "<30": {
+                    "n": 4846,
+                    "n_real": 260,
+                    "n_fake": 4586,
+                    "auc": 0.9003648227045523,
+                    "fpr": 0.15384615384615385,
+                    "fnr": 0.20453554295682513,
+                    "positive_rate": 0.7610400330169211
+                  }
+                },
+                "eligible_groups": [
+                  "30-44",
+                  "45-59",
+                  "60+",
+                  "<30"
+                ],
+                "min_support_per_class": 20,
+                "worst_group_auc": 0.9003648227045523,
+                "fpr_gap": 0.07529630490355567,
+                "fnr_gap": 0.06483328743503847,
+                "auc_gap": 0.007889833957291592,
+                "F_FPR": 0.07795137106949028,
+                "F_DP": 0.08915652730108004,
+                "es_AUC": 0.8945853829318435
+              },
+              "skin_bin": {
+                "groups": {
+                  "0": {
+                    "n": 8343,
+                    "n_real": 630,
+                    "n_fake": 7713,
+                    "auc": 0.9218067208732319,
+                    "fpr": 0.0873015873015873,
+                    "fnr": 0.21392454297938546,
+                    "positive_rate": 0.7333093611410764
+                  },
+                  "1": {
+                    "n": 7822,
+                    "n_real": 584,
+                    "n_fake": 7238,
+                    "auc": 0.9061358526346867,
+                    "fpr": 0.09931506849315068,
+                    "fnr": 0.24053605968499586,
+                    "positive_rate": 0.7101764254666326
+                  },
+                  "2": {
+                    "n": 6750,
+                    "n_real": 551,
+                    "n_fake": 6199,
+                    "auc": 0.8961930807293138,
+                    "fpr": 0.09800362976406533,
+                    "fnr": 0.2689143410227456,
+                    "positive_rate": 0.6794074074074075
+                  },
+                  "3": {
+                    "n": 6261,
+                    "n_real": 515,
+                    "n_fake": 5746,
+                    "auc": 0.8931126423109026,
+                    "fpr": 0.1029126213592233,
+                    "fnr": 0.2882004872955099,
+                    "positive_rate": 0.661715380929564
+                  },
+                  "unknown": {
+                    "n": 1931,
+                    "n_real": 158,
+                    "n_fake": 1773,
+                    "auc": 0.8857368259475824,
+                    "fpr": 0.14556962025316456,
+                    "fnr": 0.26057529610829105,
+                    "positive_rate": 0.6908337648886588
+                  }
+                },
+                "eligible_groups": [
+                  "0",
+                  "1",
+                  "2",
+                  "3"
+                ],
+                "min_support_per_class": 20,
+                "worst_group_auc": 0.8931126423109026,
+                "fpr_gap": 0.015611034057636003,
+                "fnr_gap": 0.07427594431612444,
+                "auc_gap": 0.028694078562329306,
+                "F_FPR": 0.017636060164652967,
+                "F_DP": 0.07159398021151242,
+                "es_AUC": 0.8708671110996223
+              },
+              "gender_race": {
+                "groups": {
+                  "Female-Asian": {
+                    "n": 2695,
+                    "n_real": 202,
+                    "n_fake": 2493,
+                    "auc": 0.8932277704304727,
+                    "fpr": 0.16336633663366337,
+                    "fnr": 0.21419975932611313,
+                    "positive_rate": 0.7391465677179963
+                  },
+                  "Female-Black": {
+                    "n": 2466,
+                    "n_real": 194,
+                    "n_fake": 2272,
+                    "auc": 0.9011293923333817,
+                    "fpr": 0.15979381443298968,
+                    "fnr": 0.22139084507042253,
+                    "positive_rate": 0.7299270072992701
+                  },
+                  "Female-Others": {
+                    "n": 4230,
+                    "n_real": 348,
+                    "n_fake": 3882,
+                    "auc": 0.9078120651163339,
+                    "fpr": 0.07471264367816093,
+                    "fnr": 0.2586295723853684,
+                    "positive_rate": 0.6865248226950355
+                  },
+                  "Female-White": {
+                    "n": 3223,
+                    "n_real": 257,
+                    "n_fake": 2966,
+                    "auc": 0.8944339347888259,
+                    "fpr": 0.11673151750972763,
+                    "fnr": 0.25050573162508427,
+                    "positive_rate": 0.6990381632019858
+                  },
+                  "Male-Asian": {
+                    "n": 4155,
+                    "n_real": 322,
+                    "n_fake": 3833,
+                    "auc": 0.907157198114446,
+                    "fpr": 0.09006211180124224,
+                    "fnr": 0.23584659535611793,
+                    "positive_rate": 0.711913357400722
+                  },
+                  "Male-Black": {
+                    "n": 3310,
+                    "n_real": 238,
+                    "n_fake": 3072,
+                    "auc": 0.8847751991421569,
+                    "fpr": 0.13865546218487396,
+                    "fnr": 0.2669270833333333,
+                    "positive_rate": 0.6903323262839879
+                  },
+                  "Male-Others": {
+                    "n": 7594,
+                    "n_real": 621,
+                    "n_fake": 6973,
+                    "auc": 0.9193200458266333,
+                    "fpr": 0.06280193236714976,
+                    "fnr": 0.2581385343467661,
+                    "positive_rate": 0.6863313141954175
+                  },
+                  "Male-White": {
+                    "n": 3434,
+                    "n_real": 256,
+                    "n_fake": 3178,
+                    "auc": 0.9072542184550032,
+                    "fpr": 0.0859375,
+                    "fnr": 0.27312775330396477,
+                    "positive_rate": 0.6790914385556203
+                  }
+                },
+                "eligible_groups": [
+                  "Female-Asian",
+                  "Female-Black",
+                  "Female-Others",
+                  "Female-White",
+                  "Male-Asian",
+                  "Male-Black",
+                  "Male-Others",
+                  "Male-White"
+                ],
+                "min_support_per_class": 20,
+                "worst_group_auc": 0.8847751991421569,
+                "fpr_gap": 0.10056440426651361,
+                "fnr_gap": 0.058927993977851645,
+                "auc_gap": 0.03454484668447644,
+                "F_FPR": 0.2650329429147017,
+                "F_DP": 0.060055129162375986,
+                "es_AUC": 0.8469419078869088
+              },
+              "ids8": {
+                "groups": {
+                  "0": {
+                    "n": 844,
+                    "n_real": 65,
+                    "n_fake": 779,
+                    "auc": 0.9056383924163128,
+                    "fpr": 0.1076923076923077,
+                    "fnr": 0.2772785622593068,
+                    "positive_rate": 0.6753554502369669
+                  },
+                  "1": {
+                    "n": 1664,
+                    "n_real": 128,
+                    "n_fake": 1536,
+                    "auc": 0.8774617513020833,
+                    "fpr": 0.140625,
+                    "fnr": 0.265625,
+                    "positive_rate": 0.6887019230769231
+                  },
+                  "2": {
+                    "n": 3752,
+                    "n_real": 253,
+                    "n_fake": 3499,
+                    "auc": 0.902838416848631,
+                    "fpr": 0.09090909090909091,
+                    "fnr": 0.26579022577879396,
+                    "positive_rate": 0.6908315565031983
+                  },
+                  "3": {
+                    "n": 2290,
+                    "n_real": 156,
+                    "n_fake": 2134,
+                    "auc": 0.9147682214692524,
+                    "fpr": 0.07692307692307693,
+                    "fnr": 0.2549203373945642,
+                    "positive_rate": 0.6995633187772926
+                  },
+                  "4": {
+                    "n": 11432,
+                    "n_real": 885,
+                    "n_fake": 10547,
+                    "auc": 0.9148826961799724,
+                    "fpr": 0.0711864406779661,
+                    "fnr": 0.2558073385796909,
+                    "positive_rate": 0.6920923722883136
+                  },
+                  "5": {
+                    "n": 5798,
+                    "n_real": 474,
+                    "n_fake": 5324,
+                    "auc": 0.907214999667139,
+                    "fpr": 0.0970464135021097,
+                    "fnr": 0.23516153268219384,
+                    "positive_rate": 0.710244912038634
+                  },
+                  "6": {
+                    "n": 2555,
+                    "n_real": 231,
+                    "n_fake": 2324,
+                    "auc": 0.8928999858431872,
+                    "fpr": 0.11688311688311688,
+                    "fnr": 0.24784853700516352,
+                    "positive_rate": 0.6947162426614482
+                  },
+                  "7": {
+                    "n": 2772,
+                    "n_real": 246,
+                    "n_fake": 2526,
+                    "auc": 0.8890868302982318,
+                    "fpr": 0.1910569105691057,
+                    "fnr": 0.21852731591448932,
+                    "positive_rate": 0.7290764790764791
+                  }
+                },
+                "eligible_groups": [
+                  "0",
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7"
+                ],
+                "min_support_per_class": 20,
+                "worst_group_auc": 0.8774617513020833,
+                "fpr_gap": 0.1198704698911396,
+                "fnr_gap": 0.05875124634481749,
+                "auc_gap": 0.03742094487788916,
+                "F_FPR": 0.22019231313228665,
+                "F_DP": 0.05372102883951224,
+                "es_AUC": 0.8373450898684033
+              }
+            },
+            "by_fake_family_vs_all_reals": {
+              "Editing": {
+                "n": 9378,
+                "n_real": 2438,
+                "n_fake": 6940,
+                "auc": 0.8008061008101789,
+                "fpr": 0.09967186218211649,
+                "fnr": 0.46253602305475505,
+                "positive_rate": 0.4236510983152058
+              },
+              "Face swap": {
+                "n": 9785,
+                "n_real": 2438,
+                "n_fake": 7347,
+                "auc": 0.9021552663116195,
+                "fpr": 0.09967186218211649,
+                "fnr": 0.29236423029808084,
+                "positive_rate": 0.5561573837506387
+              },
+              "GAN": {
+                "n": 3398,
+                "n_real": 2438,
+                "n_fake": 960,
+                "auc": 0.9286058842630571,
+                "fpr": 0.09967186218211649,
+                "fnr": 0.228125,
+                "positive_rate": 0.28958210712183635
+              },
+              "ID-preserving gen.": {
+                "n": 3890,
+                "n_real": 2438,
+                "n_fake": 1452,
+                "auc": 0.9651520236295388,
+                "fpr": 0.09967186218211649,
+                "fnr": 0.10674931129476584,
+                "positive_rate": 0.39588688946015427
+              },
+              "Reenactment": {
+                "n": 6127,
+                "n_real": 2438,
+                "n_fake": 3689,
+                "auc": 0.9147658904785552,
+                "fpr": 0.09967186218211649,
+                "fnr": 0.23908918406072105,
+                "positive_rate": 0.49779663783254446
+              },
+              "Restoration / SR": {
+                "n": 9224,
+                "n_real": 2438,
+                "n_fake": 6786,
+                "auc": 0.9720879763311377,
+                "fpr": 0.09967186218211649,
+                "fnr": 0.07942823460064839,
+                "positive_rate": 0.703599306157849
+              },
+              "Text-to-image": {
+                "n": 3933,
+                "n_real": 2438,
+                "n_fake": 1495,
+                "auc": 0.9911567406805841,
+                "fpr": 0.09967186218211649,
+                "fnr": 0.015384615384615385,
+                "positive_rate": 0.43605390287312484
+              }
+            }
+          },
+          "calibration": {
+            "threshold_logit": 2.58082127571106,
+            "n_real": 2438,
+            "allowed_fp": 243,
+            "achieved_fp": 243,
+            "achieved_fpr": 0.09967186218211649,
+            "requested_fpr": 0.1,
+            "test_fpr_guaranteed": false
+          }
+        }
+      ],
+      "epochs_completed": 1,
+      "selected_so_far": {
+        "epoch": 1,
+        "steps": 1706,
+        "originals_once_each": true,
+        "original_count": 218266,
+        "mean_loss": 0.2365959271972023,
+        "validation": {
+          "units": "fractions",
+          "threshold_logit": 2.58082127571106,
+          "overall": {
+            "n": 31107,
+            "n_real": 2438,
+            "n_fake": 28669,
+            "auc": 0.9045146734484182,
+            "fpr": 0.09967186218211649,
+            "fnr": 0.25030520771565107,
+            "positive_rate": 0.6987494776095413
+          },
+          "axes": {
+            "gender": {
+              "groups": {
+                "Female": {
+                  "n": 12614,
+                  "n_real": 1001,
+                  "n_fake": 11613,
+                  "auc": 0.8993351864702936,
+                  "fpr": 0.11988011988011989,
+                  "fnr": 0.23973133557220355,
+                  "positive_rate": 0.7094498176629143
+                },
+                "Male": {
+                  "n": 18493,
+                  "n_real": 1437,
+                  "n_fake": 17056,
+                  "auc": 0.9085462958973576,
+                  "fpr": 0.08559498956158663,
+                  "fnr": 0.2575046904315197,
+                  "positive_rate": 0.6914508192288974
+                }
+              },
+              "eligible_groups": [
+                "Female",
+                "Male"
+              ],
+              "min_support_per_class": 20,
+              "worst_group_auc": 0.8993351864702936,
+              "fpr_gap": 0.03428513031853325,
+              "fnr_gap": 0.017773354859316137,
+              "auc_gap": 0.009211109427063935,
+              "F_FPR": 0.03428513031853325,
+              "F_DP": 0.017998998434016866,
+              "es_AUC": 0.8962591325039192
+            },
+            "race": {
+              "groups": {
+                "Asian": {
+                  "n": 6850,
+                  "n_real": 524,
+                  "n_fake": 6326,
+                  "auc": 0.9015106081046836,
+                  "fpr": 0.1183206106870229,
+                  "fnr": 0.22731583939298133,
+                  "positive_rate": 0.7226277372262774
+                },
+                "Black": {
+                  "n": 5776,
+                  "n_real": 432,
+                  "n_fake": 5344,
+                  "auc": 0.8913626739576402,
+                  "fpr": 0.14814814814814814,
+                  "fnr": 0.24756736526946108,
+                  "positive_rate": 0.7072368421052632
+                },
+                "Others": {
+                  "n": 11824,
+                  "n_real": 969,
+                  "n_fake": 10855,
+                  "auc": 0.9151895779766972,
+                  "fpr": 0.06707946336429309,
+                  "fnr": 0.2583141409488715,
+                  "positive_rate": 0.6864005412719891
+                },
+                "White": {
+                  "n": 6657,
+                  "n_real": 513,
+                  "n_fake": 6144,
+                  "auc": 0.9002986161874594,
+                  "fpr": 0.10136452241715399,
+                  "fnr": 0.26220703125,
+                  "positive_rate": 0.6887486855941115
+                }
+              },
+              "eligible_groups": [
+                "Asian",
+                "Black",
+                "Others",
+                "White"
+              ],
+              "min_support_per_class": 20,
+              "worst_group_auc": 0.8913626739576402,
+              "fpr_gap": 0.08106868478385505,
+              "fnr_gap": 0.034891191857018666,
+              "auc_gap": 0.02382690401905696,
+              "F_FPR": 0.10141009352379897,
+              "F_DP": 0.03622719595428825,
+              "es_AUC": 0.8772778060476321
+            },
+            "age_bin": {
+              "groups": {
+                "30-44": {
+                  "n": 15167,
+                  "n_real": 1142,
+                  "n_fake": 14025,
+                  "auc": 0.9026427039530984,
+                  "fpr": 0.0989492119089317,
+                  "fnr": 0.25361853832442066,
+                  "positive_rate": 0.6976330190545262
+                },
+                "45-59": {
+                  "n": 7348,
+                  "n_real": 662,
+                  "n_fake": 6686,
+                  "auc": 0.9082546566618439,
+                  "fpr": 0.07854984894259819,
+                  "fnr": 0.2693688303918636,
+                  "positive_rate": 0.6718835057158411
+                },
+                "60+": {
+                  "n": 3746,
+                  "n_real": 374,
+                  "n_fake": 3372,
+                  "auc": 0.9031771556891925,
+                  "fpr": 0.10160427807486631,
+                  "fnr": 0.2609727164887307,
+                  "positive_rate": 0.6753870795515217
+                },
+                "<30": {
+                  "n": 4846,
+                  "n_real": 260,
+                  "n_fake": 4586,
+                  "auc": 0.9003648227045523,
+                  "fpr": 0.15384615384615385,
+                  "fnr": 0.20453554295682513,
+                  "positive_rate": 0.7610400330169211
+                }
+              },
+              "eligible_groups": [
+                "30-44",
+                "45-59",
+                "60+",
+                "<30"
+              ],
+              "min_support_per_class": 20,
+              "worst_group_auc": 0.9003648227045523,
+              "fpr_gap": 0.07529630490355567,
+              "fnr_gap": 0.06483328743503847,
+              "auc_gap": 0.007889833957291592,
+              "F_FPR": 0.07795137106949028,
+              "F_DP": 0.08915652730108004,
+              "es_AUC": 0.8945853829318435
+            },
+            "skin_bin": {
+              "groups": {
+                "0": {
+                  "n": 8343,
+                  "n_real": 630,
+                  "n_fake": 7713,
+                  "auc": 0.9218067208732319,
+                  "fpr": 0.0873015873015873,
+                  "fnr": 0.21392454297938546,
+                  "positive_rate": 0.7333093611410764
+                },
+                "1": {
+                  "n": 7822,
+                  "n_real": 584,
+                  "n_fake": 7238,
+                  "auc": 0.9061358526346867,
+                  "fpr": 0.09931506849315068,
+                  "fnr": 0.24053605968499586,
+                  "positive_rate": 0.7101764254666326
+                },
+                "2": {
+                  "n": 6750,
+                  "n_real": 551,
+                  "n_fake": 6199,
+                  "auc": 0.8961930807293138,
+                  "fpr": 0.09800362976406533,
+                  "fnr": 0.2689143410227456,
+                  "positive_rate": 0.6794074074074075
+                },
+                "3": {
+                  "n": 6261,
+                  "n_real": 515,
+                  "n_fake": 5746,
+                  "auc": 0.8931126423109026,
+                  "fpr": 0.1029126213592233,
+                  "fnr": 0.2882004872955099,
+                  "positive_rate": 0.661715380929564
+                },
+                "unknown": {
+                  "n": 1931,
+                  "n_real": 158,
+                  "n_fake": 1773,
+                  "auc": 0.8857368259475824,
+                  "fpr": 0.14556962025316456,
+                  "fnr": 0.26057529610829105,
+                  "positive_rate": 0.6908337648886588
+                }
+              },
+              "eligible_groups": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ],
+              "min_support_per_class": 20,
+              "worst_group_auc": 0.8931126423109026,
+              "fpr_gap": 0.015611034057636003,
+              "fnr_gap": 0.07427594431612444,
+              "auc_gap": 0.028694078562329306,
+              "F_FPR": 0.017636060164652967,
+              "F_DP": 0.07159398021151242,
+              "es_AUC": 0.8708671110996223
+            },
+            "gender_race": {
+              "groups": {
+                "Female-Asian": {
+                  "n": 2695,
+                  "n_real": 202,
+                  "n_fake": 2493,
+                  "auc": 0.8932277704304727,
+                  "fpr": 0.16336633663366337,
+                  "fnr": 0.21419975932611313,
+                  "positive_rate": 0.7391465677179963
+                },
+                "Female-Black": {
+                  "n": 2466,
+                  "n_real": 194,
+                  "n_fake": 2272,
+                  "auc": 0.9011293923333817,
+                  "fpr": 0.15979381443298968,
+                  "fnr": 0.22139084507042253,
+                  "positive_rate": 0.7299270072992701
+                },
+                "Female-Others": {
+                  "n": 4230,
+                  "n_real": 348,
+                  "n_fake": 3882,
+                  "auc": 0.9078120651163339,
+                  "fpr": 0.07471264367816093,
+                  "fnr": 0.2586295723853684,
+                  "positive_rate": 0.6865248226950355
+                },
+                "Female-White": {
+                  "n": 3223,
+                  "n_real": 257,
+                  "n_fake": 2966,
+                  "auc": 0.8944339347888259,
+                  "fpr": 0.11673151750972763,
+                  "fnr": 0.25050573162508427,
+                  "positive_rate": 0.6990381632019858
+                },
+                "Male-Asian": {
+                  "n": 4155,
+                  "n_real": 322,
+                  "n_fake": 3833,
+                  "auc": 0.907157198114446,
+                  "fpr": 0.09006211180124224,
+                  "fnr": 0.23584659535611793,
+                  "positive_rate": 0.711913357400722
+                },
+                "Male-Black": {
+                  "n": 3310,
+                  "n_real": 238,
+                  "n_fake": 3072,
+                  "auc": 0.8847751991421569,
+                  "fpr": 0.13865546218487396,
+                  "fnr": 0.2669270833333333,
+                  "positive_rate": 0.6903323262839879
+                },
+                "Male-Others": {
+                  "n": 7594,
+                  "n_real": 621,
+                  "n_fake": 6973,
+                  "auc": 0.9193200458266333,
+                  "fpr": 0.06280193236714976,
+                  "fnr": 0.2581385343467661,
+                  "positive_rate": 0.6863313141954175
+                },
+                "Male-White": {
+                  "n": 3434,
+                  "n_real": 256,
+                  "n_fake": 3178,
+                  "auc": 0.9072542184550032,
+                  "fpr": 0.0859375,
+                  "fnr": 0.27312775330396477,
+                  "positive_rate": 0.6790914385556203
+                }
+              },
+              "eligible_groups": [
+                "Female-Asian",
+                "Female-Black",
+                "Female-Others",
+                "Female-White",
+                "Male-Asian",
+                "Male-Black",
+                "Male-Others",
+                "Male-White"
+              ],
+              "min_support_per_class": 20,
+              "worst_group_auc": 0.8847751991421569,
+              "fpr_gap": 0.10056440426651361,
+              "fnr_gap": 0.058927993977851645,
+              "auc_gap": 0.03454484668447644,
+              "F_FPR": 0.2650329429147017,
+              "F_DP": 0.060055129162375986,
+              "es_AUC": 0.8469419078869088
+            },
+            "ids8": {
+              "groups": {
+                "0": {
+                  "n": 844,
+                  "n_real": 65,
+                  "n_fake": 779,
+                  "auc": 0.9056383924163128,
+                  "fpr": 0.1076923076923077,
+                  "fnr": 0.2772785622593068,
+                  "positive_rate": 0.6753554502369669
+                },
+                "1": {
+                  "n": 1664,
+                  "n_real": 128,
+                  "n_fake": 1536,
+                  "auc": 0.8774617513020833,
+                  "fpr": 0.140625,
+                  "fnr": 0.265625,
+                  "positive_rate": 0.6887019230769231
+                },
+                "2": {
+                  "n": 3752,
+                  "n_real": 253,
+                  "n_fake": 3499,
+                  "auc": 0.902838416848631,
+                  "fpr": 0.09090909090909091,
+                  "fnr": 0.26579022577879396,
+                  "positive_rate": 0.6908315565031983
+                },
+                "3": {
+                  "n": 2290,
+                  "n_real": 156,
+                  "n_fake": 2134,
+                  "auc": 0.9147682214692524,
+                  "fpr": 0.07692307692307693,
+                  "fnr": 0.2549203373945642,
+                  "positive_rate": 0.6995633187772926
+                },
+                "4": {
+                  "n": 11432,
+                  "n_real": 885,
+                  "n_fake": 10547,
+                  "auc": 0.9148826961799724,
+                  "fpr": 0.0711864406779661,
+                  "fnr": 0.2558073385796909,
+                  "positive_rate": 0.6920923722883136
+                },
+                "5": {
+                  "n": 5798,
+                  "n_real": 474,
+                  "n_fake": 5324,
+                  "auc": 0.907214999667139,
+                  "fpr": 0.0970464135021097,
+                  "fnr": 0.23516153268219384,
+                  "positive_rate": 0.710244912038634
+                },
+                "6": {
+                  "n": 2555,
+                  "n_real": 231,
+                  "n_fake": 2324,
+                  "auc": 0.8928999858431872,
+                  "fpr": 0.11688311688311688,
+                  "fnr": 0.24784853700516352,
+                  "positive_rate": 0.6947162426614482
+                },
+                "7": {
+                  "n": 2772,
+                  "n_real": 246,
+                  "n_fake": 2526,
+                  "auc": 0.8890868302982318,
+                  "fpr": 0.1910569105691057,
+                  "fnr": 0.21852731591448932,
+                  "positive_rate": 0.7290764790764791
+                }
+              },
+              "eligible_groups": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7"
+              ],
+              "min_support_per_class": 20,
+              "worst_group_auc": 0.8774617513020833,
+              "fpr_gap": 0.1198704698911396,
+              "fnr_gap": 0.05875124634481749,
+              "auc_gap": 0.03742094487788916,
+              "F_FPR": 0.22019231313228665,
+              "F_DP": 0.05372102883951224,
+              "es_AUC": 0.8373450898684033
+            }
+          },
+          "by_fake_family_vs_all_reals": {
+            "Editing": {
+              "n": 9378,
+              "n_real": 2438,
+              "n_fake": 6940,
+              "auc": 0.8008061008101789,
+              "fpr": 0.09967186218211649,
+              "fnr": 0.46253602305475505,
+              "positive_rate": 0.4236510983152058
+            },
+            "Face swap": {
+              "n": 9785,
+              "n_real": 2438,
+              "n_fake": 7347,
+              "auc": 0.9021552663116195,
+              "fpr": 0.09967186218211649,
+              "fnr": 0.29236423029808084,
+              "positive_rate": 0.5561573837506387
+            },
+            "GAN": {
+              "n": 3398,
+              "n_real": 2438,
+              "n_fake": 960,
+              "auc": 0.9286058842630571,
+              "fpr": 0.09967186218211649,
+              "fnr": 0.228125,
+              "positive_rate": 0.28958210712183635
+            },
+            "ID-preserving gen.": {
+              "n": 3890,
+              "n_real": 2438,
+              "n_fake": 1452,
+              "auc": 0.9651520236295388,
+              "fpr": 0.09967186218211649,
+              "fnr": 0.10674931129476584,
+              "positive_rate": 0.39588688946015427
+            },
+            "Reenactment": {
+              "n": 6127,
+              "n_real": 2438,
+              "n_fake": 3689,
+              "auc": 0.9147658904785552,
+              "fpr": 0.09967186218211649,
+              "fnr": 0.23908918406072105,
+              "positive_rate": 0.49779663783254446
+            },
+            "Restoration / SR": {
+              "n": 9224,
+              "n_real": 2438,
+              "n_fake": 6786,
+              "auc": 0.9720879763311377,
+              "fpr": 0.09967186218211649,
+              "fnr": 0.07942823460064839,
+              "positive_rate": 0.703599306157849
+            },
+            "Text-to-image": {
+              "n": 3933,
+              "n_real": 2438,
+              "n_fake": 1495,
+              "auc": 0.9911567406805841,
+              "fpr": 0.09967186218211649,
+              "fnr": 0.015384615384615385,
+              "positive_rate": 0.43605390287312484
+            }
+          }
+        },
+        "calibration": {
+          "threshold_logit": 2.58082127571106,
+          "n_real": 2438,
+          "allowed_fp": 243,
+          "achieved_fp": 243,
+          "achieved_fpr": 0.09967186218211649,
+          "requested_fpr": 0.1,
+          "test_fpr_guaranteed": false
+        }
+      },
+      "verified": null
+    },
+    "dag": {
+      "status": "RUNNING",
+      "phase": "training",
+      "worker_pid": 3683309,
+      "actual_worker_observed": true,
+      "sessions": {
+        "ff2_dag_gpu01_20261103T123610Z": {
+          "LAUNCH.json": {
+            "commit": "815b4d4bc679c55d4ee6323cc7284335ce210568",
+            "allocation": {
+              "allocation_id": "pool-v2:gpu01:GPU-789d1ee4-d888-8a11-c94e-3d866900bc4d:ff2_dag_gpu01_20261103T123610Z",
+              "gpus": 1,
+              "cuda_visible_devices": "GPU-789d1ee4-d888-8a11-c94e-3d866900bc4d",
+              "verified_by": "Codex operator; prior explicit user-authorized direct SSH shared-pool-v2 route",
+              "evidence": "/home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/allocations/ff2_dag_gpu01_20261103T123610Z/OWNERSHIP_PRIVATE.json",
+              "pbs_allocation_claimed": false,
+              "scheduler_supplied_binding": null,
+              "exclusive_physical_ownership_claimed": false
+            },
+            "session_id": "ff2_dag_gpu01_20261103T123610Z",
+            "reservation_gpu_hours": 18.0,
+            "start_unix": 1793708711.8029232,
+            "method": "dag",
+            "resume": false,
+            "test_read": false,
+            "config_sha256": "9b34ea029575851f2bb8423af185b387d4a87ec2847adfdcc326c3fd27587f6f"
+          },
+          "PROJECTION.json": {
+            "training_remaining_with_40percent_margin_hours": 18.60844524921849,
+            "session_remaining_hours": 17.914766972793473,
+            "measured_gpu_hours": 13.291746606584638,
+            "note": "Estimate, not guaranteed. VAL/checkpoint/IO variability can exhaust budget; no silent epoch reduction."
+          },
+          "SESSION_RESULT.json": {
+            "status": "BUDGET_PENDING",
+            "training_launched": false
+          },
+          "BUDGET_FINISH.json": {
+            "charged": 0.03523365371757083,
+            "reserved": 36.0,
+            "active_gpus": 2,
+            "uncommitted": 35.96476634628243
+          },
+          "software_fixture/SMOKE_RESULT.json": {
+            "status": "PASS",
+            "source_hashes": {
+              "CES_FL/src/ff2_fairness_baselines.py": "f14b818cad66c92a07f09e0c06767a2980a0b8644e8bb74b33710e142b971904",
+              "CES_FL/src/ces_fl_head_ablation.py": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
+              "CLIPFAIR/cfes/clipfair_losses.py": "daf5cb7538c76fe81abb1af5b35fe851b5a603ca8f812614e4f9673bfd36def3",
+              "CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/upstreams.lock.json": "21b288b77b73b87c6c7536dc1b859a5274acfcda9703a1ae59ca8de3f9f3c69e"
+            },
+            "device": "cuda",
+            "fixture_only": true,
+            "torch": "2.7.0+cu126",
+            "tests": [
+              "native DAW two-epoch training",
+              "mid-epoch stop/resume bitwise identical",
+              "independent selected replay",
+              "original exposure",
+              "frozen selected calibration"
+            ],
+            "scientific_results": false,
+            "test_read": false
+          },
+          "dry_run/DRY_RUN.json": {
+            "status": "PASS",
+            "source_hashes": {
+              "CES_FL/src/ff2_fairness_baselines.py": "f14b818cad66c92a07f09e0c06767a2980a0b8644e8bb74b33710e142b971904",
+              "CES_FL/src/ces_fl_head_ablation.py": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
+              "CLIPFAIR/cfes/clipfair_losses.py": "daf5cb7538c76fe81abb1af5b35fe851b5a603ca8f812614e4f9673bfd36def3",
+              "CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/upstreams.lock.json": "21b288b77b73b87c6c7536dc1b859a5274acfcda9703a1ae59ca8de3f9f3c69e"
+            },
+            "config_digest": "36dbef68848db48761470018002aeac0fc44c2333a3d0f5709fdecc2c1083163",
+            "device": "cuda",
+            "steps": 20,
+            "method": "dag",
+            "last_loss": 0.5187051892280579,
+            "median_step_seconds": 0.5546873454004526,
+            "median_cycle_including_input_seconds": 0.5609646867960691,
+            "estimated_training_only_gpu_hours": 13.291746606584638,
+            "estimate_excludes_validation_checkpoints": true,
+            "parameters": 20809001,
+            "test_read": false
+          }
+        },
+        "ff2_dag_gpu01_20261103T124210Z": {
+          "LAUNCH.json": {
+            "commit": "815b4d4bc679c55d4ee6323cc7284335ce210568",
+            "allocation": {
+              "allocation_id": "pool-v2:gpu01:GPU-9b669a06-9156-a98e-2194-36f2fc11d7ca:ff2_dag_gpu01_20261103T124210Z",
+              "gpus": 1,
+              "cuda_visible_devices": "GPU-9b669a06-9156-a98e-2194-36f2fc11d7ca",
+              "verified_by": "Codex operator; prior explicit user-authorized direct SSH shared-pool-v2 route",
+              "evidence": "/home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/allocations/ff2_dag_gpu01_20261103T124210Z/OWNERSHIP_PRIVATE.json",
+              "pbs_allocation_claimed": false,
+              "scheduler_supplied_binding": null,
+              "exclusive_physical_ownership_claimed": false
+            },
+            "session_id": "ff2_dag_gpu01_20261103T124210Z",
+            "reservation_gpu_hours": 21.0,
+            "start_unix": 1793709073.868221,
+            "method": "dag",
+            "resume": false,
+            "test_read": false,
+            "config_sha256": "9b34ea029575851f2bb8423af185b387d4a87ec2847adfdcc326c3fd27587f6f"
+          },
+          "PROJECTION.json": {
+            "training_remaining_with_40percent_margin_hours": 9.080267685838043,
+            "session_remaining_hours": 20.925568200747172,
+            "measured_gpu_hours": 6.485905489884317,
+            "note": "Estimate, not guaranteed. VAL/checkpoint/IO variability can exhaust budget; no silent epoch reduction."
+          },
+          "software_fixture/SMOKE_RESULT.json": {
+            "status": "PASS",
+            "source_hashes": {
+              "CES_FL/src/ff2_fairness_baselines.py": "f14b818cad66c92a07f09e0c06767a2980a0b8644e8bb74b33710e142b971904",
+              "CES_FL/src/ces_fl_head_ablation.py": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
+              "CLIPFAIR/cfes/clipfair_losses.py": "daf5cb7538c76fe81abb1af5b35fe851b5a603ca8f812614e4f9673bfd36def3",
+              "CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/upstreams.lock.json": "21b288b77b73b87c6c7536dc1b859a5274acfcda9703a1ae59ca8de3f9f3c69e"
+            },
+            "device": "cuda",
+            "fixture_only": true,
+            "torch": "2.7.0+cu126",
+            "tests": [
+              "native DAW two-epoch training",
+              "mid-epoch stop/resume bitwise identical",
+              "independent selected replay",
+              "original exposure",
+              "frozen selected calibration"
+            ],
+            "scientific_results": false,
+            "test_read": false
+          },
+          "dry_run/DRY_RUN.json": {
+            "status": "PASS",
+            "source_hashes": {
+              "CES_FL/src/ff2_fairness_baselines.py": "f14b818cad66c92a07f09e0c06767a2980a0b8644e8bb74b33710e142b971904",
+              "CES_FL/src/ces_fl_head_ablation.py": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
+              "CLIPFAIR/cfes/clipfair_losses.py": "daf5cb7538c76fe81abb1af5b35fe851b5a603ca8f812614e4f9673bfd36def3",
+              "CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/upstreams.lock.json": "21b288b77b73b87c6c7536dc1b859a5274acfcda9703a1ae59ca8de3f9f3c69e"
+            },
+            "config_digest": "36dbef68848db48761470018002aeac0fc44c2333a3d0f5709fdecc2c1083163",
+            "device": "cuda",
+            "steps": 20,
+            "method": "dag",
+            "last_loss": 0.5187051892280579,
+            "median_step_seconds": 0.2623718325048685,
+            "median_cycle_including_input_seconds": 0.2737310640513897,
+            "estimated_training_only_gpu_hours": 6.485905489884317,
+            "estimate_excludes_validation_checkpoints": true,
+            "parameters": 20809001,
+            "test_read": false
+          }
+        }
+      },
+      "history": [],
+      "epochs_completed": 0,
+      "selected_so_far": null,
+      "verified": null
+    },
+    "daw": {
+      "status": "RUNNING",
+      "phase": "training",
+      "worker_pid": 3683293,
+      "actual_worker_observed": true,
+      "sessions": {
+        "ff2_daw_gpu01_20261103T123610Z": {
+          "LAUNCH.json": {
+            "commit": "815b4d4bc679c55d4ee6323cc7284335ce210568",
+            "allocation": {
+              "allocation_id": "pool-v2:gpu01:GPU-61f54ca7-3cee-1c93-def3-118523e95241:ff2_daw_gpu01_20261103T123610Z",
+              "gpus": 1,
+              "cuda_visible_devices": "GPU-61f54ca7-3cee-1c93-def3-118523e95241",
+              "verified_by": "Codex operator; prior explicit user-authorized direct SSH shared-pool-v2 route",
+              "evidence": "/home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/allocations/ff2_daw_gpu01_20261103T123610Z/OWNERSHIP_PRIVATE.json",
+              "pbs_allocation_claimed": false,
+              "scheduler_supplied_binding": null,
+              "exclusive_physical_ownership_claimed": false
+            },
+            "session_id": "ff2_daw_gpu01_20261103T123610Z",
+            "reservation_gpu_hours": 18.0,
+            "start_unix": 1793708711.3101356,
+            "method": "daw",
+            "resume": false,
+            "test_read": false,
+            "config_sha256": "56c622b41d07205a829d39b39ef9e343245cab6128947fa975c51ee3f8378c6d"
+          },
+          "PROJECTION.json": {
+            "training_remaining_with_40percent_margin_hours": 20.521743571137385,
+            "session_remaining_hours": 17.914543990823958,
+            "measured_gpu_hours": 14.658388265098134,
+            "note": "Estimate, not guaranteed. VAL/checkpoint/IO variability can exhaust budget; no silent epoch reduction."
+          },
+          "SESSION_RESULT.json": {
+            "status": "BUDGET_PENDING",
+            "training_launched": false
+          },
+          "BUDGET_FINISH.json": {
+            "charged": 0.07069051623344422,
+            "reserved": 18.0,
+            "active_gpus": 1,
+            "uncommitted": 53.92930948376656
+          },
+          "software_fixture/SMOKE_RESULT.json": {
+            "status": "PASS",
+            "source_hashes": {
+              "CES_FL/src/ff2_fairness_baselines.py": "f14b818cad66c92a07f09e0c06767a2980a0b8644e8bb74b33710e142b971904",
+              "CES_FL/src/ces_fl_head_ablation.py": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
+              "CLIPFAIR/cfes/clipfair_losses.py": "daf5cb7538c76fe81abb1af5b35fe851b5a603ca8f812614e4f9673bfd36def3",
+              "CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/upstreams.lock.json": "21b288b77b73b87c6c7536dc1b859a5274acfcda9703a1ae59ca8de3f9f3c69e"
+            },
+            "device": "cuda",
+            "fixture_only": true,
+            "torch": "2.7.0+cu126",
+            "tests": [
+              "native DAW two-epoch training",
+              "mid-epoch stop/resume bitwise identical",
+              "independent selected replay",
+              "original exposure",
+              "frozen selected calibration"
+            ],
+            "scientific_results": false,
+            "test_read": false
+          },
+          "dry_run/DRY_RUN.json": {
+            "status": "PASS",
+            "source_hashes": {
+              "CES_FL/src/ff2_fairness_baselines.py": "f14b818cad66c92a07f09e0c06767a2980a0b8644e8bb74b33710e142b971904",
+              "CES_FL/src/ces_fl_head_ablation.py": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
+              "CLIPFAIR/cfes/clipfair_losses.py": "daf5cb7538c76fe81abb1af5b35fe851b5a603ca8f812614e4f9673bfd36def3",
+              "CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/upstreams.lock.json": "21b288b77b73b87c6c7536dc1b859a5274acfcda9703a1ae59ca8de3f9f3c69e"
+            },
+            "config_digest": "2425e539b1afcf5f5f667fd6e424d8468b62601b4df4fccb966e12e05e8be6cd",
+            "device": "cuda",
+            "steps": 20,
+            "method": "daw",
+            "last_loss": 0.42027097940444946,
+            "median_step_seconds": 0.6125902216881514,
+            "median_cycle_including_input_seconds": 0.6186424121260643,
+            "estimated_training_only_gpu_hours": 14.658388265098134,
+            "estimate_excludes_validation_checkpoints": true,
+            "parameters": 20809001,
+            "test_read": false
+          }
+        },
+        "ff2_daw_gpu01_20261103T124210Z": {
+          "LAUNCH.json": {
+            "commit": "815b4d4bc679c55d4ee6323cc7284335ce210568",
+            "allocation": {
+              "allocation_id": "pool-v2:gpu01:GPU-789d1ee4-d888-8a11-c94e-3d866900bc4d:ff2_daw_gpu01_20261103T124210Z",
+              "gpus": 1,
+              "cuda_visible_devices": "GPU-789d1ee4-d888-8a11-c94e-3d866900bc4d",
+              "verified_by": "Codex operator; prior explicit user-authorized direct SSH shared-pool-v2 route",
+              "evidence": "/home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/allocations/ff2_daw_gpu01_20261103T124210Z/OWNERSHIP_PRIVATE.json",
+              "pbs_allocation_claimed": false,
+              "scheduler_supplied_binding": null,
+              "exclusive_physical_ownership_claimed": false
+            },
+            "session_id": "ff2_daw_gpu01_20261103T124210Z",
+            "reservation_gpu_hours": 23.0,
+            "start_unix": 1793709073.3421323,
+            "method": "daw",
+            "resume": false,
+            "test_read": false,
+            "config_sha256": "56c622b41d07205a829d39b39ef9e343245cab6128947fa975c51ee3f8378c6d"
+          },
+          "PROJECTION.json": {
+            "training_remaining_with_40percent_margin_hours": 9.345988616316268,
+            "session_remaining_hours": 22.92453208989567,
+            "measured_gpu_hours": 6.67570615451162,
+            "note": "Estimate, not guaranteed. VAL/checkpoint/IO variability can exhaust budget; no silent epoch reduction."
+          },
+          "software_fixture/SMOKE_RESULT.json": {
+            "status": "PASS",
+            "source_hashes": {
+              "CES_FL/src/ff2_fairness_baselines.py": "f14b818cad66c92a07f09e0c06767a2980a0b8644e8bb74b33710e142b971904",
+              "CES_FL/src/ces_fl_head_ablation.py": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
+              "CLIPFAIR/cfes/clipfair_losses.py": "daf5cb7538c76fe81abb1af5b35fe851b5a603ca8f812614e4f9673bfd36def3",
+              "CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/upstreams.lock.json": "21b288b77b73b87c6c7536dc1b859a5274acfcda9703a1ae59ca8de3f9f3c69e"
+            },
+            "device": "cuda",
+            "fixture_only": true,
+            "torch": "2.7.0+cu126",
+            "tests": [
+              "native DAW two-epoch training",
+              "mid-epoch stop/resume bitwise identical",
+              "independent selected replay",
+              "original exposure",
+              "frozen selected calibration"
+            ],
+            "scientific_results": false,
+            "test_read": false
+          },
+          "dry_run/DRY_RUN.json": {
+            "status": "PASS",
+            "source_hashes": {
+              "CES_FL/src/ff2_fairness_baselines.py": "f14b818cad66c92a07f09e0c06767a2980a0b8644e8bb74b33710e142b971904",
+              "CES_FL/src/ces_fl_head_ablation.py": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
+              "CLIPFAIR/cfes/clipfair_losses.py": "daf5cb7538c76fe81abb1af5b35fe851b5a603ca8f812614e4f9673bfd36def3",
+              "CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/upstreams.lock.json": "21b288b77b73b87c6c7536dc1b859a5274acfcda9703a1ae59ca8de3f9f3c69e"
+            },
+            "config_digest": "2425e539b1afcf5f5f667fd6e424d8468b62601b4df4fccb966e12e05e8be6cd",
+            "device": "cuda",
+            "steps": 20,
+            "method": "daw",
+            "last_loss": 0.42027097940444946,
+            "median_step_seconds": 0.2724618520587683,
+            "median_cycle_including_input_seconds": 0.28174140863120556,
+            "estimated_training_only_gpu_hours": 6.67570615451162,
+            "estimate_excludes_validation_checkpoints": true,
+            "parameters": 20809001,
+            "test_read": false
+          }
+        }
+      },
+      "history": [],
+      "epochs_completed": 0,
+      "selected_so_far": null,
+      "verified": null
+    }
+  },
+  "ledger": {
+    "authorization": "User: Allow up to 72 additional GPU-hours; maximum three concurrent GPUs",
+    "cap_gpu_hours": 72.0,
+    "max_concurrent_gpus": 3,
+    "jobs": {
+      "ff2_bce_gpu01_20261103T123610Z": {
+        "state": "FINISHED",
+        "gpus": 1,
+        "reserved_gpu_hours": 18.0,
+        "start_unix": 1793708710.9981232,
+        "allocation_evidence": "pool-v2:gpu01:GPU-6a002609-de85-4949-c707-ee9317b284f0:ff2_bce_gpu01_20261103T123610Z",
+        "charged_gpu_hours": 0.03626746442582872,
+        "end_unix": 1793708841.560995,
+        "reservation_overrun": false
+      },
+      "ff2_daw_gpu01_20261103T123610Z": {
+        "state": "FINISHED",
+        "gpus": 1,
+        "reserved_gpu_hours": 18.0,
+        "start_unix": 1793708711.3101356,
+        "allocation_evidence": "pool-v2:gpu01:GPU-61f54ca7-3cee-1c93-def3-118523e95241:ff2_daw_gpu01_20261103T123610Z",
+        "charged_gpu_hours": 0.03545686251587338,
+        "end_unix": 1793708838.9548407,
+        "reservation_overrun": false
+      },
+      "ff2_dag_gpu01_20261103T123610Z": {
+        "state": "FINISHED",
+        "gpus": 1,
+        "reserved_gpu_hours": 18.0,
+        "start_unix": 1793708711.8029232,
+        "allocation_evidence": "pool-v2:gpu01:GPU-789d1ee4-d888-8a11-c94e-3d866900bc4d:ff2_dag_gpu01_20261103T123610Z",
+        "charged_gpu_hours": 0.03523365371757083,
+        "end_unix": 1793708838.6440766,
+        "reservation_overrun": false
+      },
+      "ff2_bce_gpu01_20261103T123610Z_startup": {
+        "state": "FINISHED",
+        "gpus": 1,
+        "reserved_gpu_hours": 2.325541443294949e-05,
+        "start_unix": 1793708710.9144037,
+        "allocation_evidence": "pool-v2:gpu01:GPU-6a002609-de85-4949-c707-ee9317b284f0:ff2_bce_gpu01_20261103T123610Z",
+        "charged_gpu_hours": 2.325541443294949e-05,
+        "end_unix": 1793708710.9981232,
+        "reservation_overrun": false
+      },
+      "ff2_bce_gpu01_20261103T123610Z_cleanup": {
+        "state": "FINISHED",
+        "gpus": 1,
+        "reserved_gpu_hours": 2.8796990712483724e-06,
+        "start_unix": 1793708841.560995,
+        "allocation_evidence": "pool-v2:gpu01:GPU-6a002609-de85-4949-c707-ee9317b284f0:ff2_bce_gpu01_20261103T123610Z",
+        "charged_gpu_hours": 2.8796990712483724e-06,
+        "end_unix": 1793708841.571362,
+        "reservation_overrun": false
+      },
+      "ff2_dag_gpu01_20261103T123610Z_startup": {
+        "state": "FINISHED",
+        "gpus": 1,
+        "reserved_gpu_hours": 1.0531279775831435e-05,
+        "start_unix": 1793708711.7650106,
+        "allocation_evidence": "pool-v2:gpu01:GPU-789d1ee4-d888-8a11-c94e-3d866900bc4d:ff2_dag_gpu01_20261103T123610Z",
+        "charged_gpu_hours": 1.0531279775831435e-05,
+        "end_unix": 1793708711.8029232,
+        "reservation_overrun": false
+      },
+      "ff2_dag_gpu01_20261103T123610Z_cleanup": {
+        "state": "FINISHED",
+        "gpus": 1,
+        "reserved_gpu_hours": 1.501056883070204e-05,
+        "start_unix": 1793708838.6440766,
+        "allocation_evidence": "pool-v2:gpu01:GPU-789d1ee4-d888-8a11-c94e-3d866900bc4d:ff2_dag_gpu01_20261103T123610Z",
+        "charged_gpu_hours": 1.501056883070204e-05,
+        "end_unix": 1793708838.6981146,
+        "reservation_overrun": false
+      },
+      "ff2_daw_gpu01_20261103T123610Z_startup": {
+        "state": "FINISHED",
+        "gpus": 1,
+        "reserved_gpu_hours": 1.1892848544650608e-05,
+        "start_unix": 1793708711.2673213,
+        "allocation_evidence": "pool-v2:gpu01:GPU-61f54ca7-3cee-1c93-def3-118523e95241:ff2_daw_gpu01_20261103T123610Z",
+        "charged_gpu_hours": 1.1892848544650608e-05,
+        "end_unix": 1793708711.3101356,
+        "reservation_overrun": false
+      },
+      "ff2_daw_gpu01_20261103T123610Z_cleanup": {
+        "state": "FINISHED",
+        "gpus": 1,
+        "reserved_gpu_hours": 1.2775262196858725e-05,
+        "start_unix": 1793708838.9548407,
+        "allocation_evidence": "pool-v2:gpu01:GPU-61f54ca7-3cee-1c93-def3-118523e95241:ff2_daw_gpu01_20261103T123610Z",
+        "charged_gpu_hours": 1.2775262196858725e-05,
+        "end_unix": 1793708839.0008316,
+        "reservation_overrun": false
+      },
+      "ff2_bce_gpu01_20261103T124210Z": {
+        "state": "ACTIVE",
+        "gpus": 1,
+        "reserved_gpu_hours": 24.0,
+        "start_unix": 1793709072.9712024,
+        "allocation_evidence": "pool-v2:gpu01:GPU-61f54ca7-3cee-1c93-def3-118523e95241:ff2_bce_gpu01_20261103T124210Z",
+        "charged_gpu_hours": null
+      },
+      "ff2_daw_gpu01_20261103T124210Z": {
+        "state": "ACTIVE",
+        "gpus": 1,
+        "reserved_gpu_hours": 23.0,
+        "start_unix": 1793709073.3421323,
+        "allocation_evidence": "pool-v2:gpu01:GPU-789d1ee4-d888-8a11-c94e-3d866900bc4d:ff2_daw_gpu01_20261103T124210Z",
+        "charged_gpu_hours": null
+      },
+      "ff2_dag_gpu01_20261103T124210Z": {
+        "state": "ACTIVE",
+        "gpus": 1,
+        "reserved_gpu_hours": 21.0,
+        "start_unix": 1793709073.868221,
+        "allocation_evidence": "pool-v2:gpu01:GPU-9b669a06-9156-a98e-2194-36f2fc11d7ca:ff2_dag_gpu01_20261103T124210Z",
+        "charged_gpu_hours": null
+      }
+    }
+  },
+  "observed_processes": [
+    {
+      "pid": 3683232,
+      "ppid": 1,
+      "elapsed": "12:40",
+      "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/launch_pool_method_v2.py --method bce --session ff2_bce_gpu01_20261103T124210Z --hours 24 --gpu-uuid GPU-61f54ca7-3cee-1c93-def3-118523e95241"
+    },
+    {
+      "pid": 3683248,
+      "ppid": 1,
+      "elapsed": "12:40",
+      "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/launch_pool_method_v2.py --method dag --session ff2_dag_gpu01_20261103T124210Z --hours 21 --gpu-uuid GPU-9b669a06-9156-a98e-2194-36f2fc11d7ca"
+    },
+    {
+      "pid": 3683267,
+      "ppid": 1,
+      "elapsed": "12:40",
+      "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/launch_pool_method_v2.py --method daw --session ff2_daw_gpu01_20261103T124210Z --hours 23 --gpu-uuid GPU-789d1ee4-d888-8a11-c94e-3d866900bc4d"
+    },
+    {
+      "pid": 3683278,
+      "ppid": 3683232,
+      "elapsed": "12:40",
+      "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/run_one.py --method bce --work-root /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z --sources /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103 --ledger /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/additional72_gpu_hours.json --allocation-record /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/allocations/ff2_bce_gpu01_20261103T124210Z/ALLOCATION.json --session-id ff2_bce_gpu01_20261103T124210Z --hours 24.0"
+    },
+    {
+      "pid": 3683293,
+      "ppid": 3683267,
+      "elapsed": "12:39",
+      "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/run_one.py --method daw --work-root /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z --sources /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103 --ledger /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/additional72_gpu_hours.json --allocation-record /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/allocations/ff2_daw_gpu01_20261103T124210Z/ALLOCATION.json --session-id ff2_daw_gpu01_20261103T124210Z --hours 23.0"
+    },
+    {
+      "pid": 3683309,
+      "ppid": 3683248,
+      "elapsed": "12:39",
+      "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/run_one.py --method dag --work-root /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z --sources /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103 --ledger /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/additional72_gpu_hours.json --allocation-record /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/allocations/ff2_dag_gpu01_20261103T124210Z/ALLOCATION.json --session-id ff2_dag_gpu01_20261103T124210Z --hours 21.0"
+    },
+    {
+      "pid": 3684934,
+      "ppid": 3683278,
+      "elapsed": "11:11",
+      "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/src/ff2_fairness_baselines.py --config /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/configs/bce.json --preflight /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/preflight_bce --upstream /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103/dag_daw --device cuda train --out /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/bce/training --receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/bce/sessions/ff2_bce_gpu01_20261103T124210Z/dry_run/DRY_RUN.json --software-receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/bce/sessions/ff2_bce_gpu01_20261103T124210Z/software_fixture/SMOKE_RESULT.json --budget-hours 23.9254164459308"
+    },
+    {
+      "pid": 3684936,
+      "ppid": 3683309,
+      "elapsed": "11:11",
+      "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/src/ff2_fairness_baselines.py --config /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/configs/dag.json --preflight /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/preflight_dag --upstream /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103/dag_daw --device cuda train --out /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/dag/training --receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/dag/sessions/ff2_dag_gpu01_20261103T124210Z/dry_run/DRY_RUN.json --software-receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/dag/sessions/ff2_dag_gpu01_20261103T124210Z/software_fixture/SMOKE_RESULT.json --budget-hours 20.925568200747172"
+    },
+    {
+      "pid": 3684959,
+      "ppid": 3683293,
+      "elapsed": "11:08",
+      "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/src/ff2_fairness_baselines.py --config /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/configs/daw.json --preflight /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/preflight_daw --upstream /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103/dag_daw --device cuda train --out /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/daw/training --receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/daw/sessions/ff2_daw_gpu01_20261103T124210Z/dry_run/DRY_RUN.json --software-receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/daw/sessions/ff2_daw_gpu01_20261103T124210Z/software_fixture/SMOKE_RESULT.json --budget-hours 22.92453208989567"
+    },
+    {
+      "pid": 3685101,
+      "ppid": 3684936,
+      "elapsed": "10:38",
+      "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/src/ff2_fairness_baselines.py --config /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/configs/dag.json --preflight /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/preflight_dag --upstream /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103/dag_daw --device cuda train --out /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/dag/training --receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/dag/sessions/ff2_dag_gpu01_20261103T124210Z/dry_run/DRY_RUN.json --software-receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/dag/sessions/ff2_dag_gpu01_20261103T124210Z/software_fixture/SMOKE_RESULT.json --budget-hours 20.925568200747172"
+    },
+    {
+      "pid": 3685105,
+      "ppid": 3684936,
+      "elapsed": "10:38",
+      "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/src/ff2_fairness_baselines.py --config /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/configs/dag.json --preflight /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/preflight_dag --upstream /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103/dag_daw --device cuda train --out /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/dag/training --receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/dag/sessions/ff2_dag_gpu01_20261103T124210Z/dry_run/DRY_RUN.json --software-receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/dag/sessions/ff2_dag_gpu01_20261103T124210Z/software_fixture/SMOKE_RESULT.json --budget-hours 20.925568200747172"
+    },
+    {
+      "pid": 3685109,
+      "ppid": 3684936,
+      "elapsed": "10:38",
+      "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/src/ff2_fairness_baselines.py --config /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/configs/dag.json --preflight /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/preflight_dag --upstream /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103/dag_daw --device cuda train --out /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/dag/training --receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/dag/sessions/ff2_dag_gpu01_20261103T124210Z/dry_run/DRY_RUN.json --software-receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/dag/sessions/ff2_dag_gpu01_20261103T124210Z/software_fixture/SMOKE_RESULT.json --budget-hours 20.925568200747172"
+    },
+    {
+      "pid": 3685113,
+      "ppid": 3684936,
+      "elapsed": "10:38",
+      "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/src/ff2_fairness_baselines.py --config /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/configs/dag.json --preflight /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/preflight_dag --upstream /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103/dag_daw --device cuda train --out /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/dag/training --receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/dag/sessions/ff2_dag_gpu01_20261103T124210Z/dry_run/DRY_RUN.json --software-receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/dag/sessions/ff2_dag_gpu01_20261103T124210Z/software_fixture/SMOKE_RESULT.json --budget-hours 20.925568200747172"
+    },
+    {
+      "pid": 3685154,
+      "ppid": 3684959,
+      "elapsed": "10:35",
+      "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/src/ff2_fairness_baselines.py --config /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/configs/daw.json --preflight /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/preflight_daw --upstream /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103/dag_daw --device cuda train --out /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/daw/training --receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/daw/sessions/ff2_daw_gpu01_20261103T124210Z/dry_run/DRY_RUN.json --software-receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/daw/sessions/ff2_daw_gpu01_20261103T124210Z/software_fixture/SMOKE_RESULT.json --budget-hours 22.92453208989567"
+    },
+    {
+      "pid": 3685158,
+      "ppid": 3684959,
+      "elapsed": "10:35",
+      "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/src/ff2_fairness_baselines.py --config /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/configs/daw.json --preflight /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/preflight_daw --upstream /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103/dag_daw --device cuda train --out /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/daw/training --receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/daw/sessions/ff2_daw_gpu01_20261103T124210Z/dry_run/DRY_RUN.json --software-receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/daw/sessions/ff2_daw_gpu01_20261103T124210Z/software_fixture/SMOKE_RESULT.json --budget-hours 22.92453208989567"
+    },
+    {
+      "pid": 3685162,
+      "ppid": 3684959,
+      "elapsed": "10:35",
+      "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/src/ff2_fairness_baselines.py --config /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/configs/daw.json --preflight /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/preflight_daw --upstream /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103/dag_daw --device cuda train --out /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/daw/training --receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/daw/sessions/ff2_daw_gpu01_20261103T124210Z/dry_run/DRY_RUN.json --software-receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/daw/sessions/ff2_daw_gpu01_20261103T124210Z/software_fixture/SMOKE_RESULT.json --budget-hours 22.92453208989567"
+    },
+    {
+      "pid": 3685166,
+      "ppid": 3684959,
+      "elapsed": "10:35",
+      "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/src/ff2_fairness_baselines.py --config /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/configs/daw.json --preflight /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/preflight_daw --upstream /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103/dag_daw --device cuda train --out /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/daw/training --receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/daw/sessions/ff2_daw_gpu01_20261103T124210Z/dry_run/DRY_RUN.json --software-receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/daw/sessions/ff2_daw_gpu01_20261103T124210Z/software_fixture/SMOKE_RESULT.json --budget-hours 22.92453208989567"
+    },
+    {
+      "pid": 3689638,
+      "ppid": 3684934,
+      "elapsed": "01:05",
+      "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/src/ff2_fairness_baselines.py --config /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/configs/bce.json --preflight /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/preflight_bce --upstream /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103/dag_daw --device cuda train --out /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/bce/training --receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/bce/sessions/ff2_bce_gpu01_20261103T124210Z/dry_run/DRY_RUN.json --software-receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/bce/sessions/ff2_bce_gpu01_20261103T124210Z/software_fixture/SMOKE_RESULT.json --budget-hours 23.9254164459308"
+    },
+    {
+      "pid": 3689642,
+      "ppid": 3684934,
+      "elapsed": "01:05",
+      "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/src/ff2_fairness_baselines.py --config /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/configs/bce.json --preflight /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/preflight_bce --upstream /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103/dag_daw --device cuda train --out /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/bce/training --receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/bce/sessions/ff2_bce_gpu01_20261103T124210Z/dry_run/DRY_RUN.json --software-receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/bce/sessions/ff2_bce_gpu01_20261103T124210Z/software_fixture/SMOKE_RESULT.json --budget-hours 23.9254164459308"
+    },
+    {
+      "pid": 3689646,
+      "ppid": 3684934,
+      "elapsed": "01:05",
+      "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/src/ff2_fairness_baselines.py --config /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/configs/bce.json --preflight /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/preflight_bce --upstream /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103/dag_daw --device cuda train --out /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/bce/training --receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/bce/sessions/ff2_bce_gpu01_20261103T124210Z/dry_run/DRY_RUN.json --software-receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/bce/sessions/ff2_bce_gpu01_20261103T124210Z/software_fixture/SMOKE_RESULT.json --budget-hours 23.9254164459308"
+    },
+    {
+      "pid": 3689650,
+      "ppid": 3684934,
+      "elapsed": "01:05",
+      "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/src/ff2_fairness_baselines.py --config /home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/configs/bce.json --preflight /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/preflight_bce --upstream /home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103/dag_daw --device cuda train --out /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/bce/training --receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/bce/sessions/ff2_bce_gpu01_20261103T124210Z/dry_run/DRY_RUN.json --software-receipt /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/bce/sessions/ff2_bce_gpu01_20261103T124210Z/software_fixture/SMOKE_RESULT.json --budget-hours 23.9254164459308"
+    }
+  ],
+  "process_query_returncode": 0,
+  "conditional": {
+    "PG-FDD": "BLOCKED_ADAPTER / generator-label mapping and three-encoder SAM parity pending",
+    "FairAdapter": "BLOCKED_ENTRYPOINT / 20-object-category view adapter is not an FF2 face adapter",
+    "RSEF-FDD": "BLOCKED_SOURCE / DATA"
+  },
+  "test_read": false,
+  "new_ding_experiments": false,
+  "scope": "Common-recipe adaptation, one seed17; validation only. Existing Ding/CES-FL studies retain their separate protocols and jobs. Shared-pool UUID leases are explicit and not PBS/exclusive physical allocations. Node clocks lag management; wall durations use a consistent node clock per session."
+}

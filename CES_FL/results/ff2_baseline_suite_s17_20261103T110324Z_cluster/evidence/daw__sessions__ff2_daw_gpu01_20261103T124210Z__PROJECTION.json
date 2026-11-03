@@ -1,0 +1,6 @@
+{
+  "training_remaining_with_40percent_margin_hours": 9.345988616316268,
+  "session_remaining_hours": 22.92453208989567,
+  "measured_gpu_hours": 6.67570615451162,
+  "note": "Estimate, not guaranteed. VAL/checkpoint/IO variability can exhaust budget; no silent epoch reduction."
+}

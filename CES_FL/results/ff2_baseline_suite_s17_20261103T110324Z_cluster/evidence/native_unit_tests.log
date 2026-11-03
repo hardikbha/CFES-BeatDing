@@ -1,0 +1,12 @@
+test_bce_and_cvar_gradients (test_ff2_baseline_suite.LossTests.test_bce_and_cvar_gradients) ... ok
+test_config_rejects_source_mismatch_before_io (test_ff2_baseline_suite.LossTests.test_config_rejects_source_mismatch_before_io) ... ok
+test_daw_group_code_permutation (test_ff2_baseline_suite.LossTests.test_daw_group_code_permutation) ... ok
+test_image_hash_change_rejected (test_ff2_baseline_suite.LossTests.test_image_hash_change_rejected) ... ok
+test_changed_upstream_rejected (test_ff2_baseline_suite.UpstreamTests.test_changed_upstream_rejected) ... ok
+test_full_xception_and_bn_and_checkpoint_loading (test_ff2_baseline_suite.UpstreamTests.test_full_xception_and_bn_and_checkpoint_loading) ... ok
+test_official_objective_values_and_gradients (test_ff2_baseline_suite.UpstreamTests.test_official_objective_values_and_gradients) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 1.585s
+
+OK

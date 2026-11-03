@@ -1,0 +1,10 @@
+{
+  "allocation_id": "pool-v2:gpu01:GPU-9b669a06-9156-a98e-2194-36f2fc11d7ca:ff2_dag_gpu01_20261103T124210Z",
+  "gpus": 1,
+  "cuda_visible_devices": "GPU-9b669a06-9156-a98e-2194-36f2fc11d7ca",
+  "verified_by": "Codex operator; prior explicit user-authorized direct SSH shared-pool-v2 route",
+  "evidence": "/home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/allocations/ff2_dag_gpu01_20261103T124210Z/OWNERSHIP_PRIVATE.json",
+  "pbs_allocation_claimed": false,
+  "scheduler_supplied_binding": null,
+  "exclusive_physical_ownership_claimed": false
+}

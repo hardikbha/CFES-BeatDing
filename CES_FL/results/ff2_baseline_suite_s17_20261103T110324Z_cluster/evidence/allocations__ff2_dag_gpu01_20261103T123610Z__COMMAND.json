@@ -1,0 +1,25 @@
+{
+  "argv": [
+    "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+    "-u",
+    "/home/sachin.chaudhary/ces_fl_sources/cesfl-ff2-suite-815b4d4/CES_FL/proposals/ff2_baseline_suite_s17_20261103T110324Z/run_one.py",
+    "--method",
+    "dag",
+    "--work-root",
+    "/home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z",
+    "--sources",
+    "/home/sachin.chaudhary/ces_fl_dependencies/ff2_baselines_pinned_20261103",
+    "--ledger",
+    "/home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/additional72_gpu_hours.json",
+    "--allocation-record",
+    "/home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/allocations/ff2_dag_gpu01_20261103T123610Z/ALLOCATION.json",
+    "--session-id",
+    "ff2_dag_gpu01_20261103T123610Z",
+    "--hours",
+    "18"
+  ],
+  "source_commit": "815b4d4bc679c55d4ee6323cc7284335ce210568",
+  "method": "dag",
+  "wrapper_sha256": "79315d7496c14f40dbe1287613e042783bc5e1c6c75307ea5e3d6ef4bea33805",
+  "test_read": false
+}

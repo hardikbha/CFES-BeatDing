@@ -1,0 +1,9 @@
+{
+  "status": "WORKER_RETURNED_INSPECT_SESSION_RESULT",
+  "claim_node_unix": 1793708711.2673213,
+  "end_node_unix": 1793708839.0008316,
+  "held_gpu_seconds": 127.73351836204529,
+  "worker_returncode": 0,
+  "overhead_reconciliation_required": true,
+  "test_read": false
+}
