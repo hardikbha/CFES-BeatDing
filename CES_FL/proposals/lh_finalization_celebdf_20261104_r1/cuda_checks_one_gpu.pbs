@@ -1,0 +1,10 @@
+#!/bin/bash
+#PBS -N lhR50Chk
+#PBS -q gpu
+#PBS -l select=1:ncpus=4:ngpus=1:mem=24gb
+#PBS -l walltime=00:30:00
+#PBS -j oe
+#PBS -o /home/sachin.chaudhary/ces_fl_runs/lh_finalization_celebdf_20261104_43c605b/cuda_checks_352e837.pbs.log
+set -euo pipefail
+cd /home/sachin.chaudhary/ces_fl_sources/cesfl-lh-finalize-exec-352e837
+exec /home/sachin.chaudhary/.conda/envs/aiface/bin/python -u CES_FL/proposals/lh_finalization_celebdf_20261104_r1/run_cuda_checks.py
