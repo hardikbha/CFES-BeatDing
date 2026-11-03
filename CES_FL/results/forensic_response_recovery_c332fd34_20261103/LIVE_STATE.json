@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-03T01:02:16.411746+00:00",
+  "observed_management_utc": "2026-11-03T01:12:22.645475+00:00",
   "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
   "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
   "budget": {
@@ -7,8 +7,8 @@
     "source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-forensic-response-c332fd34",
     "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
     "initial_total_gpu_hours": 24,
-    "consumed_gpu_hours": 7.279063944581172,
-    "reserved_gpu_hours": 6.26112616217126,
+    "consumed_gpu_hours": 7.617208775630635,
+    "reserved_gpu_hours": 5.922981331121797,
     "gpu_sessions": [
       {
         "id": "ffpp_checks_primary",
@@ -204,7 +204,7 @@
         "id": "ff2_A_initial",
         "ngpus": 1,
         "reserved_gpu_hours": 3.5,
-        "elapsed_seconds": 1335.5342457257211,
+        "elapsed_seconds": 1935.8216924592853,
         "state": "RUNNING",
         "route": "user_authorized_direct_ssh_pool_v2",
         "pbs_allocation_claimed": false,
@@ -226,7 +226,7 @@
         "id": "ff2_B_initial",
         "ngpus": 1,
         "reserved_gpu_hours": 3.5,
-        "elapsed_seconds": 1324.4115704577416,
+        "elapsed_seconds": 1941.4455155022442,
         "state": "RUNNING",
         "route": "user_authorized_direct_ssh_pool_v2",
         "pbs_allocation_claimed": false,
@@ -8454,7 +8454,7 @@
               "id": "ff2_A_initial",
               "ngpus": 1,
               "reserved_gpu_hours": 3.5,
-              "elapsed_seconds": 1335.5342457257211,
+              "elapsed_seconds": 1935.8216924592853,
               "state": "RUNNING",
               "route": "user_authorized_direct_ssh_pool_v2",
               "pbs_allocation_claimed": false,
@@ -8489,7 +8489,7 @@
               "id": "ff2_B_initial",
               "ngpus": 1,
               "reserved_gpu_hours": 3.5,
-              "elapsed_seconds": 1324.4115704577416,
+              "elapsed_seconds": 1941.4455155022442,
               "state": "RUNNING",
               "route": "user_authorized_direct_ssh_pool_v2",
               "pbs_allocation_claimed": false,
@@ -8537,7 +8537,7 @@
     }
   },
   "coordinator": {
-    "observed_management_utc": "2026-11-03T01:01:56.478756+00:00",
+    "observed_management_utc": "2026-11-03T01:11:56.617378+00:00",
     "phase": "WAITING_ARM",
     "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
     "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
