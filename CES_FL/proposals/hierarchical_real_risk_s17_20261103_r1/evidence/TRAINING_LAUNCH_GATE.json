@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "management_utc": "2026-11-03T09:19:12.744000+00:00",
+  "scientific_commit": "3f5f3c16839bf4b96209bea3f968255b5f351ebb",
+  "source_sha256": "2549cb1345d1e2ee617e8a77ca288a0acbbfd05cf480f7b91a46b8627fcb74b2",
+  "config_file_sha256": "63baed480e251945dba5ebb360e9ac1c7ea9fbc1cebf02acfef6abd6299fb3fd",
+  "all_checks_complete": true,
+  "old_E_F_untouched": true,
+  "selected_D_failures_verified": true,
+  "only_one_candidate": true,
+  "planned_epochs": 10,
+  "test_read": false,
+  "statistical_limit_declared_before_training": true
+}

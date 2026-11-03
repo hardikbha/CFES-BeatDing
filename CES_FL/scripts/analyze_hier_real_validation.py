@@ -81,7 +81,6 @@ def main():
                               'Recorded contributor components are not proven biological identities',
                               'Soft-mean risk can be equal despite unequal hard FPR tails',
                               'Existing >=90% usable primary rule is retained despite sparse-group support'])
-    m.write_json(out/'DECISIONS.json',payload)
     lines=['# H joint original-real risk: '+decision,'',payload['observed_management_utc']+' management UTC. FF++ validation, seed17 only; no TEST or new Ding computation.','',
            'Only the intersection-auxiliary real error summand changes. All fake error control, other-axis real penalties, sensitivity/alignment/control losses and training settings remain D. No E/F discount or ramp.','',
            '|Arm|Epochs|Selected epoch|AUC %|Intersection F_FPR fraction|Gender F_FPR fraction|Age F_FPR fraction|Achieved pooled FPR %|Pooled fake FNR %|',
@@ -104,6 +103,8 @@ def main():
             '', 'All supported-axis regressions, worst-group/FPR/FNR gaps, fake-family reports and fixed0.5 diagnostics are in DECISIONS.json. Heatmaps are aggregate rates; private contacts remain on cluster. Counterfactual/causal forensic validity is not established by image plausibility or software tests.','',
             'Decision applies only to the frozen validation criteria. A validation improvement is not evidence of having beaten Ding.']
     (out/'REPORT.md').write_text('\n'.join(lines)+'\n')
+    # Completion is published last, after report/heatmaps/private diagnostics.
+    m.write_json(out/'DECISIONS.json',payload)
     print(json.dumps(dict(status='COMPLETED_VALIDATION_ANALYSIS',decision=decision,numerical_guards=guards,new_gpu_hours=gpu_hours,test_read=False)),flush=True)
 
 

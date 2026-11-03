@@ -1,0 +1,99 @@
+{
+  "status": "PASS",
+  "source_sha256": "2549cb1345d1e2ee617e8a77ca288a0acbbfd05cf480f7b91a46b8627fcb74b2",
+  "config_digest": "494137c89d5be613c11782a1ab7589052e734c77ed7dbb752906583f26d3c701",
+  "device": "cuda",
+  "actual_auxiliary_axis": "gender_race",
+  "threshold_source": "fixed natural TRAIN-real subset",
+  "train_calibration": {
+    "threshold_logit": -0.04582675546407699,
+    "n_real": 2048,
+    "allowed_fp": 204,
+    "achieved_fp": 204,
+    "achieved_fpr": 0.099609375,
+    "requested_fpr": 0.1,
+    "test_fpr_guaranteed": false
+  },
+  "real_component_loss": 0.0004875175654888153,
+  "real_component_gradient_norm": 1.0234313844374832,
+  "fake_logits_gradients_match_D": true,
+  "all_real_logit_gradients_nonnegative": true,
+  "BN_buffers_unchanged": true,
+  "groups": [
+    "Female-Asian",
+    "Female-Black",
+    "Female-Others",
+    "Female-White",
+    "Male-Asian",
+    "Male-Black",
+    "Male-Others",
+    "Male-White"
+  ],
+  "parents": [
+    "Female",
+    "Male"
+  ],
+  "TRAIN_class_priors": [
+    [
+      0.11650936305522919,
+      0.10293768346309662
+    ],
+    [
+      0.014080148190259933,
+      0.014696343801915646
+    ],
+    [
+      0.020888132974505424,
+      0.030294401571154594
+    ],
+    [
+      0.401516318321228,
+      0.4127473831176758
+    ],
+    [
+      0.037598639726638794,
+      0.03146504610776901
+    ],
+    [
+      0.020733404904603958,
+      0.01898343674838543
+    ],
+    [
+      0.044019803404808044,
+      0.056855395436286926
+    ],
+    [
+      0.3446541726589203,
+      0.3320203125476837
+    ]
+  ],
+  "TRAIN_within_gender_real_priors": [
+    [
+      0.21068830788135529,
+      0.025461668148636818,
+      0.037772804498672485,
+      0.7260771989822388,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.08411215245723724,
+      0.046382833272218704,
+      0.09847698360681534,
+      0.7710280418395996
+    ]
+  ],
+  "optimizer_steps": 0,
+  "validation_gradients": false,
+  "test_read": false,
+  "parameters": {
+    "total": 21594159,
+    "trainable": 7575591
+  }
+}
