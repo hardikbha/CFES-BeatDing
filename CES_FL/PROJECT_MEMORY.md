@@ -248,7 +248,7 @@ New helper `reuse_review.py` checks exact pinned H qualification and identical s
 
 Immediate, authorized:
 
-1. Prepared and committed the new head code, exact two configs, CPU evidence, proposal, project memory and GPU prompt. Publish the branch to the existing writable fork because upstream denied access, then provide its exact commit. Do not launch locally.
+1. COMPLETED: code, exact configs, CPU evidence, proposal, project memory and GPU prompt were pushed to the existing writable fork after upstream denied access. Remote snapshot `293bcd9f965e065e226b3a692c8a40eada393842` was verified by git ls-remote; a subsequent documentation-only receipt records this. Scientific code/config remain commit `97ecb7df3330a250d73d44fcc76f8df5aa74aef2`. No benchmark training launched.
 2. GPU operator checks active jobs, remaining ledger and actual allocated device; creates detached checkout and new private output root. Verify cluster input/pretraining hashes and decode TRAIN/VAL.
 3. Run fresh CUDA synthetic smoke and discarded production TRAIN-threshold backward for L_A/L_H. Preserve failures; no protocol workaround.
 4. L_A may train once its checks pass. L_H additionally needs valid source-bound procedural qualification, possibly byte-identical reuse of existing H review. Preserve active gated H and wait for its actual completion before final paired reporting.

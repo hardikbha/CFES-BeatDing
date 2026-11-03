@@ -18,7 +18,9 @@
     "upstream": "BLOCKED: HTTP403; both configured accounts pull-only; no pending invitation",
     "destination": "https://github.com/hardiksharma6555/CFES-BeatDing",
     "branch": "experiment/cesfl-plain-head-s17-20261103T101418Z",
-    "final_remote_confirmation": "Supervisor must confirm remote SHA after push; publication is not training"
+    "final_remote_confirmation": "Fork branch matched published commit after push; subsequent publication-receipt docs do not change scientific code/config.",
+    "verified_remote_snapshot": "293bcd9f965e065e226b3a692c8a40eada393842",
+    "remote_verified_utc": "2026-11-03T10:52:01.825139+00:00"
   },
   "remaining": [
     "actual CUDA smoke and real-input backward",

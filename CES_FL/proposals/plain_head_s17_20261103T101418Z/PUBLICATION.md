@@ -7,3 +7,5 @@ Upstream `hardikbha/CFES-BeatDing` rejected the push with HTTP403 for hardikshar
 The existing public fork `hardiksharma6555/CFES-BeatDing` has verified write access and is the fallback publication destination. Branch: `experiment/cesfl-plain-head-s17-20261103T101418Z`. GPU_OPERATOR_PROMPT.md fetches explicitly from this fork. The supervisor handoff supplies the exact remotely verified final commit. Upstream is unchanged; merging or granting write access is separate.
 
 No benchmark training, GPU job submission, TEST inference or Qwen generation was performed by this publication.
+
+Actual push succeeded and remote branch SHA was verified as `293bcd9f965e065e226b3a692c8a40eada393842`. This documentation-only receipt follows that snapshot; science source/config hashes are unchanged.
