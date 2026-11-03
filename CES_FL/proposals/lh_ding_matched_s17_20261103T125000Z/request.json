@@ -1,0 +1,34 @@
+{
+  "request_id": "lh_ding_matched_s17_20261103T125000Z",
+  "state": "SOFTWARE_CHECKED_DEFERRED_AFTER_LH_REVIEW",
+  "base_code_git_commit": "815b4d4bc679c55d4ee6323cc7284335ce210568",
+  "hypothesis": "L_H objectives improve demographic error disparity versus identical linear BCE after a common native-budget pretraining/adaptation recipe.",
+  "training_configs": [
+    "P_config.json",
+    "A_template.json",
+    "H_template.json"
+  ],
+  "seed": 17,
+  "new_ding_runs_authorized": false,
+  "ding_baseline_scope_question": "PENDING",
+  "total_gpu_hours_assigned": null,
+  "ff2_72_hour_budget_transfer_authorized": false,
+  "launch_decision_by": "",
+  "launch_git_commit": "",
+  "scheduler_job_id": "",
+  "test_access_in_this_package": false,
+  "existing_results_modified": false,
+  "required_before_launch": [
+    "Verify private inputs and ImageNet weight hash",
+    "Confirm explicit remaining FF++ compute allowance; do not use FF2 baseline ledger",
+    "Target-device24step profile with unchanged full image batch",
+    "Bind A/H to newly completed verified P checkpoint",
+    "Reuse identical procedural review evidence or obtain named new review for H"
+  ],
+  "remaining_full_comparison_blockers": [
+    "Archived GDA detached fairness gradient; no authorization for a corrected new Ding run",
+    "Ding BN/head policy and seed differ; classify as recipe/update-budget matched, not full protocol equivalence",
+    "Future locked TEST handoff required with identical evaluator/group support after training, without test tuning"
+  ],
+  "priority_update": "User requested assessment of L_H epoch1 selection. Finish current run/diagnostics and decide on a focused ablation before launching this multi-factor50+50 recipe."
+}
