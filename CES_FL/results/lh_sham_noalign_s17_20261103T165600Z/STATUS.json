@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-03T19:18:20.349495+00:00",
+  "observed_management_utc": "2026-11-03T19:18:53.859153+00:00",
   "execution_commit": "ab7f36798cfa06226e17e31c2171e0c02404a216",
   "source_sha256": "1b6dc1b0e6d2b2220da897500a4d1bffb7764280df642abf6befdd1cf511ed01",
   "arms": {
@@ -24,7 +24,7 @@
           "mem": "1544352kb",
           "ncpus": 10,
           "vmem": "12433304kb",
-          "walltime": "00:23:55"
+          "walltime": "00:24:24"
         },
         "exec_host": "gpu01/5*10",
         "exec_vnode": "(gpu01:ncpus=10:ngpus=2:mem=67108864kb)",
@@ -795,7 +795,7 @@
           "mem": "1544352kb",
           "ncpus": 10,
           "vmem": "12433304kb",
-          "walltime": "00:23:55"
+          "walltime": "00:24:24"
         },
         "exec_host": "gpu01/5*10",
         "exec_vnode": "(gpu01:ncpus=10:ngpus=2:mem=67108864kb)",
@@ -3001,21 +3001,22 @@
         "preflight/PREFLIGHT.json": "/home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/NO_ALIGN/preflight/PREFLIGHT.json",
         "review/qualification.json": "/home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/NO_ALIGN/review/qualification.json",
         "smoke_cuda/SMOKE_RESULT.json": "/home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/NO_ALIGN/smoke_cuda/SMOKE_RESULT.json",
-        "dry/DRY_RUN.json": "/home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/NO_ALIGN/dry/DRY_RUN.json"
+        "dry/DRY_RUN.json": "/home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/NO_ALIGN/dry/DRY_RUN.json",
+        "training/RUN_VERIFIED.json": "/home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/NO_ALIGN/training/RUN_VERIFIED.json"
       }
     }
   },
   "budget": {
     "initial_total_gpu_hours": 24,
-    "consumed_gpu_hours": 16.69518616749077,
-    "reserved_gpu_hours": 2.2414273292426437
+    "consumed_gpu_hours": 16.711856774542895,
+    "reserved_gpu_hours": 2.224756722190521
   },
   "sessions": [
     {
       "id": "lh_sham_noalign_s17_20261103_SHAM_FIX",
       "ngpus": 1,
       "reserved_gpu_hours": 1.5,
-      "elapsed_seconds": 1365.3752505928278,
+      "elapsed_seconds": 1395.382567834109,
       "state": "RUNNING",
       "scientific_commit": "35ffbd21cc6a033f9b9bf4cb1f92f5e417debe8d",
       "scientific_source_sha256": "1b6dc1b0e6d2b2220da897500a4d1bffb7764280df642abf6befdd1cf511ed01",
@@ -3039,7 +3040,7 @@
       "id": "lh_sham_noalign_s17_20261103_NO_ALIGN",
       "ngpus": 1,
       "reserved_gpu_hours": 1.5,
-      "elapsed_seconds": 1365.486364133656,
+      "elapsed_seconds": 1395.493232280016,
       "state": "RUNNING",
       "scientific_commit": "35ffbd21cc6a033f9b9bf4cb1f92f5e417debe8d",
       "scientific_source_sha256": "1b6dc1b0e6d2b2220da897500a4d1bffb7764280df642abf6befdd1cf511ed01",
