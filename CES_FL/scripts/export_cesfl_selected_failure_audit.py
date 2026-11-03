@@ -32,6 +32,7 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     for name in ('scores', 'checkpoint', 'source', 'out'):
         p.add_argument('--' + name, required=True)
+    p.add_argument('--kind', choices=['D_reference','candidate'], default='D_reference')
     a = p.parse_args()
     out = Path(a.out)
     out.mkdir(exist_ok=False)
@@ -56,7 +57,9 @@ def main():
     receipt = read(Path(a.checkpoint).parent / 'RUN_VERIFIED.json')
     assert receipt['status'] == 'COMPLETED_VERIFIED'
     assert receipt['selected_checkpoint_sha256'] == scores['checkpoint_sha256']
-    assert receipt['selected_epoch'] == ck['epoch'] == 1
+    assert receipt['selected_epoch'] == ck['epoch']
+    if a.kind == 'D_reference':
+        assert ck['epoch'] == 1
     assert receipt['validation'] == ck['validation'] and not receipt['test_evaluated']
     with ThreadPoolExecutor(max_workers=8) as pool:
         measured = list(pool.map(lambda r: sha(r['image']), rows))
@@ -82,7 +85,7 @@ def main():
         members = [i for i, r in enumerate(rows) if r[axis] == group and r['label'] == label]
         errors = [i for i in members if pred[i] != label]
         correct = [i for i in members if pred[i] == label]
-        if expected_n is not None:
+        if expected_n is not None and a.kind == 'D_reference':
             assert (len(errors), len(members)) == (expected_errors, expected_n)
 
         def choose(candidates):
@@ -100,7 +103,7 @@ def main():
         picks = {'error': choose(errors), 'correct': choose(correct)}
         sheet = Image.new('RGB', (920, 4*360+48), 'white')
         draw = ImageDraw.Draw(sheet)
-        draw.text((8, 6), name + ' | manifest labels only | stored D threshold; no recalibration', fill='black', font=font)
+        draw.text((8, 6), name + ' | manifest labels only | stored '+a.kind+' threshold; no recalibration', fill='black', font=font)
         for col, kind in enumerate(('error', 'correct')):
             for j, i in enumerate(picks[kind]):
                 row = rows[i]
@@ -134,10 +137,10 @@ def main():
     write(out / 'CONTACT_INDEX_PRIVATE.json', index)
     write(out / 'D_SELECTED_PREDICTIONS_VERIFIED.json', dict(
         status='PASS', observed_management_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),
-        model='Existing CES-FL D; not Ding', exporter_sha256=sha(__file__),
+            model='CES-FL '+a.kind+'; not Ding', exporter_sha256=sha(__file__),
         source_sha256=sha(a.source), checkpoint_sha256=sha(a.checkpoint),
         scores_sha256=sha(a.scores), manifest_sha256=sha(c['val']),
-        selected_epoch=1, threshold=scores['threshold'], threshold_recalibrated=False,
+        selected_epoch=ck['epoch'], threshold=scores['threshold'], threshold_recalibrated=False,
         rows_verified=len(rows), image_hashes_verified=len(measured), row_metadata_matches_manifest=True,
         aggregate_metrics_exactly_replayed=True, validation=ck['validation'], strata=aggregates,
         contact_cases=len(index), unique_shown_images=len({r['image'] for r in index}),

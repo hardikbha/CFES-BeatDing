@@ -1,0 +1,14 @@
+{
+  "operator_commit": "c8402149c0b8170165995acc4bae362438800378",
+  "scientific_commit": "3f5f3c16839bf4b96209bea3f968255b5f351ebb",
+  "files": {
+    "CES_FL/cluster/run_hierarchical_real.py": {
+      "path": "/home/sachin.chaudhary/ces_fl_runs/hierarchical_real_risk_s17_20261103_r1/runtime/run_hierarchical_real.py",
+      "sha256": "96a21289afe3e2f3a36540f2bb044a4be7665497beeb8640c221cb1666f28433"
+    },
+    "CES_FL/scripts/check_hier_real_train.py": {
+      "path": "/home/sachin.chaudhary/ces_fl_runs/hierarchical_real_risk_s17_20261103_r1/runtime/check_hier_real_train.py",
+      "sha256": "3533fa1accbaaa0bddb5ef9a5730b0ce24d42088eb50afb404ce9efc2ee6cee3"
+    }
+  }
+}

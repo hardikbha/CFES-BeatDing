@@ -1,0 +1,18 @@
+test_architecture_and_original_D_components_ast_unchanged (test_hierarchical_real.HierarchicalReal.test_architecture_and_original_D_components_ast_unchanged) ... ok
+test_documented_soft_mean_blind_spot_does_not_guarantee_hard_fpr (test_hierarchical_real.HierarchicalReal.test_documented_soft_mean_blind_spot_does_not_guarantee_hard_fpr) ... ok
+test_exact_independent_reference_normalization (test_hierarchical_real.HierarchicalReal.test_exact_independent_reference_normalization) ... ok
+test_fake_component_gradient_exactly_legacy (test_hierarchical_real.HierarchicalReal.test_fake_component_gradient_exactly_legacy) ... ok
+test_group_offset_cancels_response_but_not_original_real_control (test_hierarchical_real.HierarchicalReal.test_group_offset_cancels_response_but_not_original_real_control) ... ok
+test_joint_order_permutation_preserves_value (test_hierarchical_real.HierarchicalReal.test_joint_order_permutation_preserves_value) ... ok
+test_lambda_changes_update (test_hierarchical_real.HierarchicalReal.test_lambda_changes_update) ... ok
+test_layout_counts_and_sparse_cartesian_rejection (test_hierarchical_real.HierarchicalReal.test_layout_counts_and_sparse_cartesian_rejection) ... ok
+test_missing_class_and_bad_group_rejected (test_hierarchical_real.HierarchicalReal.test_missing_class_and_bad_group_rejected) ... ok
+test_only_joint_real_term_changes_in_native_step (test_hierarchical_real.HierarchicalReal.test_only_joint_real_term_changes_in_native_step) ... ok
+test_parent_weights_are_real_train_not_uniform_or_fake (test_hierarchical_real.HierarchicalReal.test_parent_weights_are_real_train_not_uniform_or_fake) ... ok
+test_real_gradients_do_not_directly_raise_lower_risk (test_hierarchical_real.HierarchicalReal.test_real_gradients_do_not_directly_raise_lower_risk) ... ok
+test_train_group_inventory_fails_instead_of_dropping_sparse_cell (test_hierarchical_real.HierarchicalReal.test_train_group_inventory_fails_instead_of_dropping_sparse_cell) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 2.838s
+
+OK

@@ -62,6 +62,27 @@ class HierarchicalReal(unittest.TestCase):
         b=m.hierarchical_real_error(z,y,inverse[g],p[order],hp,0.,1.)
         torch.testing.assert_close(a,b)
 
+    def test_group_offset_cancels_response_but_not_original_real_control(self):
+        sham=torch.tensor([-2.,-2.,2.,2.])
+        self.assertEqual(float(m.response_alignment(m.response(sham,sham+1),torch.arange(4))),0.)
+        _,y,g,p,h=inputs()
+        z=torch.stack((sham,torch.ones(4)*3),dim=1).flatten().requires_grad_()
+        loss=m.hierarchical_real_error(z,y,g,p,h,0.,1.)
+        self.assertGreater(float(loss),0.)
+
+    def test_documented_soft_mean_blind_spot_does_not_guarantee_hard_fpr(self):
+        # Every soft real mean is0.5. Thresholded risks differ0.5 versus1.0.
+        reals=[[-2.,2.],[0.,0.],[-2.,2.],[0.,0.]]
+        z=[];y=[];g=[]
+        for j,rr in enumerate(reals):
+            z+=rr+[3.,3.];y += [0,0,1,1];g += [j]*4
+        z=torch.tensor(z,requires_grad=True);y=torch.tensor(y);g=torch.tensor(g)
+        _,_,_,p,h=inputs()
+        loss=m.hierarchical_real_error(z,y,g,p,h,0.,1.)
+        self.assertAlmostEqual(float(loss),0.,places=7)
+        hard=[float((z[(g==j)&(y==0)]>=0).float().mean()) for j in range(4)]
+        self.assertEqual(hard,[.5,1.,.5,1.])
+
     def test_missing_class_and_bad_group_rejected(self):
         z,y,g,p,h=inputs()
         with self.assertRaisesRegex(ValueError,'Missing auxiliary'):

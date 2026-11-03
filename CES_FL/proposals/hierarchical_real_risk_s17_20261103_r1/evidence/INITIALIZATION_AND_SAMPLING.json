@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "initial_tensor_states_exactly_equal": true,
+  "requires_grad_policies_equal": true,
+  "counts": {
+    "total": 21594159,
+    "trainable": 7575591
+  },
+  "hash_method": "sorted state_dict keys followed by contiguous CPU tensor bytes",
+  "encoder_sha256": "f85df63fff89090b98f9064e1202cb6f27cab9e2d38ad94483216b8c5e616bc2",
+  "heads_gates_fusion_sha256": "ad78bbd02001ae591faea24872867554837c54055622e4492699330070650746",
+  "reference": "D original P50 plus fresh seed17 heads, NOT selected D weights",
+  "source_sha256": "2549cb1345d1e2ee617e8a77ca288a0acbbfd05cf480f7b91a46b8627fcb74b2",
+  "test_read": false,
+  "TRAIN_hierarchy": {
+    "parents": [
+      "Female",
+      "Male"
+    ],
+    "parent_codes": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    "within_parent_real_priors": [
+      [
+        0.21068830788135529,
+        0.025461668148636818,
+        0.037772804498672485,
+        0.7260771989822388,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.08411215245723724,
+        0.046382833272218704,
+        0.09847698360681534,
+        0.7710280418395996
+      ]
+    ]
+  },
+  "five_axis_sampling_and_views": [
+    {
+      "axis": "gender",
+      "all_original_control_treated_tensors_equal": true,
+      "original_draws": 16,
+      "operator": "local_warp",
+      "strength": 0.5
+    },
+    {
+      "axis": "race",
+      "all_original_control_treated_tensors_equal": true,
+      "original_draws": 32,
+      "operator": "local_warp",
+      "strength": 0.5
+    },
+    {
+      "axis": "age_bin",
+      "all_original_control_treated_tensors_equal": true,
+      "original_draws": 32,
+      "operator": "local_warp",
+      "strength": 0.5
+    },
+    {
+      "axis": "skin_bin",
+      "all_original_control_treated_tensors_equal": true,
+      "original_draws": 32,
+      "operator": "local_warp",
+      "strength": 0.5
+    },
+    {
+      "axis": "gender_race",
+      "all_original_control_treated_tensors_equal": true,
+      "original_draws": 64,
+      "operator": "local_warp",
+      "strength": 0.5
+    }
+  ]
+}
