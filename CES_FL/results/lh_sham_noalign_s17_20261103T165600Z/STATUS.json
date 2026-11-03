@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-03T18:56:41.957608+00:00",
+  "observed_management_utc": "2026-11-03T18:57:15.173784+00:00",
   "execution_commit": "ab7f36798cfa06226e17e31c2171e0c02404a216",
   "source_sha256": "1b6dc1b0e6d2b2220da897500a4d1bffb7764280df642abf6befdd1cf511ed01",
   "arms": {
@@ -24,7 +24,7 @@
           "mem": "1544352kb",
           "ncpus": 10,
           "vmem": "12433304kb",
-          "walltime": "00:01:51"
+          "walltime": "00:02:31"
         },
         "exec_host": "gpu01/5*10",
         "exec_vnode": "(gpu01:ncpus=10:ngpus=2:mem=67108864kb)",
@@ -40,7 +40,8 @@
       "receipts": {
         "preflight/PREFLIGHT.json": "/home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/SHAM_FIX/preflight/PREFLIGHT.json",
         "review/qualification.json": "/home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/SHAM_FIX/review/qualification.json",
-        "smoke_cuda/SMOKE_RESULT.json": "/home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/SHAM_FIX/smoke_cuda/SMOKE_RESULT.json"
+        "smoke_cuda/SMOKE_RESULT.json": "/home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/SHAM_FIX/smoke_cuda/SMOKE_RESULT.json",
+        "dry/DRY_RUN.json": "/home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/SHAM_FIX/dry/DRY_RUN.json"
       }
     },
     "NO_ALIGN": {
@@ -64,7 +65,7 @@
           "mem": "1544352kb",
           "ncpus": 10,
           "vmem": "12433304kb",
-          "walltime": "00:01:51"
+          "walltime": "00:02:31"
         },
         "exec_host": "gpu01/5*10",
         "exec_vnode": "(gpu01:ncpus=10:ngpus=2:mem=67108864kb)",
@@ -80,21 +81,22 @@
       "receipts": {
         "preflight/PREFLIGHT.json": "/home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/NO_ALIGN/preflight/PREFLIGHT.json",
         "review/qualification.json": "/home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/NO_ALIGN/review/qualification.json",
-        "smoke_cuda/SMOKE_RESULT.json": "/home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/NO_ALIGN/smoke_cuda/SMOKE_RESULT.json"
+        "smoke_cuda/SMOKE_RESULT.json": "/home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/NO_ALIGN/smoke_cuda/SMOKE_RESULT.json",
+        "dry/DRY_RUN.json": "/home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/NO_ALIGN/dry/DRY_RUN.json"
       }
     }
   },
   "budget": {
     "initial_total_gpu_hours": 24,
-    "consumed_gpu_hours": 15.97831995149557,
-    "reserved_gpu_hours": 2.958293545237846
+    "consumed_gpu_hours": 15.99499123666746,
+    "reserved_gpu_hours": 2.941622260065956
   },
   "sessions": [
     {
       "id": "lh_sham_noalign_s17_20261103_SHAM_FIX",
       "ngpus": 1,
       "reserved_gpu_hours": 1.5,
-      "elapsed_seconds": 75.02029529958963,
+      "elapsed_seconds": 105.02890748530626,
       "state": "RUNNING",
       "scientific_commit": "35ffbd21cc6a033f9b9bf4cb1f92f5e417debe8d",
       "scientific_source_sha256": "1b6dc1b0e6d2b2220da897500a4d1bffb7764280df642abf6befdd1cf511ed01",
@@ -118,7 +120,7 @@
       "id": "lh_sham_noalign_s17_20261103_NO_ALIGN",
       "ngpus": 1,
       "reserved_gpu_hours": 1.5,
-      "elapsed_seconds": 75.12294184416533,
+      "elapsed_seconds": 105.13095627725124,
       "state": "RUNNING",
       "scientific_commit": "35ffbd21cc6a033f9b9bf4cb1f92f5e417debe8d",
       "scientific_source_sha256": "1b6dc1b0e6d2b2220da897500a4d1bffb7764280df642abf6befdd1cf511ed01",
