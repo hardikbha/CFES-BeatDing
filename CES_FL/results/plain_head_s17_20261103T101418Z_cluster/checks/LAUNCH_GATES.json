@@ -1,0 +1,15 @@
+{
+  "observed_management_utc": "2026-11-03T11:21:04.022878+00:00",
+  "source_commit": "0d699d241e27f758ec0990fbe58493a15bdb0ff9",
+  "runtime_sha256": {
+    "allocated_commands.sh": "2432f56b9cf231198a7ad49bfc5b1fb25ca38a62363db6802ef489dae2d624bf",
+    "allocated_guard.py": "545597dd4be6b98cfaa608360caef0c1e238a3d52b8f899c0e53aaeeb9bb2d39",
+    "allocated_job.pbs": "779a44d85c2f10cabff2dd022f02b6dd7cf439956af3df7ef7012fb9b7de8163",
+    "verify_reference_caches.py": "c6af9364a62202d300ddae0c5610b9fcf57de1952704e280fa96116499e03f5c",
+    "report_plain.py": "d1c0d866e2b23f1f13e3ea5188d1c6b7022ba215159e829311a0c7334e5c22c2",
+    "analysis_job.pbs": "a718e6b7841f4d2c70a0de256302b0d594caf991b3728103e1b25e2df28eff23"
+  },
+  "source_or_config_modified": false,
+  "review_reused_identical_bytes": true,
+  "test_read": false
+}

@@ -1,14 +1,14 @@
 # Plain-head comparisons: FF++ validation, seed17
 
-2026-11-03T11:02:26.115097+00:00
+2026-11-03T11:22:57.083622+00:00
 
 Pinned scientific commit `0d699d241e27f758ec0990fbe58493a15bdb0ff9`; source SHA `08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177`.
 
 |Model/objective|Completed epochs|Selected epoch|AUC %|FPR %|FNR %|Gender F_FPR|Race F_FPR|Joint F_FPR|Age F_FPR|Skin F_FPR|
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-|gated_A|0|pending|||||||||
+|gated_A|10|4|98.426411|9.995112|4.146708|0.043699|0.087846|0.505265|0.228592|0.028039|
 |linear_A|0|pending|||||||||
-|gated_H|0|pending|||||||||
+|gated_H|10|1|98.197763|9.995112|4.132620|0.059377|0.078985|0.421326|0.291921|0.055875|
 |linear_H|0|pending|||||||||
 
 F_FPR is a sum of absolute group-versus-pooled FPR deviations, displayed in fraction units. Lower is better. Reference thresholds are preserved; each new selected model uses its own global VAL-real empirical10%FPR threshold. Selection is earliest highest VAL AUC after ten epochs.
@@ -20,12 +20,12 @@ All group denominators, AUC/FPR/FNR, disparities/gaps, worst-group AUC, historie
 ## Checks and evidence
 
 CPU:11 head tests,13 forensic regression,13 hierarchy regression,9 support regression passed. Production input preflights and CUDA receipts are reported by actual file presence and content below.
-- preflight_A/PREFLIGHT.json: PENDING
-- preflight_H/PREFLIGHT.json: PENDING
+- preflight_A/PREFLIGHT.json: PASS
+- preflight_H/PREFLIGHT.json: PASS
 - smoke_cuda/SMOKE_RESULT.json: PENDING
 - dry_A/DRY_RUN.json: PENDING
 - dry_H/DRY_RUN.json: PENDING
-- review_H/qualification.json: PENDING
+- review_H/qualification.json: OPERATOR_REVIEW_RECORDED
 
 ## Limitations
 
