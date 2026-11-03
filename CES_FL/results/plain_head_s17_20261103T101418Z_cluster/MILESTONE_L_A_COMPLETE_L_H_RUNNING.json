@@ -1,0 +1,18 @@
+{
+  "observed_management_utc": "2026-11-03T12:11:38.129464+00:00",
+  "L_A": "COMPLETED_VERIFIED",
+  "L_A_completed_epochs": 10,
+  "L_A_selected_epoch": 3,
+  "L_A_selected_checkpoint_sha256": "aee9670ca011937d457846fbf13717445c5607715064dd6a54da5a82bda580ae",
+  "L_H": "RUNNING_OBSERVED",
+  "pbs_job_id": "45295.mgmt01",
+  "training_pid": 1125671,
+  "host": "gpu02",
+  "gpu_index": 5,
+  "source_commit": "0d699d241e27f758ec0990fbe58493a15bdb0ff9",
+  "source_sha256": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
+  "CPU_analysis_job": "45305.mgmt01",
+  "CPU_analysis_dependency": "afterok:45295.mgmt01",
+  "CIs_pending": true,
+  "test_read": false
+}
