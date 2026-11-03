@@ -1,0 +1,17 @@
+{
+  "commit": "29ce92ee8631c9c11ee3649d4f5a1110ecba29fd",
+  "git_status_porcelain": "",
+  "observed_management_utc": "2026-11-03T14:13:07.535338+00:00",
+  "source_sha256": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
+  "proposal_file_sha256": {
+    "diagnose_train.py": "ee6fe4a9deff25f9ef6f88496635b17badfd692f21963bf125ed30f2661f31c5",
+    "commands.sh": "fd948fc2ed60fcb144862fbd9bdd38a1349be9b76c68d6ddf059e7d74f017ec4",
+    "README.md": "f6963bd9e6b4133a25e11b2a7347ba4c7e81d015a0f9a3595b703b3c2e05a072",
+    "run_allocated.py": "aaa6badbce9cdbe57921b8d39db50b5d4f4b12a6036ce0c6c79bcf45f70f76a7",
+    "report_comparison.py": "9f8f3b4641405c93b01f1477a0971c487321f505658aa19842e6a48b20cca015",
+    "one_gpu.pbs": "3b8f9697f9575db7e8212221b9196041cbfe40967d67c07369c2ff7e4b454a88",
+    "reuse_review.py": "006a7033f8c305cb014d09db25336d304abaff79aa6d012b05d087dbabbf4349",
+    "check_request.py": "e304eb34032df8c4574b3860c4778145c899fcc1020803ef6d5aa49af7454830",
+    "config.json": "7ac0d405161210e11846ce24af420a77ebdb16074cf39df8d0f80e5742fe6085"
+  }
+}
