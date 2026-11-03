@@ -1,0 +1,21 @@
+{
+  "pbs_job_id": "45314.mgmt01",
+  "ngpus": 1,
+  "ncpus": 6,
+  "host": "gpu02",
+  "controller_pid": 1152316,
+  "card": {
+    "index": 5,
+    "uuid": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1",
+    "free_mib": 26369,
+    "util": 0,
+    "available_mib": 26369
+  },
+  "cuda_visible_devices": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1",
+  "scheduler_supplied_binding": null,
+  "physical_binding": "prior_explicit_user_authorized_pool_v2_UUID_lease",
+  "exclusive_physical_ownership_claimed": false,
+  "scientific_commit": "ee73f2fdf5218e440852917e90281818bbe711bb",
+  "runner_sha256": "cc21328aed395a3f0e133658341b58ef341f610c71947852bcf5a6806e526a29",
+  "locked_plan_sha256": "6dffee3b9b309975d7c3844dc1052427885dc41b2375e77c15f38ae33f76c5ea"
+}

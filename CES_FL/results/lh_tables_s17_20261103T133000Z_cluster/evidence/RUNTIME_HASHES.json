@@ -1,0 +1,14 @@
+{
+  "observed_management_utc": "2026-11-03T13:41:07.735649+00:00",
+  "operator_source_commit": "ee73f2fdf5218e440852917e90281818bbe711bb",
+  "runtime_sha256": {
+    "prepare_integrity.py": "c2d384c490fdefb004909267734d3483d1daa20abd9759e554bb945f7c96148d",
+    "allocated_eval.py": "8b9f3393ea56f0341e59c9f81643f118e153d5e9bc3a613864071f08aa93db76",
+    "allocated_eval.pbs": "edeed8a30d515c05124091c9c900be1299daa1247b1b039c4f410d18b5b9dac3",
+    "analyze_locked.py": "108c0064d79b2c17d5b22121c79000f8aac50dc9960c72258c0207de5c9278b8",
+    "analyze_locked.pbs": "b0d969b32bbd3c20729bf2bc03d11a669b3e711d617760c9b2b241980726f70e",
+    "render_locked_results.py": "9261de54fe1633bd1be806a2aba801d62de701afe6a97c1a5f46c7a9af77a9c4"
+  },
+  "scientific_source_or_config_changed": false,
+  "analysis_job_id": "45315.mgmt01"
+}

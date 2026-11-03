@@ -1,0 +1,9 @@
+{
+  "stdout": "45314.mgmt01\n",
+  "stderr": "",
+  "returncode": 0,
+  "held_pending_input_integrity": true,
+  "original24h_committed_before": 15.196284060301776,
+  "new_eval_cap_gpu_hours": 2,
+  "ff2_budget_used": false
+}

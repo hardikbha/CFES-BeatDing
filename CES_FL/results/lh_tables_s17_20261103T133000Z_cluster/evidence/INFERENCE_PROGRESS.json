@@ -1,0 +1,25 @@
+{
+  "completed": [
+    {
+      "arm": "L_A",
+      "dataset": "ffpp",
+      "status": "PASS",
+      "receipt_sha256": "bd6d53105455925b8fe253e894a38a3ef7fa7221931f654a430eafe23058cb8a"
+    },
+    {
+      "arm": "L_A",
+      "dataset": "dfdc",
+      "status": "PASS",
+      "receipt_sha256": "b2df9cbe72198f98723553f1e0f1bc2f96c4f50dc1e37c42e5c80b8dfc530839"
+    },
+    {
+      "arm": "L_A",
+      "dataset": "celebdf",
+      "status": "PASS",
+      "receipt_sha256": "93d06039a7c056050c52f854b4f672490778c0d58fac6ec6db9f88874af81b64"
+    }
+  ],
+  "expected": 8,
+  "checkpoint_selection_changed": false,
+  "test_threshold_search": false
+}

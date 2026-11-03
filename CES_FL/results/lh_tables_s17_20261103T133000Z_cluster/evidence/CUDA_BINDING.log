@@ -1,0 +1,1 @@
+{"uuid": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1", "device": "NVIDIA H100 80GB HBM3", "torch": "2.7.0+cu126", "cuda": "12.6"}
