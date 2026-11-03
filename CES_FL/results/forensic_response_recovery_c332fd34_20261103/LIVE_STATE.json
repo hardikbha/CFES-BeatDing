@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-03T11:11:12.781827+00:00",
+  "observed_management_utc": "2026-11-03T11:21:17.783775+00:00",
   "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
   "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
   "budget": {
@@ -403,12 +403,14 @@
         "ngpus": 1,
         "reserved_gpu_hours": 5.75,
         "elapsed_seconds": 0.0,
-        "state": "QUEUED",
+        "state": "RUNNING",
         "scientific_commit": "0d699d241e27f758ec0990fbe58493a15bdb0ff9",
         "scientific_source_sha256": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
         "proposal_total_cap_gpu_hours": 6.0,
         "route": "PBS_ngpus1_plus_explicit_prior_user_authorized_shared_pool_v2_UUID_lease",
-        "pbs_job_id": "45295.mgmt01"
+        "pbs_job_id": "45295.mgmt01",
+        "controller_pid": 1116139,
+        "host": "gpu02"
       }
     ],
     "prior_study_ledger": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_9030dd77_20261103/budget_ledger.json",
