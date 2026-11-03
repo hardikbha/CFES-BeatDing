@@ -1,0 +1,18 @@
+{
+  "observed_management_utc": "2026-11-03T12:31:02.065610+00:00",
+  "scheduler": {
+    "45295.mgmt01": {
+      "exit_code": 0,
+      "stdout": "Job id            Name             User              Time Use S Queue\n----------------  ---------------- ----------------  -------- - -----\n45295.mgmt01      cesplain17       sachin.chaudhary  00:00:31 R workq           \n",
+      "stderr": ""
+    },
+    "45305.mgmt01": {
+      "exit_code": 0,
+      "stdout": "Job id            Name             User              Time Use S Queue\n----------------  ---------------- ----------------  -------- - -----\n45305.mgmt01      plainval17       sachin.chaudhary         0 H workq           \n",
+      "stderr": ""
+    }
+  },
+  "monitor_pid": 2172442,
+  "can_launch_or_retry": false,
+  "test_read": false
+}
