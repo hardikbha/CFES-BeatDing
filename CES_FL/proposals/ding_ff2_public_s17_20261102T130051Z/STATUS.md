@@ -1,13 +1,13 @@
 # Actual execution status
 
-Observed management UTC: **2026-11-03T00:33:41.016801+00:00**.
+Observed management UTC: **2026-11-03T00:48:44.026003+00:00**.
 
 State: **RUNNING**. Source commit `8487d98303fd5d7766fef2fa3dd32c37f38e5f4b`.
 
 Host `gpu01`, physical GPUs0/2 in shared pool-v2 mode; no PBS allocation or exclusive CPU/GPU ownership claimed.
 Controller PID `2754578`, training torchrun PID `2754977`.
 
-Latest recorded event: `TRAIN_STEP`, stage `classification`, epoch `13`, batch `3000/3149`, loss `0.014935915358364582`.
+Latest recorded event: `TRAIN_STEP`, stage `classification`, epoch `14`, batch `800/3149`, loss `0.014999195002019405`.
 
 Eight CPU tests PASS; real-TRAIN full-native-batch two-GPU CUDA smoke PASS. 128classification images/update; 64main+64auxiliary GDA images/update; 224px; seed17;50classification→TRAIN-SFD→50corrected-GDAepochs.
 Corrected differentiable class-conditioned GDA with frozen encoder BN is explicitly distinguished from the detached archived GDA and paper results. Values below are completed validation epochs, not TEST scores. No TEST inference is attached.
@@ -22,7 +22,7 @@ Finite observation/publication only, every15min for at most72h; no training retr
 
 See live_status.json for verified process observation, aggregate validation/group metrics, checkpoint hashes and completion/failure state. Review historical PROJECT_BLUEPRINT.md as a dated snapshot; this page is the execution update.
 
-## classification: 12 completed validation epochs
+## classification: 13 completed validation epochs
 
 Best validation AUC: 99.4541% at epoch12 (fixed AUC-only selection).
 
@@ -40,6 +40,7 @@ Best validation AUC: 99.4541% at epoch12 (fixed AUC-only selection).
 | 10 | 0.027830 | 99.3516 | 98.7454 | 11.8379 | 31.3901 |
 | 11 | 0.034788 | 99.1404 | 98.0091 | 10.0892 | 21.5891 |
 | 12 | 0.038114 | 99.4541 | 98.7340 | 18.9120 | 46.7261 |
+| 13 | 0.042096 | 99.1756 | 98.6686 | 10.3785 | 22.2637 |
 
 ## gda_corrected: 0 completed validation epochs
 
