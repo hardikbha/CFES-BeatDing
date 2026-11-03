@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-03T14:34:31.392415+00:00",
+  "observed_management_utc": "2026-11-03T14:39:33.980027+00:00",
   "state": "CHECKS_OR_QUALIFICATION_PENDING",
   "completed_epochs": 0,
   "planned_epochs": 3,
@@ -73,12 +73,33 @@
   },
   "history": [],
   "native_completion": null,
-  "allocation": null,
+  "allocation": {
+    "pbs_job_id": "45321.mgmt01",
+    "host": "gpu02",
+    "ngpus": 1,
+    "ncpus": 6,
+    "mem_gb": 32,
+    "card": {
+      "index": 5,
+      "uuid": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1",
+      "free_mib": 26369,
+      "util": 0,
+      "available_mib": 26369
+    },
+    "cuda_visible_devices": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1",
+    "scheduler_supplied_binding": null,
+    "physical_binding_route": "explicit_prior_user_authorized_pool_v2_UUID_lease",
+    "exclusive_physical_assignment_claimed": false,
+    "source_commit": "29ce92ee8631c9c11ee3649d4f5a1110ecba29fd",
+    "source_sha256": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
+    "config_sha256": "7ac0d405161210e11846ce24af420a77ebdb16074cf39df8d0f80e5742fe6085",
+    "controller_pid": 1171552
+  },
   "allocation_end": null,
   "scheduler": {
     "45321.mgmt01": {
       "returncode": 0,
-      "stdout": "Job id            Name             User              Time Use S Queue\n----------------  ---------------- ----------------  -------- - -----\n45321.mgmt01      lhLR3s17         sachin.chaudhary         0 H workq           \n",
+      "stdout": "Job id            Name             User              Time Use S Queue\n----------------  ---------------- ----------------  -------- - -----\n45321.mgmt01      lhLR3s17         sachin.chaudhary  00:00:26 R workq           \n",
       "stderr": ""
     },
     "45322.mgmt01": {
@@ -93,8 +114,8 @@
     "source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-forensic-response-c332fd34",
     "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
     "initial_total_gpu_hours": 24,
-    "consumed_gpu_hours": 15.364391274511194,
-    "reserved_gpu_hours": 1.5,
+    "consumed_gpu_hours": 15.439434121958394,
+    "reserved_gpu_hours": 1.4249571525527993,
     "gpu_sessions": [
       {
         "id": "ffpp_checks_primary",
@@ -556,14 +577,25 @@
         "id": "lh_low_lr3_s17_20261103",
         "ngpus": 1,
         "reserved_gpu_hours": 1.5,
-        "elapsed_seconds": 0.0,
-        "state": "QUEUED",
+        "elapsed_seconds": 270.1542508099228,
+        "state": "RUNNING",
         "scientific_commit": "29ce92ee8631c9c11ee3649d4f5a1110ecba29fd",
         "scientific_source_sha256": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
         "route": "PBS_ngpus1_plus_prior_explicit_authorized_pool_v2_UUID",
         "planned_epochs": 3,
         "no_automatic_extension": true,
-        "pbs_job_id": "45321.mgmt01"
+        "pbs_job_id": "45321.mgmt01",
+        "pid": 1171552,
+        "host": "gpu02",
+        "card": {
+          "index": 5,
+          "uuid": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1",
+          "free_mib": 26369,
+          "util": 0,
+          "available_mib": 26369
+        },
+        "log": "/home/sachin.chaudhary/ces_fl_runs/lh_low_lr3_s17_20261103T140700Z/allocation.log",
+        "child_pid": 1171785
       }
     ],
     "prior_study_ledger": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_9030dd77_20261103/budget_ledger.json",
