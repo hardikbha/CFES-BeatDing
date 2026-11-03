@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-03T04:24:08.736494+00:00",
+  "observed_management_utc": "2026-11-03T04:34:13.854545+00:00",
   "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
   "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
   "budget": {
@@ -10988,7 +10988,7 @@
     }
   },
   "coordinator": {
-    "observed_management_utc": "2026-11-03T04:24:00.728969+00:00",
+    "observed_management_utc": "2026-11-03T04:34:01.346362+00:00",
     "phase": "FF2_C_D_BLOCKED_NAMED_REVIEW",
     "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
     "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
