@@ -1,13 +1,13 @@
 # Actual execution status
 
-Observed management UTC: **2026-11-03T21:11:05.701302+00:00**.
+Observed management UTC: **2026-11-03T21:26:09.393814+00:00**.
 
 State: **RUNNING**. Source commit `8487d98303fd5d7766fef2fa3dd32c37f38e5f4b`.
 
 Host `gpu01`, physical GPUs0/2 in shared pool-v2 mode; no PBS allocation or exclusive CPU/GPU ownership claimed.
 Controller PID `2754578`, training torchrun PID `2754977`.
 
-Latest recorded event: `TRAIN_STEP`, stage `classification`, epoch `39`, batch `200/3149`, loss `0.08411449193954468`.
+Latest recorded event: `TRAIN_STEP`, stage `classification`, epoch `39`, batch `800/3149`, loss `0.04406185448169708`.
 
 Eight CPU tests PASS; real-TRAIN full-native-batch two-GPU CUDA smoke PASS. 128classification images/update; 64main+64auxiliary GDA images/update; 224px; seed17;50classification→TRAIN-SFD→50corrected-GDAepochs.
 Corrected differentiable class-conditioned GDA with frozen encoder BN is explicitly distinguished from the detached archived GDA and paper results. Values below are completed validation epochs, not TEST scores. No TEST inference is attached.
