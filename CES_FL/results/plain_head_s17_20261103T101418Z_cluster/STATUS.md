@@ -1,6 +1,6 @@
 # Plain-head comparisons: FF++ validation, seed17
 
-2026-11-03T11:22:57.083622+00:00
+2026-11-03T11:24:38.706390+00:00
 
 Pinned scientific commit `0d699d241e27f758ec0990fbe58493a15bdb0ff9`; source SHA `08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177`.
 
@@ -22,9 +22,9 @@ All group denominators, AUC/FPR/FNR, disparities/gaps, worst-group AUC, historie
 CPU:11 head tests,13 forensic regression,13 hierarchy regression,9 support regression passed. Production input preflights and CUDA receipts are reported by actual file presence and content below.
 - preflight_A/PREFLIGHT.json: PASS
 - preflight_H/PREFLIGHT.json: PASS
-- smoke_cuda/SMOKE_RESULT.json: PENDING
-- dry_A/DRY_RUN.json: PENDING
-- dry_H/DRY_RUN.json: PENDING
+- smoke_cuda/SMOKE_RESULT.json: PASS
+- dry_A/DRY_RUN.json: PASS
+- dry_H/DRY_RUN.json: PASS
 - review_H/qualification.json: OPERATOR_REVIEW_RECORDED
 
 ## Limitations
