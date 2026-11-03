@@ -1,0 +1,62 @@
+{
+  "observed_management_utc": "2026-11-03T08:20:08.506000+00:00",
+  "reviewed_commits": {
+    "results": "206d5eed960bd2c727ec810e8ed0b92c6d825a29",
+    "D_source": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
+    "E_F_source": "8d5f0996a3f1cc02fbeaff9d25c1d95f714e8e77"
+  },
+  "E_F_analysis_complete": true,
+  "bootstrap_job": "45259.mgmt01",
+  "decisions": {
+    "E_support": {
+      "decision": "reject",
+      "numerical_guards": {
+        "primary": false,
+        "auc": true,
+        "gender": false,
+        "age": false,
+        "pooled_fake_FNR": true,
+        "worst_gender": true,
+        "worst_age_bin": true,
+        "worst_gender_race": true
+      },
+      "primary_interval": {
+        "estimate": 0.08893573879606881,
+        "ci95": [
+          -0.011645762502256449,
+          0.1547901887398914
+        ],
+        "valid_replicates": 746,
+        "invalid_or_unavailable_replicates": 254
+      },
+      "uncertainty_usable": false
+    },
+    "F_support_ramp3": {
+      "decision": "reject",
+      "numerical_guards": {
+        "primary": false,
+        "auc": true,
+        "gender": true,
+        "age": false,
+        "pooled_fake_FNR": true,
+        "worst_gender": true,
+        "worst_age_bin": true,
+        "worst_gender_race": true
+      },
+      "primary_interval": {
+        "estimate": 0.11623220132523215,
+        "ci95": [
+          -0.004302998424069782,
+          0.1443858048516808
+        ],
+        "valid_replicates": 746,
+        "invalid_or_unavailable_replicates": 254
+      },
+      "uncertainty_usable": false
+    }
+  },
+  "budget_before_new_checks": 12.43608248947654,
+  "remaining_of_24": 11.56391751052346,
+  "old_results_or_protocol_modified": false,
+  "test_read": false
+}

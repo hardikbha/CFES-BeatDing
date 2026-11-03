@@ -1,0 +1,6 @@
+{
+  "source_sha256": "2549cb1345d1e2ee617e8a77ca288a0acbbfd05cf480f7b91a46b8627fcb74b2",
+  "CPU_full_smoke_source_sha256": "2549cb1345d1e2ee617e8a77ca288a0acbbfd05cf480f7b91a46b8627fcb74b2",
+  "proposal_fixed_before_training": true,
+  "training_launched": false
+}

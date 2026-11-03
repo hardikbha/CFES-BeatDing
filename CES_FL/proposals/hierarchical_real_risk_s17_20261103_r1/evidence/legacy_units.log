@@ -1,0 +1,18 @@
+test_alignment_label_permutation_invariant (test_forensic_response.ForensicResponseInvariants.test_alignment_label_permutation_invariant) ... ok
+test_alignment_uses_distribution_not_only_mean (test_forensic_response.ForensicResponseInvariants.test_alignment_uses_distribution_not_only_mean) ... ok
+test_calibration_ties_and_exact_budget (test_forensic_response.ForensicResponseInvariants.test_calibration_ties_and_exact_budget) ... ok
+test_contributor_components_are_transitive (test_forensic_response.ForensicResponseInvariants.test_contributor_components_are_transitive) ... ok
+test_equal_group_errors_have_zero_penalty_and_grad (test_forensic_response.ForensicResponseInvariants.test_equal_group_errors_have_zero_penalty_and_grad) ... ok
+test_fair_loss_rejects_missing_class_in_auxiliary (test_forensic_response.ForensicResponseInvariants.test_fair_loss_rejects_missing_class_in_auxiliary) ... ok
+test_fit_test_overlap_is_explicit (test_forensic_response.ForensicResponseInvariants.test_fit_test_overlap_is_explicit) ... ok
+test_full_audit_rejects_unknown_keys_and_wrong_stage (test_forensic_response.ForensicResponseInvariants.test_full_audit_rejects_unknown_keys_and_wrong_stage) ... ok
+test_full_audit_still_rejects_path_leakage (test_forensic_response.ForensicResponseInvariants.test_full_audit_still_rejects_path_leakage) ... ok
+test_full_six_key_audit_checks_only_train_val (test_forensic_response.ForensicResponseInvariants.test_full_six_key_audit_checks_only_train_val) ... ok
+test_pending_review_cannot_qualify (test_forensic_response.ForensicResponseInvariants.test_pending_review_cannot_qualify) ... ok
+test_processing_control_is_not_zero_or_random_placeholder (test_forensic_response.ForensicResponseInvariants.test_processing_control_is_not_zero_or_random_placeholder) ... ok
+test_sparse_bootstrap_keeps_declared_groups (test_forensic_response.ForensicResponseInvariants.test_sparse_bootstrap_keeps_declared_groups) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 7.775s
+
+OK

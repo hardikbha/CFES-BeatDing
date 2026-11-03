@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""CES-FL forensic response v2: support-aware optimization, 3 November 2026.
+"""CES-FL forensic response v3: hierarchical original-real risk, 3 November 2026.
 
 Dependencies: Python>=3.10, torch, numpy, Pillow, scikit-learn. No project
 imports, downloads, diffusion models, automatic cluster jobs or test inference.
@@ -37,7 +37,7 @@ from torch import nn
 import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
 
-VERSION = 'CESFL_FORENSIC_RESPONSE_v2_SUPPORT'
+VERSION = 'CESFL_FORENSIC_RESPONSE_v3_HIER_REAL'
 AXES = ('gender', 'race', 'age_bin', 'skin_bin', 'gender_race', 'ids8')
 ARMS = ('A', 'B', 'C', 'D')
 OPERATORS = ('local_warp', 'local_resample')
@@ -552,6 +552,14 @@ def group_inventory(rows, c):
         active[axis] = {g: cell for g, cell in sorted(groups.items()) if g.lower() != 'unknown' and min(len(cell[0]), len(cell[1])) >= c['min_train_support']}
         report[axis] = {g: {'real': len(cell[0]), 'fake': len(cell[1]), 'eligible': g in active[axis]} for g, cell in sorted(groups.items())}
         if len(active[axis]) < 2: raise ValueError(f'Insufficient supported groups for requested axis {axis}')
+    if c['error_control'] == 'hierarchical_real':
+        # Validate metadata once, using TRAIN only. No visual label inference.
+        known = [r for r in rows if all(r[k].lower() != 'unknown' for k in ('gender', 'race', 'gender_race'))]
+        if any(r['gender_race'] != r['gender'] + '-' + r['race'] for r in known):
+            raise ValueError('TRAIN joint/parent demographic metadata disagree')
+        if {r['gender_race'] for r in known} != set(active['gender_race']):
+            raise ValueError('Missing/sparse TRAIN joint cell; no coverage reduction')
+        hierarchy_layout(rows, active['gender_race'])
     return active, report
 
 
@@ -583,11 +591,87 @@ def auxiliary(rows, active, c, event, epoch):
         support_fraction.append(cell_support)
     counts = torch.tensor([[len(groups[g][label]) for label in (0, 1)] for g in group_names], dtype=torch.float32)
     priors = counts / counts.sum(0)
-    return {'x': torch.stack(originals), 's': torch.stack(sham), 't': torch.stack(treated),
+    result = {'x': torch.stack(originals), 's': torch.stack(sham), 't': torch.stack(treated),
             'y': torch.tensor(labels), 'group': torch.tensor(group_codes), 'priors': priors,
             'support_fraction': torch.tensor(support_fraction, dtype=torch.float32),
             'axis': axis, 'groups': group_names, 'indices': indices, 'case': case,
             'operator': op, 'strength': strength}
+    if c['error_control'] == 'hierarchical_real' and axis == 'gender_race':
+        result['hierarchy'] = hierarchy_layout(rows, groups)
+    return result
+
+
+def hierarchy_layout(rows, groups):
+    """Class0 TRAIN within-parent race proportions, in actual auxiliary order.
+
+    group_inventory checks every TRAIN row first. Here representatives recover
+    that verified metadata without rescanning all TRAIN frames each auxiliary step.
+    Sparse/missing Cartesian cells fail; unknown rows still retain original BCE.
+    """
+    names = list(groups)
+    if not names or any(not groups[g][0] or not groups[g][1] for g in names):
+        raise ValueError('Hierarchy needs both classes in every joint cell')
+    pairs = [(rows[groups[g][0][0]]['gender'], rows[groups[g][0][0]]['race']) for g in names]
+    parents, races = sorted({g for g, _ in pairs}), sorted({r for _, r in pairs})
+    if len(parents) < 2 or len(races) < 2 or len(set(pairs)) != len(pairs):
+        raise ValueError('Missing/duplicate hierarchy parent or race cells')
+    if set(pairs) != {(g, r) for g in parents for r in races}:
+        raise ValueError('Incomplete TRAIN joint Cartesian coverage')
+    codes = torch.tensor([parents.index(g) for g, _ in pairs], dtype=torch.long)
+    nreal = torch.tensor([len(groups[g][0]) for g in names], dtype=torch.float32)
+    within = torch.stack([torch.where(codes == h, nreal, 0.) for h in range(len(parents))])
+    within = within / within.sum(1, keepdim=True)
+    return {'parents': parents, 'parent_codes': codes, 'within_parent_real_priors': within}
+
+
+def hierarchical_real_error(z, y, group, priors, layout, threshold, temperature):
+    """Replace ONLY the gender_race auxiliary real summand of D's error loss.
+
+    r_j = E[sigmoid((z-t_TRAIN)/T)|real,j]. Parent risks use TRAIN real
+    within-gender race proportions. b=stopgrad(sum_j pi_j,real*r_j).
+    H = .5*(2 mean_j relu(r_j-b)) + .5*(2 mean_s relu(R_s-b)).
+    Return .5*H + .5*mean_j abs(FNRsoft_j - attached pooled FNRsoft).
+    Fake-image value/gradient is exactly the original D term. All other axes
+    retain D's full legacy term; no diversity discount or alignment ramp.
+    """
+    n = len(priors)
+    if priors.shape != (n, 2) or not torch.isfinite(priors).all() or (priors < 0).any():
+        raise ValueError('Invalid joint class priors')
+    if not torch.allclose(priors.sum(0), torch.ones(2, device=priors.device)):
+        raise ValueError('Joint class priors must sum to one')
+    codes = layout['parent_codes'].to(device=z.device)
+    q = layout['within_parent_real_priors'].to(device=z.device, dtype=torch.float32)
+    if codes.shape != (n,) or codes.dtype != torch.long or q.ndim != 2 or q.shape[1] != n or q.shape[0] < 2:
+        raise ValueError('Hierarchy alignment/shape mismatch')
+    if not torch.isfinite(q).all() or (q < 0).any() or (codes < 0).any() or (codes >= len(q)).any():
+        raise ValueError('Invalid hierarchy weights/codes')
+    if not torch.allclose(q.sum(1), torch.ones(len(q), device=z.device)):
+        raise ValueError('Within-parent weights must sum to one')
+    expected = torch.stack([torch.where(codes == h, priors[:, 0].to(z.device), 0.) for h in range(len(q))])
+    if (expected.sum(1) <= 0).any():
+        raise ValueError('Missing parent support')
+    expected = expected / expected.sum(1, keepdim=True)
+    if not torch.allclose(q, expected):
+        raise ValueError('Parent weights differ from TRAIN class0 proportions')
+    if z.ndim != 1 or y.shape != z.shape or group.shape != z.shape or not torch.isfinite(z).all():
+        raise ValueError('Invalid joint logits/labels/alignment')
+    if not ((y == 0) | (y == 1)).all() or (group < 0).any() or (group >= n).any():
+        raise ValueError('Invalid joint label/group code')
+    p = torch.sigmoid((z.float() - float(threshold)) / temperature)
+    real, fake = [], []
+    for j in range(n):
+        a, b = (group == j) & (y == 0), (group == j) & (y == 1)
+        if not a.any() or not b.any():
+            raise ValueError('Missing auxiliary joint/class cell')
+        real.append(p[a].mean()); fake.append((1-p[b]).mean())
+    real, fake = torch.stack(real), torch.stack(fake)
+    priors = priors.to(z.device)
+    reference = (real * priors[:, 0]).sum().detach()
+    # Elementwise float32 reduction avoids autocast downcasting a matrix product.
+    parent = (q * real[None, :]).sum(1)
+    hierarchy = F.relu(real-reference).mean() + F.relu(parent-reference).mean()
+    fake_reference = (fake * priors[:, 1]).sum()  # Attached, exactly as D.
+    return .5 * hierarchy + .5 * (fake-fake_reference).abs().mean()
 
 
 def recorded_contributor(row):
@@ -685,7 +769,9 @@ def train_step(model, b, aux, weights, c, arm, threshold, device, epoch=0):
         if aux is not None and arm != 'A':
             za = model(aux['x'].to(device))['logit']
             ay, ag = aux['y'].to(device), aux['group'].to(device)
-            if c['error_control'] == 'support_upper':
+            if c['error_control'] == 'hierarchical_real' and aux['axis'] == 'gender_race':
+                fair = hierarchical_real_error(za, ay, ag, aux['priors'], aux['hierarchy'], threshold, c['temperature'])
+            elif c['error_control'] == 'support_upper':
                 fair = support_upper_error(za, ay, ag, aux['priors'], aux['support_fraction'], threshold, c['temperature'])
             else:
                 fair = soft_error_disparity(za, ay, ag, aux['priors'], threshold, c['temperature'])
@@ -768,8 +854,13 @@ def check_config(c, fixture=False, bound=True):
             'max_gpu_hours', 'allowed_content_overlap', 'source_sha256', 'synthetic_fixture',
             'error_control', 'alignment_warmup_epochs'}
     if set(c) != keys: raise ValueError(f'Config schema differs: missing={keys-set(c)}, extra={set(c)-keys}')
-    if c['error_control'] not in ('legacy', 'support_upper'):
+    if c['error_control'] not in ('legacy', 'support_upper', 'hierarchical_real'):
         raise ValueError('Invalid error-control objective')
+    if c['error_control'] == 'hierarchical_real':
+        if c['alignment_warmup_epochs'] != 0 or 'gender_race' not in c['axes']:
+            raise ValueError('Hierarchical real-only candidate requires joint batches and no ramp')
+        if not fixture and c['axes'] != ['gender', 'race', 'age_bin', 'skin_bin', 'gender_race']:
+            raise ValueError('Do not change the D auxiliary schedule')
     if type(c['alignment_warmup_epochs']) is not int or not 0 <= c['alignment_warmup_epochs'] <= c['epochs']:
         raise ValueError('Invalid alignment warmup')
     if c['format'] != VERSION or bool(c['synthetic_fixture']) != fixture: raise ValueError('Config format/fixture mismatch')
@@ -1052,9 +1143,16 @@ def dry_run(c, preflight_dir, out, arm, device):
     ix = next(i for i, r in enumerate(rows) if r['label'] == 0)
     samples = [Originals(rows, c, pairs=True)[i] for i in [ix] + [j for j in range(min(c['batch_size'] - 1, len(rows)))]]
     b = {k: torch.stack([s[k] for s in samples]) if torch.is_tensor(samples[0][k]) else torch.tensor([s[k] for s in samples]) for k in samples[0]}
-    aux = auxiliary(rows, active, c, 0, 0)
+    event = c['axes'].index('gender_race') if c['error_control'] == 'hierarchical_real' else 0
+    aux = auxiliary(rows, active, c, event, 0)
     if device.type == 'cuda': torch.cuda.reset_peak_memory_stats(device); torch.cuda.synchronize(device)
     started = time.perf_counter(); losses, count = train_step(model, b, aux, weights, c, arm, 0., device)
+    changed_grad_norm = None
+    if c['error_control'] == 'hierarchical_real':
+        grads = torch.autograd.grad(losses['error_fairness'], [p for p in model.parameters() if p.requires_grad], retain_graph=True, allow_unused=True)
+        changed_grad_norm = math.sqrt(sum(float(g.float().square().sum()) for g in grads if g is not None))
+        if not math.isfinite(changed_grad_norm) or changed_grad_norm <= 0:
+            raise RuntimeError('Changed real-input joint error loss has no finite gradient')
     finite_step(losses, model, opt)
     if device.type == 'cuda': torch.cuda.synchronize(device)
     record = {'status': 'PASS', 'source_sha256': sha(__file__), 'config_digest': digest(c), 'arm': arm,
@@ -1063,6 +1161,7 @@ def dry_run(c, preflight_dir, out, arm, device):
               'peak_cuda_bytes': torch.cuda.max_memory_allocated(device) if device.type == 'cuda' else None,
               'losses': {k: float(v.detach()) for k, v in losses.items()}, 'real_pair_count': count,
               'optimizer_steps_in_discarded_model': 1, 'scientific_intervention_validity': False,
+              'auxiliary_axis_checked': aux['axis'], 'changed_error_gradient_norm': changed_grad_norm,
               'device': str(device), 'torch': str(torch.__version__)}
     write_json(out / 'DRY_RUN.json', record); print(json.dumps(record))
     return record
@@ -1319,6 +1418,40 @@ def smoke(device, out):
     assert all(torch.equal(v, resumed['model'][k]) for k, v in uninterrupted['model'].items())
     assert uninterrupted['calibration'] == resumed['calibration']
     checks.append('both_support_candidates_native_reload_and_bitwise_scheduled_resume')
+    # Independent software fixture: four complete joint cells, both classes.
+    hc = dict(c, error_control='hierarchical_real', alignment_warmup_epochs=0,
+              axes=['gender','race','gender_race'])
+    for split in ('train','val'):
+        rr = read_manifest(manifests[split])
+        for i, row in enumerate(rr):
+            j=i//2; row.update(gender=('A' if j<2 else 'B'), race=('X' if j%2==0 else 'Y'))
+            row['gender_race']=row['gender']+'-'+row['race']
+        path=fixture/('hier_'+split+'.csv')
+        with path.open('w',newline='') as f:
+            wr=csv.DictWriter(f,fieldnames=list(rr[0]));wr.writeheader();wr.writerows(rr)
+        hc[split],hc[split+'_sha256']=str(path.resolve()),sha(path)
+    hi=torch.load(ip,map_location='cpu',weights_only=True)
+    hi['config'].update(train=hc['train'],val=hc['val'])
+    hip=fixture/'hier_initial.pt';atomic_save(hip,hi);del hi
+    hc['init_checkpoint'],hc['init_sha256']=str(hip.resolve()),sha(hip)
+    check_config(hc,fixture=True);preflight(hc,out/'preflight_hier')
+    train(hc,out/'preflight_hier',out/'hier','D',device,fixture=True)
+    train(hc,out/'preflight_hier',out/'resume_hier','D',device,fixture=True,stop_after=1)
+    train(hc,out/'preflight_hier',out/'resume_hier','D',device,fixture=True,resume=True)
+    ha=torch.load(out/'hier/last.pt',map_location='cpu',weights_only=True)
+    hb=torch.load(out/'resume_hier/last.pt',map_location='cpu',weights_only=True)
+    assert all(torch.equal(v,hb['model'][k]) for k,v in ha['model'].items())
+    assert ha['calibration']==hb['calibration']
+    hr=read_manifest(hc['train']);hg,_=group_inventory(hr,hc)
+    hh=auxiliary(hr,hg,hc,2,0)['hierarchy']
+    zz=torch.tensor([-2.,1.,2.,-1.,-1.,3.,1.,0.],device=device,requires_grad=True)
+    yy=torch.tensor([0,1]*4,device=device);gg=torch.tensor([0,0,1,1,2,2,3,3],device=device)
+    pp=torch.ones(4,2,device=device)/4
+    hl=hierarchical_real_error(zz,yy,gg,pp,hh,0.,1.)
+    og=torch.autograd.grad(soft_error_disparity(zz,yy,gg,pp,0.,1.),zz,retain_graph=True)[0]
+    ng=torch.autograd.grad(hl,zz)[0]
+    torch.testing.assert_close(og[yy==1],ng[yy==1]);assert (ng[yy==0]>=0).all() and ng[yy==0].abs().sum()>0
+    checks.append('hierarchical_real_weighting_fake_gradient_preservation_and_native_bitwise_resume')
     rep=evaluate(out/'D/best.pt',manifests['test'],sha(manifests['test']),out/'evaluation',device,replicates=10,fixture=True)
     testrows=read_manifest(manifests['test']);flipped=[{**r,'label':1-r['label']} for r in testrows]
     flip=fixture/'flipped.csv'

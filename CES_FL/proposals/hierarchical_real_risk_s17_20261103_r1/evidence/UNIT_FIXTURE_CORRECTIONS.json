@@ -1,0 +1,7 @@
+{
+  "initial_attempt": "2incorrect test expectations; scientific equation already matched independent reference",
+  "lambda_fix": "SGD baseline-minus-weighted update equals +lr*lambda*gradient, not negative",
+  "hierarchy_fix": "A low-risk child within an above-reference parent receives a downward risk gradient; zero expected for low-risk child AND low-risk parent",
+  "scientific_loss_changed_for_fixes": false,
+  "earlier_failure_preserved": true
+}

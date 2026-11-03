@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "rows_compared": 25386,
+  "upstream": [
+    {
+      "path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/ff++_ding/realval.csv",
+      "sha256": "ee9f35d134617fcb55c519453a787bc5e245c0c667c49f2685e282ea3c454153"
+    },
+    {
+      "path": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DINGREPRO_LIN/data/ff++_ding/fakeval.csv",
+      "sha256": "82f1d0f5ef34de3772841b066b34b4d215cc1b8ceb31619cbbbce24016972380"
+    }
+  ],
+  "canonical_sha256": "52f4844cffe5a03adb08cecde8829244bb50e05eeead36f6d659599f1c24f5b1",
+  "scope": "Existing adopted Ding/Lin validation membership and inherited group labels; not independent demographic truth or author-row equivalence",
+  "test_read": false,
+  "real_identity_metadata_stable": true
+}
