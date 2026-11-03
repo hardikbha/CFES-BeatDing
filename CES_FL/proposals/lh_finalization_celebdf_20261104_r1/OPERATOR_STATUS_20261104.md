@@ -1,6 +1,6 @@
 # Operator status: Celeb-DF audit and Table 3 preparation
 
-Observed 4 November 2026 from supervisor source `43c605bcd55395dce79650c1f342429c090553a8`. This file records aggregate evidence only. Private images, row-level predictions and checkpoints remain on the cluster.
+Observed 4 November 2026. Supervisor source `43c605bcd55395dce79650c1f342429c090553a8`; implementation `352e837b98bfb73aeb6db3f754604d950ca8b580`; allocated-smoke launcher `6356cf11aea097c656e2caa21705c41cb591ebd1`. This file records aggregate evidence only. Private images, row-level predictions and checkpoints remain on the cluster.
 
 ## Celeb-DF cache and annotation audit
 
@@ -28,7 +28,7 @@ Private audit root: `/home/sachin.chaudhary/ces_fl_runs/lh_finalization_celebdf_
 
 ## Compute gate
 
-The shared original ledger is unchanged at 17.2866134967/24 GPU-hours used, leaving 6.7133865033. Historical ResNet-50 P10 on the same 76,139-row exposure, batch 16 and one H100 consumed 6,226.7448 seconds (1.72965 GPU-hours). A linear 50-epoch projection is 8.6483 GPU-hours before replay, checks or downstream L_A/L_H. This makes the required P50 alone larger than the remaining allowance. The full ResNet cohort and subsequent Ding-10 control must therefore not launch under the present budget.
+The shared original ledger reports 17.2866134967/24 GPU-hours consumed and 0.5 GPU-hours reserved for the CUDA checks, leaving 6.2133865033. Historical ResNet-50 P10 on the same 76,139-row exposure, batch 16 and one H100 consumed 6,226.7448 seconds (1.72965 GPU-hours). A linear 50-epoch projection is 8.6483 GPU-hours before replay, checks or downstream L_A/L_H. This makes the required P50 alone larger than the remaining allowance. The full ResNet cohort and subsequent Ding-10 control must therefore not launch under the present budget.
 
 The prior P10 checkpoint cannot replace P50. The downstream templates intentionally retain `BIND_AFTER_VERIFIED_P50_COMPLETION` and are not runnable configs until a completed P50 hash is inserted and the source-bound preview/review, CUDA smoke and real-input checks pass.
 
@@ -50,3 +50,9 @@ The native Ding seed-17 classification epoch-49 checkpoint exists. An independen
 | Ding-10 controlled adaptation | BLOCKED_PRIORITY_DEPENDENCY_AND_BUDGET |
 
 No TEST tuning, new loss search, threshold change, full training, benchmark inference or automatic extension was performed in this milestone.
+
+## GPU check job
+
+PBS job `45387.mgmt01` was submitted from launcher commit `6356cf11aea097c656e2caa21705c41cb591ebd1` with `select=1:ncpus=4:ngpus=1:mem=24gb`, a 30-minute wall limit and a 0.5 GPU-hour reservation. At the last scheduler query it remained queued with `Not Running: User has reached queue gpu running job limit`. It has no `exec_host`, no verified CUDA device, no output directory and no measured GPU time yet. The reserved budget is included above.
+
+If PBS starts it, the launcher checks the job's `ngpus=1` record and requires a single-GPU `CUDA_VISIBLE_DEVICES` or one-entry `PBS_GPUFILE` binding. It then runs synthetic CUDA smoke for both ResNet adapters and one real-input P50 backward check with zero optimizer updates. Missing or ambiguous binding stops the job. The PBS log path is `/home/sachin.chaudhary/ces_fl_runs/lh_finalization_celebdf_20261104_43c605b/cuda_checks_352e837.pbs.log`; intended output directory is `/home/sachin.chaudhary/ces_fl_runs/lh_finalization_celebdf_20261104_43c605b/cuda_checks_352e837/`.
