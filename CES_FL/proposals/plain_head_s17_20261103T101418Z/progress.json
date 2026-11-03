@@ -14,7 +14,12 @@
   },
   "cpu_native_smoke": "PASS",
   "full_discovery": "FAILED: two cluster-only imports and one checkpoint writer failure; preserved in evidence/all_tests.log",
-  "publication": "Commit and push pending at document creation; final Git revision and remote confirmation supplied by supervisor",
+  "publication": {
+    "upstream": "BLOCKED: HTTP403; both configured accounts pull-only; no pending invitation",
+    "destination": "https://github.com/hardiksharma6555/CFES-BeatDing",
+    "branch": "experiment/cesfl-plain-head-s17-20261103T101418Z",
+    "final_remote_confirmation": "Supervisor must confirm remote SHA after push; publication is not training"
+  },
   "remaining": [
     "actual CUDA smoke and real-input backward",
     "actual TRAIN/VAL/P50 input verification",
@@ -22,5 +27,6 @@
     "two authorized ten-epoch plain-head runs",
     "completed gated H reference",
     "paired VAL-only reporting"
-  ]
+  ],
+  "code_commit": "97ecb7df3330a250d73d44fcc76f8df5aa74aef2"
 }

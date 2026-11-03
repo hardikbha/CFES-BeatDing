@@ -10,7 +10,7 @@ Active authorized implementation: [plain-head proposal](proposals/plain_head_s17
 
 Worktree base: `58ed0cb64341ec1413000eb2266a5846215582b1`, from `experiment/cesfl-hier-real-s17-20261103`. New branch: `experiment/cesfl-plain-head-s17-20261103T101418Z`. An additional read-only remote check found H update `438291e0ca7d5bee73cff737bbebab80e63b23a0`, observed at 2026-11-03T10:19:59.565126Z: H9/10, selected epoch1, not complete. That later status does not change this proposal's science source or authorize a new run. Original `main` was `67d2308225e422a91c715c40427f40c3df6812cf` during that check.
 
-New model source SHA256: `08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177`. Its format is `CESFL_HEAD_ABLATION_v1`. No real benchmark training, generation or TEST inference has been launched for the new head. CPU synthetic smoke passed; GPU/input checks remain pending. Final publication/launch SHA belongs in the handoff and actual launch receipt; a push is not a job submission.
+New model source SHA256: `08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177`. Its format is `CESFL_HEAD_ABLATION_v1`. No real benchmark training, generation or TEST inference has been launched for the new head. CPU synthetic smoke passed; GPU/input checks remain pending. Code/test/config commit is `97ecb7df3330a250d73d44fcc76f8df5aa74aef2`. Publishing to upstream returned403: neither configured account has push access and there is no pending invitation. The handoff uses the existing writable fork `https://github.com/hardiksharma6555/CFES-BeatDing`; do not assume upstream contains this proposal. A later documentation-only commit records that destination. Final publication/launch SHA belongs in the handoff and actual launch receipt; a push is not a job submission.
 
 ## 2. Vision, motivation and research claim boundaries
 
@@ -248,7 +248,7 @@ New helper `reuse_review.py` checks exact pinned H qualification and identical s
 
 Immediate, authorized:
 
-1. Publish the new head code, exact two configs, CPU evidence, proposal, project memory and GPU prompt on the new branch. Provide exact commit to the user. Do not launch locally.
+1. Prepared and committed the new head code, exact two configs, CPU evidence, proposal, project memory and GPU prompt. Publish the branch to the existing writable fork because upstream denied access, then provide its exact commit. Do not launch locally.
 2. GPU operator checks active jobs, remaining ledger and actual allocated device; creates detached checkout and new private output root. Verify cluster input/pretraining hashes and decode TRAIN/VAL.
 3. Run fresh CUDA synthetic smoke and discarded production TRAIN-threshold backward for L_A/L_H. Preserve failures; no protocol workaround.
 4. L_A may train once its checks pass. L_H additionally needs valid source-bound procedural qualification, possibly byte-identical reuse of existing H review. Preserve active gated H and wait for its actual completion before final paired reporting.

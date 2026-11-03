@@ -2,7 +2,7 @@
 
 User-authorized question: does the global/local gated head help enough to retain it? This proposal changes the prediction head and preserves the existing loss/training recipes. It does not replace active H, launch anything on publication, or claim a fairness gain.
 
-Base reviewed: `58ed0cb64341ec1413000eb2266a5846215582b1`. New branch: `experiment/cesfl-plain-head-s17-20261103T101418Z`. Exact execution commit must be recorded from the immutable checkout, along with source/config hashes and launch receipts. See [operator prompt](GPU_OPERATOR_PROMPT.md), [commands](commands.sh), [project memory](../../PROJECT_MEMORY.md).
+Base reviewed: `58ed0cb64341ec1413000eb2266a5846215582b1`. New branch: `experiment/cesfl-plain-head-s17-20261103T101418Z` on the existing writable fork `hardiksharma6555/CFES-BeatDing`; upstream push denied403. Code/test/config commit: `97ecb7df3330a250d73d44fcc76f8df5aa74aef2`. Later publication documentation leaves scientific source/config unchanged. Exact execution commit must be recorded from the immutable checkout, along with source/config hashes and launch receipts. See [operator prompt](GPU_OPERATOR_PROMPT.md), [commands](commands.sh), [project memory](../../PROJECT_MEMORY.md).
 
 ## Model and exact comparisons
 

@@ -1,6 +1,6 @@
 # GPU operator prompt: plain Xception head, matched BCE and H
 
-Carry out the user-authorized head ablation from the exact commit supplied with this prompt on branch `experiment/cesfl-plain-head-s17-20261103T101418Z`. Do not substitute `main` or an unpinned latest branch. This is two CES-FL FF++ runs, L_A and L_H, seed17. It is not a request to rerun Ding, generate edits, tune hyperparameters or access TEST.
+Carry out the user-authorized head ablation from the exact commit supplied with this prompt on branch `experiment/cesfl-plain-head-s17-20261103T101418Z`. Fetch from the existing writable fork `https://github.com/hardiksharma6555/CFES-BeatDing.git`; upstream hardikbha denied publication with403. Do not substitute `main` or an unpinned latest branch. This is two CES-FL FF++ runs, L_A and L_H, seed17. It is not a request to rerun Ding, generate edits, tune hyperparameters or access TEST.
 
 Read `CES_FL/AGENTS.md`, `WORKFLOW.md`, `PROJECT_MEMORY.md`, this proposal's README/CHECKS, actual source and both configs. Inspect existing jobs/results first. Preserve the current gated H run, all previous source/checkpoints/results and other users' jobs. A stale GitHub RUNNING status is not live verification.
 
@@ -10,7 +10,7 @@ Fetch the provided exact commit into a NEW detached worktree. Never pull over ac
 
 ```bash
 CES_COMMIT=<exact SHA supplied by supervisor>
-git fetch origin experiment/cesfl-plain-head-s17-20261103T101418Z
+git fetch https://github.com/hardiksharma6555/CFES-BeatDing.git experiment/cesfl-plain-head-s17-20261103T101418Z
 CES_SOURCE_DIR=/home/sachin.chaudhary/ces_fl_sources/plain_head_s17_${CES_COMMIT}
 git worktree add --detach "$CES_SOURCE_DIR" "$CES_COMMIT"
 cd "$CES_SOURCE_DIR"

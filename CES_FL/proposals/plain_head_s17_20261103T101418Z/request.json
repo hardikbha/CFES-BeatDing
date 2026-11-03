@@ -34,5 +34,7 @@
     "altering completed evidence/preregistration"
   ],
   "details": "README.md",
-  "operator_prompt": "GPU_OPERATOR_PROMPT.md"
+  "operator_prompt": "GPU_OPERATOR_PROMPT.md",
+  "publication_repository": "https://github.com/hardiksharma6555/CFES-BeatDing",
+  "upstream_write_access": false
 }
