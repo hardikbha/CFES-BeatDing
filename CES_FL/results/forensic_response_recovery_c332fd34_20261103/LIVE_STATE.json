@@ -1,14 +1,14 @@
 {
-  "observed_management_utc": "2026-11-03T22:39:49.503144+00:00",
+  "observed_management_utc": "2026-11-03T22:49:55.020152+00:00",
   "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
   "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
   "budget": {
     "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
     "source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-forensic-response-c332fd34",
     "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
-    "initial_total_gpu_hours": 24,
-    "consumed_gpu_hours": 17.286613496733416,
-    "reserved_gpu_hours": 0,
+    "initial_total_gpu_hours": 48,
+    "consumed_gpu_hours": 17.331068975467026,
+    "reserved_gpu_hours": 9.955544521266388,
     "gpu_sessions": [
       {
         "id": "ffpp_checks_primary",
@@ -573,6 +573,31 @@
         "log": "/home/sachin.chaudhary/ces_fl_runs/lh_finalization_celebdf_20261104_43c605b/cuda_checks_352e837.pbs.log",
         "cancel_reason": "User explicitly redirected authorized work to direct SSH GPU01/GPU02; qstat confirmed job never started",
         "qdel_command": "qdel 45387.mgmt01"
+      },
+      {
+        "id": "lh_resnet50_P50_s17_20261104",
+        "ngpus": 1,
+        "reserved_gpu_hours": 10.0,
+        "elapsed_seconds": 160.03972344100475,
+        "state": "RUNNING",
+        "scientific_source_sha256": "2d66966b1733feec222fe3a80ff9a6cd7181a6ba28cb9f767ad980968d337098",
+        "scientific_commit": "486d1e305977f13681cab41532acb9e1773abfe3",
+        "route": "user_authorized_direct_ssh_pool_v2",
+        "pbs_allocation_claimed": false,
+        "host": "gpu01",
+        "device_uuid": "GPU-6cc0a5b3-99ca-13e3-5508-a201a06e82d6",
+        "purpose": "ResNet-50 seed17 P50; 50 original-only epochs; no TEST",
+        "executor_commit": "486d1e3",
+        "log": "/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104_P50_attempt3.log",
+        "controller_pid": 3906763,
+        "card": {
+          "index": 1,
+          "uuid": "GPU-6cc0a5b3-99ca-13e3-5508-a201a06e82d6",
+          "free_mib": 81083,
+          "used_mib": 8,
+          "utilization": 0
+        },
+        "device": "NVIDIA H100 80GB HBM3"
       }
     ],
     "prior_study_ledger": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_9030dd77_20261103/budget_ledger.json",
@@ -580,7 +605,17 @@
     "budget_scope": "All new forensic-response checks and training across both datasets/GPUs, including parent attempts; existing Ding study separate and preserved",
     "created_management_utc": "2026-11-02T20:40:45.030840+00:00",
     "state": "ACTIVE_BUDGET_LEDGER; execution state is in per-session records and COORDINATOR_STATUS.json",
-    "route_override": "Explicit user-authorized direct SSH with pool-v2 leases; no PBS allocation claimed"
+    "route_override": "Explicit user-authorized direct SSH with pool-v2 leases; no PBS allocation claimed",
+    "original_authorized_gpu_hours": 24,
+    "budget_extensions": [
+      {
+        "request": "2026-11-04 user approved increase to continue CES-FL experiment over direct SSH GPU01/GPU02",
+        "additional_gpu_hours": 24,
+        "previous_total_gpu_hours": 24,
+        "new_total_gpu_hours": 48,
+        "scope": "this L_H finalization: ResNet-50 P50/L_A/L_H/Table3 and authorized Ding-10 control; no FairForge-2 budget transfer"
+      }
+    ]
   },
   "actual_process_observations": {},
   "datasets": {
