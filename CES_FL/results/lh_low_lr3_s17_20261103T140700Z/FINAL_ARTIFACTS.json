@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "source_commit": "29ce92ee8631c9c11ee3649d4f5a1110ecba29fd",
+  "execution_checkout_clean": true,
+  "old_best_and_last_checkpoint_hashes_unchanged": true,
+  "files": {
+    "receipt_ALLOCATION_END.json": "3a5a4f5a5213871f6ceaec7bf0c51547a3ec6e4ac6029365ad3e9d4a84bd11e4",
+    "receipt_review__qualification.json": "cac5c52969ab3331826ca7071f14201d76720b9326ee41179061eff07290330e",
+    "RUN_VERIFIED.json": "b1b2a1c6176762fb2cbf12e83ae98fc7ab912b415d704a1bee5f59c99d790cb7",
+    "ALL_FAIRNESS_METRICS.csv": "7888a438ffb8e2f21aa5ff95d0054b5e0740a2d40f3824da6aa3d77299bf3154",
+    "receipt_smoke_cuda__SMOKE_RESULT.json": "4e0c646a8d86e0bdb8c600d776ced5d8f4dcd1c398a3a3332ee2cf29bfca994e",
+    "HISTORY.json": "d8bee5913931f14edc4231739ba7e8e23a82666376a01b6c4580096d6c61b988",
+    "SCHEDULER_ACCOUNTING.json": "2e10c8cb41f28fdcf11743d6186efde20cf3889dcf62dba314c5d27424284cf2",
+    "head_tests.log": "ebd2ff43ec13d3eddece4509e01a256234ca96fde4e09bfe89ec5183e1a00262",
+    "GROUP_COUNTS_AND_RATES.csv": "bd51e5e5a024f017cf54ca6f6d0057a143661532a60d921b764bcc7ae16e03e5",
+    "receipt_dry__DRY_RUN.json": "81bc2c64a5da1cd0c5b43d72002c3cc9043fb961882004c7919bd1fd4cb9a3e2",
+    "receipt_REQUEST_CHECK.json": "caa176d94906b14a43fe542a67f9325b3b891312c26f13140b61928fff2171fe",
+    "receipt_SOURCE_CHECKOUT.json": "76913c8ffa96173eadc2be5259c898bf6bd298abbf4ecc65af3b3abb345458f9",
+    "COMPARISON.json": "682e6b5167d6f39083c703f9eb1e0729545293d7b9d3a386093afe6cbef203f9",
+    "OUTCOME.md": "d09d6d07cb4f1346e0412eb252c2692a3875a236c931292827e288bf740dc0dc",
+    "receipt_preflight__PREFLIGHT.json": "8bd0cc92a3894c894c51de0017dade4f47e70d2dc196900eacb1fd811fec580a",
+    "REPORT.md": "57488b91ce033105079f149545a367e309b923b10d19de6696ce38eab5e59552"
+  },
+  "benchmark_test_read": false
+}

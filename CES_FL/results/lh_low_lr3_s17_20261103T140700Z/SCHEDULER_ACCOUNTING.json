@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "observed_management_utc": "2026-11-03T15:11:07.339559+00:00",
+  "job": "45321.mgmt01",
+  "scheduler_wall_seconds": 2060,
+  "guard_elapsed_seconds": 2052.410222215578,
+  "extra_bookend_seconds": 7.58977778442204,
+  "total_new_gpu_hours": 0.5722222222222222,
+  "new_study_cap_gpu_hours": 1.5,
+  "used_original24_gpu_hours": 15.936613496733417,
+  "remaining_original24_gpu_hours": 8.063386503266583,
+  "training_exit_status": 0,
+  "comparison_job": "45322.mgmt01",
+  "comparison_exit_status": 0,
+  "test_access": false
+}
