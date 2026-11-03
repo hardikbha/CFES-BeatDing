@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-03T17:05:54.085484+00:00",
+  "observed_management_utc": "2026-11-03T17:15:59.334409+00:00",
   "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
   "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
   "budget": {
@@ -7,8 +7,8 @@
     "source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-forensic-response-c332fd34",
     "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
     "initial_total_gpu_hours": 24,
-    "consumed_gpu_hours": 15.936613496733417,
-    "reserved_gpu_hours": 0,
+    "consumed_gpu_hours": 15.936613496733413,
+    "reserved_gpu_hours": 3.0,
     "gpu_sessions": [
       {
         "id": "ffpp_checks_primary",
@@ -498,6 +498,30 @@
         "elapsed_seconds": 7.58977778442204,
         "pbs_job_id": "45321.mgmt01",
         "scope": "PBS startup/cleanup seconds beyond monotonic main guard; complete allocated time charged"
+      },
+      {
+        "id": "lh_sham_noalign_s17_20261103_SHAM_FIX",
+        "ngpus": 1,
+        "reserved_gpu_hours": 1.5,
+        "elapsed_seconds": 0.0,
+        "state": "QUEUED",
+        "scientific_commit": "35ffbd21cc6a033f9b9bf4cb1f92f5e417debe8d",
+        "scientific_source_sha256": "1b6dc1b0e6d2b2220da897500a4d1bffb7764280df642abf6befdd1cf511ed01",
+        "route": "PBS_ngpus1_plus_prior_explicit_authorized_pool_v2_UUID",
+        "planned_epochs": 3,
+        "no_automatic_extension": true
+      },
+      {
+        "id": "lh_sham_noalign_s17_20261103_NO_ALIGN",
+        "ngpus": 1,
+        "reserved_gpu_hours": 1.5,
+        "elapsed_seconds": 0.0,
+        "state": "QUEUED",
+        "scientific_commit": "35ffbd21cc6a033f9b9bf4cb1f92f5e417debe8d",
+        "scientific_source_sha256": "1b6dc1b0e6d2b2220da897500a4d1bffb7764280df642abf6befdd1cf511ed01",
+        "route": "PBS_ngpus1_plus_prior_explicit_authorized_pool_v2_UUID",
+        "planned_epochs": 3,
+        "no_automatic_extension": true
       }
     ],
     "prior_study_ledger": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_9030dd77_20261103/budget_ledger.json",
