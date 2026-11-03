@@ -1,17 +1,17 @@
 # CES-FL support-aware seed17 pilots
 
-Observed management UTC: 2026-11-03T06:13:26.311450+00:00
+Observed management UTC: 2026-11-03T06:23:30.001254+00:00
 
 Scientific commit8d5f0996a3f1cc02fbeaff9d25c1d95f714e8e77; source SHA2560eeafd838da3ca158336dcfe3b8195842dd15bc9fecd67ebbaf2ea03ba3c2680. Both candidates seed17,tenepochs. Existing CES-FL controls reused; no new Ding model computation, no new FF2 experiments, no TEST.
 
 Explicit user-authorized pool-v2 shared UUID leases; no PBS or exclusive-GPU allocation claimed. Existing Ding jobs untouched.
 
-Shared GPU budget used10.4343/24TOTAL hours; unspent conservative reservations8.7082h. Both GPUs counted by full task-held walltime even when shared.
+Shared GPU budget used10.7677/24TOTAL hours; unspent conservative reservations8.3747h. Both GPUs counted by full task-held walltime even when shared.
 
 |Candidate|Actual state|Complete epochs|Selected epoch|VAL AUC (%)|Intersection F_FPR (fraction)|Gender F_FPR|Age F_FPR|
 |---|---|---:|---:|---:|---:|---:|---:|
-|E_support|RUNNING|1/10|1|98.210202|0.410801|0.057418|0.306131|
-|F_support_ramp3|RUNNING|1/10|1|98.319331|0.495578|0.048598|0.296048|
+|E_support|RUNNING|2/10|2|98.228795|0.468281|0.054478|0.312441|
+|F_support_ramp3|RUNNING|3/10|1|98.319331|0.495578|0.048598|0.296048|
 
 Values are selected-so-far VAL until native ten-epoch completion/replay. All supported axes, FPR/FNR, group support, achieved calibration, pair exposure and hashes are in LIVE_STATE.json. Gates are learned weights; maps are signed local contributions. AI visual review qualifies representative procedural recipes, not biological identity or real-forgery validity.
 
