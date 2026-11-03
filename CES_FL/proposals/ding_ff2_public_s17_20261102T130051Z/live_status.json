@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-03T10:51:06.215186+00:00",
+  "observed_management_utc": "2026-11-03T11:06:09.775242+00:00",
   "reported_state": "RUNNING",
   "controller": {
     "utc": "2026-11-02T13:30:03Z",
@@ -49,21 +49,21 @@
     "log": "/home/sachin.chaudhary/ces_fl_runs/ding_ff2_public_s17_20261102T130051Z/logs/training.log"
   },
   "process": {
-    "remote_utc": "2026-11-03T10:40:15Z",
+    "remote_utc": "2026-11-03T10:55:18Z",
     "torchrun_proc_exists": true
   },
   "latest_training_event": {
-    "utc": "2026-11-03T10:40:10Z",
+    "utc": "2026-11-03T10:55:07Z",
     "event": "TRAIN_STEP",
     "stage": "classification",
     "epoch": 26,
-    "batch": 700,
+    "batch": 1650,
     "batches": 3149,
-    "global_step": 79425,
-    "ce": 0.036605268716812134,
+    "global_step": 80375,
+    "ce": 0.0603332445025444,
     "fair": 0.0,
-    "loss": 0.036605268716812134,
-    "elapsed_seconds": 667.8100304603577,
+    "loss": 0.0603332445025444,
+    "elapsed_seconds": 1565.2417843341827,
     "peak_memory_mib": 8635.82275390625
   },
   "stages": {
