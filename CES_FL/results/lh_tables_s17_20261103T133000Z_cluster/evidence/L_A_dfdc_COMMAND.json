@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+    "-u",
+    "/home/sachin.chaudhary/ces_fl_sources/cesfl-lh-tables-ee73f2f/CES_FL/scripts/lh_locked_benchmarks.py",
+    "infer",
+    "--plan",
+    "/home/sachin.chaudhary/ces_fl_runs/lh_tables_s17_20261103T133000Z/LOCKED_PLAN.json",
+    "--arm",
+    "L_A",
+    "--dataset",
+    "dfdc",
+    "--out",
+    "/home/sachin.chaudhary/ces_fl_runs/lh_tables_s17_20261103T133000Z/inference/L_A/dfdc",
+    "--device",
+    "cuda"
+  ],
+  "scientific_commit": "ee73f2fdf5218e440852917e90281818bbe711bb",
+  "plan_sha256": "6dffee3b9b309975d7c3844dc1052427885dc41b2375e77c15f38ae33f76c5ea",
+  "command_authorized_by": "pinned GPU operator prompt: two arms, four fixed TEST manifests, one frozen pass",
+  "new_training": false
+}

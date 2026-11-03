@@ -47,3 +47,22 @@ CPU-only PBS `45315.mgmt01` depends afterok on45314,4CPUs24GB,3h,ngpus0. It runs
 - Matched50+50 recipe remains explicitly deferred by its own priority update. Its passing CPU tests do not authorize its full training.
 
 The final tables distinguish archived paper references, historical local classification/GDA seeds/protocols, pending new Ding10, and the two fixed new CES-FL checkpoints. Table1/2 have separate fixed0.5 and source-VAL10%views; Table3 stays pending. No direct protocol-equivalent win, SOTA, biological-identity independence, demographic-counterfactual validity or causal forgery-mask claim is supported merely by successful software/evaluation execution.
+
+## Final verified milestone — 3 November 2026, 13:58 UTC
+
+PBS45314 completed with exit0 and measured PBS walltime00:10:02, requesting ngpus1. All eight INFERENCE_VERIFIED receipts passed; the allocation was released before bootstrap. PBS45315 used4CPUs and no requested GPU, completed with exit0 and walltime00:12:20. Its actual log contains eight ANALYSIS_PASS and four PAIRED_ANALYSIS_PASS entries. ANALYSIS_DONE confirms8native plus4paired analyses,1,000draws, seed17, with no extra inference or threshold search. Source/model/checkpoint/validation-cache/manifest/audit/output hashes were checked again during publication; final execution metadata is in `evidence/FINAL_EXECUTION_RECEIPT.json`.
+
+Executed final reporting commands with `/home/sachin.chaudhary/.conda/envs/aiface/bin/python`:
+
+```text
+PRIVATE_ROOT/reconcile_allocation_accounting.py
+PRIVATE_ROOT/finalize_publication.py --out CES_FL/results/lh_tables_s17_20261103T133000Z_cluster
+```
+
+Actual outputs: `LOCKED_TABLES_RENDERED 8 verified inference outputs bootstrap_done True`; `UNCERTAINTY_RENDER_PASS 12 analyses 2286 interval rows 198 low-support defined cells`; `FINAL_PUBLICATION_VERIFIED ... 8 inference, 12 analysis, both PBS exit 0`. These are reporting/integrity checks, not additional training or inference. Read-only exporter sources and their hashes are preserved in `evidence/runtime/`; neither pinned scientific source nor accepted config was edited.
+
+GPU accounting preserves the original monotonic task receipts and adds separate PBS bookend entries: original plain-head allocation3.185971extra seconds, locked evaluation3.389952extra seconds. Locked evaluation602scheduler seconds =0.167222GPUh. The original shared ledger now records15.364391/24GPUh consumed and8.635609unreserved; no active reservation remains for these two allocations. FairForge-2's additional72h ledger is untouched. The exact reconciliation is in `evidence/SCHEDULER_ACCOUNTING.json`.
+
+The complete tables, subgroup denominators/rates and2,286bootstrap interval cells are published. One hundred ninety-eight defined interval cells have fewer than900usable draws. Primary intersection counts are FF++990,DFDC608,Celeb-DF587,DFD957; age FF++ has675. Undefined cross-domain age/skin cells remain undefined. These intervals cannot establish training-seed robustness. See `FINDINGS.md` and `UNCERTAINTY.md` for the mixed detection/fairness outcomes; favorable fixed0.5 metrics do not erase missed-fake increases or source-validation-threshold regressions.
+
+Separate prior-authorized FF2 jobs were observed RUNNING at13:52:48UTC, each5/50epochs, with selected-so-far validation AUC97.489104/98.605174/97.899613% for BCE/DAG/DAW. That read-only snapshot was pushed to upstream branch `results/ff2-baselines-815b4d4-20261103`, commit3ecbf22. No extra method, duplicate run or TEST evaluation was launched for that wave.

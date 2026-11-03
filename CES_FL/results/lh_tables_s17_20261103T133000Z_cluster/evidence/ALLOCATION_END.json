@@ -1,0 +1,58 @@
+{
+  "status": "COMPLETED",
+  "elapsed_seconds": 598.6100483946502,
+  "gpu_hours": 0.16628056899851396,
+  "pbs_job_id": "45314.mgmt01",
+  "completed": [
+    {
+      "arm": "L_A",
+      "dataset": "ffpp",
+      "status": "PASS",
+      "receipt_sha256": "bd6d53105455925b8fe253e894a38a3ef7fa7221931f654a430eafe23058cb8a"
+    },
+    {
+      "arm": "L_A",
+      "dataset": "dfdc",
+      "status": "PASS",
+      "receipt_sha256": "b2df9cbe72198f98723553f1e0f1bc2f96c4f50dc1e37c42e5c80b8dfc530839"
+    },
+    {
+      "arm": "L_A",
+      "dataset": "celebdf",
+      "status": "PASS",
+      "receipt_sha256": "93d06039a7c056050c52f854b4f672490778c0d58fac6ec6db9f88874af81b64"
+    },
+    {
+      "arm": "L_A",
+      "dataset": "dfd",
+      "status": "PASS",
+      "receipt_sha256": "8132081822bf9237bb026808494fd13b4a25e5478d4a9657aa5e3ecb02d78997"
+    },
+    {
+      "arm": "L_H",
+      "dataset": "ffpp",
+      "status": "PASS",
+      "receipt_sha256": "91dd3a982c9629a6810bc980ea9c3edff88a3ec1119cf20e1985c510a4d56299"
+    },
+    {
+      "arm": "L_H",
+      "dataset": "dfdc",
+      "status": "PASS",
+      "receipt_sha256": "d76c67f7760938032d97a1bf039c9f71378510dd77ee5e9c39078a6a5670c718"
+    },
+    {
+      "arm": "L_H",
+      "dataset": "celebdf",
+      "status": "PASS",
+      "receipt_sha256": "ec95fb1a723bec7c7e6f8a984cb76d9034e1a84d12da89e690bd826e7e685653"
+    },
+    {
+      "arm": "L_H",
+      "dataset": "dfd",
+      "status": "PASS",
+      "receipt_sha256": "6c6a2bfd03f6fd42041c5c5b0203b4edf8e3be04946b01e5213e4bc5061dbcc0"
+    }
+  ],
+  "only_locked_test_inference": true,
+  "training_launched": false
+}

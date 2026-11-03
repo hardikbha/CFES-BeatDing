@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "management_utc": "2026-11-03T13:58:36.119923+00:00",
+  "analysis_files": {
+    "H_minus_A_celebdf": "3f0c0506819681512d37746972df434c3a9797c08af003b8a791fff672dc9d01",
+    "H_minus_A_dfd": "738868029bc9089ae4c873df03e096d4b299b53cb31ff441f8fe68c2abbdb1c2",
+    "H_minus_A_dfdc": "96aec03b0123080255fe9c163f62ff5f70c654d882658557522057d93d4c13c8",
+    "H_minus_A_ffpp": "42533bb5b3a5652f09412a892a5877200adc5732d730ee09a5a3091bf4575a19",
+    "L_A_celebdf": "762bd8ddb59ab089ae872ec23a9f6182c3bc49eb3e389234778463138e666e32",
+    "L_A_dfd": "6238682e9e9511dc372c4a7e17f18600692f2c3204c30e74daf3bed41b747921",
+    "L_A_dfdc": "dec9a25912f95b85b4c76af2ef7b3ae12a6709d56812b792481400ed821babf5",
+    "L_A_ffpp": "3acfdf377cd32901b5918af8b12453b2756008a95f56315e456973c0524f28fb",
+    "L_H_celebdf": "4d2940d2f453749055aeb7f74854a44cd78c5882f96509d743e64ff4541943dd",
+    "L_H_dfd": "38b12ac10c138da447d92c845b2e85abcca21943c5c917ee05c8932a54848d02",
+    "L_H_dfdc": "15741b45edc88dca740ca9e2703a21a4e3df34bce7d2f38e80bd752ac8371dcb",
+    "L_H_ffpp": "0a34c5026d0b8598f54406c8d39b638b377ec177a9a7665b807dc789d8cbadb9"
+  },
+  "source_commit": "ee73f2fdf5218e440852917e90281818bbe711bb",
+  "single_model_analyses": 8,
+  "paired_dataset_analyses": 4,
+  "bootstrap_draws": 1000,
+  "required_usable_draws": 900,
+  "interval_rows": 2286,
+  "below_900_defined_cells": 198,
+  "no_model_or_threshold_selection": true,
+  "no_additional_inference": true
+}

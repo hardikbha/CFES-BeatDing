@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "single_model_analyses": 8,
+  "paired_dataset_analyses": 4,
+  "bootstrap_draws": 1000,
+  "seed": 17,
+  "source_commit": "ee73f2fdf5218e440852917e90281818bbe711bb",
+  "test_threshold_search": false,
+  "no_additional_inference": true
+}

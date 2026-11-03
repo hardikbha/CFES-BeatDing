@@ -1,0 +1,11 @@
+#!/bin/bash
+#PBS -N lhTablesCI
+#PBS -q workq
+#PBS -l select=1:ncpus=4:mem=24gb
+#PBS -l walltime=03:00:00
+#PBS -j oe
+#PBS -o /home/sachin.chaudhary/ces_fl_runs/lh_tables_s17_20261103T133000Z/analysis.log
+set -euo pipefail
+umask 077
+export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1
+exec /home/sachin.chaudhary/.conda/envs/aiface/bin/python -u /home/sachin.chaudhary/ces_fl_runs/lh_tables_s17_20261103T133000Z/analyze_locked.py

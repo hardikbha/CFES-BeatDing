@@ -1,0 +1,45 @@
+{
+  "management_utc": "2026-11-03T13:58:36.192077+00:00",
+  "status": "PASS",
+  "scheduler": {
+    "45314.mgmt01": {
+      "Job_Name": "lhTables17",
+      "resources_used.cput": "00:20:18",
+      "resources_used.ncpus": "6",
+      "resources_used.walltime": "00:10:02",
+      "job_state": "F",
+      "exec_host": "gpu02/8*6",
+      "Resource_List.ncpus": "6",
+      "Resource_List.ngpus": "1",
+      "stime": "Tue Nov  3 19:05:07 2026",
+      "obittime": "Tue Nov  3 19:15:12 2026",
+      "Exit_status": "0"
+    },
+    "45315.mgmt01": {
+      "Job_Name": "lhTablesCI",
+      "resources_used.cput": "00:38:39",
+      "resources_used.ncpus": "4",
+      "resources_used.walltime": "00:12:20",
+      "job_state": "F",
+      "exec_host": "gpu01/5*4",
+      "Resource_List.ncpus": "4",
+      "stime": "Tue Nov  3 19:15:12 2026",
+      "obittime": "Tue Nov  3 19:28:16 2026",
+      "Exit_status": "0"
+    }
+  },
+  "scientific_commit": "ee73f2fdf5218e440852917e90281818bbe711bb",
+  "scientific_source_or_config_changed": false,
+  "runtime_sha256": {
+    "analyze_locked.py": "108c0064d79b2c17d5b22121c79000f8aac50dc9960c72258c0207de5c9278b8",
+    "analyze_locked.pbs": "b0d969b32bbd3c20729bf2bc03d11a669b3e711d617760c9b2b241980726f70e",
+    "render_locked_results.py": "acc680a39099da60bde5f413fad03688dd9370b846a2d0a6e1d2e75aa3d6f056",
+    "summarize_uncertainty.py": "5e9bae3116cac883152db6e142ed5bbac215b2fb54503f36d5b638820dca27ea",
+    "reconcile_allocation_accounting.py": "485432c7c21be7e2b9f8d074801b9a4b2aaaa8a8280284032ec3e5a5cd01c9e8",
+    "finalize_publication.py": "35eef9d564dbc92a495b0483f0db1a97a99eaa95eb34f7077686118e2d32e3ec"
+  },
+  "completed_inference_tasks": 8,
+  "completed_analysis_tasks": 12,
+  "additional_inference_or_training_launched": false,
+  "public_evidence_contains_private_rows_or_images": false
+}
