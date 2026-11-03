@@ -1,6 +1,6 @@
 # CES-FL support-aware seed17 pilots
 
-Observed management UTC: 2026-11-03T07:34:01.585130+00:00
+Observed management UTC: 2026-11-03T07:44:05.422359+00:00
 
 Scientific commit8d5f0996a3f1cc02fbeaff9d25c1d95f714e8e77; source SHA2560eeafd838da3ca158336dcfe3b8195842dd15bc9fecd67ebbaf2ea03ba3c2680. Both candidates seed17,tenepochs. Existing CES-FL controls reused; no new Ding model computation, no new FF2 experiments, no TEST.
 
