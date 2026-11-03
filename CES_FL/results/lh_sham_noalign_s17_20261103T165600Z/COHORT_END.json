@@ -1,0 +1,10 @@
+{
+  "job_id": "45361.mgmt01",
+  "exit_codes": {
+    "SHAM_FIX": 0,
+    "NO_ALIGN": 0
+  },
+  "elapsed_seconds": 2361.3893990553916,
+  "ngpus": 2,
+  "no_test_access": true
+}

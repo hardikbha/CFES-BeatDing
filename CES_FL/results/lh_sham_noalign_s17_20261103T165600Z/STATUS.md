@@ -1,12 +1,12 @@
 # SHAM-FIX and NO-ALIGN: observed status
 
-2026-11-03T19:33:48.485858+00:00
+2026-11-03T19:34:53.417533+00:00
 
 Source execution commit: `ab7f36798cfa06226e17e31c2171e0c02404a216`. Independent three-epoch ablations against completed lower-LR L_H; seed17, FF++ TRAIN/VAL only. No TEST.
 
 |Arm|PBS job|Observed scheduler state|Completed epochs|Last recorded VAL AUC %|
 |---|---|---|---:|---:|
-|SHAM_FIX|45361.mgmt01|R|3/3|98.162281|
+|SHAM_FIX|45361.mgmt01|E|3/3|98.162281|
 
 ### SHAM_FIX recorded epochs
 
@@ -15,7 +15,7 @@ Source execution commit: `ab7f36798cfa06226e17e31c2171e0c02404a216`. Independent
 |1|97.892568|5.442848|0.036840|0.105853|0.447757|0.117667|0.025796|0.339438|
 |2|98.097466|4.818259|0.034880|0.088648|0.412280|0.139442|0.021834|0.331834|
 |3|98.162281|4.494224|0.038799|0.070286|0.430919|0.144968|0.028359|0.377597|
-|NO_ALIGN|45361.mgmt01|R|3/3|98.208318|
+|NO_ALIGN|45361.mgmt01|E|3/3|98.208318|
 
 ### NO_ALIGN recorded epochs
 
@@ -27,6 +27,6 @@ Source execution commit: `ab7f36798cfa06226e17e31c2171e0c02404a216`. Independent
 
 Completed epochs are recorded history, not proof of a live process. H=held, Q=queued, R=running allocation; GPU checks precede training. Qualification is reused only on exact matching bytes and retains the original AI procedural-review scope. Both runs start from P50 plus the identical fresh head; neither starts from a trained L_H checkpoint.
 
-Budget: {"initial_total_gpu_hours": 24, "consumed_gpu_hours": 16.96943320075464, "reserved_gpu_hours": 0.8623201751264019}. A maximum 3 GPU-hours is reserved across the two arms.
+Budget: {"initial_total_gpu_hours": 24, "consumed_gpu_hours": 16.98761667545057, "reserved_gpu_hours": 0}. A maximum 3 GPU-hours is reserved across the two arms.
 
 All fairness values are fractions. Keep regressions visible. Single-seed validation findings are not a Ding TEST comparison or proof of generalization. This helper publishes only aggregate evidence and does not control execution.
