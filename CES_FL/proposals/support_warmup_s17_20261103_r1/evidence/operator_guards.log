@@ -1,0 +1,9 @@
+test_accepted_reservation_binds_new_source (test_support_operator.OperatorGuards.test_accepted_reservation_binds_new_source) ... ok
+test_budget_overcommit_rejected (test_support_operator.OperatorGuards.test_budget_overcommit_rejected) ... ok
+test_duplicate_rejected (test_support_operator.OperatorGuards.test_duplicate_rejected) ... ok
+test_new_scope_is_CESFL_FFPP_candidates_only (test_support_operator.OperatorGuards.test_new_scope_is_CESFL_FFPP_candidates_only) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+OK
