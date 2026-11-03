@@ -1,0 +1,226 @@
+{
+  "observed_management_utc": "2026-11-03T06:28:20.328000+00:00",
+  "source_sha256": "0eeafd838da3ca158336dcfe3b8195842dd15bc9fecd67ebbaf2ea03ba3c2680",
+  "paired_completed_epoch_checks": [
+    {
+      "epoch": 1,
+      "equal_aggregate_exposure": {
+        "steps": true,
+        "unique_originals": true,
+        "originals_once_each": true,
+        "original_real_pairs": true,
+        "auxiliary_schedule": true,
+        "auxiliary_planned_draws": true,
+        "auxiliary_unique_planned_sources": true,
+        "original_real_pairs_by_axis_group": true,
+        "auxiliary_original_draws_by_axis_group_label": true,
+        "auxiliary_real_pair_draws_by_axis_group": true,
+        "recorded_contributor_support_histogram": true
+      },
+      "exact_image_rows_once": 76139,
+      "real_pairs": 12926,
+      "E_alignment_multiplier": 1.0,
+      "F_alignment_multiplier": 0.3333333333333333
+    },
+    {
+      "epoch": 2,
+      "equal_aggregate_exposure": {
+        "steps": true,
+        "unique_originals": true,
+        "originals_once_each": true,
+        "original_real_pairs": true,
+        "auxiliary_schedule": true,
+        "auxiliary_planned_draws": true,
+        "auxiliary_unique_planned_sources": true,
+        "original_real_pairs_by_axis_group": true,
+        "auxiliary_original_draws_by_axis_group_label": true,
+        "auxiliary_real_pair_draws_by_axis_group": true,
+        "recorded_contributor_support_histogram": true
+      },
+      "exact_image_rows_once": 76139,
+      "real_pairs": 12926,
+      "E_alignment_multiplier": 1.0,
+      "F_alignment_multiplier": 0.6666666666666666
+    }
+  ],
+  "first_epoch_observed_cell_support": {
+    "gender:Female:0": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9957983193277311
+    },
+    "gender:Female:1": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9957983193277311
+    },
+    "gender:Male:0": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9936974789915967
+    },
+    "gender:Male:1": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9936974789915967
+    },
+    "race:Asian:0": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9873949579831933
+    },
+    "race:Asian:1": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9789915966386554
+    },
+    "race:Black:0": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9180672268907563
+    },
+    "race:Black:1": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9012605042016807
+    },
+    "race:Others:0": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9453781512605042
+    },
+    "race:Others:1": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9747899159663865
+    },
+    "race:White:0": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9936974789915967
+    },
+    "race:White:1": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9957983193277311
+    },
+    "age_bin:30-44:0": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9810924369747899
+    },
+    "age_bin:30-44:1": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9894957983193278
+    },
+    "age_bin:45-59:0": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.976890756302521
+    },
+    "age_bin:45-59:1": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9789915966386554
+    },
+    "age_bin:60+:0": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9138655462184874
+    },
+    "age_bin:60+:1": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.8550420168067226
+    },
+    "age_bin:<30:0": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9915966386554622
+    },
+    "age_bin:<30:1": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9936974789915967
+    },
+    "skin_bin:0:0": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9957983193277311
+    },
+    "skin_bin:0:1": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9810924369747899
+    },
+    "skin_bin:1:0": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9894957983193278
+    },
+    "skin_bin:1:1": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9936974789915967
+    },
+    "skin_bin:2:0": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9978991596638656
+    },
+    "skin_bin:2:1": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9894957983193278
+    },
+    "skin_bin:3:0": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9894957983193278
+    },
+    "skin_bin:3:1": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9789915966386554
+    },
+    "gender_race:Female-Asian:0": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9747899159663865
+    },
+    "gender_race:Female-Asian:1": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9705882352941176
+    },
+    "gender_race:Female-Black:0": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.7836134453781513
+    },
+    "gender_race:Female-Black:1": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.8403361344537815
+    },
+    "gender_race:Female-Others:0": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.8802521008403361
+    },
+    "gender_race:Female-Others:1": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9243697478991597
+    },
+    "gender_race:Female-White:0": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9873949579831933
+    },
+    "gender_race:Female-White:1": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9831932773109243
+    },
+    "gender_race:Male-Asian:0": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9117647058823529
+    },
+    "gender_race:Male-Asian:1": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9369747899159664
+    },
+    "gender_race:Male-Black:0": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.8403361344537815
+    },
+    "gender_race:Male-Black:1": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.8718487394957983
+    },
+    "gender_race:Male-Others:0": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9327731092436975
+    },
+    "gender_race:Male-Others:1": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9558823529411765
+    },
+    "gender_race:Male-White:0": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9894957983193278
+    },
+    "gender_race:Male-White:1": {
+      "events": 119,
+      "mean_recorded_contributor_fraction": 0.9936974789915967
+    }
+  },
+  "note": "Aggregate exposure equality, not proof that repeated recorded contributors are independent people; deterministic source/checks fix actual plan",
+  "test_read": false
+}
