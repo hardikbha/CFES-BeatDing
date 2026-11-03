@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{booktabs,graphicx}
+\begin{document}
+\section*{FairForge-2 public: interim validation, seed 17}
+All values below are $100\times$ native fractions. Each method uses one AUC-selected checkpoint.
+BCE: selected epoch17, 18/50 completed; DAG-FDD: selected epoch19, 21/50 completed; DAW-FDD: selected epoch15, 17/50 completed.
+No TEST results. Global validation calibration targets10\% FPR; achieved9.967\%.
+\begin{center}\begin{tabular}{lllrrrr}\toprule
+Attribute & Method & Backbone & $F_{FPR}\downarrow$ & $F_{DP}\downarrow$ & es-AUC$\uparrow$ & AUC$\uparrow$ \\ \midrule
+Gender & BCE & Xception & 1.734 & 0.024 & 99.224 & 99.344 \\
+Gender & DAG-FDD & Xception & 3.259 & 0.185 & 99.630 & 99.645 \\
+Gender & DAW-FDD & Xception & 2.581 & 0.010 & 99.500 & 99.521 \\
+\midrule
+Race & BCE & Xception & 4.541 & 0.464 & 98.445 & 99.344 \\
+Race & DAG-FDD & Xception & 13.567 & 1.441 & 99.071 & 99.645 \\
+Race & DAW-FDD & Xception & 14.861 & 1.369 & 98.821 & 99.521 \\
+\midrule
+Gender x race & BCE & Xception & 11.406 & 0.742 & 97.119 & 99.344 \\
+Gender x race & DAG-FDD & Xception & 29.092 & 1.497 & 98.505 & 99.645 \\
+Gender x race & DAW-FDD & Xception & 34.041 & 1.679 & 98.017 & 99.521 \\
+\midrule
+Age bins (proxy) & BCE & Xception & 9.037 & 4.839 & 98.864 & 99.344 \\
+Age bins (proxy) & DAG-FDD & Xception & 8.108 & 4.143 & 99.062 & 99.645 \\
+Age bins (proxy) & DAW-FDD & Xception & 8.469 & 4.701 & 99.192 & 99.521 \\
+\midrule
+Skin-tone bins (proxy) & BCE & Xception & 6.889 & 1.242 & 98.688 & 99.344 \\
+Skin-tone bins (proxy) & DAG-FDD & Xception & 7.208 & 0.910 & 99.175 & 99.645 \\
+Skin-tone bins (proxy) & DAW-FDD & Xception & 6.223 & 1.408 & 98.934 & 99.521 \\
+\bottomrule\end{tabular}\end{center}
+Age and skin-tone bins are automatic proxies. See REPORT.md for support, FPR/FNR, limitations and Ding stage status.
+\end{document}

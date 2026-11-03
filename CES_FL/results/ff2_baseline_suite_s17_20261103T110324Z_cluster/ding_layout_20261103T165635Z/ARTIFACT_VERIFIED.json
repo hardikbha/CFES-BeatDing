@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "observed_management_utc": "2026-11-03T17:14:34.331261+00:00",
+  "table_rows": 15,
+  "group_rows": 69,
+  "native_metric_values_unchanged": true,
+  "pdf_compilation": "pdflatex exit0; 1page; rendered and visually inspected",
+  "source_script": "/home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/render_ding_layout_snapshot.py",
+  "artifact_hashes": {
+    "SNAPSHOT.json": "dbe1bdcdc6bd5ccedda46a03f512dda51c8205945a51ed5119390de45eb06402",
+    "DING_LAYOUT.pdf": "d97d391d55175ad420e8d60c67fbb61dd979c21c662983919bda6b04d8a53b73",
+    "PER_GROUP_METRICS.csv": "2f90ba8f3fc5978fec0edb29fdc7329fb4d6d534a4454b59cc70f38537c31b1c",
+    "DING_LAYOUT.tex": "e73ee39b9e344cb28dc0a7aee5b319bad94d48260f48963d05e06ecf3a33349c",
+    "DING_LAYOUT.csv": "d863f54d3f77f95386e6c8ac23525fb89603f26cdb4118ad71f0a06dfb972324",
+    "REPORT.md": "f785cf142796b0a4c48d4c5593f4b9cab06b7738c4842dfe3463da812b31ebea"
+  }
+}
