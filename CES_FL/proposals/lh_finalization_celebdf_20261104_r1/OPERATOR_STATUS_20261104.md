@@ -1,6 +1,6 @@
 # Operator status: Celeb-DF audit and Table 3 preparation
 
-Observed 4 November 2026. Supervisor source `43c605bcd55395dce79650c1f342429c090553a8`; implementation `352e837b98bfb73aeb6db3f754604d950ca8b580`; allocated-smoke launcher `6356cf11aea097c656e2caa21705c41cb591ebd1`. This file records aggregate evidence only. Private images, row-level predictions and checkpoints remain on the cluster.
+Observed 4 November 2026. Supervisor source `43c605bcd55395dce79650c1f342429c090553a8`; implementation `352e837b98bfb73aeb6db3f754604d950ca8b580`; direct-SSH runner `486d1e305977f13681cab41532acb9e1773abfe3`. This file records aggregate evidence only. Private images, row-level predictions and checkpoints remain on the cluster.
 
 ## Celeb-DF cache and annotation audit
 
@@ -28,11 +28,11 @@ Private audit root: `/home/sachin.chaudhary/ces_fl_runs/lh_finalization_celebdf_
 
 ## Compute gate
 
-The shared original ledger reports 17.2866134967/24 GPU-hours consumed and 0.5 GPU-hours reserved for the CUDA checks, leaving 6.2133865033. Historical ResNet-50 P10 on the same 76,139-row exposure, batch 16 and one H100 consumed 6,226.7448 seconds (1.72965 GPU-hours). A linear 50-epoch projection is 8.6483 GPU-hours before replay, checks or downstream L_A/L_H. This makes the required P50 alone larger than the remaining allowance. The full ResNet cohort and subsequent Ding-10 control must therefore not launch under the present budget.
+On 4 November the user authorized an additional 24 GPU-hours for this study; the separate FairForge-2 budget was untouched. The shared ledger is now 48 total GPU-hours. At this checkpoint it reports 17.436652 GPU-hours consumed, 9.849961 reserved for P50 and 20.713387 available beyond that reservation. P50 is using the reserved session below. Existing ResNet-50 P10 on the same 76,139-row exposure, batch 16 and one H100 took 6,226.747 seconds, projecting 8.6483 GPU-hours for 50 epochs. Actual P50 throughput will replace this projection after more epochs.
 
 The prior P10 checkpoint cannot replace P50. The downstream templates intentionally retain `BIND_AFTER_VERIFIED_P50_COMPLETION` and are not runnable configs until a completed P50 hash is inserted and the source-bound preview/review, CUDA smoke and real-input checks pass.
 
-The native Ding seed-17 classification epoch-49 checkpoint exists. An independently bound TRAIN-only 2% mask and connected-gradient ten-epoch adapter have not been certified in this execution. Ding-10 remains pending behind both the priority ResNet cohort and the shared budget gate.
+The native Ding seed-17 classification epoch-49 checkpoint and TRAIN-only 2% SFD channel list were found and hash-checked. A connected-gradient ten-epoch adapter has not yet been implemented. Native Ding full-run epoch intervals project 6.114 GPU-hours at the requested 2,380 updates/epoch, before adapter checks and replay. Ding-10 remains after the ResNet comparison and will be reconsidered against the remaining ledger then.
 
 The local artifacts do include `DING_base_s17/49.pth` (SHA256 `b2240f157d4f94895f0908ad1a177832d258ab3c0f71ac9e09acc87a333b4e32`) and `DING_full_s17/SFD_channels.txt` (SHA256 `ef9ac134b7564f1d9e78b641291479638c9246bd40772df0d73a8448125bb039`). The mask file has ten channel indices, and the archived run log shows seed-17 SFD used that base checkpoint with `--prc 2.0`. These are reusable candidate dependencies; the connected-gradient ten-epoch adapter and source-bound CUDA checks remain unimplemented. From the completed native seed-17 full run, 49 inter-epoch intervals average 1,827.35 seconds at 1,976 updates/epoch. Scaling to the requested 2,380 updates/epoch gives about 6.114 GPU-hours for ten training epochs alone, before the new adapter's checks/replay. That does not fit with adequate verification margin in the 6.213 GPU-hours currently left after the queued CUDA reservation, so Ding-10 is also held.
 
@@ -45,16 +45,17 @@ The local artifacts do include `DING_base_s17/49.pth` (SHA256 `b2240f157d4f94895
 | Private deterministic error sheet | COMPLETED |
 | ResNet P50/downstream implementation | COMPLETED |
 | CPU software smoke | COMPLETED, PASS |
-| Source-bound CUDA smoke | PENDING ALLOCATION |
-| Real-input CUDA backward check | PENDING ALLOCATION |
-| ResNet P50 training | BLOCKED_BUDGET |
-| ResNet L_A/L_H training and Table 3 TEST | BLOCKED_P50_AND_BUDGET |
-| Ding-10 controlled adaptation | BLOCKED_PRIORITY_DEPENDENCY_AND_BUDGET |
+| Source-bound CUDA smoke | COMPLETED, PASS on gpu01 GPU1 |
+| Real-input CUDA backward check | COMPLETED, PASS, zero optimizer updates |
+| ResNet P50 training | RUNNING, seed17, epoch2/50, step2100/4759 at last observation |
+| ResNet L_A/L_H training | PENDING verified P50 |
+| Table 3 TEST evaluation | PENDING both selected checkpoints; no TEST read |
+| Ding-10 controlled adaptation | PENDING ResNet priority and adapter implementation |
 
-No TEST tuning, new loss search, threshold change, full training, benchmark inference or automatic extension was performed in this milestone.
+P50 epoch1 validation AUC was 91.3360%, with AUC-only selection and the stored validation-real 10% threshold. At that threshold validation FPR was 9.9951%, FNR 23.0440%; gender/race/gender×race F_FPR were 0.0564/0.4289/0.9086 (fractions). These are preliminary validation observations for P50 epoch1, not final selected results or TEST metrics. No threshold tuning, new loss search or TEST evaluation was performed.
 
-## GPU check job
+## GPU execution record
 
-PBS job `45387.mgmt01` was submitted from launcher commit `6356cf11aea097c656e2caa21705c41cb591ebd1` with `select=1:ncpus=4:ngpus=1:mem=24gb`, a 30-minute wall limit and a 0.5 GPU-hour reservation. At the last scheduler query it remained queued with `Not Running: User has reached queue gpu running job limit`. It has no `exec_host`, no verified CUDA device, no output directory and no measured GPU time yet. The reserved budget is included above.
+PBS job `45387.mgmt01` was canceled while queued, before it acquired a GPU; its reservation was released and it consumed zero GPU-hours. The replacement direct-SSH run uses gpu01 GPU1, UUID `GPU-6cc0a5b3-99ca-13e3-5508-a201a06e82d6`, through shared-pool lease `lh_resnet50_P50_s17_20261104`.
 
-If PBS starts it, the launcher checks the job's `ngpus=1` record and requires a single-GPU `CUDA_VISIBLE_DEVICES` or one-entry `PBS_GPUFILE` binding. It then runs synthetic CUDA smoke for both ResNet adapters and one real-input P50 backward check with zero optimizer updates. Missing or ambiguous binding stops the job. The PBS log path is `/home/sachin.chaudhary/ces_fl_runs/lh_finalization_celebdf_20261104_43c605b/cuda_checks_352e837.pbs.log`; intended output directory is `/home/sachin.chaudhary/ces_fl_runs/lh_finalization_celebdf_20261104_43c605b/cuda_checks_352e837/`.
+The controller PID is `3906763`; its log is `/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104_P50_attempt3.log`. Run outputs are under `/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104/`. Both synthetic CUDA smoke receipts and the real-input pretrain dry-run receipt are present there. The dry-run forward/backward loaded 16 real TRAIN samples and performed zero optimizer updates. The 50-epoch P50 training then started; epoch1 has completed and epoch2 is in progress. No L_A/L_H or Ding training has started.
