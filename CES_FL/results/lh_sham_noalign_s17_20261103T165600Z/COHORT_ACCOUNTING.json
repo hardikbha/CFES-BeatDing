@@ -1,0 +1,16 @@
+{
+  "pbs_job_id": "45361.mgmt01",
+  "pbs_exit_status": 0,
+  "pbs_walltime": "00:40:30",
+  "pbs_allocated_ngpus": 2,
+  "pbs_allocated_gpu_hours": 1.35,
+  "monotonic_arm_seconds": {
+    "SHAM_FIX": 2361.1078784503043,
+    "NO_ALIGN": 1422.5035649314523
+  },
+  "reconciled_unattributed_gpu_seconds": 1076.3885566182435,
+  "ledger_total_gpu_hours": 17.286613496733413,
+  "ledger_remaining_gpu_hours": 6.713386503266587,
+  "management_utc": "2026-11-03T19:36:06.081546+00:00",
+  "note": "PBS stime/etime are skewed; resources_used.walltime and monotonic receipts used. No additional run."
+}
