@@ -1,0 +1,12 @@
+test_duplicate_stage_rejected (test_hier_operator.Guards.test_duplicate_stage_rejected) ... ok
+test_new_4hour_limit (test_hier_operator.Guards.test_new_4hour_limit) ... ok
+test_no_node_git_dependency_and_detached_head_required (test_hier_operator.Guards.test_no_node_git_dependency_and_detached_head_required) ... ok
+test_no_unregistered_phase (test_hier_operator.Guards.test_no_unregistered_phase) ... ok
+test_only_one_candidate (test_hier_operator.Guards.test_only_one_candidate) ... ok
+test_original_24hour_limit (test_hier_operator.Guards.test_original_24hour_limit) ... ok
+test_reservation_binds_actual_source (test_hier_operator.Guards.test_reservation_binds_actual_source) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.014s
+
+OK
