@@ -7,7 +7,7 @@ OUT=REPO/'CES_FL/results/lh_sham_noalign_s17_20261103T165600Z'
 OUT.mkdir(parents=True,exist_ok=True)
 def read(p):return json.loads(p.read_text())
 now=datetime.datetime.now(datetime.timezone.utc).isoformat()
-data=dict(observed_management_utc=now,execution_commit='35ffbd21cc6a033f9b9bf4cb1f92f5e417debe8d',source_sha256='1b6dc1b0e6d2b2220da897500a4d1bffb7764280df642abf6befdd1cf511ed01',arms={})
+data=dict(observed_management_utc=now,execution_commit=read(ROOT/'SHAM_FIX/SOURCE_CHECKOUT.json')['commit'],source_sha256='1b6dc1b0e6d2b2220da897500a4d1bffb7764280df642abf6befdd1cf511ed01',arms={})
 lines=['# SHAM-FIX and NO-ALIGN: observed status','',now,'','Source execution commit: `'+data['execution_commit']+'`. Independent three-epoch ablations against completed lower-LR L_H; seed17, FF++ TRAIN/VAL only. No TEST.','', '|Arm|PBS job|Observed scheduler state|Completed epochs|Last recorded VAL AUC %|','|---|---|---|---:|---:|']
 for arm in ('SHAM_FIX','NO_ALIGN'):
  r=ROOT/arm;dest=OUT/arm;dest.mkdir(exist_ok=True);sub=read(r/'SUBMISSION.json');job=sub['stdout'].strip()
@@ -18,7 +18,7 @@ for arm in ('SHAM_FIX','NO_ALIGN'):
   scheduler={k:full[k] for k in ('job_state','queue','Resource_List','resources_used','exec_host','exec_vnode','stime','comment','Exit_status') if k in full}
  h=read(r/'training/history.json') if (r/'training/history.json').exists() else []
  entry=dict(job_id=job,scheduler_state=state,scheduler_observation=scheduler,completed_epochs=len(h),history=h,paths=dict(root=str(r),training_log=str(r/'train.log')))
- for name in ('REQUEST_CHECK.json','SOURCE_CHECKOUT.json','SUBMISSION.json','QUEUE_CHANGE.json','ALLOCATION.json','ALLOCATION_END.json','SCHEDULER_ACCOUNTING.json','preflight/PREFLIGHT.json','review/qualification.json','smoke_cuda/SMOKE_RESULT.json','dry/DRY_RUN.json','training/RUN_VERIFIED.json','training/history.json','comparison/COMPARISON.json','comparison/REPORT.md','comparison/ALL_FAIRNESS_METRICS.csv','comparison/GROUP_COUNTS_AND_RATES.csv','loss_tests_cuda.log'):
+ for name in ('REQUEST_CHECK.json','SOURCE_CHECKOUT.json','SUBMISSION.json','SUPERSEDED_SUBMISSION.json','SUPERSEDED_JOB_CANCELLATION.json','RELEASE.json','QUEUE_CHANGE.json','ALLOCATION.json','ALLOCATION_END.json','SCHEDULER_ACCOUNTING.json','preflight/PREFLIGHT.json','review/qualification.json','smoke_cuda/SMOKE_RESULT.json','dry/DRY_RUN.json','training/RUN_VERIFIED.json','training/history.json','comparison/COMPARISON.json','comparison/REPORT.md','comparison/ALL_FAIRNESS_METRICS.csv','comparison/GROUP_COUNTS_AND_RATES.csv','loss_tests_cuda.log'):
   src=r/name
   if src.exists():
    dst=dest/name;dst.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(src,dst)
@@ -30,7 +30,7 @@ for arm in ('SHAM_FIX','NO_ALIGN'):
   lines+=['','### '+arm+' recorded epochs','','|Epoch|AUC %|FNR %|Gender F_FPR|Race|Gender×race|Age|Skin|ids8|','|---|---:|---:|---:|---:|---:|---:|---:|---:|']
   for e in h:
    v=e['validation'];lines.append('|'+str(e['epoch'])+'|'+f"{100*v['overall']['auc']:.6f}|{100*v['overall']['fnr']:.6f}|"+'|'.join(f"{v['axes'][a]['F_FPR']:.6f}" for a in ('gender','race','gender_race','age_bin','skin_bin','ids8'))+'|')
-for name in ('head_tests_cpu.log','loss_tests_cpu.log'):
+for name in ('head_tests_cpu.log','loss_tests_cpu.log','COHORT_ALLOCATION.json','COHORT_END.json','COHORT_ACCOUNTING.json'):
  if (ROOT/name).exists():shutil.copyfile(ROOT/name,OUT/name)
 ledger=read(Path('/home/sachin.chaudhary/ces_fl_runs/forensic_response_c332fd34_20261103/budget_ledger.json'))
 data['budget']={k:ledger[k] for k in ('initial_total_gpu_hours','consumed_gpu_hours','reserved_gpu_hours')}
