@@ -1,6 +1,6 @@
 # Corrected-source forensic-response study: actual progress
 
-Observed management UTC: 2026-11-03T04:44:19.563944+00:00
+Observed management UTC: 2026-11-03T04:47:10.638372+00:00
 
 Execution commit `c332fd34fb603b8919b15fee08e8d022fb9f57c8`; script SHA256 `89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b`.
 
@@ -16,14 +16,16 @@ New-study task-held GPU time: **10.0589/24TOTAL GPU-hours**. Unspent conservativ
 | ffpp | D | COMPLETED_VERIFIED | 10/10 | 1 | 98.2526 | 0.379345 | 23.8391 | 93.8519 |
 | ff2 | A | COMPLETED_VERIFIED | 10/10 | 7 | 99.8085 | 0.290986 | 11.6609 | 99.6003 |
 | ff2 | B | COMPLETED_VERIFIED | 10/10 | 1 | 99.8075 | 0.295459 | 11.0284 | 99.5864 |
-| ff2 | C | PENDING | 0/10 | — | — | — | — | — |
-| ff2 | D | PENDING | 0/10 | — | — | — | — | — |
+| ff2 | C | BLOCKED_INPUTS | 0/10 | — | — | — | — | — |
+| ff2 | D | BLOCKED_INPUTS | 0/10 | — | — | — | — | — |
 
 All values above are VAL. Selected-so-far values remain preliminary until ten epochs and native independent replay pass. No fairness/model/threshold selection against TEST. Single-seed results do not establish statistical superiority.
 
 Full per-axis/group supports, FPR/FNR, calibration, coverage, exact configuration hashes, GPU leases/PIDs, checkpoint hashes and errors are in LIVE_STATE.json. Age/skin labels are inherited proxies; recorded contributor IDs do not certify biological identities.
 
 FF++ reviewed88 procedural cases across22 originals/18recorded identity-source IDs. The review is an explicitly named AI visual screen, not human annotation, per-view universal approval or proof of actual forgery validity. Source-bound qualification receipt stays private.
+
+FairForge-2 operator review inspected88cases across22originals:72approved,8rejected,8uncertain. Rotation padding, hat/mask/hand occlusion confound some face-region probes. Qualification rejected the review; C/D remain BLOCKED_INPUTS. No sources silently removed or approvals invented.
 
 The original six-key audit is unchanged; two TRAIN/VAL declarations checked, four TEST-related declarations DEFERRED. Known163TRAIN/VAL contributor overlaps remain disclosed.
 
