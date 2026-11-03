@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "source_sha256": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
+  "seed": 17,
+  "parameters": {
+    "total": 20809001,
+    "trainable": 6790433,
+    "encoder": 20806952,
+    "head": 2049,
+    "encoder_trainable": 6788384,
+    "head_type": "linear",
+    "encoder_policy": "exit"
+  },
+  "A_H_full_initial_state_identical": true,
+  "P50_encoder_bitwise_equal": true,
+  "encoder_state_hash": "28390525d92313ec786b694ce21eef17db9c5157e1b89c37a0ac8071a475dbcb",
+  "linear_head_state_hash": "9600162d7f69931f93d5e9e44ec778cd4e361c9ad0af38b66708508b50d04907",
+  "hash_scheme": "sorted key UTF8 and contiguous tensor numpy bytes",
+  "init_checkpoint_sha256": "3174e5b01a84c91cc70afae538505663ca96454d897e6b793c0672826a8f08b5",
+  "train_gradients_used": false,
+  "test_read": false
+}
