@@ -1,0 +1,15 @@
+{
+  "archive_result_commit": "1f3098ea66f5537bf0c947957d0f7078fe85efcd",
+  "archive_official_revision": "059ec37fc969825bab9dc5f79e01c9864d00eaec",
+  "file_sha256": {
+    "DINGREPRO_LIN/PREREG.txt": "98b8ec061bdf9856e56c5fe77b32c6520bf6cff3d6bf1303e60539ba6801d1e8",
+    "DINGREPRO_LIN/VERIFICATION.md": "793824a9ae5fa407b04ad2f093a3cafaad30b046ef39179571f3288b18bcc27b",
+    "DINGREPRO_LIN/code/Ding_mod/GDA.py": "bef29fa69e46c729dc679356d0ac3904ebac6da4c00180350daf282fe94599db",
+    "DINGREPRO_LIN/code/Ding_mod/train_ori_model.py": "ee2d3b3229ed0ce96bf3e5517e488059419d1fae411f9d05739808e81ea6a7d0",
+    "DINGREPRO_LIN/code/Ding_mod/test.py": "953ec501f6e9490a967e0bc5e1fb6f2d30cec8678992d05320b747fce3c0d3fa",
+    "DINGREPRO_LIN/code/Ding_mod/src/transform.py": "44974fa54b9d846f40ad84e83faedece40112ca1ebd6159fe533f48a6fb4e60f",
+    "DINGREPRO_LIN/results/GDA_GRAD_CHECK.json": "cc88f032810feb96285708f9cf1d45e19c258a0f14e3bf29153ea9ec9ee46819"
+  },
+  "read_only": true,
+  "new_ding_computation": false
+}

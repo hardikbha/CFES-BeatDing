@@ -1,0 +1,166 @@
+{
+  "observed_management_utc": "2026-11-03T05:39:33.967000+00:00",
+  "new_ding_model_computation": false,
+  "historical_records": [
+    {
+      "dataset": "ff++",
+      "method": "historical archived classification baseline",
+      "seed": 7,
+      "epoch": 49,
+      "auc_pct": 89.0096389915727,
+      "n": 25401,
+      "evidence": "DINGREPRO_LIN/results/eval_ding_protocol/base_s7_ep49_ff++.json",
+      "sha256": "37710656516b6a876cd38db1f03a0c905febfd8e9ba6eb35bfc7da634d526fee"
+    },
+    {
+      "dataset": "ff++",
+      "method": "historical archived classification baseline",
+      "seed": 17,
+      "epoch": 49,
+      "auc_pct": 96.32097819544985,
+      "n": 25401,
+      "evidence": "DINGREPRO_LIN/results/eval_ding_protocol/base_s17_ep49_ff++.json",
+      "sha256": "15401f7eb691238f653b979f45e24845d6a6c384ba7f8a08df7a6a67c79434e4"
+    },
+    {
+      "dataset": "ff++",
+      "method": "historical archived classification baseline",
+      "seed": 27,
+      "epoch": 49,
+      "auc_pct": 96.99097854421721,
+      "n": 25401,
+      "evidence": "DINGREPRO_LIN/results/eval_ding_protocol/base_s27_ep49_ff++.json",
+      "sha256": "a294baabd4cbae94dfd196d3514081b8fe681a7950a621660b3ab40da5086ab5"
+    },
+    {
+      "dataset": "ff++",
+      "method": "historical archived released GDA/SFD",
+      "seed": 7,
+      "epoch": 49,
+      "auc_pct": 97.44434441001673,
+      "n": 25401,
+      "evidence": "DINGREPRO_LIN/results/eval_ding_protocol/full_s7_ep49_ff++.json",
+      "sha256": "dbfbfe87abd569d6f81cbf74355f69c83133e246cae180d647b3bb7215ea4eeb"
+    },
+    {
+      "dataset": "dfdc",
+      "method": "historical archived classification baseline",
+      "seed": 7,
+      "epoch": 49,
+      "auc_pct": 54.4119627392337,
+      "n": 22857,
+      "evidence": "DINGREPRO_LIN/results/eval_ding_protocol/base_s7_ep49_dfdc.json",
+      "sha256": "1954afb31051436374ecdb2f73da9de92636e2d2094e630cfab30868c4eadad4"
+    },
+    {
+      "dataset": "dfdc",
+      "method": "historical archived classification baseline",
+      "seed": 17,
+      "epoch": 49,
+      "auc_pct": 55.59931596896395,
+      "n": 22857,
+      "evidence": "DINGREPRO_LIN/results/eval_ding_protocol/base_s17_ep49_dfdc.json",
+      "sha256": "4bd204e4b77a36182d7a3460240ef5311d1642a261ce8de8e232647dfe0304bc"
+    },
+    {
+      "dataset": "dfdc",
+      "method": "historical archived classification baseline",
+      "seed": 27,
+      "epoch": 49,
+      "auc_pct": 54.039561389945014,
+      "n": 22857,
+      "evidence": "DINGREPRO_LIN/results/eval_ding_protocol/base_s27_ep49_dfdc.json",
+      "sha256": "090cc60b6aae5b9304ab987e2dd633fa5ea5f6b9c0874e72ca3138a3c14a7c89"
+    },
+    {
+      "dataset": "dfdc",
+      "method": "historical archived released GDA/SFD",
+      "seed": 7,
+      "epoch": 49,
+      "auc_pct": 56.04677875247086,
+      "n": 22857,
+      "evidence": "DINGREPRO_LIN/results/eval_ding_protocol/full_s7_ep49_dfdc.json",
+      "sha256": "768a8edda93fbfe6620d7676f827640d2cefef7a869606671ba3740fa12076bc"
+    },
+    {
+      "dataset": "celebdf",
+      "method": "historical archived classification baseline",
+      "seed": 7,
+      "epoch": 49,
+      "auc_pct": 56.94189689052867,
+      "n": 28458,
+      "evidence": "DINGREPRO_LIN/results/eval_ding_protocol/base_s7_ep49_celebdf.json",
+      "sha256": "091e935f3ce3afc68516aa19a7396e32d99276170fe622a6e7d749a0ae748c3a"
+    },
+    {
+      "dataset": "celebdf",
+      "method": "historical archived classification baseline",
+      "seed": 17,
+      "epoch": 49,
+      "auc_pct": 69.15931381329318,
+      "n": 28458,
+      "evidence": "DINGREPRO_LIN/results/eval_ding_protocol/base_s17_ep49_celebdf.json",
+      "sha256": "6ef261def0bd003a3d2b2c8c8af0149feb2b5c4aad816d4f1b4e7c5af2ca774e"
+    },
+    {
+      "dataset": "celebdf",
+      "method": "historical archived classification baseline",
+      "seed": 27,
+      "epoch": 49,
+      "auc_pct": 75.32451028124547,
+      "n": 28458,
+      "evidence": "DINGREPRO_LIN/results/eval_ding_protocol/base_s27_ep49_celebdf.json",
+      "sha256": "c625ef51e7c6e767d76ece3f1561ce322466c7a5bac822b547cf20d0e0f1014a"
+    },
+    {
+      "dataset": "celebdf",
+      "method": "historical archived released GDA/SFD",
+      "seed": 7,
+      "epoch": 49,
+      "auc_pct": 71.21955698990286,
+      "n": 28458,
+      "evidence": "DINGREPRO_LIN/results/eval_ding_protocol/full_s7_ep49_celebdf.json",
+      "sha256": "c33a6d1884b0c82dfddc7b539dc500dc0c12efc521ee5fa7557d932e271c15b3"
+    },
+    {
+      "dataset": "dfd",
+      "method": "historical archived classification baseline",
+      "seed": 7,
+      "epoch": 49,
+      "auc_pct": 57.19355362916845,
+      "n": 9385,
+      "evidence": "DINGREPRO_LIN/results/eval_ding_protocol/base_s7_ep49_dfd.json",
+      "sha256": "e1c95f6cb65be6bd92f2c6210e99030c93021772b6a2200aa7ad1b01069846ba"
+    },
+    {
+      "dataset": "dfd",
+      "method": "historical archived classification baseline",
+      "seed": 17,
+      "epoch": 49,
+      "auc_pct": 68.00797062137461,
+      "n": 9385,
+      "evidence": "DINGREPRO_LIN/results/eval_ding_protocol/base_s17_ep49_dfd.json",
+      "sha256": "3beb26b88bb61a6497b4b38e1a89259889d735428d900004d01d094f38465d80"
+    },
+    {
+      "dataset": "dfd",
+      "method": "historical archived classification baseline",
+      "seed": 27,
+      "epoch": 49,
+      "auc_pct": 75.21098310634477,
+      "n": 9385,
+      "evidence": "DINGREPRO_LIN/results/eval_ding_protocol/base_s27_ep49_dfd.json",
+      "sha256": "33cb80240436400deb903615defbff3d6a4ae6a6154e319aaa1217953d8c6e86"
+    },
+    {
+      "dataset": "dfd",
+      "method": "historical archived released GDA/SFD",
+      "seed": 7,
+      "epoch": 49,
+      "auc_pct": 72.5373518163984,
+      "n": 9385,
+      "evidence": "DINGREPRO_LIN/results/eval_ding_protocol/full_s7_ep49_dfd.json",
+      "sha256": "cae14a2a70bf6e035cdf52e4dc4699e67caa3b9588371aa580b4e5162765769a"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "observed_management_utc": "2026-11-03T05:47:41.519122+00:00",
+  "source_sha256": "0eeafd838da3ca158336dcfe3b8195842dd15bc9fecd67ebbaf2ea03ba3c2680",
+  "model_computations": "CES-FL initialization only, CPU; no Ding model",
+  "optimizer_steps": 0,
+  "results": {
+    "E_support": {
+      "head_gate_fusion_state_sha256": "9a2c7205137621701dc38d059a8d51291cbc90af21910fa1b5ce9a958dd5b438",
+      "encoder_state_sha256": "ebab81dad9871d8fba181b94557a6fb638488015cf7325f532cc3d888973cc8b",
+      "parameters": {
+        "total": 21594159,
+        "trainable": 7575591
+      }
+    },
+    "F_support_ramp3": {
+      "head_gate_fusion_state_sha256": "9a2c7205137621701dc38d059a8d51291cbc90af21910fa1b5ce9a958dd5b438",
+      "encoder_state_sha256": "ebab81dad9871d8fba181b94557a6fb638488015cf7325f532cc3d888973cc8b",
+      "parameters": {
+        "total": 21594159,
+        "trainable": 7575591
+      }
+    },
+    "original_CESFL_control_initializer": {
+      "head_gate_fusion_state_sha256": "9a2c7205137621701dc38d059a8d51291cbc90af21910fa1b5ce9a958dd5b438",
+      "encoder_state_sha256": "ebab81dad9871d8fba181b94557a6fb638488015cf7325f532cc3d888973cc8b",
+      "parameters": {
+        "total": 21594159,
+        "trainable": 7575591
+      }
+    }
+  }
+}

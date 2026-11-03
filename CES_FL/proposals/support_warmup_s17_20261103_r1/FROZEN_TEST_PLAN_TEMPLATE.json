@@ -1,0 +1,43 @@
+{
+  "status": "PREPARED_NOT_AUTHORIZED_TO_RUN_AUTOMATICALLY",
+  "seed": 17,
+  "development_dataset": "FF++ TRAIN/VAL only",
+  "final_checkpoint_sha256": null,
+  "automatic_test_evaluation": false,
+  "external_test_as_validation": false,
+  "protocol_equivalence_limitations": [
+    "non-DFDC author row membership unavailable",
+    "paper compression/initialization/selection/staging incompletely resolved",
+    "CES-FL head/optimizer/BN/exposure differ",
+    "ResNet50 current model unsupported"
+  ],
+  "historical_test_exposure_disclosed": true,
+  "benchmark_paths_from_archive": {
+    "ff++": {
+      "path": "/home/sachin.chaudhary/ces_fl_sources/cesfl-support-warmup-s17-20261103/DINGREPRO_LIN/data/ff++/test.csv",
+      "exists": true,
+      "opened": false
+    },
+    "dfdc": {
+      "path": "/home/sachin.chaudhary/ces_fl_sources/cesfl-support-warmup-s17-20261103/DINGREPRO_LIN/data/dfdc/test.csv",
+      "exists": true,
+      "opened": false
+    },
+    "celebdf": {
+      "path": "/home/sachin.chaudhary/ces_fl_sources/cesfl-support-warmup-s17-20261103/DINGREPRO_LIN/data/celebdf/test.csv",
+      "exists": true,
+      "opened": false
+    },
+    "dfd": {
+      "path": "/home/sachin.chaudhary/ces_fl_sources/cesfl-support-warmup-s17-20261103/DINGREPRO_LIN/data/dfd/test.csv",
+      "exists": true,
+      "opened": false
+    }
+  },
+  "required_before_test": [
+    "freeze final model/config/checkpoint and table plan",
+    "explicit current fit:test provenance/content audit",
+    "frozen VAL-calibrated threshold plus fixed0.5",
+    "no subsequent method selection against TEST"
+  ]
+}

@@ -1,0 +1,650 @@
+{
+  "status": "PASS",
+  "scientific_source_sha256": "0eeafd838da3ca158336dcfe3b8195842dd15bc9fecd67ebbaf2ea03ba3c2680",
+  "config_digest": "e93f752d9555bc1d891777177500ab6b4013cdac2b3133d33d6bb306992c8848",
+  "images_decoded": false,
+  "test_read": false,
+  "train_support": {
+    "gender": {
+      "Female": {
+        "0": {
+          "rows": 7148,
+          "recorded_tuples": 332,
+          "sum_original_BCE_weights": 18377.87109375
+        },
+        "1": {
+          "rows": 35442,
+          "recorded_tuples": 183,
+          "sum_original_BCE_weights": 18446.5625
+        }
+      },
+      "Male": {
+        "0": {
+          "rows": 5778,
+          "recorded_tuples": 270,
+          "sum_original_BCE_weights": 19691.626953125
+        },
+        "1": {
+          "rows": 27771,
+          "recorded_tuples": 131,
+          "sum_original_BCE_weights": 19622.935546875
+        }
+      }
+    },
+    "race": {
+      "Asian": {
+        "0": {
+          "rows": 1992,
+          "recorded_tuples": 95,
+          "sum_original_BCE_weights": 7164.8037109375
+        },
+        "1": {
+          "rows": 8496,
+          "recorded_tuples": 83,
+          "sum_original_BCE_weights": 5758.6015625
+        }
+      },
+      "Black": {
+        "0": {
+          "rows": 450,
+          "recorded_tuples": 20,
+          "sum_original_BCE_weights": 1066.7288818359375
+        },
+        "1": {
+          "rows": 2129,
+          "recorded_tuples": 19,
+          "sum_original_BCE_weights": 1374.271728515625
+        }
+      },
+      "Others": {
+        "0": {
+          "rows": 839,
+          "recorded_tuples": 41,
+          "sum_original_BCE_weights": 2564.37255859375
+        },
+        "1": {
+          "rows": 5509,
+          "recorded_tuples": 84,
+          "sum_original_BCE_weights": 3875.82080078125
+        }
+      },
+      "White": {
+        "0": {
+          "rows": 9645,
+          "recorded_tuples": 446,
+          "sum_original_BCE_weights": 27273.595703125
+        },
+        "1": {
+          "rows": 47079,
+          "recorded_tuples": 266,
+          "sum_original_BCE_weights": 27060.8046875
+        }
+      }
+    },
+    "age_bin": {
+      "30-44": {
+        "0": {
+          "rows": 3616,
+          "recorded_tuples": 173,
+          "sum_original_BCE_weights": 13582.736328125
+        },
+        "1": {
+          "rows": 15683,
+          "recorded_tuples": 178,
+          "sum_original_BCE_weights": 11350.26171875
+        }
+      },
+      "45-59": {
+        "0": {
+          "rows": 1532,
+          "recorded_tuples": 70,
+          "sum_original_BCE_weights": 4543.10791015625
+        },
+        "1": {
+          "rows": 7374,
+          "recorded_tuples": 76,
+          "sum_original_BCE_weights": 4201.82568359375
+        }
+      },
+      "60+": {
+        "0": {
+          "rows": 448,
+          "recorded_tuples": 18,
+          "sum_original_BCE_weights": 967.234130859375
+        },
+        "1": {
+          "rows": 1079,
+          "recorded_tuples": 13,
+          "sum_original_BCE_weights": 537.5736694335938
+        }
+      },
+      "<30": {
+        "0": {
+          "rows": 7330,
+          "recorded_tuples": 341,
+          "sum_original_BCE_weights": 18976.421875
+        },
+        "1": {
+          "rows": 39077,
+          "recorded_tuples": 265,
+          "sum_original_BCE_weights": 21979.8359375
+        }
+      }
+    },
+    "skin_bin": {
+      "0": {
+        "0": {
+          "rows": 3062,
+          "recorded_tuples": 146,
+          "sum_original_BCE_weights": 9197.142578125
+        },
+        "1": {
+          "rows": 16272,
+          "recorded_tuples": 160,
+          "sum_original_BCE_weights": 9955.81640625
+        }
+      },
+      "1": {
+        "0": {
+          "rows": 3140,
+          "recorded_tuples": 145,
+          "sum_original_BCE_weights": 8973.4326171875
+        },
+        "1": {
+          "rows": 15417,
+          "recorded_tuples": 176,
+          "sum_original_BCE_weights": 9419.78515625
+        }
+      },
+      "2": {
+        "0": {
+          "rows": 3079,
+          "recorded_tuples": 145,
+          "sum_original_BCE_weights": 9255.763671875
+        },
+        "1": {
+          "rows": 14511,
+          "recorded_tuples": 170,
+          "sum_original_BCE_weights": 8953.62109375
+        }
+      },
+      "3": {
+        "0": {
+          "rows": 3395,
+          "recorded_tuples": 146,
+          "sum_original_BCE_weights": 9464.916015625
+        },
+        "1": {
+          "rows": 16062,
+          "recorded_tuples": 138,
+          "sum_original_BCE_weights": 9164.701171875
+        }
+      }
+    },
+    "gender_race": {
+      "Female-Asian": {
+        "0": {
+          "rows": 1506,
+          "recorded_tuples": 64,
+          "sum_original_BCE_weights": 4985.197265625
+        },
+        "1": {
+          "rows": 6507,
+          "recorded_tuples": 65,
+          "sum_original_BCE_weights": 4020.869140625
+        }
+      },
+      "Female-Black": {
+        "0": {
+          "rows": 182,
+          "recorded_tuples": 9,
+          "sum_original_BCE_weights": 317.129638671875
+        },
+        "1": {
+          "rows": 929,
+          "recorded_tuples": 11,
+          "sum_original_BCE_weights": 707.460205078125
+        }
+      },
+      "Female-Others": {
+        "0": {
+          "rows": 270,
+          "recorded_tuples": 14,
+          "sum_original_BCE_weights": 473.9526062011719
+        },
+        "1": {
+          "rows": 1915,
+          "recorded_tuples": 36,
+          "sum_original_BCE_weights": 917.878662109375
+        }
+      },
+      "Female-White": {
+        "0": {
+          "rows": 5190,
+          "recorded_tuples": 245,
+          "sum_original_BCE_weights": 12601.5947265625
+        },
+        "1": {
+          "rows": 26091,
+          "recorded_tuples": 154,
+          "sum_original_BCE_weights": 12800.357421875
+        }
+      },
+      "Male-Asian": {
+        "0": {
+          "rows": 486,
+          "recorded_tuples": 31,
+          "sum_original_BCE_weights": 2179.606689453125
+        },
+        "1": {
+          "rows": 1989,
+          "recorded_tuples": 19,
+          "sum_original_BCE_weights": 1737.7330322265625
+        }
+      },
+      "Male-Black": {
+        "0": {
+          "rows": 268,
+          "recorded_tuples": 11,
+          "sum_original_BCE_weights": 749.5992431640625
+        },
+        "1": {
+          "rows": 1200,
+          "recorded_tuples": 10,
+          "sum_original_BCE_weights": 666.811279296875
+        }
+      },
+      "Male-Others": {
+        "0": {
+          "rows": 569,
+          "recorded_tuples": 27,
+          "sum_original_BCE_weights": 2090.419677734375
+        },
+        "1": {
+          "rows": 3594,
+          "recorded_tuples": 49,
+          "sum_original_BCE_weights": 2957.942138671875
+        }
+      },
+      "Male-White": {
+        "0": {
+          "rows": 4455,
+          "recorded_tuples": 201,
+          "sum_original_BCE_weights": 14672.0009765625
+        },
+        "1": {
+          "rows": 20988,
+          "recorded_tuples": 118,
+          "sum_original_BCE_weights": 14260.4501953125
+        }
+      }
+    }
+  },
+  "planned_epoch0_auxiliary_events": 595,
+  "planned_contributor_diversity_histogram": {
+    "gender:Female:0:U=4/n=4": 117,
+    "gender:Female:1:U=4/n=4": 117,
+    "gender:Male:0:U=4/n=4": 116,
+    "gender:Male:1:U=4/n=4": 116,
+    "race:Asian:0:U=4/n=4": 113,
+    "race:Asian:1:U=4/n=4": 109,
+    "race:Black:0:U=4/n=4": 85,
+    "race:Black:1:U=3/n=4": 29,
+    "race:Others:0:U=4/n=4": 93,
+    "race:Others:1:U=4/n=4": 107,
+    "race:White:0:U=4/n=4": 116,
+    "race:White:1:U=4/n=4": 118,
+    "age_bin:30-44:0:U=4/n=4": 110,
+    "age_bin:30-44:1:U=4/n=4": 114,
+    "age_bin:45-59:0:U=4/n=4": 109,
+    "age_bin:45-59:1:U=4/n=4": 110,
+    "age_bin:60+:0:U=4/n=4": 79,
+    "age_bin:60+:1:U=3/n=4": 53,
+    "age_bin:<30:0:U=4/n=4": 115,
+    "age_bin:<30:1:U=4/n=4": 116,
+    "skin_bin:0:0:U=4/n=4": 117,
+    "skin_bin:0:1:U=4/n=4": 110,
+    "skin_bin:1:0:U=4/n=4": 114,
+    "skin_bin:1:1:U=4/n=4": 116,
+    "skin_bin:2:0:U=4/n=4": 118,
+    "skin_bin:2:1:U=4/n=4": 114,
+    "skin_bin:3:0:U=4/n=4": 114,
+    "skin_bin:3:1:U=4/n=4": 109,
+    "gender_race:Female-Asian:0:U=4/n=4": 107,
+    "gender_race:Female-Asian:1:U=4/n=4": 105,
+    "gender_race:Female-Black:0:U=4/n=4": 31,
+    "gender_race:Female-Black:1:U=3/n=4": 53,
+    "gender_race:Female-Others:0:U=3/n=4": 49,
+    "gender_race:Female-Others:1:U=4/n=4": 85,
+    "gender_race:Female-White:0:U=4/n=4": 113,
+    "gender_race:Female-White:1:U=4/n=4": 111,
+    "gender_race:Male-Asian:0:U=4/n=4": 79,
+    "gender_race:Male-Asian:1:U=4/n=4": 90,
+    "gender_race:Male-Black:0:U=4/n=4": 53,
+    "gender_race:Male-Black:1:U=2/n=4": 5,
+    "gender_race:Male-Others:0:U=4/n=4": 87,
+    "gender_race:Male-Others:1:U=2/n=4": 1,
+    "gender_race:Male-White:0:U=3/n=4": 5,
+    "gender_race:Male-White:1:U=4/n=4": 116,
+    "race:Asian:1:U=3/n=4": 10,
+    "age_bin:60+:1:U=4/n=4": 58,
+    "gender_race:Female-Asian:1:U=3/n=4": 14,
+    "gender_race:Female-Black:0:U=3/n=4": 73,
+    "gender_race:Female-Black:1:U=4/n=4": 55,
+    "gender_race:Male-Asian:0:U=3/n=4": 38,
+    "gender_race:Male-Black:1:U=4/n=4": 63,
+    "gender_race:Male-Others:1:U=4/n=4": 99,
+    "gender_race:Male-White:0:U=4/n=4": 114,
+    "race:Black:1:U=4/n=4": 81,
+    "race:Others:0:U=3/n=4": 26,
+    "gender_race:Female-Others:0:U=4/n=4": 66,
+    "gender_race:Male-Black:0:U=3/n=4": 56,
+    "gender_race:Male-Others:0:U=3/n=4": 32,
+    "race:Black:0:U=3/n=4": 29,
+    "age_bin:45-59:0:U=2/n=4": 1,
+    "age_bin:60+:0:U=3/n=4": 39,
+    "age_bin:60+:1:U=2/n=4": 8,
+    "skin_bin:0:1:U=3/n=4": 9,
+    "gender_race:Female-Others:0:U=2/n=4": 4,
+    "age_bin:30-44:1:U=3/n=4": 5,
+    "gender_race:Female-Asian:0:U=3/n=4": 12,
+    "gender_race:Male-Black:1:U=3/n=4": 51,
+    "gender_race:Female-White:0:U=3/n=4": 6,
+    "skin_bin:0:0:U=3/n=4": 2,
+    "gender_race:Male-Asian:1:U=3/n=4": 28,
+    "gender_race:Female-Black:1:U=2/n=4": 10,
+    "gender:Male:1:U=3/n=4": 3,
+    "race:Asian:0:U=3/n=4": 6,
+    "race:Others:1:U=3/n=4": 12,
+    "gender_race:Female-Others:1:U=3/n=4": 32,
+    "gender_race:Male-Others:1:U=3/n=4": 19,
+    "age_bin:30-44:0:U=3/n=4": 9,
+    "age_bin:<30:0:U=3/n=4": 4,
+    "age_bin:45-59:1:U=3/n=4": 8,
+    "gender_race:Female-Black:0:U=2/n=4": 15,
+    "skin_bin:3:1:U=3/n=4": 10,
+    "age_bin:45-59:1:U=2/n=4": 1,
+    "gender_race:Female-Others:1:U=2/n=4": 2,
+    "race:Black:1:U=2/n=4": 9,
+    "race:White:1:U=2/n=4": 1,
+    "skin_bin:1:0:U=3/n=4": 5,
+    "skin_bin:1:1:U=3/n=4": 3,
+    "gender_race:Male-Asian:0:U=2/n=4": 2,
+    "gender_race:Male-Asian:1:U=2/n=4": 1,
+    "race:Black:0:U=2/n=4": 5,
+    "gender_race:Male-Black:0:U=2/n=4": 10,
+    "race:White:0:U=3/n=4": 3,
+    "age_bin:60+:0:U=2/n=4": 1,
+    "gender_race:Female-White:1:U=3/n=4": 8,
+    "gender:Male:0:U=3/n=4": 3,
+    "age_bin:<30:1:U=3/n=4": 3,
+    "gender:Female:1:U=3/n=4": 2,
+    "age_bin:45-59:0:U=3/n=4": 9,
+    "skin_bin:2:1:U=3/n=4": 5,
+    "skin_bin:3:0:U=3/n=4": 5,
+    "gender:Female:0:U=3/n=4": 2,
+    "skin_bin:2:0:U=3/n=4": 1,
+    "gender_race:Male-White:1:U=3/n=4": 3,
+    "gender_race:Female-Black:1:U=1/n=4": 1
+  },
+  "validation_components": {
+    "number": 209,
+    "largest_rows": 360,
+    "largest_fraction": 0.014181044670290712,
+    "top10_sizes": [
+      360,
+      359,
+      359,
+      359,
+      359,
+      358,
+      358,
+      358,
+      358,
+      358
+    ],
+    "group_class_support": {
+      "gender": {
+        "Female": {
+          "0": {
+            "rows": 2147,
+            "components_with_rows": 110
+          },
+          "1": {
+            "rows": 10957,
+            "components_with_rows": 57
+          }
+        },
+        "Male": {
+          "0": {
+            "rows": 1945,
+            "components_with_rows": 92
+          },
+          "1": {
+            "rows": 10337,
+            "components_with_rows": 47
+          }
+        }
+      },
+      "race": {
+        "Asian": {
+          "0": {
+            "rows": 627,
+            "components_with_rows": 34
+          },
+          "1": {
+            "rows": 2886,
+            "components_with_rows": 23
+          }
+        },
+        "Black": {
+          "0": {
+            "rows": 120,
+            "components_with_rows": 8
+          },
+          "1": {
+            "rows": 510,
+            "components_with_rows": 6
+          }
+        },
+        "Others": {
+          "0": {
+            "rows": 328,
+            "components_with_rows": 18
+          },
+          "1": {
+            "rows": 1980,
+            "components_with_rows": 30
+          }
+        },
+        "White": {
+          "0": {
+            "rows": 3017,
+            "components_with_rows": 159
+          },
+          "1": {
+            "rows": 15918,
+            "components_with_rows": 85
+          }
+        }
+      },
+      "age_bin": {
+        "30-44": {
+          "0": {
+            "rows": 1301,
+            "components_with_rows": 67
+          },
+          "1": {
+            "rows": 6200,
+            "components_with_rows": 61
+          }
+        },
+        "45-59": {
+          "0": {
+            "rows": 511,
+            "components_with_rows": 29
+          },
+          "1": {
+            "rows": 2398,
+            "components_with_rows": 24
+          }
+        },
+        "60+": {
+          "0": {
+            "rows": 63,
+            "components_with_rows": 6
+          },
+          "1": {
+            "rows": 240,
+            "components_with_rows": 4
+          }
+        },
+        "<30": {
+          "0": {
+            "rows": 2217,
+            "components_with_rows": 119
+          },
+          "1": {
+            "rows": 12456,
+            "components_with_rows": 88
+          }
+        }
+      },
+      "skin_bin": {
+        "0": {
+          "0": {
+            "rows": 1161,
+            "components_with_rows": 68
+          },
+          "1": {
+            "rows": 7027,
+            "components_with_rows": 70
+          }
+        },
+        "1": {
+          "0": {
+            "rows": 1010,
+            "components_with_rows": 50
+          },
+          "1": {
+            "rows": 5105,
+            "components_with_rows": 62
+          }
+        },
+        "2": {
+          "0": {
+            "rows": 1063,
+            "components_with_rows": 67
+          },
+          "1": {
+            "rows": 5069,
+            "components_with_rows": 61
+          }
+        },
+        "3": {
+          "0": {
+            "rows": 798,
+            "components_with_rows": 51
+          },
+          "1": {
+            "rows": 3764,
+            "components_with_rows": 42
+          }
+        },
+        "unknown": {
+          "0": {
+            "rows": 60,
+            "components_with_rows": 4
+          },
+          "1": {
+            "rows": 329,
+            "components_with_rows": 6
+          }
+        }
+      },
+      "gender_race": {
+        "Female-Asian": {
+          "0": {
+            "rows": 275,
+            "components_with_rows": 20
+          },
+          "1": {
+            "rows": 1153,
+            "components_with_rows": 13
+          }
+        },
+        "Female-Black": {
+          "0": {
+            "rows": 30,
+            "components_with_rows": 2
+          },
+          "1": {
+            "rows": 120,
+            "components_with_rows": 2
+          }
+        },
+        "Female-Others": {
+          "0": {
+            "rows": 89,
+            "components_with_rows": 4
+          },
+          "1": {
+            "rows": 810,
+            "components_with_rows": 13
+          }
+        },
+        "Female-White": {
+          "0": {
+            "rows": 1753,
+            "components_with_rows": 90
+          },
+          "1": {
+            "rows": 8874,
+            "components_with_rows": 49
+          }
+        },
+        "Male-Asian": {
+          "0": {
+            "rows": 352,
+            "components_with_rows": 14
+          },
+          "1": {
+            "rows": 1733,
+            "components_with_rows": 12
+          }
+        },
+        "Male-Black": {
+          "0": {
+            "rows": 90,
+            "components_with_rows": 6
+          },
+          "1": {
+            "rows": 390,
+            "components_with_rows": 4
+          }
+        },
+        "Male-Others": {
+          "0": {
+            "rows": 239,
+            "components_with_rows": 14
+          },
+          "1": {
+            "rows": 1170,
+            "components_with_rows": 19
+          }
+        },
+        "Male-White": {
+          "0": {
+            "rows": 1264,
+            "components_with_rows": 69
+          },
+          "1": {
+            "rows": 7044,
+            "components_with_rows": 39
+          }
+        }
+      }
+    }
+  },
+  "warning": "Recorded contributor components/tuples do not certify biological independence; histograms are plans, not consumed training exposures"
+}

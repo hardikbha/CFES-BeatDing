@@ -1,0 +1,18 @@
+{
+  "operator_commit": "85df9fa2a86a78891f6f059c7b272bbc36779c19",
+  "scientific_commit": "8d5f0996a3f1cc02fbeaff9d25c1d95f714e8e77",
+  "scientific_source_sha256": "0eeafd838da3ca158336dcfe3b8195842dd15bc9fecd67ebbaf2ea03ba3c2680",
+  "frozen_runtime_sha256": {
+    "/home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/runtime/run_support_warmup.py": "eb7128c5382a1d621e4ff9711915ade4b460c20cc23503dac4c2b955f0e42c28",
+    "/home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/runtime/diagnose_support_warmup.py": "1cdad43b13ea14f3182495ea9181f3c746ec52af82dea9cd3f0f38a7bc35e182",
+    "/home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/runtime/support_metadata_diagnostics.py": "39a431205af0aa5ecb099e9980aa8f701cfb8e4a78937d417a17d83f3ef0fa98"
+  },
+  "created_management_utc": "2026-11-03T05:34:03.094000+00:00",
+  "no_ding_execution": true,
+  "no_ff2_execution": true,
+  "operator_v2": {
+    "commit": "ec4305731c4498ff51fbec725dc3810e07dfd996",
+    "script": "/home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/runtime/run_support_warmup_v2.py",
+    "sha256": "b964c19b3d0374761f6dbc7e5d3d79af9faa888cf9f1f6711ad1e7862593bf13"
+  }
+}

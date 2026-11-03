@@ -1,0 +1,20 @@
+{
+  "status": "FAILED_BEFORE_GPU_RESERVATION",
+  "command": {
+    "host": "gpu01",
+    "pid": 3355570,
+    "command": [
+      "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+      "-u",
+      "/home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/runtime/run_support_warmup.py",
+      "--task",
+      "smoke"
+    ],
+    "pbs_allocation_claimed": false
+  },
+  "error": "FileNotFoundError: [Errno2] No such file or directory: git",
+  "gpu_hours": 0.0,
+  "recovery": "Versioned pure-Python detachedHEAD/source hash verification plus launch-host clean-checkout receipt; no scientific source change",
+  "operator_v2_commit": "ec4305731c4498ff51fbec725dc3810e07dfd996",
+  "operator_v2_sha256": "b964c19b3d0374761f6dbc7e5d3d79af9faa888cf9f1f6711ad1e7862593bf13"
+}
