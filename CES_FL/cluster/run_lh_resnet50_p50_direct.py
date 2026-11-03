@@ -98,8 +98,19 @@ def query_gpu(uuid):
 
 def reserve_budget(budget, gpu):
     with budget.ledger() as data:
-        if any(s['id'] == SESSION_ID for s in data['gpu_sessions']):
-            raise RuntimeError('Duplicate P50 budget session exists; inspect before resuming')
+        existing = [s for s in data['gpu_sessions'] if s['id'] == SESSION_ID]
+        if existing:
+            row = existing[0]
+            if (row['state'] != 'QUEUED' or row['ngpus'] != 1
+                    or row['reserved_gpu_hours'] != RESERVED_GPU_HOURS
+                    or row.get('device_uuid') != gpu['uuid']
+                    or row.get('scientific_source_sha256') != EXPECTED_P50_SHA):
+                raise RuntimeError('Existing P50 reservation does not match this exact source/device/budget')
+            row.update(state='RUNNING', host=os.uname().nodename,
+                       controller_pid=os.getpid(), card=gpu,
+                       scientific_commit=subprocess.check_output(
+                           ['git', '-C', str(SOURCE), 'rev-parse', 'HEAD'], text=True).strip())
+            return
         committed = sum(s['reserved_gpu_hours'] if s['state'] in ('QUEUED', 'RUNNING')
                         else s.get('elapsed_seconds', 0) * s['ngpus'] / 3600
                         for s in data['gpu_sessions'])
