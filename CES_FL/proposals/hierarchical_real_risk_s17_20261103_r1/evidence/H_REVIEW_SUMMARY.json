@@ -1,0 +1,19 @@
+{
+  "observed_management_utc": "2026-11-03T09:16:04.854234+00:00",
+  "reviewer": "Codex AI visual reviewer; not a human annotator",
+  "cases": 88,
+  "approved_limited_procedural_recipe": 88,
+  "rejected": 0,
+  "uncertain_visual_recipe": 0,
+  "originals": 22,
+  "all22composites_actually_inspected": true,
+  "source_sha256": "2549cb1345d1e2ee617e8a77ca288a0acbbfd05cf480f7b91a46b8627fcb74b2",
+  "config_digest": "494137c89d5be613c11782a1ab7589052e734c77ed7dbb752906583f26d3c701",
+  "real_forgery_or_demographic_counterfactual_validity_proven": false,
+  "scope": "Representative visual qualification of unchanged local_warp/resample recipe; not per-image causal/human validation",
+  "limitations": [
+    "Pose, compression, blur, cosmetics and accessories can confound intervention difficulty",
+    "Labels inherited from manifest, not inferred or newly verified",
+    "No demographic edit bank or human approval fabricated"
+  ]
+}

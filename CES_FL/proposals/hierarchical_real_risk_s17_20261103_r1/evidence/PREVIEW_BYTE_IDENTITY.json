@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "cases": 88,
+  "originals": 22,
+  "all_case_pixels_settings_and_original_hashes_equal_to_E": true,
+  "comparison_scope": "Same existing procedural recipe; not an approval or causal-validity claim"
+}

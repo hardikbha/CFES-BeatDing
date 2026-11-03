@@ -1,0 +1,19 @@
+{
+  "status": "VERIFIED_FROM_LABELS_AND_COMPONENTS_ONLY",
+  "replicates": 1000,
+  "seed": 17,
+  "components": 209,
+  "primary_usable_replicates": 746,
+  "required_usable": 900,
+  "missing_cells": {
+    "Female-Black:0": 146,
+    "Female-Black:1": 138,
+    "Male-Black:1": 18,
+    "Female-Others:0": 17,
+    "Male-Black:0": 2
+  },
+  "model_scores_used_for_replicate_validity": false,
+  "no_new_model_inference": true,
+  "test_read": false,
+  "conclusion": "With fixed membership/eligibility/draws and finite scores, PASS is structurally unavailable under the retained90% rule. Point-target effects remain measurable; numerical success is at best INCONCLUSIVE. The rule is not relaxed."
+}

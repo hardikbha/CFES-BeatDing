@@ -1,0 +1,9 @@
+{
+  "stage": "Post-preview contact composition only",
+  "native_preview_status": "REVIEW_PENDING88cases; correctly completed in aiface",
+  "failed_default_environment": "/home/sachin.chaudhary/.conda/envs/internvl/bin/python",
+  "exception": "ImportError: cannot import name _imaging from PIL",
+  "fix": "Reran composition only in explicitly pinned aiface; no rerun/overwrite of native preview",
+  "gpu_hours": 0,
+  "training_launched": false
+}
