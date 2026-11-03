@@ -1,0 +1,21 @@
+{
+  "recorded_management_utc": "2026-11-03T13:33:53.970238+00:00",
+  "commit": "ee73f2fdf5218e440852917e90281818bbe711bb",
+  "pre_test_file_hashes": {
+    "CES_FL/proposals/lh_tables_ding10_s17_20261103T133000Z/README.md": "a57d28c6b47a53b8c00e70189a994322f6694ca36f7b9b4f1e770ba5495dab9b",
+    "CES_FL/proposals/lh_tables_ding10_s17_20261103T133000Z/protocol.json": "bf24220b5d2db3421ff67b708eb9283a01db7b89265bb3a3a226d8a4cc3c8bdd",
+    "CES_FL/proposals/lh_ding_matched_s17_20261103T125000Z/P_config.json": "809ef9096e3e0b20d572db43a666ef9ae0db8c7f3447ccf3a71cb1b76e279f7e",
+    "CES_FL/proposals/lh_ding_matched_s17_20261103T125000Z/A_template.json": "b66b2968a9e1492d740236acae90289bc8d1d08c2016cbc7723e4fc758d6c299",
+    "CES_FL/proposals/lh_ding_matched_s17_20261103T125000Z/H_template.json": "a3b1cec26ea743c7f859b76bf4fb994b503462b6941461251f624c6e08cb79a0"
+  },
+  "model_selection": "existing completed L_A earliest maximum VAL AUC epoch3; existing completed L_H earliest maximum VAL AUC epoch1",
+  "thresholds": "native source-validation global10% FPR; fixed probability0.5; neither selected on TEST",
+  "new_training_launched": false,
+  "training_work_orders": {
+    "Ding10": "AUTHORIZED_SCOPE_BUT_BLOCKED_IMPLEMENTATION_AND_BUDGET: separately named connected-gradient head-only SGD10epoch adaptation, never relabel archived detached GDA",
+    "ResNet50_LH": "BLOCKED_IMPLEMENTATION_AND_BUDGET: native ResNet P50 then matched A/H10, layer4, linear2048head, frozen BN, declared ImageNet normalization",
+    "convergence": "FROZEN_PROSPECTIVE_SPEC_BUT_BLOCKED_IMPLEMENTATION_AND_BUDGET: same10epochs/init/data/losses/seed/batch/AUCselection, multiply both rates by0.1+0.9*(1+cos(pi*e/9))/2, e0..9; no component-loss change"
+  },
+  "post_test_development_policy": "No implementation/configuration/checkpoint/threshold/loss-weight selection using these TEST outcomes. Any missing training-adapter design choice must be justified and frozen using prior TRAIN/VAL/source evidence, never the new TEST result.",
+  "ff2_72h_budget_reallocated": false
+}

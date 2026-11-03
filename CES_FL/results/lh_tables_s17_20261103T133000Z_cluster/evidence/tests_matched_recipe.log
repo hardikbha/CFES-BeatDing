@@ -1,0 +1,22 @@
+test_actual_xception_gradients_bn_and_parameter_counts (test_matched_recipe.MatchedRecipeTests.test_actual_xception_gradients_bn_and_parameter_counts) ... ok
+test_config_rejects_recipe_changes (test_matched_recipe.MatchedRecipeTests.test_config_rejects_recipe_changes) ... ok
+test_core_science_is_called_not_reimplemented (test_matched_recipe.MatchedRecipeTests.test_core_science_is_called_not_reimplemented) ... ok
+test_end_to_end_final_selection_transfer_resume_and_exposure (test_matched_recipe.MatchedRecipeTests.test_end_to_end_final_selection_transfer_resume_and_exposure) ... {"status": "PREFLIGHT_PASS", "train": 16, "val": 16}
+{"stage": "P", "epoch": 1, "auc": 0.28125, "seconds": 1.4729854110628366}
+{"stage": "P", "epoch": 2, "auc": 0.28125, "seconds": 1.5490689759608358}
+{"status": "PREFLIGHT_PASS", "train": 16, "val": 16}
+{"stage": "H", "epoch": 1, "auc": 0.28125, "seconds": 0.18171243811957538}
+{"stage": "H", "epoch": 2, "auc": 0.28125, "seconds": 0.2935398460831493}
+{"stage": "H", "epoch": 1, "auc": 0.28125, "seconds": 0.10769149684347212}
+{"stage": "H", "epoch": 2, "auc": 0.28125, "seconds": 0.2033644667826593}
+{"status": "PREFLIGHT_PASS", "train": 16, "val": 16}
+{"stage": "A", "epoch": 1, "auc": 0.28125, "seconds": 0.0790808848105371}
+{"stage": "A", "epoch": 2, "auc": 0.28125, "seconds": 0.15781058091670275}
+ok
+test_pair_units_partial_batch_and_reproducibility (test_matched_recipe.MatchedRecipeTests.test_pair_units_partial_batch_and_reproducibility) ... ok
+test_val_geometry_matches_torchvision (test_matched_recipe.MatchedRecipeTests.test_val_geometry_matches_torchvision) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 18.274s
+
+OK
