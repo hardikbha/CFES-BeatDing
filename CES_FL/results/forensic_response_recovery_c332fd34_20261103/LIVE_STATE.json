@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-03T06:48:15.140119+00:00",
+  "observed_management_utc": "2026-11-03T06:58:20.724799+00:00",
   "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
   "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
   "budget": {
@@ -7,8 +7,8 @@
     "source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-forensic-response-c332fd34",
     "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
     "initial_total_gpu_hours": 24,
-    "consumed_gpu_hours": 11.593162987847398,
-    "reserved_gpu_hours": 7.549281636328022,
+    "consumed_gpu_hours": 11.857003218661477,
+    "reserved_gpu_hours": 3.603798230688812,
     "gpu_sessions": [
       {
         "id": "ffpp_checks_primary",
@@ -292,7 +292,7 @@
         "id": "support_E_support",
         "ngpus": 1,
         "reserved_gpu_hours": 4.5,
-        "elapsed_seconds": 2611.0920404046774,
+        "elapsed_seconds": 3226.326369520277,
         "state": "RUNNING",
         "scientific_source_sha256": "0eeafd838da3ca158336dcfe3b8195842dd15bc9fecd67ebbaf2ea03ba3c2680",
         "scientific_commit": "8d5f0996a3f1cc02fbeaff9d25c1d95f714e8e77",
@@ -314,8 +314,8 @@
         "id": "support_F_support_ramp3",
         "ngpus": 1,
         "reserved_gpu_hours": 4.5,
-        "elapsed_seconds": 2611.4940688144416,
-        "state": "RUNNING",
+        "elapsed_seconds": 2946.084570629522,
+        "state": "COMPLETED",
         "scientific_source_sha256": "0eeafd838da3ca158336dcfe3b8195842dd15bc9fecd67ebbaf2ea03ba3c2680",
         "scientific_commit": "8d5f0996a3f1cc02fbeaff9d25c1d95f714e8e77",
         "route": "explicit_user_authorized_shared_pool_v2",
@@ -345,12 +345,6 @@
       "3372134": {
         "exists": true,
         "cmdline": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u -c import sys,torch,runpy,json,os;assert torch.cuda.is_available() and torch.cuda.device_count()==1 and torch.cuda.is_bf16_supported();assert 'H100' in torch.cuda.get_device_name(0);torch.cuda.set_per_process_memory_fraction(.16);print(json.dumps(dict(event='CUDA_BINDING',uuid=os.environ['CUDA_VISIBLE_DEVICES'],device=torch.cuda.get_device_name(0),bf16=True,torch=str(torch.__version__))),flush=True);sys.argv=sys.argv[1:];runpy.run_path(sys.argv[0],run_name='__main__') /home/sachin.chaudhary/ces_fl_sources/cesfl-support-warmup-execution-20261103/CES_FL/src/ces_fl_forensic_response.py train --config /home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/E_support/config.json --preflight /home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/E_support/preflight --arm D --device cuda --software-receipt /home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/software_cuda/SMOKE_RESULT.json --dry-run-receipt /home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/E_support/dry/DRY_RUN.json --qualification /home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/E_support/qualification.json --out /home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/E_support/training "
-      }
-    },
-    "gpu02": {
-      "347559": {
-        "exists": true,
-        "cmdline": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u -c import sys,torch,runpy,json,os;assert torch.cuda.is_available() and torch.cuda.device_count()==1 and torch.cuda.is_bf16_supported();assert 'H100' in torch.cuda.get_device_name(0);torch.cuda.set_per_process_memory_fraction(.16);print(json.dumps(dict(event='CUDA_BINDING',uuid=os.environ['CUDA_VISIBLE_DEVICES'],device=torch.cuda.get_device_name(0),bf16=True,torch=str(torch.__version__))),flush=True);sys.argv=sys.argv[1:];runpy.run_path(sys.argv[0],run_name='__main__') /home/sachin.chaudhary/ces_fl_sources/cesfl-support-warmup-execution-20261103/CES_FL/src/ces_fl_forensic_response.py train --config /home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/F_support_ramp3/config.json --preflight /home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/F_support_ramp3/preflight --arm D --device cuda --software-receipt /home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/software_cuda/SMOKE_RESULT.json --dry-run-receipt /home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/F_support_ramp3/dry/DRY_RUN.json --qualification /home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/F_support_ramp3/qualification.json --out /home/sachin.chaudhary/ces_fl_runs/support_warmup_s17_20261103_r1/F_support_ramp3/training "
       }
     }
   },
