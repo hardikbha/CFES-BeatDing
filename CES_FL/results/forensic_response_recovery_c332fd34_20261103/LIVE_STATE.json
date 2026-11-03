@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-03T19:27:19.823825+00:00",
+  "observed_management_utc": "2026-11-03T19:38:16.592772+00:00",
   "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
   "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
   "budget": {
@@ -7,8 +7,8 @@
     "source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-forensic-response-c332fd34",
     "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
     "initial_total_gpu_hours": 24,
-    "consumed_gpu_hours": 16.86106749820523,
-    "reserved_gpu_hours": 0.9706858776758115,
+    "consumed_gpu_hours": 17.286613496733413,
+    "reserved_gpu_hours": 0,
     "gpu_sessions": [
       {
         "id": "ffpp_checks_primary",
@@ -503,8 +503,8 @@
         "id": "lh_sham_noalign_s17_20261103_SHAM_FIX",
         "ngpus": 1,
         "reserved_gpu_hours": 1.5,
-        "elapsed_seconds": 1905.5308403670788,
-        "state": "RUNNING",
+        "elapsed_seconds": 2361.1078784503043,
+        "state": "COMPLETED",
         "scientific_commit": "35ffbd21cc6a033f9b9bf4cb1f92f5e417debe8d",
         "scientific_source_sha256": "1b6dc1b0e6d2b2220da897500a4d1bffb7764280df642abf6befdd1cf511ed01",
         "route": "PBS_ngpus1_plus_prior_explicit_authorized_pool_v2_UUID",
@@ -546,6 +546,16 @@
         },
         "log": "/home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/NO_ALIGN/allocation.log",
         "child_pid": 3834160
+      },
+      {
+        "id": "lh_sham_noalign_s17_20261103_pbs_unattributed_allocation",
+        "state": "COMPLETED",
+        "ngpus": 1,
+        "reserved_gpu_hours": 0.0,
+        "elapsed_seconds": 1076.3885566182435,
+        "pbs_job_id": "45361.mgmt01",
+        "accounting": "2*PBS resources_used.walltime minus sum per-arm monotonic allocation times; includes early-finished arm held allocation and PBS bookends",
+        "original_arm_receipts_preserved": true
       }
     ],
     "prior_study_ledger": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_9030dd77_20261103/budget_ledger.json",
@@ -555,14 +565,7 @@
     "state": "ACTIVE_BUDGET_LEDGER; execution state is in per-session records and COORDINATOR_STATUS.json",
     "route_override": "Explicit user-authorized direct SSH with pool-v2 leases; no PBS allocation claimed"
   },
-  "actual_process_observations": {
-    "gpu01": {
-      "3834165": {
-        "exists": true,
-        "cmdline": "bash /home/sachin.chaudhary/ces_fl_sources/cesfl-lh-sham-noalign-cohort10-execution-20261104/CES_FL/proposals/lh_sham_noalign_s17_20261103T165600Z/commands.sh SHAM_FIX gpu "
-      }
-    }
-  },
+  "actual_process_observations": {},
   "datasets": {
     "ffpp": {
       "root": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_overlapfix_20261103_r1_ffpp_s17",
