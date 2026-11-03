@@ -1,0 +1,10 @@
+{
+  "command": [
+    "qsub",
+    "-h",
+    "/home/sachin.chaudhary/ces_fl_sources/cesfl-lh-sham-noalign-execution-20261103/CES_FL/proposals/lh_sham_noalign_s17_20261103T165600Z/SHAM_FIX.pbs"
+  ],
+  "returncode": 0,
+  "stdout": "45350.mgmt01\n",
+  "stderr": ""
+}

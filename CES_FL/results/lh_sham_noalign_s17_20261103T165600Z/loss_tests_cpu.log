@@ -1,0 +1,11 @@
+test_difference_transform_is_offset_invariant_and_nonzero (__main__.LossAblations.test_difference_transform_is_offset_invariant_and_nonzero) ... ok
+test_legacy_losses_and_gradients_bitwise_identical (__main__.LossAblations.test_legacy_losses_and_gradients_bitwise_identical) ... ok
+test_no_align_has_exactly_zero_alignment_gradient (__main__.LossAblations.test_no_align_has_exactly_zero_alignment_gradient) ... ok
+test_other_functions_ast_unchanged (__main__.LossAblations.test_other_functions_ast_unchanged) ... ok
+test_sham_fix_both_terms_and_only_terms (__main__.LossAblations.test_sham_fix_both_terms_and_only_terms) ... ok
+test_zero_only_alignment_and_invalid_values_rejected (__main__.LossAblations.test_zero_only_alignment_and_invalid_values_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.262s
+
+OK

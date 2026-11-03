@@ -1,0 +1,148 @@
+{
+  "observed_management_utc": "2026-11-03T17:15:47.330977+00:00",
+  "execution_commit": "35ffbd21cc6a033f9b9bf4cb1f92f5e417debe8d",
+  "source_sha256": "1b6dc1b0e6d2b2220da897500a4d1bffb7764280df642abf6befdd1cf511ed01",
+  "arms": {
+    "SHAM_FIX": {
+      "job_id": "45350.mgmt01",
+      "scheduler_state": "H",
+      "scheduler_observation": {
+        "Job_Name": "lhSHAM17",
+        "Job_Owner": "sachin.chaudhary@mgmt01.head.cm.ddn.upes.ac.in",
+        "job_state": "H",
+        "queue": "workq",
+        "server": "mgmt01",
+        "Checkpoint": "u",
+        "ctime": "Tue Nov  3 22:44:08 2026",
+        "Error_Path": "mgmt01.head.cm.ddn.upes.ac.in:/home/sachin.chaudhary/lhSHAM17.e45350",
+        "Hold_Types": "u",
+        "Join_Path": "oe",
+        "Keep_Files": "n",
+        "Mail_Points": "a",
+        "mtime": "Tue Nov  3 22:44:08 2026",
+        "Output_Path": "mgmt01.head.cm.ddn.upes.ac.in:/home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/SHAM_FIX/allocation.log",
+        "Priority": 0,
+        "qtime": "Tue Nov  3 22:44:08 2026",
+        "Rerunable": "True",
+        "Resource_List": {
+          "mem": "32gb",
+          "ncpus": 6,
+          "ngpus": 1,
+          "nodect": 1,
+          "place": "free",
+          "select": "1:host=gpu01:ncpus=6:ngpus=1:mem=32gb",
+          "walltime": "01:35:00"
+        },
+        "substate": 20,
+        "Variable_List": {
+          "PBS_O_HOME": "/home/sachin.chaudhary",
+          "PBS_O_LANG": "C.UTF-8",
+          "PBS_O_LOGNAME": "sachin.chaudhary",
+          "PBS_O_PATH": "/home/sachin.chaudhary/.codex/packages/app-server-daemon/releases/0.166.0-x86_64-unknown-linux-musl/codex-path:/home/sachin.chaudhary/.codex/tmp/arg0-linux/codex-arg0zuHW5S:/home/sachin.chaudhary/.codex/tmp/arg0-linux/codex-arg0yaSRfl:/home/sachin.chaudhary/.codex/packages/app-server-daemon/releases/0.165.0-x86_64-unknown-linux-musl/codex-path:/home/sachin.chaudhary/.codex/tmp/arg0-linux/codex-arg0x8Wj92:/home/sachin.chaudhary/.codex/packages/app-server-daemon/releases/0.164.0-x86_64-unknown-linux-musl/codex-path:/home/sachin.chaudhary/.codex/tmp/arg0-linux/codex-arg00GMgZZ:/home/sachin.chaudhary/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/sachin.chaudhary/.codex/tmp/arg0/codex-arg0ml0Jy5:/home/sachin.chaudhary/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path:/home/sachin.chaudhary/.codex/tmp/arg0/codex-arg0grURfa:/home/sachin.chaudhary/.conda/envs/internvl/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path:/home/sachin.chaudhary/.antigravity-ide-server/bin/2.5.5-ecfbad74d93962fc8ca485d93ab9b4f3d4cb6cf8/bin/remote-cli:/home/sachin.chaudhary/.conda/envs/internvl/bin:/home/soft/anaconda3/condabin:/usr/local/texlive/2025/bin/x86_64-linux:/usr/share/Modules/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/pbs/bin",
+          "PBS_O_MAIL": "/var/spool/mail/sachin.chaudhary",
+          "PBS_O_SHELL": "/bin/sh",
+          "PBS_O_WORKDIR": "/home/sachin.chaudhary",
+          "PBS_O_SYSTEM": "Linux",
+          "PBS_O_QUEUE": "workq",
+          "PBS_O_HOST": "mgmt01.head.cm.ddn.upes.ac.in"
+        },
+        "Submit_arguments": "-h /home/sachin.chaudhary/ces_fl_sources/cesfl-lh-sham-noalign-execution-20261103/CES_FL/proposals/lh_sham_noalign_s17_20261103T165600Z/SHAM_FIX.pbs",
+        "project": "_pbs_project_default",
+        "Submit_Host": "mgmt01.head.cm.ddn.upes.ac.in"
+      },
+      "completed_epochs": 0,
+      "history": [],
+      "paths": {
+        "root": "/home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/SHAM_FIX",
+        "training_log": "/home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/SHAM_FIX/train.log"
+      },
+      "receipts": {}
+    },
+    "NO_ALIGN": {
+      "job_id": "45351.mgmt01",
+      "scheduler_state": "H",
+      "scheduler_observation": {
+        "Job_Name": "lhNO_A17",
+        "Job_Owner": "sachin.chaudhary@mgmt01.head.cm.ddn.upes.ac.in",
+        "job_state": "H",
+        "queue": "workq",
+        "server": "mgmt01",
+        "Checkpoint": "u",
+        "ctime": "Tue Nov  3 22:44:08 2026",
+        "Error_Path": "mgmt01.head.cm.ddn.upes.ac.in:/home/sachin.chaudhary/lhNO_A17.e45351",
+        "Hold_Types": "u",
+        "Join_Path": "oe",
+        "Keep_Files": "n",
+        "Mail_Points": "a",
+        "mtime": "Tue Nov  3 22:44:08 2026",
+        "Output_Path": "mgmt01.head.cm.ddn.upes.ac.in:/home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/NO_ALIGN/allocation.log",
+        "Priority": 0,
+        "qtime": "Tue Nov  3 22:44:08 2026",
+        "Rerunable": "True",
+        "Resource_List": {
+          "mem": "32gb",
+          "ncpus": 6,
+          "ngpus": 1,
+          "nodect": 1,
+          "place": "free",
+          "select": "1:host=gpu02:ncpus=6:ngpus=1:mem=32gb",
+          "walltime": "01:35:00"
+        },
+        "substate": 20,
+        "Variable_List": {
+          "PBS_O_HOME": "/home/sachin.chaudhary",
+          "PBS_O_LANG": "C.UTF-8",
+          "PBS_O_LOGNAME": "sachin.chaudhary",
+          "PBS_O_PATH": "/home/sachin.chaudhary/.codex/packages/app-server-daemon/releases/0.166.0-x86_64-unknown-linux-musl/codex-path:/home/sachin.chaudhary/.codex/tmp/arg0-linux/codex-arg0zuHW5S:/home/sachin.chaudhary/.codex/tmp/arg0-linux/codex-arg0yaSRfl:/home/sachin.chaudhary/.codex/packages/app-server-daemon/releases/0.165.0-x86_64-unknown-linux-musl/codex-path:/home/sachin.chaudhary/.codex/tmp/arg0-linux/codex-arg0x8Wj92:/home/sachin.chaudhary/.codex/packages/app-server-daemon/releases/0.164.0-x86_64-unknown-linux-musl/codex-path:/home/sachin.chaudhary/.codex/tmp/arg0-linux/codex-arg00GMgZZ:/home/sachin.chaudhary/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:/home/sachin.chaudhary/.codex/tmp/arg0/codex-arg0ml0Jy5:/home/sachin.chaudhary/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path:/home/sachin.chaudhary/.codex/tmp/arg0/codex-arg0grURfa:/home/sachin.chaudhary/.conda/envs/internvl/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path:/home/sachin.chaudhary/.antigravity-ide-server/bin/2.5.5-ecfbad74d93962fc8ca485d93ab9b4f3d4cb6cf8/bin/remote-cli:/home/sachin.chaudhary/.conda/envs/internvl/bin:/home/soft/anaconda3/condabin:/usr/local/texlive/2025/bin/x86_64-linux:/usr/share/Modules/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/pbs/bin",
+          "PBS_O_MAIL": "/var/spool/mail/sachin.chaudhary",
+          "PBS_O_SHELL": "/bin/sh",
+          "PBS_O_WORKDIR": "/home/sachin.chaudhary",
+          "PBS_O_SYSTEM": "Linux",
+          "PBS_O_QUEUE": "workq",
+          "PBS_O_HOST": "mgmt01.head.cm.ddn.upes.ac.in"
+        },
+        "Submit_arguments": "-h /home/sachin.chaudhary/ces_fl_sources/cesfl-lh-sham-noalign-execution-20261103/CES_FL/proposals/lh_sham_noalign_s17_20261103T165600Z/NO_ALIGN.pbs",
+        "project": "_pbs_project_default",
+        "Submit_Host": "mgmt01.head.cm.ddn.upes.ac.in"
+      },
+      "completed_epochs": 0,
+      "history": [],
+      "paths": {
+        "root": "/home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/NO_ALIGN",
+        "training_log": "/home/sachin.chaudhary/ces_fl_runs/lh_sham_noalign_s17_20261103T165600Z/NO_ALIGN/train.log"
+      },
+      "receipts": {}
+    }
+  },
+  "budget": {
+    "initial_total_gpu_hours": 24,
+    "consumed_gpu_hours": 15.936613496733413,
+    "reserved_gpu_hours": 3.0
+  },
+  "sessions": [
+    {
+      "id": "lh_sham_noalign_s17_20261103_SHAM_FIX",
+      "ngpus": 1,
+      "reserved_gpu_hours": 1.5,
+      "elapsed_seconds": 0.0,
+      "state": "QUEUED",
+      "scientific_commit": "35ffbd21cc6a033f9b9bf4cb1f92f5e417debe8d",
+      "scientific_source_sha256": "1b6dc1b0e6d2b2220da897500a4d1bffb7764280df642abf6befdd1cf511ed01",
+      "route": "PBS_ngpus1_plus_prior_explicit_authorized_pool_v2_UUID",
+      "planned_epochs": 3,
+      "no_automatic_extension": true
+    },
+    {
+      "id": "lh_sham_noalign_s17_20261103_NO_ALIGN",
+      "ngpus": 1,
+      "reserved_gpu_hours": 1.5,
+      "elapsed_seconds": 0.0,
+      "state": "QUEUED",
+      "scientific_commit": "35ffbd21cc6a033f9b9bf4cb1f92f5e417debe8d",
+      "scientific_source_sha256": "1b6dc1b0e6d2b2220da897500a4d1bffb7764280df642abf6befdd1cf511ed01",
+      "route": "PBS_ngpus1_plus_prior_explicit_authorized_pool_v2_UUID",
+      "planned_epochs": 3,
+      "no_automatic_extension": true
+    }
+  ]
+}

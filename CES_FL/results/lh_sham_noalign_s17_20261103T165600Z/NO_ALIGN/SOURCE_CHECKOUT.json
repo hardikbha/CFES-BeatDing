@@ -1,0 +1,17 @@
+{
+  "commit": "35ffbd21cc6a033f9b9bf4cb1f92f5e417debe8d",
+  "source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-lh-sham-noalign-execution-20261103",
+  "source_sha256": "1b6dc1b0e6d2b2220da897500a4d1bffb7764280df642abf6befdd1cf511ed01",
+  "git_status_porcelain": "",
+  "proposal_file_sha256": {
+    "SHAM_FIX.json": "acc77b2fbc1d431b18a8fdc44d8401a03f89f9fe1811a6cd6f9399a18da07369",
+    "NO_ALIGN.json": "d910f32843b28e58f56909ffc2446741178f519283e94e5a623e467bcfaf5905",
+    "NO_ALIGN.pbs": "bc9cc328c88acc117b012883ec78e5b030f59dced22476d53d799d8dfbeb57dc",
+    "report.py": "ef1bb36889950b2f4738649c9592faab1fcad2d95b8c3cb832af365bfd1531ac",
+    "commands.sh": "734c38b070acf1933a249707157e73265901cb308e3b094dc6a9e57368a4c006",
+    "README.md": "02c9b0688c8504a87329f55291ad4db5352928b783cda28a4587e6d668e3c5a5",
+    "run_allocated.py": "b331ba0d9c0a61324dfc19256b8cb1e0a39d6362e2943ac874d15f6af56c95ad",
+    "checks.py": "cd3aa827a8f659c14cd16716882204392da4423ad63a55f189eb0bf2c6ff413b",
+    "SHAM_FIX.pbs": "68524f65725fc0970b9294164452f200ef8c5b4c0fbbba3011bc16664a2612df"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "arm": "SHAM_FIX",
+  "source_sha256": "1b6dc1b0e6d2b2220da897500a4d1bffb7764280df642abf6befdd1cf511ed01",
+  "config_sha256": "acc77b2fbc1d431b18a8fdc44d8401a03f89f9fe1811a6cd6f9399a18da07369",
+  "config_digest": "05bd9798ef47a7f425edbdecbfe8f659601897e8542853f5d0155cbdba9f9c74",
+  "identical_fresh_initialization": true,
+  "head_hash": "9600162d7f69931f93d5e9e44ec778cd4e361c9ad0af38b66708508b50d04907",
+  "encoder_hash": "28390525d92313ec786b694ce21eef17db9c5157e1b89c37a0ac8071a475dbcb",
+  "parameters": {
+    "total": 20809001,
+    "trainable": 6790433,
+    "encoder": 20806952,
+    "head": 2049,
+    "encoder_trainable": 6788384,
+    "head_type": "linear",
+    "encoder_policy": "exit"
+  },
+  "no_test_access": true
+}

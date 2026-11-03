@@ -1,0 +1,16 @@
+test_config_requires_explicit_head_and_new_format (test_head_ablation.HeadAblationTests.test_config_requires_explicit_head_and_new_format) ... ok
+test_exact_config_differences (test_head_ablation.HeadAblationTests.test_exact_config_differences) ... ok
+test_exact_production_parameter_counts (test_head_ablation.HeadAblationTests.test_exact_production_parameter_counts) ... ok
+test_linear_and_gated_checkpoints_cannot_be_interchanged (test_head_ablation.HeadAblationTests.test_linear_and_gated_checkpoints_cannot_be_interchanged) ... ok
+test_linear_removes_all_old_head_modules (test_head_ablation.HeadAblationTests.test_linear_removes_all_old_head_modules) ... ok
+test_plain_formula_and_cam_are_independent_reference (test_head_ablation.HeadAblationTests.test_plain_formula_and_cam_are_independent_reference) ... ok
+test_reference_gated_initialization_logits_losses_and_gradients_unchanged (test_head_ablation.HeadAblationTests.test_reference_gated_initialization_logits_losses_and_gradients_unchanged) ... ok
+test_reference_requires_complete_pinned_run_and_earliest_auc_selection (test_head_ablation.HeadAblationTests.test_reference_requires_complete_pinned_run_and_earliest_auc_selection) ... ok
+test_review_reuse_rejects_metadata_membership_and_byte_changes (test_head_ablation.HeadAblationTests.test_review_reuse_rejects_metadata_membership_and_byte_changes) ... ok
+test_science_functions_are_ast_identical_to_H (test_head_ablation.HeadAblationTests.test_science_functions_are_ast_identical_to_H) ... ok
+test_trainable_policy_and_bn_buffers (test_head_ablation.HeadAblationTests.test_trainable_policy_and_bn_buffers) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 2.140s
+
+OK
