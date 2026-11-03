@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-03T12:52:27.658981+00:00",
+  "observed_management_utc": "2026-11-03T13:02:33.220942+00:00",
   "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
   "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
   "budget": {
@@ -7,8 +7,8 @@
     "source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-forensic-response-c332fd34",
     "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
     "initial_total_gpu_hours": 24,
-    "consumed_gpu_hours": 15.047007974933626,
-    "reserved_gpu_hours": 4.228494410688678,
+    "consumed_gpu_hours": 15.196284060301776,
+    "reserved_gpu_hours": 0,
     "gpu_sessions": [
       {
         "id": "ffpp_checks_primary",
@@ -402,8 +402,8 @@
         "id": "plain_head_0d699d2",
         "ngpus": 1,
         "reserved_gpu_hours": 5.75,
-        "elapsed_seconds": 5477.420121520758,
-        "state": "RUNNING",
+        "elapsed_seconds": 6014.8140288461,
+        "state": "COMPLETED",
         "scientific_commit": "0d699d241e27f758ec0990fbe58493a15bdb0ff9",
         "scientific_source_sha256": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
         "proposal_total_cap_gpu_hours": 6.0,
@@ -429,14 +429,7 @@
     "state": "ACTIVE_BUDGET_LEDGER; execution state is in per-session records and COORDINATOR_STATUS.json",
     "route_override": "Explicit user-authorized direct SSH with pool-v2 leases; no PBS allocation claimed"
   },
-  "actual_process_observations": {
-    "gpu02": {
-      "1116371": {
-        "exists": true,
-        "cmdline": "bash /home/sachin.chaudhary/ces_fl_runs/plain_head_s17_20261103T101418Z/allocated_commands.sh "
-      }
-    }
-  },
+  "actual_process_observations": {},
   "datasets": {
     "ffpp": {
       "root": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_overlapfix_20261103_r1_ffpp_s17",
