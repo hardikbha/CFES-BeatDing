@@ -1,5 +1,9 @@
 # CES-FL — supervisor review and training handoff
 
+## Locked current L_A/L_H tables — ee73f2f cluster execution
+
+[Tables1/2 and execution status](results/lh_tables_s17_20261103T133000Z_cluster/STATUS.md) · [Exact gates, jobs and separate training blockers](results/lh_tables_s17_20261103T133000Z_cluster/OPERATOR_RECORD.md). Both ten-epoch plain-head runs completed and independently replayed. The fixed model checkpoints and four benchmark manifests were bound before one authorized TEST pass per arm/dataset. PBS45314 performs eight frozen evaluations; CPU45315 follows with1000draw paired/component uncertainty after GPU release. Tables have separate fixed0.5/source-VAL10%views and explicit published/historical/current rows. New Ding10, ResNet L_H and prospective schedule remain implementation/budget work orders; no full training launched from this handoff. Historical observations below are preserved.
+
 ## FairForge-2 external baselines — 3 November 2026
 
 [Proposal and readiness](proposals/ff2_baseline_suite_s17_20261103T110324Z/README.md) · [GPU operator prompt](proposals/ff2_baseline_suite_s17_20261103T110324Z/GPU_OPERATOR_PROMPT.md). User authorized72 additional aggregate GPU-hours and at most3 allocated GPUs. Matched native Xception BCE/DAG-FDD/DAW-FDD code, configs and CPU checks are prepared; real input/CUDA checks and training remain pending. PG-FDD/FairAdapter source is pinned but adapters remain conditional; RSEF lacks verified source. Existing Ding and plain-head work is preserved. Publish destination is the writable `hardiksharma6555` fork; this is not a training launch.

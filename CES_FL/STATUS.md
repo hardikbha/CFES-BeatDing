@@ -4,6 +4,10 @@ New [baseline suite and operator prompt](proposals/ff2_baseline_suite_s17_202611
 
 # Current CES-FL status
 
+## ee73f2f locked L_A/L_H evaluation — 3 November2026
+
+[Current table/evidence snapshot](results/lh_tables_s17_20261103T133000Z_cluster/STATUS.md). Both existing native L_A/L_H completed10epochs and selected epoch3/1 respectively; neither was restarted. Source/helper tests and all four image/membership/overlap audits passed. Source, checkpoints, native thresholds and future design specifications were frozen/published before TEST. One allocated GPU job45314; CPU-only analysis45315depends afterok. New Ding10/ResNet/schedule training remains blocked on implementations/checks and budget; FF2 baseline jobs and their separate72hledger are preserved. Follow timestamps/receipts in the linked directory; old RUNNING snapshots below are not current liveness evidence.
+
 ## Plain Xception head ablation — 3 November 2026
 
 [Project memory and research blueprint](PROJECT_MEMORY.md) · [Two-arm proposal](proposals/plain_head_s17_20261103T101418Z/README.md) · [GPU operator prompt](proposals/plain_head_s17_20261103T101418Z/GPU_OPERATOR_PROMPT.md). New standalone Xception+GAP+linear source:20,809,001 total /6,790,433 exit-policy trainable parameters. CPU synthetic smoke and targeted checks pass; CUDA/input checks and both real-data runs are pending. Existing H and completed results are preserved. This publication launches no jobs.

@@ -1,8 +1,8 @@
 # Locked L_A/L_H Tables1–3
 
-2026-11-03T13:41:07.819311+00:00 management UTC.
+2026-11-03T13:45:20.393017+00:00 management UTC.
 
-Verified TEST inference: 3/8. Bootstrap analysis: PENDING; point estimates only until the CPU job finishes.
+Verified TEST inference: 8/8. Bootstrap analysis: PENDING; point estimates only until the CPU job finishes.
 
 Exact operator commit `ee73f2fdf5218e440852917e90281818bbe711bb`; historical model source `08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177`. L_A epoch3 checkpoint `aee9670ca011937d457846fbf13717445c5607715064dd6a54da5a82bda580ae`; L_H epoch1 checkpoint `6ef2caad3979d101fd94d7350aa3c1a50f95ee8307673cfaae63ac9d89af36f0`. Both ten-epoch runs completed/native replay PASS.
 
