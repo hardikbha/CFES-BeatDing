@@ -100,7 +100,7 @@ def main():
     parser.add_argument('--gpu-uuid',required=True)
     parser.add_argument('--budget-hours',type=float,default=RESERVED_HOURS)
     args=parser.parse_args()
-    if args.budget_hours!=RESERVED_HOURS:raise ValueError('Fixed three-hour per-arm safety reservation expected')
+    if args.budget_hours!=RESERVED_HOURS:raise ValueError('Fixed two-hour per-arm safety reservation expected')
     if os.uname().nodename.split('.')[0] not in ('gpu01','gpu02'):raise RuntimeError('Direct SSH must land on gpu01 or gpu02')
     if not (P50_DIR/'DONE').is_file() or not (P50_DIR/'RUN_VERIFIED.json').is_file():raise RuntimeError('Verified P50 dependency absent')
     p50_receipt=read_json(P50_DIR/'RUN_VERIFIED.json')
