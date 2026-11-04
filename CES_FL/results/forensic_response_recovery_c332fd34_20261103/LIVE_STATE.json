@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-04T05:03:07.165272+00:00",
+  "observed_management_utc": "2026-11-04T05:13:11.731028+00:00",
   "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
   "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
   "budget": {
@@ -7,7 +7,7 @@
     "source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-forensic-response-c332fd34",
     "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
     "initial_total_gpu_hours": 48,
-    "consumed_gpu_hours": 21.510799746674795,
+    "consumed_gpu_hours": 21.512188635563685,
     "reserved_gpu_hours": 0,
     "gpu_sessions": [
       {
@@ -708,6 +708,42 @@
         "scientific_source_sha256": "72d368a439658c601a5fe4d717237b1561190e85c13c70f6db3a441bc5cdbe78",
         "log": "/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104_cudaenv3/lh_resnet50_L_H_s17_20261104_cudaenv3.log",
         "purpose": "ResNet-50 Table3 lh_resnet50_L_H_s17_20261104_cudaenv3 arm; no automatic TEST evaluation"
+      },
+      {
+        "id": "table3_pbs_eval_45437",
+        "ngpus": 1,
+        "reserved_gpu_hours": 0.0,
+        "elapsed_seconds": 4.0,
+        "state": "FAILED_BINDING_NO_CUDA_VISIBLE_DEVICES",
+        "route": "PBS_ngpus1_shared",
+        "pbs_allocation_claimed": true,
+        "pbs_job_id": "45437.mgmt01",
+        "host": "gpu02",
+        "card": {
+          "host": "gpu02",
+          "exec_host": "gpu02/7*6",
+          "device_uuid": null
+        },
+        "log": "/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104_cudaenv3/table3_eval/PBS_TABLE3_EVAL.log",
+        "purpose": "Locked Table3 PBS attempt; stopped before Python/inference because scheduler did not provide CVD"
+      },
+      {
+        "id": "table3_pbs_binding_probe_45438",
+        "ngpus": 1,
+        "reserved_gpu_hours": 0.0,
+        "elapsed_seconds": 1.0,
+        "state": "COMPLETED_NO_CUDA_BINDING",
+        "route": "PBS_ngpus1_binding_probe",
+        "pbs_allocation_claimed": true,
+        "pbs_job_id": "45438.mgmt01",
+        "host": "gpu02",
+        "card": {
+          "host": "gpu02",
+          "exec_host": "gpu02/7",
+          "device_uuid": null
+        },
+        "log": "/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104_cudaenv3/table3_eval/PBS_BINDING_PROBE.log",
+        "purpose": "Noninvasive allocation/binding probe; no CUDA initialization or dataset access"
       }
     ],
     "prior_study_ledger": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_9030dd77_20261103/budget_ledger.json",
