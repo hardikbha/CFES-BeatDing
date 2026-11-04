@@ -28,3 +28,12 @@ Command run on CPU, with no TEST manifest/image reads:
 ```
 
 Result: `Ran 5 tests ... OK`. The checks load the pinned protocol/parent-plan hashes, reject a changed threshold view, reject target-domain calibration, reject stale evaluator bindings, and reject a synthetic fixture as a production selected checkpoint. The first attempt failed because the copied historical manifest-protocol SHA contained a one-character typo; the expected value was re-read from the existing locked `LOCKED_PLAN.json`, corrected, and the full command above passed. The evaluator has not been bound to the live model checkpoints and no TEST inference has run.
+
+Direct evaluation executor syntax and CLI:
+
+```bash
+/home/sachin.chaudhary/.conda/envs/aiface/bin/python -m py_compile CES_FL/cluster/run_resnet50_table3_eval_direct.py
+/home/sachin.chaudhary/.conda/envs/aiface/bin/python CES_FL/cluster/run_resnet50_table3_eval_direct.py --help
+```
+
+Both commands succeeded. The executor was not launched; this confirms only Python syntax and argument parsing, with no TEST reads.
