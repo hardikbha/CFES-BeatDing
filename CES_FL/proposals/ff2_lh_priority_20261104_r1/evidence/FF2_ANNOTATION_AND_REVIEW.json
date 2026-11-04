@@ -1,0 +1,193 @@
+{
+  "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
+  "observed_management_utc": "2026-11-04T11:09:31.543092+00:00",
+  "groups": {
+    "gender": {
+      "Female": {
+        "real": 6783,
+        "fake": 81486,
+        "eligible": true
+      },
+      "Male": {
+        "real": 9994,
+        "fake": 120003,
+        "eligible": true
+      }
+    },
+    "race": {
+      "Asian": {
+        "real": 3552,
+        "fake": 43579,
+        "eligible": true
+      },
+      "Black": {
+        "real": 3319,
+        "fake": 41870,
+        "eligible": true
+      },
+      "Others": {
+        "real": 6323,
+        "fake": 71146,
+        "eligible": true
+      },
+      "White": {
+        "real": 3583,
+        "fake": 44894,
+        "eligible": true
+      }
+    },
+    "age_bin": {
+      "30-44": {
+        "real": 7791,
+        "fake": 98387,
+        "eligible": true
+      },
+      "45-59": {
+        "real": 4821,
+        "fake": 49181,
+        "eligible": true
+      },
+      "60+": {
+        "real": 2504,
+        "fake": 24350,
+        "eligible": true
+      },
+      "<30": {
+        "real": 1661,
+        "fake": 29571,
+        "eligible": true
+      }
+    },
+    "skin_bin": {
+      "0": {
+        "real": 4042,
+        "fake": 50366,
+        "eligible": true
+      },
+      "1": {
+        "real": 3833,
+        "fake": 48970,
+        "eligible": true
+      },
+      "2": {
+        "real": 3902,
+        "fake": 45441,
+        "eligible": true
+      },
+      "3": {
+        "real": 3926,
+        "fake": 44056,
+        "eligible": true
+      },
+      "unknown": {
+        "real": 1074,
+        "fake": 12656,
+        "eligible": false
+      }
+    },
+    "gender_race": {
+      "Female-Asian": {
+        "real": 1333,
+        "fake": 17079,
+        "eligible": true
+      },
+      "Female-Black": {
+        "real": 1524,
+        "fake": 18463,
+        "eligible": true
+      },
+      "Female-Others": {
+        "real": 2152,
+        "fake": 24286,
+        "eligible": true
+      },
+      "Female-White": {
+        "real": 1774,
+        "fake": 21658,
+        "eligible": true
+      },
+      "Male-Asian": {
+        "real": 2219,
+        "fake": 26500,
+        "eligible": true
+      },
+      "Male-Black": {
+        "real": 1795,
+        "fake": 23407,
+        "eligible": true
+      },
+      "Male-Others": {
+        "real": 4171,
+        "fake": 46860,
+        "eligible": true
+      },
+      "Male-White": {
+        "real": 1809,
+        "fake": 23236,
+        "eligible": true
+      }
+    }
+  },
+  "review": {
+    "status": "BLOCKED_OPERATOR_REVIEW",
+    "cases_inspected": 88,
+    "unique_original_images": 22,
+    "recorded_identity_ids": 22,
+    "recorded_source_ids": 22,
+    "groups_covered": {
+      "gender": [
+        "Female",
+        "Male"
+      ],
+      "race": [
+        "Asian",
+        "Black",
+        "Others",
+        "White"
+      ],
+      "age_bin": [
+        "30-44",
+        "45-59",
+        "60+",
+        "<30"
+      ],
+      "skin_bin": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "unknown"
+      ],
+      "gender_race": [
+        "Female-Asian",
+        "Female-Black",
+        "Female-Others",
+        "Female-White",
+        "Male-Asian",
+        "Male-Black",
+        "Male-Others",
+        "Male-White"
+      ]
+    },
+    "review_type": "AI visual operator screen; not human annotation",
+    "approved": 72,
+    "rejected": 8,
+    "uncertain": 8,
+    "blocked_sources_count": 4,
+    "blocking_reasons": [
+      "rotation padding intersects the fixed face-region intervention support",
+      "hat occludes upper face and dominates probe",
+      "costume mask confounds facial region",
+      "hand occlusion and severe softness make suitability uncertain"
+    ],
+    "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
+    "config_digest": "212645fe0e196651e0f6728708edfac5f2b87fa7cde508e19f7b799887a1f522",
+    "preview_sha256": "f4fc30cf66df82d7d4e1aac36c14da261c218992714e51dc263f30f3a4270f2e",
+    "review_sha256": "3443a455c72c5d821b818f439ffa55bc0d10e4af7f175d2241b3dded6d69c20a",
+    "real_forgery_validity_proven": false,
+    "qualification_passed": false,
+    "scope": "Representative visual qualification of the declared procedural recipe only",
+    "recovery_requirement": "New dated proposal and fresh qualification if recipe/eligibility changes. Do not silently omit sources, shrink group coverage or manufacture approvals."
+  },
+  "qualification_recorded": false
+}

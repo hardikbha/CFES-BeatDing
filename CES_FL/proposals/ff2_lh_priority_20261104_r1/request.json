@@ -1,0 +1,48 @@
+{
+  "id": "ff2_lh_priority_20261104_r1",
+  "priority": "L_H before additional unstarted baselines; preserve active jobs",
+  "splits": {
+    "train": {
+      "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ff2/train.csv",
+      "sha256": "4f83e7dc8042533329d7047fefd0f30cbd96f45d42bde2666dd0edc7d58f29cc",
+      "rows": 218266,
+      "labels": {
+        "1": 201489,
+        "0": 16777
+      }
+    },
+    "val": {
+      "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ff2/val.csv",
+      "sha256": "aeda051259d9e26b07c2810152b601ae115ce7c9e10523f99ea07bbc9f92afa8",
+      "rows": 31107,
+      "labels": {
+        "0": 2438,
+        "1": 28669
+      }
+    },
+    "test": {
+      "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ff2/test.csv",
+      "sha256": "dd5eb9ef070f658fe6b7f744c47f73e25ce7c53f948bc272f4f16c69a37d4099",
+      "rows": 87564,
+      "labels": {
+        "1": 82123,
+        "0": 5441
+      }
+    }
+  },
+  "source_sha256": "08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177",
+  "native_pretraining_checkpoint_sha256": "a62af6bc1ff02f4280fcb38e9b9a4b035ccee3427472d160880b4b9e0c31d835",
+  "native_pretraining_source_commit": "815b4d4bc679c55d4ee6323cc7284335ce210568",
+  "pretraining_epochs_completed": 50,
+  "pretraining_selected_epoch": 40,
+  "downstream_epochs": 10,
+  "seed": 17,
+  "primary_arm": "L_H",
+  "matched_control": "L_A",
+  "training_started": false,
+  "approval_review": "Earlier FF2 procedural review has8reject/8uncertain; no qualification transplant or fabricated approvals",
+  "budget": "No extra hours granted. Profile and fit within verified unreserved existing allowance; do not displace F3Net/CORE/Ding or double-count ledgers.",
+  "annotation_scope": "gender/race inherited; age automatic estimates; skin proxy bins include unknown; no new annotation required for existing axes",
+  "test_policy": "After verified completion only, frozen validation-selected checkpoint, fixed0.5 plus stored VAL10%; same published FF2TEST membership",
+  "pretraining_adaptation": "Audited encoder-only transfer from verified native Xception BCE50; fresh downstream heads; original L_H objectives unchanged"
+}

@@ -1,0 +1,6 @@
+PASS: encoder-only transfer preserves every native feature tensor/output exactly on synthetic224px inputs
+PASS: native classifier excluded; unexpected state keys rejected
+PASS: original L_H source hash unchanged; matched configs identical apart from native CLI arm
+PASS: all four annotation axes partition all218266TRAIN rows; unknown skin entries retained
+PRIVATE_CHECKPOINT_TRANSFER: not run locally; exact pinned native weights/manifests require cluster verification
+CUDA_AND_TRAINING: not launched
