@@ -55,7 +55,7 @@ def pool_mutex():
     finally:p.rmdir()
 
 
-def card_by_uuid(uuid):
+def card_by_uuid(uuid,allow_shared=False):
     output=subprocess.check_output(['nvidia-smi','--query-gpu=index,uuid,memory.free,memory.used,utilization.gpu',
                                     '--format=csv,noheader,nounits'],text=True)
     cards=[{'index':int(r[0]),'uuid':r[1].strip(),'free_mib':int(r[2]),'used_mib':int(r[3]),'utilization':int(r[4])}
@@ -65,7 +65,10 @@ def card_by_uuid(uuid):
     apps=subprocess.check_output(['nvidia-smi','--query-compute-apps=gpu_uuid,pid,used_memory',
                                   '--format=csv,noheader,nounits'],text=True)
     active=[r for r in csv.reader(apps.splitlines()) if r and r[0].strip()==uuid]
-    if found[0]['free_mib']<24000 or active:raise RuntimeError(f'GPU lacks free evaluation headroom: {found[0]} apps={active}')
+    if found[0]['free_mib']<24_000:raise RuntimeError(f'GPU lacks minimum evaluation headroom: {found[0]} apps={active}')
+    if active and not allow_shared:raise RuntimeError(f'GPU has active compute apps; shared mode was not authorized: {found[0]} apps={active}')
+    if active and found[0]['utilization']>20:raise RuntimeError(f'Shared GPU utilization is too high: {found[0]} apps={active}')
+    found[0]['active_compute_apps_at_claim']=[[x.strip() for x in row] for row in active]
     return found[0]
 
 
@@ -97,6 +100,7 @@ def main():
     parser=__import__('argparse').ArgumentParser()
     parser.add_argument('--arm',choices=('L_A','L_H'),required=True)
     parser.add_argument('--gpu-uuid',required=True)
+    parser.add_argument('--shared-active',action='store_true',help='Use a low-utilization shared-pool H100 with at least24GiB free')
     parser.add_argument('--attempt-id',required=True)
     parser.add_argument('--plan',required=True)
     parser.add_argument('--out-root',required=True)
@@ -120,12 +124,12 @@ def main():
         raise ValueError('Wrong arm/dataset inventory in locked plan')
     for dataset in DATASETS:
         if (outroot/args.arm/dataset).exists():raise ValueError(f'Existing TEST output: {outroot/args.arm/dataset}')
-    gpu=card_by_uuid(args.gpu_uuid)
+    gpu=card_by_uuid(args.gpu_uuid,args.shared_active)
     budget=load('cesfl_direct_budget',BUDGET_FILE)
     sid=f'lh_resnet50_table3_eval_{args.arm}_s17_{args.attempt_id}'
     lease_dir=LOCKS/f"gpu{gpu['index']}";lease=lease_dir/f'task_{sid}.json'
     with pool_mutex():
-        gpu=card_by_uuid(args.gpu_uuid)
+        gpu=card_by_uuid(args.gpu_uuid,args.shared_active)
         if lease.exists():raise RuntimeError('Duplicate direct evaluation lease')
         if lease_dir.exists():
             owner=lease_dir/'pool_owner.json'
@@ -135,8 +139,10 @@ def main():
             if active:raise RuntimeError(f'GPU already leased: {active}')
         else:
             lease_dir.mkdir();write_json(lease_dir/'pool_owner.json',{'shared':True,'v':2,'pid':0,'wid':'pool_v2_shared'})
-        write_json(lease,{'name':sid,'wid':sid,'pid':os.getpid(),'pgid':os.getpgrp(),'cls':'writer',
-                          'need':24000,'time':time.time(),'device_uuid':gpu['uuid'],'commit':commit})
+        write_json(lease,{'name':sid,'wid':sid,'pid':os.getpid(),'pgid':os.getpgrp(),
+                          'cls':'reader' if args.shared_active else 'writer',
+                          'need':16000 if args.shared_active else 24000,'time':time.time(),
+                          'device_uuid':gpu['uuid'],'commit':commit})
     log=outroot/f'{args.arm}.direct_eval.log';outroot.mkdir(parents=True,exist_ok=True)
     try:reserve(budget,sid,gpu,commit,log)
     except Exception:
@@ -151,10 +157,16 @@ def main():
     thread=threading.Thread(target=heartbeat,daemon=True);thread.start()
     try:
         import torch
+        if args.shared_active:
+            # Keep the evaluator's allocator below the free-memory margin on a
+            # shared H100; this bounds, but cannot reserve, memory for others.
+            torch.cuda.set_per_process_memory_fraction(0.16,0)
         binding=verify_binding(torch,gpu['uuid'])
         write_json(outroot/f'{args.arm}_CUDA_BINDING.json',{'status':'PASS','pid':os.getpid(),
             'expected_device_uuid':gpu['uuid'],'cuda_visible_devices':os.environ['CUDA_VISIBLE_DEVICES'],
             'device_name':torch.cuda.get_device_name(0),'nvidia_smi_process_rows':binding,
+            'shared_active_mode':args.shared_active,
+            'active_compute_apps_at_claim':gpu.get('active_compute_apps_at_claim',[]),
             'executor_commit':commit,'plan_sha256':sha(plan_path),'test_read':False})
         torch.set_num_threads(4)
         state={'status':'RUNNING','arm':args.arm,'plan_sha256':sha(plan_path),'completed_datasets':[],'test_read':True}
