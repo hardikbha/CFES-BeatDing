@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-04T14:23:31.753950+00:00",
+  "observed_management_utc": "2026-11-04T14:33:36.944338+00:00",
   "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
   "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
   "budget": {
@@ -7,8 +7,8 @@
     "source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-forensic-response-c332fd34",
     "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
     "initial_total_gpu_hours": 48,
-    "consumed_gpu_hours": 22.510746392061314,
-    "reserved_gpu_hours": 0.6332714791404497,
+    "consumed_gpu_hours": 22.655269636084945,
+    "reserved_gpu_hours": 0.7388803821010516,
     "gpu_sessions": [
       {
         "id": "ffpp_checks_primary",
@@ -1038,8 +1038,8 @@
         "id": "nuisance_train_A1",
         "ngpus": 1,
         "reserved_gpu_hours": 0.75,
-        "elapsed_seconds": 420.222675094381,
-        "state": "RUNNING",
+        "elapsed_seconds": 900.475729143247,
+        "state": "COMPLETED",
         "route": "user_authorized_direct_ssh_pool_v2",
         "pbs_allocation_claimed": false,
         "host": "gpu02",
@@ -1067,6 +1067,40 @@
         "checkpoint_sha256": null,
         "child_pid": 2025437,
         "log": "/home/sachin.chaudhary/ces_fl_runs/lh_nuisance_pilot_20261104_r1/operator/nuisance_train_A1.log"
+      },
+      {
+        "id": "nuisance_train_H1",
+        "ngpus": 1,
+        "reserved_gpu_hours": 0.75,
+        "elapsed_seconds": 40.030624436214566,
+        "state": "RUNNING",
+        "route": "user_authorized_direct_ssh_pool_v2",
+        "pbs_allocation_claimed": false,
+        "host": "gpu02",
+        "controller_pid": 2029262,
+        "card": {
+          "index": 5,
+          "uuid": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1",
+          "free": 23629,
+          "used": 57451,
+          "reserved_not_yet_used_mib": 0,
+          "available_mib": 23629,
+          "utilization_at_claim": 0,
+          "active_compute_apps_at_claim": {}
+        },
+        "scientific_commit": "84ad9838ac14f9e252d292146df5b1e1b1121d7c",
+        "scientific_source_sha256": "1997eebf093aa3e37de1cbbe58302a1539ac2e517f966a4607aae89dc695a8e0",
+        "purpose": "LH nuisance pilot; one diagnostic, CUDA/input checks or three-epoch A0/H0/A1/H1 training",
+        "test_read": false,
+        "configuration": {
+          "config_path": "/home/sachin.chaudhary/ces_fl_sources/cesfl-lh-nuisance-84ad983/CES_FL/proposals/lh_nuisance_pilot_20261104_r1/configs/H1.json",
+          "config_file_sha256": "93c1c71b9688edfa0a4d33dd5978f4e43ce25e7ec49d823468762955a4b328ac",
+          "config_digest": "d7c2939b21d6d516da1c903bda673fbf0b5412549affc550aeab337d4bd8ae27",
+          "qualification_sha256": "ac4e16bcadba73848d78c635b83f6e420a50d3ecc61b585fc46fc5d67f32e0c2"
+        },
+        "checkpoint_sha256": null,
+        "child_pid": 2029371,
+        "log": "/home/sachin.chaudhary/ces_fl_runs/lh_nuisance_pilot_20261104_r1/operator/nuisance_train_H1.log"
       }
     ],
     "prior_study_ledger": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_9030dd77_20261103/budget_ledger.json",
@@ -1088,9 +1122,9 @@
   },
   "actual_process_observations": {
     "gpu02": {
-      "2025437": {
+      "2029371": {
         "exists": true,
-        "cmdline": "bash /home/sachin.chaudhary/ces_fl_sources/cesfl-lh-nuisance-84ad983/CES_FL/proposals/lh_nuisance_pilot_20261104_r1/commands.sh train A1 "
+        "cmdline": "bash /home/sachin.chaudhary/ces_fl_sources/cesfl-lh-nuisance-84ad983/CES_FL/proposals/lh_nuisance_pilot_20261104_r1/commands.sh train H1 "
       }
     }
   },
