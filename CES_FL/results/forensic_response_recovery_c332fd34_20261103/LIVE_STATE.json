@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-04T01:41:20.304785+00:00",
+  "observed_management_utc": "2026-11-04T01:51:25.220403+00:00",
   "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
   "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
   "budget": {
@@ -7,7 +7,7 @@
     "source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-forensic-response-c332fd34",
     "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
     "initial_total_gpu_hours": 48,
-    "consumed_gpu_hours": 20.06484015953313,
+    "consumed_gpu_hours": 20.0651675757683,
     "reserved_gpu_hours": 0,
     "gpu_sessions": [
       {
@@ -598,6 +598,50 @@
           "utilization": 0
         },
         "device": "NVIDIA H100 80GB HBM3"
+      },
+      {
+        "id": "lh_resnet50_L_A_s17_20261104",
+        "ngpus": 1,
+        "reserved_gpu_hours": 2.0,
+        "elapsed_seconds": 0.6135726645588875,
+        "state": "FAILED",
+        "route": "user_authorized_direct_ssh_pool_v2",
+        "pbs_allocation_claimed": false,
+        "host": "gpu01",
+        "controller_pid": 3962732,
+        "card": {
+          "index": 1,
+          "uuid": "GPU-6cc0a5b3-99ca-13e3-5508-a201a06e82d6",
+          "free_mib": 81083,
+          "used_mib": 8,
+          "utilization": 0
+        },
+        "scientific_commit": "dd3242fd8bd477a6016b810669efe5cb8ee59275",
+        "scientific_source_sha256": "72d368a439658c601a5fe4d717237b1561190e85c13c70f6db3a441bc5cdbe78",
+        "log": "/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104/lh_resnet50_L_A_s17_20261104.log",
+        "purpose": "ResNet-50 Table3 lh_resnet50_L_A_s17_20261104 arm; no automatic TEST evaluation"
+      },
+      {
+        "id": "lh_resnet50_L_H_s17_20261104",
+        "ngpus": 1,
+        "reserved_gpu_hours": 2.0,
+        "elapsed_seconds": 0.5651257820427418,
+        "state": "FAILED",
+        "route": "user_authorized_direct_ssh_pool_v2",
+        "pbs_allocation_claimed": false,
+        "host": "gpu01",
+        "controller_pid": 3962804,
+        "card": {
+          "index": 5,
+          "uuid": "GPU-789d1ee4-d888-8a11-c94e-3d866900bc4d",
+          "free_mib": 81085,
+          "used_mib": 6,
+          "utilization": 0
+        },
+        "scientific_commit": "dd3242fd8bd477a6016b810669efe5cb8ee59275",
+        "scientific_source_sha256": "72d368a439658c601a5fe4d717237b1561190e85c13c70f6db3a441bc5cdbe78",
+        "log": "/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104/lh_resnet50_L_H_s17_20261104.log",
+        "purpose": "ResNet-50 Table3 lh_resnet50_L_H_s17_20261104 arm; no automatic TEST evaluation"
       }
     ],
     "prior_study_ledger": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_9030dd77_20261103/budget_ledger.json",
