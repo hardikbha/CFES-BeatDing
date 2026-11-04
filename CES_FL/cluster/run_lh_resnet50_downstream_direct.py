@@ -15,10 +15,10 @@ import time
 PYTHON='/home/sachin.chaudhary/.conda/envs/aiface/bin/python'
 SOURCE=Path(__file__).resolve().parents[2]
 ROOT=Path('/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104')
+P50_DIR=ROOT/'P50'
 LOCKS=Path('/tmp/scf_gpu_locks')
 BUDGET_MODULE=Path('/home/sachin.chaudhary/ces_fl_runs/forensic_response_c332fd34_20261103/allocated_stage.py')
 HEAD_SHA='72d368a439658c601a5fe4d717237b1561190e85c13c70f6db3a441bc5cdbe78'
-P50_DIR=ROOT/'P50'
 RESERVED_HOURS=2.0
 
 
@@ -95,13 +95,24 @@ def reserve(budget,sid,card,head,commit):
 
 
 def main():
+    global ROOT
     parser=__import__('argparse').ArgumentParser()
     parser.add_argument('--arm',choices=('L_A','L_H'),required=True)
     parser.add_argument('--gpu-uuid',required=True)
     parser.add_argument('--budget-hours',type=float,default=RESERVED_HOURS)
+    parser.add_argument('--attempt-id',required=True)
+    parser.add_argument('--out-root',required=True)
+    parser.add_argument('--preflight-dir')
+    parser.add_argument('--qualification')
     args=parser.parse_args()
     if args.budget_hours!=RESERVED_HOURS:raise ValueError('Fixed two-hour per-arm safety reservation expected')
     if os.uname().nodename.split('.')[0] not in ('gpu01','gpu02'):raise RuntimeError('Direct SSH must land on gpu01 or gpu02')
+    if not args.gpu_uuid.startswith('GPU-') or not args.attempt_id.replace('_','').replace('-','').isalnum():
+        raise ValueError('Invalid physical UUID or attempt identifier')
+    # CUDA_VISIBLE_DEVICES must be set before importing the model module, which
+    # imports torch. Setting it after that import can bind the process to GPU0.
+    os.environ.update(CUDA_VISIBLE_DEVICES=args.gpu_uuid,OMP_NUM_THREADS='2',MKL_NUM_THREADS='2',OPENBLAS_NUM_THREADS='1')
+    ROOT=Path(args.out_root).resolve()
     if not (P50_DIR/'DONE').is_file() or not (P50_DIR/'RUN_VERIFIED.json').is_file():raise RuntimeError('Verified P50 dependency absent')
     p50_receipt=read_json(P50_DIR/'RUN_VERIFIED.json')
     if p50_receipt.get('status')!='PASS' or p50_receipt.get('test_read') is not False:
@@ -124,22 +135,44 @@ def main():
     template_path.write_text(json.dumps(template,indent=2)+'\n')
     bound_path=arm_root/'config.json'
     head.bind(template_path,bound_path)
-    config=json.loads(bound_path.read_text());preflight_dir=arm_root/'preflight'
-    head.preflight(config,preflight_dir)
+    config=json.loads(bound_path.read_text())
+    if args.preflight_dir:
+        preflight_dir=Path(args.preflight_dir).resolve()
+        pre= head.checked_inputs(config,preflight_dir)
+        write_json(arm_root/'PREFLIGHT_REUSE.json',{'status':'PASS','source_sha256':HEAD_SHA,
+            'config_digest':head.digest(config),'source_preflight':str(preflight_dir),
+            'preflight_receipt_sha256':head.sha(preflight_dir/'PREFLIGHT.json'),
+            'inventory_sha256':head.sha(preflight_dir/'inventory_PRIVATE.json'),'test_read':False})
+    else:
+        preflight_dir=arm_root/'preflight';head.preflight(config,preflight_dir)
     qualification=None
     if args.arm=='L_H':
-        preview_dir=arm_root/'preview';head.preview(config,preflight_dir,preview_dir)
-        review=arm_root/'review_reused_PRIVATE.json';qualification_path=arm_root/'qualification.json'
-        helper=SOURCE/'CES_FL/proposals/lh_finalization_celebdf_20261104_r1/reuse_procedural_review_if_identical.py'
-        subprocess.run([PYTHON,str(helper),'--new-preview',str(preview_dir),'--derived-review',str(review),
-                        '--qualification',str(qualification_path)],check=True,cwd=SOURCE)
-        qualification=str(qualification_path)
+        if args.qualification:
+            qualification_path=Path(args.qualification).resolve()
+            qualification_hash=head.check_qualification(config,qualification_path)
+            qualification_receipt=read_json(qualification_path)
+            write_json(arm_root/'QUALIFICATION_REUSE.json',{'status':'PASS','source_sha256':HEAD_SHA,
+                'config_digest':head.digest(config),'qualification_path':str(qualification_path),
+                'qualification_sha256':qualification_hash,'reviewer_provenance_preserved':True,
+                'reviewers':qualification_receipt.get('reviewers',[]),
+                'scope':qualification_receipt.get('scope'),
+                'test_read':False})
+            qualification=str(qualification_path)
+        else:
+            preview_dir=arm_root/'preview';head.preview(config,preflight_dir,preview_dir)
+            review=arm_root/'review_reused_PRIVATE.json';qualification_path=arm_root/'qualification.json'
+            helper=SOURCE/'CES_FL/proposals/lh_finalization_celebdf_20261104_r1/reuse_procedural_review_if_identical.py'
+            subprocess.run([PYTHON,str(helper),'--new-preview',str(preview_dir),'--derived-review',str(review),
+                            '--qualification',str(qualification_path)],check=True,cwd=SOURCE)
+            qualification=str(qualification_path)
+    elif args.qualification:
+        raise ValueError('Only L_H accepts an intervention qualification receipt')
     budget=load('cesfl_budget_direct',Path('/home/sachin.chaudhary/ces_fl_runs/forensic_response_c332fd34_20261103/allocated_stage.py'))
-    sid=f'lh_resnet50_{args.arm}_s17_20261104'
+    sid=f'lh_resnet50_{args.arm}_s17_20261104_{args.attempt_id}'
     gpu=card_by_uuid(args.gpu_uuid)
-    os.environ.update(CUDA_VISIBLE_DEVICES=gpu['uuid'],OMP_NUM_THREADS='2',MKL_NUM_THREADS='2',OPENBLAS_NUM_THREADS='1')
+    if gpu['uuid']!=args.gpu_uuid:raise RuntimeError('Resolved GPU differs from requested UUID')
     import torch
-    lease_dir=LOCKS/f"gpu{gpu['index']}";lease=lease_dir/f'task_{args.arm}_r50_s17.json'
+    lease_dir=LOCKS/f"gpu{gpu['index']}";lease=lease_dir/f'task_{args.arm}_r50_s17_{args.attempt_id}.json'
     with pool_mutex():
         # Recheck card and global lease state while holding the shared-pool mutex.
         gpu=card_by_uuid(args.gpu_uuid)
@@ -171,7 +204,7 @@ def main():
     thread=threading.Thread(target=heartbeat,daemon=True);thread.start()
     try:
         verify_cuda_uuid(torch,gpu['uuid'])
-        smoke_receipt=ROOT/'P50'/'checks'/'synthetic_downstream'/'SMOKE_RESULT.json'
+        smoke_receipt=P50_DIR/'checks'/'synthetic_downstream'/'SMOKE_RESULT.json'
         if not smoke_receipt.is_file():raise RuntimeError('Current source-bound CUDA smoke receipt missing')
         smoke=read_json(smoke_receipt)
         if smoke.get('status')!='PASS' or smoke.get('source_sha256')!=HEAD_SHA or smoke.get('device')!='cuda':
