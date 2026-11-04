@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-04T13:22:58.572931+00:00",
+  "observed_management_utc": "2026-11-04T13:33:04.921381+00:00",
   "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
   "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
   "budget": {
@@ -7,7 +7,7 @@
     "source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-forensic-response-c332fd34",
     "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
     "initial_total_gpu_hours": 48,
-    "consumed_gpu_hours": 21.7714246983138,
+    "consumed_gpu_hours": 21.804781712609756,
     "reserved_gpu_hours": 0,
     "gpu_sessions": [
       {
@@ -800,6 +800,35 @@
         "scientific_commit": "8685c715e568731787662858d6a01e29ec51a81d",
         "purpose": "single locked ResNet Table-3 inference pass; no calibration",
         "log": "/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104_cudaenv3/table3_eval/L_H.direct_eval.log"
+      },
+      {
+        "id": "nuisance_diag_original_resnet_H",
+        "ngpus": 1,
+        "reserved_gpu_hours": 0.75,
+        "elapsed_seconds": 120.0852514654398,
+        "state": "COMPLETED",
+        "route": "user_authorized_direct_ssh_pool_v2",
+        "pbs_allocation_claimed": false,
+        "host": "gpu02",
+        "controller_pid": 2013327,
+        "card": {
+          "index": 5,
+          "uuid": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1",
+          "free": 23629,
+          "used": 57451,
+          "reserved_not_yet_used_mib": 0,
+          "available_mib": 23629,
+          "utilization_at_claim": 0,
+          "active_compute_apps_at_claim": {}
+        },
+        "scientific_commit": "84ad9838ac14f9e252d292146df5b1e1b1121d7c",
+        "scientific_source_sha256": "1997eebf093aa3e37de1cbbe58302a1539ac2e517f966a4607aae89dc695a8e0",
+        "purpose": "LH nuisance pilot; one diagnostic, CUDA/input checks or three-epoch A0/H0/A1/H1 training",
+        "test_read": false,
+        "configuration": null,
+        "checkpoint_sha256": "b08c2b5180d999f81e044872a8228f7e876d0250a6cb29034d59b11b1a897f10",
+        "child_pid": 2013445,
+        "log": "/home/sachin.chaudhary/ces_fl_runs/lh_nuisance_pilot_20261104_r1/operator/nuisance_diag_original_resnet_H.log"
       }
     ],
     "prior_study_ledger": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_9030dd77_20261103/budget_ledger.json",
