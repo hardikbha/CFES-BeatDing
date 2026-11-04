@@ -156,17 +156,20 @@ def main():
         command=[PYTHON,'-u',str(model_path),'preflight','--config',str(config_path),'--out',str(preflight_out)]
         stream.write(json.dumps({'command':command,'source_sha256':MODEL_SHA,'config_sha256':CONFIG_SHA})+'\n');stream.flush()
         subprocess.run(command,cwd=SOURCE,stdout=stream,stderr=subprocess.STDOUT,check=True)
-    pre=read_json(preflight_out/'PREFLIGHT.json')
-    if pre.get('status')!='PASS' or pre.get('test_read') is not False or pre.get('train_count')!=76139 or pre.get('val_count')!=25386:
+    pre=read_json(preflight_out/'PREFLIGHT.json');config=read_json(config_path)
+    if pre.get('status')!='PASS' or pre.get('test_read') is not False or pre.get('train')!=76139 or pre.get('val')!=25386:
         raise RuntimeError(f'Fresh Ding-10 CPU input preflight failed: {pre}')
-    if (pre.get('base_sha256')!=read_json(config_path)['input_hashes']['base_checkpoint']
-            or pre.get('sfd_sha256')!=read_json(config_path)['input_hashes']['sfd_channels']
-            or pre.get('split_audit',{}).get('native_Ding_membership',{}).get('path_label_group_exact') is not True):
+    if (pre.get('audit',{}).get('native_Ding_membership',{}).get('path_label_group_exact') is not True
+            or pre.get('audit',{}).get('native_Ding_membership',{}).get('rows')!=76139):
         raise RuntimeError('Fresh Ding-10 preflight checkpoint/SFD/native-row provenance mismatch')
+    channels=[int(x) for x in Path(config['sfd_channels']).read_text().split()]
+    if pre.get('channels')!=channels:raise RuntimeError('Fresh preflight SFD channel list changed')
     write_json(root/'PREFLIGHT_BOUND.json',{'status':'PASS','source_sha256':MODEL_SHA,
         'config_sha256':CONFIG_SHA,'preflight_sha256':sha(preflight_out/'PREFLIGHT.json'),
-        'train_count':pre['train_count'],'val_count':pre['val_count'],
-        'native_membership':pre['split_audit']['native_Ding_membership'],'test_read':False})
+        'train_count':pre['train'],'val_count':pre['val'],
+        'base_checkpoint_sha256':config['input_hashes']['base_checkpoint'],
+        'sfd_channels_sha256':config['input_hashes']['sfd_channels'],
+        'native_membership':pre['audit']['native_Ding_membership'],'channels':channels,'test_read':False})
     budget=load('ding10_budget',LEDGER_PATH)
     if sha(DIRECT_STAGE)!=DIRECT_STAGE_SHA:raise RuntimeError('Shared direct-stage lease helper changed')
     pool_helper=load('ding10_pool',POOL_HELPER)
