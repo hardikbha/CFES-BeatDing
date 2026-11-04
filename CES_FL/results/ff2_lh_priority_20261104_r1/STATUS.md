@@ -58,3 +58,9 @@ The cluster-only review sheets, row-level decisions, manifest inventory, logs, a
 - Rechecked the private qualification audit: it is unchanged (72 approved, 8 uncertain, 8 rejected; human review incomplete; qualification exit 1; no qualification receipt).
 - A physical `gpu01` device appeared idle in the 19:09 IST `nvidia-smi` snapshot, but it had no L_H allocation. The cluster scheduler is PBS (`qstat`); `squeue` is unavailable. Existing PBS/GPU jobs were left untouched.
 - No L_H PBS job was submitted and no direct-SSH training process was started. CUDA checks, cost profiling, L_H/L_A training, and TEST evaluation remain not run. An idle utilization reading does not satisfy the source's qualification or GPU-allocation requirements.
+
+## Status refresh — 2026-11-05 01:07 IST
+
+- The intervention audit and qualification artifacts are unchanged from 2026-11-04: 72 approved, 8 uncertain, 8 rejected; named human review and intervention validity are unestablished; qualification remains failed. No L_H allocation, process, checkpoint, or metric appeared.
+- The shared 72-hour ledger now records `48.808470` GPU-hours charged, no active reservations, and `23.191530` uncommitted. F3Net and CORE ledger entries are FINISHED at `7.536253` and `13.261345` GPU-hours respectively. Both have 50-epoch histories, but neither has `DONE` or `RUN_VERIFIED.json`; these are unverified runs, not certified completed results.
+- At the latest PBS/GPU snapshot, existing GPU jobs remained on the nodes and all reported devices had memory allocated. No L_H allocation was present. Existing Ding work was left untouched. CUDA checks, L_H/L_A training and TEST evaluation remain not run.
