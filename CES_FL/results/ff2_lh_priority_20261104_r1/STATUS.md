@@ -45,3 +45,10 @@ No L_H/L_A AUC, FPR, FNR, fairness gap, worst-group metric, subgroup support, co
 ## Private audit artifacts
 
 The cluster-only review sheets, row-level decisions, manifest inventory, logs, and checkpoint remain private under `/home/sachin.chaudhary/ces_fl_runs/ff2_lh_priority_20261104_r1/`. The qualification failure log is `qualify_attempt.log`; the aggregate private machine-readable audit is `INTERVENTION_VALIDITY_BLOCKED_PRIVATE.json`. No images, row-level labels/scores, or weights are committed here.
+
+## Status refresh — 2026-11-04 19:00 IST
+
+- L_H review state is unchanged: the review and failure-audit files retain their 17:44 and 17:46 IST timestamps; there is no qualification receipt, L_H CUDA check, allocation, training process, or L_H metric.
+- Updated shared 72-hour ledger: `35.547125` GPU-hours charged; CORE retains a `19.25` GPU-hour active reservation; `17.202875` GPU-hours remain uncommitted. F3Net's reservation is closed and the ledger records `7.536253` charged GPU-hours. This improves the budget headroom, but is not evidence that L_H's training cost fits: its required GPU profile has not run.
+- F3Net has 50 recorded epochs, but its output currently lacks both `DONE` and `RUN_VERIFIED.json`; it is not treated as verified completion. CORE remains active with 31 recorded epochs / 52,886 steps. Ding's existing run also remains active. No jobs were stopped or modified.
+- No new GPU lease was obtained for L_H. Its intervention qualification failure still blocks the dependent CUDA profile and training stages. L_A is likewise not started.
