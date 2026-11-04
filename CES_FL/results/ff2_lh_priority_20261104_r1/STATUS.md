@@ -20,7 +20,7 @@
 | Intervention preview binding | PASS | The new 88-case preview matches the previous preview in all 88 source image hashes, all settings, and all rendered contact-sheet hashes. Previous and new preview hashes: `f4fc30cf66df82d7d4e1aac36c14da261c218992714e51dc263f30f3a4270f2e` and `c4c6f6acdd899f87e80355adb9071a85fcee3d6b7a5cbd8076944bbfe17bbe38`. |
 | Independent intervention review | BLOCKED | Existing decisions are 72 approved, 8 uncertain, 8 rejected. They were AI visual inspections, not human approval; the review does not establish that the intervention preserves or removes the intended evidence. |
 | Qualification | FAIL | `commands.sh qualify` exited 1: `Substantive named operator review incomplete/rejected; revise recipe under new proposal`. No qualification receipt was created. |
-| CUDA checks / 20-step cost profile | NOT RUN | The required qualification did not pass and no new GPU allocation was available. No L_H GPU-hours were charged. |
+| CUDA checks / 20-step cost profile | NOT RUN | The required qualification did not pass and no L_H GPU allocation was obtained. No L_H GPU-hours were charged. |
 | L_H training | BLOCKED_INPUTS | No training process, checkpoint, epoch result, or L_H fairness metric exists for this request. |
 | Matched L_A training | BLOCKED_INPUTS | Same preview and qualification gate; not started. |
 | TEST evaluation | NOT RUN | No TEST manifest, labels, or scores were read. |
