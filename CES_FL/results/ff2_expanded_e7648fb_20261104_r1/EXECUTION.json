@@ -1,5 +1,5 @@
 {
-  "observed_management_local": "2026-11-04T10:40 Asia/Kolkata",
+  "observed_management_local": "2026-11-04T16:04 Asia/Kolkata",
   "source_commit": "e7648fb25aeb16d49bbef33ad998e1b1cf5a5016",
   "source_worktree": "detached and clean",
   "requested_operator_prompt": "CES_FL/proposals/ff2_expanded_baselines_20261104_r1/GPU_OPERATOR_PROMPT.md",
@@ -31,9 +31,10 @@
   "real_train_20_step_profile_failed": {"method":"srm","reason":"CUDA OOM under concurrent shared-card workload; original batch/config preserved"},
   "expanded_training_launched": true,
   "training_runs": {
-    "f3net": {"state":"RUNNING_EPOCH_1","latest_checkpoint_epoch":1,"latest_checkpoint_batch":500,"selected_epoch":null,"last_checkpoint_sha256":"d0207424b39be33b4122e8dc2a076411323c1c4deedd40e80a552305ab77806b","config_digest":"ae529c3af7dc58f55bc1b27064ca866a5eb00013a33e2cb4cd548d74741b2bcf","host":"gpu02","gpu_uuid":"GPU-65f63cc5-9366-5c2d-196a-6e7a0a62c1e8","controller_pid":1586452,"worker_pid":1586704,"epoch_budget":22.75},
-    "core": {"state":"RUNNING_EPOCH_1","latest_checkpoint_epoch":1,"latest_checkpoint_batch":1000,"selected_epoch":null,"last_checkpoint_sha256":"88e4668d50d507ae557f3bbbaad0eaf4835a87333b4a3383b3990084d43c4d89","config_digest":"b861f3e0aa608430cbcf53848f446be93364abd342b486aa377ba5946bacf389","host":"gpu01","gpu_uuid":"GPU-789d1ee4-d888-8a11-c94e-3d866900bc4d","controller_pid":4035250,"worker_pid":4035508,"epoch_budget":19.25}
+    "f3net": {"state":"RUNNING_EPOCH_36","latest_validation_epoch":35,"latest_validation_auc_pct":98.80072288982183,"checkpoint_epoch":36,"checkpoint_step":60500,"selected_epoch":null,"last_checkpoint_sha256":"46e6ee6643a9036e4892dd56ba71d61dd5ec2c67a5dbf3c5943ca259feb650cd","config_digest":"ae529c3af7dc58f55bc1b27064ca866a5eb00013a33e2cb4cd548d74741b2bcf","host":"gpu02","gpu_uuid":"GPU-65f63cc5-9366-5c2d-196a-6e7a0a62c1e8","controller_pid":1586452,"worker_pid":1586704,"epoch_budget":22.75},
+    "core": {"state":"RUNNING_EPOCH_21","latest_validation_epoch":20,"latest_validation_auc_pct":99.66550264480924,"checkpoint_epoch":21,"checkpoint_step":34500,"selected_epoch":null,"last_checkpoint_sha256":"61b3d536b692a9fc8e27deb3a62888e3d6c2e3db98926c000a9bd5c5351bccc9","config_digest":"b861f3e0aa608430cbcf53848f446be93364abd342b486aa377ba5946bacf389","host":"gpu01","gpu_uuid":"GPU-789d1ee4-d888-8a11-c94e-3d866900bc4d","controller_pid":4035250,"worker_pid":4035508,"epoch_budget":19.25}
   },
+  "existing_ding_ff2": {"state":"RUNNING_CORRECTED_GDA","classification_epochs":50,"sfd_complete":true,"gda_epochs":3,"gda_latest_validation_auc_pct":99.05944231622104,"gda_planned_epochs":50,"overall_done":false,"test_read":false},
   "test_evaluation_launched": false,
   "existing_jobs_modified_or_terminated": false,
   "shared_ff2_budget_gpu_hours": {"cap":72,"charged":28.010872244437536,"reserved":42.0,"active_gpus":2,"uncommitted":1.989127755562464},
