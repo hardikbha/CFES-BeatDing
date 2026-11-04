@@ -1,12 +1,12 @@
 # Corrected-source forensic-response study: actual progress
 
-Observed management UTC: 2026-11-04T00:40:50.377839+00:00
+Observed management UTC: 2026-11-04T00:50:55.335208+00:00
 
 Execution commit `c332fd34fb603b8919b15fee08e8d022fb9f57c8`; script SHA256 `89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b`.
 
 C/D: authorized direct SSH shared GPU leases. A/B: actual PBS ngpus=2 resource-count allocation, distinct pool-v2 UUID bindings under user authorization; scheduler physical mapping unavailable unless recorded. No exclusive GPUs claimed. Existing Ding source/jobs preserved. No TEST inference.
 
-New-study task-held GPU time: **19.1816/24TOTAL GPU-hours**. Unspent conservative reservations: 8.1050hours. Count both GPUs at full task-held wall time, even when shared; not kernel-only/exclusive-H100 utilization. CPU preflight/review are not GPU time.
+New-study task-held GPU time: **19.3483/24TOTAL GPU-hours**. Unspent conservative reservations: 7.9383hours. Count both GPUs at full task-held wall time, even when shared; not kernel-only/exclusive-H100 utilization. CPU preflight/review are not GPU time.
 
 | Dataset | Arm | Verified process/completion state | Complete epochs | Selected so far | VAL AUC (%) | gender×race F_FPR (fraction) | FPR gap (pp) | Worst AUC (%) |
 |---|---|---|---:|---:|---:|---:|---:|---:|
