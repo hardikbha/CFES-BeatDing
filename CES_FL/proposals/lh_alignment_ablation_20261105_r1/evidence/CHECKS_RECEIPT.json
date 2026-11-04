@@ -1,0 +1,17 @@
+{
+  "status": "CPU_SOFTWARE_CHECKS_PASS",
+  "tests": 9,
+  "scientific_source_sha256": "1997eebf093aa3e37de1cbbe58302a1539ac2e517f966a4607aae89dc695a8e0",
+  "files_sha256": {
+    "CES_FL/scripts/lh_alignment_followup.py": "86e740bf088ccdd7a88f56f167f07a7b0393b98789e7038299d8d94c1b0da4fb",
+    "CES_FL/tests/test_lh_alignment_followup.py": "71734881712c73e012a773cfeb85a364ac40cb59aee9ea6d840a042823bf75e7",
+    "CES_FL/proposals/lh_alignment_ablation_20261105_r1/C1.json": "93c1c71b9688edfa0a4d33dd5978f4e43ce25e7ec49d823468762955a4b328ac",
+    "CES_FL/proposals/lh_alignment_ablation_20261105_r1/protocol.json": "207a8e83e59752b9203c3e4c0a41f4d3080e5d049b44f5da2c83d2bcd25d204d",
+    "CES_FL/proposals/lh_alignment_ablation_20261105_r1/GPU_OPERATOR_PROMPT.md": "fb285b8a6971272a391370a12461a68ab16ba28db3da4a51486617dc5ffcb1a8",
+    "CES_FL/proposals/lh_alignment_ablation_20261105_r1/evidence/CPU_TESTS.log": "c3c53d901eb390d07098690a2bbdf1d718ab1eae42f749c55c6d26644d6cc482"
+  },
+  "production_binding_verified": false,
+  "CUDA_checked": false,
+  "production_training_launched": false,
+  "TEST_read": false
+}

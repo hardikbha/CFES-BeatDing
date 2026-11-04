@@ -1,0 +1,12 @@
+usage: lh_alignment_followup.py [-h]
+                                {bind,diagnose,cuda-check,train,report} ...
+
+Pinned TRAIN diagnostics and one conditional native-arm-C alignment ablation.
+The scientific model/source and H1 config remain unchanged. This helper does
+not allocate a GPU, generate review images, alter approvals or access TEST.
+
+positional arguments:
+  {bind,diagnose,cuda-check,train,report}
+
+optional arguments:
+  -h, --help            show this help message and exit

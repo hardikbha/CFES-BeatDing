@@ -1,0 +1,22 @@
+test_C_removes_only_alignment_value_and_gradient (test_lh_alignment_followup.AlignmentTests) ... /Users/hardiksharma/Downloads/fairness_cvpr/CFES-BeatDing-alignment-ablation-20261105-r1/CES_FL/tests/test_lh_alignment_followup.py:59: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  self.assertEqual(float(C['response_alignment']),0.)
+ok
+test_empty_duplicate_or_unresolved_review_inventory_rejected (test_lh_alignment_followup.AlignmentTests) ... ok
+test_engineering_trigger_needs_support_and_strength (test_lh_alignment_followup.AlignmentTests) ... ok
+test_fixed_MAIN_plan_uniform_determinism_without_replacement (test_lh_alignment_followup.AlignmentTests) ... ok
+test_full_width_224_native_C_backward_and_frozen_BN (test_lh_alignment_followup.AlignmentTests) ... ok
+test_native_C_fixture_lifecycle_resume_and_coverage (test_lh_alignment_followup.AlignmentTests) ... {"status": "PREFLIGHT_PASS", "train": 16, "val": 16}
+{"arm": "C", "epoch": 1, "validation_auc": 0.578125, "paired_sources": 8, "seconds": 3.381472915999999}
+{"arm": "C", "epoch": 2, "validation_auc": 0.59375, "paired_sources": 8, "seconds": 3.558770457999999}
+{"arm": "C", "epoch": 1, "validation_auc": 0.578125, "paired_sources": 8, "seconds": 0.12547400000000053}
+{"arm": "C", "epoch": 2, "validation_auc": 0.59375, "paired_sources": 8, "seconds": 0.2898656249999991}
+ok
+test_profile_zero_updates_and_all_component_norms (test_lh_alignment_followup.AlignmentTests) ... ok
+test_protocol_and_C1_are_pinned_to_H1 (test_lh_alignment_followup.AlignmentTests) ... ok
+test_transform_is_common_and_identity_does_not_change_inputs (test_lh_alignment_followup.AlignmentTests) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 7.086s
+
+OK

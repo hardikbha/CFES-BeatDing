@@ -1,5 +1,9 @@
 # CES-FL — supervisor review and training handoff
 
+## Repeated alignment diagnostic and C1 follow-up — 5 November 2026
+
+[Proposal](proposals/lh_alignment_ablation_20261105_r1/README.md) · [GPU operator prompt](proposals/lh_alignment_ablation_20261105_r1/GPU_OPERATOR_PROMPT.md) · [CPU checks](proposals/lh_alignment_ablation_20261105_r1/CHECKS.md). The new helper binds the completed H0/H1/A1 evidence and all352existing H1 review cases, profiles20fixed TRAIN events under identity/resize for H0/H1, and conditionally permits one three-epoch native-arm-C ablation. The scientific trainer and H1 config are unchanged; only response alignment is removed in the candidate. CPU tests pass; actual cluster diagnostics and candidate training remain pending. Maximum one GPU/one aggregate GPU-hour within the existing ledger; no new TEST evaluation or FairForge-2 review change.
+
 ## Short nuisance/sensitivity pilot — 4 November 2026
 
 [Runnable four-arm proposal](proposals/lh_nuisance_pilot_20261104_r1/README.md) · [GPU operator prompt](proposals/lh_nuisance_pilot_20261104_r1/GPU_OPERATOR_PROMPT.md) · [Actual CPU checks](proposals/lh_nuisance_pilot_20261104_r1/CHECKS.md). New ResNet A0/H0/A1/H1 three-epoch cohort tests original versus matched mild processing, retaining original losses and initialization. Synthetic counterexamples demonstrate possible scale/texture shortcuts; trained-checkpoint diagnostics and production GPU runs are pending. Maximum two devices/three aggregate GPU-hours within the remaining study ledger. Publication does not launch jobs. No new benchmark TEST use or claim of disentangled features.

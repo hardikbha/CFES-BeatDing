@@ -1,0 +1,71 @@
+{
+  "id": "lh_alignment_ablation_20261105_r1",
+  "scientific_source_sha256": "1997eebf093aa3e37de1cbbe58302a1539ac2e517f966a4607aae89dc695a8e0",
+  "reference_results_commit": "e993315a853aa278ec649010fa11daef1e601e44",
+  "config_sha256": {
+    "H0": "34800f42f2cc81df32508b7a732700e45b4df5f6ddfebca1a109aad1db1407ef",
+    "H1": "93c1c71b9688edfa0a4d33dd5978f4e43ce25e7ec49d823468762955a4b328ac",
+    "A1": "4529e43ea0fd04438e249ead1c758cb6dd1631a8a841119024eed7c089e854e9"
+  },
+  "checkpoint_sha256": {
+    "H0": "40802bb6bc8f7a9ec315a697d74d2be8b510fedcd42966abd2b64b1be0260e42",
+    "H1": "2b3c40e50bfef49b3898c911068b6a1379e0c8b6513c052b8897831e1a9a4d96",
+    "A1": "e9d7420e04d706fd4aed133473b05cc26083f072935b0c346c502ffb4bac9d20"
+  },
+  "diagnostic": {
+    "seed": 17,
+    "events": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19],
+    "conditions": ["identity", "resize90"],
+    "checkpoints": ["H0", "H1"],
+    "main_batch": 32,
+    "main_sampling": "Deterministic uniform permutation of all TRAIN rows, without replacement across 20 batches; original inverse-cell BCE weights retained",
+    "scope": "Native-style main sampling plus all five auxiliary axes and four operator/strength cases; fixed auxiliary-event diagnostic, not production-step frequencies",
+    "trigger": {
+      "minimum_valid_batches_per_condition": 16,
+      "minimum_negative_cosine_fraction": 0.6,
+      "minimum_median_alignment_to_BCE_gradient_norm_ratio": 0.25,
+      "checkpoint": "H1",
+      "condition_rule": "Either prespecified condition; both must have sufficient support and both are reported",
+      "interpretation": "Engineering triage for a single ablation, not statistical evidence of causal harm"
+    }
+  },
+  "C1": {
+    "native_arm": "C",
+    "epochs": 3,
+    "config_file": "C1.json",
+    "config_identical_to": "H1",
+    "only_objective_change": "Response alignment absent; classification, hierarchical fairness, sensitivity and sham control retained",
+    "selection": "Earliest strict maximum clean FF++ validation AUC",
+    "init": "Same P50 encoder and fresh identical seed17 head; never initialize from trained H1"
+  },
+  "qualification": {
+    "expected_cases": 352,
+    "source_bound_unchanged_H1_review_reuse_only": true,
+    "human_review_claimed": false,
+    "real_forgery_validity_claimed": false
+  },
+  "guardrails": {
+    "primary": "gender_race/F_FPR at native validation threshold",
+    "utility": ["overall/auc", "overall/fnr"],
+    "secondary": "All axes, worst-group AUC, FPR/FNR gaps, F_DP and es_AUC; show regressions",
+    "bootstrap_draws": 1000,
+    "minimum_usable": 900,
+    "no_relaxation": true,
+    "point_favorable": "Primary lower than H1, AUC no lower and FNR no higher; numerical screen only, not a noninferiority proof"
+  },
+  "budget": {
+    "maximum_concurrent_gpus": 1,
+    "maximum_aggregate_gpu_hours": 1.0,
+    "native_training_cap_hours": 0.75,
+    "includes": ["diagnostics", "CUDA checks", "idle allocation", "C1 training", "validation replay"],
+    "use_verified_remaining_shared_ledger": true,
+    "extra_total_budget_granted": 0,
+    "FF2_budget_transfer": false,
+    "automatic_extensions": false
+  },
+  "TEST_access": false,
+  "new_pretraining": false,
+  "new_seed": false,
+  "new_images_or_review_generation": false,
+  "training_started_here": false
+}
