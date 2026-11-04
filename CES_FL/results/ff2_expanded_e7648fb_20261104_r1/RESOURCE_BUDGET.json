@@ -1,0 +1,14 @@
+{
+  "scope": "shared existing FF2 72-GPU-hour cap",
+  "cap_gpu_hours": 72,
+  "charged_gpu_hours": 27.887102275556988,
+  "reserved_gpu_hours": 0,
+  "uncommitted_gpu_hours": 44.112897724443016,
+  "active_ledger_gpus": 0,
+  "profile_job": "45394.mgmt01",
+  "profile_job_state": "FAILED_FAST_NO_CUDA_BINDING",
+  "diagnostic_job": "45396.mgmt01",
+  "diagnostic_status": "PBS ngpus=1 allocation, no CUDA_VISIBLE_DEVICES/PBS_GPUFILE, all8devices visible",
+  "gpu_time_diagnostics_included_in_charged_total": true,
+  "separate_LH_budget_touched": false
+}

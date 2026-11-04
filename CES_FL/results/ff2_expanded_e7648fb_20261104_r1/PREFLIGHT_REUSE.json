@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "fresh_full_decode": false,
+  "methods": [
+    {
+      "method": "efficientnetb4",
+      "status": "PASS",
+      "config_digest": "d068b99ba4d874f4adb7a29ec1d8a300229595ae45d3197150b7c99de8f9df80",
+      "train_sha256": "4f83e7dc8042533329d7047fefd0f30cbd96f45d42bde2666dd0edc7d58f29cc",
+      "val_sha256": "aeda051259d9e26b07c2810152b601ae115ce7c9e10523f99ea07bbc9f92afa8",
+      "train_count": 218266,
+      "val_count": 31107,
+      "inventory_sha256": "9f5d4b587d5dd87fe04a7db9b353c3aabc043b892c931dfd7f2b059112276621",
+      "reuse": "Exact ordered inventory previously fully hashed/decoded by three completed FF2 preflights; current TRAIN/VAL manifest hashes match."
+    },
+    {
+      "method": "f3net",
+      "status": "PASS",
+      "config_digest": "ae529c3af7dc58f55bc1b27064ca866a5eb00013a33e2cb4cd548d74741b2bcf",
+      "train_sha256": "4f83e7dc8042533329d7047fefd0f30cbd96f45d42bde2666dd0edc7d58f29cc",
+      "val_sha256": "aeda051259d9e26b07c2810152b601ae115ce7c9e10523f99ea07bbc9f92afa8",
+      "train_count": 218266,
+      "val_count": 31107,
+      "inventory_sha256": "9f5d4b587d5dd87fe04a7db9b353c3aabc043b892c931dfd7f2b059112276621",
+      "reuse": "Exact ordered inventory previously fully hashed/decoded by three completed FF2 preflights; current TRAIN/VAL manifest hashes match."
+    },
+    {
+      "method": "spsl",
+      "status": "PASS",
+      "config_digest": "fe975febf6d610628e94a2860eafed906b8b6956a6db7ae944137922cfbb12d9",
+      "train_sha256": "4f83e7dc8042533329d7047fefd0f30cbd96f45d42bde2666dd0edc7d58f29cc",
+      "val_sha256": "aeda051259d9e26b07c2810152b601ae115ce7c9e10523f99ea07bbc9f92afa8",
+      "train_count": 218266,
+      "val_count": 31107,
+      "inventory_sha256": "9f5d4b587d5dd87fe04a7db9b353c3aabc043b892c931dfd7f2b059112276621",
+      "reuse": "Exact ordered inventory previously fully hashed/decoded by three completed FF2 preflights; current TRAIN/VAL manifest hashes match."
+    },
+    {
+      "method": "srm",
+      "status": "PASS",
+      "config_digest": "49845e07e8b3ebfbd1d2cbdb17e191aa5ed818b753a8ca420c8ee518c1b0a00a",
+      "train_sha256": "4f83e7dc8042533329d7047fefd0f30cbd96f45d42bde2666dd0edc7d58f29cc",
+      "val_sha256": "aeda051259d9e26b07c2810152b601ae115ce7c9e10523f99ea07bbc9f92afa8",
+      "train_count": 218266,
+      "val_count": 31107,
+      "inventory_sha256": "9f5d4b587d5dd87fe04a7db9b353c3aabc043b892c931dfd7f2b059112276621",
+      "reuse": "Exact ordered inventory previously fully hashed/decoded by three completed FF2 preflights; current TRAIN/VAL manifest hashes match."
+    },
+    {
+      "method": "core",
+      "status": "PASS",
+      "config_digest": "b861f3e0aa608430cbcf53848f446be93364abd342b486aa377ba5946bacf389",
+      "train_sha256": "4f83e7dc8042533329d7047fefd0f30cbd96f45d42bde2666dd0edc7d58f29cc",
+      "val_sha256": "aeda051259d9e26b07c2810152b601ae115ce7c9e10523f99ea07bbc9f92afa8",
+      "train_count": 218266,
+      "val_count": 31107,
+      "inventory_sha256": "9f5d4b587d5dd87fe04a7db9b353c3aabc043b892c931dfd7f2b059112276621",
+      "reuse": "Exact ordered inventory previously fully hashed/decoded by three completed FF2 preflights; current TRAIN/VAL manifest hashes match."
+    },
+    {
+      "method": "univfd",
+      "status": "PASS",
+      "config_digest": "48900b19b7069129b834d699a9fd3620af13b5ebafe66c4ebc4b92342f3ac063",
+      "train_sha256": "4f83e7dc8042533329d7047fefd0f30cbd96f45d42bde2666dd0edc7d58f29cc",
+      "val_sha256": "aeda051259d9e26b07c2810152b601ae115ce7c9e10523f99ea07bbc9f92afa8",
+      "train_count": 218266,
+      "val_count": 31107,
+      "inventory_sha256": "9f5d4b587d5dd87fe04a7db9b353c3aabc043b892c931dfd7f2b059112276621",
+      "reuse": "Exact ordered inventory previously fully hashed/decoded by three completed FF2 preflights; current TRAIN/VAL manifest hashes match."
+    }
+  ],
+  "prior_inventory_rehash_equal": true,
+  "test_read": false
+}

@@ -4,6 +4,10 @@ New [baseline suite and operator prompt](proposals/ff2_baseline_suite_s17_202611
 
 # Current CES-FL status
 
+## FairForge-2 expanded baselines — 4 November 2026
+
+[Readiness, completed baseline results and blockers](results/ff2_expanded_e7648fb_20261104_r1/STATUS.md). Exact source commit `e7648fb25aeb16d49bbef33ad998e1b1cf5a5016`. Existing BCE/DAG/DAW are verified complete50/50 and reused; their checkpoint-selected VAL AUCs are99.804621/99.813559/99.836011%. Nine model-adapter CPU tests and six budget tests pass; source clones, local weight loads and six source/config-bound reused input receipts pass. No new model training, CUDA forward or TEST evaluation ran. PBS job45394 allocated ngpus1 but supplied no CVD; diagnostic45396 saw8CUDA devices and no PBS_GPUFILE. No device was guessed. Shared72h ledger:27.887102h charged,44.112898h uncommitted. CUDA smoke and20-step profiles remain blocked pending a job-specific site binding. The commit's README links `GPU_OPERATOR_PROMPT.md`, but that file is missing.
+
 ## Plain Xception head ablation — 3 November 2026
 
 [Project memory and research blueprint](PROJECT_MEMORY.md) · [Two-arm proposal](proposals/plain_head_s17_20261103T101418Z/README.md) · [GPU operator prompt](proposals/plain_head_s17_20261103T101418Z/GPU_OPERATOR_PROMPT.md). New standalone Xception+GAP+linear source:20,809,001 total /6,790,433 exit-policy trainable parameters. CPU synthetic smoke and targeted checks pass; CUDA/input checks and both real-data runs are pending. Existing H and completed results are preserved. This publication launches no jobs.

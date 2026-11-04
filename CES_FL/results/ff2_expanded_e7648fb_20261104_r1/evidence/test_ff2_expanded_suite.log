@@ -1,0 +1,18 @@
+test_dropout_resume_is_exact (test_ff2_expanded_suite.Checks.test_dropout_resume_is_exact) ... {"method": "vit_b16", "epoch": 1, "val_auc": 0.375, "elapsed_seconds": 6.053006701171398}
+{"method": "vit_b16", "epoch": 2, "val_auc": 0.375, "elapsed_seconds": 6.083737803157419}
+{"method": "vit_b16", "epoch": 1, "val_auc": 0.375, "elapsed_seconds": 0.034764116862788796}
+{"method": "vit_b16", "epoch": 2, "val_auc": 0.375, "elapsed_seconds": 0.0662455998826772}
+ok
+test_invalid_predictions_fail (test_ff2_expanded_suite.Checks.test_invalid_predictions_fail) ... ok
+test_metric_formulas_and_eer_reference (test_ff2_expanded_suite.Checks.test_metric_formulas_and_eer_reference) ... ok
+test_paired_methods_reject_plain_bce_fallback (test_ff2_expanded_suite.Checks.test_paired_methods_reject_plain_bce_fallback) ... ok
+test_spatial_fft_does_not_mix_images (test_ff2_expanded_suite.Checks.test_spatial_fft_does_not_mix_images) ... ok
+test_threshold_changes_decisions_not_auc (test_ff2_expanded_suite.Checks.test_threshold_changes_decisions_not_auc) ... ok
+test_unknown_and_single_class_not_fabricated (test_ff2_expanded_suite.Checks.test_unknown_and_single_class_not_fabricated) ... ok
+test_update_seed_wraps_after_many_steps (test_ff2_expanded_suite.Checks.test_update_seed_wraps_after_many_steps) ... ok
+test_xception_native_initialization_parity (test_ff2_expanded_suite.Checks.test_xception_native_initialization_parity) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 7.120s
+
+OK

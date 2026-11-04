@@ -1,5 +1,9 @@
 # CES-FL — supervisor review and training handoff
 
+## FairForge-2 expanded baseline readiness — e7648fb
+
+[Current readiness report](results/ff2_expanded_e7648fb_20261104_r1/STATUS.md) · [baseline validation metrics](results/ff2_expanded_e7648fb_20261104_r1/BASELINE_VALIDATION.json) · [model readiness matrix](results/ff2_expanded_e7648fb_20261104_r1/READINESS.csv) · [source/config hashes](results/ff2_expanded_e7648fb_20261104_r1/SOURCE_CONFIG_HASHES.json) · [budget state](results/ff2_expanded_e7648fb_20261104_r1/RESOURCE_BUDGET.json). Exact source commit `e7648fb25aeb16d49bbef33ad998e1b1cf5a5016`; nine expanded-suite CPU tests and six budget tests pass. Six local pretrained weights load. Input inventory was reused from identical completed baseline preflights. CUDA smoke and timing profiles are blocked because PBS assigned one GPU without a CUDA device binding; no new training or TEST evaluation launched. The named GPU operator prompt is absent in that commit; the available proposal README/protocol were followed, and the missing file is documented.
+
 ## FairForge-2 external baselines — 3 November 2026
 
 [Proposal and readiness](proposals/ff2_baseline_suite_s17_20261103T110324Z/README.md) · [GPU operator prompt](proposals/ff2_baseline_suite_s17_20261103T110324Z/GPU_OPERATOR_PROMPT.md). User authorized72 additional aggregate GPU-hours and at most3 allocated GPUs. Matched native Xception BCE/DAG-FDD/DAW-FDD code, configs and CPU checks are prepared; real input/CUDA checks and training remain pending. PG-FDD/FairAdapter source is pinned but adapters remain conditional; RSEF lacks verified source. Existing Ding and plain-head work is preserved. Publish destination is the writable `hardiksharma6555` fork; this is not a training launch.

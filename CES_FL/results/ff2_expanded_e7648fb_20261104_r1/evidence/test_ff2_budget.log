@@ -1,0 +1,11 @@
+test_cap_includes_prior_usage (test_ff2_budget.BudgetTests.test_cap_includes_prior_usage) ... ok
+test_charge_gpu_hours_and_release_reservation (test_ff2_budget.BudgetTests.test_charge_gpu_hours_and_release_reservation) ... ok
+test_duplicate_job_and_finish_rejected (test_ff2_budget.BudgetTests.test_duplicate_job_and_finish_rejected) ... ok
+test_invalid_claims (test_ff2_budget.BudgetTests.test_invalid_claims) ... ok
+test_overdue_active_job_not_hidden (test_ff2_budget.BudgetTests.test_overdue_active_job_not_hidden) ... ok
+test_three_gpu_concurrency (test_ff2_budget.BudgetTests.test_three_gpu_concurrency) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.004s
+
+OK

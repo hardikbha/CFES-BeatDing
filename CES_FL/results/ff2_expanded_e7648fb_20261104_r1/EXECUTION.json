@@ -1,0 +1,36 @@
+{
+  "observed_management_local": "2026-11-04 Asia/Kolkata",
+  "source_commit": "e7648fb25aeb16d49bbef33ad998e1b1cf5a5016",
+  "source_worktree": "detached and clean",
+  "requested_operator_prompt": "CES_FL/proposals/ff2_expanded_baselines_20261104_r1/GPU_OPERATOR_PROMPT.md",
+  "operator_prompt_present_in_exact_commit": false,
+  "available_protocol_used": [
+    "CES_FL/AGENTS.md",
+    "CES_FL/WORKFLOW.md",
+    "CES_FL/proposals/ff2_expanded_baselines_20261104_r1/README.md",
+    "protocol.json",
+    "methods.json",
+    "PAPER_AND_METHOD_AUDIT.md",
+    "sources.lock.json"
+  ],
+  "existing_baselines": {
+    "source_commit": "815b4d4bc679c55d4ee6323cc7284335ce210568",
+    "bce": {"status":"COMPLETED_VERIFIED","epochs":50,"selected_epoch":40,"checkpoint_sha256":"a62af6bc1ff02f4280fcb38e9b9a4b035ccee3427472d160880b4b9e0c31d835"},
+    "dag": {"status":"COMPLETED_VERIFIED","epochs":50,"selected_epoch":50,"checkpoint_sha256":"7cd8e8511910ea8e94d6adb8f44c5890cc1f08d7d1fe8b63f41043f73576309f"},
+    "daw": {"status":"COMPLETED_VERIFIED","epochs":50,"selected_epoch":41,"checkpoint_sha256":"63b53852dfd61d8c44a25bd8fcb1baf90a67719fcccb94225892db49c6ea4036"}
+  },
+  "cpu_checks": {"expanded_suite": "9/9 pass, 0 skipped", "shared_budget": "6/6 pass", "source_clone_receipt": "PASS"},
+  "local_pretrained_weight_loading": {"efficientnetb4":"PASS","f3net":"PASS","spsl":"PASS","srm":"PASS","core":"PASS","univfd":"PASS","vit_b16":"BLOCKED_NO_COMPATIBLE_LOCAL_TORCHVISION_STATE"},
+  "input_preflight": {"status":"PASS_REUSED_FULL_PRIOR_IMAGE_HASH_INVENTORY","train_rows":218266,"val_rows":31107,"test_read":false,"inventory_sha256":"9f5d4b587d5dd87fe04a7db9b353c3aabc043b892c931dfd7f2b059112276621","fresh_rescan":"Interrupted after a redundant partial reread; preserved outside repository; exact prior manifest/inventory reuse was verified."},
+  "pbs_jobs": {
+    "45394.mgmt01":{"queue":"workq","ngpus":1,"exec_host":"gpu02/8*8","exit_status":32,"reason":"CUDA_VISIBLE_DEVICES unset; guard stopped before model execution"},
+    "45396.mgmt01":{"queue":"workq","ngpus":1,"exec_host":"gpu01/8","exit_status":0,"diagnostic":"CUDA_VISIBLE_DEVICES and PBS_GPUFILE unset; PyTorch saw8visible GPUs"}
+  },
+  "cuda_smokes_completed": 0,
+  "real_train_20_step_profiles_completed": 0,
+  "expanded_training_launched": false,
+  "test_evaluation_launched": false,
+  "existing_jobs_modified_or_terminated": false,
+  "shared_ff2_budget_gpu_hours": {"cap":72,"charged":27.887102275556988,"reserved":0,"uncommitted":44.112897724443016},
+  "separate_lh_budget_touched": false
+}

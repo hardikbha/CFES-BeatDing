@@ -1,0 +1,30 @@
+#!/bin/bash
+#PBS -N ff2BindDiag
+#PBS -q workq
+#PBS -l select=1:ncpus=1:ngpus=1:mem=2gb
+#PBS -l walltime=00:05:00
+#PBS -j oe
+#PBS -k oe
+#PBS -o /home/sachin.chaudhary/ces_fl_runs/ff2_expanded_e7648fb/binding_diagnostic.log
+set -u
+LOG="/home/sachin.chaudhary/ces_fl_runs/ff2_expanded_e7648fb/binding_diagnostic_${PBS_JOBID:?}.log"
+exec >"$LOG" 2>&1
+echo "PBS_JOBID=${PBS_JOBID:-}"
+echo "CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES:-UNSET}"
+echo "PBS_GPUFILE=${PBS_GPUFILE:-UNSET}"
+env | sort | grep -E '^(CUDA|PBS_GPU)' || true
+if [[ -n "${PBS_GPUFILE:-}" && -r "$PBS_GPUFILE" ]]; then
+  echo 'PBS_GPUFILE_CONTENT_BEGIN'
+  cat "$PBS_GPUFILE"
+  echo 'PBS_GPUFILE_CONTENT_END'
+fi
+/opt/pbs/bin/qstat -f "${PBS_JOBID:?}" | grep -E 'job_state|exec_host|Resource_List.ngpus|Resource_List.ncpus'
+nvidia-smi --query-gpu=index,uuid,memory.free,memory.used --format=csv,noheader,nounits
+/home/sachin.chaudhary/.conda/envs/aiface/bin/python - <<'PY'
+import os,torch
+print('TORCH_CUDA_AVAILABLE',torch.cuda.is_available())
+print('TORCH_DEVICE_COUNT',torch.cuda.device_count())
+for i in range(torch.cuda.device_count()):
+ print('TORCH_DEVICE',i,torch.cuda.get_device_name(i))
+print('CUDA_VISIBLE_DEVICES',os.environ.get('CUDA_VISIBLE_DEVICES'))
+PY

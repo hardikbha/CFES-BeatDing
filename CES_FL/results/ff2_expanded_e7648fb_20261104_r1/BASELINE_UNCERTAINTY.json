@@ -1,0 +1,398 @@
+{
+  "source": "Saved selected validation predictions only",
+  "test_read": false,
+  "draws": 1000,
+  "required_usable_draws": 900,
+  "models": {
+    "bce": {
+      "fixed_probability_0_5": {
+        "method": "percentile connected-recorded-contributor bootstrap",
+        "replicates": 1000,
+        "seed": 17,
+        "components": 45,
+        "training_seed_variability_measured": false,
+        "true_person_independence_verified": false,
+        "intervals": {
+          "overall/auc": {
+            "estimate": 0.998046212790376,
+            "ci95": [
+              0.995168592858065,
+              0.9991070605687142
+            ],
+            "valid_replicates": 1000,
+            "invalid_or_unavailable_replicates": 0
+          },
+          "gender/F_FPR": {
+            "estimate": 0.036731535687694356,
+            "ci95": [
+              0.002713519109891277,
+              0.20764103749609059
+            ],
+            "valid_replicates": 1000,
+            "invalid_or_unavailable_replicates": 0
+          },
+          "race/F_FPR": {
+            "estimate": 0.19461424778974384,
+            "ci95": [
+              0.09950152726118515,
+              0.9324584087219691
+            ],
+            "valid_replicates": 972,
+            "invalid_or_unavailable_replicates": 28
+          },
+          "age_bin/F_FPR": {
+            "estimate": 0.0783577749390818,
+            "ci95": [
+              0.019578321851499585,
+              0.20515437242357612
+            ],
+            "valid_replicates": 1000,
+            "invalid_or_unavailable_replicates": 0
+          },
+          "skin_bin/F_FPR": {
+            "estimate": 0.14157123054612392,
+            "ci95": [
+              0.043549996805633914,
+              0.3042882581948942
+            ],
+            "valid_replicates": 1000,
+            "invalid_or_unavailable_replicates": 0
+          },
+          "gender_race/F_FPR": {
+            "estimate": 0.4014643588311009,
+            "ci95": [
+              0.34095296246056184,
+              2.23506730426776
+            ],
+            "valid_replicates": 490,
+            "invalid_or_unavailable_replicates": 510
+          }
+        }
+      },
+      "source_validation_10pct": {
+        "method": "percentile connected-recorded-contributor bootstrap",
+        "replicates": 1000,
+        "seed": 17,
+        "components": 45,
+        "training_seed_variability_measured": false,
+        "true_person_independence_verified": false,
+        "intervals": {
+          "overall/auc": {
+            "estimate": 0.998046212790376,
+            "ci95": [
+              0.995168592858065,
+              0.9991070605687142
+            ],
+            "valid_replicates": 1000,
+            "invalid_or_unavailable_replicates": 0
+          },
+          "gender/F_FPR": {
+            "estimate": 0.03428513031853325,
+            "ci95": [
+              0.0021809273122164728,
+              0.21115205385392327
+            ],
+            "valid_replicates": 1000,
+            "invalid_or_unavailable_replicates": 0
+          },
+          "race/F_FPR": {
+            "estimate": 0.19541264811913828,
+            "ci95": [
+              0.09947196612919708,
+              0.9523167329386746
+            ],
+            "valid_replicates": 972,
+            "invalid_or_unavailable_replicates": 28
+          },
+          "age_bin/F_FPR": {
+            "estimate": 0.08740383021890699,
+            "ci95": [
+              0.019992373651881373,
+              0.22622430371918523
+            ],
+            "valid_replicates": 1000,
+            "invalid_or_unavailable_replicates": 0
+          },
+          "skin_bin/F_FPR": {
+            "estimate": 0.1456711088340845,
+            "ci95": [
+              0.042376840127135794,
+              0.31327896052593684
+            ],
+            "valid_replicates": 1000,
+            "invalid_or_unavailable_replicates": 0
+          },
+          "gender_race/F_FPR": {
+            "estimate": 0.40523658338866214,
+            "ci95": [
+              0.3535831812707215,
+              2.3190502532083856
+            ],
+            "valid_replicates": 490,
+            "invalid_or_unavailable_replicates": 510
+          }
+        }
+      }
+    },
+    "dag": {
+      "fixed_probability_0_5": {
+        "method": "percentile connected-recorded-contributor bootstrap",
+        "replicates": 1000,
+        "seed": 17,
+        "components": 45,
+        "training_seed_variability_measured": false,
+        "true_person_independence_verified": false,
+        "intervals": {
+          "overall/auc": {
+            "estimate": 0.9981355896847703,
+            "ci95": [
+              0.9955268740069638,
+              0.9992307125578138
+            ],
+            "valid_replicates": 1000,
+            "invalid_or_unavailable_replicates": 0
+          },
+          "gender/F_FPR": {
+            "estimate": 0.03566440518423816,
+            "ci95": [
+              0.0011763290539053243,
+              0.13749144153264872
+            ],
+            "valid_replicates": 1000,
+            "invalid_or_unavailable_replicates": 0
+          },
+          "race/F_FPR": {
+            "estimate": 0.14132853408355261,
+            "ci95": [
+              0.07821672595893607,
+              0.6002518511806647
+            ],
+            "valid_replicates": 972,
+            "invalid_or_unavailable_replicates": 28
+          },
+          "age_bin/F_FPR": {
+            "estimate": 0.07981430710908488,
+            "ci95": [
+              0.022475983196984226,
+              0.20298614630296868
+            ],
+            "valid_replicates": 1000,
+            "invalid_or_unavailable_replicates": 0
+          },
+          "skin_bin/F_FPR": {
+            "estimate": 0.08902887897888825,
+            "ci95": [
+              0.038164663141934924,
+              0.17806462562572284
+            ],
+            "valid_replicates": 1000,
+            "invalid_or_unavailable_replicates": 0
+          },
+          "gender_race/F_FPR": {
+            "estimate": 0.32212521031991964,
+            "ci95": [
+              0.2055284674191817,
+              1.559182988515577
+            ],
+            "valid_replicates": 490,
+            "invalid_or_unavailable_replicates": 510
+          }
+        }
+      },
+      "source_validation_10pct": {
+        "method": "percentile connected-recorded-contributor bootstrap",
+        "replicates": 1000,
+        "seed": 17,
+        "components": 45,
+        "training_seed_variability_measured": false,
+        "true_person_independence_verified": false,
+        "intervals": {
+          "overall/auc": {
+            "estimate": 0.9981355896847703,
+            "ci95": [
+              0.9955268740069638,
+              0.9992307125578138
+            ],
+            "valid_replicates": 1000,
+            "invalid_or_unavailable_replicates": 0
+          },
+          "gender/F_FPR": {
+            "estimate": 0.04275960643392794,
+            "ci95": [
+              0.001974835020201672,
+              0.18085273055668055
+            ],
+            "valid_replicates": 1000,
+            "invalid_or_unavailable_replicates": 0
+          },
+          "race/F_FPR": {
+            "estimate": 0.18324467548836465,
+            "ci95": [
+              0.09625972838637883,
+              0.8034082051871658
+            ],
+            "valid_replicates": 972,
+            "invalid_or_unavailable_replicates": 28
+          },
+          "age_bin/F_FPR": {
+            "estimate": 0.10447496027147489,
+            "ci95": [
+              0.041445297324700155,
+              0.23460909796483995
+            ],
+            "valid_replicates": 1000,
+            "invalid_or_unavailable_replicates": 0
+          },
+          "skin_bin/F_FPR": {
+            "estimate": 0.12778132375483334,
+            "ci95": [
+              0.053562412326007836,
+              0.24750983759396605
+            ],
+            "valid_replicates": 1000,
+            "invalid_or_unavailable_replicates": 0
+          },
+          "gender_race/F_FPR": {
+            "estimate": 0.37891057150121643,
+            "ci95": [
+              0.2887697746787216,
+              1.9604542622660492
+            ],
+            "valid_replicates": 490,
+            "invalid_or_unavailable_replicates": 510
+          }
+        }
+      }
+    },
+    "daw": {
+      "fixed_probability_0_5": {
+        "method": "percentile connected-recorded-contributor bootstrap",
+        "replicates": 1000,
+        "seed": 17,
+        "components": 45,
+        "training_seed_variability_measured": false,
+        "true_person_independence_verified": false,
+        "intervals": {
+          "overall/auc": {
+            "estimate": 0.9983601121121329,
+            "ci95": [
+              0.9962309783221472,
+              0.9992178516714464
+            ],
+            "valid_replicates": 1000,
+            "invalid_or_unavailable_replicates": 0
+          },
+          "gender/F_FPR": {
+            "estimate": 0.04456573350101534,
+            "ci95": [
+              0.0019531977214872365,
+              0.13937699933019881
+            ],
+            "valid_replicates": 1000,
+            "invalid_or_unavailable_replicates": 0
+          },
+          "race/F_FPR": {
+            "estimate": 0.12501416909784313,
+            "ci95": [
+              0.04795020384345152,
+              0.5728232556557893
+            ],
+            "valid_replicates": 972,
+            "invalid_or_unavailable_replicates": 28
+          },
+          "age_bin/F_FPR": {
+            "estimate": 0.11145769318461633,
+            "ci95": [
+              0.04734568177497413,
+              0.21323459611447837
+            ],
+            "valid_replicates": 1000,
+            "invalid_or_unavailable_replicates": 0
+          },
+          "skin_bin/F_FPR": {
+            "estimate": 0.04891687167741489,
+            "ci95": [
+              0.016492072268894976,
+              0.12758625568744525
+            ],
+            "valid_replicates": 1000,
+            "invalid_or_unavailable_replicates": 0
+          },
+          "gender_race/F_FPR": {
+            "estimate": 0.3237530581949966,
+            "ci95": [
+              0.18371606153645548,
+              1.5030692560272154
+            ],
+            "valid_replicates": 490,
+            "invalid_or_unavailable_replicates": 510
+          }
+        }
+      },
+      "source_validation_10pct": {
+        "method": "percentile connected-recorded-contributor bootstrap",
+        "replicates": 1000,
+        "seed": 17,
+        "components": 45,
+        "training_seed_variability_measured": false,
+        "true_person_independence_verified": false,
+        "intervals": {
+          "overall/auc": {
+            "estimate": 0.9983601121121329,
+            "ci95": [
+              0.9962309783221472,
+              0.9992178516714464
+            ],
+            "valid_replicates": 1000,
+            "invalid_or_unavailable_replicates": 0
+          },
+          "gender/F_FPR": {
+            "estimate": 0.03428513031853325,
+            "ci95": [
+              0.0015798235325828127,
+              0.13687766263579815
+            ],
+            "valid_replicates": 1000,
+            "invalid_or_unavailable_replicates": 0
+          },
+          "race/F_FPR": {
+            "estimate": 0.12865852671143008,
+            "ci95": [
+              0.052520533898379275,
+              0.6321081771794664
+            ],
+            "valid_replicates": 972,
+            "invalid_or_unavailable_replicates": 28
+          },
+          "age_bin/F_FPR": {
+            "estimate": 0.10453062480724319,
+            "ci95": [
+              0.04159148605340484,
+              0.21176879367213636
+            ],
+            "valid_replicates": 1000,
+            "invalid_or_unavailable_replicates": 0
+          },
+          "skin_bin/F_FPR": {
+            "estimate": 0.06795566845365673,
+            "ci95": [
+              0.018023166189125767,
+              0.1646103771815748
+            ],
+            "valid_replicates": 1000,
+            "invalid_or_unavailable_replicates": 0
+          },
+          "gender_race/F_FPR": {
+            "estimate": 0.3069532584737017,
+            "ci95": [
+              0.19740182460857628,
+              1.5808164585404842
+            ],
+            "valid_replicates": 490,
+            "invalid_or_unavailable_replicates": 510
+          }
+        }
+      }
+    }
+  }
+}

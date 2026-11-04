@@ -1,0 +1,85 @@
+{
+  "commit": "e7648fb25aeb16d49bbef33ad998e1b1cf5a5016",
+  "source_sha256": {
+    "CES_FL/src/ff2_expanded_runner.py": "493931fd40fdb8ab8138a3b6a50e4761bff3d4bc4e14d7690a39f76efceb4468",
+    "CES_FL/src/ff2_expanded_models.py": "3001b3406029203689bdd60f91459bd54cf850bfc29cb81bc6522290196e9999",
+    "CES_FL/scripts/ff2_expanded_metrics.py": "ab66b8e1a90fb2282a0d0caa365fa98d06977e144c22ac87d6cb7f56ea1a25e9",
+    "CES_FL/proposals/ff2_expanded_baselines_20261104_r1/methods.json": "11f70580939711301e8e4952f52c235bc9e435ea7b23d5bcbbf017a23048a42f",
+    "CES_FL/proposals/ff2_expanded_baselines_20261104_r1/protocol.json": "37164ab3fb546f54b334d86d64e3632a5290c4b721a1bb6f5d38c407ae82a999",
+    "CES_FL/proposals/ff2_expanded_baselines_20261104_r1/sources.lock.json": "5119be09d6701bb1bb20c1ab4b515b9e7ce8875dca47d4bde50c430a57846519"
+  },
+  "configs": {
+    "xception": {
+      "path": "CES_FL/proposals/ff2_expanded_baselines_20261104_r1/configs/xception.json",
+      "sha256": "68b16a73b42681a336b096c5edf5c3779291b61aabb9982da154af0f801c81e5"
+    },
+    "efficientnetb4": {
+      "path": "CES_FL/proposals/ff2_expanded_baselines_20261104_r1/configs/efficientnetb4.json",
+      "sha256": "b6869eb330687edbce0dad6df28856fa30a1856aa579b867a7eabdad113e12a5"
+    },
+    "vit_b16": {
+      "path": "CES_FL/proposals/ff2_expanded_baselines_20261104_r1/configs/vit_b16.json",
+      "sha256": "8e391937179477f408adc5780ca4e7802fdb1c5be81c9eb3fb9f97e1be4b07d9"
+    },
+    "f3net": {
+      "path": "CES_FL/proposals/ff2_expanded_baselines_20261104_r1/configs/f3net.json",
+      "sha256": "410a36caa9fafb22384421211b7fbdd8c652858c7b36022c27ad6d1f17b5030e"
+    },
+    "spsl": {
+      "path": "CES_FL/proposals/ff2_expanded_baselines_20261104_r1/configs/spsl.json",
+      "sha256": "b82331c83ce32f6e39d15b0efd9bf4e06272b5909216df0caa9f0b633dc06e60"
+    },
+    "srm": {
+      "path": "CES_FL/proposals/ff2_expanded_baselines_20261104_r1/configs/srm.json",
+      "sha256": "770c4fdcc7e24d1387b3af896deee32bbd747fe4d9d8bc2bc5bc3ad4f5a2b200"
+    },
+    "core": {
+      "path": "CES_FL/proposals/ff2_expanded_baselines_20261104_r1/configs/core.json",
+      "sha256": "e8a318c2d30a9c240b5f8fa5f6e9150e34d88727899732a6ba51992523fc6e4a"
+    },
+    "univfd": {
+      "path": "CES_FL/proposals/ff2_expanded_baselines_20261104_r1/configs/univfd.json",
+      "sha256": "8fc6e16cfc6c9bc0d83ced17303e0a8d82dde77f76aa3c319aaf90830f1be4ce"
+    },
+    "dag_reuse": {
+      "path": "CES_FL/proposals/ff2_expanded_baselines_20261104_r1/configs/dag_reuse.json",
+      "sha256": "82101224fa913c9763bb62171d050ada531156e6d1cc7c67364387c339913028"
+    },
+    "daw_reuse": {
+      "path": "CES_FL/proposals/ff2_expanded_baselines_20261104_r1/configs/daw_reuse.json",
+      "sha256": "343ec0d5a5a4b6ad81044ea4c89cc5547087914bb60f7dffd4d102b3185f352e"
+    },
+    "ucf_requirements": {
+      "path": "CES_FL/proposals/ff2_expanded_baselines_20261104_r1/configs/ucf_requirements.json",
+      "sha256": "70db4227b7a49233d3fd893813fc62eb7377f57ffc3daf0c345a64bef821164c"
+    },
+    "pg_fdd_requirements": {
+      "path": "CES_FL/proposals/ff2_expanded_baselines_20261104_r1/configs/pg_fdd_requirements.json",
+      "sha256": "f4c3d321006991c85294af13f063355264d8ffc1c23173390b85b7a0b235aeeb"
+    },
+    "bound_efficientnetb4": {
+      "path": "private:efficientnetb4",
+      "sha256": "7c1b7e14f2578cf0207507e4ca7519287bd3457ea27f8faa0dc0d6636a36411d"
+    },
+    "bound_f3net": {
+      "path": "private:f3net",
+      "sha256": "410a36caa9fafb22384421211b7fbdd8c652858c7b36022c27ad6d1f17b5030e"
+    },
+    "bound_spsl": {
+      "path": "private:spsl",
+      "sha256": "b82331c83ce32f6e39d15b0efd9bf4e06272b5909216df0caa9f0b633dc06e60"
+    },
+    "bound_srm": {
+      "path": "private:srm",
+      "sha256": "770c4fdcc7e24d1387b3af896deee32bbd747fe4d9d8bc2bc5bc3ad4f5a2b200"
+    },
+    "bound_core": {
+      "path": "private:core",
+      "sha256": "e8a318c2d30a9c240b5f8fa5f6e9150e34d88727899732a6ba51992523fc6e4a"
+    },
+    "bound_univfd": {
+      "path": "private:univfd",
+      "sha256": "2cd4df2eeb6298a390cde525fe42165a51415aa65f1a8cf4a98646e824125290"
+    }
+  }
+}
