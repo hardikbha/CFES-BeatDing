@@ -1,6 +1,6 @@
 # Operator status: Celeb-DF audit and Table 3 preparation
 
-Observed 4 November 2026. Supervisor source `43c605bcd55395dce79650c1f342429c090553a8`; ResNet implementation `352e837b98bfb73aeb6db3f754604d950ca8b580`; active P50 runner `486d1e305977f13681cab41532acb9e1773abfe3`; Ding-control adapter source SHA256 `9d480b3bf018d7fff46c840044011122b953b456df04d154f42f173ceeace324`. This file records aggregate evidence only. Private images, row-level predictions and checkpoints remain on the cluster.
+Observed 4 November 2026. Supervisor source `43c605bcd55395dce79650c1f342429c090553a8`; ResNet implementation `352e837b98bfb73aeb6db3f754604d950ca8b580`; active P50 runner `486d1e305977f13681cab41532acb9e1773abfe3`; downstream runner `f777275`; Ding-control adapter source SHA256 `9d480b3bf018d7fff46c840044011122b953b456df04d154f42f173ceeace324`. This file records aggregate evidence only. Private images, row-level predictions and checkpoints remain on the cluster.
 
 ## Celeb-DF cache and annotation audit
 
@@ -28,7 +28,7 @@ Private audit root: `/home/sachin.chaudhary/ces_fl_runs/lh_finalization_celebdf_
 
 ## Compute gate
 
-On 4 November the user authorized an additional 24 GPU-hours for this study; the separate FairForge-2 budget was untouched. The shared ledger is now 48 total GPU-hours. At this checkpoint it reports 18.842586 GPU-hours consumed, 8.444028 still reserved for P50 and 20.713387 available beyond that reservation. Twenty-five P50 epochs took5,319.94 seconds, projecting roughly2.96 GPU-hours for50 epochs at current throughput; this estimate will be refreshed from later epoch timings. The prior ResNet P10 ran slower at1.72965 GPU-hours for10 epochs.
+On 4 November the user authorized an additional 24 GPU-hours for this study; the separate FairForge-2 budget was untouched. The shared ledger is now 48 total GPU-hours. At this checkpoint it reports 18.981511 GPU-hours consumed, 8.305103 still reserved for P50 and 20.713387 available beyond that reservation. Twenty-eight P50 epochs took5,895.20 seconds, projecting roughly2.92 GPU-hours for50 epochs at current throughput; this estimate will be refreshed from later epoch timings. The prior ResNet P10 ran slower at1.72965 GPU-hours for10 epochs.
 
 The prior P10 checkpoint cannot replace P50. The downstream templates intentionally retain `BIND_AFTER_VERIFIED_P50_COMPLETION` and are not runnable configs until a completed P50 hash is inserted and the source-bound preview/review, CUDA smoke and real-input checks pass.
 
@@ -47,18 +47,18 @@ The local artifacts include `DING_base_s17/49.pth` (SHA256 `b2240f157d4f94895f09
 | CPU software smoke | COMPLETED, PASS |
 | Source-bound CUDA smoke | COMPLETED, PASS on gpu01 GPU1 |
 | Real-input CUDA backward check | COMPLETED, PASS, zero optimizer updates |
-| ResNet P50 training | RUNNING, seed17, epoch26/50, step4700/4759 at last observation; 25 epochs recorded |
+| ResNet P50 training | RUNNING, seed17, epoch29/50, step1600/4759 at last observation; 28 epochs recorded |
 | ResNet L_A/L_H training | PENDING verified P50 |
 | Table 3 TEST evaluation | Evaluation plan frozen; pending both selected checkpoints; no TEST read |
 | Ding-10 controlled adaptation | ADAPTER CPU-CHECKED; PENDING ResNet priority and CUDA dry-run |
 
-P50's best checkpoint through epoch25 remains epoch12 with validation AUC96.5348%; epoch25 validation AUC was96.3651%. Epoch1 was91.3360%. Selection remains validation AUC-only and calibration uses validation real images. These are interim validation observations, not final results or TEST metrics. No threshold tuning, new loss search or TEST evaluation was performed.
+P50's best checkpoint through epoch28 remains epoch12 with validation AUC96.5348%; epoch28 validation AUC was95.8272%. Epoch1 was91.3360%. Selection remains validation AUC-only and calibration uses validation real images. These are interim validation observations, not final results or TEST metrics. No threshold tuning, new loss search or TEST evaluation was performed.
 
 ## GPU execution record
 
 PBS job `45387.mgmt01` was canceled while queued, before it acquired a GPU; its reservation was released and it consumed zero GPU-hours. The replacement direct-SSH run uses gpu01 GPU1, UUID `GPU-6cc0a5b3-99ca-13e3-5508-a201a06e82d6`, through shared-pool lease `lh_resnet50_P50_s17_20261104`.
 
-The controller PID is `3906763`; its log is `/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104_P50_attempt3.log`. Run outputs are under `/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104/`. Both synthetic CUDA smoke receipts and the real-input pretrain dry-run receipt passed. The real-input backward used16 TRAIN images and performed zero optimizer updates. P50 runs on gpu01 GPU1, UUID `GPU-6cc0a5b3-99ca-13e3-5508-a201a06e82d6`; it was at epoch26 step4700 at the latest query. No L_A/L_H or Ding training has started.
+The controller PID is `3906763`; its log is `/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104_P50_attempt3.log`. Run outputs are under `/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104/`. Both synthetic CUDA smoke receipts and the real-input pretrain dry-run receipt passed. The real-input backward used16 TRAIN images and performed zero optimizer updates. P50 runs on gpu01 GPU1, UUID `GPU-6cc0a5b3-99ca-13e3-5508-a201a06e82d6`; it was at epoch29 step1600 at the latest query. No L_A/L_H or Ding training has started. The matched downstream runner is prepared to bind L_A/L_H from verified P50 and claim another GPU only after a fresh lease check.
 
 Ding-10 source/config are under `CES_FL/src/ding10_connected_control.py` and `CES_FL/proposals/lh_finalization_celebdf_20261104_r1/configs/ding10_connected.json`. Private CPU smoke/preflight receipts are at `/home/sachin.chaudhary/ces_fl_runs/lh_finalization_celebdf_20261104_43c605b/ding10_cpu_smoke_v3/`; a real-input CPU backward receipt is at `/home/sachin.chaudhary/ces_fl_runs/lh_finalization_celebdf_20261104_43c605b/ding10_real_input_cpu_dry/DRY_RUN.json`. These are software/data checks only, not a Ding run or CUDA qualification. The procedural-review rebinding helper reuses recorded decisions only if new and old preview sheet bytes match exactly; it has not yet been run because the ResNet P50 source-bound preview needs the verified P50 checkpoint. No new review or approval is claimed.
 
