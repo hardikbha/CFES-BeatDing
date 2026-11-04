@@ -19,7 +19,7 @@ These use the same frozen Xception L_A/L_H checkpoints as Table 1. DFDC's native
 - [Existing full ResNet Table 3](https://github.com/hardikbha/CFES-BeatDing/blob/run/lh-finalization-resnet50-20261104/CES_FL/results/ding_format_tables_s17_20261102/TABLE_3.md) — Ding published references plus historical CES-FL ResNet A/B/C test rows.
 - [New locked Table 3 protocol](https://github.com/hardikbha/CFES-BeatDing/blob/run/lh-finalization-resnet50-20261104/CES_FL/proposals/lh_finalization_celebdf_20261104_r1/configs/resnet50_table3_eval_protocol.json)
 
-The new plain-head ResNet L_A/L_H runs are now complete, selected and validation-replay verified. Their **TEST** cells remain pending: all GPUs on gpu01/gpu02 were occupied at the latest check, so the locked evaluator has not started. The selected FF++ validation values below are not comparable to Ding's published TEST numbers:
+The new plain-head ResNet L_A/L_H runs are complete, selected and validation-replay verified. Their **TEST** cells remain pending. Direct scans found no unleased GPU; PBS job `45437.mgmt01` received an `ngpus=1` allocation on gpu02, but the node exported neither `CUDA_VISIBLE_DEVICES` nor `PBS_GPUFILE`, so the safety check stopped before Python or TEST inference. Binding probe `45438.mgmt01` confirmed the missing mapping without initializing CUDA. No existing job was preempted. The selected FF++ validation values below are not comparable to Ding's published TEST numbers:
 
 | Dataset | Ding published ResNet-50 AUC (paper TEST) | New CES-FL L_A TEST | New CES-FL L_H TEST |
 |---|---:|---:|---:|
@@ -43,5 +43,7 @@ This validation table uses the selected checkpoint's FF++ validation-real 10% FP
 - ResNet L_A selected checkpoint: `0571a220faa63ad61c3b2d5815d73f25a077ecf59a1a8e30c379a620e31c0555`.
 - ResNet L_H selected checkpoint: `b08c2b5180d999f81e044872a8228f7e876d0250a6cb29034d59b11b1a897f10`.
 - Locked dynamic evaluation plan SHA256: `a234331c21c5539fb350f011737c993dd9bf84feb3d1ea65132a4fc36e98a788` (cluster-private; no test scores included).
+
+The locked plan binds four test manifests, overlap audits, selected checkpoint hashes, fixed-0.5 and source-validation threshold views, and connected recorded-contributor uncertainty. The direct evaluator is ready, but no TEST inference has started because there is no free directly bound device and PBS does not expose the allocated GPU UUID. Private PBS logs are `/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104_cudaenv3/table3_eval/PBS_TABLE3_EVAL.log` and `PBS_BINDING_PROBE.log`.
 
 All results are seed17. The Xception tables, historical ResNet A/B/C results, Ding's published rows and current ResNet L_A/L_H validation results use distinct protocols/checkpoints. No result here establishes that we beat Ding under a matched protocol.
