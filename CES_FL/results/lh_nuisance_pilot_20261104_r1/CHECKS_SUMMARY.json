@@ -1,0 +1,318 @@
+{
+  "command": "python -m unittest discover -s CES_FL/tests -p test_lh_nuisance.py -v; bash CES_FL/proposals/lh_nuisance_pilot_20261104_r1/commands.sh preflight",
+  "arms": {
+    "A0": {
+      "status": "PASS",
+      "train_rows": 76139,
+      "val_rows": 25386,
+      "decoded_images": 101525,
+      "test_read": false
+    },
+    "H0": {
+      "status": "PASS",
+      "train_rows": 76139,
+      "val_rows": 25386,
+      "decoded_images": 101525,
+      "test_read": false
+    },
+    "A1": {
+      "status": "PASS",
+      "train_rows": 76139,
+      "val_rows": 25386,
+      "decoded_images": 101525,
+      "test_read": false
+    },
+    "H1": {
+      "status": "PASS",
+      "train_rows": 76139,
+      "val_rows": 25386,
+      "decoded_images": 101525,
+      "test_read": false
+    }
+  },
+  "cpu_unit_tests": {
+    "command": "python -m unittest discover -s CES_FL/tests -p test_lh_nuisance.py -v",
+    "status": "PASS",
+    "tests": 6
+  },
+  "cuda_checks": {
+    "A0": {
+      "smoke": {
+        "status": "PASS",
+        "source_sha256": "1997eebf093aa3e37de1cbbe58302a1539ac2e517f966a4607aae89dc695a8e0",
+        "device": "cuda",
+        "torch": "2.7.0+cu126",
+        "head_type": "linear",
+        "parameters": {
+          "total": 23510081,
+          "trainable": 14966785,
+          "encoder": 23508032,
+          "head": 2049,
+          "encoder_trainable": 14964736,
+          "head_type": "linear",
+          "encoder_policy": "exit",
+          "backbone": "resnet50",
+          "trainable_encoder_scope": "layer4"
+        },
+        "checks": [
+          "full_width_224px_parameters_cam_gradients_and_frozen_bn",
+          "frozen_encoder_fixture_identical_initialization_wrong_backbone_rejection_A_and_H_reload_coverage_and_bitwise_resume",
+          "frozen_threshold_label_flip_paired_comparison_and_head_aware_map_export"
+        ],
+        "cuda_tested": true
+      },
+      "real_backward": {
+        "status": "PASS",
+        "source_sha256": "1997eebf093aa3e37de1cbbe58302a1539ac2e517f966a4607aae89dc695a8e0",
+        "config_digest": "6d2a5672a1088618a3cfed06ff7bcc1ec2c77a977fb57ceef7e467930abda0c7",
+        "arm": "A",
+        "error_control": "legacy",
+        "parameters": {
+          "total": 23510081,
+          "trainable": 14966785,
+          "encoder": 23508032,
+          "head": 2049,
+          "encoder_trainable": 14964736,
+          "head_type": "linear",
+          "encoder_policy": "exit",
+          "backbone": "resnet50",
+          "trainable_encoder_scope": "layer4"
+        },
+        "train_calibration": {
+          "threshold_logit": 0.42286390066146856,
+          "n_real": 2048,
+          "allowed_fp": 204,
+          "achieved_fp": 204,
+          "achieved_fpr": 0.099609375,
+          "requested_fpr": 0.1,
+          "test_fpr_guaranteed": false
+        },
+        "seconds_one_optimizer_step": 2.2708949632942677,
+        "peak_cuda_bytes": 481081344,
+        "losses": {
+          "total": 1.5938749313354492,
+          "classification": 1.5938749313354492,
+          "error_fairness": 0.0,
+          "original_sensitivity": 0.0,
+          "aux_sensitivity": 0.0,
+          "response_alignment": 0.0,
+          "original_control_stability": 0.0,
+          "aux_control_stability": 0.0
+        },
+        "real_pair_count": 0,
+        "changed_error_gradient_norm": null,
+        "device": "cuda",
+        "torch": "2.7.0+cu126"
+      }
+    },
+    "H0": {
+      "smoke": {
+        "status": "PASS",
+        "source_sha256": "1997eebf093aa3e37de1cbbe58302a1539ac2e517f966a4607aae89dc695a8e0",
+        "device": "cuda",
+        "torch": "2.7.0+cu126",
+        "head_type": "linear",
+        "parameters": {
+          "total": 23510081,
+          "trainable": 14966785,
+          "encoder": 23508032,
+          "head": 2049,
+          "encoder_trainable": 14964736,
+          "head_type": "linear",
+          "encoder_policy": "exit",
+          "backbone": "resnet50",
+          "trainable_encoder_scope": "layer4"
+        },
+        "checks": [
+          "full_width_224px_parameters_cam_gradients_and_frozen_bn",
+          "frozen_encoder_fixture_identical_initialization_wrong_backbone_rejection_A_and_H_reload_coverage_and_bitwise_resume",
+          "frozen_threshold_label_flip_paired_comparison_and_head_aware_map_export"
+        ],
+        "cuda_tested": true
+      },
+      "real_backward": {
+        "status": "PASS",
+        "source_sha256": "1997eebf093aa3e37de1cbbe58302a1539ac2e517f966a4607aae89dc695a8e0",
+        "config_digest": "76575eb018ca4167e7acd3de1660eae80484da6191d3b7b75e97579168773630",
+        "arm": "D",
+        "error_control": "hierarchical_real",
+        "parameters": {
+          "total": 23510081,
+          "trainable": 14966785,
+          "encoder": 23508032,
+          "head": 2049,
+          "encoder_trainable": 14964736,
+          "head_type": "linear",
+          "encoder_policy": "exit",
+          "backbone": "resnet50",
+          "trainable_encoder_scope": "layer4"
+        },
+        "train_calibration": {
+          "threshold_logit": 0.42286390066146856,
+          "n_real": 2048,
+          "allowed_fp": 204,
+          "achieved_fp": 204,
+          "achieved_fpr": 0.099609375,
+          "requested_fpr": 0.1,
+          "test_fpr_guaranteed": false
+        },
+        "seconds_one_optimizer_step": 0.6309779677540064,
+        "peak_cuda_bytes": 904560640,
+        "losses": {
+          "total": 1.86985182762146,
+          "classification": 1.5938749313354492,
+          "error_fairness": 0.00921565480530262,
+          "original_sensitivity": 0.5200037956237793,
+          "aux_sensitivity": 0.531281054019928,
+          "response_alignment": 0.013529445976018906,
+          "original_control_stability": 0.011683511547744274,
+          "aux_control_stability": 0.0089093754068017
+        },
+        "real_pair_count": 32,
+        "changed_error_gradient_norm": 4.3068278575362,
+        "device": "cuda",
+        "torch": "2.7.0+cu126"
+      }
+    },
+    "A1": {
+      "smoke": {
+        "status": "PASS",
+        "source_sha256": "1997eebf093aa3e37de1cbbe58302a1539ac2e517f966a4607aae89dc695a8e0",
+        "device": "cuda",
+        "torch": "2.7.0+cu126",
+        "head_type": "linear",
+        "parameters": {
+          "total": 23510081,
+          "trainable": 14966785,
+          "encoder": 23508032,
+          "head": 2049,
+          "encoder_trainable": 14964736,
+          "head_type": "linear",
+          "encoder_policy": "exit",
+          "backbone": "resnet50",
+          "trainable_encoder_scope": "layer4"
+        },
+        "checks": [
+          "full_width_224px_parameters_cam_gradients_and_frozen_bn",
+          "frozen_encoder_fixture_identical_initialization_wrong_backbone_rejection_A_and_H_reload_coverage_and_bitwise_resume",
+          "frozen_threshold_label_flip_paired_comparison_and_head_aware_map_export"
+        ],
+        "cuda_tested": true
+      },
+      "real_backward": {
+        "status": "PASS",
+        "source_sha256": "1997eebf093aa3e37de1cbbe58302a1539ac2e517f966a4607aae89dc695a8e0",
+        "config_digest": "fdbe7613ca680f4b2e96c336668972f7d42183d2504b58cfea16760d58d75f31",
+        "arm": "A",
+        "error_control": "legacy",
+        "parameters": {
+          "total": 23510081,
+          "trainable": 14966785,
+          "encoder": 23508032,
+          "head": 2049,
+          "encoder_trainable": 14964736,
+          "head_type": "linear",
+          "encoder_policy": "exit",
+          "backbone": "resnet50",
+          "trainable_encoder_scope": "layer4"
+        },
+        "train_calibration": {
+          "threshold_logit": 0.42286390066146856,
+          "n_real": 2048,
+          "allowed_fp": 204,
+          "achieved_fp": 204,
+          "achieved_fpr": 0.099609375,
+          "requested_fpr": 0.1,
+          "test_fpr_guaranteed": false
+        },
+        "seconds_one_optimizer_step": 0.275100190192461,
+        "peak_cuda_bytes": 481081344,
+        "losses": {
+          "total": 1.5849504470825195,
+          "classification": 1.5849504470825195,
+          "error_fairness": 0.0,
+          "original_sensitivity": 0.0,
+          "aux_sensitivity": 0.0,
+          "response_alignment": 0.0,
+          "original_control_stability": 0.0,
+          "aux_control_stability": 0.0
+        },
+        "real_pair_count": 0,
+        "changed_error_gradient_norm": null,
+        "device": "cuda",
+        "torch": "2.7.0+cu126"
+      }
+    },
+    "H1": {
+      "smoke": {
+        "status": "PASS",
+        "source_sha256": "1997eebf093aa3e37de1cbbe58302a1539ac2e517f966a4607aae89dc695a8e0",
+        "device": "cuda",
+        "torch": "2.7.0+cu126",
+        "head_type": "linear",
+        "parameters": {
+          "total": 23510081,
+          "trainable": 14966785,
+          "encoder": 23508032,
+          "head": 2049,
+          "encoder_trainable": 14964736,
+          "head_type": "linear",
+          "encoder_policy": "exit",
+          "backbone": "resnet50",
+          "trainable_encoder_scope": "layer4"
+        },
+        "checks": [
+          "full_width_224px_parameters_cam_gradients_and_frozen_bn",
+          "frozen_encoder_fixture_identical_initialization_wrong_backbone_rejection_A_and_H_reload_coverage_and_bitwise_resume",
+          "frozen_threshold_label_flip_paired_comparison_and_head_aware_map_export"
+        ],
+        "cuda_tested": true
+      },
+      "real_backward": {
+        "status": "PASS",
+        "source_sha256": "1997eebf093aa3e37de1cbbe58302a1539ac2e517f966a4607aae89dc695a8e0",
+        "config_digest": "d7c2939b21d6d516da1c903bda673fbf0b5412549affc550aeab337d4bd8ae27",
+        "arm": "D",
+        "error_control": "hierarchical_real",
+        "parameters": {
+          "total": 23510081,
+          "trainable": 14966785,
+          "encoder": 23508032,
+          "head": 2049,
+          "encoder_trainable": 14964736,
+          "head_type": "linear",
+          "encoder_policy": "exit",
+          "backbone": "resnet50",
+          "trainable_encoder_scope": "layer4"
+        },
+        "train_calibration": {
+          "threshold_logit": 0.42286390066146856,
+          "n_real": 2048,
+          "allowed_fp": 204,
+          "achieved_fp": 204,
+          "achieved_fpr": 0.099609375,
+          "requested_fpr": 0.1,
+          "test_fpr_guaranteed": false
+        },
+        "seconds_one_optimizer_step": 0.5877910796552896,
+        "peak_cuda_bytes": 904560640,
+        "losses": {
+          "total": 1.8613520860671997,
+          "classification": 1.5849504470825195,
+          "error_fairness": 0.00921565480530262,
+          "original_sensitivity": 0.523986279964447,
+          "aux_sensitivity": 0.531281054019928,
+          "response_alignment": 0.013529445976018906,
+          "original_control_stability": 0.012213076464831829,
+          "aux_control_stability": 0.0089093754068017
+        },
+        "real_pair_count": 32,
+        "changed_error_gradient_norm": 4.3068278575362,
+        "device": "cuda",
+        "torch": "2.7.0+cu126"
+      }
+    }
+  },
+  "test_read": false,
+  "python_environment": "cluster aiface environment"
+}

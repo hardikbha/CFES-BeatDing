@@ -2,7 +2,7 @@
 
 ## Short nuisance/sensitivity pilot — 4 November 2026
 
-[Runnable four-arm proposal](proposals/lh_nuisance_pilot_20261104_r1/README.md) · [GPU operator prompt](proposals/lh_nuisance_pilot_20261104_r1/GPU_OPERATOR_PROMPT.md) · [Actual CPU checks](proposals/lh_nuisance_pilot_20261104_r1/CHECKS.md). New ResNet A0/H0/A1/H1 three-epoch cohort tests original versus matched mild processing, retaining original losses and initialization. Synthetic counterexamples demonstrate possible scale/texture shortcuts; trained-checkpoint diagnostics and production GPU runs are pending. Maximum two devices/three aggregate GPU-hours within the remaining study ledger. Publication does not launch jobs. No new benchmark TEST use or claim of disentangled features.
+[Runnable four-arm proposal](proposals/lh_nuisance_pilot_20261104_r1/README.md) · [GPU operator prompt](proposals/lh_nuisance_pilot_20261104_r1/GPU_OPERATOR_PROMPT.md) · [Completed validation report and aggregate artifacts](results/lh_nuisance_pilot_20261104_r1/REPORT.md). All four seed-17 ResNet-50 arms completed three epochs, passed validation replay, and used 1.1951/3.0000 GPU-hours. The source-domain validation result is mixed: H1 reduces resize nuisance drift, but fairness regressions remain across axes and gender×race uncertainty is unsupported. No benchmark TEST was read; no disentanglement or real-forgery-selectivity claim is made.
 
 ## FairForge-2 external baselines — 3 November 2026
 

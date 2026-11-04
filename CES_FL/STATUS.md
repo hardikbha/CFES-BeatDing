@@ -1,3 +1,16 @@
+## ResNet-50 nuisance pilot — observed 2026-11-04T15:24:25Z
+
+[Full report and aggregate artifacts](results/lh_nuisance_pilot_20261104_r1/REPORT.md) · [Proposal](proposals/lh_nuisance_pilot_20261104_r1/README.md). Exact source commit `84ad9838ac14f9e252d292146df5b1e1b1121d7c`; four seed-17 arms completed 3/3 epochs with validation replay. No TEST read.
+
+| Arm | Selected epoch | FF++ validation AUC | FNR | Gender F_FPR | Race F_FPR | Gender×race F_FPR | Age F_FPR | Skin F_FPR |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| A0 | 3 | 96.6217% | 9.6036% | 6.0357% | 12.3531% | 40.5914% | 12.9181% | 7.7712% |
+| H0 | 1 | 96.4214% | 9.9934% | 5.6438% | 9.9922% | 33.3735% | 12.2680% | 5.0148% |
+| A1 | 1 | 96.4903% | 9.3407% | 6.6237% | 11.0651% | 37.6674% | 6.7056% | 8.6143% |
+| H1 | 1 | 96.6281% | 9.3547% | 5.6438% | 11.4295% | 35.6454% | 4.6997% | 7.3456% |
+
+Mixed/inconclusive: H1 reduced resize nuisance score/response drift and improved several point metrics over A1; race F_FPR worsened slightly, FNR did not improve, and the gender×race bootstrap intervals are below the 900/1000 support floor. AI-only preview review did not establish real-forgery validity. The pilot used 1.1951/3.0000 GPU-hours on one shared gpu02 H100; no existing job was preempted and the FairForge-2 budget was untouched.
+
 ## FairForge-2 baseline preparation — 2026-11-03T11:33:27.003004+00:00
 
 New [baseline suite and operator prompt](proposals/ff2_baseline_suite_s17_20261103T110324Z/GPU_OPERATOR_PROMPT.md): user approved72 additional GPU-hours, maximum3 allocated GPUs. Native BCE/DAG/DAW CPU checks pass; CUDA/input checks and training are pending. PG-FDD/FairAdapter adaptations remain conditional; RSEF source unavailable. No jobs launched here; existing jobs/results preserved. This is a preparation observation, not live cluster status. Published to the writable fork because upstream push permission remains unavailable.

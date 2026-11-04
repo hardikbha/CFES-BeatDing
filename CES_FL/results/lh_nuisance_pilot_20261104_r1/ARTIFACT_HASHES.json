@@ -1,0 +1,26 @@
+{
+  "source_commit": "84ad9838ac14f9e252d292146df5b1e1b1121d7c",
+  "scientific_source_sha256": "1997eebf093aa3e37de1cbbe58302a1539ac2e517f966a4607aae89dc695a8e0",
+  "train_manifest_sha256": "6ee9326fe8361dc3aee0f803c49b5eada169be5cf3bc3cb44ad3d934ba5ca657",
+  "validation_manifest_sha256": "52f4844cffe5a03adb08cecde8829244bb50e05eeead36f6d659599f1c24f5b1",
+  "initial_p50_checkpoint_sha256": "c28bbb9cfcd06a11894027dc9369c5fd674f640de6c182c28b6d6f0aa8d77f55",
+  "original_resnet_lh_checkpoint_sha256": "b08c2b5180d999f81e044872a8228f7e876d0250a6cb29034d59b11b1a897f10",
+  "config_sha256": {
+    "A0": "89d3d1277f09b44f16c07666cd121bd274ac1e0e84b56b57679d70715d4d8441",
+    "H0": "34800f42f2cc81df32508b7a732700e45b4df5f6ddfebca1a109aad1db1407ef",
+    "A1": "4529e43ea0fd04438e249ead1c758cb6dd1631a8a841119024eed7c089e854e9",
+    "H1": "93c1c71b9688edfa0a4d33dd5978f4e43ce25e7ec49d823468762955a4b328ac"
+  },
+  "selected_checkpoint_sha256": {
+    "A0": "59ea7bbaf7c47c41da7429091ab3d22a40855e03dae8bd3b90fd23d6efcef56a",
+    "H0": "40802bb6bc8f7a9ec315a697d74d2be8b510fedcd42966abd2b64b1be0260e42",
+    "A1": "e9d7420e04d706fd4aed133473b05cc26083f072935b0c346c502ffb4bac9d20",
+    "H1": "2b3c40e50bfef49b3898c911068b6a1379e0c8b6513c052b8897831e1a9a4d96"
+  },
+  "diagnostic_checkpoint_sha256": {
+    "original_resnet_LH": "b08c2b5180d999f81e044872a8228f7e876d0250a6cb29034d59b11b1a897f10",
+    "H0": "40802bb6bc8f7a9ec315a697d74d2be8b510fedcd42966abd2b64b1be0260e42",
+    "H1": "2b3c40e50bfef49b3898c911068b6a1379e0c8b6513c052b8897831e1a9a4d96"
+  },
+  "test_read": false
+}

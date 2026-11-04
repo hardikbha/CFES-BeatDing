@@ -1,0 +1,239 @@
+{
+  "split": "TRAIN",
+  "rows": 76139,
+  "distinct_recorded_identity_tokens": 773,
+  "distinct_recorded_source_tokens": 773,
+  "note": "These are manifest provenance tokens, not verified unique people; no demographic label inference or TEST access was performed.",
+  "axes": {
+    "gender": {
+      "Female": {
+        "rows": 42590,
+        "real_rows": 7148,
+        "fake_rows": 35442,
+        "unique_recorded_identity_tokens": 458,
+        "unique_recorded_source_tokens": 458
+      },
+      "Male": {
+        "rows": 33549,
+        "real_rows": 5778,
+        "fake_rows": 27771,
+        "unique_recorded_identity_tokens": 339,
+        "unique_recorded_source_tokens": 339
+      }
+    },
+    "race": {
+      "Asian": {
+        "rows": 10488,
+        "real_rows": 1992,
+        "fake_rows": 8496,
+        "unique_recorded_identity_tokens": 194,
+        "unique_recorded_source_tokens": 194
+      },
+      "Black": {
+        "rows": 2579,
+        "real_rows": 450,
+        "fake_rows": 2129,
+        "unique_recorded_identity_tokens": 43,
+        "unique_recorded_source_tokens": 43
+      },
+      "Others": {
+        "rows": 6348,
+        "real_rows": 839,
+        "fake_rows": 5509,
+        "unique_recorded_identity_tokens": 181,
+        "unique_recorded_source_tokens": 181
+      },
+      "White": {
+        "rows": 56724,
+        "real_rows": 9645,
+        "fake_rows": 47079,
+        "unique_recorded_identity_tokens": 656,
+        "unique_recorded_source_tokens": 656
+      }
+    },
+    "age_bin": {
+      "30-44": {
+        "rows": 19299,
+        "real_rows": 3616,
+        "fake_rows": 15683,
+        "unique_recorded_identity_tokens": 418,
+        "unique_recorded_source_tokens": 418
+      },
+      "45-59": {
+        "rows": 8906,
+        "real_rows": 1532,
+        "fake_rows": 7374,
+        "unique_recorded_identity_tokens": 173,
+        "unique_recorded_source_tokens": 173
+      },
+      "60+": {
+        "rows": 1527,
+        "real_rows": 448,
+        "fake_rows": 1079,
+        "unique_recorded_identity_tokens": 33,
+        "unique_recorded_source_tokens": 33
+      },
+      "<30": {
+        "rows": 46407,
+        "real_rows": 7330,
+        "fake_rows": 39077,
+        "unique_recorded_identity_tokens": 625,
+        "unique_recorded_source_tokens": 625
+      }
+    },
+    "skin_bin": {
+      "0": {
+        "rows": 19334,
+        "real_rows": 3062,
+        "fake_rows": 16272,
+        "unique_recorded_identity_tokens": 366,
+        "unique_recorded_source_tokens": 366
+      },
+      "1": {
+        "rows": 18557,
+        "real_rows": 3140,
+        "fake_rows": 15417,
+        "unique_recorded_identity_tokens": 395,
+        "unique_recorded_source_tokens": 395
+      },
+      "2": {
+        "rows": 17590,
+        "real_rows": 3079,
+        "fake_rows": 14511,
+        "unique_recorded_identity_tokens": 387,
+        "unique_recorded_source_tokens": 387
+      },
+      "3": {
+        "rows": 19457,
+        "real_rows": 3395,
+        "fake_rows": 16062,
+        "unique_recorded_identity_tokens": 308,
+        "unique_recorded_source_tokens": 308
+      },
+      "unknown": {
+        "rows": 1201,
+        "real_rows": 250,
+        "fake_rows": 951,
+        "unique_recorded_identity_tokens": 42,
+        "unique_recorded_source_tokens": 42
+      }
+    },
+    "gender_race": {
+      "Female-Asian": {
+        "rows": 8013,
+        "real_rows": 1506,
+        "fake_rows": 6507,
+        "unique_recorded_identity_tokens": 143,
+        "unique_recorded_source_tokens": 143
+      },
+      "Female-Black": {
+        "rows": 1111,
+        "real_rows": 182,
+        "fake_rows": 929,
+        "unique_recorded_identity_tokens": 25,
+        "unique_recorded_source_tokens": 25
+      },
+      "Female-Others": {
+        "rows": 2185,
+        "real_rows": 270,
+        "fake_rows": 1915,
+        "unique_recorded_identity_tokens": 77,
+        "unique_recorded_source_tokens": 77
+      },
+      "Female-White": {
+        "rows": 31281,
+        "real_rows": 5190,
+        "fake_rows": 26091,
+        "unique_recorded_identity_tokens": 380,
+        "unique_recorded_source_tokens": 380
+      },
+      "Male-Asian": {
+        "rows": 2475,
+        "real_rows": 486,
+        "fake_rows": 1989,
+        "unique_recorded_identity_tokens": 53,
+        "unique_recorded_source_tokens": 53
+      },
+      "Male-Black": {
+        "rows": 1468,
+        "real_rows": 268,
+        "fake_rows": 1200,
+        "unique_recorded_identity_tokens": 22,
+        "unique_recorded_source_tokens": 22
+      },
+      "Male-Others": {
+        "rows": 4163,
+        "real_rows": 569,
+        "fake_rows": 3594,
+        "unique_recorded_identity_tokens": 106,
+        "unique_recorded_source_tokens": 106
+      },
+      "Male-White": {
+        "rows": 25443,
+        "real_rows": 4455,
+        "fake_rows": 20988,
+        "unique_recorded_identity_tokens": 288,
+        "unique_recorded_source_tokens": 288
+      }
+    },
+    "ids8": {
+      "0": {
+        "rows": 2394,
+        "real_rows": 388,
+        "fake_rows": 2006,
+        "unique_recorded_identity_tokens": 56,
+        "unique_recorded_source_tokens": 56
+      },
+      "1": {
+        "rows": 22802,
+        "real_rows": 3580,
+        "fake_rows": 19222,
+        "unique_recorded_identity_tokens": 316,
+        "unique_recorded_source_tokens": 316
+      },
+      "2": {
+        "rows": 12303,
+        "real_rows": 2161,
+        "fake_rows": 10142,
+        "unique_recorded_identity_tokens": 188,
+        "unique_recorded_source_tokens": 188
+      },
+      "3": {
+        "rows": 2680,
+        "real_rows": 630,
+        "fake_rows": 2050,
+        "unique_recorded_identity_tokens": 78,
+        "unique_recorded_source_tokens": 78
+      },
+      "4": {
+        "rows": 13863,
+        "real_rows": 2297,
+        "fake_rows": 11566,
+        "unique_recorded_identity_tokens": 224,
+        "unique_recorded_source_tokens": 224
+      },
+      "5": {
+        "rows": 1649,
+        "real_rows": 270,
+        "fake_rows": 1379,
+        "unique_recorded_identity_tokens": 55,
+        "unique_recorded_source_tokens": 55
+      },
+      "6": {
+        "rows": 4594,
+        "real_rows": 869,
+        "fake_rows": 3725,
+        "unique_recorded_identity_tokens": 101,
+        "unique_recorded_source_tokens": 101
+      },
+      "7": {
+        "rows": 15854,
+        "real_rows": 2731,
+        "fake_rows": 13123,
+        "unique_recorded_identity_tokens": 294,
+        "unique_recorded_source_tokens": 294
+      }
+    }
+  },
+  "test_read": false
+}

@@ -1,0 +1,121 @@
+{
+  "manifest_sha256": {
+    "train": "6ee9326fe8361dc3aee0f803c49b5eada169be5cf3bc3cb44ad3d934ba5ca657",
+    "val": "52f4844cffe5a03adb08cecde8829244bb50e05eeead36f6d659599f1c24f5b1"
+  },
+  "arms": [
+    {
+      "arm": "A0",
+      "status": "PASS",
+      "source_sha256": "1997eebf093aa3e37de1cbbe58302a1539ac2e517f966a4607aae89dc695a8e0",
+      "config_digest": "6d2a5672a1088618a3cfed06ff7bcc1ec2c77a977fb57ceef7e467930abda0c7",
+      "decoded_images": 101525,
+      "train_rows": 76139,
+      "val_rows": 25386,
+      "split_audit": {
+        "recorded_contributor_overlap": {
+          "identity_ids": 163,
+          "source_ids": 163
+        },
+        "true_person_separation_verified": false,
+        "checked_overlap_keys": [
+          "identity_ids:train:val",
+          "source_ids:train:val"
+        ],
+        "deferred_overlap_keys": [
+          "identity_ids:train:test",
+          "identity_ids:val:test",
+          "source_ids:train:test",
+          "source_ids:val:test"
+        ]
+      },
+      "cross_split_content_overlap": 0,
+      "test_read": false
+    },
+    {
+      "arm": "H0",
+      "status": "PASS",
+      "source_sha256": "1997eebf093aa3e37de1cbbe58302a1539ac2e517f966a4607aae89dc695a8e0",
+      "config_digest": "76575eb018ca4167e7acd3de1660eae80484da6191d3b7b75e97579168773630",
+      "decoded_images": 101525,
+      "train_rows": 76139,
+      "val_rows": 25386,
+      "split_audit": {
+        "recorded_contributor_overlap": {
+          "identity_ids": 163,
+          "source_ids": 163
+        },
+        "true_person_separation_verified": false,
+        "checked_overlap_keys": [
+          "identity_ids:train:val",
+          "source_ids:train:val"
+        ],
+        "deferred_overlap_keys": [
+          "identity_ids:train:test",
+          "identity_ids:val:test",
+          "source_ids:train:test",
+          "source_ids:val:test"
+        ]
+      },
+      "cross_split_content_overlap": 0,
+      "test_read": false
+    },
+    {
+      "arm": "A1",
+      "status": "PASS",
+      "source_sha256": "1997eebf093aa3e37de1cbbe58302a1539ac2e517f966a4607aae89dc695a8e0",
+      "config_digest": "fdbe7613ca680f4b2e96c336668972f7d42183d2504b58cfea16760d58d75f31",
+      "decoded_images": 101525,
+      "train_rows": 76139,
+      "val_rows": 25386,
+      "split_audit": {
+        "recorded_contributor_overlap": {
+          "identity_ids": 163,
+          "source_ids": 163
+        },
+        "true_person_separation_verified": false,
+        "checked_overlap_keys": [
+          "identity_ids:train:val",
+          "source_ids:train:val"
+        ],
+        "deferred_overlap_keys": [
+          "identity_ids:train:test",
+          "identity_ids:val:test",
+          "source_ids:train:test",
+          "source_ids:val:test"
+        ]
+      },
+      "cross_split_content_overlap": 0,
+      "test_read": false
+    },
+    {
+      "arm": "H1",
+      "status": "PASS",
+      "source_sha256": "1997eebf093aa3e37de1cbbe58302a1539ac2e517f966a4607aae89dc695a8e0",
+      "config_digest": "d7c2939b21d6d516da1c903bda673fbf0b5412549affc550aeab337d4bd8ae27",
+      "decoded_images": 101525,
+      "train_rows": 76139,
+      "val_rows": 25386,
+      "split_audit": {
+        "recorded_contributor_overlap": {
+          "identity_ids": 163,
+          "source_ids": 163
+        },
+        "true_person_separation_verified": false,
+        "checked_overlap_keys": [
+          "identity_ids:train:val",
+          "source_ids:train:val"
+        ],
+        "deferred_overlap_keys": [
+          "identity_ids:train:test",
+          "identity_ids:val:test",
+          "source_ids:train:test",
+          "source_ids:val:test"
+        ]
+      },
+      "cross_split_content_overlap": 0,
+      "test_read": false
+    }
+  ],
+  "test_read": false
+}

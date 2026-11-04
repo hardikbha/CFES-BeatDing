@@ -1,0 +1,19 @@
+{
+  "H0": {
+    "cases": 88,
+    "cases_reviewed": 88,
+    "reviewer": "Codex (AI visual reviewer)",
+    "human_review": false,
+    "qualification_status": "OPERATOR_REVIEW_RECORDED",
+    "real_forgery_validity_proven": false
+  },
+  "H1": {
+    "cases": 352,
+    "cases_reviewed": 352,
+    "reviewer": "Codex (AI visual reviewer)",
+    "human_review": false,
+    "qualification_status": "OPERATOR_REVIEW_RECORDED",
+    "real_forgery_validity_proven": false
+  },
+  "scope": "Visual processing/crop/local-probe screen only; not identity, causal, or real-forgery evidence validation."
+}
