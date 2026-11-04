@@ -65,6 +65,10 @@ F_FPR on gender/race/gender×race/age/skin proxy axes for the selected validatio
 
 The existing Ding FairForge-2 run is still active on two gpu01 GPUs (workers2755001/2755002 observed in process table and nvidia-smi at03:49IST). Classification has38 completed epochs; training log shows epoch39 in progress. Best classification validation AUC is99.810363% at epoch21; latest completed epoch38 AUC is99.723986%. Classification DONE, SFD receipt, GDA directory and overall DONE do not exist. Therefore SFD and corrected GDA remain pending, and Ding's full FairForge-2 run is incomplete. The status renderer verified source/config hashes and matching TRAIN/VAL manifest hashes; no Ding training or inference was performed for this check.
 
+## Latest stage refresh — 4 November 2026, 05:18 UTC
+
+Read-only SSH process inspection still observes Ding controller2754578, torchrun2754977 and both workers2755001/2755002 active on gpu01. Classification history records45 completed epochs; latest saved validation result is epoch45 AUC99.664198%, while the highest classification checkpoint remains epoch21 at99.810363%. SFD.json and the corrected-GDA stage directory are still absent. The in-process runner is already coded to start TRAIN-only SFD and50epoch corrected GDA after classification50; no duplicate Ding training was launched. Full status is in `ding_layout_20261104T0510Z/REPORT.md`.
+
 ## Detailed validation tables and existing Ding status — 3 November 2026
 
 User requested Ding-format tables and the existing Ding FairForge-2 status. The dated `ding_layout_20261103T165635Z/` package preserves the actual16:56UTC baseline snapshot: BCE18/50selected17, DAG21/50selected19, DAW17/50selected15. Fifteen demographic/method rows use a single validation-AUC-selected checkpoint per method; all values use100×native fractions. Supplementary outputs include69per-group rows with counts, eligibility and rates, worst-group AUC, FPR/FNR gaps, Markdown, CSV, standalone LaTeX and a successfully compiled one-page PDF. These are interim validation results, with no new model computation or TEST access.

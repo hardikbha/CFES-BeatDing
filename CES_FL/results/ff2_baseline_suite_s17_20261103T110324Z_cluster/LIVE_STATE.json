@@ -1,9 +1,9 @@
 {
-  "observed_management_utc": "2026-11-04T04:37:29.843543+00:00",
-  "observed_gpu01_unix": 1793766397.0969224,
-  "measured_finished_gpu_hours": 27.887102275556988,
-  "measured_active_gpu_hours": 0,
-  "measured_total_gpu_hours": 27.887102275556988,
+  "observed_management_utc": "2026-11-04T05:18:36.508444+00:00",
+  "observed_gpu01_unix": 1793768864.7547264,
+  "measured_finished_gpu_hours": 28.010872244437536,
+  "measured_active_gpu_hours": 0.40354137811395857,
+  "measured_total_gpu_hours": 28.414413622551496,
   "commit": "815b4d4bc679c55d4ee6323cc7284335ce210568",
   "source_and_config": {
     "status": "SOURCE_AND_CONFIG_HASHES_PASS",
@@ -78417,10 +78417,53 @@
         "charged_gpu_hours": 0.001388888888888889,
         "end_unix": 1793749630.0,
         "reservation_overrun": false
+      },
+      "ff2_expanded_profiles_20261104T043755Z": {
+        "state": "FINISHED",
+        "gpus": 1,
+        "reserved_gpu_hours": 4.0,
+        "start_unix": 1793767077.7882714,
+        "allocation_evidence": "pool-v2:gpu02:GPU-65f63cc5-9366-5c2d-196a-6e7a0a62c1e8:ff2_expanded_profiles_20261104T043755Z",
+        "charged_gpu_hours": 0.12375534686777327,
+        "end_unix": 1793767523.3075202,
+        "reservation_overrun": false
+      },
+      "ff2_expanded_profile_pool_bookend_20261104T043755Z": {
+        "state": "FINISHED",
+        "gpus": 1,
+        "reserved_gpu_hours": 0.0006061207585864597,
+        "start_unix": 1793767523.3148541,
+        "allocation_evidence": "direct-ssh-pool-v2-profile-bookend",
+        "charged_gpu_hours": 1.4622012774149577e-05,
+        "end_unix": 1793767523.3674934,
+        "reservation_overrun": false
+      },
+      "ff2_expanded_f3net_20261104T045535Z": {
+        "state": "ACTIVE",
+        "gpus": 1,
+        "reserved_gpu_hours": 22.75,
+        "start_unix": 1793768138.2058823,
+        "allocation_evidence": "pool-v2:gpu02:GPU-65f63cc5-9366-5c2d-196a-6e7a0a62c1e8:ff2_expanded_f3net_20261104T045535Z",
+        "charged_gpu_hours": null
+      },
+      "ff2_expanded_core_20261104T045535Z": {
+        "state": "ACTIVE",
+        "gpus": 1,
+        "reserved_gpu_hours": 19.25,
+        "start_unix": 1793768138.5546093,
+        "allocation_evidence": "pool-v2:gpu01:GPU-789d1ee4-d888-8a11-c94e-3d866900bc4d:ff2_expanded_core_20261104T045535Z",
+        "charged_gpu_hours": null
       }
     }
   },
-  "observed_processes": [],
+  "observed_processes": [
+    {
+      "pid": 4035508,
+      "ppid": 4035250,
+      "elapsed": "12:06",
+      "command": "/home/sachin.chaudhary/.conda/envs/aiface/bin/python /home/sachin.chaudhary/ces_fl_sources/ff2-expanded-e7648fb/CES_FL/proposals/ff2_expanded_baselines_20261104_r1/with_gpu_budget.py --ledger /home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/additional72_gpu_hours.json --allocation /home/sachin.chaudhary/ces_fl_runs/ff2_expanded_e7648fb/run_ff2_expanded_core_20261104T045535Z/ALLOCATION.json --session ff2_expanded_core_20261104T045535Z --hours 19.25 --out /home/sachin.chaudhary/ces_fl_runs/ff2_expanded_e7648fb/run_ff2_expanded_core_20261104T045535Z/budgeted_session --projection /home/sachin.chaudhary/ces_fl_runs/ff2_expanded_e7648fb/profile_ff2_expanded_profiles_20261104T043755Z/budgeted_profile/core/real_train_profile/DRY_RUN.json -- /home/sachin.chaudhary/.conda/envs/aiface/bin/python /home/sachin.chaudhary/ces_fl_sources/ff2-expanded-e7648fb/CES_FL/src/ff2_expanded_runner.py train --config /home/sachin.chaudhary/ces_fl_runs/ff2_expanded_e7648fb/bound_configs/core.json --sources /home/sachin.chaudhary/ces_fl_dependencies/ff2_expanded_e7648fb_sources/aiface --preflight /home/sachin.chaudhary/ces_fl_runs/ff2_expanded_e7648fb/preflight_reused_v2/core --device cuda --out /home/sachin.chaudhary/ces_fl_runs/ff2_expanded_e7648fb/trainings/core_seed17_50ep --budget-hours 19.25 --receipt /home/sachin.chaudhary/ces_fl_runs/ff2_expanded_e7648fb/profile_ff2_expanded_profiles_20261104T043755Z/budgeted_profile/core/real_train_profile/DRY_RUN.json --software-receipt /home/sachin.chaudhary/ces_fl_runs/ff2_expanded_e7648fb/profile_ff2_expanded_profiles_20261104T043755Z/budgeted_profile/core/cuda_smoke/SMOKE_RESULT.json"
+    }
+  ],
   "process_query_returncode": 0,
   "conditional": {
     "PG-FDD": "BLOCKED_ADAPTER / generator-label mapping and three-encoder SAM parity pending",
