@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+#PBS -N CESFLBindProbe
+#PBS -q workq
+#PBS -l select=1:host=gpu02:ncpus=1:ngpus=1:mem=8gb
+#PBS -l walltime=00:05:00
+#PBS -j oe
+#PBS -o /home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104_cudaenv3/table3_eval/PBS_BINDING_PROBE.log
+
+set -Eeuo pipefail
+umask 077
+echo "time=$(date --iso-8601=seconds)"
+echo "host=$(hostname -f)"
+echo "PBS_JOBID=${PBS_JOBID:-MISSING}"
+echo "PBS_GPUFILE=${PBS_GPUFILE:-MISSING}"
+echo "PBS_NODEFILE=${PBS_NODEFILE:-MISSING}"
+echo "CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES:-MISSING}"
+env | sort | grep -E '^(PBS_|CUDA_|GPU|NVIDIA)' || true
+if [[ -n "${PBS_NODEFILE:-}" && -f "$PBS_NODEFILE" ]]; then cat "$PBS_NODEFILE"; fi
+if [[ -n "${PBS_GPUFILE:-}" && -f "$PBS_GPUFILE" ]]; then
+  echo '--- PBS_GPUFILE contents ---'
+  cat "$PBS_GPUFILE"
+fi
+if [[ -n "${PBS_JOBID:-}" ]]; then /opt/pbs/bin/qstat -f "$PBS_JOBID" || true; fi
+echo '--- device nodes ---'
+ls -l /dev/nvidia* 2>&1 || true
+echo '--- nvidia-smi inventory ---'
+nvidia-smi --query-gpu=index,uuid,name,memory.used,memory.free,utilization.gpu --format=csv,noheader
+
+if [[ -z "${CUDA_VISIBLE_DEVICES:-}" ]]; then
+  echo 'BINDING_STATUS=UNVERIFIED_CUDA_VISIBLE_DEVICES_MISSING; did not initialize CUDA.'
+  exit 0
+fi
+/home/sachin.chaudhary/.conda/envs/aiface/bin/python -u - <<'PY'
+import csv, os, subprocess, torch
+print('torch_version='+torch.__version__)
+print('cuda_visible_devices='+os.environ['CUDA_VISIBLE_DEVICES'])
+print('cuda_available='+str(torch.cuda.is_available()))
+print('cuda_device_count='+str(torch.cuda.device_count()))
+if not torch.cuda.is_available() or torch.cuda.device_count()!=1:
+    raise SystemExit('BINDING_STATUS=FAIL_DEVICE_COUNT')
+print('device_name='+torch.cuda.get_device_name(0))
+torch.empty(1,device='cuda')
+rows=list(csv.reader(subprocess.check_output(
+    ['nvidia-smi','--query-compute-apps=gpu_uuid,pid,used_memory','--format=csv,noheader,nounits'],
+    text=True).splitlines()))
+own=[r for r in rows if len(r)>=2 and r[1].strip()==str(os.getpid())]
+print('pid_gpu_rows='+repr(own))
+if len({r[0].strip() for r in own})!=1:
+    raise SystemExit('BINDING_STATUS=FAIL_PROCESS_UUID')
+print('BINDING_STATUS=PASS_UUID_VERIFIED')
+PY
