@@ -1,5 +1,5 @@
 {
-  "observed_management_local": "2026-11-04 Asia/Kolkata",
+  "observed_management_local": "2026-11-04T10:40 Asia/Kolkata",
   "source_commit": "e7648fb25aeb16d49bbef33ad998e1b1cf5a5016",
   "source_worktree": "detached and clean",
   "requested_operator_prompt": "CES_FL/proposals/ff2_expanded_baselines_20261104_r1/GPU_OPERATOR_PROMPT.md",
@@ -26,11 +26,16 @@
     "45394.mgmt01":{"queue":"workq","ngpus":1,"exec_host":"gpu02/8*8","exit_status":32,"reason":"CUDA_VISIBLE_DEVICES unset; guard stopped before model execution"},
     "45396.mgmt01":{"queue":"workq","ngpus":1,"exec_host":"gpu01/8","exit_status":0,"diagnostic":"CUDA_VISIBLE_DEVICES and PBS_GPUFILE unset; PyTorch saw8visible GPUs"}
   },
-  "cuda_smokes_completed": 0,
-  "real_train_20_step_profiles_completed": 0,
-  "expanded_training_launched": false,
+  "cuda_smokes_completed": 6,
+  "real_train_20_step_profiles_completed": 5,
+  "real_train_20_step_profile_failed": {"method":"srm","reason":"CUDA OOM under concurrent shared-card workload; original batch/config preserved"},
+  "expanded_training_launched": true,
+  "training_runs": {
+    "f3net": {"state":"RUNNING_INITIALIZATION_NO_COMPLETED_EPOCH_YET","config_digest":"ae529c3af7dc58f55bc1b27064ca866a5eb00013a33e2cb4cd548d74741b2bcf","host":"gpu02","gpu_uuid":"GPU-65f63cc5-9366-5c2d-196a-6e7a0a62c1e8","controller_pid":1586452,"worker_pid":1586704,"epoch_budget":22.75},
+    "core": {"state":"RUNNING_INITIALIZATION_NO_COMPLETED_EPOCH_YET","config_digest":"b861f3e0aa608430cbcf53848f446be93364abd342b486aa377ba5946bacf389","host":"gpu01","gpu_uuid":"GPU-789d1ee4-d888-8a11-c94e-3d866900bc4d","controller_pid":4035250,"worker_pid":4035508,"epoch_budget":19.25}
+  },
   "test_evaluation_launched": false,
   "existing_jobs_modified_or_terminated": false,
-  "shared_ff2_budget_gpu_hours": {"cap":72,"charged":27.887102275556988,"reserved":0,"uncommitted":44.112897724443016},
+  "shared_ff2_budget_gpu_hours": {"cap":72,"charged":28.010872244437536,"reserved":42.0,"active_gpus":2,"uncommitted":1.989127755562464},
   "separate_lh_budget_touched": false
 }
