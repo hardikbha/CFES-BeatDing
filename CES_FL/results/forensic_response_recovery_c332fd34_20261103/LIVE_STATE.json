@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-04T05:23:16.269591+00:00",
+  "observed_management_utc": "2026-11-04T05:33:27.806234+00:00",
   "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
   "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
   "budget": {
@@ -7,8 +7,8 @@
     "source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-forensic-response-c332fd34",
     "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
     "initial_total_gpu_hours": 48,
-    "consumed_gpu_hours": 21.539973890382488,
-    "reserved_gpu_hours": 0.9722147451811988,
+    "consumed_gpu_hours": 21.721641810478953,
+    "reserved_gpu_hours": 0.9833294046944421,
     "gpu_sessions": [
       {
         "id": "ffpp_checks_primary",
@@ -749,8 +749,8 @@
         "id": "lh_resnet50_table3_eval_L_A_s17_shared-gpu5-20261104",
         "ngpus": 1,
         "reserved_gpu_hours": 1.0,
-        "elapsed_seconds": 100.0269173476845,
-        "state": "RUNNING",
+        "elapsed_seconds": 694.0172865949571,
+        "state": "COMPLETED",
         "route": "user_authorized_direct_ssh_pool_v2",
         "pbs_allocation_claimed": false,
         "host": "gpu02",
@@ -772,6 +772,34 @@
         "scientific_commit": "8685c715e568731787662858d6a01e29ec51a81d",
         "purpose": "single locked ResNet Table-3 inference pass; no calibration",
         "log": "/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104_cudaenv3/table3_eval/L_A.direct_eval.log"
+      },
+      {
+        "id": "lh_resnet50_table3_eval_L_H_s17_shared-gpu4-20261104",
+        "ngpus": 1,
+        "reserved_gpu_hours": 1.0,
+        "elapsed_seconds": 60.01414310000837,
+        "state": "RUNNING",
+        "route": "user_authorized_direct_ssh_pool_v2",
+        "pbs_allocation_claimed": false,
+        "host": "gpu02",
+        "controller_pid": 1593466,
+        "card": {
+          "index": 4,
+          "uuid": "GPU-ee335748-8273-2d67-42a5-d45463027c1b",
+          "free_mib": 26351,
+          "used_mib": 54729,
+          "utilization": 0,
+          "active_compute_apps_at_claim": [
+            [
+              "GPU-ee335748-8273-2d67-42a5-d45463027c1b",
+              "2986320",
+              "54636"
+            ]
+          ]
+        },
+        "scientific_commit": "8685c715e568731787662858d6a01e29ec51a81d",
+        "purpose": "single locked ResNet Table-3 inference pass; no calibration",
+        "log": "/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104_cudaenv3/table3_eval/L_H.direct_eval.log"
       }
     ],
     "prior_study_ledger": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_9030dd77_20261103/budget_ledger.json",
