@@ -79,6 +79,7 @@ def verify_cuda_uuid(torch, expected_uuid):
     rows=[r for r in csv.reader(apps.splitlines()) if len(r)>=2 and r[1].strip()==str(os.getpid())]
     if not any(r[0].strip()==expected_uuid for r in rows):
         raise RuntimeError(f'CUDA process is not mapped to leased UUID {expected_uuid}: {rows}')
+    return rows
 
 
 def reserve(budget,sid,card,head,commit):
@@ -203,8 +204,12 @@ def main():
                 row=next(s for s in d['gpu_sessions'] if s['id']==sid);row['elapsed_seconds']=time.monotonic()-start
     thread=threading.Thread(target=heartbeat,daemon=True);thread.start()
     try:
-        verify_cuda_uuid(torch,gpu['uuid'])
-        smoke_receipt=P50_DIR/'checks'/'synthetic_downstream'/'SMOKE_RESULT.json'
+        binding_rows=verify_cuda_uuid(torch,gpu['uuid'])
+        write_json(arm_root/'CUDA_BINDING.json',{'status':'PASS','pid':os.getpid(),
+            'expected_device_uuid':gpu['uuid'],'cuda_visible_devices':os.environ.get('CUDA_VISIBLE_DEVICES'),
+            'device_name':torch.cuda.get_device_name(0),'nvidia_smi_process_rows':binding_rows,
+            'executor_commit':commit,'test_read':False})
+        smoke_receipt=P50_DIR.parent/'checks'/'synthetic_downstream'/'SMOKE_RESULT.json'
         if not smoke_receipt.is_file():raise RuntimeError('Current source-bound CUDA smoke receipt missing')
         smoke=read_json(smoke_receipt)
         if smoke.get('status')!='PASS' or smoke.get('source_sha256')!=HEAD_SHA or smoke.get('device')!='cuda':
