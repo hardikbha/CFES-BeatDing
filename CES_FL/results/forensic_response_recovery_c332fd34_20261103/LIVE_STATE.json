@@ -1,5 +1,5 @@
 {
-  "observed_management_utc": "2026-11-04T05:33:27.806234+00:00",
+  "observed_management_utc": "2026-11-04T05:43:34.256206+00:00",
   "source_commit": "c332fd34fb603b8919b15fee08e8d022fb9f57c8",
   "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
   "budget": {
@@ -7,8 +7,8 @@
     "source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-forensic-response-c332fd34",
     "source_sha256": "89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b",
     "initial_total_gpu_hours": 48,
-    "consumed_gpu_hours": 21.721641810478953,
-    "reserved_gpu_hours": 0.9833294046944421,
+    "consumed_gpu_hours": 21.7714246983138,
+    "reserved_gpu_hours": 0,
     "gpu_sessions": [
       {
         "id": "ffpp_checks_primary",
@@ -777,8 +777,8 @@
         "id": "lh_resnet50_table3_eval_L_H_s17_shared-gpu4-20261104",
         "ngpus": 1,
         "reserved_gpu_hours": 1.0,
-        "elapsed_seconds": 60.01414310000837,
-        "state": "RUNNING",
+        "elapsed_seconds": 239.23253930546343,
+        "state": "COMPLETED",
         "route": "user_authorized_direct_ssh_pool_v2",
         "pbs_allocation_claimed": false,
         "host": "gpu02",
