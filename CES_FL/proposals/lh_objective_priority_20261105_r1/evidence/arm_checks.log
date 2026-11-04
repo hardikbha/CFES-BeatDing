@@ -1,0 +1,3 @@
+B PASS: exact objective and forward-use semantics; finite gradients
+C PASS: exact objective and forward-use semantics; finite gradients
+PASS: scientific source/configs identical to pinned H0; production inputs/CUDA remain cluster checks

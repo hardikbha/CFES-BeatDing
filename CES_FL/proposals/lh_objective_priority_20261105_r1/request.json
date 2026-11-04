@@ -1,0 +1,46 @@
+{
+  "id": "lh_objective_priority_20261105_r1",
+  "source_origin_commit": "84ad9838ac14f9e252d292146df5b1e1b1121d7c",
+  "source_sha256": "1997eebf093aa3e37de1cbbe58302a1539ac2e517f966a4607aae89dc695a8e0",
+  "controls_result_commit": "e993315a853aa278ec649010fa11daef1e601e44",
+  "review_commit": "0cff0aa53f712981e423e6acc818c26569f6221b",
+  "priority_order": [
+    "B0",
+    "C0",
+    "full_classifier_audit",
+    "source_only_generalization_design"
+  ],
+  "new_runs": {
+    "B0": {
+      "native_arm": "B",
+      "description": "original BCE plus hierarchical error control"
+    },
+    "C0": {
+      "native_arm": "C",
+      "description": "B0 plus procedural sensitivity and sham stability; no alignment"
+    }
+  },
+  "controls": {
+    "A0": "completed3epoch BCE, reuse after verification",
+    "H0": "completed3epoch full H, reuse after verification"
+  },
+  "epochs": 3,
+  "seed": 17,
+  "selection": "earliest strict maximum clean FF++ validation AUC; no fairness-based epoch replacement",
+  "primary_fairness": "gender_race/F_FPR",
+  "secondary": "all gender/race/age/skin/ids8 metrics and FPR/FNR/worst-groupAUC",
+  "uncertainty": "1000 paired recorded-contributor draws; minimum900 usable; no protocol relaxation",
+  "target_60_of_80": "aspirational reporting target only; never a TEST tuning/selection objective",
+  "test_access": false,
+  "training_launched_here": false,
+  "compute": {
+    "max_concurrent_gpus": 2,
+    "first_cohort_cap_gpu_hours": 3,
+    "classifier_audit_cap_gpu_hours": 0.25,
+    "existing_ledger": "L_H finalization; verify actual remaining allowance and authorization; no FF2 baseline budget transfer",
+    "last_reported_total_cap": 48,
+    "last_reported_remaining": 25.0334,
+    "new_budget_granted": 0
+  },
+  "followup_generalization": "Prepare one TRAIN-only manipulation holdout, exclude it and development contributors from all detector pretraining. Exact fold/config/projection required before any further training; do not select from known external TEST outcomes."
+}
