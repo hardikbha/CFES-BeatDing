@@ -163,3 +163,5 @@ The source-bound H0 preview had 88 cases and H1 had 352 (the same 88 source/oper
 CPU unit checks: 6/6 passed. All four full TRAIN/VAL preflights passed (101,525 images decoded per arm; no image-byte overlap). All four CUDA smoke and config-specific real-input backward checks passed on one verified H100 UUID. Full process-level mappings, source/config hashes and aggregate GPU ledger are in the receipt files.
 
 Files also include `RECORDED_TRAIN_COVERAGE.json`, `REVIEW_SUMMARY.json` and `CUDA_BINDINGS_AGGREGATE.json`. Per-image inventories, contact sheets, review rows, raw prediction rows and checkpoints remain private on the cluster.
+
+After accounting for all pilot sessions, the shared L_H-finalization ledger snapshot is 22.9666/48.0000 GPU-h consumed, 0.0000 reserved, 25.0334 remaining. The separate FairForge-2 budget was not used.

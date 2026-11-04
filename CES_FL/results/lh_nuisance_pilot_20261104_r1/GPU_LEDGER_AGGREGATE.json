@@ -191,5 +191,13 @@
     }
   ],
   "test_read": false,
-  "fairforge2_budget_used": false
+  "fairforge2_budget_used": false,
+  "shared_global_ledger_final": {
+    "total_gpu_hours": 48,
+    "consumed_gpu_hours": 22.966574061007965,
+    "reserved_gpu_hours": 0,
+    "remaining_gpu_hours": 25.033425938992035,
+    "state": "ACTIVE_BUDGET_LEDGER; execution state is in per-session records and COORDINATOR_STATUS.json",
+    "scope": "All new forensic-response checks and training across both datasets/GPUs, including parent attempts; existing Ding study separate and preserved"
+  }
 }
