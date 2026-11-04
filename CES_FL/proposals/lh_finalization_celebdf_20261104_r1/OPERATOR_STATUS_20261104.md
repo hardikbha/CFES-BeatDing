@@ -48,7 +48,7 @@ The local artifacts include `DING_base_s17/49.pth` (SHA256 `b2240f157d4f94895f09
 | Source-bound CUDA smoke | COMPLETED, PASS on gpu01 GPU1 |
 | Real-input CUDA backward check | COMPLETED, PASS, zero optimizer updates |
 | ResNet P50 training | COMPLETED, seed17, 50/50 epochs, validation replay PASS |
-| ResNet L_A/L_H training | RUNNING, seed17; L_A completed 6/10 and is in epoch7; L_H completed 5/10 and is in epoch6 at 07:40 IST |
+| ResNet L_A/L_H training | RUNNING, seed17; L_A completed 7/10 and is in epoch8; L_H completed 6/10 and is in epoch7 at 07:44 IST |
 | Table 3 TEST evaluation | Protocol frozen and CPU policy guards PASS; pending both selected checkpoints; no TEST read |
 | Ding-10 controlled adaptation | ADAPTER CPU-CHECKED; PENDING ResNet priority and CUDA dry-run |
 
@@ -62,7 +62,7 @@ The P50 controller PID was `3906763`; its log is `/home/sachin.chaudhary/ces_fl_
 
 At 06:55 IST the two downstream runners bound L_A/L_H to the same P50 best checkpoint and passed full 76,139 TRAIN +25,386 VAL image hash/decode preflight. Config SHA256s are `be851ef7f8ccbbdb1a9fe261035fbe4478215ca8211a276852fa8f10a145ccad` (L_A) and `858b7359fa56de1468d04f86633e1fb73306559b4c905c4fac17c7cad1bc183a` (L_H); configs differ only in `error_control`. Both then failed the CUDA binding guard before any backward or training: PyTorch had been imported before setting `CUDA_VISIBLE_DEVICES`, and `nvidia-smi` mapped each process to gpu01 GPU0 (`GPU-410a5796-06b3-dbe6-5371-5d06a1a53416`) rather than the requested UUID. Each briefly allocated a CUDA context on GPU0 (522MiB reported) and exited without an optimizer step; no existing job was terminated or changed. The failures and their GPU time are preserved in `L_A.direct.log`, `L_H.direct.log`, and each `ALLOCATION_END.json` (0.0001704h and0.0001570h). L_H also produced an exact-preview reuse receipt for 88 procedural cases; reviewer provenance is explicitly `Codex AI ... NOT human approval`, not represented as human approval.
 
-The refreshed shared ledger is48GPU-hours total and20.859988consumed, with4hours reserved for the two active arms;23.140012hours are presently unreserved beyond those reservations. The corrected runner sets the UUID before loading the model/PyTorch module and uses fresh attempt IDs/output paths. It reuses the source/config-bound preflight and recorded L_H qualification only after their hashes pass again.
+The refreshed shared ledger is48GPU-hours total and20.998913consumed, with4hours reserved for the two active arms;23.001087hours are presently unreserved beyond those reservations. The corrected runner sets the UUID before loading the model/PyTorch module and uses fresh attempt IDs/output paths. It reuses the source/config-bound preflight and recorded L_H qualification only after their hashes pass again.
 
 A second L_A startup (executor commit `9294083`) verified the expected gpu01 GPU1 UUID successfully, but stopped because the runner looked for the pre-existing CUDA smoke receipt under `P50/checks/`; the actual checked receipt is under the run-root `checks/synthetic_downstream/`. It performed no backward/training update and consumed0.0001175GPU-hours. Preserve the failed startup output at `/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104_cudaenv2/`. The fresh `cudaenv3` L_A run verified the correct UUID and passed its real-input CUDA backward check; L_H passed the same checks on GPU5.
 
@@ -70,8 +70,8 @@ Interim best through the latest completed epochs, selected by earliest maximum v
 
 | Arm | Completed | Best epoch | AUC | FPR | FNR | Gender F_FPR | Race F_FPR | Age F_FPR | Skin F_FPR | Gender×race F_FPR | Worst gender×race AUC |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| L_A | 6/10 | 5 | 96.6525% | 9.9951% | 9.6318% | 5.8398% | 12.0151% | 14.5474% | 8.5857% | 39.2534% | 90.4245% |
-| L_H | 5/10 | 1 | 96.4214% | 9.9951% | 9.9934% | 5.6438% | 9.9922% | 12.2680% | 5.0148% | 33.3735% | 90.2108% |
+| L_A | 7/10 | 5 | 96.6525% | 9.9951% | 9.6318% | 5.8398% | 12.0151% | 14.5474% | 8.5857% | 39.2534% | 90.4245% |
+| L_H | 6/10 | 1 | 96.4214% | 9.9951% | 9.9934% | 5.6438% | 9.9922% | 12.2680% | 5.0148% | 33.3735% | 90.2108% |
 
 All rates above are fractions converted to percent and use each checkpoint's fixed FF++ validation-real10% threshold (achieved validation FPR9.9951%). These are interim validation snapshots, not TEST results; selection can still change through epoch10. They show current mixed group outcomes, not a final method comparison.
 
