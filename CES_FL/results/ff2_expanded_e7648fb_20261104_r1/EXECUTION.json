@@ -31,8 +31,8 @@
   "real_train_20_step_profile_failed": {"method":"srm","reason":"CUDA OOM under concurrent shared-card workload; original batch/config preserved"},
   "expanded_training_launched": true,
   "training_runs": {
-    "f3net": {"state":"RUNNING_INITIALIZATION_NO_COMPLETED_EPOCH_YET","config_digest":"ae529c3af7dc58f55bc1b27064ca866a5eb00013a33e2cb4cd548d74741b2bcf","host":"gpu02","gpu_uuid":"GPU-65f63cc5-9366-5c2d-196a-6e7a0a62c1e8","controller_pid":1586452,"worker_pid":1586704,"epoch_budget":22.75},
-    "core": {"state":"RUNNING_INITIALIZATION_NO_COMPLETED_EPOCH_YET","config_digest":"b861f3e0aa608430cbcf53848f446be93364abd342b486aa377ba5946bacf389","host":"gpu01","gpu_uuid":"GPU-789d1ee4-d888-8a11-c94e-3d866900bc4d","controller_pid":4035250,"worker_pid":4035508,"epoch_budget":19.25}
+    "f3net": {"state":"RUNNING_EPOCH_1","latest_checkpoint_epoch":1,"latest_checkpoint_batch":500,"selected_epoch":null,"last_checkpoint_sha256":"d0207424b39be33b4122e8dc2a076411323c1c4deedd40e80a552305ab77806b","config_digest":"ae529c3af7dc58f55bc1b27064ca866a5eb00013a33e2cb4cd548d74741b2bcf","host":"gpu02","gpu_uuid":"GPU-65f63cc5-9366-5c2d-196a-6e7a0a62c1e8","controller_pid":1586452,"worker_pid":1586704,"epoch_budget":22.75},
+    "core": {"state":"RUNNING_EPOCH_1","latest_checkpoint_epoch":1,"latest_checkpoint_batch":1000,"selected_epoch":null,"last_checkpoint_sha256":"88e4668d50d507ae557f3bbbaad0eaf4835a87333b4a3383b3990084d43c4d89","config_digest":"b861f3e0aa608430cbcf53848f446be93364abd342b486aa377ba5946bacf389","host":"gpu01","gpu_uuid":"GPU-789d1ee4-d888-8a11-c94e-3d866900bc4d","controller_pid":4035250,"worker_pid":4035508,"epoch_budget":19.25}
   },
   "test_evaluation_launched": false,
   "existing_jobs_modified_or_terminated": false,
