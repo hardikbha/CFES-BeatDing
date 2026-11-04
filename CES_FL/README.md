@@ -1,8 +1,8 @@
 # CES-FL — supervisor review and training handoff
 
-## Verified FairForge-2 training launch — 3 November2026
+## Current FairForge-2 status — 4 November 2026
 
-[Actual BCE/DAG-FDD/DAW-FDD state and evidence](results/ff2_baseline_suite_s17_20261103T110324Z_cluster/STATUS.md) · [Launch/check/budget record](results/ff2_baseline_suite_s17_20261103T110324Z_cluster/OPERATOR_RECORD.md). All three native methods are training on the public218,266TRAIN/31,107VAL split after CPU, full image preflight, fresh CUDA/resume and20-step real backward/profile PASS. Pinned science commit815b4d4; seed17,50epochs,batch128. No complete epoch/validation result at the12:46UTC observation. Three verified shared-pool GPU leases;72h additional ledger. PG/FairAdapter remain conditional; RSEF blocked; existing jobs preserved. This is a dated snapshot.
+[BCE/DAG-FDD/DAW-FDD results](results/ff2_baseline_suite_s17_20261103T110324Z_cluster/STATUS.md) · [expanded model readiness and blockers](https://github.com/hardikbha/CFES-BeatDing/blob/ff4b497/CES_FL/results/ff2_expanded_e7648fb_20261104_r1/STATUS.md) · [existing Ding stage report](results/ff2_baseline_suite_s17_20261103T110324Z_cluster/ding_layout_20261104T0437Z/REPORT.md). The three matched baseline runs completed50/50 and replayed selected checkpoints on VAL; AUC99.804621/99.813559/99.836011%. Ding's separate run remains at44/50classification epochs, with epoch45 in progress; SFD and corrected GDA are pending. Expanded new models have no training/results because PBS did not supply a per-job CUDA device binding. Shared72h budget has44.112898GPUh uncommitted. No TEST evaluation was made in this work.
 
 ## FairForge-2 external baselines — 3 November 2026
 

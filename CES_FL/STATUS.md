@@ -1,6 +1,6 @@
-## Verified FairForge-2 training launch — 2026-11-03T12:46UTC
+## FairForge-2 current status — 4 November2026
 
-[Actual state and all aggregate evidence](results/ff2_baseline_suite_s17_20261103T110324Z_cluster/STATUS.md): BCE,DAG-FDD,DAW-FDD native TRAIN subprocesses observed running on three distinct gpu01UUID leases. Full CPU/input/CUDA/real-backward checks passed. Scientific commit815b4d4; exact50epoch seed17 common recipe unchanged. No completed epoch or benchmark validation score yet. Actual resource reconciliation, private log paths and conditional-method blockers are in the linked operator record. Historical preparation observations below remain preserved.
+[BCE/DAG-FDD/DAW-FDD results and budget](results/ff2_baseline_suite_s17_20261103T110324Z_cluster/STATUS.md) · [expanded model readiness](https://github.com/hardikbha/CFES-BeatDing/blob/ff4b497/CES_FL/results/ff2_expanded_e7648fb_20261104_r1/STATUS.md) · [Ding FF2 stage report](results/ff2_baseline_suite_s17_20261103T110324Z_cluster/ding_layout_20261104T0437Z/REPORT.md). BCE,DAG and DAW are50/50 `COMPLETED_VERIFIED`, selected epochs40/50/41. Their validation AUCs are99.804621/99.813559/99.836011%. Existing Ding classification is44/50, epoch45 in progress on two GPUs; SFD and corrected GDA remain pending. Expanded models are blocked at CUDA binding (PBS ngpus=1 allocation exposed all8 GPUs without CVD/PBS_GPUFILE). The shared FF2 cap has44.112898GPUh uncommitted. No TEST was accessed by the expanded setup.
 
 ## FairForge-2 baseline preparation — 2026-11-03T11:33:27.003004+00:00
 
