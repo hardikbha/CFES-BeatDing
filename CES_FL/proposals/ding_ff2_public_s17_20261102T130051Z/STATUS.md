@@ -1,13 +1,13 @@
 # Actual execution status
 
-Observed management UTC: **2026-11-04T19:21:12.904741+00:00**.
+Observed management UTC: **2026-11-04T19:36:16.330649+00:00**.
 
 State: **RUNNING**. Source commit `8487d98303fd5d7766fef2fa3dd32c37f38e5f4b`.
 
 Host `gpu01`, physical GPUs0/2 in shared pool-v2 mode; no PBS allocation or exclusive CPU/GPU ownership claimed.
 Controller PID `2754578`, training torchrun PID `2754977`.
 
-Latest recorded event: `TRAIN_STEP`, stage `gda_corrected`, epoch `36`, batch `3750/6297`, loss `0.04478832334280014`.
+Latest recorded event: `TRAIN_STEP`, stage `gda_corrected`, epoch `37`, batch `3250/6297`, loss `0.06746470928192139`.
 
 Eight CPU tests PASS; real-TRAIN full-native-batch two-GPU CUDA smoke PASS. 128classification images/update; 64main+64auxiliary GDA images/update; 224px; seed17;50classification→TRAIN-SFD→50corrected-GDAepochs.
 Corrected differentiable class-conditioned GDA with frozen encoder BN is explicitly distinguished from the detached archived GDA and paper results. Values below are completed validation epochs, not TEST scores. No TEST inference is attached.
@@ -79,7 +79,7 @@ Best validation AUC: 99.8104% at epoch21 (fixed AUC-only selection).
 | 49 | 0.035081 | 99.0757 | 98.1639 | 21.0054 | 52.1904 |
 | 50 | 0.034389 | 99.0215 | 98.0331 | 5.3723 | 12.9677 |
 
-## gda_corrected: 35 completed validation epochs
+## gda_corrected: 36 completed validation epochs
 
 Best validation AUC: 99.0594% at epoch3 (fixed AUC-only selection).
 
@@ -120,3 +120,4 @@ Best validation AUC: 99.0594% at epoch3 (fixed AUC-only selection).
 | 33 | 0.094823 | 99.0574 | 98.0629 | 4.8540 | 13.1136 |
 | 34 | 0.094806 | 99.0583 | 98.0632 | 4.8540 | 13.1136 |
 | 35 | 0.094802 | 99.0581 | 98.0631 | 4.8540 | 13.1136 |
+| 36 | 0.094753 | 99.0581 | 98.0631 | 4.8540 | 13.1136 |
