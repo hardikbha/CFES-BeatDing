@@ -93,3 +93,5 @@ All checkpoint binaries, private images, full row-level predictions and logs rem
 | Ding corrected-GDA run | `8487d98303fd5d7766fef2fa3dd32c37f38e5f4b` | Active/incomplete at observation; no final checkpoint result in this report. |
 
 The report branch is based on results snapshot `a84672b35437e107247b7b9de23f72d87ed1aa74`. The private machine-readable group support and all run receipts remain at their existing cluster paths; no prior artifact was overwritten.
+
+Additional age×skin and FairForensics-style sex×age×race validation analysis is in [INTERSECTIONAL_ANALYSIS.md](INTERSECTIONAL_ANALYSIS.md). It reports threshold sensitivity and current support limitations; CES-FL intersection replay is pending PBS allocation.
