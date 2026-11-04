@@ -1,0 +1,33 @@
+{
+  "format": "CESFL_RESNET50_TABLE3_EVAL_PROTOCOL_v1",
+  "parent_locked_plan": "/home/sachin.chaudhary/ces_fl_runs/lh_tables_s17_20261103T133000Z/LOCKED_PLAN.json",
+  "parent_locked_plan_sha256": "6dffee3b9b309975d7c3844dc1052427885dc41b2375e77c15f38ae33f76c5ea",
+  "historical_manifest_protocol_sha256": "8541a40413f278d34bd26630cec3446def3fc6f2b9fdf76a825859efe1d233fe",
+  "resnet_downstream_source_sha256": "72d368a439658c601a5fe4d717237b1561190e85c13c70f6db3a441bc5cdbe78",
+  "arms": {
+    "L_A": "A",
+    "L_H": "D"
+  },
+  "datasets": [
+    "ffpp",
+    "dfdc",
+    "celebdf",
+    "dfd"
+  ],
+  "threshold_views": [
+    "fixed_probability_0.5",
+    "selected_FFPP_validation_real_empirical_10pct"
+  ],
+  "target_domain_calibration": false,
+  "test_threshold_search": false,
+  "test_driven_selection": false,
+  "inference_passes_per_model_dataset": 1,
+  "bootstrap": {
+    "method": "connected recorded-contributor bootstrap",
+    "replicates": 1000,
+    "seed": 17,
+    "minimum_valid_replicates_for_interval": 900,
+    "insufficient_replicates_policy": "report actual valid count and unavailable interval; do not relax floor"
+  },
+  "uncertainty_scope": "conditional on seed-17 selected model; not training-seed variability or verified biological-person independence"
+}

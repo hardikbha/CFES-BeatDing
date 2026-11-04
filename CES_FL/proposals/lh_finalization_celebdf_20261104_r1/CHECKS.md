@@ -18,3 +18,13 @@ Additional executed checks, recorded in [checks.log](evidence/checks.log):
 - Original `src/ces_fl_head_ablation.py` SHA remains `08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177`.
 
 The model source, completed results/configs and historical preregistration are unchanged. The ResNet/Ding-10 training adapters, bound native pretraining configuration, actual cluster input/CUDA checks, private annotation provenance and scheduler allocation are **not certified by this package**. Their implementation and verification steps are in the operator prompt. No new training result is implied by publishing this commit.
+
+## ResNet Table 3 locked-evaluator policy checks
+
+Command run on CPU, with no TEST manifest/image reads:
+
+```bash
+/home/sachin.chaudhary/.conda/envs/aiface/bin/python -m unittest discover -s CES_FL/tests -p 'test_lh_resnet50_locked_table3.py' -v
+```
+
+Result: `Ran 5 tests ... OK`. The checks load the pinned protocol/parent-plan hashes, reject a changed threshold view, reject target-domain calibration, reject stale evaluator bindings, and reject a synthetic fixture as a production selected checkpoint. The first attempt failed because the copied historical manifest-protocol SHA contained a one-character typo; the expected value was re-read from the existing locked `LOCKED_PLAN.json`, corrected, and the full command above passed. The evaluator has not been bound to the live model checkpoints and no TEST inference has run.
