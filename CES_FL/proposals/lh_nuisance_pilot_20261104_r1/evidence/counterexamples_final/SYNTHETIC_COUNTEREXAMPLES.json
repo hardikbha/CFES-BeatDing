@@ -1,0 +1,72 @@
+{
+  "data": "Synthetic tensors only; no face images or trained checkpoint",
+  "gain_counterexample": [
+    {
+      "logit_gain": 1.0,
+      "response": 0.09983409941196442,
+      "sensitivity_loss": 0.4001659154891968
+    },
+    {
+      "logit_gain": 10.0,
+      "response": 0.8813735842704773,
+      "sensitivity_loss": 0.0
+    }
+  ],
+  "group_offset_counterexample": {
+    "response_alignment_loss": 5.960464477539063e-08,
+    "real_group_positive_rates_at_zero": [
+      0.0,
+      1.0
+    ],
+    "interpretation": "Response alignment alone does not remove additive group score offsets."
+  },
+  "texture_only_counterexample": [
+    {
+      "texture_index": 0,
+      "procedural_response": 1.518436312675476,
+      "sensitivity_loss": 0.0,
+      "nuisance_only_logit_changes": {
+        "identity": 0.0,
+        "jpeg90": -0.5189552307128906,
+        "resize90": 16.582901000976562,
+        "blur035": 6.653598785400391
+      }
+    },
+    {
+      "texture_index": 1,
+      "procedural_response": 1.682434320449829,
+      "sensitivity_loss": 0.0,
+      "nuisance_only_logit_changes": {
+        "identity": 0.0,
+        "jpeg90": -0.5847454071044922,
+        "resize90": 16.796924591064453,
+        "blur035": 6.727855682373047
+      }
+    },
+    {
+      "texture_index": 2,
+      "procedural_response": 1.4918663501739502,
+      "sensitivity_loss": 0.0,
+      "nuisance_only_logit_changes": {
+        "identity": 0.0,
+        "jpeg90": -0.5723152160644531,
+        "resize90": 16.507352828979492,
+        "blur035": 6.592020034790039
+      }
+    },
+    {
+      "texture_index": 3,
+      "procedural_response": 1.7503201961517334,
+      "sensitivity_loss": 0.0,
+      "nuisance_only_logit_changes": {
+        "identity": 0.0,
+        "jpeg90": -0.6211795806884766,
+        "resize90": 16.654804229736328,
+        "blur035": 6.687339782714844
+      }
+    }
+  ],
+  "conclusion": "These demonstrate possible shortcuts, not their actual use by L_H.",
+  "trained_model_tested": false,
+  "scientific_source_sha256": "1997eebf093aa3e37de1cbbe58302a1539ac2e517f966a4607aae89dc695a8e0"
+}

@@ -1,5 +1,9 @@
 # CES-FL — supervisor review and training handoff
 
+## Short nuisance/sensitivity pilot — 4 November 2026
+
+[Runnable four-arm proposal](proposals/lh_nuisance_pilot_20261104_r1/README.md) · [GPU operator prompt](proposals/lh_nuisance_pilot_20261104_r1/GPU_OPERATOR_PROMPT.md) · [Actual CPU checks](proposals/lh_nuisance_pilot_20261104_r1/CHECKS.md). New ResNet A0/H0/A1/H1 three-epoch cohort tests original versus matched mild processing, retaining original losses and initialization. Synthetic counterexamples demonstrate possible scale/texture shortcuts; trained-checkpoint diagnostics and production GPU runs are pending. Maximum two devices/three aggregate GPU-hours within the remaining study ledger. Publication does not launch jobs. No new benchmark TEST use or claim of disentangled features.
+
 ## FairForge-2 external baselines — 3 November 2026
 
 [Proposal and readiness](proposals/ff2_baseline_suite_s17_20261103T110324Z/README.md) · [GPU operator prompt](proposals/ff2_baseline_suite_s17_20261103T110324Z/GPU_OPERATOR_PROMPT.md). User authorized72 additional aggregate GPU-hours and at most3 allocated GPUs. Matched native Xception BCE/DAG-FDD/DAW-FDD code, configs and CPU checks are prepared; real input/CUDA checks and training remain pending. PG-FDD/FairAdapter source is pinned but adapters remain conditional; RSEF lacks verified source. Existing Ding and plain-head work is preserved. Publish destination is the writable `hardiksharma6555` fork; this is not a training launch.

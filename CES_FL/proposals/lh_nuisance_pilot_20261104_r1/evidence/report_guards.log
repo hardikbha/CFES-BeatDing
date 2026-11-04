@@ -1,0 +1,3 @@
+PASS missing arms rejected
+PASS synthetic lifecycle cannot become a production result
+PASS current source, four configs and completed smoke receipt are hash-bound

@@ -1,0 +1,93 @@
+{
+  "request_id": "lh_nuisance_pilot_20261104_r1",
+  "kind": "FOUR_ARM_RESNET_TRAIN_VAL_NUISANCE_PILOT",
+  "purpose": "Distinguish benign-processing sensitivity from procedural responses, and test H beyond a matched augmented BCE control. No feature-disentanglement proof.",
+  "source_base_commit": "08f78b315d19526429ca67aadfae516f929ecc5e",
+  "source_model": "CES_FL/src/ces_fl_nuisance_resnet50.py",
+  "scientific_source_sha256": "1997eebf093aa3e37de1cbbe58302a1539ac2e517f966a4607aae89dc695a8e0",
+  "base_resnet_source_sha256": "72d368a439658c601a5fe4d717237b1561190e85c13c70f6db3a441bc5cdbe78",
+  "arms": {
+    "A0": {
+      "native_arm": "A",
+      "config_file": "configs/A0.json",
+      "config_sha256": "89d3d1277f09b44f16c07666cd121bd274ac1e0e84b56b57679d70715d4d8441"
+    },
+    "H0": {
+      "native_arm": "D",
+      "config_file": "configs/H0.json",
+      "config_sha256": "34800f42f2cc81df32508b7a732700e45b4df5f6ddfebca1a109aad1db1407ef"
+    },
+    "A1": {
+      "native_arm": "A",
+      "config_file": "configs/A1.json",
+      "config_sha256": "4529e43ea0fd04438e249ead1c758cb6dd1631a8a841119024eed7c089e854e9"
+    },
+    "H1": {
+      "native_arm": "D",
+      "config_file": "configs/H1.json",
+      "config_sha256": "93c1c71b9688edfa0a4d33dd5978f4e43ce25e7ec49d823468762955a4b328ac"
+    }
+  },
+  "candidate_configuration_count": 4,
+  "epochs_per_arm": 3,
+  "training_seed": 17,
+  "batch_size": 32,
+  "primary_metric": "gender_race F_FPR; all other axes and detection regressions reported",
+  "selection": "earliest maximum clean FF++ validation AUC per arm",
+  "thresholds": [
+    "selected FF++ validation-real 10% FPR",
+    "fixed probability 0.5 diagnostic"
+  ],
+  "new_loss_terms": false,
+  "augmentation_cases": [
+    "identity",
+    "jpeg90_subsampling0",
+    "bilinear_resize90",
+    "Pillow_GaussianBlur_radius035"
+  ],
+  "train_pairs": "same transformation after procedural treatment for original/sham/treated; auxiliary event shares nuisance across groups/classes",
+  "benchmark_test_access": false,
+  "celebdf_target_tuning": false,
+  "validated_demographic_counterfactuals_claimed": false,
+  "real_forgery_validity_claimed": false,
+  "direct_feature_disentanglement_claimed": false,
+  "new_pretraining": false,
+  "prior_TEST_exposure_disclosed": true,
+  "bootstrap": {
+    "draws": 1000,
+    "minimum_usable": 900,
+    "unit": "connected recorded contributors",
+    "seed": 17,
+    "interaction_interval_implemented": false
+  },
+  "resources": {
+    "maximum_concurrent_gpus": 2,
+    "maximum_aggregate_gpu_hours": 3,
+    "native_per_run_epoch_boundary_hours": 0.75,
+    "includes": [
+      "diagnostics",
+      "CUDA checks",
+      "idle allocations",
+      "training",
+      "replay"
+    ],
+    "must_fit_verified_remaining_shared_ledger": true,
+    "ff2_budget_transfer": false,
+    "automatic_extensions": false
+  },
+  "software": {
+    "CPU_focused_tests": "PASS",
+    "CPU_full_width_backward": "PASS",
+    "CPU_lifecycle": "PASS on frozen-encoder software fixture; production remains layer4 training",
+    "CUDA_checks": "PENDING",
+    "private_input_checks": "PENDING",
+    "trained_checkpoint_diagnostics": "PENDING",
+    "scientific_training": "NOT_LAUNCHED"
+  },
+  "artifact_hashes": {
+    "CES_FL/scripts/diagnose_lh_nuisance.py": "e79eadfdb25d9a9664d16e6b46ef421587bcf53d537fbfeb90c8338946e93ad0",
+    "CES_FL/scripts/report_lh_nuisance.py": "5e7e12764c8428ac505c10fde744c02dbd34dbf82470feda57b20a0550cf1e47",
+    "CES_FL/tests/test_lh_nuisance.py": "fdab19985b0c9f121cce43705778ea24da0c1cad6150041e1bc894ed02a6594b",
+    "CES_FL/proposals/lh_nuisance_pilot_20261104_r1/commands.sh": "622e0a1c22ea987367e98c4f72ee45950f73d38ac281d67b44e4c924104f06ce"
+  }
+}

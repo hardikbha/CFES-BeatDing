@@ -1,0 +1,26 @@
+{
+  "status": "FAILED_LOCAL_DISK_LIMIT",
+  "exit_code": 120,
+  "available_bytes_observed": 150994944,
+  "scientific_performance_tested": false,
+  "synthetic_only": true,
+  "removed_generated_binary_files": [
+    {
+      "path": "/Users/hardiksharma/Downloads/fairness_cvpr/output/lh_nuisance_smoke_20261104_r1/A/last.tmp",
+      "size": 68911104
+    },
+    {
+      "path": "/Users/hardiksharma/Downloads/fairness_cvpr/output/lh_nuisance_smoke_20261104_r1/A/best.pt",
+      "size": 214105741
+    },
+    {
+      "path": "/Users/hardiksharma/Downloads/fairness_cvpr/output/lh_nuisance_smoke_20261104_r1/fixture_PRIVATE/initial.pt",
+      "size": 94355199
+    },
+    {
+      "path": "/Users/hardiksharma/Downloads/fairness_cvpr/output/lh_nuisance_smoke_20261104_r1/fixture_PRIVATE/wrong_backbone.pt",
+      "size": 94357993
+    }
+  ],
+  "tested_source_sha256": "ce78cfdd844bff35be80948737dfc575884b1161cbeb1cb7130f34a1298b1bda"
+}

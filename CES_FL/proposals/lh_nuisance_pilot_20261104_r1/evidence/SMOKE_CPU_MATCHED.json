@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "source_sha256": "1997eebf093aa3e37de1cbbe58302a1539ac2e517f966a4607aae89dc695a8e0",
+  "device": "cpu",
+  "torch": "2.8.0",
+  "head_type": "linear",
+  "nuisance_mode": "matched",
+  "parameters": {
+    "total": 23510081,
+    "trainable": 14966785,
+    "encoder": 23508032,
+    "head": 2049,
+    "encoder_trainable": 14964736,
+    "head_type": "linear",
+    "encoder_policy": "exit",
+    "backbone": "resnet50",
+    "trainable_encoder_scope": "layer4"
+  },
+  "checks": [
+    "full_width_224px_parameters_cam_gradients_and_frozen_bn",
+    "frozen_encoder_fixture_identical_initialization_wrong_backbone_rejection_A_and_H_reload_coverage_and_bitwise_resume",
+    "frozen_threshold_label_flip_paired_comparison_and_head_aware_map_export"
+  ],
+  "scientific_performance_tested": false,
+  "real_interventions_validated": false,
+  "fixture_only": true,
+  "cuda_tested": false
+}

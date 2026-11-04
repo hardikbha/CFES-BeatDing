@@ -1,0 +1,11 @@
+test_auxiliary_has_one_matching_transform_for_every_group_and_class (test_lh_nuisance.NuisanceTests) ... ok
+test_case_is_independent_of_global_rng_and_metadata (test_lh_nuisance.NuisanceTests) ... ok
+test_loss_shortcuts_are_explicit_not_scientific_success (test_lh_nuisance.NuisanceTests) ... ok
+test_matching_cancels_zero_intervention_for_every_transform (test_lh_nuisance.NuisanceTests) ... ok
+test_native_model_loss_and_selection_math_unchanged (test_lh_nuisance.NuisanceTests) ... ok
+test_originals_control_parity_eval_is_unaugmented_and_labels_cannot_change_x (test_lh_nuisance.NuisanceTests) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.376s
+
+OK
