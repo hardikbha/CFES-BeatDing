@@ -17,10 +17,9 @@ SOURCE=Path(__file__).resolve().parents[2]
 ROOT=Path('/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104')
 LOCKS=Path('/tmp/scf_gpu_locks')
 BUDGET_MODULE=Path('/home/sachin.chaudhary/ces_fl_runs/forensic_response_c332fd34_20261103/allocated_stage.py')
-PYTHON='/home/sachin.chaudhary/.conda/envs/aiface/bin/python'
 HEAD_SHA='72d368a439658c601a5fe4d717237b1561190e85c13c70f6db3a441bc5cdbe78'
 P50_DIR=ROOT/'P50'
-RESERVED_HOURS=3.0
+RESERVED_HOURS=2.0
 
 
 def sha(path):
@@ -69,6 +68,19 @@ def card_by_uuid(uuid):
     return found[0]
 
 
+def verify_cuda_uuid(torch, expected_uuid):
+    if not torch.cuda.is_available() or torch.cuda.device_count()!=1:
+        raise RuntimeError('Direct CUDA binding did not expose exactly one GPU')
+    if 'H100' not in torch.cuda.get_device_name(0):
+        raise RuntimeError('Direct CUDA binding exposed an unexpected GPU model')
+    torch.empty(1,device='cuda')
+    apps=subprocess.check_output(['nvidia-smi','--query-compute-apps=gpu_uuid,pid,used_memory',
+                                  '--format=csv,noheader,nounits'],text=True)
+    rows=[r for r in csv.reader(apps.splitlines()) if len(r)>=2 and r[1].strip()==str(os.getpid())]
+    if not any(r[0].strip()==expected_uuid for r in rows):
+        raise RuntimeError(f'CUDA process is not mapped to leased UUID {expected_uuid}: {rows}')
+
+
 def reserve(budget,sid,card,head,commit):
     with budget.ledger() as d:
         if any(s['id']==sid for s in d['gpu_sessions']):raise RuntimeError('Duplicate arm reservation')
@@ -102,30 +114,9 @@ def main():
         raise RuntimeError('Runner checkout must be detached')
     if subprocess.check_output([git,'-C',str(SOURCE),'status','--porcelain'],text=True).strip():
         raise RuntimeError('Runner source tree is dirty')
-    gpu=card_by_uuid(args.gpu_uuid)
     arm_key='A' if args.arm=='L_A' else 'D'
     arm_root=ROOT/args.arm
     if arm_root.exists():raise RuntimeError(f'Preserve existing arm output {arm_root}')
-    os.environ.update(CUDA_VISIBLE_DEVICES=gpu['uuid'],OMP_NUM_THREADS='2',MKL_NUM_THREADS='2',OPENBLAS_NUM_THREADS='1')
-    import torch
-    if not torch.cuda.is_available() or torch.cuda.device_count()!=1 or 'H100' not in torch.cuda.get_device_name(0):
-        raise RuntimeError('Direct CUDA/H100 binding failed')
-    lease_dir=LOCKS/f"gpu{gpu['index']}";lease=lease_dir/f'task_{args.arm}_r50_s17.json'
-    with pool_mutex():
-        if lease.exists():raise RuntimeError('This arm already has a GPU lease')
-        if lease_dir.exists():
-            owner=lease_dir/'pool_owner.json'
-            if not owner.exists() or not read_json(owner).get('shared'):
-                raise RuntimeError('GPU is not an authorized shared pool-v2 card')
-            active=[]
-            for path in lease_dir.glob('task_*.json'):
-                entry=read_json(path);pid=entry.get('pid')
-                if isinstance(pid,int) and Path(f'/proc/{pid}').exists():active.append(entry)
-            if active:raise RuntimeError(f'GPU already leased: {active}')
-        else:
-            lease_dir.mkdir();write_json(lease_dir/'pool_owner.json',{'shared':True,'v':2,'pid':0,'wid':'pool_v2_shared'})
-        write_json(lease,{'name':args.arm,'wid':args.arm,'pid':os.getpid(),'pgid':os.getpgrp(),
-                          'cls':'writer','need':24000,'time':time.time(),'device_uuid':gpu['uuid'],'commit':commit})
     template=read_json(SOURCE/f'CES_FL/proposals/lh_finalization_celebdf_20261104_r1/configs/resnet50_{args.arm}.template.json')
     template['init_sha256']=head.sha(P50_DIR/'best.pt')
     arm_root.mkdir(parents=True)
@@ -145,6 +136,27 @@ def main():
         qualification=str(qualification_path)
     budget=load('cesfl_budget_direct',Path('/home/sachin.chaudhary/ces_fl_runs/forensic_response_c332fd34_20261103/allocated_stage.py'))
     sid=f'lh_resnet50_{args.arm}_s17_20261104'
+    gpu=card_by_uuid(args.gpu_uuid)
+    os.environ.update(CUDA_VISIBLE_DEVICES=gpu['uuid'],OMP_NUM_THREADS='2',MKL_NUM_THREADS='2',OPENBLAS_NUM_THREADS='1')
+    import torch
+    lease_dir=LOCKS/f"gpu{gpu['index']}";lease=lease_dir/f'task_{args.arm}_r50_s17.json'
+    with pool_mutex():
+        # Recheck card and global lease state while holding the shared-pool mutex.
+        gpu=card_by_uuid(args.gpu_uuid)
+        if lease.exists():raise RuntimeError('This arm already has a GPU lease')
+        if lease_dir.exists():
+            owner=lease_dir/'pool_owner.json'
+            if not owner.exists() or not read_json(owner).get('shared'):
+                raise RuntimeError('GPU is not an authorized shared pool-v2 card')
+            active=[]
+            for path in lease_dir.glob('task_*.json'):
+                entry=read_json(path);pid=entry.get('pid')
+                if isinstance(pid,int) and Path(f'/proc/{pid}').exists():active.append(entry)
+            if active:raise RuntimeError(f'GPU already leased: {active}')
+        else:
+            lease_dir.mkdir();write_json(lease_dir/'pool_owner.json',{'shared':True,'v':2,'pid':0,'wid':'pool_v2_shared'})
+        write_json(lease,{'name':args.arm,'wid':args.arm,'pid':os.getpid(),'pgid':os.getpgrp(),
+                          'cls':'writer','need':24000,'time':time.time(),'device_uuid':gpu['uuid'],'commit':commit})
     try:
         reserve(budget,sid,gpu,head,commit)
     except Exception:
@@ -158,6 +170,7 @@ def main():
                 row=next(s for s in d['gpu_sessions'] if s['id']==sid);row['elapsed_seconds']=time.monotonic()-start
     thread=threading.Thread(target=heartbeat,daemon=True);thread.start()
     try:
+        verify_cuda_uuid(torch,gpu['uuid'])
         smoke_receipt=ROOT/'P50'/'checks'/'synthetic_downstream'/'SMOKE_RESULT.json'
         if not smoke_receipt.is_file():raise RuntimeError('Current source-bound CUDA smoke receipt missing')
         smoke=read_json(smoke_receipt)
@@ -170,10 +183,14 @@ def main():
             raise RuntimeError('Real-input backward receipt mismatch')
         if dry.get('config_digest')!=head.digest(config) or dry.get('arm')!=arm_key or dry.get('optimizer_steps_in_discarded_model')!=1:
             raise RuntimeError('Real-input backward was not this exact arm/config or unexpectedly persisted updates')
-        head.train(config,preflight_dir,arm_root/'training',arm_key,torch.device('cuda'),qualification,
-                   resume=False,budget_hours=RESERVED_HOURS)
+        training_result=head.train(config,preflight_dir,arm_root/'training',arm_key,torch.device('cuda'),qualification,
+                                   resume=False,budget_hours=RESERVED_HOURS)
+        if training_result.get('status')!='COMPLETED_VERIFIED':
+            state={'status':'INCOMPLETE','arm':args.arm,'training_result':training_result,
+                   'test_evaluated':False}
+            raise RuntimeError(f'Arm did not finish all configured epochs and validation replay: {training_result}')
         state={'status':'COMPLETED','arm':args.arm,'selected_checkpoint_sha256':head.sha(arm_root/'training'/'best.pt'),
-               'epochs':10,'p50_sha256':head.sha(P50_DIR/'best.pt'),'test_evaluated':False}
+               'epochs':config['epochs'],'p50_sha256':head.sha(P50_DIR/'best.pt'),'test_evaluated':False}
     finally:
         stop.set();thread.join(timeout=20);elapsed=time.monotonic()-start
         state.update(elapsed_seconds=elapsed,gpu_hours=elapsed/3600,gpu=gpu,host=os.uname().nodename,commit=commit)

@@ -28,7 +28,7 @@ Private audit root: `/home/sachin.chaudhary/ces_fl_runs/lh_finalization_celebdf_
 
 ## Compute gate
 
-On 4 November the user authorized an additional 24 GPU-hours for this study; the separate FairForge-2 budget was untouched. The shared ledger is now 48 total GPU-hours. At this checkpoint it reports 19.409409 GPU-hours consumed, 7.877205 still reserved for P50 and 20.713387 available beyond that reservation. Thirty-six P50 epochs took7,518.78 seconds, projecting roughly2.90 GPU-hours for50 epochs at current throughput; this estimate will be refreshed from later epoch timings. The prior ResNet P10 ran slower at1.72965 GPU-hours for10 epochs.
+On 4 November the user authorized an additional 24 GPU-hours for this study; the separate FairForge-2 budget was untouched. The shared ledger is now 48 total GPU-hours. At this checkpoint it reports 19.559451 GPU-hours consumed, 7.727162 still reserved for P50 and 20.713387 available beyond that reservation. Thirty-nine P50 epochs took8,026.66 seconds, projecting roughly2.86 GPU-hours for50 epochs at current throughput; this estimate will be refreshed from later epoch timings. The prior ResNet P10 ran slower at1.72965 GPU-hours for10 epochs.
 
 The prior P10 checkpoint cannot replace P50. The downstream templates intentionally retain `BIND_AFTER_VERIFIED_P50_COMPLETION` and are not runnable configs until a completed P50 hash is inserted and the source-bound preview/review, CUDA smoke and real-input checks pass.
 
@@ -47,18 +47,22 @@ The local artifacts include `DING_base_s17/49.pth` (SHA256 `b2240f157d4f94895f09
 | CPU software smoke | COMPLETED, PASS |
 | Source-bound CUDA smoke | COMPLETED, PASS on gpu01 GPU1 |
 | Real-input CUDA backward check | COMPLETED, PASS, zero optimizer updates |
-| ResNet P50 training | RUNNING, seed17, epoch37/50, step700/4759 at last observation; 36 epochs recorded |
+| ResNet P50 training | RUNNING, seed17, epoch42/50, step1300/4759 at 06:27 IST; 40 epochs recorded |
 | ResNet L_A/L_H training | PENDING verified P50 |
 | Table 3 TEST evaluation | Evaluation plan frozen; pending both selected checkpoints; no TEST read |
 | Ding-10 controlled adaptation | ADAPTER CPU-CHECKED; PENDING ResNet priority and CUDA dry-run |
 
-P50's best checkpoint through epoch36 remains epoch12 with validation AUC96.5348%; epoch36 validation AUC was95.9206%. Epoch1 was91.3360%. Selection remains validation AUC-only and calibration uses validation real images. These are interim validation observations, not final results or TEST metrics. No threshold tuning, new loss search or TEST evaluation was performed.
+P50's best checkpoint through epoch40 remains epoch12 with validation AUC96.5348%; epoch40 validation AUC was96.2303%. Epoch1 was91.3360%. Selection remains validation AUC-only and calibration uses validation real images. Epoch41/42 had not yet reached validation at the latest observation. These are interim validation observations, not final results or TEST metrics. No threshold tuning, new loss search or TEST evaluation was performed.
 
 ## GPU execution record
 
 PBS job `45387.mgmt01` was canceled while queued, before it acquired a GPU; its reservation was released and it consumed zero GPU-hours. Two direct-runner guard failures also occurred before training: one rejected the already-recorded P50 reservation, and one found `git` missing from the non-login SSH `PATH`. Neither performed an optimizer step or used GPU compute. The corrected runner uses an absolute Git executable and adopts the existing reservation. The replacement direct-SSH run uses gpu01 GPU1, UUID `GPU-6cc0a5b3-99ca-13e3-5508-a201a06e82d6`, through shared-pool lease `lh_resnet50_P50_s17_20261104`.
 
-The controller PID is `3906763`; its log is `/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104_P50_attempt3.log`. Run outputs are under `/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104/`. Both synthetic CUDA smoke receipts and the real-input pretrain dry-run receipt passed. The real-input backward used16 TRAIN images and performed zero optimizer updates. P50 runs on gpu01 GPU1, UUID `GPU-6cc0a5b3-99ca-13e3-5508-a201a06e82d6`; it had completed epoch36 and started epoch37 at the latest query. No L_A/L_H or Ding training has started. The matched downstream runner is prepared to bind L_A/L_H from verified P50 and claim another GPU only after a fresh lease check.
+The controller PID is `3906763`; its log is `/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104_P50_attempt3.log`. Run outputs are under `/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104/`. Both synthetic CUDA smoke receipts and the real-input pretrain dry-run receipt passed. The real-input backward used16 TRAIN images and performed zero optimizer updates. P50 runs on gpu01 GPU1, UUID `GPU-6cc0a5b3-99ca-13e3-5508-a201a06e82d6`; at 06:27 IST the controller was active, with epoch42 at step1300/4759 and the latest completed validation at epoch40. The refreshed ledger reports 19.6595 GPU-hours consumed and 10 hours reserved for P50; 18.3405 hours remain unreserved under the 48-hour ceiling. No L_A/L_H or Ding training has started. The matched downstream runner is prepared to bind L_A/L_H from verified P50 and claim another GPU only after a fresh lease check.
+
+## Execution runner safety update
+
+The direct L_A/L_H runner is being updated without changing the scientific trainer, configs, losses, selection, calibration or output paths. It now stages CPU binding/preflight before claiming a GPU, uses the configured two-hour per-arm execution cap, and ensures the direct GPU lease is acquired before CUDA checks and released on failure. The downstream source remains SHA256 `72d368a439658c601a5fe4d717237b1561190e85c13c70f6db3a441bc5cdbe78`. A source syntax check passed; actual arm preflight, CUDA backward checks and training remain gated on completed, replay-verified P50.
 
 Ding-10 source/config are under `CES_FL/src/ding10_connected_control.py` and `CES_FL/proposals/lh_finalization_celebdf_20261104_r1/configs/ding10_connected.json`. Private CPU smoke/preflight receipts are at `/home/sachin.chaudhary/ces_fl_runs/lh_finalization_celebdf_20261104_43c605b/ding10_cpu_smoke_v3/`; a real-input CPU backward receipt is at `/home/sachin.chaudhary/ces_fl_runs/lh_finalization_celebdf_20261104_43c605b/ding10_real_input_cpu_dry/DRY_RUN.json`. These are software/data checks only, not a Ding run or CUDA qualification. The procedural-review rebinding helper reuses recorded decisions only if new and old preview sheet bytes match exactly; it has not yet been run because the ResNet P50 source-bound preview needs the verified P50 checkpoint. No new review or approval is claimed.
 
