@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+#PBS -N CESFLR50T3
+#PBS -q workq
+#PBS -l select=1:host=gpu02:ncpus=6:ngpus=1:mem=32gb
+#PBS -l walltime=02:00:00
+#PBS -j oe
+#PBS -o /home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104_cudaenv3/table3_eval/PBS_TABLE3_EVAL.log
+
+set -Eeuo pipefail
+umask 077
+: "${CES_SOURCE_DIR:?Set the immutable detached evaluator worktree}"
+: "${TABLE3_EVAL_ROOT:?Set the locked Table 3 evaluation output root}"
+: "${TABLE3_LOCKED_PLAN:?Set the already bound Table 3 plan}"
+: "${CUDA_VISIBLE_DEVICES:?PBS must provide its actual allocated CUDA binding}"
+CES_PY=${CES_PY:-/home/sachin.chaudhary/.conda/envs/aiface/bin/python}
+
+if [[ -n $(/home/soft/anaconda3/pkgs/git-2.45.2-pl5340h9abc3c3_1/bin/git -C "$CES_SOURCE_DIR" symbolic-ref -q HEAD 2>/dev/null || true) ]]; then
+  echo 'Evaluator source must be a detached immutable checkout.' >&2
+  exit 2
+fi
+if [[ -n $(/home/soft/anaconda3/pkgs/git-2.45.2-pl5340h9abc3c3_1/bin/git -C "$CES_SOURCE_DIR" status --porcelain) ]]; then
+  echo 'Evaluator source checkout is dirty.' >&2
+  exit 2
+fi
+if [[ "$(hostname -s)" != gpu02 ]]; then
+  echo "Expected PBS allocation on gpu02; got $(hostname -s)." >&2
+  exit 2
+fi
+[[ -f "$TABLE3_LOCKED_PLAN" ]]
+[[ -d "$TABLE3_EVAL_ROOT" ]]
+cd "$CES_SOURCE_DIR"
+exec "$CES_PY" -u "$CES_SOURCE_DIR/CES_FL/cluster/run_resnet50_table3_eval_pbs.py" \
+  --plan "$TABLE3_LOCKED_PLAN" --out-root "$TABLE3_EVAL_ROOT" --expected-host gpu02

@@ -37,3 +37,12 @@ Direct evaluation executor syntax and CLI:
 ```
 
 Both commands succeeded. The executor was not launched; this confirms only Python syntax and argument parsing, with no TEST reads.
+
+PBS-shared evaluation launcher checks:
+
+```bash
+/home/sachin.chaudhary/.conda/envs/aiface/bin/python -m py_compile CES_FL/cluster/run_resnet50_table3_eval_pbs.py
+bash -n CES_FL/cluster/table3_eval_one_gpu.pbs
+```
+
+Both passed. The PBS job has not yet started; its Python wrapper requires `PBS_JOBID`, a scheduler-reported `ngpus=1` allocation, a nonempty PBS-provided `CUDA_VISIBLE_DEVICES`, and an `nvidia-smi` PID-to-UUID match before any TEST inference.
