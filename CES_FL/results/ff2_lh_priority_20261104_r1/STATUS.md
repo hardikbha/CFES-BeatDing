@@ -52,3 +52,9 @@ The cluster-only review sheets, row-level decisions, manifest inventory, logs, a
 - Updated shared 72-hour ledger: `35.547125` GPU-hours charged; CORE retains a `19.25` GPU-hour active reservation; `17.202875` GPU-hours remain uncommitted. F3Net's reservation is closed and the ledger records `7.536253` charged GPU-hours. This improves the budget headroom, but is not evidence that L_H's training cost fits: its required GPU profile has not run.
 - F3Net has 50 recorded epochs, but its output currently lacks both `DONE` and `RUN_VERIFIED.json`; it is not treated as verified completion. CORE remains active with 31 recorded epochs / 52,886 steps. Ding's existing run also remains active. No jobs were stopped or modified.
 - No new GPU lease was obtained for L_H. Its intervention qualification failure still blocks the dependent CUDA profile and training stages. L_A is likewise not started.
+
+## Status refresh — 2026-11-04 19:29 IST
+
+- Rechecked the private qualification audit: it is unchanged (72 approved, 8 uncertain, 8 rejected; human review incomplete; qualification exit 1; no qualification receipt).
+- A physical `gpu01` device appeared idle in the 19:09 IST `nvidia-smi` snapshot, but it had no L_H allocation. The cluster scheduler is PBS (`qstat`); `squeue` is unavailable. Existing PBS/GPU jobs were left untouched.
+- No L_H PBS job was submitted and no direct-SSH training process was started. CUDA checks, cost profiling, L_H/L_A training, and TEST evaluation remain not run. An idle utilization reading does not satisfy the source's qualification or GPU-allocation requirements.
