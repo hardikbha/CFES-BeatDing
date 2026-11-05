@@ -354,17 +354,19 @@ def main():
         f"seed17:fixed-nuisance-audit:{r['image']}".encode()).hexdigest())[:128]
     nuisance_results = {}
     for name, (model, kind, config, threshold, expected_auc) in models.items():
+        model.eval()
         baseline = []
         transformed = {case: [] for case in nuisance.NUISANCE_BANK}
         labels = []
-        for row in sample:
-            raw = nuisance.load_pixels(row, 224)
-            labels.append(int(row["label"]))
-            x = nuisance.normalize(raw)[None].to(device)
-            baseline.append(float(model(x)["logit"].float().detach().cpu()[0]))
-            for case in nuisance.NUISANCE_BANK:
-                view = nuisance.nuisance_view(raw, case)
-                transformed[case].append(float(model(nuisance.normalize(view)[None].to(device))["logit"].float().detach().cpu()[0]))
+        with torch.inference_mode():
+            for row in sample:
+                raw = nuisance.load_pixels(row, 224)
+                labels.append(int(row["label"]))
+                x = nuisance.normalize(raw)[None].to(device)
+                baseline.append(float(model(x)["logit"].float().cpu()[0]))
+                for case in nuisance.NUISANCE_BANK:
+                    view = nuisance.nuisance_view(raw, case)
+                    transformed[case].append(float(model(nuisance.normalize(view)[None].to(device))["logit"].float().cpu()[0]))
         base = np.asarray(baseline)
         details = {}
         for case, values in transformed.items():
