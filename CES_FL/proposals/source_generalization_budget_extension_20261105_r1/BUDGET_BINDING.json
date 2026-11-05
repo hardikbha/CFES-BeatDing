@@ -23,7 +23,7 @@
     "pair_before_safety": 21.081300674161565,
     "pair_with_1_10_margin": 23.189430741577723
   },
-  "per_arm_reservation_gpu_hours": 11.9,
+  "per_arm_reservation_gpu_hours": 11.88,
   "existing_cuda_smoke_gpu_hours_counted": 0.025042398720462287,
   "test_read": false,
   "fairforge2_budget_transfer": false
