@@ -90,3 +90,19 @@ excluded here.
 - Frozen public-release stats and benchmarks: `release_ff2_public/stats/` (`panel_public.csv`, `ding_format_public.csv`,
   `family_auc_public.csv`, `groups_*_cellvalid.csv`), frozen 25 Oct 2026.
 - `diag_source.py` → private `diag_source_fpr.json` (counts only; VAL manifest sha256 `aeda0512…`, 31,107 rows per model).
+
+## 6. Final paper table format (added 6 Nov 2026)
+
+[PAPER_TABLE_TEMPLATE.tex](PAPER_TABLE_TEMPLATE.tex) holds the two FF2 tables planned for the paper; every cell is `--`
+until a one-time TEST evaluation of frozen models.
+
+- **Table A (`tab:ff2main`), Ding format.** Rows: Ori (BCE), DAG-FDD, DAW-FDD, PG-FDD, F3Net, CORE, Ding et al. (our
+  run), ours; all Xception, trained on FF2 public TRAIN, SELECT-chosen checkpoint and 10%-FPR threshold, mean ± std of
+  3 seeds. Columns: gender / race / gender×race × F_FPR, F_DP, es-AUC, plus AUC. Two blocks: all TEST (87,564) and
+  unseen models (16,953).
+- **Table B (`tab:ff2axes`), FF2-only axes.** Age and skin (F_FPR, es-AUC, worst-group AUC), race F_FPR within FairFace
+  and within FFHQ (because of the source effect in T9), overall FPR and FNR.
+
+Filling status: VAL-only results exist for BCE, DAG-FDD, DAW-FDD, Ding-style GDA and CES-FL P/A/B (seed 17).
+F3Net/CORE need their verification fixed; PG-FDD and the full CES-FL method have no FF2 run; seeds 2–3 and TEST are
+pending. The FF2 rows of the older `tab:ff2ding` (internal build incl. RFW, CFES ViT-L/14) must not be reused.

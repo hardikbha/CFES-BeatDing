@@ -1,0 +1,66 @@
+% FairForge-2 final paper tables: FORMAT TEMPLATE (6 Nov 2026). Cells marked -- are pending.
+% Every number must come from a one-time evaluation on FF2 public TEST (87,564 cell-valid rows) after the model,
+% checkpoint and VAL-real 10%-FPR threshold are frozen. All rows are trained on FF2 public TRAIN (218,266 rows).
+% Do not reuse the FF2* rows of tab:ff2ding (internal build incl. RFW).
+
+% ---------------- Table A: main result, Ding et al. format ----------------
+\begin{table*}[t]
+\centering
+\caption{Fairness and detection on FairForge-2 public TEST, in the format of Ding \etal{}. All methods are trained on
+FairForge-2 public TRAIN, select checkpoints on SELECT and use a threshold fixed on SELECT reals for 10\% FPR. g = gender
+(2 groups), r = race (4), i = gender$\times$race (8). ``Unseen models'': fakes of the 5 generators that never occur in TRAIN
+(FFHQ sources only; i uses 6 groups). Mean $\pm$ std over 3 seeds.}
+\label{tab:ff2main}
+\setlength{\tabcolsep}{3pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llc|ccc|ccc|ccc|c}
+\toprule
+& & & \multicolumn{9}{c|}{Fairness metrics (\%)} & Detection (\%) \\
+Test subset & Method & Backbone & g $\Fpr\!\downarrow$ & g $\Fdp\!\downarrow$ & g es-AUC$\uparrow$ & r $\Fpr\!\downarrow$ & r $\Fdp\!\downarrow$ & r es-AUC$\uparrow$ & i $\Fpr\!\downarrow$ & i $\Fdp\!\downarrow$ & i es-AUC$\uparrow$ & AUC$\uparrow$ \\
+\midrule
+\multirow{9}{*}{\shortstack[l]{All TEST\\(87{,}564)}}
+ & Ori (BCE) & Xception & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+ & DAG-FDD WACV'24 & Xception & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+ & DAW-FDD WACV'24 & Xception & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+ & PG-FDD CVPR'24 & Xception & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+ & F3Net (FAD branch) & Xception & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+ & CORE & Xception & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+ & Ding \etal{} CVPR'26 (SFD+GDA, our run) & Xception & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+\cmidrule{2-13}
+ & \textbf{\method{} (ours)} & Xception & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+\midrule
+\multirow{9}{*}{\shortstack[l]{Unseen models\\(16{,}953)}}
+ & Ori (BCE) & Xception & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+ & \multicolumn{12}{l}{\emph{(same method rows as above)}} \\
+\cmidrule{2-13}
+ & \textbf{\method{} (ours)} & Xception & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+\bottomrule
+\end{tabular}}
+\end{table*}
+
+% ---------------- Table B: extra axes + source-stratified (FF2-specific) ----------------
+\begin{table*}[t]
+\centering
+\caption{Axes beyond Ding \etal{} on FairForge-2 public TEST: age (4 bins: $<$30, 30--44, 45--59, 60+) and skin tone
+(4 ITA bins), both machine estimates, and race disparity within each source dataset (``Others'' exists only in FairFace,
+so pooled race metrics mix a source effect). FNR = overall miss rate at the frozen threshold.}
+\label{tab:ff2axes}
+\setlength{\tabcolsep}{3pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lc|ccc|ccc|cc|cc}
+\toprule
+& & \multicolumn{3}{c|}{Age (4 bins)} & \multicolumn{3}{c|}{Skin tone (4 bins)} & \multicolumn{2}{c|}{Race $\Fpr\!\downarrow$ within source} & \multicolumn{2}{c}{Overall (\%)} \\
+Method & Backbone & $\Fpr\!\downarrow$ & es-AUC$\uparrow$ & worst AUC$\uparrow$ & $\Fpr\!\downarrow$ & es-AUC$\uparrow$ & worst AUC$\uparrow$ & FairFace & FFHQ & FPR & FNR$\downarrow$ \\
+\midrule
+Ori (BCE) & Xception & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+DAG-FDD & Xception & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+DAW-FDD & Xception & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+PG-FDD & Xception & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+F3Net & Xception & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+CORE & Xception & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+Ding \etal{} (our run) & Xception & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+\midrule
+\textbf{\method{} (ours)} & Xception & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+\bottomrule
+\end{tabular}}
+\end{table*}
