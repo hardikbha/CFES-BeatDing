@@ -1,0 +1,202 @@
+{
+  "status": "PASS",
+  "models": [
+    "BCE",
+    "DAG-FDD",
+    "DAW-FDD",
+    "CES-FL P",
+    "CES-FL A",
+    "CES-FL B"
+  ],
+  "verified_source_axis_checks": 30,
+  "checks": [
+    {
+      "model": "BCE",
+      "axis": "gender",
+      "status": "PASS_MATCHES_RUN_VERIFIED"
+    },
+    {
+      "model": "BCE",
+      "axis": "race",
+      "status": "PASS_MATCHES_RUN_VERIFIED"
+    },
+    {
+      "model": "BCE",
+      "axis": "gender_race",
+      "status": "PASS_MATCHES_RUN_VERIFIED"
+    },
+    {
+      "model": "BCE",
+      "axis": "age_bin",
+      "status": "PASS_MATCHES_RUN_VERIFIED"
+    },
+    {
+      "model": "BCE",
+      "axis": "skin_bin",
+      "status": "PASS_MATCHES_RUN_VERIFIED"
+    },
+    {
+      "model": "DAG-FDD",
+      "axis": "gender",
+      "status": "PASS_MATCHES_RUN_VERIFIED"
+    },
+    {
+      "model": "DAG-FDD",
+      "axis": "race",
+      "status": "PASS_MATCHES_RUN_VERIFIED"
+    },
+    {
+      "model": "DAG-FDD",
+      "axis": "gender_race",
+      "status": "PASS_MATCHES_RUN_VERIFIED"
+    },
+    {
+      "model": "DAG-FDD",
+      "axis": "age_bin",
+      "status": "PASS_MATCHES_RUN_VERIFIED"
+    },
+    {
+      "model": "DAG-FDD",
+      "axis": "skin_bin",
+      "status": "PASS_MATCHES_RUN_VERIFIED"
+    },
+    {
+      "model": "DAW-FDD",
+      "axis": "gender",
+      "status": "PASS_MATCHES_RUN_VERIFIED"
+    },
+    {
+      "model": "DAW-FDD",
+      "axis": "race",
+      "status": "PASS_MATCHES_RUN_VERIFIED"
+    },
+    {
+      "model": "DAW-FDD",
+      "axis": "gender_race",
+      "status": "PASS_MATCHES_RUN_VERIFIED"
+    },
+    {
+      "model": "DAW-FDD",
+      "axis": "age_bin",
+      "status": "PASS_MATCHES_RUN_VERIFIED"
+    },
+    {
+      "model": "DAW-FDD",
+      "axis": "skin_bin",
+      "status": "PASS_MATCHES_RUN_VERIFIED"
+    },
+    {
+      "model": "CES-FL P",
+      "axis": "gender",
+      "status": "PASS_MATCHES_RUN_VERIFIED"
+    },
+    {
+      "model": "CES-FL P",
+      "axis": "race",
+      "status": "PASS_MATCHES_RUN_VERIFIED"
+    },
+    {
+      "model": "CES-FL P",
+      "axis": "gender_race",
+      "status": "PASS_MATCHES_RUN_VERIFIED"
+    },
+    {
+      "model": "CES-FL P",
+      "axis": "age_bin",
+      "status": "PASS_MATCHES_RUN_VERIFIED"
+    },
+    {
+      "model": "CES-FL P",
+      "axis": "skin_bin",
+      "status": "PASS_MATCHES_RUN_VERIFIED"
+    },
+    {
+      "model": "CES-FL A",
+      "axis": "gender",
+      "status": "PASS_MATCHES_RUN_VERIFIED"
+    },
+    {
+      "model": "CES-FL A",
+      "axis": "race",
+      "status": "PASS_MATCHES_RUN_VERIFIED"
+    },
+    {
+      "model": "CES-FL A",
+      "axis": "gender_race",
+      "status": "PASS_MATCHES_RUN_VERIFIED"
+    },
+    {
+      "model": "CES-FL A",
+      "axis": "age_bin",
+      "status": "PASS_MATCHES_RUN_VERIFIED"
+    },
+    {
+      "model": "CES-FL A",
+      "axis": "skin_bin",
+      "status": "PASS_MATCHES_RUN_VERIFIED"
+    },
+    {
+      "model": "CES-FL B",
+      "axis": "gender",
+      "status": "PASS_MATCHES_RUN_VERIFIED"
+    },
+    {
+      "model": "CES-FL B",
+      "axis": "race",
+      "status": "PASS_MATCHES_RUN_VERIFIED"
+    },
+    {
+      "model": "CES-FL B",
+      "axis": "gender_race",
+      "status": "PASS_MATCHES_RUN_VERIFIED"
+    },
+    {
+      "model": "CES-FL B",
+      "axis": "age_bin",
+      "status": "PASS_MATCHES_RUN_VERIFIED"
+    },
+    {
+      "model": "CES-FL B",
+      "axis": "skin_bin",
+      "status": "PASS_MATCHES_RUN_VERIFIED"
+    }
+  ],
+  "grouping_definitions": [
+    "gender",
+    "race",
+    "gender_race",
+    "age_bin",
+    "skin_bin_known",
+    "age_x_skin16",
+    "sex_age_race8_all",
+    "sex_age_race8_min20"
+  ],
+  "fairness_metric_definitions": [
+    "F_FPR",
+    "F_DP",
+    "es_AUC",
+    "F_MEO_max",
+    "F_OAE"
+  ],
+  "diagnostics": [
+    "FPR_gap",
+    "TPR_gap",
+    "worst_group_AUC"
+  ],
+  "detection_metrics": [
+    "overall_AUC",
+    "overall_FPR",
+    "overall_FNR"
+  ],
+  "threshold_views": [
+    "per-checkpoint VAL-real10% frozen threshold",
+    "fixed logit 0 / probability .5"
+  ],
+  "rows_per_model": 31107,
+  "val_manifest_sha256": "aeda051259d9e26b07c2810152b601ae115ce7c9e10523f99ea07bbc9f92afa8",
+  "test_access": false,
+  "fairness_axis_values_per_model_per_view": 40,
+  "metric_rows": 96,
+  "support_rows": 648,
+  "definition_note": "F_MEO_max=max(FPR_gap,TPR_gap); F_OAE=max-min subgroup accuracy. FairForensics reports F_MEO but does not publish a formula in accessible text, so this field is explicitly the Max Equalized Odds convention, not claimed as exact FairForensics."
+}

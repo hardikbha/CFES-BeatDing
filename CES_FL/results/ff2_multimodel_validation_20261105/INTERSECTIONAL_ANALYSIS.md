@@ -10,6 +10,12 @@ The FairForensics paper reports AUC and `F_FPR`, `F_MEO`, `F_DP`, and `F_OAE`, a
 
 `F_OAE` is max-minus-min group accuracy. `FPR gap` is max-minus-min group FPR. In age×skin tables, unknown skin-tone rows remain in the overall rates but are excluded from the 16 known age-bin×skin-bin groups. Every one of those 16 cells meets the configured 20-real/20-fake support floor. Metrics are not directly comparable across different intersection counts: summed `F_FPR` naturally changes with the number of groups, so read it alongside the max FPR gap and group support.
 
+### Metric inventory
+
+The current aggregate uses **8 headline metric types**: 3 detection metrics (overall AUC, FPR, FNR) and 5 fairness metrics (F_FPR, F_DP, es-AUC, F_MEO_max, F_OAE). It also records 3 diagnostics (FPR gap, TPR gap, worst-group AUC) plus subgroup counts and rates. There are 7 distinct group definitions—gender, race, gender×race, age, skin, age×skin, and sex×age×race—plus a separate seven-cell minimum-support sensitivity view for the eight-cell sex×age×race partition.
+
+Across six verified models and two threshold views, the machine-readable table has 96 model×grouping×threshold rows. That is 480 fairness values plus 36 unique overall detection values (the overall values are repeated by grouping in the CSV), with diagnostic and group-support values alongside. All 30 recomputations for the original five axes matched each run's `RUN_VERIFIED` metrics. See [METRICS_LONG.csv](METRICS_LONG.csv), [GROUP_SUPPORT.csv](GROUP_SUPPORT.csv), and [SUMMARY.json](SUMMARY.json).
+
 ## Age-bin × skin-bin results
 
 Age bins are `<30`, `30–44`, `45–59`, and `60+`; skin bins are the FF2 ITA proxy bins `0–3`. These are not human-verified age labels or Fitzpatrick skin tones. The 158-real/1,773-fake unknown-skin rows are excluded from the 16 cells but remain in overall rates. Each cell is `real/fake`; the rarest cell has 51 real and 736 fake examples.
