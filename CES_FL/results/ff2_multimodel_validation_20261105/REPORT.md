@@ -4,15 +4,15 @@
 
 ## Executive summary
 
-- **Six training runs are completed and verified:** three matched 50-epoch Xception baselines (BCE, DAG-FDD, DAW-FDD) and three CES-FL experiments (P, A, B).
+- **Seven model/configuration results are completed and validation-verified:** three matched 50-epoch Xception baselines (BCE, DAG-FDD, DAW-FDD), three CES-FL experiments (P, A, B), and the two-stage Ding-style corrected-GDA pipeline (classification50 + SFD selection + corrected GDA50).
 - **F3Net and CORE each have a 50-epoch history but are not verified complete:** neither output has `DONE` or `RUN_VERIFIED.json`. Their epoch-50 values below are provisional history records.
-- **The FairForge-2 Ding-style run is still in corrected GDA training:** latest recorded event is epoch 40/50, batch 3,800; last completed validation event is epoch 39. It has no final selected result.
+- The completed Ding-style run is a **corrected differentiable head-only GDA adaptation**, not an exact reproduction of Ding's published implementation. It selected GDA epoch 3 after completing 50 GDA epochs; the full chain has a verified DONE receipt and no TEST inference.
 - **Age and skin-tone proxy metrics are available** in addition to gender, race and gender×race. Age labels are automatic estimates; skin bins are automatic ITA proxies, not human-verified ground truth.
 - CES-FL's full sensitivity/response-alignment objective has **not** been evaluated on FairForge-2. The verified CES-FL rows are P (original-only BCE), A (weighted-BCE control), and B (A plus soft error-disparity loss).
 
 ## Dataset and evaluation protocol
 
-All six verified runs use seed 17 and the same public FairForge-2 TRAIN/VAL manifests:
+All seven verified runs use seed 17 and the same public FairForge-2 TRAIN/VAL manifests:
 
 | Split | Images | Real | Fake | Manifest SHA256 |
 |---|---:|---:|---:|---|
@@ -33,6 +33,7 @@ Percentages are shown for AUC/FPR/FNR. `selected epoch` is the validation-select
 | CES-FL P — original-only BCE | 10/10 | 9 | 99.8105 | 9.9672 | 0.3802 |
 | CES-FL A — weighted-BCE control | 10/10 | 7 | 99.8085 | 9.9672 | 0.3314 |
 | CES-FL B — A + soft error disparity | 10/10 | 1 | 99.8075 | 9.9672 | 0.3697 |
+| Ding-style corrected GDA — classification50 + GDA50, SFD selected | Completed 50+50 stages | GDA epoch 3 | 99.0594 | 9.9672 | 1.0743 |
 
 ## Verified fairness results
 
@@ -46,6 +47,7 @@ The following are the run-record `F_FPR` values in native fraction units (lower 
 | CES-FL P | 0.0360 | 0.1216 | 0.2839 | 0.0923 | 0.1168 |
 | CES-FL A | 0.0326 | 0.1280 | 0.2910 | 0.0902 | 0.1062 |
 | CES-FL B | 0.0343 | 0.1317 | 0.2955 | 0.0742 | 0.1156 |
+| Ding-style corrected GDA | 0.0072 | 0.0409 | 0.1244 | 0.0158 | 0.0772 |
 
 ### Validation group support (real/fake counts)
 
@@ -57,9 +59,9 @@ The following are the run-record `F_FPR` values in native fraction units (lower 
 
 All listed groups exceed the configured minimum support of 20 examples per class. Age and skin categories remain proxy-label analyses; support does not establish label validity.
 
-## Additional histories and active run
+## Additional unverified histories
 
-These values are **not counted among the six verified runs**. They are the latest epoch-50 validation records, not certified selected-checkpoint replays.
+These values are **not counted among the seven verified model results**. They are the latest epoch-50 validation records, not certified selected-checkpoint replays.
 
 | Model | Recorded epochs | Epoch-50 AUC % | FPR % | FNR % | Gender×race F_FPR | Age F_FPR | Skin F_FPR | Status |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
@@ -68,17 +70,17 @@ These values are **not counted among the six verified runs**. They are the lates
 
 CORE is an external paired-view consistency baseline, not our method. F3Net is explicitly the AI-Face FAD-only adaptation, not the complete dual-branch paper method. Both need selected-checkpoint replay and provenance verification before being tabled as completed results.
 
-The separate Ding-style FairForge-2 job is running its **corrected GDA** stage, not a final published-method result. The latest recorded training event is epoch 40/50, batch 3,800; the latest completed GDA validation event is epoch 39 with AUC 99.0579%. Do not compare this partial validation score with a completed run or Ding's paper TEST results.
+The Ding-style corrected GDA run completed classification50 → TRAIN-only SFD selection (10 channels; structural parameter removal is false) → corrected GDA50. Classification selected epoch21 (VAL AUC99.8104%); corrected GDA selected epoch3 (VAL AUC99.0594%). The GDA checkpoint SHA256 is `4a2202ec0957a853f9513ae4e62d7e9b926bcf2188899c3867c8d6f4b3fb1b92`; TEST inference is false. Its F_FPR point estimates are lower than the Xception baselines on gender, race, gender×race and age, but overall AUC is lower and FNR higher; its skin-bin F_FPR is not best. This is not the published Ding test result and should be labelled a corrected adaptation.
 
 ## What the results say and how to improve the evidence
 
-1. **Detection is strong on this validation split, but this is not a TEST claim.** The six verified AUCs are 99.8046–99.8360%. The repeated 9.9672% FPR reflects the common validation-real calibration target; it does not show equal test FPR.
-2. **Fairness is axis-dependent.** Among the three 50-epoch Xception fairness baselines, DAW-FDD has the lowest race, gender×race and skin-bin `F_FPR`, while its age-bin `F_FPR` is higher than BCE's. No method is uniformly best across all axes.
+1. **Detection is strong for the BCE/fairness/CES rows on this validation split, but this is not a TEST claim.** Those six AUCs are 99.8046–99.8360%. Corrected Ding GDA is lower at99.0594%, with a higher FNR. The repeated 9.9672% FPR reflects the common validation-real calibration target; it does not show equal test FPR.
+2. **Fairness is axis-dependent.** Among the original 50-epoch Xception baselines, DAW-FDD has the lowest race, gender×race and skin-bin F_FPR; corrected Ding GDA has the lowest gender, race, gender×race and age point F_FPR, but has lower es-AUC/AUC and higher FNR. No model is uniformly best across utility and fairness axes.
 3. **CES-FL B is mixed versus its A control.** B lowers age-bin `F_FPR` from 0.0902 to 0.0742, but increases gender, race, gender×race and skin-bin `F_FPR`; its AUC is lower by about 0.0011 percentage points. This does not establish an overall fairness improvement.
 4. **CES-FL P/A/B do not validate the full counterfactual claim.** P is original-only BCE, A is weighted BCE, and B adds the soft error-disparity term. Sensitivity/control-stability and conditional-response-alignment arms have no verified FairForge-2 run. Their launch remains gated by the unresolved intervention review; do not relax that gate or infer validity from visual appearance.
-5. **The cross-method table is not yet paper-ready.** Baseline and CES-FL runs use different training budgets/recipes, F3Net and CORE lack completion verification, Ding's corrected GDA is incomplete, and there is one seed. The existing baseline uncertainty analysis has only 490 usable bootstrap draws for the primary gender×race `F_FPR`, below its 900-draw acceptance minimum. No TEST scores are included.
+5. **The cross-method table is not yet paper-ready.** Baseline and CES-FL runs use different training budgets/recipes, F3Net and CORE lack completion verification, the Ding row is a corrected adaptation rather than an exact published reproduction, and all work is one seed. The existing baseline uncertainty analysis has only 490 usable bootstrap draws for the primary gender×race `F_FPR`, below its 900-draw acceptance minimum. No TEST scores are included.
 
-Recommended sequence: verify F3Net/CORE checkpoints and selected-VAL replays; finish and verify Ding's current stage without calling it an exact paper reproduction; preserve a common protocol and add the full CES-FL arms only after valid intervention evidence exists; then run a preregistered multi-seed confirmation with contributor-cluster uncertainty. Freeze model selection and thresholds before any one-time TEST evaluation. Human-review or improve the age/skin labels before making strong claims on those axes.
+Recommended sequence: verify F3Net/CORE checkpoints and selected-VAL replays; do not rerun the completed Ding corrected-GDA pipeline; preserve a common protocol and add the full CES-FL arms only after valid intervention evidence exists; then run a preregistered multi-seed confirmation with contributor-cluster uncertainty. Freeze model selection and thresholds before any one-time TEST evaluation. Human-review or improve the age/skin labels before making strong claims on those axes.
 
 ## Provenance
 
@@ -90,8 +92,12 @@ All checkpoint binaries, private images, full row-level predictions and logs rem
 | CES-FL P | `875bce025084871438ef799ca9086985c4375672` | Config SHA256 `db0c886527635295f0394dddbca9da1a8a3c40807609ab78f324b75b382fbee8`; selected checkpoint `43152de1b98dce48801114efb2454cb0bc6aa7400445dd5f139759022229895a`. |
 | CES-FL A / B | `c332fd34fb603b8919b15fee08e8d022fb9f57c8` | Source file SHA256 `89530025a00b9b0405fba7026d3eed5f2749d86620174ad3ffde93a44f8b770b`; config digest `212645fe0e196651e0f6728708edfac5f2b87fa7cde508e19f7b799887a1f522`; selected checkpoints A `3b504d4e038c1ddc266f3e5179cdf78d052176f936705fe94b4c2caf2e227dd6`, B `542111034536fc0b35a3e203192d1b377f9477b3c60d593eb28c8d4cd6531bd3`. |
 | F3Net / CORE | `e7648fb25aeb16d49bbef33ad998e1b1cf5a5016` | Config SHA256s: F3Net `410a36caa9fafb22384421211b7fbdd8c652858c7b36022c27ad6d1f17b5030e`; CORE `e8a318c2d30a9c240b5f8fa5f6e9150e34d88727899732a6ba51992523fc6e4a`. Histories only; no verified selected checkpoint receipt. |
-| Ding corrected-GDA run | `8487d98303fd5d7766fef2fa3dd32c37f38e5f4b` | Active/incomplete at observation; no final checkpoint result in this report. |
+| Ding corrected-GDA run | `8487d98303fd5d7766fef2fa3dd32c37f38e5f4b` | Config SHA256 `264720d345442c174f5fb5675d5ef83c101b67ab5b0f9ccfa033f7863a9a92f8`; Classification50, TRAIN-only SFD selection (10-channel mask), corrected GDA50; selected epoch3 GDA checkpoint SHA256 `4a2202ec0957a853f9513ae4e62d7e9b926bcf2188899c3867c8d6f4b3fb1b92`; no TEST inference. |
 
 The report branch is based on results snapshot `a84672b35437e107247b7b9de23f72d87ed1aa74`. The private machine-readable group support and all run receipts remain at their existing cluster paths; no prior artifact was overwritten.
 
-Additional age×skin and FairForensics-style sex×age×race validation analysis is in [INTERSECTIONAL_ANALYSIS.md](INTERSECTIONAL_ANALYSIS.md). It reports threshold sensitivity and current support limitations; CES-FL intersection replay is pending PBS allocation.
+Additional age×skin and FairForensics-style sex×age×race validation analysis is in [INTERSECTIONAL_ANALYSIS.md](INTERSECTIONAL_ANALYSIS.md). It reports threshold sensitivity, support limitations and the corrected Ding GDA result. Machine-readable aggregate tables for all seven verified runs are linked below.
+
+- [Seven-run metric table](METRICS_LONG_7RUNS.csv)
+- [Seven-run group support and rates](GROUP_SUPPORT_7RUNS.csv)
+- [Metric definitions and verification summary](SUMMARY_7RUNS.json)
