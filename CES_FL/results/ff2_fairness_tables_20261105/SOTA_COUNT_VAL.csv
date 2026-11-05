@@ -1,0 +1,28 @@
+table,metric,dir,best_baseline,by,best_ours,ours_by,beat_all,tie,beat_ding,P_beats_all,A_beats_all,B_beats_all
+T2,g F_FPR,min,0.72,Ding corrected GDA,3.26,A,False,False,False,False,False,False
+T2,g F_DP,min,0.09,DAW-FDD,0.14,A,False,False,True,False,False,False
+T2,g es-AUC,max,99.8,DAW-FDD,99.8,P/B,False,True,True,False,False,False
+T2,r F_FPR,min,4.09,Ding corrected GDA,12.16,P,False,False,False,False,False,False
+T2,r F_DP,min,1.29,DAW-FDD,1.06,P,True,False,True,True,True,True
+T2,r es-AUC,max,99.38,DAW-FDD,99.44,P,True,False,True,True,True,True
+T2,i F_FPR,min,12.44,Ding corrected GDA,28.39,P,False,False,False,False,False,False
+T2,i F_DP,min,1.56,DAW-FDD,1.32,B,True,False,True,True,True,True
+T2,i es-AUC,max,98.85,DAW-FDD,99.08,P,True,False,True,True,True,True
+T2,AUC,max,99.84,DAW-FDD,99.81,P/A/B,False,False,True,False,False,False
+T3,age F_FPR,min,1.58,Ding corrected GDA,7.42,B,False,False,False,False,False,False
+T3,age es-AUC,max,99.61,BCE,99.63,P,True,False,True,True,False,False
+T3,age worst AUC,max,99.72,DAG-FDD/DAW-FDD,99.7,P,False,False,True,False,False,False
+T3,skin F_FPR,min,6.8,DAW-FDD,10.62,A,False,False,False,False,False,False
+T3,skin es-AUC,max,99.62,DAW-FDD,99.62,P/B,False,True,True,False,False,False
+T3,skin worst AUC,max,99.73,DAW-FDD,99.71,A,False,False,True,False,False,False
+T3,race F_FPR in FairFace,min,1.63,BCE,1.41,A,True,False,True,False,True,False
+T3,race F_FPR in FFHQ,min,2.07,Ding corrected GDA,10.35,A/B,False,False,False,False,False,False
+T3,FNR,min,0.22,DAG-FDD,0.33,A,False,False,True,False,False,False
+T4,FPR Female-Asian,min,12.38,Ding corrected GDA,15.35,B,False,False,False,False,False,False
+T4,FPR Female-Black,min,11.34,Ding corrected GDA,11.86,P,False,False,False,False,False,False
+T4,FPR Female-White,min,8.17,Ding corrected GDA,15.56,P,False,False,False,False,False,False
+T4,FPR Female-Others,min,3.74,BCE,5.46,A,False,False,True,False,False,False
+T4,FPR Male-Asian,min,7.14,DAW-FDD,8.7,P,False,False,False,False,False,False
+T4,FPR Male-Black,min,13.03,Ding corrected GDA,13.03,P/A/B,False,True,False,False,False,False
+T4,FPR Male-White,min,8.59,Ding corrected GDA,10.94,A,False,False,False,False,False,False
+T4,FPR Male-Others,min,2.9,DAG-FDD,5.31,B,False,False,True,False,False,False

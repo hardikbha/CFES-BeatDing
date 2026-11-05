@@ -106,3 +106,20 @@ until a one-time TEST evaluation of frozen models.
 Filling status: VAL-only results exist for BCE, DAG-FDD, DAW-FDD, Ding-style GDA and CES-FL P/A/B (seed 17).
 F3Net/CORE need their verification fixed; PG-FDD and the full CES-FL method have no FF2 run; seeds 2–3 and TEST are
 pending. The FF2 rows of the older `tab:ff2ding` (internal build incl. RFW, CFES ViT-L/14) must not be reused.
+
+## 7. Metrics where CES-FL surpasses the best baseline on FF2 (added 6 Nov 2026)
+
+Counted on the 27 metrics of `FF2_TABLES_DRAFT.pdf` (Tables 2–4), VAL, seed 17, two-decimal values. "Best baseline" =
+best of BCE, DAG-FDD, DAW-FDD and Ding-style GDA per metric; "ours" = best of CES-FL P/A/B. Row-level detail:
+[SOTA_COUNT_VAL.csv](SOTA_COUNT_VAL.csv).
+
+| Table | Metrics | Ours better than every baseline | Tie | Ours better than Ding-style GDA alone |
+|---|---:|---:|---:|---:|
+| 2: Ding format (g/r/i × F_FPR, F_DP, es-AUC; AUC) | 10 | 4 (r F_DP, r es-AUC, i F_DP, i es-AUC) | 1 (g es-AUC) | 7 |
+| 3: age, skin, within-source race, FNR | 9 | 2 (age es-AUC, race F_FPR within FairFace) | 1 (skin es-AUC) | 6 |
+| 4: per-group FPR (8 groups) | 8 | 0 | 1 (Male-Black) | 2 |
+| **Total** | **27** | **6** | **3** | **15** |
+
+Ours is not best on any F_FPR axis (gender, race, gender×race, age, skin) nor on AUC. Margins of the six wins are small
+(es-AUC +0.02–0.23 pt, F_DP −0.23–0.24 pt) on one seed and one VAL split. CES-FL P, which supplies most wins, is
+original-only BCE, not the CES-FL fairness objective. This is not a state-of-the-art claim.
