@@ -1,0 +1,30 @@
+{
+  "status": "AUTHORIZED_CAP_EXTENSION",
+  "date": "2026-11-05",
+  "user_instruction": "increase GPU budget",
+  "supersedes": "CES_FL/proposals/source_generalization_20261105_r1/GPU_OPERATOR_PROMPT.md#5-hour-stage-cap-only",
+  "scientific_settings_changed": false,
+  "training_epochs_per_arm": 50,
+  "arms": ["S0_original", "S1_nuisance_bank"],
+  "source_commit_at_protocol_review": "fc47a22ba9314c91be68287e6e45e34425f647a6",
+  "adapter_source_sha256": "54c19fae5bc1d55569448d299c31d2c58f43e8c47dfde478282bec755d7226bb",
+  "config_sha256": {
+    "S0_original": "d8fec9fbb17b6c24b1362bcd82254cd71950b6f45cce7d4211b26ca3d109db3e",
+    "S1_nuisance_bank": "a809f207d0faddecc1ddb6c4e7868608d679992fceb36be4a7283449f88ec397"
+  },
+  "original_stage_cap_gpu_hours": 5.0,
+  "new_stage_cap_gpu_hours": 23.8,
+  "global_ledger_total_gpu_hours": 48.0,
+  "global_ledger_consumed_or_reserved_before_extension": 23.786941608935596,
+  "global_ledger_unreserved_before_extension": 24.213058391064404,
+  "projected_gpu_hours": {
+    "S0_original": 10.584836047918847,
+    "S1_nuisance_bank": 10.496464626242718,
+    "pair_before_safety": 21.081300674161565,
+    "pair_with_1_10_margin": 23.189430741577723
+  },
+  "per_arm_reservation_gpu_hours": 11.9,
+  "existing_cuda_smoke_gpu_hours_counted": 0.025042398720462287,
+  "test_read": false,
+  "fairforge2_budget_transfer": false
+}
