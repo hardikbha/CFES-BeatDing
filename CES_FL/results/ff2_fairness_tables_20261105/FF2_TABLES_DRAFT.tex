@@ -1,0 +1,101 @@
+\documentclass[10pt]{article}
+\usepackage[margin=1.6cm,landscape]{geometry}
+\usepackage{booktabs,multirow,graphicx,xcolor,amsmath}
+\usepackage[T1]{fontenc}\usepackage{lmodern}
+\newcommand{\Fpr}{F_{\mathrm{FPR}}}\newcommand{\Fdp}{F_{\mathrm{DP}}}
+\title{FairForge-2 tables: current draft}
+\author{CES-FL project, generated 6 Nov 2026 from verified run aggregates}
+\date{}
+\begin{document}\maketitle
+\noindent\fcolorbox{orange}{orange!8}{\parbox{0.97\linewidth}{\textbf{Status of the numbers.} All results are on FairForge-2
+\textbf{SELECT (validation), not TEST}: seed 17, one run per method, threshold fixed on SELECT reals for 10\% FPR (achieved
+9.97\%). TEST stays sealed until the final model, checkpoint and threshold are frozen; the paper version will report TEST
+(87{,}564 images, plus the 16{,}953-image unseen-generator subset) as mean $\pm$ std over 3 seeds. Grey rows are not yet
+available. Bold = best among the filled rows. Age and skin bins are machine estimates (InsightFace age, ITA skin tone),
+not human labels. CES-FL P/A/B are controls of the CES-FL recipe; the full counterfactual CES-FL objective has not run on FF2.}}
+
+\begin{table}[h]\centering
+\caption{FairForge-2 public split: real / fake images with valid group labels, per gender$\times$race group and split, and
+real images per source dataset. ``Others'' (Indian, Latino/Hispanic, Middle Eastern) exists only in FairFace.}
+\small\begin{tabular}{l|cccc|cc}\toprule
+Group & TRAIN & SELECT & CAL & TEST & FFHQ reals & FairFace reals \\\midrule
+Female-Asian & 1,333 / 17,079 & 202 / 2,493 & 194 / 2,479 & 449 / 8,711 & 526 & 1,652 \\
+Female-Black & 1,524 / 18,463 & 194 / 2,272 & 205 / 2,469 & 475 / 8,392 & 793 & 1,605 \\
+Female-White & 1,774 / 21,658 & 257 / 2,966 & 232 / 2,817 & 567 / 9,348 & 824 & 2,006 \\
+Female-Others & 2,152 / 24,286 & 348 / 3,882 & 358 / 4,033 & 691 / 7,961 & 0 & 3,549 \\
+Male-Asian & 2,219 / 26,500 & 322 / 3,833 & 324 / 3,950 & 722 / 11,573 & 726 & 2,861 \\
+Male-Black & 1,795 / 23,407 & 238 / 3,072 & 248 / 3,148 & 585 / 10,261 & 886 & 1,980 \\
+Male-White & 1,809 / 23,236 & 256 / 3,178 & 243 / 2,916 & 612 / 10,654 & 886 & 2,034 \\
+Male-Others & 4,171 / 46,860 & 621 / 6,973 & 705 / 7,934 & 1,340 / 15,223 & 0 & 6,837 \\
+\midrule
+All & 16,777 / 201,489 & 2,438 / 28,669 & 2,509 / 29,746 & 5,441 / 82,123 & 4,641 & 22,524 \\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[h]\centering
+\caption{Main table in the format of Ding et al. (values $\times$100). g = gender (2 groups), r = race (4), i = gender$\times$race
+(8). $\Fpr=\sum_g |\mathrm{FPR}_g-\mathrm{FPR}|$, es-AUC $=\mathrm{AUC}/(1+\sum_g|\mathrm{AUC}_g-\mathrm{AUC}|)$. FairForge-2 SELECT, seed 17.}
+\resizebox{\linewidth}{!}{\begin{tabular}{l|ccc|ccc|ccc|c}\toprule
+& \multicolumn{9}{c|}{Fairness metrics (\%)} & Detection (\%) \\
+Method (all Xception) & g $\Fpr\!\downarrow$ & g $\Fdp\!\downarrow$ & g es-AUC$\uparrow$ & r $\Fpr\!\downarrow$ & r $\Fdp\!\downarrow$ & r es-AUC$\uparrow$ & i $\Fpr\!\downarrow$ & i $\Fdp\!\downarrow$ & i es-AUC$\uparrow$ & AUC$\uparrow$ \\\midrule
+Ori (BCE) & 3.43 & 0.11 & 99.74 & 19.54 & 1.52 & 99.22 & 40.52 & 1.62 & 98.61 & 99.80 \\
+DAG-FDD WACV'24 & 4.28 & 0.18 & 99.66 & 18.32 & 1.51 & 99.26 & 37.89 & 1.68 & 98.50 & 99.81 \\
+DAW-FDD WACV'24 & 3.43 & \textbf{0.09} & \textbf{99.80} & 12.87 & 1.29 & 99.38 & 30.70 & 1.56 & 98.85 & \textbf{99.84} \\
+PG-FDD CVPR'24 & \multicolumn{10}{c}{\textcolor{gray}{-- pending (not run on FF2) --}} \\
+F3Net (FAD branch) & \multicolumn{10}{c}{\textcolor{gray}{-- pending (trained; verification failed) --}} \\
+CORE & \multicolumn{10}{c}{\textcolor{gray}{-- pending (trained; verification failed) --}} \\
+Ding et al.\ CVPR'26 (corrected GDA, our run) & \textbf{0.72} & 0.24 & 98.98 & \textbf{4.09} & 1.38 & 97.21 & \textbf{12.44} & 1.72 & 95.31 & 99.06 \\
+\midrule
+CES-FL P: original-only BCE & 3.60 & 0.24 & \textbf{99.80} & 12.16 & \textbf{1.06} & \textbf{99.44} & 28.39 & 1.53 & \textbf{99.08} & 99.81 \\
+CES-FL A: weighted BCE & 3.26 & 0.14 & 99.79 & 12.80 & 1.12 & 99.43 & 29.10 & 1.43 & 99.05 & 99.81 \\
+CES-FL B: A + soft error disparity & 3.43 & 0.19 & \textbf{99.80} & 13.17 & 1.11 & 99.42 & 29.55 & \textbf{1.32} & 99.04 & 99.81 \\
+\midrule
+\textbf{CES-FL full (ours, final)} & \multicolumn{10}{c}{\textcolor{gray}{-- pending (not run on FF2) --}} \\
+\bottomrule\end{tabular}}\end{table}
+
+\begin{table}[h]\centering
+\caption{Axes beyond Ding et al. (values $\times$100). Age: $<$30, 30--44, 45--59, 60+. Skin: 4 ITA bins (unknown excluded).
+Race $\Fpr$ within source recomputes the race metric inside one source dataset, against that source's own FPR
+(FairFace: 4 races, 2{,}196 reals; FFHQ: 3 races, 242 reals). FNR = overall miss rate.}
+\resizebox{\linewidth}{!}{\begin{tabular}{l|ccc|ccc|cc|c}\toprule
+& \multicolumn{3}{c|}{Age (4 bins)} & \multicolumn{3}{c|}{Skin tone (4 bins)} & \multicolumn{2}{c|}{Race $\Fpr\!\downarrow$ within source} & \\
+Method (all Xception) & $\Fpr\!\downarrow$ & es-AUC$\uparrow$ & worst AUC$\uparrow$ & $\Fpr\!\downarrow$ & es-AUC$\uparrow$ & worst AUC$\uparrow$ & FairFace & FFHQ & FNR$\downarrow$ \\\midrule
+Ori (BCE) & 8.74 & 99.61 & 99.69 & 14.57 & 99.50 & 99.66 & 1.63 & 4.19 & 0.30 \\
+DAG-FDD WACV'24 & 10.45 & 99.58 & \textbf{99.72} & 12.78 & 99.40 & 99.69 & 2.58 & 11.76 & \textbf{0.22} \\
+DAW-FDD WACV'24 & 10.45 & 99.59 & \textbf{99.72} & \textbf{6.80} & \textbf{99.62} & \textbf{99.73} & 2.43 & 15.14 & 0.24 \\
+PG-FDD CVPR'24 & \multicolumn{9}{c}{\textcolor{gray}{-- pending (not run on FF2) --}} \\
+F3Net (FAD branch) & \multicolumn{9}{c}{\textcolor{gray}{-- pending (trained; verification failed) --}} \\
+CORE & \multicolumn{9}{c}{\textcolor{gray}{-- pending (trained; verification failed) --}} \\
+Ding et al.\ CVPR'26 (corrected GDA, our run) & \textbf{1.58} & 98.41 & 98.69 & 7.72 & 97.46 & 98.29 & 4.88 & \textbf{2.07} & 1.07 \\
+\midrule
+CES-FL P: original-only BCE & 9.23 & \textbf{99.63} & 99.70 & 11.68 & \textbf{99.62} & 99.70 & 1.64 & 18.15 & 0.38 \\
+CES-FL A: weighted BCE & 9.02 & 99.57 & 99.67 & 10.62 & 99.61 & 99.71 & \textbf{1.41} & 10.35 & 0.33 \\
+CES-FL B: A + soft error disparity & 7.42 & 99.60 & 99.68 & 11.56 & \textbf{99.62} & 99.69 & 1.86 & 10.35 & 0.37 \\
+\midrule
+\textbf{CES-FL full (ours, final)} & \multicolumn{9}{c}{\textcolor{gray}{-- pending (not run on FF2) --}} \\
+\bottomrule\end{tabular}}\end{table}
+
+\begin{table}[h]\centering
+\caption{False-positive rate (\%) on real images per gender$\times$race group (lower is better; the overall target is 10\%).
+Real images per group in brackets. FairForge-2 SELECT, seed 17.}
+\resizebox{\linewidth}{!}{\begin{tabular}{l|cccc|cccc}\toprule
+Method (all Xception) & Female Asian (202) & Female Black (194) & Female White (257) & Female Others (348) & Male Asian (322) & Male Black (238) & Male White (256) & Male Others (621) \\\midrule
+Ori (BCE) & 15.84 & 18.56 & 15.18 & \textbf{3.74} & 11.18 & 13.87 & 12.89 & 3.38 \\
+DAG-FDD WACV'24 & 16.34 & 18.56 & 14.01 & 5.75 & 9.94 & 13.45 & 14.06 & \textbf{2.90} \\
+DAW-FDD WACV'24 & 13.37 & 15.46 & 14.79 & 7.18 & \textbf{7.14} & 14.71 & 12.11 & 5.48 \\
+PG-FDD CVPR'24 & \multicolumn{8}{c}{\textcolor{gray}{-- pending (not run on FF2) --}} \\
+F3Net (FAD branch) & \multicolumn{8}{c}{\textcolor{gray}{-- pending (trained; verification failed) --}} \\
+CORE & \multicolumn{8}{c}{\textcolor{gray}{-- pending (trained; verification failed) --}} \\
+Ding et al.\ CVPR'26 (corrected GDA, our run) & \textbf{12.38} & \textbf{11.34} & \textbf{8.17} & 10.34 & 8.39 & \textbf{13.03} & \textbf{8.59} & 9.50 \\
+\midrule
+CES-FL P: original-only BCE & 17.33 & 11.86 & 15.56 & 6.61 & 8.70 & \textbf{13.03} & 11.33 & 5.48 \\
+CES-FL A: weighted BCE & 15.84 & 12.37 & 17.12 & 5.46 & 9.01 & \textbf{13.03} & 10.94 & 5.80 \\
+CES-FL B: A + soft error disparity & 15.35 & 13.40 & 16.34 & 6.03 & 9.01 & \textbf{13.03} & 11.72 & 5.31 \\
+\midrule
+\textbf{CES-FL full (ours, final)} & \multicolumn{8}{c}{\textcolor{gray}{-- pending (not run on FF2) --}} \\
+\bottomrule\end{tabular}}\end{table}
+
+\noindent\textbf{Reading the tables.} Ding-style GDA has the lowest $\Fpr$ on gender, race, gender$\times$race and age, but the
+lowest AUC and a 3--5$\times$ higher miss rate. No CES-FL control is best on any $\Fpr$ column. Most of the pooled race and
+age disparity comes from the source dataset: FFHQ reals are flagged as fake far more often than FairFace reals
+(Table~3, within-source columns; README T9 in the results branch).
+\end{document}

@@ -93,7 +93,7 @@ excluded here.
 
 ## 6. Final paper table format (added 6 Nov 2026)
 
-[PAPER_TABLE_TEMPLATE.tex](PAPER_TABLE_TEMPLATE.tex) holds the two FF2 tables planned for the paper; every cell is `--`
+[FF2_TABLES_DRAFT.pdf](FF2_TABLES_DRAFT.pdf) is the current filled draft (SELECT/validation numbers, seed 17; built by `build_paper_pdf.py`). [PAPER_TABLE_TEMPLATE.tex](PAPER_TABLE_TEMPLATE.tex) holds the two FF2 tables planned for the paper; every cell is `--`
 until a one-time TEST evaluation of frozen models.
 
 - **Table A (`tab:ff2main`), Ding format.** Rows: Ori (BCE), DAG-FDD, DAW-FDD, PG-FDD, F3Net, CORE, Ding et al. (our
