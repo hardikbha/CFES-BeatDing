@@ -1,0 +1,92 @@
+# FairForge-2 fairness tables and failure diagnosis (5 Nov 2026)
+
+Aggregate-only package. No training, inference, threshold tuning or TEST access was performed for it. The tables are
+built by `build_tables.py` from existing files; the one new computation (`diag_source.py`) re-reads the private VAL
+score files already used for the 5 Nov seven-run report and writes counts only. All detailed tables are in
+[TABLES.md](TABLES.md) (CSV for every table; `tables.tex` for T5 and T9).
+
+## 1. Status update
+
+**Ding's dataset (FF++ train → FF++/DFDC/Celeb-DF/DFD test, Xception, seed 17, against Ding's published Tables 1–2).**
+CES-FL L_A wins 23/40 cells (FF++ 7/10, DFDC 9/10, Celeb-DF 1/10, DFD 6/10); L_H wins 21/40. Previous best was BD0 at
+17/40. The pre-registered "beats Ding" rule (≥25/40, AUC and all es-AUC on all four sets, intersection F_FPR on ≥3 sets)
+is **not** met: AUC is above Ding only on FF++, and Celeb-DF is the weak set. ResNet-50 Table 3: L_A 9/40, L_H 12/40.
+These L_A/L_H rows are the plain-head ablation, not the full CES-FL diagram model.
+
+**FairForge-2 (in-domain, VAL only, seed 17).** Seven verified runs. AUC is 99.81–99.84 for every run except the
+Ding-style GDA run (99.06). On F_FPR, Ding-style GDA is best on gender, race, gender×race and age; DAW-FDD is best on skin.
+No CES-FL run (P/A/B) is best on any F_FPR axis (T5). F3Net and CORE trained 50 epochs but their post-hoc verification
+failed three times, so they are not tabled.
+
+## 2. Why our model is failing on FF2 fairness
+
+1. **The "race" and "age" gaps on FF2 are mostly a source-dataset gap, and none of our losses targets it (T9).**
+   FFHQ real photos are called fake far more often than FairFace real photos, at each model's own 10% VAL-real threshold:
+
+   | | BCE | DAG-FDD | DAW-FDD | Ding-style GDA | CES-FL P | CES-FL A | CES-FL B |
+   |---|---:|---:|---:|---:|---:|---:|---:|
+   | FFHQ reals (n=242) FPR % | 72.73 | 59.92 | 47.11 | 14.88 | 44.21 | 45.04 | 45.04 |
+   | FairFace reals (n=2,196) FPR % | 3.05 | 4.46 | 5.87 | 9.43 | 6.19 | 6.10 | 6.10 |
+
+   "Others" is 100% FairFace, while Asian/Black/White include FFHQ reals, so Others gets a low FPR and the other three a
+   high one. Inside FairFace alone, the race FPR spread is small: BCE 2.12–3.51% (1.4 pts) versus 12.5 pts overall;
+   CES-FL P 5.88–7.14% (1.3 pts) versus 7.6 pts overall. FFHQ reals under 30 reach 79% FPR for BCE, which drives the
+   `<30` age-bin gap. Ding-style GDA "wins" F_FPR mainly because it pulls FFHQ FPR down to 15% (and pushes FairFace up to
+   9.4%), at the cost of AUC (99.06) and a 3–5× higher miss rate (FNR 1.07% vs 0.22–0.38%).
+
+   Candidate causes (not yet tested): FFHQ fakes per real are higher (≈17 vs ≈13); seven generators were trained on FFHQ
+   (StyleGAN2, EG3D, StyleSwin, Projected GAN, CodeFormer, GFPGAN, DifFace) and all eight TEST-only labels are FFHQ-sourced;
+   FFHQ and FairFace use different canonicaliser profiles (v1 vs v2) and different master resolutions (1024 vs 448 px).
+   Any of these can make "looks like FFHQ" a fake cue.
+
+2. **The errors are false positives on reals, not missed fakes.** Per-group FNR is 0.05–0.52% for every non-GDA run, and
+   per-group AUC is 99.4–99.95%. Fairness is therefore set almost entirely by where each group's real-score distribution
+   sits relative to one global threshold (T8).
+
+3. **P/A/B are not the full CES-FL method.** P is BCE on originals, A is weighted BCE, B adds a soft error-disparity term.
+   The counterfactual sensitivity/response terms have never run on FF2 (blocked on intervention review). B's selected
+   epoch is 1, and B is worse than A on four of five F_FPR axes.
+
+4. **The fairness term is weak.** It is computed per batch of 16; in a 20k-batch simulation it is active in 67% of batches,
+   usually comparing 2–3 of 8 groups with 1–2 real images each. It also uses demographic groups, not source.
+
+5. **Small real support and one seed.** VAL has 2,438 reals (194 Female-Black); one image moves a group FPR by ~0.5 pt.
+   The primary bootstrap has 490 valid draws, below the pre-registered 900 floor.
+
+## 3. Suggested next steps (not launched; each needs a dated proposal)
+
+- Report FF2 group metrics **within source** (FairFace-only and FFHQ-only) alongside pooled ones; add source as a
+  stratification variable in the datasheet and paper.
+- Test the candidate causes on saved scores first (CPU): FPR by source × canonicaliser profile, by generator family, and
+  by skin bin within source.
+- If the source cue is confirmed, a source-aware real-calibration or source-balanced sampling arm is the direct fix;
+  demographic-only fairness losses will not remove it.
+- Keep TEST sealed until the model, threshold and decision rule are frozen.
+
+## 4. Table index
+
+| Table | Content | Split |
+|---|---|---|
+| T1 | Real/fake counts per gender×race group, split and source | composition |
+| T2 | 52 non-degenerate off-the-shelf detectors (of 80): AUC, i-F_FPR, i-F_MEO, i-F_DP, i-F_OAE, i-es-AUC | public TEST |
+| T3a/b | Ding format (gender/race/intersection × F_FPR/F_DP/es-AUC + AUC), FF++-trained → FF2; all / unseen models | public TEST |
+| T4 | AUC per fake family, FF++-trained | public TEST |
+| T5 | FF2-trained: F_FPR on gender, race, gender×race, age, skin + AUC/FPR/FNR | VAL |
+| T5-axis | Per axis: F_FPR, F_DP, es-AUC, FPR gap, TPR gap, F_MEO, F_OAE, worst-group AUC | VAL |
+| T6 | FairForensics-style 8 groups (sex × age × White/Non-White) | VAL |
+| T7 | Age × skin 16-cell FPR and FNR | VAL |
+| T8 | Per-group FPR and FNR for every axis | VAL |
+| T9 | Real FPR by source dataset × race | VAL |
+
+Caveats: age and skin bins are machine estimates (InsightFace age, ITA skin tone), not human labels. The FF++-trained
+rows in T3/T4 are older (Oct) results recomputed on the frozen public TEST; Ding rows there are our reproduction, not
+published numbers. The FF2-full-trained TEST rows in the source CSV were trained on the internal set (incl. RFW) and are
+excluded here.
+
+## 5. Inputs
+
+- `../ff2_multimodel_validation_20261105/METRICS_LONG_7RUNS.csv`, `GROUP_SUPPORT_7RUNS.csv` (branch
+  `results/ff2-multimodel-findings-20261105`, commit `6eef208`).
+- Frozen public-release stats and benchmarks: `release_ff2_public/stats/` (`panel_public.csv`, `ding_format_public.csv`,
+  `family_auc_public.csv`, `groups_*_cellvalid.csv`), frozen 25 Oct 2026.
+- `diag_source.py` → private `diag_source_fpr.json` (counts only; VAL manifest sha256 `aeda0512…`, 31,107 rows per model).

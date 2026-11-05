@@ -1,0 +1,3 @@
+group,n_real,n_fake,Xception BCE,DAG-FDD,DAW-FDD,Ding-style GDA (corrected),CES-FL P (ours),CES-FL A (ours),CES-FL B (ours)
+Female,1001,11613,0.3100,0.2239,0.2669,1.1711,0.3100,0.3100,0.3272
+Male,1437,17056,0.2932,0.2169,0.2287,1.0084,0.4280,0.3459,0.3987

@@ -1,0 +1,35 @@
+\begin{table}[t]\centering\small
+\caption{FF2-trained detectors: F\_FPR ($\times$100, lower is better) on five axes, FF2 validation.}\label{tab:ff2_ffpr_axes}
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Model & AUC & FPR & FNR & Gender F\_FPR & Race F\_FPR & Gender$\times$Race F\_FPR & Age F\_FPR & Skin F\_FPR \\
+\midrule
+Xception BCE & 99.80 & 9.97 & 0.30 & 3.43 & 19.54 & 40.52 & 8.74 & 14.57 \\
+DAG-FDD & 99.81 & 9.97 & 0.22 & 4.28 & 18.32 & 37.89 & 10.45 & 12.78 \\
+DAW-FDD & 99.84 & 9.97 & 0.24 & 3.43 & 12.87 & 30.70 & 10.45 & 6.80 \\
+Ding-style GDA (corrected) & 99.06 & 9.97 & 1.07 & 0.72 & 4.09 & 12.44 & 1.58 & 7.72 \\
+CES-FL P (ours) & 99.81 & 9.97 & 0.38 & 3.60 & 12.16 & 28.39 & 9.23 & 11.68 \\
+CES-FL A (ours) & 99.81 & 9.97 & 0.33 & 3.26 & 12.80 & 29.10 & 9.02 & 10.62 \\
+CES-FL B (ours) & 99.81 & 9.97 & 0.37 & 3.43 & 13.17 & 29.55 & 7.42 & 11.56 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]\centering\small
+\caption{Real-image FPR (\%) by source dataset on FF2 validation.}\label{tab:ff2_source}
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+Source & Group & VAL reals & Xception BCE & DAG-FDD & DAW-FDD & Ding-style GDA (corrected) & CES-FL P (ours) & CES-FL A (ours) & CES-FL B (ours) \\
+\midrule
+FairFace & all & 2196 & 3.05 & 4.46 & 5.87 & 9.43 & 6.19 & 6.10 & 6.10 \\
+FFHQ & all & 242 & 72.73 & 59.92 & 47.11 & 14.88 & 44.21 & 45.04 & 45.04 \\
+FFHQ & Asian & 72 & 75.00 & 58.33 & 38.89 & 13.89 & 50.00 & 44.44 & 44.44 \\
+FairFace & Asian & 452 & 3.10 & 5.09 & 4.87 & 9.29 & 5.97 & 6.42 & 6.19 \\
+FFHQ & Black & 82 & 71.95 & 65.85 & 50.00 & 15.85 & 35.37 & 40.24 & 40.24 \\
+FairFace & Black & 350 & 2.86 & 4.00 & 6.86 & 11.43 & 7.14 & 6.29 & 6.86 \\
+FFHQ & White & 88 & 71.59 & 55.68 & 51.14 & 14.77 & 47.73 & 50.00 & 50.00 \\
+FairFace & White & 425 & 2.12 & 5.41 & 5.65 & 7.06 & 6.35 & 6.59 & 6.59 \\
+FairFace & Others & 969 & 3.51 & 3.92 & 6.09 & 9.80 & 5.88 & 5.68 & 5.57 \\
+\bottomrule
+\end{tabular}
+\end{table}
