@@ -1,0 +1,254 @@
+{
+  "status": "BLOCKED_COMPUTE",
+  "source_commit": "fe518e2cbaba0dfd748eb89e95745aefe8a4ee6a",
+  "trainer_source_sha256": "54c19fae5bc1d55569448d299c31d2c58f43e8c47dfde478282bec755d7226bb",
+  "p50_native_source_sha256": "2d66966b1733feec222fe3a80ff9a6cd7181a6ba28cb9f767ad980968d337098",
+  "transform_source_sha256": "1997eebf093aa3e37de1cbbe58302a1539ac2e517f966a4607aae89dc695a8e0",
+  "fold_audit_sha256": "61fa42a94937a3d6f3651eb6987de46f2022d8b84b2225493340a435ff12b461",
+  "fit_manifest_sha256": "eb4fd630a4964f337678f54c1b7b7059ba30ee5019b66e15aeba2fb00685c54f",
+  "development_manifest_sha256": "83cbb49977444a7f0fa3a7d5ed1838d9badd291c3d30bfe87cf7a9939539f161",
+  "config_sha256": {
+    "S0_original": "d8fec9fbb17b6c24b1362bcd82254cd71950b6f45cce7d4211b26ca3d109db3e",
+    "S1_nuisance_bank": "a809f207d0faddecc1ddb6c4e7868608d679992fceb36be4a7283449f88ec397"
+  },
+  "counts": {
+    "train_rows": 76139,
+    "recorded_components_total": 471,
+    "heldout_family_fake_rows": 12504,
+    "heldout_family_components": 270,
+    "eligible_components": 201,
+    "fit_components": 160,
+    "dev_real_components": 41,
+    "fit_rows": 3745,
+    "fit_real": 842,
+    "fit_fake": 2903,
+    "development_rows": 12773,
+    "development_real": 269,
+    "development_fake": 12504,
+    "unused_rows": 59621,
+    "heldout_family_support": {
+      "Deepfakes": {
+        "fake_rows": 12504,
+        "recorded_components": 270
+      },
+      "Face2Face": {
+        "fake_rows": 13416,
+        "recorded_components": 278
+      },
+      "FaceShifter": {
+        "fake_rows": 12269,
+        "recorded_components": 270
+      },
+      "FaceSwap": {
+        "fake_rows": 11941,
+        "recorded_components": 259
+      },
+      "NeuralTextures": {
+        "fake_rows": 13083,
+        "recorded_components": 273
+      }
+    },
+    "fit_ids8_cell_counts": {
+      "0": {
+        "real": 34,
+        "fake": 60
+      },
+      "1": {
+        "real": 192,
+        "fake": 534
+      },
+      "2": {
+        "real": 19,
+        "fake": 30
+      },
+      "3": {
+        "real": 10,
+        "fake": 60
+      },
+      "4": {
+        "real": 200,
+        "fake": 810
+      },
+      "5": {
+        "real": 63,
+        "fake": 90
+      },
+      "6": {
+        "real": 98,
+        "fake": 300
+      },
+      "7": {
+        "real": 226,
+        "fake": 1019
+      }
+    },
+    "development_group_counts": {
+      "gender": {
+        "Female": {
+          "real": 162,
+          "fake": 7114
+        },
+        "Male": {
+          "real": 107,
+          "fake": 5390
+        }
+      },
+      "race": {
+        "Asian": {
+          "real": 7,
+          "fake": 1962
+        },
+        "Black": {
+          "real": 1,
+          "fake": 450
+        },
+        "Others": {
+          "real": 30,
+          "fake": 1286
+        },
+        "White": {
+          "real": 231,
+          "fake": 8806
+        }
+      },
+      "age_bin": {
+        "30-44": {
+          "real": 10,
+          "fake": 2948
+        },
+        "45-59": {
+          "real": 62,
+          "fake": 1168
+        },
+        "60+": {
+          "real": 2,
+          "fake": 179
+        },
+        "<30": {
+          "real": 195,
+          "fake": 8209
+        }
+      },
+      "skin_bin": {
+        "0": {
+          "real": 97,
+          "fake": 3807
+        },
+        "1": {
+          "real": 126,
+          "fake": 2569
+        },
+        "2": {
+          "real": 7,
+          "fake": 2814
+        },
+        "3": {
+          "real": 37,
+          "fake": 3201
+        },
+        "unknown": {
+          "real": 2,
+          "fake": 113
+        }
+      },
+      "gender_race": {
+        "Female-Asian": {
+          "real": 2,
+          "fake": 1531
+        },
+        "Female-Black": {
+          "real": 1,
+          "fake": 180
+        },
+        "Female-Others": {
+          "real": 30,
+          "fake": 537
+        },
+        "Female-White": {
+          "real": 129,
+          "fake": 4866
+        },
+        "Male-Asian": {
+          "real": 5,
+          "fake": 431
+        },
+        "Male-Black": {
+          "real": 0,
+          "fake": 270
+        },
+        "Male-Others": {
+          "real": 0,
+          "fake": 749
+        },
+        "Male-White": {
+          "real": 102,
+          "fake": 3940
+        }
+      },
+      "ids8": {
+        "0": {
+          "real": 1,
+          "fake": 450
+        },
+        "1": {
+          "real": 98,
+          "fake": 3858
+        },
+        "2": {
+          "real": 38,
+          "fake": 1811
+        },
+        "3": {
+          "real": 0,
+          "fake": 326
+        },
+        "4": {
+          "real": 64,
+          "fake": 2308
+        },
+        "5": {
+          "real": 0,
+          "fake": 360
+        },
+        "6": {
+          "real": 4,
+          "fake": 731
+        },
+        "7": {
+          "real": 64,
+          "fake": 2660
+        }
+      }
+    }
+  },
+  "smoke": {
+    "S0": {
+      "status": "PASS",
+      "sha256": "e1544fe8b9d99e1ac1ca1c28a2fea31a22c3445a14fbf9c6dee4aa46fe960c69",
+      "initial_state_sha256": "5b961251c19dd0c5ed132c5bd017610d6d705ff40733bda02d0cabcd74fcb025",
+      "gpu": "gpu02",
+      "uuid": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1",
+      "actual_gpu_hours": 0.0125218909,
+      "projected_gpu_hours_before_safety": 10.584836047918847
+    },
+    "S1": {
+      "status": "PASS",
+      "sha256": "68c6a301e0546ea20e67159b4bcb43660a83d5839b89dec34cc4f7e3981ed4c3",
+      "initial_state_sha256": "5b961251c19dd0c5ed132c5bd017610d6d705ff40733bda02d0cabcd74fcb025",
+      "gpu": "gpu02",
+      "uuid": "GPU-65f63cc5-9366-5c2d-196a-6e7a0a62c1e8",
+      "actual_gpu_hours": 0.0125205078,
+      "projected_gpu_hours_before_safety": 10.496464626242718
+    },
+    "identical_fresh_initialization": true
+  },
+  "cap_gpu_hours": 5.0,
+  "projected_aggregate_before_safety_margin": 21.081300674161565,
+  "conservative_2x_estimate": 42.16260134832313,
+  "actual_smoke_gpu_hours": 0.025042398720462287,
+  "training_launched": false,
+  "reason": "Full native 50-epoch paired schedule exceeds the fixed five aggregate GPU-hour cap by a factor of at least 4.2 before safety margin.",
+  "test_manifest_read": false,
+  "test_scores_read": false,
+  "private_rows_or_checkpoints_published": false
+}
