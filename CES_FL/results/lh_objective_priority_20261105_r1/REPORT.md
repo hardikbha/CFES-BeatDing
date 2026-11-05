@@ -31,7 +31,7 @@ B0 and C0 completed three epochs and passed selected-checkpoint validation repla
 
 ## Remaining work at this publication
 
-- **Complete-classifier P50 audit:** CUDA smoke passed; the zero-update comparison against complete P50 and A0/B0/C0/H0 is running under the separate 0.25 GPU-hour cap. No audit result is claimed yet.
+- **Complete-classifier P50 audit:** CUDA smoke passed, but the zero-update comparison against complete P50 and A0/B0/C0/H0 did not finish within the separate 0.25 GPU-hour cap. The private process was stopped at the cap before it wrote an audit result; no score-distribution, nuisance-response or gradient comparison is claimed. The runner recorded 0.250314 GPU-hours, 1.13 seconds over the nominal cap during process teardown. This remains a blocker; no retry is authorized under the exhausted cap.
 - **TRAIN-only source generalization:** the deterministic Deepfakes-held-out fold is prepared and image-decoded. Fit has 3,745 rows/160 recorded components; development has 12,504 held-out-family fakes and only 269 reals from 41 components. Several demographic real cells are sparse or empty. This allows at most a limited detection-generalization pilot, not full demographic fairness analysis. CUDA smoke and resource profiling are pending; no S0/S1 training has started.
 
 The separate proposal, exact protocol and scripts are in [`source_generalization_20261105_r1`](../../proposals/source_generalization_20261105_r1/README.md). The complete-classifier audit script and runbook are in [`lh_objective_priority_20261105_r1`](../../proposals/lh_objective_priority_20261105_r1/PRETRAINED_CLASSIFIER_AUDIT.md). Row-level scores, fold manifests and checkpoints remain private.
