@@ -19,6 +19,8 @@ Point estimates suggest B0 barely changes the intersection metric versus A0 (0.4
 
 At fixed probability 0.5, overall FPR/FNR were: A0 14.7849%/6.4854%; B0 14.2962%/6.7859%; C0 12.8055%/7.7727%; H0 13.0743%/8.0070%. Gender×race F_FPR at fixed 0.5 was 0.5407, 0.5348, 0.4119 and 0.3821, respectively. This operating point also shows the detection/fairness trade-off; it does not replace calibrated results.
 
+The fixed-0.5 paired bootstrap used the same 1,000 contributor-cluster draws on private cache copies with logit threshold 0 (the original caches were unchanged). Gender×race F_FPR differences were B0−A0 −0.0058 [95% CI −0.0315, 0.0526], C0−B0 −0.1230 [−0.2876, 0.0170], H0−C0 −0.0298 [−0.0969, 0.0848], B0−H0 0.1528 [−0.0132, 0.2819], and H0−A0 −0.1586 [−0.2615, 0.0161]. Each had 746 valid draws, so all remain inconclusive under the 900-draw rule. The aggregate intervals are in `FIXED05_PAIRED_BOOTSTRAP_AGGREGATE.json`.
+
 ## Uncertainty and intervention validity
 
 Paired seed-17 validation bootstrap resampled 209 connected recorded-contributor components for 1,000 draws. The primary gender×race F_FPR interval has only **746/1,000** valid draws, below the prespecified 900-draw minimum, so the primary fairness comparisons are **inconclusive**. Age-axis intervals had 976 valid draws. The connected recorded IDs are not ground-truth proof of person independence, and these intervals measure validation-sample uncertainty, not training-seed uncertainty.
