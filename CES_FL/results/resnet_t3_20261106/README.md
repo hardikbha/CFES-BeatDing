@@ -96,3 +96,13 @@ d9ba7275e62dd28aa17af41b43e732b876307f7189e772083b5313498394c959  SAMEBB/code_r3
 d16f4982c54e3ddb5fcf7e52cdaa1bd0c16c96531bcd7d3e9e7a8d4d97d85023  posthoc/worker.sh
 81f50993d0f8b11cba4714b6d1b1e4afde82e0d400be6cc0c68ff75ee2dc072b  posthoc/chain.sh
 ```
+
+## Update: R4/R5 (Amendment 6) and refreshed post-hoc table (Amendment 8/8a)
+- `SCORECARD_R4R5_3seed.md` and `SCORECARD_R4R5_3seed.json`, op05, SWA, mean wins per seed:
+  - R4 (balanced SBI sources): 15.67 +/- 1.53.
+  - R5 (R4 with L_R 0.10): 14.67 +/- 0.58.
+  - Both are below R3-SBI at 17.67 +/- 3.06.
+- `TABLE3_FULL_v2_op05_SWA.md`: the full per-column Table 3 including R4 and R5.
+- `TABLE3_POSTHOC.md` and `TABLE3_POSTHOC.json` now also cover R4, R5 and R7 (3 seeds + soup) and R6 s37.
+- Soup sanity on FF++ val AUC flags R3-SBI and R4 as degenerate (more than 2 pt below the seed mean).
+- R6b (Amendment 8a: R3-SBI plus L_DP with coefficient 2.0) is running, seeds 37, 47 and 57.

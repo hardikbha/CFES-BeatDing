@@ -122,3 +122,12 @@
   - per-seed rows plus mean always shown.
 - **User intends to headline the single best seed.** Allowed only as a row labelled "best seed (selected post hoc
   on test)" next to the per-seed rows and the mean (Amendment 5a).
+
+## Amendment 8a (06 Nov ~20:55 IST, before any R6 result exists)
+- R4 (15.7) and R5 (14.7) are below R3-SBI (17.7), so balanced SBI sources don't help.
+- The pre-declared R6b is therefore re-based on **R3-SBI** (natural SBI sources) instead of R4:
+  - R6b = R3-SBI-SWA plus L_DP with dp_coef 2.0, inside the existing x4 fair step:
+    4[0.5 L_C + 0.02 L_R + 2.0 L_DP].
+  - Seeds 37/47/57, on the GPUs R4/R5 freed (gpu01:2/3/4).
+  - Target: the 12 F_DP columns.
+- The coefficient is unchanged from Amendment 7a; only the base arm changes. Disclosed.
