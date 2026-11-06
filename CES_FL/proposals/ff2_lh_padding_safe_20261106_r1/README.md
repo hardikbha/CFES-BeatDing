@@ -1,6 +1,7 @@
 # Proposal: FairForge-2 L_H with a padding-safe probe (L_H-PS) and its matched L_A control
 
-**Date:** 6 Nov 2026 · **Status:** awaiting user approval · nothing launched · TEST not read.
+**Date:** 6 Nov 2026 · **Status:** APPROVED by the user on 6 Nov 2026, including amendment PS-2. Human reviewer of the 88 cases: Ashish (PhD
+researcher, named by the user). TEST not read.
 Parent: `ff2_lh_priority_20261104_r1` (blocked at qualification on 4 Nov).
 
 ## 1. Why
@@ -133,3 +134,9 @@ $PY $SRC train --config $R/L_PS.json --preflight $R/preflight --arm D --device c
   --software-receipt $R/smoke_cuda/SMOKE_RESULT.json --dry-run-receipt $R/dry_D/DRY_RUN.json --budget-hours 4 \
   --qualification $R/qualification.json
 ```
+
+## 8. Decision log
+
+- 2026-11-06: user approved this proposal and accepted PS-2 (partial occlusion does not by itself make a crop
+  unsuitable). Human review assigned to Ashish. L_A may start on the first free allowed GPU; L_H-PS waits for
+  `qualify` to pass on Ashish's signed review.
