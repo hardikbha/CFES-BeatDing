@@ -147,3 +147,11 @@ per test set, F_FPR, F_MEO, F_DP, F_OAE over their 8 sex × age × White/Non-Whi
   FairForge-2 TEST; Ding reproductions and the CFES (CLIP) lineage, seed means at each model's FF++-validation threshold.
 - **Table 2 (empty):** the exact FairForensics analogue, trained on FF2 TRAIN and tested on external datasets. No FF2-trained
   checkpoint has been evaluated there; that one-time inference needs approval.
+
+## 10. Cause of the FFHQ-vs-FairFace gap found (6 Nov 2026)
+
+[source_diagnosis_20261106/REPORT.md](source_diagnosis_20261106/REPORT.md): the FFHQ-real false alarms come from the sources'
+**compression history**. FairFace sources are 448 px q75 4:2:0 JPEGs whose trace survives the v2 crop; FFHQ masters are
+lossless. Re-making the 242 FFHQ VAL reals with FairFace-like geometry plus a q75 4:2:0 round-trip drops L_A's flag rate from
+67.8% to 2.1%, and the same treatment lets 94% of FFHQ-sourced fakes pass. Every FF2 fairness number above partly measures this
+shortcut. The dataset needs a common compression history across sources before release and retraining.
