@@ -63,6 +63,14 @@ POST HOC ON TEST (Amendment 5a) and shown only next to the per-seed rows and the
 | R6 | SWA | valFPR1 | s37 17 (4/8/3/2) | 17.00 | 17 | s37: 17 (post hoc) |
 | R6 | SWA+TTA | op05 | s37 14 (6/4/2/2) | 14.00 | 14 | s37: 14 (post hoc) |
 | R6 | SWA+TTA | valFPR1 | s37 16 (5/8/2/1) | 16.00 | 16 | s37: 16 (post hoc) |
+| R6b | SWA | op05 | s37 15 (5/5/3/2); s47 18 (7/5/3/3); s57 14 (6/5/3/0) | 15.67 | 15 | s47: 18 (post hoc) |
+| R6b | SWA | valFPR1 | s37 16 (4/7/3/2); s47 19 (6/8/3/2); s57 17 (5/7/3/2) | 17.33 | 16 | s47: 19 (post hoc) |
+| R6b | SWA+TTA | op05 | s37 13 (5/3/3/2); s47 18 (5/5/3/5); s57 17 (5/6/3/3) | 16.00 | 14 | s47: 18 (post hoc) |
+| R6b | SWA+TTA | valFPR1 | s37 16 (4/7/3/2); s47 20 (5/9/3/3); s57 18 (5/7/3/3) | 18.00 | 16 | s47: 20 (post hoc) |
+| R6b | SOUP | op05 | soup 15 (5/6/3/1) | 15.00 | 15 | - |
+| R6b | SOUP | valFPR1 | soup 16 (3/8/3/2) | 16.00 | 16 | - |
+| R6b | SOUP+TTA | op05 | soup 13 (4/5/3/1) | 13.00 | 13 | - |
+| R6b | SOUP+TTA | valFPR1 | soup 16 (3/7/4/2) | 16.00 | 16 | - |
 
 ## Soup sanity (FF++ val AUC; logged, not selected on)
 
@@ -72,6 +80,7 @@ POST HOC ON TEST (Amendment 5a) and shown only next to the per-seed rows and the
 - R4: soup 0.9218 vs mean single-seed 0.9598 -> DEGENERATE (> 2 pt)
 - R5: soup 0.9547 vs mean single-seed 0.9675 -> OK (within 2 pt)
 - R7: soup 0.9422 vs mean single-seed 0.9619 -> OK (within 2 pt)
+- R6b: soup 0.9411 vs mean single-seed 0.9571 -> OK (within 2 pt)
 
 ## Best-by-mean variant per arm (selected post hoc on test across variants/ops; labelled) - full 40 columns
 
@@ -434,4 +443,49 @@ POST HOC ON TEST (Amendment 5a) and shown only next to the per-seed rows and the
 | dfd | i F_DP | 4.85 | 17.38 | 17.38 |
 | dfd | i es-AUC | 66.19 | 55.75 | 55.75 |
 | dfd | AUC | 78.63 | 77.15 | 77.15 |
+
+### R6b: SWA+TTA, valFPR1 (mean 18.00/40; mean-row 16/40; best seed R6b_s47_swa 20/40, post hoc)
+
+| set | column | Ding | mean | best seed (post hoc) |
+|---|---|---|---|---|
+| ffpp | g F_FPR | 3.94 | 0.12 * | 0.18 * |
+| ffpp | g F_DP | 5.14 | 9.41 | 9.50 |
+| ffpp | g es-AUC | 94.46 | 93.10 | 94.14 |
+| ffpp | r F_FPR | 18.67 | 3.74 * | 3.56 * |
+| ffpp | r F_DP | 2.43 | 5.97 | 5.98 |
+| ffpp | r es-AUC | 92.69 | 93.84 * | 93.96 * |
+| ffpp | i F_FPR | 34.30 | 8.80 * | 8.13 * |
+| ffpp | i F_DP | 8.61 | 22.44 | 22.34 |
+| ffpp | i es-AUC | 82.87 | 80.72 | 82.50 |
+| ffpp | AUC | 95.53 | 96.06 * | 96.72 * |
+| dfdc | g F_FPR | 3.97 | 1.59 * | 1.34 * |
+| dfdc | g F_DP | 3.61 | 4.23 | 4.42 |
+| dfdc | g es-AUC | 56.96 | 61.00 * | 62.04 * |
+| dfdc | r F_FPR | 11.94 | 5.59 * | 6.25 * |
+| dfdc | r F_DP | 5.15 | 2.78 * | 2.81 * |
+| dfdc | r es-AUC | 50.99 | 55.55 * | 55.94 * |
+| dfdc | i F_FPR | 32.14 | 23.77 * | 20.74 * |
+| dfdc | i F_DP | 10.27 | 11.47 | 8.93 * |
+| dfdc | i es-AUC | 37.55 | 42.70 * | 42.16 * |
+| dfdc | AUC | 62.54 | 62.10 | 62.77 * |
+| celebdf | g F_FPR | 4.53 | 1.57 * | 2.65 * |
+| celebdf | g F_DP | 12.00 | 30.86 | 32.86 |
+| celebdf | g es-AUC | 68.98 | 71.44 * | 72.77 * |
+| celebdf | r F_FPR | 6.76 | 22.67 | 25.15 |
+| celebdf | r F_DP | 8.16 | 25.22 | 26.82 |
+| celebdf | r es-AUC | 71.03 | 62.69 | 63.43 |
+| celebdf | i F_FPR | 5.56 | 12.01 | 16.44 |
+| celebdf | i F_DP | 9.11 | 27.36 | 28.37 |
+| celebdf | i es-AUC | 68.25 | 66.18 | 66.70 |
+| celebdf | AUC | 77.35 | 80.21 * | 81.57 * |
+| dfd | g F_FPR | 3.12 | 1.56 * | 1.54 * |
+| dfd | g F_DP | 1.76 | 2.12 | 1.77 |
+| dfd | g es-AUC | 77.68 | 77.36 | 78.30 * |
+| dfd | r F_FPR | 6.51 | 7.32 | 10.07 |
+| dfd | r F_DP | 3.03 | 11.16 | 9.36 |
+| dfd | r es-AUC | 70.93 | 69.78 | 70.74 |
+| dfd | i F_FPR | 20.99 | 28.41 | 31.25 |
+| dfd | i F_DP | 4.85 | 17.88 | 15.91 |
+| dfd | i es-AUC | 66.19 | 57.09 | 58.58 |
+| dfd | AUC | 78.63 | 78.16 | 79.13 * |
 
