@@ -1,6 +1,6 @@
 # Proposal: remove the source-compression shortcut from FairForge-2 (FF2-H) and re-run the FF2 tables
 
-**Date:** 6 Nov 2026 · **Status:** draft, awaiting user approval · nothing launched · TEST not read.
+**Date:** 6 Nov 2026 · **Status:** APPROVED by the user on 7 Nov 2026 (Phases 0–3; L_H-PS waits for FF2-H; Phase 4 budget decided after G1–G3). TEST not read.
 Evidence: `CES_FL/results/ff2_fairness_tables_20261105/source_diagnosis_20261106/REPORT.md` (results branch).
 
 ## 1. Problem
@@ -107,3 +107,7 @@ every row trained for 10 epochs from the same FF2-H BCE warm start, which is clo
 1. Approve Phases 0–3: build FF2-H with R1, run the G1 probe, retrain L_A on FF2-H (~2.6 GPU-hours from the FF2 ledger).
 2. Confirm that the L_H-PS run waits for FF2-H rather than training on the v1.0 crops.
 3. Phase 4 budget (full ~55–60 GPU-hours, or P4-lite ~25–30) can be decided after G1–G3.
+
+## 9. Decision log
+
+- 2026-11-07: user approved Phases 0–3 and confirmed that L_H-PS waits for FF2-H. Phase 4 budget to be decided after the gates.
