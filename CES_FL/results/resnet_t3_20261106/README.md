@@ -62,3 +62,23 @@ Run config (R0_s37/args_train.txt):
   "diag_every": 0,
   "skip_swa_bn": false
 }```
+
+## Update: SBI arms (Amendment 5), final 3 seeds
+- `SCORECARD_SBI_3seed.md` and `SCORECARD_SBI_3seed.json` cover R0-SWA, R0-SBI-SWA and R3-SBI-SWA for seeds 37, 47 and 57, at op05 and valFPR10, for SWA and raw epoch 49. They include the paired diffs and the Celeb-DF per-column table.
+- `TABLE3_FULL_op05_SWA.md` is the full Table 3 per-column view at op05 for the SWA models, with per-seed values and means vs Ding.
+- Headline (op05, SWA), mean wins per seed:
+  - R0-SWA: 14.0 +/- 1.0.
+  - R0-SBI-SWA: 13.7 +/- 3.2.
+  - R3-SBI-SWA: 17.7 +/- 3.1 (per seed 15, 17 and 21); mean AUC FF++ 96.01, DFDC 62.23, Celeb-DF 80.07, DFD 77.74.
+  - Method evidence for R3-SBI vs R0-SBI: MET. Target (25/40 and AUC >= Ding on all 4 sets): NOT MET.
+- `decisions_amendments_4_5_6.md`: the pre-registered Amendments 4, 5 and 6.
+- SBI is the CERTA-2 F1 self-blend on InsightFace 106-point landmarks of FF++ train reals (12,784 of 12,926). No faces or landmarks are published.
+
+Code sha256 (code_r3sbi, run script, watchdog):
+```
+1e45befacefa11eda07f19768f0d2b68be1583a36bffd683941ed09cbc3b9f65  RESNET_STRAT/watchdog_sbi/r3sbi_watchdog.sh
+a765b5927c8adce375b606fe8d9bec8a4e3440daeb59917b2a51262fe6da0232  SAMEBB/code_r3sbi/run/run_r3sbi.sh
+ccb57822cde4efdc004b2eb89710e81965e1ffe11cc23ec3b9c2230c6aca2134  SAMEBB/code_r3sbi/Ding_r3sbi/train_r3sbi.py
+0c2230811fc14505735a81e37c53849a055f0171af0d5280f77b2b963beb4084  SAMEBB/code_r3sbi/Ding_r3sbi/sbi.py
+d9ba7275e62dd28aa17af41b43e732b876307f7189e772083b5313498394c959  SAMEBB/code_r3sbi/Ding_r3sbi/r3sbi_aggregate.py
+```
