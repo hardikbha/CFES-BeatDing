@@ -42,7 +42,7 @@
   "amp": true,
   "max_gpu_hours": 4.0,
   "allowed_content_overlap": [],
-  "source_sha256": "3705ab85207459a00b54f99e5a40ce7282d8ec36dc16a765d50bdac41f805e23",
+  "source_sha256": "8c25ba8cb844b059adbbce75b57785a156333182afa2d5d576985997f2d36733",
   "synthetic_fixture": false,
   "sham_weight": 0.5,
   "error_control": "hierarchical_real",

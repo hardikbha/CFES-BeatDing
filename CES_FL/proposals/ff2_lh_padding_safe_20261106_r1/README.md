@@ -146,3 +146,10 @@ $PY $SRC train --config $R/L_PS.json --preflight $R/preflight --arm D --device c
 - 2026-11-06: user approved `workers` 4 → 16 (data-loading parallelism only; batches, seed, model, losses and epochs
   unchanged). Config re-bound (digest `266057b1…`); preflight rebound to the same inventory; preview regenerated with
   all 88 sheets byte-identical, so the human review kit is unchanged. L_A restarted from scratch (no checkpoint existed).
+- 2026-11-06 ~15:00: workers=16 attempt ran at 3.55 steps/s (projected 5.3 h > 4 h cap); stopped after ~0.2 GPU-hours.
+  Losses at steps 400–600 matched the first attempt exactly. Cause found in the training loop: every 4 steps the main
+  process builds the auxiliary batch (64 image reads from network storage + 32 probe renders), even for arm A.
+- 2026-11-06: user approved amendment **PS-3 (speed only)**: `AuxiliaryPlan` / `auxiliary_loader` build the same
+  `auxiliary(rows, active, c, event, epoch)` batches in DataLoader workers (in order). New test
+  `test_auxiliary_loader_is_bitwise_identical_to_direct_calls` (13/13 pass) and the CPU smoke lifecycle (incl. bitwise
+  resume) pass. Source `8c25ba8c…`, config digest `143cb13b…`; preview regenerated with all 88 sheets identical.

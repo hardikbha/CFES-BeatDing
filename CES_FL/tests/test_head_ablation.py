@@ -51,6 +51,32 @@ class HeadAblationTests(unittest.TestCase):
                     self.assertTrue(torch.equal(s[:, :, :40], t[:, :, :40]))
                     self.assertGreater(settings['padding_fraction'], .17)
 
+    def test_auxiliary_loader_is_bitwise_identical_to_direct_calls(self):
+        import numpy as np
+        from PIL import Image
+        with tempfile.TemporaryDirectory() as d:
+            rng = np.random.default_rng(3); rows = []
+            for i in range(32):
+                p = Path(d) / f'{i}.png'; Image.fromarray(rng.integers(0, 256, (64, 64, 3), dtype=np.uint8)).save(p)
+                gender, race = ('Female', 'Male')[(i // 2) % 2], ('Asian', 'Black')[(i // 4) % 2]
+                rows.append({'image': str(p), 'label': i % 2, 'gender': gender, 'race': race,
+                             'gender_race': f'{gender}-{race}', 'identity_ids': str(i), 'source_ids': str(i)})
+            c = new.defaults(); c.update(size=64, axes=['gender', 'gender_race'], min_train_support=1, group_per_class=2,
+                                         error_control='hierarchical_real', workers=4)
+            active, _ = new.group_inventory(rows, c)
+            for epoch in (0, 1):
+                got = list(new.auxiliary_loader(rows, active, c, 10 * epoch, epoch, 5))
+                self.assertEqual(len(got), 5)
+                for k, a in enumerate(got):
+                    b = new.auxiliary(rows, active, c, 10 * epoch + k, epoch)
+                    self.assertEqual(set(a), set(b))
+                    for key in b:
+                        if torch.is_tensor(b[key]): self.assertTrue(torch.equal(a[key], b[key]), key)
+                        elif key == 'hierarchy':
+                            for h in b[key]:
+                                self.assertTrue(torch.equal(a[key][h], b[key][h]) if torch.is_tensor(b[key][h]) else a[key][h] == b[key][h])
+                        else: self.assertEqual(a[key], b[key], key)
+
     def test_exact_production_parameter_counts(self):
         for head, total, trainable, head_n in [('linear',20809001,6790433,2049),
                                              ('gated',21594159,7575591,787207)]:

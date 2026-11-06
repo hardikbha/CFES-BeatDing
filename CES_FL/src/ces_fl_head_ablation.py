@@ -987,6 +987,26 @@ def checked_inputs(c, preflight_dir):
     return train, val, receipt
 
 
+def _identity(x): return x
+
+
+class AuxiliaryPlan(Dataset):
+    """Amendment PS-3 (speed only): the epoch's auxiliary() batches, built in DataLoader workers.
+
+    Item k is exactly auxiliary(rows, active, c, first_event + k, epoch); the loader keeps order.
+    """
+    def __init__(self, rows, active, c, first_event, epoch, count):
+        self.rows, self.active, self.c, self.first_event, self.epoch, self.count = rows, active, c, first_event, epoch, count
+    def __len__(self): return self.count
+    def __getitem__(self, k): return auxiliary(self.rows, self.active, self.c, self.first_event + k, self.epoch)
+
+
+def auxiliary_loader(rows, active, c, first_event, epoch, count):
+    workers = 0 if c['workers'] == 0 else max(2, c['workers'] // 2)
+    return DataLoader(AuxiliaryPlan(rows, active, c, first_event, epoch, count), batch_size=None, shuffle=False,
+                      num_workers=workers, collate_fn=_identity, prefetch_factor=4 if workers else None)
+
+
 def image_uint8(x): return (x.detach().cpu().clamp(0, 1).permute(1, 2, 0).numpy() * 255).round().astype(np.uint8)
 
 
@@ -1115,12 +1135,14 @@ def train(c, preflight_dir, out, arm, device, qualification=None, resume=False, 
         threshold_record = calibrate(predict(model, real_rows, c, device), c['target_fpr'])
         model.train(); seen = Counter(); paired = 0; sums = Counter(); aux_events = Counter(); aux_draws = Counter(); steps = 0
         original_pair_groups = defaultdict(Counter); auxiliary_cells = Counter(); support_histogram = Counter()
-        auxiliary_event = epoch * math.ceil(math.ceil(len(rows) / c['batch_size']) / c['aux_every'])
+        events_per_epoch = math.ceil(math.ceil(len(rows) / c['batch_size']) / c['aux_every'])
+        auxiliary_event = epoch * events_per_epoch
+        aux_batches = iter(auxiliary_loader(rows, active, c, auxiliary_event, epoch, events_per_epoch))
         for step, b in enumerate(make_loader(rows, c, epoch, pairs=arm in ('C', 'D'), shuffle=True)):
             aux = None
             if step % c['aux_every'] == 0:
                 # Deterministic auxiliary plan identical across arms. A does not forward it.
-                aux = auxiliary(rows, active, c, auxiliary_event, epoch); auxiliary_event += 1
+                aux = next(aux_batches); auxiliary_event += 1
                 aux_events[f"{aux['axis']}:{aux['operator']}:{aux['strength']}"] += 1
                 aux_draws.update(aux['indices'])
             losses, n_pair = train_step(model, b, aux, weights, c, arm, threshold_record['threshold_logit'], device, epoch)
