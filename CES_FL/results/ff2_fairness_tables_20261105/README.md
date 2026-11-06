@@ -123,3 +123,17 @@ best of BCE, DAG-FDD, DAW-FDD and Ding-style GDA per metric; "ours" = best of CE
 Ours is not best on any F_FPR axis (gender, race, gender×race, age, skin) nor on AUC. Margins of the six wins are small
 (es-AUC +0.02–0.23 pt, F_DP −0.23–0.24 pt) on one seed and one VAL split. CES-FL P, which supplies most wins, is
 original-only BCE, not the CES-FL fairness objective. This is not a state-of-the-art claim.
+
+## 8. L_A added (6 Nov 2026)
+
+L_A, the matched BCE control for L_H-PS (proposal branch `proposal/ff2-lh-padding-safe-20261106`), finished 10/10 epochs,
+`COMPLETED_VERIFIED`, selected epoch 2, 2.55 GPU-hours (seed 17, plain linear head, encoder from FF2 BCE50 epoch 40).
+Its VAL aggregates (same `aggregate_metrics.py` code, reproduces the run's own verified metrics on 5 axes) are in
+`l_a_ps_20261106/`, and it is a new row in [FF2_TABLES_DRAFT.pdf](FF2_TABLES_DRAFT.pdf).
+
+| | AUC | g F_FPR | r F_FPR | g×r F_FPR | age F_FPR | skin F_FPR | FNR | FFHQ real FPR | FairFace real FPR |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| L_A | 99.81 | 4.11 | 17.54 | 37.37 | 9.58 | 14.23 | 0.28 | 67.77 | 3.60 |
+
+L_A behaves like the Xception BCE baseline (g×r F_FPR 40.52), with the same FFHQ-vs-FairFace source gap. L_H-PS is
+pending the human review of its probe.

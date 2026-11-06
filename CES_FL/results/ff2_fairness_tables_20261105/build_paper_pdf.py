@@ -10,13 +10,16 @@ DIAG = Path('/home/sachin.chaudhary/ces_fl_runs/ff2_fairness_tables_20261105/dia
 ROWS = [('Ori (BCE)', 'BCE'), ('DAG-FDD WACV\'24', 'DAG-FDD'), ('DAW-FDD WACV\'24', 'DAW-FDD'), ('PG-FDD CVPR\'24', None),
         ('F3Net (FAD branch)', None), ('CORE', None), ('Ding et al.\\ CVPR\'26 (corrected GDA, our run)', 'Ding corrected GDA'),
         ('CES-FL P: original-only BCE', 'CES-FL P'), ('CES-FL A: weighted BCE', 'CES-FL A'), ('CES-FL B: A + soft error disparity', 'CES-FL B'),
+        ('L\\_A: plain-head BCE (matched control)', 'L_A (plain-head BCE)'),
+        ('\\textbf{L\\_H-PS (ours): hierarchical-real + probe}', None),
         ('\\textbf{CES-FL full (ours, final)}', None)]
 NOTE = {'PG-FDD CVPR\'24': 'not run on FF2', 'F3Net (FAD branch)': 'trained; verification failed', 'CORE': 'trained; verification failed',
-        '\\textbf{CES-FL full (ours, final)}': 'not run on FF2'}
+        '\\textbf{CES-FL full (ours, final)}': 'not run on FF2',
+        '\\textbf{L\\_H-PS (ours): hierarchical-real + probe}': 'awaiting human review of the probe'}
 
-m = pd.read_csv(RUNS / 'METRICS_LONG_7RUNS.csv', keep_default_na=False)
+m = pd.read_csv(RUNS / 'METRICS_LONG_8RUNS.csv', keep_default_na=False)
 m = m[m.threshold_view == 'VAL10']
-g = pd.read_csv(RUNS / 'GROUP_SUPPORT_7RUNS.csv', keep_default_na=False)
+g = pd.read_csv(RUNS / 'GROUP_SUPPORT_8RUNS.csv', keep_default_na=False)
 g = g[g.threshold_view == 'VAL10']
 dg = json.load(open(DIAG))
 
@@ -39,7 +42,7 @@ def table(cols, getters, dirs):
         best.append(min(vals, key=vals.get) if d == 'min' else max(vals, key=vals.get))
     lines = []
     for name, k in ROWS:
-        if name.startswith('CES-FL P') or name.startswith('\\textbf{CES-FL full'):
+        if name.startswith('CES-FL P') or name.startswith('L\\_A'):
             lines.append('\\midrule')
         if k is None:
             lines.append(f'{name} & \\multicolumn{{{len(getters)}}}{{c}}{{\\textcolor{{gray}}{{-- pending ({NOTE[name]}) --}}}} \\\\')
@@ -91,7 +94,7 @@ doc = r'''\documentclass[10pt]{article}
 \usepackage[T1]{fontenc}\usepackage{lmodern}
 \newcommand{\Fpr}{F_{\mathrm{FPR}}}\newcommand{\Fdp}{F_{\mathrm{DP}}}
 \title{FairForge-2 tables: current draft}
-\author{CES-FL project, generated 6 Nov 2026 from verified run aggregates}
+\author{CES-FL project, updated 6 Nov 2026 (L\_A added) from verified run aggregates}
 \date{}
 \begin{document}\maketitle
 \noindent\fcolorbox{orange}{orange!8}{\parbox{0.97\linewidth}{\textbf{Status of the numbers.} All results are on FairForge-2
@@ -99,7 +102,7 @@ doc = r'''\documentclass[10pt]{article}
 9.97\%). TEST stays sealed until the final model, checkpoint and threshold are frozen; the paper version will report TEST
 (87{,}564 images, plus the 16{,}953-image unseen-generator subset) as mean $\pm$ std over 3 seeds. Grey rows are not yet
 available. Bold = best among the filled rows. Age and skin bins are machine estimates (InsightFace age, ITA skin tone),
-not human labels. CES-FL P/A/B are controls of the CES-FL recipe; the full counterfactual CES-FL objective has not run on FF2.}}
+not human labels. CES-FL P/A/B are controls of the CES-FL recipe; L\_A (6 Nov) is the matched BCE control for L\_H-PS (plain linear head, encoder from FF2 BCE50, 10 epochs, selected epoch 2); the full counterfactual CES-FL objective has not run on FF2.}}
 
 \begin{table}[h]\centering
 \caption{FairForge-2 public split: real / fake images with valid group labels, per gender$\times$race group and split, and
