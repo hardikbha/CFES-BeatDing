@@ -82,3 +82,17 @@ ccb57822cde4efdc004b2eb89710e81965e1ffe11cc23ec3b9c2230c6aca2134  SAMEBB/code_r3
 0c2230811fc14505735a81e37c53849a055f0171af0d5280f77b2b963beb4084  SAMEBB/code_r3sbi/Ding_r3sbi/sbi.py
 d9ba7275e62dd28aa17af41b43e732b876307f7189e772083b5313498394c959  SAMEBB/code_r3sbi/Ding_r3sbi/r3sbi_aggregate.py
 ```
+
+## Update: post-hoc variants (Amendment 8)
+- `TABLE3_POSTHOC.md` and `TABLE3_POSTHOC.json` report each arm under SWA, SWA+TTA (hflip), SOUP (uniform average of 3 seeds, BN recomputed on FF++ train) and SOUP+TTA.
+- Two operating points:
+  - op05: Ding protocol, primary.
+  - valFPR1: the 99th percentile of the model's own FF++ val real logits. This is a frozen secondary rule and a deviation from Ding's protocol.
+- The tables show per-seed rows, the mean and mean-row wins. The 'best seed' rows are selected post hoc on test and labelled.
+- First pass covers R0-SWA, R0-SBI, R3-SBI (3 seeds + soup), R7 (s47, s57) and R0-BSBI (s37). The other arms are added as they finish.
+- Code sha256:
+```
+1cba36bb29030930c56bf68c60b23c3a71e6ce7db0a48506cf77819623b7927f  posthoc/posthoc.py
+d16f4982c54e3ddb5fcf7e52cdaa1bd0c16c96531bcd7d3e9e7a8d4d97d85023  posthoc/worker.sh
+81f50993d0f8b11cba4714b6d1b1e4afde82e0d400be6cc0c68ff75ee2dc072b  posthoc/chain.sh
+```
