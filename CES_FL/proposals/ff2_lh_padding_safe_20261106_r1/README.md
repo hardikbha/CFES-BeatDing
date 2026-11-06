@@ -140,3 +140,9 @@ $PY $SRC train --config $R/L_PS.json --preflight $R/preflight --arm D --device c
 - 2026-11-06: user approved this proposal and accepted PS-2 (partial occlusion does not by itself make a crop
   unsuitable). Human review assigned to Ashish. L_A may start on the first free allowed GPU; L_H-PS waits for
   `qualify` to pass on Ashish's signed review.
+- 2026-11-06 ~12:00: first L_A attempt on gpu01 ran at 2.86 steps/s (projected ~6.6 h for 10 epochs, over the 4 h cap)
+  and was stopped by the operator after 0.27 GPU-hours, per section 4. Cause: image loading from network storage on a
+  CPU-saturated node (gpu01 load ~100/104); a read probe gave 271 img/s with 4 readers vs 835 with 16.
+- 2026-11-06: user approved `workers` 4 → 16 (data-loading parallelism only; batches, seed, model, losses and epochs
+  unchanged). Config re-bound (digest `266057b1…`); preflight rebound to the same inventory; preview regenerated with
+  all 88 sheets byte-identical, so the human review kit is unchanged. L_A restarted from scratch (no checkpoint existed).
