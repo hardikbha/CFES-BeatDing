@@ -516,6 +516,27 @@ def load_pixels(row, size):
 def normalize(x): return (x - 0.5) / 0.5
 
 
+PADDING_LEVEL = 6 / 255.  # near-black canonicaliser padding
+PADDING_MARGIN = 6        # px; covers the largest local_warp shift (0.045 * 112 px)
+
+
+def padding_region(x):
+    """Near-black pixels connected to the image border, dilated by PADDING_MARGIN.
+
+    Group-blind and computed from the input pixels only. Empty for images without padding,
+    in which case the intervention output is identical to the pre-amendment recipe.
+    """
+    dark = (x.max(0).values <= PADDING_LEVEL)[None, None].float()
+    seed = torch.zeros_like(dark)
+    seed[..., 0, :] = dark[..., 0, :]; seed[..., -1, :] = dark[..., -1, :]
+    seed[..., :, 0] = dark[..., :, 0]; seed[..., :, -1] = dark[..., :, -1]
+    while True:
+        grown = F.max_pool2d(seed, 3, 1, 1) * dark
+        if torch.equal(grown, seed): break
+        seed = grown
+    return F.max_pool2d(seed, 2 * PADDING_MARGIN + 1, 1, PADDING_MARGIN)[0]
+
+
 def intervention(x, operator, strength, seed):
     """Procedural probes, NOT official SBI or validated real-world forgery synthesis.
 
@@ -537,6 +558,9 @@ def intervention(x, operator, strength, seed):
     rx, ry = rng.uniform(.40, .55), rng.uniform(.50, .65)
     distance = ((xx - cx) / rx).square() + ((yy - cy) / ry).square()
     mask = ((1.0 - distance) / .25).clamp(0, 1)[None]
+    # Amendment PS-1 (6 Nov 2026): never alter or sample artificial padding.
+    pad = padding_region(x)
+    if pad.any(): mask = mask * (1 - pad)
     base_grid = torch.stack((xx, yy), -1)[None]
     # Same identity-resampling path for the sham in both operator families.
     identity = F.grid_sample(common[None], base_grid, mode='bilinear', padding_mode='border', align_corners=True)[0]
@@ -551,7 +575,8 @@ def intervention(x, operator, strength, seed):
     if strength == 0: source = identity.clone()
     sham = (1 - mask) * common + mask * identity
     treated = (1 - mask) * common + mask * source
-    return sham.clamp(0, 1), treated.clamp(0, 1), mask, {'operator': operator, 'strength': strength, 'seed': seed, 'jpeg_quality': quality}
+    return sham.clamp(0, 1), treated.clamp(0, 1), mask, {'operator': operator, 'strength': strength, 'seed': seed, 'jpeg_quality': quality,
+                                                          'recipe': 'padding_safe_v2', 'padding_fraction': float(pad.mean())}
 
 
 class Originals(Dataset):

@@ -26,6 +26,7 @@ PROPOSAL = SRC.parent / 'proposals/plain_head_s17_20261103T101418Z'
 reuse = load('reuse_review', PROPOSAL / 'reuse_review.py')
 replay = load('replay_reference', PROPOSAL / 'replay_reference.py')
 torch.set_num_threads(2)
+LEGACY_SOURCE_SHA256 = '08a9c5e5ca0f6a6f1fb19d86c25ea3e62fcabe45302f5d388252de61a1c4a177'
 
 
 class FeatureInput(nn.Module):
@@ -34,6 +35,22 @@ class FeatureInput(nn.Module):
 
 
 class HeadAblationTests(unittest.TestCase):
+    def test_padding_safe_intervention(self):
+        g = torch.Generator().manual_seed(0)
+        x = torch.rand(3, 224, 224, generator=g) * .8 + .1
+        y = x.clone(); y[:, :, :40] = 0.  # left padding band
+        for op in new.OPERATORS:
+            for strength in new.STRENGTHS:
+                with self.subTest(op=op, strength=strength):
+                    # Unpadded image: identical to the frozen reference implementation.
+                    a = new.intervention(x, op, strength, 5); b = old.intervention(x, op, strength, 5)
+                    for u, v in zip(a[:3], b[:3]): self.assertTrue(torch.equal(u, v))
+                    # Padded image: padding (plus margin) is outside the mask and identical in sham/treated.
+                    s, t, mask, settings = new.intervention(y, op, strength, 5)
+                    self.assertEqual(float(mask[:, :, :40 + new.PADDING_MARGIN].abs().max()), 0.)
+                    self.assertTrue(torch.equal(s[:, :, :40], t[:, :, :40]))
+                    self.assertGreater(settings['padding_fraction'], .17)
+
     def test_exact_production_parameter_counts(self):
         for head, total, trainable, head_n in [('linear',20809001,6790433,2049),
                                              ('gated',21594159,7575591,787207)]:
@@ -93,7 +110,9 @@ class HeadAblationTests(unittest.TestCase):
             return {n.name:ast.dump(n,include_attributes=False) for n in ast.parse(path.read_text()).body
                     if isinstance(n,(ast.FunctionDef,ast.ClassDef))}
         a=functions(SRC/'ces_fl_forensic_response.py');b=functions(SRC/'ces_fl_head_ablation.py')
-        for name in ('Xception','Block','SeparableConv2d','intervention','Originals','auxiliary','hierarchy_layout',
+        # intervention() is intentionally changed by amendment PS-1; its equivalence on unpadded
+        # images is checked numerically in test_padding_safe_intervention.
+        for name in ('Xception','Block','SeparableConv2d','Originals','auxiliary','hierarchy_layout',
                      'hierarchical_real_error','soft_error_disparity','response','sensitivity','response_alignment',
                      'train_step','original_weights','make_loader','build_optimizer','calibrate','metric_report',
                      'bootstrap','components','split_audit','read_manifest','qualify','check_qualification'):
@@ -124,7 +143,8 @@ class HeadAblationTests(unittest.TestCase):
         for reference, filename in [('A','L_A_plain_bce.json'),('H','L_H_plain_hierarchical.json')]:
             old_c=replay.reference_config(reference)
             c=json.loads((PROPOSAL/filename).read_text())
-            expected=dict(old_c,format=new.VERSION,source_sha256=new.sha(new.__file__),head_type='linear')
+            # Historical proposal configs stay bound to the pre-amendment source (PS-1 changed only intervention()).
+            expected=dict(old_c,format=new.VERSION,source_sha256=LEGACY_SOURCE_SHA256,head_type='linear')
             expected.setdefault('error_control','legacy');expected.setdefault('alignment_warmup_epochs',0)
             self.assertEqual(c,expected)
 
