@@ -137,3 +137,13 @@ Its VAL aggregates (same `aggregate_metrics.py` code, reproduces the run's own v
 
 L_A behaves like the Xception BCE baseline (g×r F_FPR 40.52), with the same FFHQ-vs-FairFace source gap. L_H-PS is
 pending the human review of its probe.
+
+## 9. FairForensics-style cross-dataset tables (added 6 Nov 2026)
+
+[CROSSDATASET_TABLES_DRAFT.pdf](CROSSDATASET_TABLES_DRAFT.pdf) uses the layout of FairForensics (arXiv 2608.01661) Table III:
+per test set, F_FPR, F_MEO, F_DP, F_OAE over their 8 sex × age × White/Non-White groups (FairFace-classifier labels) and AUC.
+
+- **Table 1 (filled from existing saved scores):** trained on FF++ (Ding protocol), tested on FF++, Celeb-DF, DFDC, DFD and
+  FairForge-2 TEST; Ding reproductions and the CFES (CLIP) lineage, seed means at each model's FF++-validation threshold.
+- **Table 2 (empty):** the exact FairForensics analogue, trained on FF2 TRAIN and tested on external datasets. No FF2-trained
+  checkpoint has been evaluated there; that one-time inference needs approval.

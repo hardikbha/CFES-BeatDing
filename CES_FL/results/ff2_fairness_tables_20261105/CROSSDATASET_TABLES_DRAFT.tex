@@ -1,0 +1,64 @@
+\documentclass[9pt]{extarticle}
+\usepackage[margin=1.2cm,landscape,a4paper]{geometry}
+\usepackage{booktabs,multirow,graphicx,xcolor,amsmath}
+\usepackage[T1]{fontenc}\usepackage{lmodern}
+\title{Cross-dataset fairness tables in the FairForensics (Table III) format: current status}
+\author{CES-FL project, 6 Nov 2026. Aggregates of existing saved scores; no new inference.}
+\date{}
+\begin{document}\maketitle
+\noindent\fcolorbox{orange}{orange!8}{\parbox{0.98\linewidth}{\textbf{Format.} As FairForensics (arXiv 2608.01661) Table III:
+per test set, $F_{\mathrm{FPR}}$, $F_{\mathrm{MEO}}$, $F_{\mathrm{DP}}$, $F_{\mathrm{OAE}}$ over 8 intersectional demographic
+subgroups (sex $\times$ age 0--29/30+ $\times$ White/Non-White, labelled with the official FairFace classifier, as in their
+protocol) and AUC, all in \%. \textbf{Table 1 (filled):} train on FF++ (Ding protocol), test on FF++ and four unseen datasets
+including FairForge-2. \textbf{Table 2 (empty):} the exact FairForensics analogue, train on FairForge-2 TRAIN and test on
+external datasets; no FF2-trained model has been evaluated there yet. Threshold: each model's FF++-validation rule (A1).
+Video sets use video-majority labels; a group enters FPR terms only with $\geq$3 real videos (persons on FF2). Values are seed
+means (seed count shown). These are descriptive; no significance claims. Bold = best per column among rows shown.}}
+
+\begin{table}[h]\centering
+\caption{Performance comparison under cross-dataset evaluation, trained on FF++ (Ding et al.\ protocol). Detection and
+fairness (\%) on FF++ (in-domain), Celeb-DF, DFDC, DFD and FairForge-2 public TEST (87{,}564 images; every FF2 generator is
+unseen for these models). Lower fairness scores are better; higher AUC is better.}
+\resizebox{\linewidth}{!}{\begin{tabular}{ll c|ccccc|ccccc|ccccc|ccccc|ccccc}\toprule
+Type & Detector & Seeds & \multicolumn{5}{c|}{FF++ (in-domain)} & \multicolumn{5}{c|}{Celeb-DF} & \multicolumn{5}{c|}{DFDC} & \multicolumn{5}{c|}{DFD} & \multicolumn{5}{c}{FairForge-2 TEST} \\
+ & & & $F_{\mathrm{FPR}}\!\downarrow$ & $F_{\mathrm{MEO}}\!\downarrow$ & $F_{\mathrm{DP}}\!\downarrow$ & $F_{\mathrm{OAE}}\!\downarrow$ & AUC$\uparrow$ & $F_{\mathrm{FPR}}\!\downarrow$ & $F_{\mathrm{MEO}}\!\downarrow$ & $F_{\mathrm{DP}}\!\downarrow$ & $F_{\mathrm{OAE}}\!\downarrow$ & AUC$\uparrow$ & $F_{\mathrm{FPR}}\!\downarrow$ & $F_{\mathrm{MEO}}\!\downarrow$ & $F_{\mathrm{DP}}\!\downarrow$ & $F_{\mathrm{OAE}}\!\downarrow$ & AUC$\uparrow$ & $F_{\mathrm{FPR}}\!\downarrow$ & $F_{\mathrm{MEO}}\!\downarrow$ & $F_{\mathrm{DP}}\!\downarrow$ & $F_{\mathrm{OAE}}\!\downarrow$ & AUC$\uparrow$ & $F_{\mathrm{FPR}}\!\downarrow$ & $F_{\mathrm{MEO}}\!\downarrow$ & $F_{\mathrm{DP}}\!\downarrow$ & $F_{\mathrm{OAE}}\!\downarrow$ & AUC$\uparrow$ \\\midrule
+\multirow{2}{*}{\shortstack[l]{Fair-based\\Xception}} & Ding et al.\ CVPR'26 Ori (our repro.) & 3 & 18.54 & 34.74 & 40.93 & 18.97 & 94.11 & 56.58 & 46.57 & 36.13 & 20.68 & 67.14 & 40.88 & 28.49 & 13.90 & 27.69 & 54.68 & 51.10 & 47.64 & 25.37 & 29.93 & 66.80 & 44.02 & 19.56 & 14.48 & 12.46 & 37.90 \\
+ & Ding et al.\ CVPR'26 SFD+GDA (our repro.) & 1 & \textbf{7.60} & 36.63 & 45.62 & 17.08 & \textbf{97.44} & 59.36 & 57.33 & 46.00 & 21.37 & 71.22 & 18.20 & \textbf{19.20} & \textbf{6.15} & 30.07 & 56.05 & 51.40 & 43.37 & 24.45 & 28.75 & 72.54 & 41.75 & 18.12 & 13.53 & 11.68 & 36.36 \\
+\midrule
+\multirow{7}{*}{\shortstack[l]{Ours (CFES)\\CLIP ViT-L/14}} & Detection-only control & 3 & 46.53 & 30.34 & 27.52 & 19.25 & 91.55 & 84.17 & 61.98 & 48.99 & 24.39 & 81.41 & 42.66 & 30.30 & 16.51 & \textbf{17.14} & 71.75 & 34.25 & 37.23 & 17.55 & 16.24 & 83.68 & 36.02 & 17.60 & 15.62 & 15.29 & 62.71 \\
+ & CFES A (rev4) & 3 & 50.35 & 30.78 & \textbf{24.82} & 22.27 & 92.99 & 85.81 & 58.55 & 45.20 & 26.91 & 85.66 & 37.85 & 30.83 & 15.55 & 17.44 & 73.22 & 37.60 & \textbf{33.22} & 20.19 & 14.79 & 86.97 & 24.56 & 15.58 & 14.68 & 14.62 & 66.64 \\
+ & arm C & 3 & 30.37 & 32.93 & 32.92 & 23.66 & 95.80 & 36.95 & 38.56 & 40.13 & 21.08 & \textbf{89.06} & 21.26 & 37.18 & 9.86 & 21.82 & 75.09 & 33.06 & 34.79 & 18.84 & 10.47 & \textbf{90.68} & 24.99 & 19.08 & 17.94 & 17.93 & 69.90 \\
+ & arm E w1 & 1 & 13.32 & 51.48 & 50.88 & 28.81 & 97.03 & \textbf{28.12} & 49.05 & 44.29 & 28.82 & 87.56 & \textbf{5.99} & 30.05 & 8.73 & 26.35 & \textbf{79.19} & \textbf{9.20} & 66.63 & 35.05 & 25.20 & 89.66 & \textbf{6.78} & \textbf{13.44} & 12.33 & 12.91 & 76.92 \\
+ & arm E w3 & 1 & 8.68 & 52.99 & 52.52 & 28.20 & 97.06 & 30.96 & 37.37 & 40.13 & 22.69 & 86.87 & 6.08 & 29.76 & 7.32 & 27.13 & 77.92 & 10.12 & 65.39 & 33.14 & 19.55 & 89.72 & 7.64 & 14.38 & 13.16 & 14.11 & 78.46 \\
+ & arm E w10 & 1 & 10.66 & 53.62 & 50.19 & 29.38 & 96.67 & 35.69 & \textbf{22.86} & \textbf{19.25} & \textbf{13.35} & 84.89 & 8.12 & 33.88 & 8.55 & 26.80 & 76.41 & 14.42 & 64.07 & 25.98 & \textbf{10.10} & 90.05 & 16.11 & 19.07 & 17.59 & 18.36 & \textbf{79.22} \\
+ & \textbf{CFES-D (final)} & 3 & 24.68 & 37.84 & 37.89 & 23.86 & 95.61 & 32.69 & 33.85 & 33.50 & 20.93 & 87.31 & 14.92 & 33.06 & 8.71 & 21.80 & 76.92 & 50.02 & 45.83 & 19.88 & 16.60 & 89.90 & 25.14 & 18.26 & 13.66 & 13.03 & 70.99 \\
+\midrule
+\multirow{1}{*}{\shortstack[l]{Ours (CFES)\\ResNet-50}} & CFES-ResNet & 3 & 36.78 & \textbf{25.92} & 34.14 & \textbf{15.95} & 92.52 & 53.49 & 40.73 & 30.75 & 19.83 & 71.38 & 35.16 & 23.07 & 13.51 & 21.49 & 58.66 & 51.72 & 45.41 & \textbf{16.77} & 22.21 & 71.40 & 37.68 & 17.62 & \textbf{11.41} & \textbf{10.33} & 38.48 \\
+\bottomrule\end{tabular}}\end{table}
+
+\noindent\textbf{Reading Table 1.} On the FairForge-2 column the arm E variants reach 77--79 AUC (one seed each)
+and CFES-D 70.99 (3 seeds), against 36--38 for the Ding reproductions. FairForge-2 is hard for every FF++-trained
+detector, and Ding's method transfers worst. These rows are the older CFES (CLIP) lineage; the current CES-FL L\_A/L\_H
+(Xception, plain head) have Ding-format FF++ results but have not yet been rescored on these 8 groups (CPU only, from saved scores).
+
+\begin{table}[h]\centering
+\caption{The exact FairForensics analogue: train on FairForge-2 public TRAIN (218{,}266 images), test on unseen datasets.
+\textbf{Status: not evaluated.} Checkpoints marked ``done (VAL)'' exist and are verified on FF2 validation; none has been run on
+the external test sets. That one-time evaluation (inference only, frozen checkpoints and thresholds) needs approval.}
+\resizebox{\linewidth}{!}{\begin{tabular}{ll|ccccc|ccccc|ccccc|ccccc}\toprule
+Detector (trained on FF2) & FF2 checkpoint & \multicolumn{5}{c|}{FF++} & \multicolumn{5}{c|}{Celeb-DF} & \multicolumn{5}{c|}{DFDC} & \multicolumn{5}{c}{DFD} \\
+ & & $F_{\mathrm{FPR}}$ & $F_{\mathrm{MEO}}$ & $F_{\mathrm{DP}}$ & $F_{\mathrm{OAE}}$ & AUC & $F_{\mathrm{FPR}}$ & $F_{\mathrm{MEO}}$ & $F_{\mathrm{DP}}$ & $F_{\mathrm{OAE}}$ & AUC & $F_{\mathrm{FPR}}$ & $F_{\mathrm{MEO}}$ & $F_{\mathrm{DP}}$ & $F_{\mathrm{OAE}}$ & AUC & $F_{\mathrm{FPR}}$ & $F_{\mathrm{MEO}}$ & $F_{\mathrm{DP}}$ & $F_{\mathrm{OAE}}$ & AUC \\\midrule
+Ori (BCE) & done (VAL) & \multicolumn{20}{c}{\textcolor{gray}{-- not evaluated --}} \\
+DAG-FDD & done (VAL) & \multicolumn{20}{c}{\textcolor{gray}{-- not evaluated --}} \\
+DAW-FDD & done (VAL) & \multicolumn{20}{c}{\textcolor{gray}{-- not evaluated --}} \\
+PG-FDD & not trained & \multicolumn{20}{c}{\textcolor{gray}{-- not evaluated --}} \\
+F3Net (FAD) & trained; verification failed & \multicolumn{20}{c}{\textcolor{gray}{-- not evaluated --}} \\
+CORE & trained; verification failed & \multicolumn{20}{c}{\textcolor{gray}{-- not evaluated --}} \\
+Ding et al.\ (corrected GDA, our run) & done (VAL) & \multicolumn{20}{c}{\textcolor{gray}{-- not evaluated --}} \\
+CES-FL P & done (VAL) & \multicolumn{20}{c}{\textcolor{gray}{-- not evaluated --}} \\
+CES-FL A & done (VAL) & \multicolumn{20}{c}{\textcolor{gray}{-- not evaluated --}} \\
+CES-FL B & done (VAL) & \multicolumn{20}{c}{\textcolor{gray}{-- not evaluated --}} \\
+L\_A (matched control) & done (VAL) & \multicolumn{20}{c}{\textcolor{gray}{-- not evaluated --}} \\
+\textbf{L\_H-PS (ours)} & awaiting probe review & \multicolumn{20}{c}{\textcolor{gray}{-- not evaluated --}} \\
+\bottomrule\end{tabular}}\end{table}
+\end{document}
