@@ -1,6 +1,6 @@
 # Proposal: remove the source-compression shortcut from FairForge-2 (FF2-H) and re-run the FF2 tables
 
-**Date:** 6 Nov 2026 · **Status:** APPROVED by the user on 7 Nov 2026 (Phases 0–3; L_H-PS waits for FF2-H; Phase 4 budget decided after G1–G3). TEST not read.
+**Date:** 6 Nov 2026 · **Status:** STOPPED by the user on 7 Nov 2026 after gate G1 failed (was APPROVED on 7 Nov 2026 (Phases 0–3; L_H-PS waits for FF2-H; Phase 4 budget decided after G1–G3)). TEST not read.
 Evidence: `CES_FL/results/ff2_fairness_tables_20261105/source_diagnosis_20261106/REPORT.md` (results branch).
 
 ## 1. Problem
@@ -115,3 +115,6 @@ every row trained for 10 epochs from the same FF2-H BCE warm start, which is clo
   (`phase0_2_results/`). **Gate G1 FAILED**: within-source real-vs-fake probe VAL AUC FFHQ 0.702 [0.667, 0.734], FairFace
   0.640 [0.628, 0.652] (threshold ≤ 0.60; v1.0 crops: 0.823 / 0.858). Work stopped as pre-declared; R2 not run; awaiting the
   user's decision.
+- 2026-11-07: user decided to stop the harmonisation work after the G1 failure and focus on results with the existing FF2
+  (v1.0) data. FF2-H images and manifests are kept on disk, unused. Phase 3 not run; no gate was amended. FF2 v1.0 results
+  must disclose the source-compression shortcut (see the diagnosis report).
