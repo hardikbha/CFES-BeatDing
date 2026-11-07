@@ -1,0 +1,55 @@
+{
+ "ffhq|0|unchanged": {
+  "n": 242,
+  "flag_fake_rate": 0.6776859504132231
+ },
+ "ffhq|0|q75_420_s1.158": {
+  "n": 242,
+  "flag_fake_rate": 0.0
+ },
+ "ffhq|0|q75_444_s1.158": {
+  "n": 242,
+  "flag_fake_rate": 1.0
+ },
+ "ffhq|0|q95_420_s1.158": {
+  "n": 242,
+  "flag_fake_rate": 1.0
+ },
+ "ffhq|1|unchanged": {
+  "n": 300,
+  "flag_fake_rate": 0.9933333333333333
+ },
+ "ffhq|1|q75_420_s1.158": {
+  "n": 300,
+  "flag_fake_rate": 0.006666666666666667
+ },
+ "ffhq|1|q75_444_s1.158": {
+  "n": 300,
+  "flag_fake_rate": 1.0
+ },
+ "ffhq|1|q95_420_s1.158": {
+  "n": 300,
+  "flag_fake_rate": 1.0
+ },
+ "img|0|unchanged": {
+  "n": 300,
+  "flag_fake_rate": 0.02666666666666667
+ },
+ "img|0|q75_420_s1.158": {
+  "n": 300,
+  "flag_fake_rate": 0.0
+ },
+ "img|0|q75_444_s1.158": {
+  "n": 300,
+  "flag_fake_rate": 0.97
+ },
+ "img|0|q95_420_s1.158": {
+  "n": 300,
+  "flag_fake_rate": 0.8
+ },
+ "gate_QJ": {
+  "rule": "FFHQ real flag rate <= 0.20 under crop-level q75 4:2:0",
+  "value": 0.0,
+  "pass": true
+ }
+}
