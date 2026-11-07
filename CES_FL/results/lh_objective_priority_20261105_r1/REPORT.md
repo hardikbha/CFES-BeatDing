@@ -31,10 +31,23 @@ B0’s exact objective is original-image fairness only; its fairness point chang
 
 B0 and C0 completed three epochs and passed selected-checkpoint validation replay. Both ran sequentially on gpu02 H100 UUID `GPU-65f63cc5-9366-5c2d-196a-6e7a0a62c1e8`; B0 consumed 0.2335 GPU-hours and C0 0.2615. CUDA checks consumed 0.0500 GPU-hours total. The B0/C0 cohort used 0.5450 of its 3 GPU-hour cap; no reservation remains. Selected checkpoint hashes are recorded in the aggregate JSON. The original failed B0 operator attempt is preserved and used zero GPU time.
 
-## Remaining work at this publication
+## Initial status before the later budget extension
 
 - **Complete-classifier P50 audit:** CUDA smoke passed, but the zero-update comparison against complete P50 and A0/B0/C0/H0 did not finish within the separate 0.25 GPU-hour cap. The private process was stopped at the cap before it wrote an audit result; no score-distribution, nuisance-response or gradient comparison is claimed. The runner recorded 0.250314 GPU-hours, 1.13 seconds over the nominal cap during process teardown. This remains a blocker; no retry is authorized under the exhausted cap.
 - **Existing checkpoint metrics (partial attribution only):** the verified P50 checkpoint receipt and A0/B0/C0/H0 validation receipts use the same FF++ VAL hash. P50’s stored full-classifier metrics are AUC 96.5348%, FPR 9.9951%, FNR 9.9042%; A0 is 96.6217%, 9.9951%, 9.6036%. These are pre-existing saved metrics, not a completed new audit. They do not isolate the encoder from the changed heads/training recipe, and no paired P50 score cache exists for uncertainty or class-score-distribution analysis. The aggregate group metrics are in `PRETRAINED_CLASSIFIER_EXISTING_METRICS.json`.
 - **TRAIN-only source generalization:** the deterministic Deepfakes-held-out fold is prepared and image-decoded. Fit has 3,745 rows/160 recorded components; development has 12,504 held-out-family fakes and only 269 reals from 41 components. Several demographic real cells are sparse or empty. Both real-input CUDA smokes passed on separate gpu02 H100s; the fresh seed-17 initialization hashes match. However, measured profiles project **10.5848 GPU-hours for S0 and 10.4965 for S1** before a safety margin (21.0813 aggregate GPU-hours), exceeding the fixed 5 GPU-hour cohort cap. Training was not started; no truncated schedule, smaller batch, or extra budget was substituted. The result can only support a detection-generalization experiment if a new budget/proposal is authorized.
 
 The separate proposal, exact protocol and scripts are in [`source_generalization_20261105_r1`](../../proposals/source_generalization_20261105_r1/README.md). The complete-classifier audit script and runbook are in [`lh_objective_priority_20261105_r1`](../../proposals/lh_objective_priority_20261105_r1/PRETRAINED_CLASSIFIER_AUDIT.md). Row-level scores, fold manifests and checkpoints remain private.
+
+## Later update: user-authorized source-generalization cap extension
+
+After the initial five-hour cap was blocked by a cold one-step profile, the user authorized a higher GPU budget. A versioned addendum raised the source-generalization cap to 23.8 aggregate GPU-hours without changing either scientific configuration. Both full schedules then completed on two gpu02 H100s and passed validation replay. Actual use including the earlier smokes was 0.8849 GPU-hours; the original one-step projection was overly pessimistic after the first optimizer-state initialization.
+
+| Arm | Epochs | Selected development epoch | Development AUC | FPR | FNR | G×R F_FPR* | GPU-hours |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| S0 original-only BCE | 50/50 | 45 | 86.6916% | 9.6654% | 34.5649% | 0.3251 | 0.3840 |
+| S1 nuisance bank on both labels | 50/50 | 35 | 82.5470% | 9.6654% | 47.4648% | 0.2065 | 0.4758 |
+
+*The development set contains 12,504 Deepfakes fakes but only 269 real images from 41 recorded components. Only three gender×race real/fake groups meet the minimum support rule; these F_FPR values are descriptive and do not support a fairness claim. S1 loses 4.1446 AUC percentage points and increases FNR by 12.90 points relative to S0 on this limited held-out-family development fold. This is a source-generalization diagnostic, not a Ding Table1/2/3 test result.
+
+Full aggregate metrics, group support, transformation exposure and checkpoint hashes are in [`SOURCEGEN_EXTENSION_RESULTS.json`](SOURCEGEN_EXTENSION_RESULTS.json). No TEST manifest or score was read.
