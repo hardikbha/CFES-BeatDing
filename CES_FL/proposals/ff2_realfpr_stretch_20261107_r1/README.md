@@ -35,3 +35,23 @@ Cap 4 GPU-hours per run (epoch-boundary stop). FF2 ledger before launch: ~54 of 
 - **Ablation reading:** effect of the loss = S vs L_A; of JPEG = J vs L_A; combined = SJ; encoder = SJF vs SJ. All other FF2
   table metrics, source FPRs and per-family FNRs are reported either way.
 - **Expectation (Codex):** beating 12.44 needs ~67% less disparity than L_A; credible stretch, not an expected win.
+
+## Results (8 Nov 2026; VAL, seed 17)
+
+All four runs completed 10/10 epochs (4.88 GPU-hours in total; FF2 ledger now 58.58 / 72). Per-epoch VAL metrics:
+`EPOCH_HISTORY_VAL.json`.
+
+| Run | Feasible epochs | Selected (rule) | AUC | FNR | g×r F_FPR | Lowest F_FPR in any epoch (AUC / FNR) |
+|---|---:|---|---:|---:|---:|---|
+| L_A (rule re-applied to its history) | 10/10 | epoch 2 | 99.81 | 0.28% | 37.37 | 37.37 |
+| **S** (loss only) | 10/10 | epoch 2 | 99.80 | 0.29% | **34.12** | 34.12 |
+| J (JPEG only) | 0/10 | none | — | — | — | 21.47 (99.28 / 1.07%) |
+| SJ (loss + JPEG) | 0/10 | none | — | — | — | 20.92 (99.27 / 1.11%) |
+| SJF (SJ, full encoder) | 0/10 | none | — | — | — | 27.82 (99.30 / 1.25%) |
+| Ding-style GDA (reference) | — | — | 99.06 | 1.07% | 12.44 | — |
+
+**Pre-declared reading: screening target not met.** No run reached g×r F_FPR < 12.44 under the AUC ≥ 99.5 / FNR ≤ 0.5651%
+constraints. The real-only loss alone (S) lowers F_FPR by 3.25 points against L_A with unchanged detection, and leaves the
+source gap (FFHQ real FPR 64.5% vs FairFace 4.0%). JPEG augmentation attacks the shortcut (F_FPR 21–24) but costs detection
+(AUC 99.1–99.3, FNR 1.1–1.5%), the same kind of trade-off Ding-style GDA makes, while still staying above Ding's 12.44.
+Training the full encoder (SJF) recovered some AUC (up to 99.59) but never brought FNR under 0.5651% and lost fairness.
