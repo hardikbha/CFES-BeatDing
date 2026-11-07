@@ -155,3 +155,11 @@ per test set, F_FPR, F_MEO, F_DP, F_OAE over their 8 sex × age × White/Non-Whi
 lossless. Re-making the 242 FFHQ VAL reals with FairFace-like geometry plus a q75 4:2:0 round-trip drops L_A's flag rate from
 67.8% to 2.1%, and the same treatment lets 94% of FFHQ-sourced fakes pass. Every FF2 fairness number above partly measures this
 shortcut. The dataset needs a common compression history across sources before release and retraining.
+
+## 11. L_A/L_H added to the cross-dataset table (7 Nov 2026)
+
+CES-FL L_A and L_H (Xception plain head, FF++-trained, seed 17) are now rows of Table 1 in
+[CROSSDATASET_TABLES_DRAFT.pdf](CROSSDATASET_TABLES_DRAFT.pdf), rescored on the FairForensics 8 groups from their saved 3 Nov
+scores (no inference; 100% label join; AUCs reproduce the published ones within 0.0005). A1 thresholds re-derived on FF++
+validation only (L_A 18.314, L_H 5.077). No FairForge-2 TEST scores exist for them. Single seed vs 3-seed means elsewhere;
+at A1 their DFDC TPR is ~10%. Details: `lh_ids8_rescore/`.

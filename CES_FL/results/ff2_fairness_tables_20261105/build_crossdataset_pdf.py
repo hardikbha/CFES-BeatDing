@@ -7,6 +7,9 @@ OUT = Path(sys.argv[1]); OUT.mkdir(parents=True, exist_ok=True)
 D = Path('/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/DEMO_AXES/results/fairforensics_ids')
 s = pd.read_csv(D / 'ids8_seedmean.csv', keep_default_na=False)
 s = s[(s.threshold == 'A1') & (s.labels == 'main') & (s.rule == 'min_support')]
+lh = pd.read_csv('/home/sachin.chaudhary/ces_fl_runs/ff2_fairness_tables_20261105/lh_ids8_rescore/IDS8_LH_ROWS.csv', keep_default_na=False)
+lh = lh[lh.threshold == 'A1'].assign(model=lambda x: x.arm)
+s = pd.concat([s, lh[[c for c in lh.columns if c in s.columns]]], ignore_index=True)
 SETS = [('ffpp_test', 'FF++ (in-domain)'), ('celebdf', 'Celeb-DF'), ('dfdc', 'DFDC'), ('dfd', 'DFD'), ('ff2_test', 'FairForge-2 TEST')]
 MET = [('F_FPR', 'min'), ('F_MEO', 'min'), ('F_DP', 'min'), ('F_OAE', 'min'), ('AUC', 'max')]
 GROUPS = [('Fair-based', 'Xception', [('Ding et al.\\ CVPR\'26 Ori (our repro.)', 'Ding Ori repro (SFD)'),
@@ -14,7 +17,8 @@ GROUPS = [('Fair-based', 'Xception', [('Ding et al.\\ CVPR\'26 Ori (our repro.)'
           ('Ours (CFES)', 'CLIP ViT-L/14', [('Detection-only control', 'control (det-only)'), ('CFES A (rev4)', 'CFES A (rev4)'),
                                             ('arm C', 'arm C'), ('arm E w1', 'arm E w1'), ('arm E w3', 'arm E w3'),
                                             ('arm E w10', 'arm E w10'), ('\\textbf{CFES-D (final)}', 'CFES-D')]),
-          ('Ours (CFES)', 'ResNet-50', [('CFES-ResNet', 'CFES-ResNet')])]
+          ('Ours (CFES)', 'ResNet-50', [('CFES-ResNet', 'CFES-ResNet')]),
+          ('Ours (CES-FL)', 'Xception', [('L\\_A (plain head, BCE)', 'L_A'), ('\\textbf{L\\_H (plain head, ours)}', 'L_H')])]
 key = lambda m, st: s[(s.model == m) & (s.set == st)]
 best = {}
 for st, _ in SETS:
@@ -28,6 +32,8 @@ for gname, bb, rows in GROUPS:
         cells = []
         for st, _ in SETS:
             r = key(m, st)
+            if not len(r):
+                cells.append('\\multicolumn{5}{c|}{\\textcolor{gray}{-- not evaluated --}}' if st != SETS[-1][0] else '\\multicolumn{5}{c}{\\textcolor{gray}{-- not evaluated --}}'); continue
             for mk, _ in MET:
                 v = float(r.iloc[0][mk]); t = f'{v:.2f}'
                 cells.append(f'\\textbf{{{t}}}' if f'{v:.2f}' == f'{best[(st, mk)]:.2f}' else t)
@@ -76,8 +82,9 @@ Type & Detector & Seeds & ''' + head + r''' \\
 
 \noindent\textbf{Reading Table 1.} On the FairForge-2 column the arm E variants reach 77--79 AUC (one seed each)
 and CFES-D 70.99 (3 seeds), against 36--38 for the Ding reproductions. FairForge-2 is hard for every FF++-trained
-detector, and Ding's method transfers worst. These rows are the older CFES (CLIP) lineage; the current CES-FL L\_A/L\_H
-(Xception, plain head) have Ding-format FF++ results but have not yet been rescored on these 8 groups (CPU only, from saved scores).
+detector, and Ding's method transfers worst. The CES-FL L\_A/L\_H rows (Xception, plain head, seed 17) were rescored on these 8 groups from their saved 3 Nov
+scores (no new inference), with the A1 threshold re-derived on FF++ validation; they have no FairForge-2 TEST scores. At A1
+their DFDC TPR is only about 10\%, so the low DFDC fairness gaps there reflect an almost-never-fake operating point.
 
 \begin{table}[h]\centering
 \caption{The exact FairForensics analogue: train on FairForge-2 public TRAIN (218{,}266 images), test on unseen datasets.

@@ -1,0 +1,80 @@
+IDS8 rows for CES-FL L_A / L_H (Xception plain head, FF++-trained, seed 17). 7 Nov 2026.
+=====================================================================================
+
+WHAT
+  Two models added to the FairForensics-style 8-IDS cross-dataset table
+  (DEMO_AXES/results/fairforensics_ids/ids8_seedmean.csv, labels==main, rule==min_support).
+  Deliverable: IDS8_LH_ROWS.csv (aggregates only; one row per arm x set x threshold).
+  Code: compute_ids8_lh.py (this dir). Check log: checks.json (this dir).
+  No inference, no training, no GPU. Only already-saved per-image logits were re-scored, on gpu01 CPU.
+  Nothing outside this directory was written.
+
+INPUTS
+  Test logits: ces_fl_runs/lh_tables_s17_20261103T133000Z/inference/{L_A,L_H}/{ffpp,dfdc,celebdf,dfd}/scores_PRIVATE.json
+    These come from the locked one-time evaluation on 3 Nov.
+    Checkpoint sha256: L_A aee9670c..., L_H 6ef2caad...
+  Validation logits (used for threshold (c) only):
+    ces_fl_runs/plain_head_s17_20261103T101418Z/{L_A,L_H}/validation_scores_PRIVATE.json
+    split=validation, test_read=False. Same checkpoint sha as the test files; LOCKED_PLAN.json records the cache sha256.
+  Labels and metrics: imported unchanged from DEMO_AXES/code/fairforensics_ids.py.
+    - load_labels(set) uses labels_fairface/<set>.csv joined to the DINGREPRO_LIN protocol CSV.
+    - "main" = video-majority FairFace IDS. Groups are sex x age 0-29/30+ x White/Non-White.
+    - ids8_metrics(...) with min_support: >=3 real / >=3 fake videos per group.
+  A1 rule: imported unchanged from rescore.py (RS.val_curves, RS.pick_a1, which come from CFES/scripts/fair_oppoint.py).
+
+METHOD
+  1. Join.
+     - In every set the score-file image paths are byte-identical to load_labels' img_path and in the same row order
+       (DFDC includes its 1,476 duplicate protocol rows, 22,857 rows in total).
+     - Coverage is 100% in all 8 arm x set files, and label vectors are identical.
+     - Rows: FF++ 25,401; DFDC 22,857; Celeb-DF 28,458; DFD 9,385.
+     - No label was inferred or guessed.
+  2. Thresholds (decision: fake iff logit >= t; none chosen on test):
+     (a) valreal10: the checkpoint's stored FF++ val-real 10%-FPR threshold.
+         L_A -1.53666, L_H -2.55037. Re-derived on val: FPR 409/4092 = 9.995% for both.
+     (b) t05: logit >= 0.
+     (c) A1: the 22-Oct rule re-run on each checkpoint's OWN FF++ validation logits with Xu labels
+         (minimise intersectional 8-group F_FPR subject to val TPR >= 80% and val FPR <= 20%; the grid is every distinct
+         val logit).
+         - Xu group per val image: the `group` field of the registry val npz (CFES runs_rev4 clip_D_w0.3_s7), joined on
+           img_path. Coverage 100%.
+         - That field is identical in a second registry val npz (arm C s7). It agrees 100% with the Ding/Lin
+           gender_race string stored in the L_A/L_H validation rows.
+         - Results: L_A A1 = 18.31376 (val FPR 0.66%, TPR 80.23%, Xu F_FPR 5.35).
+           L_H A1 = 5.07664 (val FPR 0.42%, TPR 80.14%, Xu F_FPR 3.99).
+         - Code check: the same imported rule re-derives arm C s7's A1 as 20.97706, against 20.9771 in
+           thresholds_used.csv.
+         - In the existing table's terms, a1_src = "rule re-run on saved FF++ val logits (Xu labels)".
+  3. Metrics: ids8_metrics(y, z, t, ids_main, video, person).
+     - Columns: AUC, FPR, TPR, F_FPR, F_MEO, F_DP, F_OAE, es_AUC, fpr_gap, tpr_gap, worst_fpr, worst_tpr and eligibility
+       counts.
+     - Bootstrap 95% intervals for F_FPR, fpr_gap and tpr_gap use the same procedure as fairforensics_ids.py main():
+       video-cluster multinomial, B = 1000, rng 2026, the same set order, so the cluster weights are the same.
+     - The intervals are descriptive only.
+
+CHECKS
+  - AUC against the published Ding-format AUCs: every |diff| <= 0.00045 (tolerance 0.01). PASS for all 8.
+    Recomputed AUC (L_A / L_H):
+      FF++     98.471 / 98.489
+      DFDC     61.769 / 60.456
+      Celeb-DF 70.747 / 71.404
+      DFD      81.156 / 80.879
+  - Eligible group counts match the other table rows:
+      FF++ 8/8/8, DFDC 8/8/8, Celeb-DF 7 FPR / 5 TPR / 4 both, DFD 6 / 7 / 6.
+  - The score files' own `ids8` field equals the FairFace video IDS on FF++ (100%). It is "unknown" on the
+    cross-dataset sets, so the FairFace label tables are used everywhere.
+
+CAVEATS
+  - Single seed (17). The other rows are 3-seed means (n_seeds = 1 here).
+  - Threshold (a) is not the table's A1 rule. Compare like with like: use the A1 rows against the table's A1 rows.
+    At t05 and valreal10 these models run at a high FPR cross-dataset (Celeb-DF 61-65%, DFD 46-50% for L_A), so the
+    gaps reflect that operating point.
+  - A1 is very conservative for these checkpoints (val FPR < 1%, set by the TPR >= 80% floor).
+    - FF++ test F_FPR is low (5.4 / 3.0), but F_MEO and F_DP are high (47-49), because group TPRs spread at that
+      operating point.
+    - DFDC TPR collapses to about 10%, so its low F_FPR / F_DP are near a degenerate operating point.
+  - Celeb-DF (4 groups in both terms) and DFD (0-8 videos per group) rest on very few identities. Bootstrap intervals
+    are wide: the DFD F_FPR upper bound is above 90 at every threshold.
+  - FairFace labels are machine estimates; see the README section 7 caveats. These are "FairForensics-style", not
+    FairForensics' labels.
+  - The test logits were only scored. All three thresholds were fixed before the test logits were read.

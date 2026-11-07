@@ -23,7 +23,7 @@ unseen for these models). Lower fairness scores are better; higher AUC is better
 Type & Detector & Seeds & \multicolumn{5}{c|}{FF++ (in-domain)} & \multicolumn{5}{c|}{Celeb-DF} & \multicolumn{5}{c|}{DFDC} & \multicolumn{5}{c|}{DFD} & \multicolumn{5}{c}{FairForge-2 TEST} \\
  & & & $F_{\mathrm{FPR}}\!\downarrow$ & $F_{\mathrm{MEO}}\!\downarrow$ & $F_{\mathrm{DP}}\!\downarrow$ & $F_{\mathrm{OAE}}\!\downarrow$ & AUC$\uparrow$ & $F_{\mathrm{FPR}}\!\downarrow$ & $F_{\mathrm{MEO}}\!\downarrow$ & $F_{\mathrm{DP}}\!\downarrow$ & $F_{\mathrm{OAE}}\!\downarrow$ & AUC$\uparrow$ & $F_{\mathrm{FPR}}\!\downarrow$ & $F_{\mathrm{MEO}}\!\downarrow$ & $F_{\mathrm{DP}}\!\downarrow$ & $F_{\mathrm{OAE}}\!\downarrow$ & AUC$\uparrow$ & $F_{\mathrm{FPR}}\!\downarrow$ & $F_{\mathrm{MEO}}\!\downarrow$ & $F_{\mathrm{DP}}\!\downarrow$ & $F_{\mathrm{OAE}}\!\downarrow$ & AUC$\uparrow$ & $F_{\mathrm{FPR}}\!\downarrow$ & $F_{\mathrm{MEO}}\!\downarrow$ & $F_{\mathrm{DP}}\!\downarrow$ & $F_{\mathrm{OAE}}\!\downarrow$ & AUC$\uparrow$ \\\midrule
 \multirow{2}{*}{\shortstack[l]{Fair-based\\Xception}} & Ding et al.\ CVPR'26 Ori (our repro.) & 3 & 18.54 & 34.74 & 40.93 & 18.97 & 94.11 & 56.58 & 46.57 & 36.13 & 20.68 & 67.14 & 40.88 & 28.49 & 13.90 & 27.69 & 54.68 & 51.10 & 47.64 & 25.37 & 29.93 & 66.80 & 44.02 & 19.56 & 14.48 & 12.46 & 37.90 \\
- & Ding et al.\ CVPR'26 SFD+GDA (our repro.) & 1 & \textbf{7.60} & 36.63 & 45.62 & 17.08 & \textbf{97.44} & 59.36 & 57.33 & 46.00 & 21.37 & 71.22 & 18.20 & \textbf{19.20} & \textbf{6.15} & 30.07 & 56.05 & 51.40 & 43.37 & 24.45 & 28.75 & 72.54 & 41.75 & 18.12 & 13.53 & 11.68 & 36.36 \\
+ & Ding et al.\ CVPR'26 SFD+GDA (our repro.) & 1 & 7.60 & 36.63 & 45.62 & 17.08 & 97.44 & 59.36 & 57.33 & 46.00 & 21.37 & 71.22 & 18.20 & 19.20 & 6.15 & 30.07 & 56.05 & 51.40 & 43.37 & 24.45 & 28.75 & 72.54 & 41.75 & 18.12 & 13.53 & 11.68 & 36.36 \\
 \midrule
 \multirow{7}{*}{\shortstack[l]{Ours (CFES)\\CLIP ViT-L/14}} & Detection-only control & 3 & 46.53 & 30.34 & 27.52 & 19.25 & 91.55 & 84.17 & 61.98 & 48.99 & 24.39 & 81.41 & 42.66 & 30.30 & 16.51 & \textbf{17.14} & 71.75 & 34.25 & 37.23 & 17.55 & 16.24 & 83.68 & 36.02 & 17.60 & 15.62 & 15.29 & 62.71 \\
  & CFES A (rev4) & 3 & 50.35 & 30.78 & \textbf{24.82} & 22.27 & 92.99 & 85.81 & 58.55 & 45.20 & 26.91 & 85.66 & 37.85 & 30.83 & 15.55 & 17.44 & 73.22 & 37.60 & \textbf{33.22} & 20.19 & 14.79 & 86.97 & 24.56 & 15.58 & 14.68 & 14.62 & 66.64 \\
@@ -34,12 +34,16 @@ Type & Detector & Seeds & \multicolumn{5}{c|}{FF++ (in-domain)} & \multicolumn{5
  & \textbf{CFES-D (final)} & 3 & 24.68 & 37.84 & 37.89 & 23.86 & 95.61 & 32.69 & 33.85 & 33.50 & 20.93 & 87.31 & 14.92 & 33.06 & 8.71 & 21.80 & 76.92 & 50.02 & 45.83 & 19.88 & 16.60 & 89.90 & 25.14 & 18.26 & 13.66 & 13.03 & 70.99 \\
 \midrule
 \multirow{1}{*}{\shortstack[l]{Ours (CFES)\\ResNet-50}} & CFES-ResNet & 3 & 36.78 & \textbf{25.92} & 34.14 & \textbf{15.95} & 92.52 & 53.49 & 40.73 & 30.75 & 19.83 & 71.38 & 35.16 & 23.07 & 13.51 & 21.49 & 58.66 & 51.72 & 45.41 & \textbf{16.77} & 22.21 & 71.40 & 37.68 & 17.62 & \textbf{11.41} & \textbf{10.33} & 38.48 \\
+\midrule
+\multirow{2}{*}{\shortstack[l]{Ours (CES-FL)\\Xception}} & L\_A (plain head, BCE) & 1 & 5.42 & 46.88 & 46.54 & 24.04 & 98.47 & 49.33 & 36.23 & 31.99 & 13.88 & 70.75 & 10.76 & \textbf{13.08} & 5.49 & 27.98 & 61.77 & 41.87 & 43.80 & 23.03 & 26.43 & 81.16 & \multicolumn{5}{c}{\textcolor{gray}{-- not evaluated --}} \\
+ & \textbf{L\_H (plain head, ours)} & 1 & \textbf{3.04} & 48.96 & 47.64 & 24.91 & \textbf{98.49} & 39.39 & 32.92 & 27.44 & 16.34 & 71.40 & 7.54 & 13.70 & \textbf{4.86} & 28.55 & 60.46 & 42.76 & 41.98 & 21.35 & 23.04 & 80.88 & \multicolumn{5}{c}{\textcolor{gray}{-- not evaluated --}} \\
 \bottomrule\end{tabular}}\end{table}
 
 \noindent\textbf{Reading Table 1.} On the FairForge-2 column the arm E variants reach 77--79 AUC (one seed each)
 and CFES-D 70.99 (3 seeds), against 36--38 for the Ding reproductions. FairForge-2 is hard for every FF++-trained
-detector, and Ding's method transfers worst. These rows are the older CFES (CLIP) lineage; the current CES-FL L\_A/L\_H
-(Xception, plain head) have Ding-format FF++ results but have not yet been rescored on these 8 groups (CPU only, from saved scores).
+detector, and Ding's method transfers worst. The CES-FL L\_A/L\_H rows (Xception, plain head, seed 17) were rescored on these 8 groups from their saved 3 Nov
+scores (no new inference), with the A1 threshold re-derived on FF++ validation; they have no FairForge-2 TEST scores. At A1
+their DFDC TPR is only about 10\%, so the low DFDC fairness gaps there reflect an almost-never-fake operating point.
 
 \begin{table}[h]\centering
 \caption{The exact FairForensics analogue: train on FairForge-2 public TRAIN (218{,}266 images), test on unseen datasets.
