@@ -1,0 +1,238 @@
+{
+ "n": 1000,
+ "n_err": 0,
+ "errors": {},
+ "chk_hw": {
+  "256x256": 1000
+ },
+ "new_size": {
+  "256": 1000
+ },
+ "new_qtable_hash": {
+  "c73b79bf": 1000
+ },
+ "ref_qtable_hash": {
+  "c73b79bf": 1000
+ },
+ "new_sampling": {
+  "0": 1000
+ },
+ "ref_sampling": {
+  "0": 1000
+ },
+ "qtable_match_frac": 1.0,
+ "sha_on_disk_ok_frac": 1.0,
+ "master_sha_vs_stored": {
+  "n_with_stored": 981,
+  "n_match": 981
+ },
+ "lm_src_master": {
+  "scrfd_v2canvas_master": 1000
+ },
+ "lm_src_align": {
+  "scrfd_v2canvas_rt": 1000
+ },
+ "largest_face_is_match_frac": 1.0,
+ "interp": {
+  "AREA": 846,
+  "CUBIC": 154
+ },
+ "no_face_on_output": 0,
+ "lm_err_mean_px": {
+  "FFHQ|fake": {
+   "ff2h": {
+    "p50": 7.761,
+    "p95": 12.694,
+    "p99": 14.868,
+    "max": 19.842
+   },
+   "ff2_v10": {
+    "p50": 7.816,
+    "p95": 13.274,
+    "p99": 15.483,
+    "max": 20.109
+   }
+  },
+  "FFHQ|real": {
+   "ff2h": {
+    "p50": 8.431,
+    "p95": 10.877,
+    "p99": 11.413,
+    "max": 11.547
+   },
+   "ff2_v10": {
+    "p50": 8.146,
+    "p95": 11.251,
+    "p99": 11.263,
+    "max": 11.267
+   }
+  },
+  "FairFace|fake": {
+   "ff2h": {
+    "p50": 7.271,
+    "p95": 13.442,
+    "p99": 17.265,
+    "max": 21.583
+   },
+   "ff2_v10": {
+    "p50": 7.323,
+    "p95": 13.507,
+    "p99": 17.417,
+    "max": 20.768
+   }
+  },
+  "FairFace|real": {
+   "ff2h": {
+    "p50": 6.479,
+    "p95": 16.249,
+    "p99": 19.057,
+    "max": 19.759
+   },
+   "ff2_v10": {
+    "p50": 6.734,
+    "p95": 16.412,
+    "p99": 18.964,
+    "max": 19.602
+   }
+  }
+ },
+ "lm_err_mean_px_all": {
+  "ff2h": {
+   "p50": 7.461,
+   "p95": 13.268,
+   "p99": 17.078,
+   "max": 21.583
+  },
+  "ff2_v10": {
+   "p50": 7.525,
+   "p95": 13.36,
+   "p99": 16.945,
+   "max": 20.768
+  }
+ },
+ "centring_tolerance_px(ref_p99)": 16.945,
+ "frac_ff2h_within_tol": 0.988,
+ "scale_by_grp": {
+  "FFHQ|fake": {
+   "p50": 0.272,
+   "p95": 0.348,
+   "p99": 0.363,
+   "max": 0.367
+  },
+  "FFHQ|real": {
+   "p50": 0.264,
+   "p95": 0.304,
+   "p99": 0.31,
+   "max": 0.312
+  },
+  "FairFace|fake": {
+   "p50": 0.924,
+   "p95": 1.203,
+   "p99": 1.5,
+   "max": 1.796
+  },
+  "FairFace|real": {
+   "p50": 0.993,
+   "p95": 1.422,
+   "p99": 2.221,
+   "max": 2.421
+  }
+ },
+ "align_scale_by_grp": {
+  "FFHQ|fake": {
+   "p50": 1.198,
+   "p95": 1.293,
+   "p99": 1.33,
+   "max": 1.346
+  },
+  "FFHQ|real": {
+   "p50": 1.203,
+   "p95": 1.3,
+   "p99": 1.323,
+   "max": 1.329
+  },
+  "FairFace|fake": {
+   "p50": 1.181,
+   "p95": 1.285,
+   "p99": 1.326,
+   "max": 1.377
+  },
+  "FairFace|real": {
+   "p50": 1.178,
+   "p95": 1.276,
+   "p99": 1.297,
+   "max": 1.302
+  }
+ },
+ "iod_master_by_grp": {
+  "FFHQ|fake": {
+   "p50": 255.765,
+   "p95": 278.766,
+   "p99": 287.94,
+   "max": 292.748
+  },
+  "FFHQ|real": {
+   "p50": 263.758,
+   "p95": 281.649,
+   "p99": 281.902,
+   "max": 281.965
+  },
+  "FairFace|fake": {
+   "p50": 75.3,
+   "p95": 242.973,
+   "p99": 268.255,
+   "max": 350.285
+  },
+  "FairFace|real": {
+   "p50": 70.044,
+   "p95": 81.297,
+   "p99": 86.837,
+   "max": 88.222
+  }
+ },
+ "stored_iod_vs_measured_master": {
+  "n": 461,
+  "median_rel_diff": 9.827877833212817e-06,
+  "frac_rel_diff_gt_5pct": 0.0
+ },
+ "upsampled_frac_by_method": {
+  "arc2face": 0.0,
+  "blendface": 0.205,
+  "codeformer": 0.135,
+  "difface": 0.205,
+  "eg3d": 0.0,
+  "flux": 0.0,
+  "gfpgan": 0.351,
+  "hart": 0.0,
+  "iclight": 0.275,
+  "inpaint": 0.275,
+  "instantid": 0.0,
+  "ipadapter": 0.0,
+  "liveportrait": 0.25,
+  "magicbrush": 0.243,
+  "omnigen": 0.158,
+  "photomaker": 0.025,
+  "pixart": 0.026,
+  "playground": 0.056,
+  "projgan": 1.0,
+  "pulid": 0.0,
+  "qwenedit": 0.216,
+  "realesrgan": 0.282,
+  "reface": 0.222,
+  "simswap": 0.211,
+  "styleswin": 0.0,
+  "tpsmm": 0.27
+ },
+ "out_bytes_median_by_grp": {
+  "FFHQ|fake": 23543.0,
+  "FFHQ|real": 23717.0,
+  "FairFace|fake": 21393.0,
+  "FairFace|real": 18463.0
+ },
+ "ref_ff2_v10_bytes_median_by_grp": {
+  "FFHQ|fake": 29083.0,
+  "FFHQ|real": 31187.0,
+  "FairFace|fake": 22610.0,
+  "FairFace|real": 18908.0
+ }
+}

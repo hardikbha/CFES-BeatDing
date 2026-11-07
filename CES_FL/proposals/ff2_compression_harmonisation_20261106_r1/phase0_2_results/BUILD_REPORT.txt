@@ -1,0 +1,61 @@
+FF2-H BUILD REPORT (Phases 0, pilot, 1)  -- 7 Nov 2026
+Recipe R1, applied to every row of the frozen FF2 public manifest (398,957 rows; TRAIN/SELECT/CAL/TEST), no label/source exceptions.
+CPU only (gpu01, 24-32 single-threaded workers, ORT intra=inter=1 via wrapped InferenceSession). aiface env, cv2 4.12.0;
+V.assert_env() and C.assert_frozen_env() passed (frozen encoder hash 53e6778df0b6ee7f). Aggregates only.
+
+RECIPE AS IMPLEMENTED (build.py)
+ 1 master bytes read, sha256 recorded, decoded with cv2.IMREAD_COLOR.
+ 2 landmarks on master: canon_v2.detect_v2 (SCRFD buffalo_l, v2 canvas), largest face. scale k = IOD_TARGET / master IOD;
+   INTER_AREA if k<1, INTER_CUBIC if k>1 (cv2.resize fx=fy=k).
+ 3 JPEG round-trip q75 4:2:0, cv2.imencode, standard IJG tables (code identical to recrop_score.py::jpeg_rt).
+ 4 canonical v2: detect_v2 on the round-tripped image; face chosen = the detection closest to the scaled master landmarks
+   (accepted if mean deviation < 0.25*IOD_TARGET; it was the largest face in 100% of cases); else scaled master landmarks
+   (declared fallback). Then canon_v2.canonicalize_v2 -> 256 px, frozen encoder JPEG q95 4:4:4. Deterministic (no RNG).
+ Output layout: /home/sachin.chaudhary/ICLR_2027/fairforge2_h/<public rel_path> (same relative layout as the release tree).
+
+PHASE 0  inventory (phase0_summary.json, phase0_coverage_by_split_source_label_method.csv)
+ Masters found: 398,957 / 398,957 (100%) in every split x source x label x method cell; TEST checked by existence only.
+   FFHQ reals 4,641 -> fairforge2/masters/real/ffhq1024/<id>.webp
+   FairFace reals 22,524 -> fairforge_scaleup/sources/fairface_1.25/images/... (HF FairFace config 1.25, 448 px, original bytes)
+   scale-up fakes 349,594 -> fin_records master_path
+   FF2 v1.0 fakes 22,198: 22,088 via fairforge2/metadata/acquisition_manifest_* (joined on image_id AND canonical out_sha256
+     = public sha256); 110 (swap, all TEST) absent from the acquisition manifests -> resolved via generation_manifest_swap_*
+     (masters/swap/<id>.png); their master sha256 matched the generation-time hash at build time.
+ Reference-hash consistency: public sha256 = recorded canonical hash for 100% of reals and scale-up fakes, 99.50% of v1.0 fakes
+   (the 110 above).
+ FairFace interocular target (MEASURED, SCRFD v2 on all 13,601 FairFace TRAIN-real originals, 448x448, 0 failures):
+   median IOD_TARGET = 69.5632 px (p05 51.6, p25 66.0, p75 72.6, p95 78.7); stored kps median 69.56, median |diff| 0.002 px.
+
+PILOT  (1,000 TRAIN/SELECT items, 52 source x label x method strata; pilot_qc_summary.json)
+ 0 errors; 1000/1000 decode at 256x256; quantisation table hash c73b79bf and sampling 4:4:4 identical to FF2 v1.0 crops (100%);
+ on-disk sha = recorded sha 100%; master sha = stored master sha 981/981.
+ Centring: re-detected landmark error vs the v2 256-px template, FF2-H vs FF2 v1.0 crop of the SAME items:
+   median 7.46 vs 7.53 px, p95 13.27 vs 13.36, p99 17.08 vs 16.95; 98.8% of FF2-H within the v1.0 p99 (16.9 px). No face lost.
+ Stored master IOD (fakes) vs re-measured: median rel. diff 1e-5, 0% > 5%.
+ Contact sheet (20 items, v1.0 | FF2-H | FF2-H + template points) inspected: faces centred, no crops/artefacts/wrong faces.
+ It is private: _pilot_contact_sheet_PRIVATE.jpg.
+
+PHASE 1  full build (build.log, build_summary.json; 8,843 s at 45 items/s)
+ Built 398,957 / 398,957; failures 0 in every split (TRAIN 236,163; SELECT 34,001; CAL 35,250; TEST 93,543) and every method.
+ Master sha256 vs stored hash: 394,316 compared, 394,316 match (the 4,641 FFHQ webp masters have no stored hash).
+ Landmarks: master 100% SCRFD v2 canvas; alignment SCRFD on round-tripped image 398,931, scaled-master fallback 26
+   (23 detection did not match the master face, 3 no face). 0 duplicate output hashes.
+ Scale k (median [p01, p99]): FFHQ real 0.268 [0.246, 0.351]; FFHQ-sourced fake 0.272 [0.243, 0.364];
+   FairFace real 1.000 [0.811, 1.747]; FairFace-sourced fake 0.975 [0.267, 1.555].
+   Upsampled (k>1, INTER_CUBIC): FFHQ 0%, FairFace reals 50.2%, FairFace-sourced fakes 37.9% (121,565 items in total).
+ v2 align_scale median: 1.198 FFHQ real, 1.200 FFHQ fake, 1.182 FairFace real, 1.183 FairFace fake (v1.0: FFHQ 0.65 vs FF 1.16).
+ Output: 8.34 GB. Median bytes FFHQ real 23,959 / fake 23,451; FairFace real 19,276 / fake 19,825 (v1.0: 31.5k vs 19.5k).
+
+MANIFESTS (make_manifests.py) - same rows, order, columns; only the path column and sha256 changed
+ (a) public_manifest.csv -> data_ding_schema/fairforge2_h/public_manifest.csv and fairforge2_h/manifests/public_manifest.csv
+     rel_path unchanged (new root), sha256 = FF2-H sha256; 30 other columns identical; 398,957 rows.
+ (b) data_ding_schema/fairforge2_h/{train,realval,fakeval,cal,test,provenance}.csv: 218,266 / 2,438 / 28,669 / 32,255 /
+     87,564 / 369,192 rows; all non-path columns (labels, groups, split, person_id, method, cell, source) identical.
+ (c) ces_fl_pipeline/manifests/ff2h/{train,val}.csv: 218,266 / 31,107 rows; 15 non-path columns identical.
+     (test.csv and approved_pairs.csv were not requested and not written.)
+ 0 manifest rows point at a missing/failed image. Split and person_id in provenance agree with the public manifest
+ (after the tier-prefix normalisation the release already applies).
+
+PRIVATE per-item files (work dir only): _inventory_PRIVATE.pkl, _build_records_PRIVATE.csv (master sha256, iod, scale, interp,
+ landmark sources, align_scale, output sha256), _ff2h_item_records_PRIVATE.csv.
+Nothing existing was modified; writes only to the work dir, fairforge2_h/, and the two new manifest dirs.

@@ -1,0 +1,38 @@
+GATE G1 REPORT (Phase 2)  -- 7 Nov 2026          VERDICT: FAIL
+Pre-declared rule: within-source real-vs-fake logistic regression on the diagnosis statistics, trained on FF2-H TRAIN,
+VAL AUC <= 0.60 in BOTH sources. Threshold not changed. TEST not read. CPU only; no model scoring of images.
+
+SETUP (g1_probe.py, g1_summary.json)
+ Features: feat_stats.feats() from ff2_source_diag_20261106, unchanged; feature list exactly as analyse_stats.py (FEAT).
+   NOTE: that list has 43 statistics, not the 46 the diagnosis REPORT states. An extended 47-feature set (+chroma_ratio,
+   cr_mean, cb_mean, edge_flat) gives the same verdict.
+ TRAIN (ces_fl ff2 train rows): per source, all reals + an equal number of fakes, method-stratified (seed 7):
+   FFHQ 3,176 real + 3,177 fake; FairFace 13,601 real + 13,601 fake.
+ VAL = ces_fl val manifest (SELECT), all rows: FFHQ 242 real / 3,290 fake; FairFace 2,196 real / 25,379 fake.
+ Same rows probed on FF2-H and FF2 v1.0 crops. Feature errors 0. Both versions share one quant table (c73b79bf).
+ AUC 95% CIs: 1,000 bootstrap resamples of VAL.
+
+RESULTS (VAL AUC)                          FF2-H                    FF2 v1.0 (context)
+ G1 real vs fake, within FFHQ              0.702 [0.667, 0.734]     0.823 [0.801, 0.842]
+ G1 real vs fake, within FairFace          0.640 [0.628, 0.652]     0.858 [0.851, 0.865]
+ real source FFHQ vs FairFace (reals)      0.982 [0.977, 0.986]     1.000 [1.000, 1.000]
+ pooled real vs fake (context)             0.618                    0.743
+ -> G1 FAILS in both sources (0.702 > 0.60 and 0.640 > 0.60).
+
+WHAT CHANGED (VAL medians, real | fake)
+ FFHQ-sourced     log-Laplacian 6.07|5.77 -> 4.76|4.65; noise 2.19|1.58 -> 0.68|0.63; bytes 31.5k|29.1k -> 23.8k|23.5k
+ FairFace-sourced log-Laplacian 3.18|3.48 -> 3.10|3.33; noise 0.39|0.41 -> 0.38|0.40; (nearly idempotent, as expected)
+ The FFHQ real/fake gap in these statistics shrank strongly; FFHQ reals are still much sharper than FairFace reals
+ (log-Lap 4.76 vs 3.10, hf_y -5.23 vs -7.06), so the real-source probe stays near-perfect (0.982).
+ Residual per-method AUC (each method's VAL fakes vs that source's VAL reals): FairFace highest pixart 0.93, hart 0.91,
+ flux 0.88, eg3d 0.86, styleswin 0.84, realesrgan 0.82 (13 of 22 methods > 0.60; v1.0: 21 of 22);
+ FFHQ highest difface 0.85, simswap 0.84, codeformer 0.83, instantid 0.81 (18 of 24 > 0.60; v1.0: 19 of 24).
+
+INTERPRETATION (inferred, not tested)
+ R1 removed most of the compression/sharpness separation (FairFace 0.858 -> 0.640, FFHQ 0.823 -> 0.702) but not to the
+ pre-declared level. The probe cannot tell residual source-acquisition cues from genuine generator evidence (e.g. de-novo
+ generators at FairFace scale being sharper than q75 FairFace photos); the gate does not distinguish them and was
+ not relaxed. FFHQ vs FairFace reals still differ in native sharpness (FFHQ 1024 masters downsampled ~0.27x vs FairFace
+ 448 px photos used near 1x), which R1 does not equalise.
+ Per the proposal: G1 failed -> stop. Fallback R2 (randomised quality/subsampling) or any other change needs your decision;
+ none was run. FF2-H (R1) images and manifests are kept as built.

@@ -111,3 +111,7 @@ every row trained for 10 epochs from the same FF2-H BCE warm start, which is clo
 ## 9. Decision log
 
 - 2026-11-07: user approved Phases 0–3 and confirmed that L_H-PS waits for FF2-H. Phase 4 budget to be decided after the gates.
+- 2026-11-07: Phases 0–1 done: FF2-H built for all 398,957 images, 0 failures, manifests identical except path/sha256
+  (`phase0_2_results/`). **Gate G1 FAILED**: within-source real-vs-fake probe VAL AUC FFHQ 0.702 [0.667, 0.734], FairFace
+  0.640 [0.628, 0.652] (threshold ≤ 0.60; v1.0 crops: 0.823 / 0.858). Work stopped as pre-declared; R2 not run; awaiting the
+  user's decision.

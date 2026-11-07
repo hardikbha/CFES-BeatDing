@@ -1,0 +1,438 @@
+{
+ "source_ids_prefix_vs_src": {
+  "ffhq|FFHQ": 50770,
+  "img|FairFace": 198603
+ },
+ "n_train_by_src_label": {
+  "FFHQ|0": 3176,
+  "FFHQ|1": 3177,
+  "FairFace|0": 13601,
+  "FairFace|1": 13601
+ },
+ "n_val_by_src_label": {
+  "FFHQ|0": 242,
+  "FFHQ|1": 3290,
+  "FairFace|0": 2196,
+  "FairFace|1": 25379
+ },
+ "feature_errors": 0,
+ "n_features": {
+  "diag_FEAT": 43,
+  "extended": 47
+ },
+ "jpeg_qtable_by_version": {
+  "ff2h": {
+   "c73b79bf": 64662
+  },
+  "ff2_v10": {
+   "c73b79bf": 64662
+  }
+ },
+ "results": {
+  "ff2h/diag_FEAT": {
+   "real_vs_fake_within_FFHQ": {
+    "val_auc": 0.7024,
+    "ci95": [
+     0.6674,
+     0.7336
+    ],
+    "n_train": 6353,
+    "n_val_real": 242,
+    "n_val_fake": 3290
+   },
+   "per_method_val_auc_FFHQ": {
+    "arc2face": 0.774,
+    "blendface": 0.773,
+    "codeformer": 0.832,
+    "difface": 0.848,
+    "eg3d": 0.545,
+    "flux": 0.781,
+    "gfpgan": 0.759,
+    "hart": 0.664,
+    "iclight": 0.625,
+    "inpaint": 0.512,
+    "instantid": 0.812,
+    "ipadapter": 0.583,
+    "liveportrait": 0.773,
+    "magicbrush": 0.659,
+    "omnigen": 0.599,
+    "photomaker": 0.708,
+    "pixart": 0.709,
+    "pulid": 0.748,
+    "qwenedit": 0.607,
+    "realesrgan": 0.429,
+    "reface": 0.734,
+    "simswap": 0.842,
+    "styleswin": 0.57,
+    "tpsmm": 0.793
+   },
+   "real_vs_fake_within_FairFace": {
+    "val_auc": 0.6401,
+    "ci95": [
+     0.628,
+     0.6515
+    ],
+    "n_train": 27202,
+    "n_val_real": 2196,
+    "n_val_fake": 25379
+   },
+   "per_method_val_auc_FairFace": {
+    "blendface": 0.592,
+    "codeformer": 0.76,
+    "difface": 0.656,
+    "eg3d": 0.861,
+    "flux": 0.879,
+    "gfpgan": 0.752,
+    "hart": 0.913,
+    "iclight": 0.645,
+    "inpaint": 0.515,
+    "ipadapter": 0.644,
+    "liveportrait": 0.513,
+    "magicbrush": 0.543,
+    "omnigen": 0.476,
+    "pixart": 0.934,
+    "projgan": 0.789,
+    "pulid": 0.611,
+    "qwenedit": 0.599,
+    "realesrgan": 0.819,
+    "reface": 0.522,
+    "simswap": 0.562,
+    "styleswin": 0.842,
+    "tpsmm": 0.559
+   },
+   "real_source_FFHQ_vs_FairFace": {
+    "val_auc": 0.9818,
+    "ci95": [
+     0.9767,
+     0.9863
+    ]
+   },
+   "real_vs_fake_pooled": {
+    "val_auc": 0.6179
+   }
+  },
+  "ff2h/extended": {
+   "real_vs_fake_within_FFHQ": {
+    "val_auc": 0.7126,
+    "ci95": [
+     0.6798,
+     0.7435
+    ],
+    "n_train": 6353,
+    "n_val_real": 242,
+    "n_val_fake": 3290
+   },
+   "per_method_val_auc_FFHQ": {
+    "arc2face": 0.79,
+    "blendface": 0.779,
+    "codeformer": 0.832,
+    "difface": 0.833,
+    "eg3d": 0.563,
+    "flux": 0.798,
+    "gfpgan": 0.761,
+    "hart": 0.698,
+    "iclight": 0.645,
+    "inpaint": 0.513,
+    "instantid": 0.835,
+    "ipadapter": 0.595,
+    "liveportrait": 0.778,
+    "magicbrush": 0.674,
+    "omnigen": 0.605,
+    "photomaker": 0.753,
+    "pixart": 0.751,
+    "pulid": 0.773,
+    "qwenedit": 0.615,
+    "realesrgan": 0.425,
+    "reface": 0.747,
+    "simswap": 0.84,
+    "styleswin": 0.556,
+    "tpsmm": 0.796
+   },
+   "real_vs_fake_within_FairFace": {
+    "val_auc": 0.6422,
+    "ci95": [
+     0.6302,
+     0.6541
+    ],
+    "n_train": 27202,
+    "n_val_real": 2196,
+    "n_val_fake": 25379
+   },
+   "per_method_val_auc_FairFace": {
+    "blendface": 0.591,
+    "codeformer": 0.759,
+    "difface": 0.661,
+    "eg3d": 0.868,
+    "flux": 0.871,
+    "gfpgan": 0.753,
+    "hart": 0.914,
+    "iclight": 0.665,
+    "inpaint": 0.515,
+    "ipadapter": 0.636,
+    "liveportrait": 0.51,
+    "magicbrush": 0.559,
+    "omnigen": 0.485,
+    "pixart": 0.933,
+    "projgan": 0.79,
+    "pulid": 0.611,
+    "qwenedit": 0.597,
+    "realesrgan": 0.819,
+    "reface": 0.534,
+    "simswap": 0.564,
+    "styleswin": 0.839,
+    "tpsmm": 0.56
+   },
+   "real_source_FFHQ_vs_FairFace": {
+    "val_auc": 0.9817,
+    "ci95": [
+     0.9766,
+     0.9861
+    ]
+   },
+   "real_vs_fake_pooled": {
+    "val_auc": 0.6196
+   }
+  },
+  "ff2_v10/diag_FEAT": {
+   "real_vs_fake_within_FFHQ": {
+    "val_auc": 0.8225,
+    "ci95": [
+     0.8008,
+     0.8418
+    ],
+    "n_train": 6353,
+    "n_val_real": 242,
+    "n_val_fake": 3290
+   },
+   "per_method_val_auc_FFHQ": {
+    "arc2face": 0.936,
+    "blendface": 1.0,
+    "codeformer": 0.979,
+    "difface": 0.929,
+    "eg3d": 0.52,
+    "flux": 0.91,
+    "gfpgan": 0.954,
+    "hart": 0.535,
+    "iclight": 0.655,
+    "inpaint": 0.551,
+    "instantid": 0.766,
+    "ipadapter": 0.674,
+    "liveportrait": 0.933,
+    "magicbrush": 0.861,
+    "omnigen": 0.809,
+    "photomaker": 0.668,
+    "pixart": 0.754,
+    "pulid": 0.905,
+    "qwenedit": 0.931,
+    "realesrgan": 0.496,
+    "reface": 0.854,
+    "simswap": 0.999,
+    "styleswin": 0.55,
+    "tpsmm": 0.986
+   },
+   "real_vs_fake_within_FairFace": {
+    "val_auc": 0.8579,
+    "ci95": [
+     0.8512,
+     0.8653
+    ],
+    "n_train": 27202,
+    "n_val_real": 2196,
+    "n_val_fake": 25379
+   },
+   "per_method_val_auc_FairFace": {
+    "blendface": 0.877,
+    "codeformer": 0.935,
+    "difface": 0.909,
+    "eg3d": 0.997,
+    "flux": 0.853,
+    "gfpgan": 0.937,
+    "hart": 0.785,
+    "iclight": 0.821,
+    "inpaint": 0.55,
+    "ipadapter": 0.812,
+    "liveportrait": 0.853,
+    "magicbrush": 0.79,
+    "omnigen": 0.871,
+    "pixart": 0.993,
+    "projgan": 0.997,
+    "pulid": 0.882,
+    "qwenedit": 0.755,
+    "realesrgan": 0.903,
+    "reface": 0.757,
+    "simswap": 0.936,
+    "styleswin": 0.987,
+    "tpsmm": 0.929
+   },
+   "real_source_FFHQ_vs_FairFace": {
+    "val_auc": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   },
+   "real_vs_fake_pooled": {
+    "val_auc": 0.7434
+   }
+  },
+  "ff2_v10/extended": {
+   "real_vs_fake_within_FFHQ": {
+    "val_auc": 0.8305,
+    "ci95": [
+     0.8098,
+     0.8502
+    ],
+    "n_train": 6353,
+    "n_val_real": 242,
+    "n_val_fake": 3290
+   },
+   "per_method_val_auc_FFHQ": {
+    "arc2face": 0.942,
+    "blendface": 1.0,
+    "codeformer": 0.976,
+    "difface": 0.92,
+    "eg3d": 0.529,
+    "flux": 0.912,
+    "gfpgan": 0.95,
+    "hart": 0.594,
+    "iclight": 0.674,
+    "inpaint": 0.553,
+    "instantid": 0.816,
+    "ipadapter": 0.688,
+    "liveportrait": 0.932,
+    "magicbrush": 0.856,
+    "omnigen": 0.809,
+    "photomaker": 0.731,
+    "pixart": 0.795,
+    "pulid": 0.917,
+    "qwenedit": 0.925,
+    "realesrgan": 0.499,
+    "reface": 0.855,
+    "simswap": 0.999,
+    "styleswin": 0.551,
+    "tpsmm": 0.989
+   },
+   "real_vs_fake_within_FairFace": {
+    "val_auc": 0.8581,
+    "ci95": [
+     0.8515,
+     0.8654
+    ],
+    "n_train": 27202,
+    "n_val_real": 2196,
+    "n_val_fake": 25379
+   },
+   "per_method_val_auc_FairFace": {
+    "blendface": 0.877,
+    "codeformer": 0.935,
+    "difface": 0.91,
+    "eg3d": 0.997,
+    "flux": 0.852,
+    "gfpgan": 0.937,
+    "hart": 0.784,
+    "iclight": 0.824,
+    "inpaint": 0.55,
+    "ipadapter": 0.81,
+    "liveportrait": 0.852,
+    "magicbrush": 0.792,
+    "omnigen": 0.871,
+    "pixart": 0.993,
+    "projgan": 0.997,
+    "pulid": 0.882,
+    "qwenedit": 0.754,
+    "realesrgan": 0.903,
+    "reface": 0.758,
+    "simswap": 0.935,
+    "styleswin": 0.987,
+    "tpsmm": 0.929
+   },
+   "real_source_FFHQ_vs_FairFace": {
+    "val_auc": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   },
+   "real_vs_fake_pooled": {
+    "val_auc": 0.7428
+   }
+  }
+ },
+ "G1": {
+  "threshold": 0.6,
+  "auc_FFHQ": 0.7024,
+  "auc_FairFace": 0.6401,
+  "verdict": "FAIL",
+  "extended_featureset_verdict": "FAIL"
+ },
+ "val_medians": {
+  "ff2h": {
+   "FFHQ|0": {
+    "bytes": 23821.0,
+    "log_lap": 4.764,
+    "noise": 0.676,
+    "hf_y": -5.228,
+    "hf_c": -5.468,
+    "block8": 1.044
+   },
+   "FFHQ|1": {
+    "bytes": 23524.5,
+    "log_lap": 4.645,
+    "noise": 0.631,
+    "hf_y": -5.415,
+    "hf_c": -5.509,
+    "block8": 1.048
+   },
+   "FairFace|0": {
+    "bytes": 19286.5,
+    "log_lap": 3.095,
+    "noise": 0.382,
+    "hf_y": -7.064,
+    "hf_c": -5.424,
+    "block8": 1.062
+   },
+   "FairFace|1": {
+    "bytes": 19481.0,
+    "log_lap": 3.326,
+    "noise": 0.397,
+    "hf_y": -6.846,
+    "hf_c": -5.429,
+    "block8": 1.062
+   }
+  },
+  "ff2_v10": {
+   "FFHQ|0": {
+    "bytes": 31524.0,
+    "log_lap": 6.066,
+    "noise": 2.188,
+    "hf_y": -3.911,
+    "hf_c": -4.022,
+    "block8": 1.027
+   },
+   "FFHQ|1": {
+    "bytes": 29089.5,
+    "log_lap": 5.765,
+    "noise": 1.578,
+    "hf_y": -4.243,
+    "hf_c": -4.564,
+    "block8": 1.037
+   },
+   "FairFace|0": {
+    "bytes": 19464.0,
+    "log_lap": 3.177,
+    "noise": 0.387,
+    "hf_y": -6.956,
+    "hf_c": -5.432,
+    "block8": 1.062
+   },
+   "FairFace|1": {
+    "bytes": 20176.0,
+    "log_lap": 3.481,
+    "noise": 0.413,
+    "hf_y": -6.73,
+    "hf_c": -5.232,
+    "block8": 1.066
+   }
+  }
+ }
+}

@@ -1,0 +1,120 @@
+{
+ "n_rows": 398957,
+ "t_exist_sec": 48.4,
+ "coverage_by_split": {
+  "CAL": {
+   "n": 35250,
+   "master_found": 35250
+  },
+  "SELECT": {
+   "n": 34001,
+   "master_found": 34001
+  },
+  "TEST": {
+   "n": 93543,
+   "master_found": 93543
+  },
+  "TRAIN": {
+   "n": 236163,
+   "master_found": 236163
+  }
+ },
+ "coverage_by_split_src_label": {
+  "CAL|FFHQ|fake": {
+   "n": 3050,
+   "master_found": 3050
+  },
+  "CAL|FFHQ|real": {
+   "n": 219,
+   "master_found": 219
+  },
+  "CAL|FairFace|fake": {
+   "n": 29691,
+   "master_found": 29691
+  },
+  "CAL|FairFace|real": {
+   "n": 2290,
+   "master_found": 2290
+  },
+  "SELECT|FFHQ|fake": {
+   "n": 3290,
+   "master_found": 3290
+  },
+  "SELECT|FFHQ|real": {
+   "n": 242,
+   "master_found": 242
+  },
+  "SELECT|FairFace|fake": {
+   "n": 28273,
+   "master_found": 28273
+  },
+  "SELECT|FairFace|real": {
+   "n": 2196,
+   "master_found": 2196
+  },
+  "TEST|FFHQ|fake": {
+   "n": 30353,
+   "master_found": 30353
+  },
+  "TEST|FFHQ|real": {
+   "n": 1004,
+   "master_found": 1004
+  },
+  "TEST|FairFace|fake": {
+   "n": 57749,
+   "master_found": 57749
+  },
+  "TEST|FairFace|real": {
+   "n": 4437,
+   "master_found": 4437
+  },
+  "TRAIN|FFHQ|fake": {
+   "n": 44062,
+   "master_found": 44062
+  },
+  "TRAIN|FFHQ|real": {
+   "n": 3176,
+   "master_found": 3176
+  },
+  "TRAIN|FairFace|fake": {
+   "n": 175324,
+   "master_found": 175324
+  },
+  "TRAIN|FairFace|real": {
+   "n": 13601,
+   "master_found": 13601
+  }
+ },
+ "master_kind_counts": {
+  "scaleup_fin_records": 349594,
+  "fairface125_jpeg": 22524,
+  "ff2v1_acquisition": 22088,
+  "ffhq1024_webp": 4641,
+  "ff2v1_generation_manifest": 110
+ },
+ "missing_master_by_method_split": {},
+ "ref_sha_ok_mean_by_origin": {
+  "ff2_v1.0": 0.99504,
+  "scaleup": 1.0,
+  "scaleup_real": 1.0
+ },
+ "ff2v1_fallback_generation_manifest_by_split": {
+  "TEST": 110
+ },
+ "fairface_train_real_iod": {
+  "n": 13601,
+  "n_detected": 13601,
+  "n_err": {},
+  "median": 69.56316375732422,
+  "mean": 68.39198694465072,
+  "p05": 51.6275749206543,
+  "p25": 65.96550750732422,
+  "p75": 72.63822937011719,
+  "p95": 78.73799133300781,
+  "src_hw": "{(448, 448): 13601}",
+  "stored_face_iod_src_px_median": 69.56,
+  "median_abs_diff_vs_stored": 0.002497406005858238
+ },
+ "IOD_TARGET": 69.5632,
+ "t_total_sec": 259.6
+}
