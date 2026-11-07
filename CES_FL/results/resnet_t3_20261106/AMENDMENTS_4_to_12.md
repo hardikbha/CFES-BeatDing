@@ -165,3 +165,19 @@
 - **Scoring:** vs Ding T12 published at op05 (primary) and valFPR1 (Amendment 8 rule), plus flip-TTA variants;
   per-seed plus mean; best seed labelled post hoc.
 - **Kill rule:** val-AUC (R3 more than 2 pt below paired R0-SBI-X at both ep10 and ep15); non-finite = fail.
+
+## Amendment 12 (07 Nov ~07:10 IST, /goal active; declared before computing any result)
+- **F_DP bound** (agents/RESNET_STRAT/cdf_fdp_bound.py):
+  - Celeb-DF fake prevalence per group: gender 0.42/0.84; race White 0.82, Black 0.63, Others 0.17;
+    intersection 0.63/0.85/0.25.
+  - For an equal-opportunity detector, F_DP = J x prevalence spread. Ding's Celeb-DF F_DP (12.0/8.16/9.11) then
+    implies J <= 0.28/0.13/0.15, while ours is 0.46.
+  - So these 3 columns are unreachable without degrading detection, and the Celeb-DF ceiling is ~7/10.
+- **New post-processing variant GPP** (group-aware post-processing; Hardt et al. 2016 style), scores unchanged:
+  - per test image, threshold = the 99th percentile of FF++ VAL real logits of the same Ding gender x race cell
+    (the per-group version of the frozen valFPR1 rule); cells with < 20 val reals fall back to the global valFPR1
+    threshold;
+  - Celeb-DF/DFD/DFDC/FF++ cells are mapped by their (gender, race) labels.
+- **Disclosed protocol deviation:** it uses demographic labels at inference, unlike Ding. It's reported as a
+  separate, labelled row; AUC and es-AUC are unchanged by construction.
+- **Applied to:** all 7 R3-SBI seeds and the 3 R0-SBI seeds (control), per seed + mean, best seed labelled post hoc.
