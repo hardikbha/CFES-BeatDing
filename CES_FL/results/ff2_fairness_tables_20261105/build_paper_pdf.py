@@ -12,14 +12,15 @@ ROWS = [('Ori (BCE)', 'BCE'), ('DAG-FDD WACV\'24', 'DAG-FDD'), ('DAW-FDD WACV\'2
         ('CES-FL P: original-only BCE', 'CES-FL P'), ('CES-FL A: weighted BCE', 'CES-FL A'), ('CES-FL B: A + soft error disparity', 'CES-FL B'),
         ('L\\_A: plain-head BCE (matched control)', 'L_A (plain-head BCE)'),
         ('\\textbf{L\\_H-PS (ours): hierarchical-real + probe}', 'L_H-PS (ours)'),
+        ('\\textbf{RF-S (ours): real-only FPR equalisation, balanced reals}', 'RF-S (ours)'),
         ('\\textbf{CES-FL full (ours, final)}', None)]
 NOTE = {'PG-FDD CVPR\'24': 'not run on FF2', 'F3Net (FAD branch)': 'trained; verification failed', 'CORE': 'trained; verification failed',
         '\\textbf{CES-FL full (ours, final)}': 'not run on FF2',
         '\\textbf{L\\_H-PS (ours): hierarchical-real + probe}': 'awaiting human review of the probe'}
 
-m = pd.read_csv(RUNS / 'METRICS_LONG_9RUNS.csv', keep_default_na=False)
+m = pd.read_csv(RUNS / 'METRICS_LONG_10RUNS.csv', keep_default_na=False)
 m = m[m.threshold_view == 'VAL10']
-g = pd.read_csv(RUNS / 'GROUP_SUPPORT_9RUNS.csv', keep_default_na=False)
+g = pd.read_csv(RUNS / 'GROUP_SUPPORT_10RUNS.csv', keep_default_na=False)
 g = g[g.threshold_view == 'VAL10']
 dg = json.load(open(DIAG))
 
@@ -94,7 +95,7 @@ doc = r'''\documentclass[10pt]{article}
 \usepackage[T1]{fontenc}\usepackage{lmodern}
 \newcommand{\Fpr}{F_{\mathrm{FPR}}}\newcommand{\Fdp}{F_{\mathrm{DP}}}
 \title{FairForge-2 tables: current draft}
-\author{CES-FL project, updated 7 Nov 2026 (L\_A and L\_H-PS added) from verified run aggregates}
+\author{CES-FL project, updated 8 Nov 2026 (L\_A, L\_H-PS, RF-S added) from verified run aggregates}
 \date{}
 \begin{document}\maketitle
 \noindent\fcolorbox{orange}{orange!8}{\parbox{0.97\linewidth}{\textbf{Status of the numbers.} All results are on FairForge-2
@@ -102,7 +103,7 @@ doc = r'''\documentclass[10pt]{article}
 9.97\%). TEST stays sealed until the final model, checkpoint and threshold are frozen; the paper version will report TEST
 (87{,}564 images, plus the 16{,}953-image unseen-generator subset) as mean $\pm$ std over 3 seeds. Grey rows are not yet
 available. Bold = best among the filled rows. Age and skin bins are machine estimates (InsightFace age, ITA skin tone),
-not human labels. CES-FL P/A/B are controls of the CES-FL recipe; L\_A (6 Nov) is the matched BCE control for L\_H-PS (plain linear head, encoder from FF2 BCE50, 10 epochs, selected epoch 2); L\_H-PS (7 Nov) is our fairness method on the same recipe (selected epoch 10). Pre-declared rule: L\_H-PS is fairer than L\_A only if gender$\times$race $F_{\mathrm{FPR}}$ drops by $\geq$2 points with AUC loss $\leq$0.5 and FNR $\leq$2$\times$: not met (37.37$\to$36.23); the full counterfactual CES-FL objective has not run on FF2.}}
+not human labels. CES-FL P/A/B are controls of the CES-FL recipe; L\_A (6 Nov) is the matched BCE control for L\_H-PS (plain linear head, encoder from FF2 BCE50, 10 epochs, selected epoch 2); L\_H-PS (7 Nov) is our fairness method on the same recipe (selected epoch 10). Pre-declared rule: L\_H-PS is fairer than L\_A only if gender$\times$race $F_{\mathrm{FPR}}$ drops by $\geq$2 points with AUC loss $\leq$0.5 and FNR $\leq$2$\times$: not met (37.37$\to$36.23); RF-S (8 Nov stretch experiment, selected by min F$_{\mathrm{FPR}}$ subject to AUC/FNR limits) is the only feasible run of that experiment; its JPEG-augmented variants reached lower F$_{\mathrm{FPR}}$ (21--24) only with AUC 99.1--99.3 and FNR 1.1--1.5\%, so they have no feasible checkpoint; the full counterfactual CES-FL objective has not run on FF2.}}
 
 \begin{table}[h]\centering
 \caption{FairForge-2 public split: real / fake images with valid group labels, per gender$\times$race group and split, and

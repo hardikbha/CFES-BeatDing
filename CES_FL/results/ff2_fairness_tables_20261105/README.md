@@ -178,3 +178,11 @@ VAL aggregates in `l_h_ps_20261107/`; row added to [FF2_TABLES_DRAFT.pdf](FF2_TA
 
 **Pre-declared reading: not met.** g×r F_FPR fell by 1.14 points (rule: ≥ 2.0); AUC −0.06 (≤ 0.5, ok); FNR 1.33× (≤ 2×, ok).
 As predicted before training, L_H-PS leaves the FFHQ-vs-FairFace source gap essentially unchanged (66.9% vs 3.7%).
+
+## 13. Stretch experiment: real-only FPR equalisation + JPEG augmentation (8 Nov 2026)
+
+Pre-registered on `experiment/ff2-realfpr-stretch-20261107` (Codex gpt-6-astra review, gate Q-J passed). **Target not met.**
+Only S (real-only false-alarm equalisation on group-balanced reals, no JPEG) has a checkpoint inside AUC ≥ 99.5 / FNR ≤ 0.5651%:
+row **RF-S** in [FF2_TABLES_DRAFT.pdf](FF2_TABLES_DRAFT.pdf): AUC 99.80, FNR 0.29%, g×r F_FPR 34.12 (L_A 37.37); FFHQ real
+FPR 64.5% vs FairFace 4.0%. The JPEG-augmented runs (J, SJ, SJF) reached g×r F_FPR 21–28 only at AUC 99.1–99.6 with FNR
+0.6–1.6%, so none has a feasible checkpoint; Ding-style GDA (12.44) remains the fairest FF2 run. Aggregates: `rf_s_20261108/`.
