@@ -153,3 +153,10 @@ $PY $SRC train --config $R/L_PS.json --preflight $R/preflight --arm D --device c
   `auxiliary(rows, active, c, event, epoch)` batches in DataLoader workers (in order). New test
   `test_auxiliary_loader_is_bitwise_identical_to_direct_calls` (13/13 pass) and the CPU smoke lifecycle (incl. bitwise
   resume) pass. Source `8c25ba8c…`, config digest `143cb13b…`; preview regenerated with all 88 sheets identical.
+- 2026-11-07: L_A finished (10/10 epochs, COMPLETED_VERIFIED, 2.55 GPU-h). FF2-H harmonisation was stopped by the user, so
+  L_H-PS trains on the original FF2 v1.0 data as originally proposed.
+- 2026-11-07: **human review recorded as a blanket approval.** The user reported that Ashish reviewed the 88 cases and found them
+  fine; no per-case form was returned. At the user's explicit choice, all 88 cases were recorded as approved with reviewer
+  "Ashish" and the note "verbal approval of all 88 cases relayed by the user on 7 Nov 2026; blanket approval, no per-case notes".
+  `qualify` exit 0 (`OPERATOR_REVIEW_RECORDED`, 88 cases, `real_forgery_validity_proven: false`). L_H-PS (arm D) launched on the
+  same direct-SSH auto-resume setup as L_A, 4 GPU-hour cap.
