@@ -163,3 +163,18 @@ CES-FL L_A and L_H (Xception plain head, FF++-trained, seed 17) are now rows of 
 scores (no inference; 100% label join; AUCs reproduce the published ones within 0.0005). A1 thresholds re-derived on FF++
 validation only (L_A 18.314, L_H 5.077). No FairForge-2 TEST scores exist for them. Single seed vs 3-seed means elsewhere;
 at A1 their DFDC TPR is ~10%. Details: `lh_ids8_rescore/`.
+
+## 12. L_H-PS result on FF2 (7 Nov 2026)
+
+L_H-PS (our fairness method: hierarchical-real error control + padding-safe probe sensitivity/control + response alignment;
+plain-head Xception, encoder from FF2 BCE50, 10 epochs, seed 17) finished 10/10 epochs, `COMPLETED_VERIFIED`, selected epoch
+10, 1.49 GPU-hours. Human review of the probe: blanket approval by Ashish, relayed by the user (see the proposal log).
+VAL aggregates in `l_h_ps_20261107/`; row added to [FF2_TABLES_DRAFT.pdf](FF2_TABLES_DRAFT.pdf).
+
+| | AUC | g F_FPR | r F_FPR | g×r F_FPR | age F_FPR | skin F_FPR | FNR | FFHQ real FPR | FairFace real FPR |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| L_A (control) | 99.81 | 4.11 | 17.54 | 37.37 | 9.58 | 14.23 | 0.28 | 67.77 | 3.60 |
+| L_H-PS (ours) | 99.75 | 4.28 | 17.55 | 36.23 | 11.90 | 13.35 | 0.38 | 66.94 | 3.69 |
+
+**Pre-declared reading: not met.** g×r F_FPR fell by 1.14 points (rule: ≥ 2.0); AUC −0.06 (≤ 0.5, ok); FNR 1.33× (≤ 2×, ok).
+As predicted before training, L_H-PS leaves the FFHQ-vs-FairFace source gap essentially unchanged (66.9% vs 3.7%).
