@@ -121,3 +121,53 @@ RF-SJg reported as 3-seed mean ± std; every other row is single-seed (seed 17),
 | Sanity-checked on VAL before any TEST read | yes, all 4 exporters PASS on GPU at a measured, justified tolerance |
 | Re-run protection | yes (refuses to overwrite an existing output dir) |
 | GPU budget | each pass is one forward pass over 87,564 images, no training; estimated well under 1 GPU-hour total for all 9 checkpoints |
+
+## 8. Results (8 Nov 2026, read exactly once; this section is append-only)
+
+All 10 checkpoint evaluations (4 single-seed + 3 RF-S seeds + 3 RF-SJg seeds) were scored on the canonical FF2 public
+TEST manifest (87,564 rows, sha256 `dd5eb9ef070f658fe6b7f744c47f73e25ce7c53f948bc272f4f16c69a37d4099`), each with its
+own frozen VAL-selected threshold, on GPU (gpu01, indices 2/3/7). Checkpoint hashes verified unchanged before and
+after every score; every `test_scores_PRIVATE.json` carries the manifest hash and `split: "test"`.
+
+Metrics were computed with `results/compute_test_metrics.py`, which copies the `compute()` function and `GROUPS`
+definitions verbatim from `aggregate_rfs.py` (the exact code already used for every VAL table in this project) —
+nothing about the metric definitions changed between VAL and TEST. Full per-axis, per-seed numbers:
+`results/METRICS_LONG_TEST.csv` (summary) and `results/GROUP_SUPPORT_TEST.csv` (per-group rates). Table:
+`results/FF2_TEST_TABLE3_STYLE.pdf`.
+
+**FairForensics 8-group axis (sex × age × race), TEST:**
+
+| Detector | F_FPR↓ | F_MEO↓ | F_DP↓ | F_OAE↓ | AUC↑ | es-AUC↑ | Seeds |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| DAW-FDD | 62.90 | 22.11 | 5.86 | 2.13 | 98.87 | 96.28 | 1 |
+| Ding corrected GDA | **12.86** | **5.88** | 7.43 | 5.73 | 93.08 | 83.92 | 1 |
+| CES-FL P | 33.12 | 9.85 | 5.41 | 2.76 | 98.78 | 95.94 | 1 |
+| L_A (plain-head BCE) | 57.26 | 18.92 | **4.39** | **1.19** | **99.00** | 96.53 | 1 |
+| RF-S (ours) | 54.78±3.13 | 19.04±0.18 | 4.58±0.11 | 1.42±0.17 | 98.98±0.01 | 96.54±0.04 | 3 |
+| RF-SJg (ours) | 53.74±2.79 | 17.74±1.95 | 5.33±0.11 | 2.35±0.19 | 98.60±0.06 | **96.60±0.15** | 3 |
+
+**Ding-format gender×race axis, TEST** (the axis the stretch-experiment target was defined on):
+
+| Detector | F_FPR↓ | AUC↑ | es-AUC↑ |
+|---|---:|---:|---:|
+| Ding corrected GDA | **9.47** | 93.08 | 73.24 |
+| CES-FL P | 42.23 | 98.78 | 91.79 |
+| L_A (plain-head BCE) | 63.67 | **99.00** | 91.86 |
+| RF-S (ours) | 60.95±1.92 | 98.98±0.01 | 91.80±0.04 |
+| RF-SJg (ours) | 47.69±3.91 | 98.60±0.06 | 90.39±0.26 |
+| DAW-FDD | 45.35 | 98.87 | 91.98 |
+
+**Verdict against the pre-declared stretch-experiment target (beat Ding-style corrected GDA's gender×race F_FPR, VAL
+12.44) — target NOT met on TEST.** Ding corrected GDA's gender×race F_FPR is 9.47 on TEST, versus 47.69±3.91 for
+RF-SJg (the best of our models on this axis) — a ~5x gap, not a close miss. The relative ordering seen on VAL is
+preserved (RF-SJg < RF-S < L_A, i.e. the stretch experiment's JPEG augmentation still measurably helps versus the
+matched control and versus RF-S alone, and es-AUC on the 8-group axis is RF-SJg's best-in-table result), but the
+absolute magnitude gap to Ding's corrected-GDA baseline did not close — if anything every CES-FL-family model's
+F_FPR roughly doubled going from VAL to TEST (RF-SJg: 29.03 VAL → 47.69 TEST), while Ding-GDA's gender×race F_FPR
+was comparatively stable (12.44 VAL → 9.47 TEST). This is consistent with a genuine fairness–accuracy trade-off
+rather than a measurement artifact: Ding-GDA trades away ~6 AUC points (93.08 vs 98.6–99.0) for its much flatter
+per-group FPR, and that trade generalises from VAL to TEST far better than anything in the CES-FL family does.
+**Conclusion: the real-FPR-equalisation + gentle-JPEG stretch experiment improves fairness over the matched control
+and over RF-S alone, on both VAL and TEST, but does not close the gap to Ding's corrected GDA, and the VAL-to-TEST
+generalisation gap for the CES-FL family's F_FPR is itself a finding worth investigating before any further fairness
+claims are made for this model family.**
