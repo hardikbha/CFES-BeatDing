@@ -1,5 +1,11 @@
 # Current CES-FL status
 
+## Superseding publication — 9 November 2026
+
+The [current handoff](https://github.com/hardikbha/CFES-BeatDing/blob/76c069bdec9576b64b6543a524ffd6748851fd32/CES_FL/handoffs/PAPER_START_20261109.md), [TEST tables](https://github.com/hardikbha/CFES-BeatDing/blob/76c069bdec9576b64b6543a524ffd6748851fd32/CES_FL/paper/RESULTS.md) and [paper PDF](https://github.com/hardikbha/CFES-BeatDing/blob/76c069bdec9576b64b6543a524ffd6748851fd32/CES_FL/paper/main.pdf) supersede older completion/TEST-sealed statements below. Current scientific source/configuration/evidence is preserved on `paper/ff2-processing-fairness-20261109` at `76c069b`; main's existing experiment sources are not replaced.
+
+RF-S/RF-SJg have three completed downstream seeds each, sharing one pretrained encoder. Prior TEST exports exist for ten checkpoints. The paper-writing audit verified their bytes and aggregate records without rerunning inference. No live RF trainer was observed at 01:43 IST on gpu01/gpu02; unrelated jobs remain untouched. Shared ledger64.6011/72GPU-h charged, TEST/sanity duration reconciliation pending. No new training, generation or TEST computation in this update. Results do not support an overall win over Ding. Treat this as a dated observation, not continuous monitoring.
+
 ## Latest verified milestone — 1 November 2026
 
 All five controlled-upgrade arms completed ten epochs. All 25 authorized frozen-checkpoint test evaluations completed, with unchanged validation thresholds and exact validation-AUC replay. [Results and limitations](results/upgrade_tests_s17_20261101T040407Z/REPORT.md) · [Completed test observations](status/upgrade_tests_s17_20261101T040407Z_live.md).

@@ -1,5 +1,11 @@
 # CES-FL — supervisor review and training handoff
 
+## Current paper entry point — 9 November 2026
+
+[Working paper PDF](https://github.com/hardikbha/CFES-BeatDing/blob/76c069bdec9576b64b6543a524ffd6748851fd32/CES_FL/paper/main.pdf) · [current code/results/paper branch](https://github.com/hardikbha/CFES-BeatDing/tree/paper/ff2-processing-fairness-20261109) · [verified TEST tables](https://github.com/hardikbha/CFES-BeatDing/blob/76c069bdec9576b64b6543a524ffd6748851fd32/CES_FL/paper/RESULTS.md) · [current handoff and code map](https://github.com/hardikbha/CFES-BeatDing/blob/76c069bdec9576b64b6543a524ffd6748851fd32/CES_FL/handoffs/PAPER_START_20261109.md).
+
+Three RF-S and three RF-SJg downstream seeds and the previous frozen-list TEST exports are complete. The new first draft reports gains, utility costs, age/gender regressions, provenance gaps and the distinction from full counterfactual training. The linked branch holds current scientific files; the entries below remain historical. No experiment is launched by this index update.
+
 ## Actual Ding reproduction and FairForge-2 launch — 2 November 2026
 
 [Our archived Ding reproduction versus CES-FL](results/ding_reproduced_vs_cesfl_20261102/REPORT.md) uses measured local checkpoints rather than the paper's numbers. All four TEST memberships and FF++ TRAIN/VAL memberships match exactly. Full local Ding seed7 AUC97.44/56.05/71.22/72.54%; CES-FL B/C seed17 have higher AUC on all four datasets, with disclosed differences in preprocessing, seeds, optimization, checkpoint selection and archived GDA behavior. Full fairness metrics and native aggregate files are included.

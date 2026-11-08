@@ -1,5 +1,13 @@
 # CFES / Beat-Ding: fairness-aware deepfake detection vs Ding et al. (CVPR'26)
 
+## Current paper and results — 9 November 2026
+
+**Start here:** [paper PDF](https://github.com/hardikbha/CFES-BeatDing/blob/76c069bdec9576b64b6543a524ffd6748851fd32/CES_FL/paper/main.pdf) · [LaTeX, rebuild instructions and evidence](https://github.com/hardikbha/CFES-BeatDing/tree/76c069bdec9576b64b6543a524ffd6748851fd32/CES_FL/paper) · [complete TEST tables](https://github.com/hardikbha/CFES-BeatDing/blob/76c069bdec9576b64b6543a524ffd6748851fd32/CES_FL/paper/RESULTS.md) · [code/progress handoff](https://github.com/hardikbha/CFES-BeatDing/blob/76c069bdec9576b64b6543a524ffd6748851fd32/CES_FL/handoffs/PAPER_START_20261109.md) · [supervisor review prompt](https://github.com/hardikbha/CFES-BeatDing/blob/76c069bdec9576b64b6543a524ffd6748851fd32/CES_FL/paper/WRITING_PLAN.md).
+
+The complete current scientific source, exact configurations, aggregate reports and seven-page working draft are on [`paper/ff2-processing-fairness-20261109`](https://github.com/hardikbha/CFES-BeatDing/tree/paper/ff2-processing-fairness-20261109), pinned at `76c069b`. Main's older source/results below are preserved historical snapshots; use the linked branch for the current study.
+
+RF-S and RF-SJg each completed three downstream seeds sharing one seed17 pretrained encoder. Existing public FairForge-2 TEST exports were audited without new inference: RF-SJg AUC `98.60±0.06%`, gender×race `100F_FPR=47.69±3.91`, versus RF-S `98.98±0.01%` / `60.95±1.92`. Gender and age disparity regress; this is a measured trade-off, not an overall win over Ding. The current RF variant uses original-image risk control and processing augmentation, not the full counterfactual CES-FL objective. Private images, scores, reviews and checkpoints stay on the cluster. No new training was launched for the paper update.
+
 ## Completed original-only comparison — 2 November 2026
 
 [Verified P/BCE/fair completion and validation fairness comparison](CES_FL/results/manip_response_originals_s17_20261102/REPORT.md). Both downstream arms completed50epochs with native independent replay. BCE/fair validationAUC98.45/98.49%, but primaryF_FPR and FPRgap are worse for fair; no primary fairness win. Nochange/score/response remain blocked by reviewed manipulation quartets. Qwen224/224generated, no recorded pair approvals. No TEST or FairForge-2 run.
