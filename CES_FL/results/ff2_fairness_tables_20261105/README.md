@@ -213,3 +213,8 @@ has not yet produced a feasible checkpoint (still training / results follow).
 alone: model-type rows, $F_{\mathrm{FPR}}/F_{\mathrm{MEO}}/F_{\mathrm{DP}}/F_{\mathrm{OAE}}/\mathrm{AUC}$ over the 8
 sex×age×race groups, **bold**/underline for best/second-best, params column. All 11 FF2-trained runs included (BCE,
 DAG-FDD, DAW-FDD, Ding-style GDA, CES-FL P/A/B, L_A, L_H-PS, RF-S, RF-SJg). VAL only, seed 17.
+
+## 16. Extended with es-AUC, FPR/TPR gap, worst-group AUC (8 Nov 2026)
+
+[FF2_TABLE3_STYLE.pdf](FF2_TABLE3_STYLE.pdf) updated: the 5 FairForensics Table III columns plus 4 extra diagnostic
+columns — es-AUC, plain FPR gap, plain TPR gap, worst-group AUC — in one landscape table, FairForge-2 only.

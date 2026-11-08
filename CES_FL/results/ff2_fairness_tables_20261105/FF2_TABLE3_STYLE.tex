@@ -1,35 +1,39 @@
 \documentclass[11pt]{article}
-\usepackage[margin=1.3cm]{geometry}
+\usepackage[margin=1cm,landscape]{geometry}
 \usepackage{booktabs,multirow,graphicx,amsmath}
 \usepackage[T1]{fontenc}\usepackage{lmodern}
 \begin{document}
 \begin{table}[h]\centering
 \caption{Detection and fairness performance (\%) on \textbf{FairForge-2} (public SELECT/validation, seed 17), trained on
 FairForge-2 public TRAIN. Fairness is computed over the 8 sex $\times$ age ($<$30/30+) $\times$ race (White/Non-White)
-intersectional subgroups, as in FairForensics (arXiv 2608.01661) Table III. Lower fairness scores indicate better
-demographic fairness; higher AUC means better detection. \textbf{Bold} and \underline{underline} denote the best and
-second-best results. All rows share one architecture (Xception, 20.81M parameters), so the comparison isolates the
-training objective. These are validation, not TEST, scores; no result here has been evaluated on TEST.}
+intersectional subgroups, as in FairForensics (arXiv 2608.01661) Table III, plus four extra diagnostic columns:
+es-AUC (AUC discounted by its spread across groups), the plain FPR/TPR max$-$min gap in percentage points, and the
+AUC of the single worst-performing group. Lower fairness scores and gaps indicate better demographic fairness; higher
+AUC/es-AUC/worst-group AUC means better detection. \textbf{Bold} and \underline{underline} denote the best and
+second-best results per column. All rows share one architecture (Xception, 20.81M parameters), so the comparison
+isolates the training objective. These are validation, not TEST, scores; no result here has been evaluated on TEST.}
 \resizebox{\linewidth}{!}{%
-\begin{tabular}{ll ccccc c}
+\begin{tabular}{ll ccccc ccc c c}
 \toprule
-Model Type & Detector & $F_{\mathrm{FPR}}\!\downarrow$ & $F_{\mathrm{MEO}}\!\downarrow$ & $F_{\mathrm{DP}}\!\downarrow$ & $F_{\mathrm{OAE}}\!\downarrow$ & AUC$\uparrow$ & Params (M) \\
+& & \multicolumn{5}{c}{FairForensics Table III metrics} & \multicolumn{4}{c}{Extra diagnostics} & \\
+\cmidrule(lr){3-7}\cmidrule(lr){8-11}
+Model Type & Detector & $F_{\mathrm{FPR}}\!\downarrow$ & $F_{\mathrm{MEO}}\!\downarrow$ & $F_{\mathrm{DP}}\!\downarrow$ & $F_{\mathrm{OAE}}\!\downarrow$ & AUC$\uparrow$ & es-AUC$\uparrow$ & FPR gap$\downarrow$ & TPR gap$\downarrow$ & Worst-group AUC$\uparrow$ & Params (M) \\
 \midrule
 \multirow{1}{*}{\shortstack{CNN-based
-(Xception)}} & Ori (BCE) & 39.90 & 15.23 & 4.29 & 0.82 & 99.80 & 20.81 \\
+(Xception)}} & Ori (BCE) & 39.90 & 15.23 & 4.29 & 0.82 & 99.80 & 98.63 & 15.23 & 0.51 & \textbf{99.46} & 20.81 \\
 \midrule
-\multirow{3}{*}{\shortstack{Fair-based}} & DAG-FDD WACV'24 & 40.43 & 14.16 & 4.19 & \underline{0.82} & \underline{99.81} & 20.81 \\
- & DAW-FDD WACV'24 & 46.41 & 16.79 & 4.15 & 0.84 & \textbf{99.84} & 20.81 \\
- & Ding et al. CVPR'26 (corrected GDA, our run) & \textbf{18.83} & \textbf{8.62} & 5.12 & 2.19 & 99.06 & 20.81 \\
+\multirow{3}{*}{\shortstack{Fair-based}} & DAG-FDD WACV'24 & 40.43 & 14.16 & 4.19 & \underline{0.82} & \underline{99.81} & 98.25 & 14.16 & \underline{0.36} & 99.01 & 20.81 \\
+ & DAW-FDD WACV'24 & 46.41 & 16.79 & 4.15 & 0.84 & \textbf{99.84} & \underline{98.88} & 16.79 & \textbf{0.29} & 99.41 & 20.81 \\
+ & Ding et al. CVPR'26 (corrected GDA, our run) & \textbf{18.83} & \textbf{8.62} & 5.12 & 2.19 & 99.06 & 93.41 & \textbf{8.62} & 2.31 & 96.22 & 20.81 \\
 \midrule
 \multirow{7}{*}{\shortstack{Ours
-(CES-FL, head ablation)}} & CES-FL P: original-only BCE & 38.23 & 14.69 & \textbf{4.00} & 0.99 & 99.81 & 20.81 \\
- & CES-FL A: weighted BCE & 47.38 & 20.06 & 4.13 & 1.10 & 99.81 & 20.81 \\
- & CES-FL B: A + soft error disparity & 39.56 & 14.78 & \underline{4.02} & \textbf{0.68} & 99.81 & 20.81 \\
- & L\_A: plain-head BCE (matched control) & 42.70 & 21.24 & 4.52 & 0.86 & 99.81 & 20.81 \\
- & L\_H-PS: hierarchical-real + probe & 53.78 & 21.24 & 4.43 & 1.00 & 99.75 & 20.81 \\
- & RF-S: real-only FPR equalisation & 41.09 & 21.06 & 4.52 & 0.93 & 99.80 & 20.81 \\
- & \textbf{RF-SJg: RF-S + gentle JPEG aug} & \underline{35.67} & \underline{9.98} & 4.31 & 1.08 & 99.75 & 20.81 \\
+(CES-FL, head ablation)}} & CES-FL P: original-only BCE & 38.23 & 14.69 & \textbf{4.00} & 0.99 & 99.81 & \textbf{98.91} & 14.69 & 0.66 & 99.33 & 20.81 \\
+ & CES-FL A: weighted BCE & 47.38 & 20.06 & 4.13 & 1.10 & 99.81 & 98.84 & 20.06 & 0.57 & 99.43 & 20.81 \\
+ & CES-FL B: A + soft error disparity & 39.56 & 14.78 & \underline{4.02} & \textbf{0.68} & 99.81 & 98.82 & 14.78 & 0.57 & 99.30 & 20.81 \\
+ & L\_A: plain-head BCE (matched control) & 42.70 & 21.24 & 4.52 & 0.86 & 99.81 & 98.67 & 21.24 & 0.46 & \underline{99.46} & 20.81 \\
+ & L\_H-PS: hierarchical-real + probe & 53.78 & 21.24 & 4.43 & 1.00 & 99.75 & 98.13 & 21.24 & 0.57 & 98.96 & 20.81 \\
+ & RF-S: real-only FPR equalisation & 41.09 & 21.06 & 4.52 & 0.93 & 99.80 & 98.63 & 21.06 & 0.40 & 99.46 & 20.81 \\
+ & \textbf{RF-SJg: RF-S + gentle JPEG aug} & \underline{35.67} & \underline{9.98} & 4.31 & 1.08 & 99.75 & 98.55 & \underline{9.98} & 0.56 & 99.43 & 20.81 \\
 \bottomrule
 \end{tabular}}
 \end{table}

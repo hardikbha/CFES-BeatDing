@@ -28,7 +28,9 @@ GROUPS = [
 ]
 COLS = [('F_FPR_pct', 'min', r'$F_{\mathrm{FPR}}\!\downarrow$'), ('F_MEO_max_pp', 'min', r'$F_{\mathrm{MEO}}\!\downarrow$'),
         ('F_DP_pct', 'min', r'$F_{\mathrm{DP}}\!\downarrow$'), ('F_OAE_pp', 'min', r'$F_{\mathrm{OAE}}\!\downarrow$'),
-        ('overall_auc_pct', 'max', r'AUC$\uparrow$')]
+        ('overall_auc_pct', 'max', r'AUC$\uparrow$'), ('es_AUC_pct', 'max', r'es-AUC$\uparrow$'),
+        ('FPR_gap_pp', 'min', r'FPR gap$\downarrow$'), ('TPR_gap_pp', 'min', r'TPR gap$\downarrow$'),
+        ('worst_group_auc_pct', 'max', r'Worst-group AUC$\uparrow$')]
 
 allkeys = [k for _, rows in GROUPS for _, k in rows]
 ranked = {}
@@ -53,20 +55,24 @@ body = '\n'.join(lines[:-1])
 header = ' & '.join(h for _, _, h in COLS)
 
 doc = r'''\documentclass[11pt]{article}
-\usepackage[margin=1.3cm]{geometry}
+\usepackage[margin=1cm,landscape]{geometry}
 \usepackage{booktabs,multirow,graphicx,amsmath}
 \usepackage[T1]{fontenc}\usepackage{lmodern}
 \begin{document}
 \begin{table}[h]\centering
 \caption{Detection and fairness performance (\%) on \textbf{FairForge-2} (public SELECT/validation, seed 17), trained on
 FairForge-2 public TRAIN. Fairness is computed over the 8 sex $\times$ age ($<$30/30+) $\times$ race (White/Non-White)
-intersectional subgroups, as in FairForensics (arXiv 2608.01661) Table III. Lower fairness scores indicate better
-demographic fairness; higher AUC means better detection. \textbf{Bold} and \underline{underline} denote the best and
-second-best results. All rows share one architecture (Xception, 20.81M parameters), so the comparison isolates the
-training objective. These are validation, not TEST, scores; no result here has been evaluated on TEST.}
+intersectional subgroups, as in FairForensics (arXiv 2608.01661) Table III, plus four extra diagnostic columns:
+es-AUC (AUC discounted by its spread across groups), the plain FPR/TPR max$-$min gap in percentage points, and the
+AUC of the single worst-performing group. Lower fairness scores and gaps indicate better demographic fairness; higher
+AUC/es-AUC/worst-group AUC means better detection. \textbf{Bold} and \underline{underline} denote the best and
+second-best results per column. All rows share one architecture (Xception, 20.81M parameters), so the comparison
+isolates the training objective. These are validation, not TEST, scores; no result here has been evaluated on TEST.}
 \resizebox{\linewidth}{!}{%
-\begin{tabular}{ll ccccc c}
+\begin{tabular}{ll ccccc ccc c c}
 \toprule
+& & \multicolumn{5}{c}{FairForensics Table III metrics} & \multicolumn{4}{c}{Extra diagnostics} & \\
+\cmidrule(lr){3-7}\cmidrule(lr){8-11}
 Model Type & Detector & ''' + header + r''' & Params (M) \\
 \midrule
 ''' + body + r'''
