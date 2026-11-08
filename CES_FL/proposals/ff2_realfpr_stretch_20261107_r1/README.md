@@ -75,3 +75,20 @@ the custom-probability mix. Same selection rule as round 1 (min hard gender×rac
 SJ_gentle/SJ_ramp count as meeting the original stretch target only if they beat Ding (12.44) under the same AUC/FNR gates;
 otherwise they are reported as a further (still negative) data point on whether the shortcut can be removed without an
 unacceptable detection cost. Single seed each; no further seeds without a positive gate result.
+
+## Round 2 results: S across 3 seeds (8 Nov 2026)
+
+S (real-only false-alarm equalisation, no JPEG) now has 3 seeds, all selecting epoch 2:
+
+| Seed | AUC | FNR | g×r F_FPR |
+|---|---:|---:|---:|
+| 17 (round 1) | 99.80 | 0.29% | 34.12 |
+| 7 | 99.80 | 0.28% | 34.48 |
+| 27 | 99.81 | 0.30% | 34.12 |
+| **mean ± std** | **99.80 ± 0.01** | **0.29 ± 0.01%** | **34.24 ± 0.21** |
+
+**Confirmed, 3-seed claim:** S lowers gender×race F_FPR by 3.1 points vs L_A (37.37, single seed) with no AUC/FNR cost,
+very low seed variance. **It does not meet the stretch target** (Ding-style GDA 12.44). Per-epoch histories:
+`EPOCH_HISTORY_VAL_round2.json`.
+
+SJ_gentle (shortcoming-fix attempt 1) and SJ_ramp (attempt 2) are still training; results follow separately.
