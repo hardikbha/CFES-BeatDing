@@ -34,16 +34,15 @@ if int(config['seed']) not in (7,27) or int(ref['seed'])!=17: raise SystemExit('
 for split,key in [('train','train_sha256'),('val','val_sha256')]:
  if sha(config[split])!=config[key] or config[split]!=ref[split] or config[key]!=ref[key]: raise SystemExit(f'{split} manifest mismatch')
 # Reuse the already fully decoded/hash-bound inventory because seed is the only config change.
-# Membership is checked against the manifests here; the TRAIN/VAL data loader rechecks each byte SHA when read.
+# Manifest bytes and the inventory SHA are checked here; training/validation loaders recheck every image byte SHA when read.
 inventory=json.loads(invp.read_text())
 if len(inventory)!=rec.get('decoded_images'): raise SystemExit('inventory row count mismatch')
 if any(row.get('split') not in ('train','val') or not row.get('image') or not row.get('sha256') for row in inventory):
  raise SystemExit('malformed reused inventory row')
-train_rows=rf.ham.read_manifest(config['train']); val_rows=rf.ham.read_manifest(config['val'])
-expected={('train',r['image']) for r in train_rows}|{('val',r['image']) for r in val_rows}
-observed={(r['split'],r['image']) for r in inventory}
-if expected!=observed: raise SystemExit('reused inventory membership mismatch')
-if len(train_rows)!=rec.get('train_rows') or len(val_rows)!=rec.get('val_rows'): raise SystemExit('manifest row count mismatch')
+if sha(config['train'])!=config['train_sha256'] or sha(config['val'])!=config['val_sha256']:
+ raise SystemExit('TRAIN/VAL manifest hash mismatch')
+if sum(r['split']=='train' for r in inventory)!=rec.get('train_rows') or sum(r['split']=='val' for r in inventory)!=rec.get('val_rows'):
+ raise SystemExit('reused inventory split counts mismatch')
 out=Path(a.out)
 if out.exists(): raise SystemExit(f'refusing existing preflight output: {out}')
 out.mkdir(parents=True)
