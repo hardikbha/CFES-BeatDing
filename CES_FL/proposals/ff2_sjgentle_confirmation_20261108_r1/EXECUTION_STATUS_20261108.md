@@ -1,27 +1,28 @@
 # RF-SJg confirmation status — 8 Nov 2026
 
-Observed at 20:23 IST on 8 Nov 2026. Point-in-time status.
+Observed 20:26 IST. Point-in-time execution note.
 
 ## Stage state
 
 | Stage | State | Evidence |
 |---|---|---|
-| Proposal/config | Pushed | Branch experiment/ff2-sjgentle-confirm-20261108; active launch commit 91106b01ab28124c207319707ba841bfd32921d7. |
-| Config control | PASS | Seed-7 and seed-27 configs are exact copies of SJg seed17 except the seed field; config SHAs are in README. |
-| TRAIN/SELECT inputs | PASS | Fresh seed-specific receipts; 218,266 TRAIN / 31,107 SELECT; inventory SHA 9f5d4b58... matches the prior complete decode; zero split content overlap; test_read=false. Seed-7 receipt digest 6fd38864...; seed-27 receipt digest 71ad47f7.... |
-| First preflight attempt | FAILED adapter only | Base head-ablation CLI rejected extra RFA config keys. No training or TEST read. See logs/PREFLIGHT_SCHEMA_FAILURE_20261108.json. |
-| Redundant rehash attempts | ABORTED, no data mutation | A full-image scan and a repeated manifest-rescan were stopped as redundant; the old decoded inventory matched the exact manifest/config except seed. See PREFLIGHT_FULL_REHASH_ABORTED and PREFLIGHT_REBIND_RESCAN_ABORTED logs. |
-| First GPU launch attempt | FAILED before binding | gpu02 lacks git on PATH. No training/checkpoint and zero GPU-hours; reservation released. See LAUNCH_FAIL_SJ_gentle_s7_ssh_git_missing.json. |
-| Seed-7 RF-SJg | RUNNING | Direct shared-GPU lease on gpu02, PID 179980, visible device 7 / UUID GPU-65f63cc5-9366-5c2d-196a-6e7a0a62c1e8. At 20:23 IST: epoch 2, step 1,900 of 6,821. CUDA binding JSON exists. Log: logs/SJ_gentle_s7.log. |
-| Seed-27 RF-SJg | PENDING | Will launch sequentially after seed 7 completes and actual GPU hours are reconciled. |
-| TEST | SEALED | No TEST manifest, data, labels, scores or threshold selection were used. |
+| Proposal/config | Pushed | Branch experiment/ff2-sjgentle-confirm-20261108; launch source commit 91106b01ab28124c207319707ba841bfd32921d7. |
+| Config control | PASS | Seed-7 and seed-27 configs are copies of seed17 SJg with only the seed field changed. |
+| TRAIN/SELECT inputs | PASS | Seed-specific rebind receipts: 218,266 TRAIN / 31,107 SELECT, source 8c25ba8..., identical prior decoded inventory SHA 9f5d4b58..., zero recorded TRAIN/SELECT byte overlap, test_read=false. |
+| First preflight attempt | FAILED adapter only | Base head-ablation CLI rejected RF-SJg-only config keys; no training started. Preserved at logs/PREFLIGHT_SCHEMA_FAILURE_20261108.json. |
+| Redundant preflight attempts | ABORTED with receipts preserved | A full 249,373-image byte rehash was stopped after 274 s / 607 MB; a repeated manifest path-existence scan was stopped after 177 s with no image-byte reads. The same prior full decoded/hash inventory was already PASS for SJg17/S7/S27. The replacement rebind checks source/config/manifest hashes and inventory digest; training/validation loaders enforce each byte SHA on actual reads. |
+| First GPU launch attempt | FAILED before binding | gpu02 had no git executable on PATH; no CUDA binding, checkpoint, or GPU time. The 4-hour reservation was released. See logs/LAUNCH_FAIL_SJ_gentle_s7_ssh_git_missing.json. |
+| Seed 7 RF-SJg | RUNNING | Direct shared-GPU lease on gpu02, PID 179980, visible device 7 / H100 UUID GPU-65f63cc5-9366-5c2d-196a-6e7a0a62c1e8. At 20:26: epoch 3 around step 100/6,821; epoch 2 selected-so-far as feasible. Logs: logs/SJ_gentle_s7.log. |
+| Seed 7 current feasible checkpoint | PROVISIONAL | Epoch 2 SELECT AUC 99.7603%, FNR 0.4465%, gender×race F_FPR 30.8859%; against RF-S seed7: F_FPR −3.596 points, AUC −0.039 points, FNR +0.171 points. Later feasible epochs may replace it under the fixed selector. |
+| Seed 27 RF-SJg | PENDING | Launch sequentially only after seed7 completes and actual budget is reconciled. |
+| TEST | SEALED | No TEST manifests, data, labels, or scores were read. |
 
-The launcher checks the exact proposal commit on the login node and verifies model/config SHA256 on the GPU node (git is not installed on gpu02). It uses the shared lock/idle-device check. It does not claim exclusive device ownership and does not stop or modify unrelated jobs.
+The successful launcher verifies exact model/config SHA256 on the GPU node; git is checked at the login node because it is not installed on gpu02. It uses a shared-GPU lock and does not claim exclusive device ownership. No other jobs were stopped or modified.
 
 ## Budget and scheduler
 
-The shared 72 GPU-hour ledger is at 61.8905 charged plus 4.0 reserved for seed 7, leaving 6.1095 unreserved. The total two-run cap is 8 GPU-hours. The existing qstat jobs 45924–45927 remain queued at the scheduler's user running-job limit; their target older output folders already have DONE receipts, so they are duplicate wrappers and are not being counted as new training. Four generic running PBS jobs were identified by the user as unrelated; all were left untouched.
+The shared 72 GPU-hour ledger is 61.8905 charged plus 4.0 reserved for seed7, leaving 6.1095 unreserved. The two-run maximum is 8 GPU-hours. Four generic PBS jobs were identified by the user as unrelated and left untouched. Four rf2 wrappers remain queued because the scheduler reports the user GPU running-job limit; their target older output directories already have DONE receipts.
 
 ## Scientific interpretation
 
-Seed-17 RF-SJg SELECT results: AUC 99.7549%, FNR 0.4500%, gender×race F_FPR 27.5259%, versus matched RF-S at 99.8032%, 0.2930%, and 34.1222%. The predeclared Ding-reference target of 12.44% gender×race F_FPR was not met. The new seeds test whether the moderate validation reduction repeats; they cannot establish a Ding win or validate the full counterfactual CES-FL method.
+Seed17 RF-SJg SELECT result: AUC 99.7549%, FNR 0.4500%, gender×race F_FPR 27.5259%, versus matched RF-S at 99.8032%, 0.2930%, and 34.1222%. The predeclared Ding corrected-GDA target of 12.44% gender×race F_FPR was not met. This seed confirmation tests reproducibility of a moderate validation change, not a Ding win or the full counterfactual CES-FL method.
