@@ -1,0 +1,8 @@
+{
+  "observed_utc": "2026-11-08T14:16:15.588719+00:00",
+  "repository": "hardiksharma6555/FairForge2",
+  "metadata_only": true,
+  "status": "UNVERIFIED",
+  "error_type": "RepositoryNotFoundError",
+  "http_status": 401
+}

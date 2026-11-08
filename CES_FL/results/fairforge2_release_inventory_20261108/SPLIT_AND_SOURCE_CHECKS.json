@@ -1,0 +1,207 @@
+{
+  "observed_utc": "2026-11-08T14:19:43.591000+00:00",
+  "split_metadata_only": true,
+  "manifests": {
+    "ding": {
+      "train": {
+        "rows": 218266,
+        "columns": [
+          "img_path",
+          "label",
+          "ismale",
+          "isasian",
+          "iswhite",
+          "isblack",
+          "intersec_label"
+        ],
+        "file": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/release_ff2_public/manifests/ding/train.csv",
+        "sha256": "e0c933cb6a9d1e24fd92bee993e6fceee5d7cd906dbd756ca90ff6838581a990"
+      },
+      "realval": {
+        "rows": 2438,
+        "columns": [
+          "img_path",
+          "label",
+          "ismale",
+          "isasian",
+          "iswhite",
+          "isblack",
+          "intersec_label"
+        ],
+        "file": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/release_ff2_public/manifests/ding/realval.csv",
+        "sha256": "1a5bc095cd7e8d8a707203b8724704956882286341dd911031f5444cc0ca7cf0"
+      },
+      "fakeval": {
+        "rows": 28669,
+        "columns": [
+          "img_path",
+          "label",
+          "ismale",
+          "isasian",
+          "iswhite",
+          "isblack",
+          "intersec_label"
+        ],
+        "file": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/release_ff2_public/manifests/ding/fakeval.csv",
+        "sha256": "75fb14b8c438b7c42d412608cf6037ad1c20893447a1ae2e2cfca5750213cf8d"
+      },
+      "cal": {
+        "rows": 32255,
+        "columns": [
+          "img_path",
+          "label",
+          "ismale",
+          "isasian",
+          "iswhite",
+          "isblack",
+          "intersec_label"
+        ],
+        "file": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/release_ff2_public/manifests/ding/cal.csv",
+        "sha256": "231dc5e9d631c49c0785ceaefb81206852c87e0875082f61eb95a0fe062b108e"
+      },
+      "test": {
+        "rows": 87564,
+        "columns": [
+          "img_path",
+          "label",
+          "ismale",
+          "isasian",
+          "iswhite",
+          "isblack",
+          "intersec_label"
+        ],
+        "file": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/release_ff2_public/manifests/ding/test.csv",
+        "sha256": "141b95e8987f05e538d1a35e3f83df242c704349018d9bb93e58e1f9fbd907fe"
+      }
+    },
+    "ding_pooled": {
+      "train": {
+        "rows": 236163,
+        "columns": [
+          "img_path",
+          "label",
+          "ismale",
+          "isasian",
+          "iswhite",
+          "isblack",
+          "intersec_label"
+        ],
+        "file": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/release_ff2_public/manifests/ding_pooled/train.csv",
+        "sha256": "0c9ab85b018fb8276ce8d60c2081ff398f5afe5f0da510f85d0e7b441d291d89"
+      },
+      "realval": {
+        "rows": 2438,
+        "columns": [
+          "img_path",
+          "label",
+          "ismale",
+          "isasian",
+          "iswhite",
+          "isblack",
+          "intersec_label"
+        ],
+        "file": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/release_ff2_public/manifests/ding_pooled/realval.csv",
+        "sha256": "1a5bc095cd7e8d8a707203b8724704956882286341dd911031f5444cc0ca7cf0"
+      },
+      "fakeval": {
+        "rows": 31563,
+        "columns": [
+          "img_path",
+          "label",
+          "ismale",
+          "isasian",
+          "iswhite",
+          "isblack",
+          "intersec_label"
+        ],
+        "file": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/release_ff2_public/manifests/ding_pooled/fakeval.csv",
+        "sha256": "af33f5542da0945f0f466c46109631b6892debb7d6f5b54aa6297dcecffce05c"
+      },
+      "cal": {
+        "rows": 35250,
+        "columns": [
+          "img_path",
+          "label",
+          "ismale",
+          "isasian",
+          "iswhite",
+          "isblack",
+          "intersec_label"
+        ],
+        "file": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/release_ff2_public/manifests/ding_pooled/cal.csv",
+        "sha256": "f5f4c76f55b0e3ca195bbc470f149dd40f1196162fe55cacc73b96ee4397b38b"
+      },
+      "test": {
+        "rows": 93543,
+        "columns": [
+          "img_path",
+          "label",
+          "ismale",
+          "isasian",
+          "iswhite",
+          "isblack",
+          "intersec_label"
+        ],
+        "file": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/release_ff2_public/manifests/ding_pooled/test.csv",
+        "sha256": "0c85c1bfd1d08aed4fe339c5a505bb1b06fb7384e2444aebc58ef2b987075c8b"
+      }
+    }
+  },
+  "source_files": {
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/release_ff2_public/docs/README.md": {
+      "sha256": "9877ef1fdf9aff9f63fbe548a78943787f0f6960103ad76e9fb0e25101de31c2",
+      "bytes": 10735
+    },
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/release_ff2_public/docs/DATASHEET.md": {
+      "sha256": "c42a577c472695eeabfe328cf8739e17c72d54d0d1e61c4c9a9ac306d436eed5",
+      "bytes": 13741
+    },
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/release_ff2_public/docs/RELEASE_CHECKLIST.md": {
+      "sha256": "fa8e2bb1825cf9ec325dce5a753b645a10b6c77ae972bb6d494d12b699dcf34f",
+      "bytes": 9707
+    },
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/release_ff2_public/FREEZE.md": {
+      "sha256": "bde5ce4fd0e3f418dca07af6b673a284b6bd2fa50160778b18f9cfd00fb3d959",
+      "bytes": 8215
+    },
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/release_ff2_public/PUBLIC_SUBSET_SUMMARY.md": {
+      "sha256": "1412ddac82c2ac5ccb305ba57f1cf38659d90a50d47fe57e0b59b83f46835832",
+      "bytes": 10349
+    },
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/release_ff2_public/annotations/README_auto_annotations.md": {
+      "sha256": "e5437ce317b7cc57435a2fed0ac4e11888b4f3cfe6d4fb4fe705044ccdee936c",
+      "bytes": 9195
+    },
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/release_ff2_public/annotations/annotation_report.json": {
+      "sha256": "ef2e6369ce82080c99476922a8c920a8ff8de01ff72d609107290090568fe5c3",
+      "bytes": 855
+    },
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/release_ff2_public/annotations/hf_verify.json": {
+      "sha256": "57e01fec1637d01895f16e8a750073ac4e1949f10d7426987235d9bd8c953801",
+      "bytes": 307
+    },
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/release_ff2_public/annotations/hf_shards.csv": {
+      "sha256": "f54c27fe3145bc6fcdca7b58e4d613ef5f974329c85f89d7ad83fa9ffdac6caa",
+      "bytes": 2292
+    },
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/release_ff2_public/github_release_src/README.md": {
+      "sha256": "8fea1fd07bdf2ea5fbf264124f67b2f94fff739ebb14bd0b322934872c9789b7",
+      "bytes": 19806
+    },
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/release_ff2_public/github_release_src/CITATION.cff": {
+      "sha256": "890dc1ca5aafb7b06d99f0523bc50cf82e41c622fbba1b131e2ba02f33618e88",
+      "bytes": 830
+    }
+  },
+  "prepared_human_sheets": {
+    "sheet_files": 10,
+    "presentations": 9206,
+    "nonempty_answer_fields": 0,
+    "answer_columns": [
+      "age",
+      "gender",
+      "mst",
+      "race"
+    ]
+  }
+}

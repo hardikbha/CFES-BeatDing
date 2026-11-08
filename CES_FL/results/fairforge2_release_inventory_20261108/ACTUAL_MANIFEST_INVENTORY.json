@@ -1,0 +1,197 @@
+{
+  "observed_utc": "2026-11-08T14:17:15.730054+00:00",
+  "source_manifest": "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/release_ff2_public/manifests/public_manifest.csv",
+  "rows": 398957,
+  "columns": [
+    "rel_path",
+    "label",
+    "method",
+    "family",
+    "generator_model",
+    "src_tier",
+    "src_dataset",
+    "origin",
+    "item_id",
+    "person_id",
+    "donor_person_id",
+    "source_real_rel_path",
+    "pixel_ffhq_ids",
+    "caption_ffhq_id",
+    "split",
+    "cell_native",
+    "race_native",
+    "gender_native",
+    "ismale",
+    "isasian",
+    "iswhite",
+    "isblack",
+    "intersec_label",
+    "group",
+    "use_in_cell_metrics",
+    "cell_label_rule",
+    "p_adult",
+    "if_age",
+    "digital_source_type",
+    "generator_licence_status",
+    "release_flags",
+    "sha256"
+  ],
+  "unique_item_ids": 398957,
+  "unique_relative_paths": 398957,
+  "unique_image_sha256": 398957,
+  "fake_generator_labels": 34,
+  "distinct_generator_models": 31,
+  "real_person_ids_in_manifest": 22454,
+  "by_split": {
+    "TRAIN": {
+      "images": 236163,
+      "real": 16777,
+      "fake": 219386,
+      "excluded_from_group_metrics": 17897,
+      "group_valid_rows": 218266,
+      "recorded_real_person_ids": 13868
+    },
+    "SELECT": {
+      "images": 34001,
+      "real": 2438,
+      "fake": 31563,
+      "excluded_from_group_metrics": 2894,
+      "group_valid_rows": 31107,
+      "recorded_real_person_ids": 2043
+    },
+    "CAL": {
+      "images": 35250,
+      "real": 2509,
+      "fake": 32741,
+      "excluded_from_group_metrics": 2995,
+      "group_valid_rows": 32255,
+      "recorded_real_person_ids": 2018
+    },
+    "TEST": {
+      "images": 93543,
+      "real": 5441,
+      "fake": 88102,
+      "excluded_from_group_metrics": 5979,
+      "group_valid_rows": 87564,
+      "recorded_real_person_ids": 4525
+    }
+  },
+  "fake_families": {
+    "ID-preserving gen.": 33370,
+    "Face swap": 82608,
+    "Restoration / SR": 77197,
+    "GAN": 17733,
+    "Text-to-image": 41498,
+    "Editing": 78805,
+    "Reenactment": 40581
+  },
+  "source_by_label": {
+    "FFHQ": {
+      "real": 4641,
+      "fake": 80755
+    },
+    "FairFace": {
+      "real": 22524,
+      "fake": 291037
+    }
+  },
+  "spatial_annotation_columns_in_main_manifest": [],
+  "manifest_sha256": "21f1b206fdd4ac0e838542b268de79ff103268fb888cbacda10b609a3ebd5d2a",
+  "auto_annotation_columns": [
+    "item_id",
+    "rel_path",
+    "split",
+    "label",
+    "method",
+    "auto_ff_age9",
+    "auto_ff_age4",
+    "auto_ff_age2",
+    "auto_ff_p_age_lt30",
+    "auto_ff_sex",
+    "auto_ff_race7",
+    "auto_ff_race2",
+    "auto_ff_ids8",
+    "auto_ff_ids8_name",
+    "auto_ff_det_mode",
+    "auto_ff_det_conf",
+    "auto_ff_n_faces",
+    "auto_ff_ok",
+    "auto_ff_p_race_White",
+    "auto_ff_p_race_Black",
+    "auto_ff_p_race_Latino_Hispanic",
+    "auto_ff_p_race_East_Asian",
+    "auto_ff_p_race_Southeast_Asian",
+    "auto_ff_p_race_Indian",
+    "auto_ff_p_race_Middle_Eastern",
+    "auto_ff_p_male",
+    "auto_ff_p_female",
+    "auto_ff_p_age_0-2",
+    "auto_ff_p_age_3-9",
+    "auto_ff_p_age_10-19",
+    "auto_ff_p_age_20-29",
+    "auto_ff_p_age_30-39",
+    "auto_ff_p_age_40-49",
+    "auto_ff_p_age_50-59",
+    "auto_ff_p_age_60-69",
+    "auto_ff_p_age_70+",
+    "auto_if_age",
+    "auto_if_age4",
+    "auto_ita_gw",
+    "auto_ita_raw",
+    "auto_ita_gwexp",
+    "auto_ita_L_gw",
+    "auto_ita_b_gw",
+    "auto_ita_roi_mode",
+    "auto_ita_skin_fallback",
+    "auto_ita_n_skin_px",
+    "auto_ita_grayscale",
+    "auto_ita_det_score",
+    "auto_if_age_remeasured",
+    "auto_if_male",
+    "auto_ita_error",
+    "auto_ita_source",
+    "auto_ita4",
+    "auto_ita4_raw",
+    "auto_ita4_gwexp",
+    "human_mst",
+    "human_validated"
+  ],
+  "automatic_annotation_actual_coverage": {
+    "rows": 398957,
+    "missing": {
+      "auto_ff_age9": 0,
+      "auto_if_age": 0,
+      "auto_ita_gw": 24093,
+      "auto_ita4": 24093
+    },
+    "human_fields": {
+      "human_validated:False": 398957,
+      "human_mst_nonempty": 0
+    }
+  },
+  "stored_shard_index": {
+    "n_shards": 20,
+    "images": 398957,
+    "bytes": 10650603520,
+    "by_split": {
+      "cal": 2,
+      "select": 2,
+      "test": 5,
+      "train": 11
+    },
+    "each_shard_has_sha256": true
+  },
+  "historical_staging_root": {
+    "path": "/tmp/claude-156900507/-home-sachin-chaudhary/3e01ae21-517f-480b-a721-cb2115803d08/scratchpad/hf_ff2/repo",
+    "exists": true,
+    "shards_existing": 0
+  },
+  "cross_split_recorded_real_id_overlap": {
+    "TEST:TRAIN": 0,
+    "TEST:SELECT": 0,
+    "TEST:CAL": 0,
+    "TRAIN:SELECT": 0,
+    "TRAIN:CAL": 0,
+    "SELECT:CAL": 0
+  }
+}

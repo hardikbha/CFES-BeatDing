@@ -1,0 +1,16 @@
+{
+  "observed_utc": "2026-11-08T14:22:52.620000+00:00",
+  "base_commit": "92bbd26938e42c8d74790ea65e7830a79a236c35",
+  "dataset_metadata_git_commit": "c452b7a5ccd71c7628429ac86d95fd29338fdd91",
+  "changes": "new inventory/report only",
+  "training_or_generation_launched": false,
+  "access_settings_changed": false,
+  "evidence_sha256": {
+    "DATASET_GITHUB_METADATA.json": "ab4fb2ae8c4df614f1e67a07db7688928fae7803d1e4a2b3a6463533dd11368c",
+    "MODEL_SUMMARY.json": "580a809e1842abe895f771971b06068f091ae87ac03946b27a647fd7f967ac94",
+    "ACTUAL_MANIFEST_INVENTORY.json": "cccb6ff830dc34611e9876eaf8f75b3baa2d36b2435568869e176ac97bd40259",
+    "HF_CURRENT_METADATA.json": "ca07186e055da104d7c174fb47f7eccb9d2db109bca7401684f92e1cf345ea09",
+    "SPLIT_AND_SOURCE_CHECKS.json": "4c8b45f87d29edef92ac5006c116af6d6ad8a4ad71717c09d49ef4db6fcc15e7",
+    "REPORT.md": "4c562f68c09d62891fb1cbc8a130f4e58877ab55334796e291dee7c5c723be9e"
+  }
+}

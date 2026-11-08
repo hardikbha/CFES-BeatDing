@@ -1,0 +1,35 @@
+{
+  "observed_utc": "2026-11-08T14:18:44.555336+00:00",
+  "checkpoint": "/home/sachin.chaudhary/ces_fl_runs/ff2_originals_s17_20261102_r1/training/best.pt",
+  "bytes": 259577189,
+  "fresh_checkpoint_sha256": "43152de1b98dce48801114efb2454cb0bc6aa7400445dd5f139759022229895a",
+  "epochs_completed": 10,
+  "selected_epoch": 9,
+  "all_saved_model_tensors_finite": true,
+  "native_validation_replay_recorded": true,
+  "fresh_inference_this_task": false,
+  "validation_overall": {
+    "n": 31107,
+    "n_real": 2438,
+    "n_fake": 28669,
+    "auc": 0.9981053586334089,
+    "fpr": 0.09967186218211649,
+    "fnr": 0.0038020161149673864,
+    "positive_rate": 0.9259330697270711
+  },
+  "validation_calibration": {
+    "threshold_logit": -4.2040414810180655,
+    "rule": "validation_real_empirical_budget_v1",
+    "requested_fpr": 0.1,
+    "n_validation_real": 2438,
+    "allowed_fp": 243,
+    "achieved_fp": 243,
+    "achieved_fpr": 0.09967186218211649,
+    "test_fpr_guaranteed": false
+  },
+  "test_evaluated": false,
+  "source_sha256": "0e001dd1251570ce43fb82bde307c519dea4045d9734506e1ce90d2ed014f8de",
+  "config_sha256": "db0c886527635295f0394dddbca9da1a8a3c40807609ab78f324b75b382fbee8",
+  "kind": "CES-FL Xception original-only public-FF2 BCE;not full counterfactual model",
+  "not_uploaded": "binary weights/raw faces/raw scores"
+}
