@@ -1,5 +1,11 @@
 # CES-FL — supervisor review and training handoff
 
+## Current writing snapshot — 9 November 2026
+
+[Paper PDF](paper/main.pdf) · [LaTeX and rebuild instructions](paper/README.md) · [Verified TEST tables](paper/RESULTS.md) · [Current handoff](handoffs/PAPER_START_20261109.md) · [Claims and remaining gaps](paper/CLAIMS_AND_GAPS.md).
+
+The RF-S/RF-SJg three-downstream-seed comparison and prior frozen-list TEST exports are complete. RF-SJg TEST AUC `98.60±0.06%`, gender×race `100F_FPR=47.69±3.91`; RF-S `98.98±0.01%` / `60.95±1.92`. Gender/age disparity regress and overall superiority is not established. These seeds share one pretrained encoder. The paper records the implemented original-image variant, not a completed full counterfactual method. Private data/checkpoints remain on the cluster. This publication runs no training or inference; historical snapshots below remain preserved.
+
 ## FairForge-2 external baselines — 3 November 2026
 
 [Proposal and readiness](proposals/ff2_baseline_suite_s17_20261103T110324Z/README.md) · [GPU operator prompt](proposals/ff2_baseline_suite_s17_20261103T110324Z/GPU_OPERATOR_PROMPT.md). User authorized72 additional aggregate GPU-hours and at most3 allocated GPUs. Matched native Xception BCE/DAG-FDD/DAW-FDD code, configs and CPU checks are prepared; real input/CUDA checks and training remain pending. PG-FDD/FairAdapter source is pinned but adapters remain conditional; RSEF lacks verified source. Existing Ding and plain-head work is preserved. Publish destination is the writable `hardiksharma6555` fork; this is not a training launch.

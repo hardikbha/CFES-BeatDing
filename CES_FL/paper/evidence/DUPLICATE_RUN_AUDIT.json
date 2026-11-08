@@ -1,0 +1,8 @@
+{
+  "primary_rule": "Use the checkpoint paths in the existing TEST freeze for both VAL and TEST.",
+  "additional_seed7_run": "/home/sachin.chaudhary/ces_fl_runs/ff2_sjgentle_confirmation_20261108_r1/SJ_gentle_s7/out",
+  "additional_checkpoint_sha256": "a20a32a4f3497a9bdef08717167a3334774293b6d6ae821c8acff8b83870b742",
+  "frozen_checkpoint_sha256": "d38610fcfbaa3100b729c683752011948756cc3f61748a3237f4743ddbeed449",
+  "selected_validation_metrics_identical": true,
+  "extra_training_not_an_independent_seed": true
+}

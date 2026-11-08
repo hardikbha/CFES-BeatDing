@@ -4,6 +4,14 @@ New [baseline suite and operator prompt](proposals/ff2_baseline_suite_s17_202611
 
 # Current CES-FL status
 
+## Superseding observation — 9 November 2026, 01:43 IST login clock
+
+RF-S and RF-SJg each completed seeds7/17/27, ten downstream epochs each. The upstream `30a6b263` record already contains ten frozen-list TEST exports. No repeat training or TEST computation was launched for this publication. No live `ces_fl_realfpr.py` Python process was observed on gpu01/gpu02; four scheduler pool/generic jobs remain untouched. GPU clocks were roughly eleven minutes behind login; timestamps alone cannot certify freeze order.
+
+The [paper workspace](paper/README.md), [complete aggregate tables](paper/RESULTS.md), [source/checkpoint evidence](paper/EVIDENCE_MAP.md) and [handoff](handoffs/PAPER_START_20261109.md) are current. RF-SJg reduces primary TEST disparity relative to RF-S, at a detection cost; gender/age fairness worsens, and corrected local GDA retains much lower F_FPR with lower AUC. No overall win claim. Test is exposed and may not be used for further tuning.
+
+Duplicate seed7 is disclosed. Shared72 ledger charged64.6011GPU-h, reserved0, recorded balance7.3989 before unresolved TEST/sanity overhead. No new experiment is authorized by this status page. Older pending/RUNNING/TEST-sealed statements below describe their original observation dates.
+
 ## Plain Xception head ablation — 3 November 2026
 
 [Project memory and research blueprint](PROJECT_MEMORY.md) · [Two-arm proposal](proposals/plain_head_s17_20261103T101418Z/README.md) · [GPU operator prompt](proposals/plain_head_s17_20261103T101418Z/GPU_OPERATOR_PROMPT.md). New standalone Xception+GAP+linear source:20,809,001 total /6,790,433 exit-policy trainable parameters. CPU synthetic smoke and targeted checks pass; CUDA/input checks and both real-data runs are pending. Existing H and completed results are preserved. This publication launches no jobs.

@@ -1,0 +1,24 @@
+verified checkpoint / aggregate receipt: cesfl_p
+verified checkpoint / aggregate receipt: daw
+verified checkpoint / aggregate receipt: ding_gda
+verified checkpoint / aggregate receipt: l_a
+verified checkpoint / aggregate receipt: rf_s_s17
+verified checkpoint / aggregate receipt: rf_s_s27
+verified checkpoint / aggregate receipt: rf_s_s7
+verified checkpoint / aggregate receipt: rf_sjg_s17
+verified checkpoint / aggregate receipt: rf_sjg_s27
+verified checkpoint / aggregate receipt: rf_sjg_s7
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/ces_fl_sources/cesfl-paper-20261109/CES_FL/paper/tools/collect_paper_evidence.py", line 159, in <module>
+    collect(a.runs_root, a.out, a.repo)
+  File "/home/sachin.chaudhary/ces_fl_sources/cesfl-paper-20261109/CES_FL/paper/tools/collect_paper_evidence.py", line 111, in collect
+    dup = read(duplicate_path / 'RUN_VERIFIED.json')
+  File "/home/sachin.chaudhary/ces_fl_sources/cesfl-paper-20261109/CES_FL/paper/tools/collect_paper_evidence.py", line 26, in read
+    return json.loads(Path(path).read_text())
+  File "/usr/lib64/python3.9/pathlib.py", line 1266, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+  File "/usr/lib64/python3.9/pathlib.py", line 1252, in open
+    return io.open(self, mode, buffering, encoding, errors, newline,
+  File "/usr/lib64/python3.9/pathlib.py", line 1120, in _opener
+    return self._accessor.open(self, flags, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/sachin.chaudhary/ces_fl_runs/ff2_sjgentle_confirmation_20261108_r1/SJ_gentle_s7/RUN_VERIFIED.json'

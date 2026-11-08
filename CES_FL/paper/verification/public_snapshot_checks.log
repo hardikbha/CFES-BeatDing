@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "summary_rows_recomputed": 80,
+  "subgroup_rows": 540,
+  "selected_runs": 6,
+  "epoch_records": 60,
+  "model_source_hashes_unchanged": true,
+  "inference_or_training_executed": false,
+  "private_scores_or_images_read": false
+}
