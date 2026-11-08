@@ -14,7 +14,7 @@ Freshly scanned `manifests/public_manifest.csv`:
 - 256×256 RGB JPEG face crops as documented. A fresh eight-item TRAIN-only spot check (real plus one per fake family) decoded 8/8 and matched that format. This does not verify every image anew.
 - **34 generator labels /31 distinct generator models**, seven fake families. Labels such as swap/simswap can share a model; do not call these 34 independent architectures.
 - **22,454 recorded real-person IDs**, including ArcFace-grouped FairFace pseudo-persons. They are not 22,454 independently verified human identities; synthetic GAN/T2I faces should not be counted as actual people.
-- Sources: FFHQ4,641 real +80,755 fake; FairFace 22,524 real +291,037 fake. RFW-derived images and InSwapper outputs are excluded from this release candidate according to the recorded release decisions.
+- Sources: FFHQ 4,641 real +80,755 fake; FairFace 22,524 real +291,037 fake. RFW-derived images and InSwapper outputs are excluded from this release candidate according to the recorded release decisions.
 - Every row has a unique item ID, relative image path and recorded image SHA256. This task verified uniqueness of the manifest fields, not rehashed all 398,957 image files.
 - Fresh manifest SHA256: `21f1b206fdd4ac0e838542b268de79ff103268fb888cbacda10b609a3ebd5d2a`.
 
@@ -41,8 +41,8 @@ These existing benchmark fake-generation methods are distinct from the later Qwe
 | Baselines |Partial|Stored 80-detector public-subset benchmark and historical CFES-family results exist. This is not 80 matched public-TRAIN retrains. No complete matched public-split Ding/DAW/DAG/PG/CES-FL counterfactual leaderboard exists in the inspected evidence.|
 | Proposed model |Implementation present; empirical validation incomplete|CES-FL code, objectives and configurations exist in the method repository. Current public-FF2 checkpoint is original-only BCE pretraining; the complete proposed counterfactual method has not been established on FF2.|
 | Evaluation code |Present in research repository; not a portable complete dataset benchmark package|Ding-style metrics, AUC, FPR/FNR, group metrics, fixed/calibrated reporting, family summaries and uncertainty code exist. Dataset-only GitHub lacks the complete detector evaluation harness. Standardize and document protocols before a common leaderboard.|
-| Training code |Present in method repository; release integration incomplete|CES-FL executable trainer and exact seed 17FF2 config exist. Dataset GitHub mainly ships construction/annotation/limited regeneration scripts; build scripts still require unshipped internal inputs. Portable paths, dependency lock, commands and per-baseline configurations remain to curate.|
-| Model checkpoints |Present locally; not distributed with dataset repository|Verified FF2-trained Xception CES-FL BCE checkpoint exists, plus historical local artifacts. Dataset GitHub has no.pt/.pth/.safetensors/.onnxweights. No public final counterfactual model checkpoint is established.|
+| Training code |Present in method repository; release integration incomplete|CES-FL executable trainer and exact seed 17 FF2 config exist. Dataset GitHub mainly ships construction/annotation/limited regeneration scripts; build scripts still require unshipped internal inputs. Portable paths, dependency lock, commands and per-baseline configurations remain to curate.|
+| Model checkpoints |Present locally; not distributed with dataset repository|Verified FF2-trained Xception CES-FL BCE checkpoint exists, plus historical local artifacts. Dataset GitHub has no `.pt`, `.pth`, `.safetensors` or `.onnx` weights. No public final counterfactual model checkpoint is established.|
 
 Masks and boxes are not required for a whole-image binary classification/fairness benchmark. If a paper claims pixel-localization accuracy, it needs genuine independent spatial ground truth; CES-FL signed contribution maps cannot be substituted for it.
 
@@ -60,7 +60,7 @@ Freshly counted both the master manifest and the split CSVs:
 
 **Why the counts differ:**29,765 FairFace-derived T2I/identity-conditioned fakes have unconfirmed inherited group labels. They remain available for pooled detection analyses with `use_in_cell_metrics=False`, and must be excluded from per-group fairness metrics. Official `manifests/ding/` files omit them; `ding_pooled/` retains them. Do not silently mix these populations.
 
-Current CES-FL adapter uses 218,266TRAIN/31,107VAL(SELECT)/87,564TEST, totaling 336,937 rows. Its separate CAL32,255 rows is not an input to the existing pilot. These are the public group-valid subset, not the whole 398,957-image dataset.
+Current CES-FL adapter uses 218,266 TRAIN / 31,107 VAL (SELECT) / 87,564 TEST, totaling 336,937 rows. Its separate CAL 32,255 rows is not an input to the existing pilot. These are the public group-valid subset, not the whole 398,957-image dataset.
 
 Release protocol: select checkpoint/hyperparameters on SELECT, calibrate a global threshold on CAL, then freeze it before TEST; supplementary Ding-style probability 0.5 results are separately defined. **Existing CES-FL pilot instead calibrated on SELECT/validation real images.** That is a documented experiment-specific difference, not a test-leakage claim or permission to overwrite its stored threshold. A dataset-standard comparison needs an explicit future version/config with the declared CAL protocol.
 
@@ -70,10 +70,10 @@ Fresh scan found zero cross-split overlap in recorded real `person_id` sets. Pri
 
 Main manifest has 32 columns, including `rel_path,label,method,family,generator_model,src_dataset,item_id,person_id,donor_person_id,source_real_rel_path,split,cell_native,race_native,gender_native,intersec_label,group,use_in_cell_metrics,cell_label_rule,p_adult,if_age,sha256`.
 
-- **Authenticity/generator:** construction labels,0 real/1 fake. Label 1 includes AIrestoration and other processing as defined by the benchmark; it does not mean every item is a deceptive identity deepfake. Report forgery family and define the task.
+- **Authenticity/generator:** construction labels,0 real/1 fake. Label 1 includes AI restoration and other processing as defined by the benchmark; it does not mean every item is a deceptive identity deepfake. Report forgery family and define the task.
 - **Gender/race:** perceived labels, inherited/crowd/classifier-derived with provenance. Eight Ding groups: Male/Female×Asian/Black/White/Others. Race is not skin tone. FairFace pseudo-person labels use component aggregation, not self-identification. Generated faces can fail to render the source label.
 - **Age:** FairFace 9-bin/4-bin/2-bin estimates plus InsightFace apparent age. All 398,957 have FairFace age and InsightFace age fields. These two models and bin definitions are distinct; declare the chosen axis. Passing an apparent-adult gate is not proof of true age.
-- **Skin tone:** automatic ITA and variants.374,864/398,957 have ITA(93.961%);24,093 are missing. Four bins use fixed TRAIN-real quartiles; they are relative pixel-colour bins, affected by illumination/white balance/exposure, not human Monk categories or dermatological truth.
+- **Skin tone:** automatic ITA and variants. 374,864/398,957 have ITA(93.961%);24,093 are missing. Four bins use fixed TRAIN-real quartiles; they are relative pixel-colour bins, affected by illumination/white balance/exposure, not human Monk categories or dermatological truth.
 - **Human review:** all 398,957 rows have `human_validated=False`; all `human_mst` values are empty. Ten prepared rater sheets have 9,206 presentations and no filled race/gender/age/MST answers. Synthetic rater fixtures are software tests, not actual annotations. A human protocol/kit exists; this inventory cannot treat it as completed review.
 - **Spatial labels:** no mask/bbox/landmark coordinates in the released master schema. Five-landmark alignment is preprocessing; it is not a shipped localization target. Face ROI detection modes and confidence values are diagnostic metadata.
 
@@ -81,9 +81,9 @@ Independent reviewers still need to resolve label quality, uncertain/minor flags
 
 ## 5. Baselines and evaluation evidence
 
-`release_ff2_public/stats/benchmarks/panel_public.csv` contains 80 detector rows; stored aggregate metadata gives best panel AUC87.33%(c 2 pclip_ufd) on the public group-valid TEST population. These are existing scores filtered/recomputed for the public subset, not 80 fresh end-to-end in-domain trainings or a new result from this audit. The wider per-seed/subset CSV contains 672 rows across different training populations and subsets, not 672 independent models.
+`release_ff2_public/stats/benchmarks/panel_public.csv` contains 80 detector rows; stored aggregate metadata gives best panel AUC 87.33% (`c2pclip_ufd`) on the public group-valid TEST population. These are existing scores filtered/recomputed for the public subset, not 80 fresh end-to-end in-domain trainings or a new result from this audit. The wider per-seed/subset CSV contains 672 rows across different training populations and subsets, not 672 independent models.
 
-Historical public CFES-D seed 7TEST AUC98.2598% belongs to the older CLIP implementation and a different selection/calibration protocol. Older CFES models trained on the internal/full dataset and evaluated on public TEST remain labeled that way. The historical Ding 99.3573%AUC is on the internal 182,884-row TEST, not the current public 87,564-row benchmark. FF++→FF2 transfer is another separate experiment. None substitutes for matched public-only baselines.
+Historical public CFES-D seed 7 TEST AUC 98.2598% belongs to the older CLIP implementation and a different selection/calibration protocol. Older CFES models trained on the internal/full dataset and evaluated on public TEST remain labeled that way. The historical Ding 99.3573%AUC is on the internal 182,884-row TEST, not the current public 87,564-row benchmark. FF++→FF2 transfer is another separate experiment. None substitutes for matched public-only baselines.
 
 The current FF2 original-only BCE/Xception checkpoint completed 10 epochs, selected 9, on public TRAIN/SELECT:
 
@@ -100,7 +100,7 @@ Its saved native independent validation replay passed. This task freshly rehashe
 
 **Dataset metadata/code GitHub:** https://github.com/hardikbha/FairForge2 — current authenticated API verified `private=true`,125 files, commit `c452b7a5ccd71c7628429ac86d95fd29338fdd91`. No image JPEGs or model weights in that tree. A collaborator with access can read it; unauthenticated 404 does not mean the repository is absent.
 
-**Image host:** https://huggingface.co/datasets/hardiksharma6555/FairForge2 — historical `hf_verify.json` records 87 remote files,20 shards totaling 10,650,603,520 bytes(~10.65GB decimal), no missing/size/SHA mismatches and private=true/gated=false at that observation. **Live 8 November metadata request returned 401 RepositoryNotFoundError**, so current existence/access/revision cannot be confirmed with the credentials available to this process. Do not promise public downloading or claim it is currently gated/open. This task did not modify access settings or re-upload data. The old temporary staging directory has 0 of 20 tarshards present now; original TRAINimage samples still exist and decode. Historical upload receipts cannot establish current remote integrity.
+**Image host:** https://huggingface.co/datasets/hardiksharma6555/FairForge2 — historical `hf_verify.json` records 87 remote files,20 shards totaling 10,650,603,520 bytes(~10.65GB decimal), no missing/size/SHA mismatches and private=true / gated=false at that observation. **Live 8 November metadata request returned 401 RepositoryNotFoundError**, so current existence/access/revision cannot be confirmed with the credentials available to this process. Do not promise public downloading or claim it is currently gated/open. This task did not modify access settings or re-upload data. The old temporary staging directory has 0 of 20 tarshards present now; original TRAINimage samples still exist and decode. Historical upload receipts cannot establish current remote integrity.
 
 **Method repository:** https://github.com/hardikbha/CFES-BeatDing — current GitHub API verifies public. CES_FL contains the trainer/model/config/results, while DEMO_AXES contains demographic estimation code. A dataset paper/release should link these precisely, not imply the dataset-only repository ships complete model training/evaluation.
 
