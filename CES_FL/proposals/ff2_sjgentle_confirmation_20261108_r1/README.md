@@ -41,4 +41,4 @@ A first generic base-head preflight attempt failed because the RF-SJg config has
 
 ## Status
 
-Proposal and exact configs are pushed on branch `experiment/ff2-sjgentle-confirm-20261108`. No seed-7 or seed-27 SJg run has launched yet. Existing seed17 SJg and seed7/27 RF-S runs remain untouched.
+The proposal and exact configs are pushed on branch experiment/ff2-sjgentle-confirm-20261108. See EXECUTION_STATUS_20261108.md for the timestamped preflight, failures, active process, budget and next gate. Seed-7 RF-SJg is running; seed 27 remains pending.
