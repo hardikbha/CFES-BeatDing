@@ -11,7 +11,6 @@
     "/home/sachin.chaudhary/ces_fl_runs/ff2_rfa_20261107/S_s27/out"
   ],
   "seed17_pilot": "/home/sachin.chaudhary/ces_fl_runs/ff2_rfa_20261107/SJ_gentle/out",
-  "source_commit": "9b4b0f42f1fe3823b6abdae826db0f9d63853cfa",
   "source_sha256": {
     "ces_fl_realfpr.py": "2d99295cc0b8190a571695b581ef5ba73e7b5fc18994461bdf1a21c1d83089d1",
     "ces_fl_head_ablation.py": "8c25ba8cb844b059adbbce75b57785a156333182afa2d5d576985997f2d36733"
@@ -25,5 +24,8 @@
   "config_sha256": {
     "seed7": "74d487a07134052cae90de832d6755486e4d8d5c08a42024daa3b763a7d35f74",
     "seed27": "9dee4b7c468f3fdf2e2b58bf50d09bd60f5df4e158171d09a371a53caf27467f"
-  }
+  },
+  "base_model_commit": "9b4b0f42f1fe3823b6abdae826db0f9d63853cfa",
+  "proposal_branch": "experiment/ff2-sjgentle-confirm-20261108",
+  "approved_model_code_change": false
 }
