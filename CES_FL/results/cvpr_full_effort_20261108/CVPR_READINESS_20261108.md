@@ -1,5 +1,7 @@
 # CVPR full-effort plan — actual evidence and next gates
 
+**Superseding observation: 9 Nov 2026, 01:43 IST.** Three downstream RF-SJg seeds and the frozen-list TEST exports already completed on the original RFA branch (`30a6b263`). Do not launch duplicate confirmation or TEST jobs. RF-SJg TEST AUC `98.60±0.06%`, gender×race `100F_FPR=47.69±3.91`, versus RF-S `98.98±0.01%` / `60.95±1.92`; gender and age disparity regress. Local corrected GDA is `93.08%` / `9.47`, so an overall superiority claim is unsupported. All repeats share one seed17 pretrained encoder. Current manuscript and public aggregate audit are on `paper/ff2-processing-fairness-20261109`. The 8 Nov plan below is historical; TEST is now exposed. Shared ledger charged `64.6011/72 GPU-h`, with TEST/sanity duration reconciliation pending. No new training or inference in this publication.
+
 **Observed:** 8 Nov 2026, 20:21 IST.
 **Acceptance:** no experiment can make CVPR acceptance a sure thing. The goal is to build a clear, reproducible claim with matched baselines, independent seeds and a locked test evaluation.
 
@@ -23,7 +25,7 @@ The fixed-recipe RF-SJg seed-7/27 confirmation is in the pushed branch:
 - Model code hashes: real-FPR 2d99295cc0b8190a571695b581ef5ba73e7b5fc18994461bdf1a21c1d83089d1; core 8c25ba8cb844b059adbbce75b57785a156333182afa2d5d576985997f2d36733.
 - Seed configs are copies of SJg seed17 with only the seed changed.
 - Both seed preflight receipts PASS using the identical existing decoded/hash-bound inventory, 218,266 TRAIN / 31,107 SELECT, zero TRAIN/SELECT byte overlap, and no TEST access.
-- Seed 7 is running on gpu02 under a direct shared-GPU lease; CUDA is bound to one visible H100, physical UUID GPU-65f63cc5-9366-5c2d-196a-6e7a0a62c1e8. At this observation it is in epoch 1 around step 6,800/6,821. No TEST was read.
+- Seed 7 is running on gpu02 under a direct shared-GPU lease; CUDA is bound to one visible H100, physical UUID GPU-65f63cc5-9366-5c2d-196a-6e7a0a62c1e8. At 20:33 IST it is in epoch 4 around step 4,700/6,821; epoch 2 remains the best feasible checkpoint so far, AUC 99.7603%, FNR 0.4465%, gender×race F_FPR 30.8859%. No TEST was read.
 - Four GPU-hours are reserved for seed 7; the 72-hour shared ledger shows 61.8905 charged, 4 reserved and 6.1095 unreserved.
 - Seed 27 is pending after seed 7 completes and actual charges are reconciled.
 
