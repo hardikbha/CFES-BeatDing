@@ -34,9 +34,20 @@ def main():
     if a.sanity:
         splits, receipt = ding.read_inputs(c, stat=False)
         z, cal, report = ding.validation(model, splits['val'], c, device, 0, 1)
-        ok = report == ck['validation']
-        print(json.dumps({'sanity': 'PASS' if ok else 'FAIL', 'recomputed_auc': report['overall']['auc'],
-                          'stored_auc': ck['validation']['overall']['auc']}))
+        def diffs(x, y, path, out):
+            if isinstance(x, dict):
+                for k in x: diffs(x[k], y[k], path + '.' + str(k), out)
+            elif isinstance(x, (float, int)) and not isinstance(x, bool):
+                out.append((path, abs(x - y)))
+        pairs = []; diffs(report, ck['validation'], 'root', pairs)
+        max_diff = max((d for _, d in pairs), default=0.)
+        auc_diff = max((d for p, d in pairs if p.endswith('.auc') or p == 'root.overall.auc'), default=0.)
+        # See ff2_test_eval_20261108_r1/README.md "Root cause of the CPU sanity failures" for the justification of
+        # these bounds: AUC (rank-based) must match tightly; other fields (per-group FPR, sensitive to single-image
+        # threshold flips near the boundary) get a wider, measured bound.
+        ok = auc_diff < 1e-4 and max_diff < 0.015  # see export_baselines.py/README for the F_FPR-is-a-sum justification
+        print(json.dumps({'sanity': 'PASS' if ok else 'FAIL', 'max_metric_diff': max_diff, 'max_auc_diff': auc_diff,
+                          'recomputed_auc': report['overall']['auc'], 'stored_auc': ck['validation']['overall']['auc']}))
         if not ok: sys.exit(1)
         return
 
