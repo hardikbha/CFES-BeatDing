@@ -37,7 +37,7 @@ The RF-S controls for seeds 7 and 27 are also complete and verified. Their outpu
 
 The shared 72 GPU-hour ledger was last observed at **61.8905 hours charged**, leaving **10.1095 hours**. Reserve at most 4 hours for each of these two runs (8 total); actual RF-SJg seed17 took about 1.169 GPU-hours. Run sequentially, record allocation/binding and charge actual time. If the ledger changes or the requested reserve no longer fits, stop.
 
-Use a fresh CPU input preflight for each config, then the pinned direct-SSH shared-GPU lease wrapper. It verifies the exact source commit, CUDA visibility, shared locks and a new output directory. No unrelated PBS/SSH jobs are terminated or modified. New outputs and logs belong under `/home/sachin.chaudhary/ces_fl_runs/ff2_sjgentle_confirmation_20261108_r1/`.
+A first generic base-head preflight attempt failed because the RF-SJg config has extra RFA keys; that failure is preserved in the run log. The corrected preflight rebinds the prior fully decoded TRAIN/VAL inventory to the seed-only config after checking the source/config hashes, TRAIN/VAL manifest hashes, and every stored image-byte SHA. It does not read TEST. Use a fresh output receipt for each seed, then the pinned direct-SSH shared-GPU lease wrapper. It verifies the exact source commit, CUDA visibility, shared locks and a new output directory. No unrelated PBS/SSH jobs are terminated or modified. New outputs and logs belong under `/home/sachin.chaudhary/ces_fl_runs/ff2_sjgentle_confirmation_20261108_r1/`.
 
 ## Status
 

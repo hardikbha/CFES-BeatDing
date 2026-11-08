@@ -16,7 +16,7 @@ case "$HOST" in
   *) echo "unapproved host $HOST" >&2; exit 4 ;;
 esac
 [ -f "$CFG" ] || { echo "missing config $CFG" >&2; exit 5; }
-[ -f "$ROOT/$RUN/preflight/PREFLIGHT.json" ] || { echo "missing fresh preflight" >&2; exit 5; }
+[ -f "$ROOT/$RUN/preflight_rebound/PREFLIGHT.json" ] || { echo "missing fresh preflight" >&2; exit 5; }
 [ ! -e "$ROOT/$RUN/out" ] || { echo "refusing existing output path" >&2; exit 5; }
 ACTUAL=$(git -C "$SRC_TREE" rev-parse HEAD)
 [ "$ACTUAL" = "$EXPECTED_COMMIT" ] || { echo "commit mismatch $ACTUAL != $EXPECTED_COMMIT" >&2; exit 5; }
@@ -49,7 +49,7 @@ T0=$(date +%s)
 echo "$(date -Is) start $RUN host=$HOST visible=$CUDA_VISIBLE_DEVICES $UUID pid=$$ commit=$ACTUAL"
 cd "$ROOT/$RUN"
 set +e
-$PY -u "$MODEL" --config "$CFG" --preflight "$ROOT/$RUN/preflight" --out "$ROOT/$RUN/out" --budget-hours 4 >> "$ROOT/logs/$RUN.log" 2>&1
+$PY -u "$MODEL" --config "$CFG" --preflight "$ROOT/$RUN/preflight_rebound" --out "$ROOT/$RUN/out" --budget-hours 4 >> "$ROOT/logs/$RUN.log" 2>&1
 RC=$?
 set -e
 T1=$(date +%s)

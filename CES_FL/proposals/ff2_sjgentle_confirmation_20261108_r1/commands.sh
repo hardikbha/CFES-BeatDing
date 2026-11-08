@@ -10,8 +10,12 @@ case ${1:?preflight|launch-seed7|launch-seed27} in
     for seed in 7 27; do
       name=SJ_gentle_s${seed}
       mkdir -p "$RUNROOT/$name"
-      "$PY" "$SOURCE/CES_FL/src/ces_fl_head_ablation.py" preflight \
-        --config "$SOURCE/$ID/$name.json" --out "$RUNROOT/$name/preflight"
+      "$PY" "$SOURCE/$ID/operator/rebind_preflight.py" \
+        --source "$SOURCE" \
+        --config "$SOURCE/$ID/$name.json" \
+        --reference-config /home/sachin.chaudhary/ces_fl_runs/ff2_rfa_20261107/SJ_gentle/config.json \
+        --reference-preflight /home/sachin.chaudhary/ces_fl_runs/ff2_rfa_20261107/SJ_gentle/preflight \
+        --out "$RUNROOT/$name/preflight_rebound"
     done
     ;;
   launch-seed7|launch-seed27)
