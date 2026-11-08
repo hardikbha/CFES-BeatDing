@@ -206,3 +206,10 @@ short of Ding and of the original stretch target. The run is noisy across epochs
 3 feasible epochs; most epochs were infeasible), so this is a single-seed result; 3-seed confirmation is the natural
 next step if pursued further. A second attempt (SJ_ramp: full-strength mix phased in over 2 epochs) performed worse and
 has not yet produced a feasible checkpoint (still training / results follow).
+
+## 15. FairForge-2 table in FairForensics' Table III layout (8 Nov 2026)
+
+[FF2_TABLE3_STYLE.pdf](FF2_TABLE3_STYLE.pdf) mirrors FairForensics (arXiv 2608.01661) Table III exactly for FairForge-2
+alone: model-type rows, $F_{\mathrm{FPR}}/F_{\mathrm{MEO}}/F_{\mathrm{DP}}/F_{\mathrm{OAE}}/\mathrm{AUC}$ over the 8
+sex×age×race groups, **bold**/underline for best/second-best, params column. All 11 FF2-trained runs included (BCE,
+DAG-FDD, DAW-FDD, Ding-style GDA, CES-FL P/A/B, L_A, L_H-PS, RF-S, RF-SJg). VAL only, seed 17.
