@@ -124,3 +124,20 @@ is single-seed and was noisy across epochs within that one seed. Before includin
 confirm it across seeds 7 and 27 (identical config to SJ_gentle, seed changed only), the same practice used for RF-S.
 
 Budget: 10.11 of 72 GPU-hours left at launch. Same selection rule and cap as rounds 1–2.
+
+## Round 3 results: RF-SJg across 3 seeds (8 Nov 2026)
+
+All three seeds selected a feasible epoch:
+
+| Seed | Selected epoch | AUC | FNR | g×r F_FPR |
+|---|---:|---:|---:|---:|
+| 17 (round 2) | 2 | 99.76 | 0.45% | 27.53 |
+| 7 | 2 | 99.76 | 0.45% | 30.89 |
+| 27 | 6 | 99.75 | 0.51% | 28.67 |
+| **mean ± std** | | **99.755 ± 0.005** | **0.467 ± 0.034%** | **29.03 ± 1.71** |
+
+**Confirmed, 3-seed claim:** RF-SJg lowers gender×race F_FPR by 8.3 points vs L_A (37.37) and by 5.2 points vs RF-S's
+3-seed mean (34.24), with essentially unchanged AUC and only a small FNR increase. Seed variance is larger than RF-S's
+(1.71 vs 0.21) but the direction is consistent across all three seeds — none approached RF-S's or L_A's level. RF-SJg
+seed 17 is the checkpoint carried into the TEST evaluation freeze (`ff2_test_eval_20261108_r1`); seeds 7/27 are
+confirmatory and also included in that freeze's 3-seed TEST mean.
