@@ -13,14 +13,15 @@ ROWS = [('Ori (BCE)', 'BCE'), ('DAG-FDD WACV\'24', 'DAG-FDD'), ('DAW-FDD WACV\'2
         ('L\\_A: plain-head BCE (matched control)', 'L_A (plain-head BCE)'),
         ('\\textbf{L\\_H-PS (ours): hierarchical-real + probe}', 'L_H-PS (ours)'),
         ('\\textbf{RF-S (ours): real-only FPR equalisation, balanced reals}', 'RF-S (ours)'),
+        ('\\textbf{RF-SJg (ours): real-only FPR eq. + gentle JPEG aug}', 'RF-SJg (ours)'),
         ('\\textbf{CES-FL full (ours, final)}', None)]
 NOTE = {'PG-FDD CVPR\'24': 'not run on FF2', 'F3Net (FAD branch)': 'trained; verification failed', 'CORE': 'trained; verification failed',
         '\\textbf{CES-FL full (ours, final)}': 'not run on FF2',
         '\\textbf{L\\_H-PS (ours): hierarchical-real + probe}': 'awaiting human review of the probe'}
 
-m = pd.read_csv(RUNS / 'METRICS_LONG_10RUNS.csv', keep_default_na=False)
+m = pd.read_csv(RUNS / 'METRICS_LONG_11RUNS.csv', keep_default_na=False)
 m = m[m.threshold_view == 'VAL10']
-g = pd.read_csv(RUNS / 'GROUP_SUPPORT_10RUNS.csv', keep_default_na=False)
+g = pd.read_csv(RUNS / 'GROUP_SUPPORT_11RUNS.csv', keep_default_na=False)
 g = g[g.threshold_view == 'VAL10']
 dg = json.load(open(DIAG))
 
@@ -95,7 +96,7 @@ doc = r'''\documentclass[10pt]{article}
 \usepackage[T1]{fontenc}\usepackage{lmodern}
 \newcommand{\Fpr}{F_{\mathrm{FPR}}}\newcommand{\Fdp}{F_{\mathrm{DP}}}
 \title{FairForge-2 tables: current draft}
-\author{CES-FL project, updated 8 Nov 2026 (L\_A, L\_H-PS, RF-S added) from verified run aggregates}
+\author{CES-FL project, updated 8 Nov 2026 (L\_A, L\_H-PS, RF-S, RF-SJg added) from verified run aggregates}
 \date{}
 \begin{document}\maketitle
 \noindent\fcolorbox{orange}{orange!8}{\parbox{0.97\linewidth}{\textbf{Status of the numbers.} All results are on FairForge-2

@@ -186,3 +186,23 @@ Only S (real-only false-alarm equalisation on group-balanced reals, no JPEG) has
 row **RF-S** in [FF2_TABLES_DRAFT.pdf](FF2_TABLES_DRAFT.pdf): AUC 99.80, FNR 0.29%, g×r F_FPR 34.12 (L_A 37.37); FFHQ real
 FPR 64.5% vs FairFace 4.0%. The JPEG-augmented runs (J, SJ, SJF) reached g×r F_FPR 21–28 only at AUC 99.1–99.6 with FNR
 0.6–1.6%, so none has a feasible checkpoint; Ding-style GDA (12.44) remains the fairest FF2 run. Aggregates: `rf_s_20261108/`.
+
+## 14. Shortcoming-fix: RF-SJg, our best FF2 result so far (8 Nov 2026)
+
+Round 2 of the stretch experiment (`experiment/ff2-realfpr-stretch-20261107`) tried fixing the detection loss from round
+1's JPEG augmentation with a milder, q75-only version applied to 15% of images (`jpeg_p_any=0.15, jpeg_p_q75=1.0`).
+Result: **AUC 99.76, FNR 0.45%, gender×race F_FPR 27.53** — row **RF-SJg** in [FF2_TABLES_DRAFT.pdf](FF2_TABLES_DRAFT.pdf).
+
+| Model | g×r F_FPR | AUC | FNR | FFHQ real FPR | FairFace real FPR |
+|---|---:|---:|---:|---:|---:|
+| L_A (control) | 37.37 | 99.81 | 0.28% | 67.8% | 3.6% |
+| RF-S (3-seed mean) | 34.24 ± 0.21 | 99.80 | 0.29% | 64.5% | 4.0% |
+| **RF-SJg** | **27.53** | 99.76 | 0.45% | 51.2% | 5.4% |
+| Ding-style GDA (reference) | 12.44 | 99.06 | 1.07% | 14.9% | 9.4% |
+
+The milder JPEG augmentation narrows the FFHQ-vs-FairFace source gap (9.5× vs L_A's 19×) without breaking detection, and
+is the first JPEG-augmented run with a feasible checkpoint. It is our best FF2 fairness result to date, but still well
+short of Ding and of the original stretch target. The run is noisy across epochs (feasible F_FPR ranged 27.5–40.8 across
+3 feasible epochs; most epochs were infeasible), so this is a single-seed result; 3-seed confirmation is the natural
+next step if pursued further. A second attempt (SJ_ramp: full-strength mix phased in over 2 epochs) performed worse and
+has not yet produced a feasible checkpoint (still training / results follow).

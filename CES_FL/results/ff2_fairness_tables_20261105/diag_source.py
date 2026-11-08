@@ -9,7 +9,8 @@ MODELS={'BCE':BASE/'bce/training/validation_scores_PRIVATE.json','DAG-FDD':BASE/
  'Ding corrected GDA':Path('/home/sachin.chaudhary/ces_fl_runs/ff2_intersection_reanalysis_20261105/aggregates_v1/ding_corrected_gda_scores_PRIVATE.json'),
  'L_A (plain-head BCE)':Path('/home/sachin.chaudhary/ces_fl_runs/ff2_lh_ps_20261106_r1/L_A/validation_scores_PRIVATE.json'),
  'L_H-PS (ours)':Path('/home/sachin.chaudhary/ces_fl_runs/ff2_lh_ps_20261106_r1/L_H_PS/validation_scores_PRIVATE.json'),
- 'RF-S (ours)':Path('/home/sachin.chaudhary/ces_fl_runs/ff2_rfa_20261107/S/out/validation_scores_PRIVATE.json')}
+ 'RF-S (ours)':Path('/home/sachin.chaudhary/ces_fl_runs/ff2_rfa_20261107/S/out/validation_scores_PRIVATE.json'),
+ 'RF-SJg (ours)':Path('/home/sachin.chaudhary/ces_fl_runs/ff2_rfa_20261107/SJ_gentle/out/validation_scores_PRIVATE.json')}
 VAL_SHA='aeda051259d9e26b07c2810152b601ae115ce7c9e10523f99ea07bbc9f92afa8'
 out={}
 for m,p in MODELS.items():

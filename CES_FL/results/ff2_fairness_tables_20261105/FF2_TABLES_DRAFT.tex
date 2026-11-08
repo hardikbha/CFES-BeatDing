@@ -4,7 +4,7 @@
 \usepackage[T1]{fontenc}\usepackage{lmodern}
 \newcommand{\Fpr}{F_{\mathrm{FPR}}}\newcommand{\Fdp}{F_{\mathrm{DP}}}
 \title{FairForge-2 tables: current draft}
-\author{CES-FL project, updated 8 Nov 2026 (L\_A, L\_H-PS, RF-S added) from verified run aggregates}
+\author{CES-FL project, updated 8 Nov 2026 (L\_A, L\_H-PS, RF-S, RF-SJg added) from verified run aggregates}
 \date{}
 \begin{document}\maketitle
 \noindent\fcolorbox{orange}{orange!8}{\parbox{0.97\linewidth}{\textbf{Status of the numbers.} All results are on FairForge-2
@@ -45,13 +45,14 @@ F3Net (FAD branch) & \multicolumn{10}{c}{\textcolor{gray}{-- pending (trained; v
 CORE & \multicolumn{10}{c}{\textcolor{gray}{-- pending (trained; verification failed) --}} \\
 Ding et al.\ CVPR'26 (corrected GDA, our run) & \textbf{0.72} & 0.24 & 98.98 & \textbf{4.09} & 1.38 & 97.21 & \textbf{12.44} & 1.72 & 95.31 & 99.06 \\
 \midrule
-CES-FL P: original-only BCE & 3.60 & 0.24 & \textbf{99.80} & 12.16 & \textbf{1.06} & \textbf{99.44} & 28.39 & 1.53 & \textbf{99.08} & 99.81 \\
+CES-FL P: original-only BCE & 3.60 & 0.24 & \textbf{99.80} & 12.16 & 1.06 & \textbf{99.44} & 28.39 & 1.53 & \textbf{99.08} & 99.81 \\
 CES-FL A: weighted BCE & 3.26 & 0.14 & 99.79 & 12.80 & 1.12 & 99.43 & 29.10 & 1.43 & 99.05 & 99.81 \\
 CES-FL B: A + soft error disparity & 3.43 & 0.19 & \textbf{99.80} & 13.17 & 1.11 & 99.42 & 29.55 & \textbf{1.32} & 99.04 & 99.81 \\
 \midrule
 L\_A: plain-head BCE (matched control) & 4.11 & 0.20 & 99.77 & 17.54 & 1.33 & 99.22 & 37.37 & 1.58 & 98.66 & 99.81 \\
 \textbf{L\_H-PS (ours): hierarchical-real + probe} & 4.28 & 0.27 & 99.67 & 17.55 & 1.30 & 99.02 & 36.23 & 1.50 & 98.27 & 99.75 \\
 \textbf{RF-S (ours): real-only FPR equalisation, balanced reals} & 4.11 & 0.20 & 99.77 & 16.02 & 1.26 & 99.21 & 34.12 & 1.49 & 98.64 & 99.80 \\
+\textbf{RF-SJg (ours): real-only FPR eq. + gentle JPEG aug} & 3.26 & 0.23 & 99.74 & 13.05 & \textbf{0.83} & 99.16 & 27.53 & \textbf{1.32} & 98.58 & 99.75 \\
 \textbf{CES-FL full (ours, final)} & \multicolumn{10}{c}{\textcolor{gray}{-- pending (not run on FF2) --}} \\
 \bottomrule\end{tabular}}\end{table}
 
@@ -71,12 +72,13 @@ CORE & \multicolumn{9}{c}{\textcolor{gray}{-- pending (trained; verification fai
 Ding et al.\ CVPR'26 (corrected GDA, our run) & \textbf{1.58} & 98.41 & 98.69 & 7.72 & 97.46 & 98.29 & 4.88 & \textbf{2.07} & 1.07 \\
 \midrule
 CES-FL P: original-only BCE & 9.23 & 99.63 & 99.70 & 11.68 & \textbf{99.62} & 99.70 & 1.64 & 18.15 & 0.38 \\
-CES-FL A: weighted BCE & 9.02 & 99.57 & 99.67 & 10.62 & 99.61 & 99.71 & \textbf{1.41} & 10.35 & 0.33 \\
+CES-FL A: weighted BCE & 9.02 & 99.57 & 99.67 & 10.62 & 99.61 & 99.71 & 1.41 & 10.35 & 0.33 \\
 CES-FL B: A + soft error disparity & 7.42 & 99.60 & 99.68 & 11.56 & \textbf{99.62} & 99.69 & 1.86 & 10.35 & 0.37 \\
 \midrule
 L\_A: plain-head BCE (matched control) & 9.58 & \textbf{99.69} & 99.73 & 14.23 & 99.53 & 99.67 & 1.82 & 8.72 & 0.28 \\
 \textbf{L\_H-PS (ours): hierarchical-real + probe} & 11.90 & 99.40 & 99.60 & 13.35 & 99.30 & 99.61 & 1.46 & 9.63 & 0.38 \\
 \textbf{RF-S (ours): real-only FPR equalisation, balanced reals} & 9.62 & \textbf{99.69} & \textbf{99.74} & 13.38 & 99.53 & 99.68 & 2.27 & 9.24 & 0.29 \\
+\textbf{RF-SJg (ours): real-only FPR eq. + gentle JPEG aug} & 8.97 & 99.63 & 99.70 & 9.72 & 99.43 & 99.59 & \textbf{1.29} & 11.85 & 0.45 \\
 \textbf{CES-FL full (ours, final)} & \multicolumn{9}{c}{\textcolor{gray}{-- pending (not run on FF2) --}} \\
 \bottomrule\end{tabular}}\end{table}
 
@@ -99,7 +101,8 @@ CES-FL B: A + soft error disparity & 15.35 & 13.40 & 16.34 & 6.03 & 9.01 & 13.03
 \midrule
 L\_A: plain-head BCE (matched control) & 16.83 & 18.56 & 15.18 & 4.31 & 9.94 & 11.34 & 13.67 & 4.03 \\
 \textbf{L\_H-PS (ours): hierarchical-real + probe} & 15.84 & 17.01 & 15.95 & 5.46 & 10.25 & 12.61 & 13.28 & 3.38 \\
-\textbf{RF-S (ours): real-only FPR equalisation, balanced reals} & 15.84 & 18.56 & 15.18 & 4.89 & 9.94 & \textbf{10.92} & 12.89 & 4.51 \\
+\textbf{RF-S (ours): real-only FPR equalisation, balanced reals} & 15.84 & 18.56 & 15.18 & 4.89 & 9.94 & 10.92 & 12.89 & 4.51 \\
+\textbf{RF-SJg (ours): real-only FPR eq. + gentle JPEG aug} & 14.85 & 14.95 & 15.56 & 5.75 & 10.25 & \textbf{10.50} & 12.50 & 5.48 \\
 \textbf{CES-FL full (ours, final)} & \multicolumn{8}{c}{\textcolor{gray}{-- pending (not run on FF2) --}} \\
 \bottomrule\end{tabular}}\end{table}
 
