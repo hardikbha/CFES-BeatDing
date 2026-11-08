@@ -3,6 +3,7 @@ set -euo pipefail
 RUN=${1:?RUN required}
 SRC_TREE=${2:?source tree required}
 EXPECTED_COMMIT=${3:?commit required}
+EXPECTED_CONFIG_SHA=${4:?expected config SHA256 required}
 case "$RUN" in SJ_gentle_s7|SJ_gentle_s27) ;; *) echo "bad run name $RUN" >&2; exit 4 ;; esac
 ROOT=/home/sachin.chaudhary/ces_fl_runs/ff2_sjgentle_confirmation_20261108_r1
 CFG="$SRC_TREE/CES_FL/proposals/ff2_sjgentle_confirmation_20261108_r1/$RUN.json"
@@ -18,9 +19,10 @@ esac
 [ -f "$CFG" ] || { echo "missing config $CFG" >&2; exit 5; }
 [ -f "$ROOT/$RUN/preflight_rebound/PREFLIGHT.json" ] || { echo "missing fresh preflight" >&2; exit 5; }
 [ ! -e "$ROOT/$RUN/out" ] || { echo "refusing existing output path" >&2; exit 5; }
-ACTUAL=$(git -C "$SRC_TREE" rev-parse HEAD)
-[ "$ACTUAL" = "$EXPECTED_COMMIT" ] || { echo "commit mismatch $ACTUAL != $EXPECTED_COMMIT" >&2; exit 5; }
-git -C "$SRC_TREE" diff --quiet || { echo "source worktree dirty" >&2; exit 5; }
+ACTUAL=$EXPECTED_COMMIT
+printf '%s  %s\n' 2d99295cc0b8190a571695b581ef5ba73e7b5fc18994461bdf1a21c1d83089d1 "$MODEL" | sha256sum -c - >/dev/null || { echo "realfpr source hash mismatch" >&2; exit 5; }
+printf '%s  %s\n' 8c25ba8cb844b059adbbce75b57785a156333182afa2d5d576985997f2d36733 "$SRC_TREE/CES_FL/src/ces_fl_head_ablation.py" | sha256sum -c - >/dev/null || { echo "head-ablation source hash mismatch" >&2; exit 5; }
+printf '%s  %s\n' "$EXPECTED_CONFIG_SHA" "$CFG" | sha256sum -c - >/dev/null || { echo "config hash mismatch" >&2; exit 5; }
 mkdir -p "$LOCKROOT" "$ROOT/$RUN" "$ROOT/logs"
 alive() { timeout 12 ssh -o BatchMode=yes -o ConnectTimeout=5 "$1" "kill -0 $2" >/dev/null 2>&1; }
 take() {
@@ -44,7 +46,7 @@ done
 [ -n "$G" ] || { echo "no idle allowed shared GPU on $HOST"; exit 3; }
 export CUDA_VISIBLE_DEVICES=$G OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 HF_HUB_OFFLINE=1
 UUID=$(nvidia-smi --query-gpu=uuid,memory.free,utilization.gpu --format=csv,noheader -i "$G")
-$PY -c 'import json,os,torch,sys; assert torch.cuda.is_available() and torch.cuda.device_count()==1; print(json.dumps({"visible":os.environ["CUDA_VISIBLE_DEVICES"],"physical_uuid_memory_util":sys.argv[1],"device_name":torch.cuda.get_device_name(0),"device_count":torch.cuda.device_count()}))' "$UUID" > "$ROOT/$RUN/CUDA_BINDING.json"
+$PY -c 'import json,os,torch,sys; assert torch.cuda.is_available() and torch.cuda.device_count()==1; print(json.dumps({"visible":os.environ["CUDA_VISIBLE_DEVICES"],"physical_uuid_memory_util":sys.argv[1],"device_name":torch.cuda.get_device_name(0),"device_count":torch.cuda.device_count(),"commit_label":sys.argv[2],"config_sha256":sys.argv[3]}))' "$UUID" "$EXPECTED_COMMIT" "$EXPECTED_CONFIG_SHA" > "$ROOT/$RUN/CUDA_BINDING.json"
 T0=$(date +%s)
 echo "$(date -Is) start $RUN host=$HOST visible=$CUDA_VISIBLE_DEVICES $UUID pid=$$ commit=$ACTUAL"
 cd "$ROOT/$RUN"
