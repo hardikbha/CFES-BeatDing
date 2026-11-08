@@ -55,3 +55,23 @@ constraints. The real-only loss alone (S) lowers F_FPR by 3.25 points against L_
 source gap (FFHQ real FPR 64.5% vs FairFace 4.0%). JPEG augmentation attacks the shortcut (F_FPR 21–24) but costs detection
 (AUC 99.1–99.3, FNR 1.1–1.5%), the same kind of trade-off Ding-style GDA makes, while still staying above Ding's 12.44.
 Training the full encoder (SJF) recovered some AUC (up to 99.59) but never brought FNR under 0.5651% and lost fairness.
+
+## Round 2 (8 Nov 2026): more seeds + shortcoming-fix attempts
+
+Pre-registered before launch. Budget: 13.42 of 72 GPU-hours left; cap 4 h/run as before.
+
+| Run | Purpose | Design |
+|---|---|---|
+| S_s7, S_s27 | confirm RF-S (the only round-1 feasible design) across seeds 7 and 27, alongside the existing seed 17 | identical to S, seed changed only |
+| SJ_gentle | shortcoming fix attempt 1: round 1's JPEG augmentation (50% of images, mixed quality) broke detection immediately. Try far milder: 15% of images, exact q75/4:2:0 only (no random-quality branch) | arm R, `jpeg_p_any=0.15, jpeg_p_q75=1.0, jpeg_ramp_epochs=0`, seed 17 |
+| SJ_ramp | shortcoming fix attempt 2: same 50/25/25 mix as round 1's SJ, but phased in over 2 epochs (matching the fairness-loss ramp) instead of full strength from step 1 | arm R, `jpeg_p_any=0.5, jpeg_p_q75=0.5, jpeg_ramp_epochs=2`, seed 17 |
+
+Code change: `ces_fl_realfpr.py` — `jpeg_plan` now takes `p_any`/`p_q75` (defaults reproduce round 1's fixed 50/25/25 mix,
+statistically identical, RNG draw count differs so not bit-replayable); new `jpeg_p_any_effective` ramps `jpeg_p_any`
+linearly over `jpeg_ramp_epochs` completed epochs (0 = no ramp). 21/21 tests pass, including 2 new ones for the ramp and
+the custom-probability mix. Same selection rule as round 1 (min hard gender×race F_FPR s.t. AUC ≥ 99.5, FNR ≤ 0.5651%).
+
+**Reading plan:** report S's 3-seed mean ± std regardless of outcome (this is our one design with a feasible checkpoint).
+SJ_gentle/SJ_ramp count as meeting the original stretch target only if they beat Ding (12.44) under the same AUC/FNR gates;
+otherwise they are reported as a further (still negative) data point on whether the shortcut can be removed without an
+unacceptable detection cost. Single seed each; no further seeds without a positive gate result.

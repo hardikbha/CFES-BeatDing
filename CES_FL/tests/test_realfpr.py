@@ -17,6 +17,20 @@ class RealFPRTests(unittest.TestCase):
         self.assertTrue(all(p is None or (70 <= p[0] <= 95 and p[1] in (0, 2)) for p in plans))
         self.assertNotEqual(plans, [rf.jpeg_plan(17, 4, i) for i in range(20000)])
 
+    def test_jpeg_plan_custom_probabilities(self):
+        plans = [rf.jpeg_plan(1, 0, i, p_any=.2, p_q75=1.0) for i in range(20000)]
+        none = sum(p is None for p in plans) / len(plans)
+        self.assertAlmostEqual(none, .8, delta=.015)
+        self.assertTrue(all(p is None or (p[0] == 75 and p[1] == 2) for p in plans))  # p_q75=1 -> only exact q75/420
+
+    def test_jpeg_ramp(self):
+        c = {'jpeg_p_any': .5, 'jpeg_ramp_epochs': 2}
+        self.assertAlmostEqual(rf.jpeg_p_any_effective(c, 0), .25)
+        self.assertAlmostEqual(rf.jpeg_p_any_effective(c, 1), .5)
+        self.assertAlmostEqual(rf.jpeg_p_any_effective(c, 5), .5)
+        c0 = {'jpeg_p_any': .3, 'jpeg_ramp_epochs': 0}
+        self.assertAlmostEqual(rf.jpeg_p_any_effective(c0, 0), .3)  # no ramp: immediate full strength
+
     def test_jpeg_emulate_shape_and_change(self):
         im = Image.effect_noise((256, 256), 64).convert('RGB')
         out = rf.jpeg_emulate(im, 75, 2, 1.158)

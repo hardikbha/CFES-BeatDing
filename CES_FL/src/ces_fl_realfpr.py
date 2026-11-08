@@ -25,7 +25,8 @@ ham = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(ham)
 VERSION = 'CESFL_REALFPR_v1'
 ARMS = ('A', 'R')
 EXTRA_KEYS = {'rf_format', 'arm', 'jpeg_aug', 'jpeg_scale_file', 'jpeg_scale_sha256', 'reals_per_group', 'fair_every',
-              'lambda_rf', 'rf_ramp_epochs', 'tau_start', 'tau_end', 'threshold_refreshes_per_epoch', 'min_auc', 'max_fnr'}
+              'lambda_rf', 'rf_ramp_epochs', 'tau_start', 'tau_end', 'threshold_refreshes_per_epoch', 'min_auc', 'max_fnr',
+              'jpeg_p_any', 'jpeg_p_q75', 'jpeg_ramp_epochs'}
 
 
 def check(c):
@@ -37,6 +38,8 @@ def check(c):
         if type(c[k]) is not int or c[k] < 1: raise ValueError(k)
     if not (0 < c['tau_end'] <= c['tau_start'] and c['lambda_rf'] > 0 and 0 < c['min_auc'] < 1 and 0 < c['max_fnr'] < 1):
         raise ValueError('rf numbers')
+    if not (0 <= c['jpeg_p_any'] <= 1 and 0 <= c['jpeg_p_q75'] <= 1): raise ValueError('jpeg probs')
+    if type(c['jpeg_ramp_epochs']) is not int or c['jpeg_ramp_epochs'] < 0: raise ValueError('jpeg ramp')
     if c['source_sha256'] != ham.sha(ham.__file__): raise ValueError('head-ablation source changed')
     return c
 
@@ -45,11 +48,13 @@ def rf_digest(c): return ham.digest(c)
 
 
 # ---------------- JPEG augmentation (classification stream only) ----------------
-def jpeg_plan(seed, epoch, index):
-    """50% unchanged, 25% q75 4:2:0, 25% integer q in [70, 95] with 4:2:0 or 4:4:4 (equal). Same for every label/group."""
+def jpeg_plan(seed, epoch, index, p_any=.5, p_q75=.5):
+    """With prob p_any apply an augmentation (else unchanged); of those, p_q75 get exact q75 4:2:0, the rest
+    integer q in [70, 95] with 4:2:0 or 4:4:4 (equal). Same distribution for every label/source/group.
+    Defaults (p_any=.5, p_q75=.5) reproduce the original fixed 50/25/25 mix."""
     rng = random.Random(ham.seed_for(seed, 'jpeg', epoch, index)); u = rng.random()
-    if u < .5: return None
-    if u < .75: return 75, 2, rng.random()
+    if u >= p_any: return None
+    if rng.random() < p_q75: return 75, 2, rng.random()
     return rng.randint(70, 95), rng.choice((2, 0)), rng.random()
 
 
@@ -73,11 +78,20 @@ def load_pixels_aug(row, size, plan, scales):
     return torch.from_numpy(a).permute(2, 0, 1)
 
 
+def jpeg_p_any_effective(c, epoch):
+    """Ramp jpeg_p_any linearly in over jpeg_ramp_epochs completed epochs (0 = no ramp, immediate full strength)."""
+    r = c['jpeg_ramp_epochs']
+    factor = min(1., (epoch + 1) / r) if r > 0 else 1.
+    return c['jpeg_p_any'] * factor
+
+
 class AugOriginals(Dataset):
-    def __init__(self, rows, c, epoch, scales): self.rows, self.c, self.epoch, self.scales = rows, c, epoch, scales
+    def __init__(self, rows, c, epoch, scales):
+        self.rows, self.c, self.epoch, self.scales = rows, c, epoch, scales
+        self.p_any = jpeg_p_any_effective(c, epoch)
     def __len__(self): return len(self.rows)
     def __getitem__(self, i):
-        plan = jpeg_plan(self.c['seed'], self.epoch, i) if self.c['jpeg_aug'] else None
+        plan = jpeg_plan(self.c['seed'], self.epoch, i, self.p_any, self.c['jpeg_p_q75']) if self.c['jpeg_aug'] else None
         x = load_pixels_aug(self.rows[i], self.c['size'], plan, self.scales)
         return {'x': ham.normalize(x), 'y': self.rows[i]['label'], 'index': i}
 
