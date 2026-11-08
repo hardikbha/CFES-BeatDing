@@ -116,3 +116,11 @@ fairness result of this whole project, confirmed only on seed 17.
 target (g×r F_FPR < 12.44, AUC ≥ 99.5, FNR ≤ 0.5651%): **not met by any run.** Best result: RF-SJg at 27.53, roughly
 2.2× Ding-style GDA's 12.44. RF-S (loss only) is confirmed across 3 seeds at 34.24 ± 0.21. Next step, if pursued: 2
 more seeds of SJ_gentle's exact config to confirm 27.53 is not a lucky seed, within the ~10 GPU-hours remaining.
+
+## Round 3 (8 Nov 2026): RF-SJg 3-seed confirmation, ahead of a TEST freeze
+
+Pre-registered before launch. Purpose: RF-SJg (seed 17) is currently our best VAL fairness result (g×r F_FPR 27.53) but
+is single-seed and was noisy across epochs within that one seed. Before including it in a frozen TEST-evaluation list,
+confirm it across seeds 7 and 27 (identical config to SJ_gentle, seed changed only), the same practice used for RF-S.
+
+Budget: 10.11 of 72 GPU-hours left at launch. Same selection rule and cap as rounds 1–2.
