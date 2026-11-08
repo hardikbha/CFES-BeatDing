@@ -1,0 +1,10 @@
+{
+  "source_path": "/home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/additional72_gpu_hours.json",
+  "source_sha256": "50a01db27afac27370d8178abde6e003bbd365f9e86b0d68153a9a84e19f2058",
+  "cap_gpu_hours": 72.0,
+  "charged_gpu_hours": 64.60110213259857,
+  "active_reserved_gpu_hours": 0,
+  "unreserved_balance_gpu_hours": 7.3988978674014305,
+  "test_inference_and_sanity_runtime_reconciliation": "PENDING: receipts lack full start/end durations",
+  "balance_is_not_a_complete_study_compute_total": true
+}

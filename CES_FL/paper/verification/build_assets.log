@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "source": "committed aggregate snapshot only",
+  "test_summary_rows": 80,
+  "group_rows": 540,
+  "tables": 4,
+  "figures": 3,
+  "paired_difference": {
+    "SJg_minus_S_per_seed_pp": {
+      "17": -12.14433144780758,
+      "7": -11.619179659038686,
+      "27": -16.011907392679703
+    },
+    "mean_difference_pp": -13.258472833175324,
+    "sd_difference_pp": 2.3989575872483866
+  }
+}

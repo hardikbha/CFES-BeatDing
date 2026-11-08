@@ -1,0 +1,11 @@
+verified checkpoint / aggregate receipt: cesfl_p
+verified checkpoint / aggregate receipt: daw
+verified checkpoint / aggregate receipt: ding_gda
+verified checkpoint / aggregate receipt: l_a
+verified checkpoint / aggregate receipt: rf_s_s17
+verified checkpoint / aggregate receipt: rf_s_s27
+verified checkpoint / aggregate receipt: rf_s_s7
+verified checkpoint / aggregate receipt: rf_sjg_s17
+verified checkpoint / aggregate receipt: rf_sjg_s27
+verified checkpoint / aggregate receipt: rf_sjg_s7
+{"checks_passed": 17, "test_checkpoints": 10, "selected_validation_runs": 6, "test_summary_rows": 80, "test_group_rows": 540, "budget": {"source_path": "/home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/additional72_gpu_hours.json", "source_sha256": "50a01db27afac27370d8178abde6e003bbd365f9e86b0d68153a9a84e19f2058", "cap_gpu_hours": 72.0, "charged_gpu_hours": 64.60110213259857, "active_reserved_gpu_hours": 0, "unreserved_balance_gpu_hours": 7.3988978674014305, "test_inference_and_sanity_runtime_reconciliation": "PENDING: receipts lack full start/end durations", "balance_is_not_a_complete_study_compute_total": true}}

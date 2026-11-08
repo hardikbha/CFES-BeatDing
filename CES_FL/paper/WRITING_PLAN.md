@@ -1,0 +1,15 @@
+# Paper writing plan
+
+The first full narrative, equations, results, figures, limitations and references are in `main.tex`. The compiled `main.pdf` is the review artifact. Current focus is a source-processing audit plus a bounded original-image intervention, because that is what the recorded evidence supports.
+
+1. Supervisor reviews the central claim and decides whether this evidence supports a diagnosis paper, a method paper after further evidence, or a narrower report. Keep negative results and demographic regressions.
+2. Confirm authors, affiliations, ownership/description of FairForge-2, dataset construction text and attribution. Resolve human-reviewed versus estimated-label provenance before writing demographic-ground-truth claims.
+3. Resolve the TEST freeze chronology and numerical-export audit. Keep the existing receipt/hash evidence; do not retrospectively alter a preregistration or overwrite raw artifacts.
+4. Complete source/contributor-aware uncertainty on existing fixed predictions if separately authorized. Distinguish dataset-sampling intervals, downstream seed SD and independent encoder-pretraining variation. Do not declare significant gains from SD alone.
+5. Audit the full source/identity split integrity, source proportions, forgery-family support and data-licensing/release conditions. No hidden identity overlap or estimated-label limitations should disappear from the final text.
+6. Expand related work using primary sources and a precise closest-method comparison. A simple soft-FPR loss or JPEG augmentation alone is not a defensible novelty claim. Stronger novelty may lie in a validated confound diagnosis and rigorous controlled evidence, but that remains to be established.
+7. Any new counterfactual experiment, additional seed, dataset version or independent holdout requires its own frozen proposal and authorization. No training or generation is bundled with this writing plan. TEST feedback cannot select new settings on the exposed split.
+
+## Prompt to give a supervisor or another LLM
+
+> Work on the `paper/ff2-processing-fairness-20261109` branch of `hardikbha/CFES-BeatDing`. Read `CES_FL/AGENTS.md`, `CES_FL/paper/README.md`, `main.tex`, `CLAIMS_AND_GAPS.md`, `EVIDENCE_MAP.md`, and the exact source/configuration/aggregate receipts cited there. Treat old STATUS pages as snapshots. Review the actual first draft for claim–evidence alignment, protocol mismatches, label/source confounds, uncertainty, source attribution, and the distinction between the tested original-image RF variant and the full untested counterfactual method. Rebuild with the documented public-only commands. Check every displayed metric against the committed aggregates. Propose text/code changes on a branch; preserve historical results and preregistrations. Do not launch jobs, access private data/TEST predictions, fabricate labels/approvals, select best per-cell seeds, or claim overall superiority. Return a prioritized manuscript revision list and identify what scientific claim is defensible now.

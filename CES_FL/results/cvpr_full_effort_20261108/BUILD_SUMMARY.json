@@ -1,0 +1,46 @@
+{
+  "created": "2026-11-08",
+  "source_paper": "https://arxiv.org/html/2511.10150",
+  "Ding_T1_Xception": {
+    "cells": 10,
+    "beats_Ding": 9,
+    "beats_best_published": 7
+  },
+  "Ding_T2_Xception": {
+    "cells": 30,
+    "beats_Ding": 20,
+    "beats_best_published": 19
+  },
+  "Ding_T1_T2_Xception": {
+    "cells": 40,
+    "beats_Ding": 29,
+    "beats_best_published": 26,
+    "selection": "cellwise best of X-LA seeds 7/17/27 and X-LH seed17 at op05"
+  },
+  "Ding_T3_ResNet50": {
+    "cells": 40,
+    "beats_Ding": 13,
+    "beats_best_published": 8,
+    "selection": "cellwise best between R-LA/R-LH, seed17, fixed probability 0.5",
+    "ffpp_recorded_fit_test_overlap_ids_and_sources": 231
+  },
+  "FairForge2": {
+    "cells": 27,
+    "best_ours_strict_wins_vs_best_reported_baseline": 9,
+    "selection": "current seed17 SELECT/VAL10; full CES-FL not trained"
+  },
+  "caution": "Oracle best-per-cell values are posthoc, partly selected from test metrics. Do not present as one model, model-selection result, or confirmatory win.",
+  "input_sha256": {
+    "/home/sachin.chaudhary/ces_fl_runs/xception_seeds_7_27_20261107/TABLES12_3seed.md": "c8177758321b5bc2ea8e445be5d1d85ade35f5e5a93358d58578dc2164a56ced",
+    "/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104_cudaenv3/table3_eval/LOCKED_PLAN.json": "a234331c21c5539fb350f011737c993dd9bf84feb3d1ea65132a4fc36e98a788",
+    "/home/sachin.chaudhary/ces_fl_runs/ff2_fairness_tables_20261105/pdf11/FF2_TABLES_DRAFT.pdf": "415eb176dbb4ac451266204eb33fa2d94904175dc809fa6fd109872d14dfd917",
+    "/home/sachin.chaudhary/ces_fl_runs/ff2_fairness_tables_20261105/runs11/METRICS_LONG_11RUNS.csv": "6857cd99494fcb9c71be2af1795a6f0c2d8d3be4a41f5bec788acdbfce49d758",
+    "/home/sachin.chaudhary/ces_fl_runs/ff2_fairness_tables_20261105/runs11/GROUP_SUPPORT_11RUNS.csv": "69db5383ed62b65522742e2bc6da250412530d4c8fe2a3774d7bbe4d68b7a58c"
+  },
+  "combined_pdf": {
+    "path": "CES_FL/results/cvpr_full_effort_20261108/COMBINED_DING123_FF2_TABLES.pdf",
+    "pages": 13,
+    "sha256": "8298a4fd274975a28128423eb70e161ee3ffa6bd797a81e0fabd0e997a6ed07c",
+    "FF2_appendix_source": "FF2_TABLES_DRAFT.pdf pdf11 (2026-11-08 15:36 IST)"
+  }
+}

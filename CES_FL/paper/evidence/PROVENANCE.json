@@ -1,0 +1,102 @@
+{
+  "observed_utc": "2026-11-08T20:08:49.935242+00:00",
+  "reviewed_upstream_commit": "30a6b263aaa63677cf8d3d9f4ee51bdb472ae284",
+  "test_frozen_list_commit": "8d06aa09de29f3a6a7f666e0ab41c0cc3e7048ab",
+  "test_manifest_sha256": "dd5eb9ef070f658fe6b7f744c47f73e25ce7c53f948bc272f4f16c69a37d4099",
+  "source_files": {
+    "CES_FL/src/ces_fl_realfpr.py": "2d99295cc0b8190a571695b581ef5ba73e7b5fc18994461bdf1a21c1d83089d1",
+    "CES_FL/src/ces_fl_head_ablation.py": "8c25ba8cb844b059adbbce75b57785a156333182afa2d5d576985997f2d36733"
+  },
+  "checks": [
+    {
+      "check": "checkpoint_bytes_manifest_and_aggregate_counts",
+      "name": "cesfl_p",
+      "pass": true
+    },
+    {
+      "check": "checkpoint_bytes_manifest_and_aggregate_counts",
+      "name": "daw",
+      "pass": true
+    },
+    {
+      "check": "checkpoint_bytes_manifest_and_aggregate_counts",
+      "name": "ding_gda",
+      "pass": true
+    },
+    {
+      "check": "checkpoint_bytes_manifest_and_aggregate_counts",
+      "name": "l_a",
+      "pass": true
+    },
+    {
+      "check": "checkpoint_bytes_manifest_and_aggregate_counts",
+      "name": "rf_s_s17",
+      "pass": true
+    },
+    {
+      "check": "checkpoint_bytes_manifest_and_aggregate_counts",
+      "name": "rf_s_s27",
+      "pass": true
+    },
+    {
+      "check": "checkpoint_bytes_manifest_and_aggregate_counts",
+      "name": "rf_s_s7",
+      "pass": true
+    },
+    {
+      "check": "checkpoint_bytes_manifest_and_aggregate_counts",
+      "name": "rf_sjg_s17",
+      "pass": true
+    },
+    {
+      "check": "checkpoint_bytes_manifest_and_aggregate_counts",
+      "name": "rf_sjg_s27",
+      "pass": true
+    },
+    {
+      "check": "checkpoint_bytes_manifest_and_aggregate_counts",
+      "name": "rf_sjg_s7",
+      "pass": true
+    },
+    {
+      "check": "fixed_selection_config_digest_threshold_and_checkpoint_binding",
+      "name": "rf_s_s17",
+      "pass": true
+    },
+    {
+      "check": "fixed_selection_config_digest_threshold_and_checkpoint_binding",
+      "name": "rf_s_s7",
+      "pass": true
+    },
+    {
+      "check": "fixed_selection_config_digest_threshold_and_checkpoint_binding",
+      "name": "rf_s_s27",
+      "pass": true
+    },
+    {
+      "check": "fixed_selection_config_digest_threshold_and_checkpoint_binding",
+      "name": "rf_sjg_s17",
+      "pass": true
+    },
+    {
+      "check": "fixed_selection_config_digest_threshold_and_checkpoint_binding",
+      "name": "rf_sjg_s7",
+      "pass": true
+    },
+    {
+      "check": "fixed_selection_config_digest_threshold_and_checkpoint_binding",
+      "name": "rf_sjg_s27",
+      "pass": true
+    },
+    {
+      "check": "80_csv_rows_match_native_overall_metrics_540_support_rows",
+      "pass": true
+    }
+  ],
+  "private_scores_read": false,
+  "images_read": false,
+  "models_executed": false,
+  "temporal_freeze_audit": "Node clock skew prevents independent proof of push-before-first-TEST-read.",
+  "exporter_sanity": "Four family representatives; small DAW/GDA drift accepted under revised VAL-only tolerance.",
+  "repeat_scope": "Downstream seeds 7/17/27 share the same seed17 BCE50 encoder; SD is not a confidence interval."
+}

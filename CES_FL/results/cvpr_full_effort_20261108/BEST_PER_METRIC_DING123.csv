@@ -1,0 +1,81 @@
+table,dataset,metric,best_ours,source,ding_published,best_published,best_published_method,beats_ding,beats_best_published
+Ding T1/T2 Xception,FF++,g F_FPR,0.24,X-LA/s27,0.53,0.53,Ding SFD+GDA,True,True
+Ding T1/T2 Xception,FF++,g F_DP,1.76,X-LA/s17,3.61,3.61,Ding SFD+GDA,True,True
+Ding T1/T2 Xception,FF++,g es-AUC,97.54,X-LA/s7,96.45,96.45,Ding SFD+GDA,True,True
+Ding T1/T2 Xception,FF++,r F_FPR,6.03,X-LA/s7,9.29,5.43,DAW-FDD,True,False
+Ding T1/T2 Xception,FF++,r F_DP,3.06,X-LA/s17,4.35,4.35,Ding SFD+GDA,True,True
+Ding T1/T2 Xception,FF++,r es-AUC,97.57,X-LH/s17,94.86,94.86,Ding SFD+GDA,True,True
+Ding T1/T2 Xception,FF++,i F_FPR,14.93,X-LA/s7,20.18,9.19,PG-FDD,True,False
+Ding T1/T2 Xception,FF++,i F_DP,12.17,X-LA/s17,9.47,9.47,Ding SFD+GDA,False,False
+Ding T1/T2 Xception,FF++,i es-AUC,92.07,X-LH/s17,86.91,86.91,Ding SFD+GDA,True,True
+Ding T1/T2 Xception,FF++,AUC,98.54,X-LA/s7,97.71,97.71,Ding SFD+GDA,True,True
+Ding T1/T2 Xception,DFDC,g F_FPR,0.0,X-LA/s17,1.76,1.76,Ding SFD+GDA,True,True
+Ding T1/T2 Xception,DFDC,g F_DP,1.42,X-LA/s17,3.67,2.57,PG-FDD,True,True
+Ding T1/T2 Xception,DFDC,g es-AUC,60.69,X-LA/s17,57.94,57.94,Ding SFD+GDA,True,True
+Ding T1/T2 Xception,DFDC,r F_FPR,6.41,X-LH/s17,17.93,9.26,DAG-FDD,True,True
+Ding T1/T2 Xception,DFDC,r F_DP,4.51,X-LH/s17,7.58,7.58,Ding SFD+GDA,True,True
+Ding T1/T2 Xception,DFDC,r es-AUC,53.49,X-LA/s17,52.33,52.33,Ding SFD+GDA,True,True
+Ding T1/T2 Xception,DFDC,i F_FPR,15.02,X-LH/s17,37.37,32.16,PG-FDD,True,True
+Ding T1/T2 Xception,DFDC,i F_DP,6.63,X-LH/s17,11.92,11.92,Ding SFD+GDA,True,True
+Ding T1/T2 Xception,DFDC,i es-AUC,40.28,X-LA/s17,39.03,39.03,Ding SFD+GDA,True,True
+Ding T1/T2 Xception,DFDC,AUC,61.77,X-LA/s17,61.86,61.86,Ding SFD+GDA,False,False
+Ding T1/T2 Xception,Celeb-DF,g F_FPR,1.51,X-LA/s7,6.41,1.94,RSEF-FDD,True,True
+Ding T1/T2 Xception,Celeb-DF,g F_DP,19.94,X-LA/s7,10.81,10.81,Ding SFD+GDA,False,False
+Ding T1/T2 Xception,Celeb-DF,g es-AUC,63.86,X-LA/s27,69.68,69.68,Ding SFD+GDA,False,False
+Ding T1/T2 Xception,Celeb-DF,r F_FPR,24.44,X-LA/s27,16.6,14.76,DAW-FDD,False,False
+Ding T1/T2 Xception,Celeb-DF,r F_DP,20.55,X-LA/s27,7.29,7.29,Ding SFD+GDA,False,False
+Ding T1/T2 Xception,Celeb-DF,r es-AUC,59.66,X-LA/s27,69.96,69.96,Ding SFD+GDA,False,False
+Ding T1/T2 Xception,Celeb-DF,i F_FPR,27.53,X-LA/s7,23.32,23.32,Ding SFD+GDA,False,False
+Ding T1/T2 Xception,Celeb-DF,i F_DP,21.55,X-LA/s27,12.01,12.01,Ding SFD+GDA,False,False
+Ding T1/T2 Xception,Celeb-DF,i es-AUC,56.7,X-LA/s27,63.27,63.27,Ding SFD+GDA,False,False
+Ding T1/T2 Xception,Celeb-DF,AUC,71.4,X-LH/s17,76.75,76.75,Ding SFD+GDA,False,False
+Ding T1/T2 Xception,DFD,g F_FPR,0.85,X-LH/s17,4.72,4.72,Ding SFD+GDA,True,True
+Ding T1/T2 Xception,DFD,g F_DP,1.86,X-LH/s17,5.49,1.86,PG-FDD,True,False
+Ding T1/T2 Xception,DFD,g es-AUC,83.79,X-LA/s7,78.98,78.98,Ding SFD+GDA,True,True
+Ding T1/T2 Xception,DFD,r F_FPR,1.96,X-LA/s27,2.09,2.09,Ding SFD+GDA,True,True
+Ding T1/T2 Xception,DFD,r F_DP,1.74,X-LA/s17,18.66,12.28,FairAdapter,True,True
+Ding T1/T2 Xception,DFD,r es-AUC,82.25,X-LA/s7,77.44,77.44,Ding SFD+GDA,True,True
+Ding T1/T2 Xception,DFD,i F_FPR,15.54,X-LA/s27,27.32,27.32,Ding SFD+GDA,True,True
+Ding T1/T2 Xception,DFD,i F_DP,5.51,X-LA/s17,22.81,10.97,RSEF-FDD,True,True
+Ding T1/T2 Xception,DFD,i es-AUC,72.34,X-LA/s7,69.73,69.73,Ding SFD+GDA,True,True
+Ding T1/T2 Xception,DFD,AUC,84.23,X-LA/s7,81.46,81.46,Ding SFD+GDA,True,True
+Ding T3 ResNet50,FF++,g F_FPR,0.017930387905779055,R-L_H/s17,3.94,1.92,DAG-FDD,True,True
+Ding T3 ResNet50,FF++,g F_DP,4.25994921902737,R-L_H/s17,5.14,3.06,PG-FDD,True,False
+Ding T3 ResNet50,FF++,g es-AUC,93.72434361625814,R-L_A/s17,94.46,94.46,Ding SFD+GDA,False,False
+Ding T3 ResNet50,FF++,r F_FPR,14.86401590157265,R-L_A/s17,18.67,6.38,DAG-FDD,True,False
+Ding T3 ResNet50,FF++,r F_DP,2.669990804649558,R-L_H/s17,2.43,2.43,Ding SFD+GDA,False,False
+Ding T3 ResNet50,FF++,r es-AUC,92.76707683740126,R-L_H/s17,92.69,92.69,Ding SFD+GDA,True,True
+Ding T3 ResNet50,FF++,i F_FPR,30.433722910690864,R-L_H/s17,34.3,22.1,PG-FDD,True,False
+Ding T3 ResNet50,FF++,i F_DP,8.933193796617145,R-L_H/s17,8.61,8.61,Ding SFD+GDA,False,False
+Ding T3 ResNet50,FF++,i es-AUC,81.37746276234296,R-L_H/s17,82.87,82.87,Ding SFD+GDA,False,False
+Ding T3 ResNet50,FF++,AUC,96.21028628349141,R-L_A/s17,95.53,95.53,Ding SFD+GDA,True,True
+Ding T3 ResNet50,DFDC,g F_FPR,8.629517371318563,R-L_A/s17,3.97,3.97,Ding SFD+GDA,False,False
+Ding T3 ResNet50,DFDC,g F_DP,8.706620264234278,R-L_A/s17,3.61,3.61,Ding SFD+GDA,False,False
+Ding T3 ResNet50,DFDC,g es-AUC,57.95161870598635,R-L_H/s17,56.96,58.34,PG-FDD,True,False
+Ding T3 ResNet50,DFDC,r F_FPR,16.35638167390963,R-L_H/s17,11.94,11.94,Ding SFD+GDA,False,False
+Ding T3 ResNet50,DFDC,r F_DP,1.5962293794186955,R-L_H/s17,5.15,2.81,DAW-FDD,True,True
+Ding T3 ResNet50,DFDC,r es-AUC,51.18255702265252,R-L_H/s17,50.99,50.99,Ding SFD+GDA,True,True
+Ding T3 ResNet50,DFDC,i F_FPR,46.56278271724389,R-L_A/s17,32.14,31.97,PG-FDD,False,False
+Ding T3 ResNet50,DFDC,i F_DP,12.361343233147942,R-L_A/s17,10.27,8.54,PG-FDD,False,False
+Ding T3 ResNet50,DFDC,i es-AUC,36.146138755629366,R-L_A/s17,37.55,37.55,Ding SFD+GDA,False,False
+Ding T3 ResNet50,DFDC,AUC,60.06800832213355,R-L_H/s17,62.54,62.54,Ding SFD+GDA,False,False
+Ding T3 ResNet50,Celeb-DF,g F_FPR,12.19291012319581,R-L_A/s17,4.53,4.53,Ding SFD+GDA,False,False
+Ding T3 ResNet50,Celeb-DF,g F_DP,27.694097264270024,R-L_A/s17,12.0,12.0,Ding SFD+GDA,False,False
+Ding T3 ResNet50,Celeb-DF,g es-AUC,62.54064223341299,R-L_H/s17,68.98,68.98,Ding SFD+GDA,False,False
+Ding T3 ResNet50,Celeb-DF,r F_FPR,44.33061194622824,R-L_A/s17,6.76,6.76,Ding SFD+GDA,False,False
+Ding T3 ResNet50,Celeb-DF,r F_DP,30.750375765984504,R-L_A/s17,8.16,8.16,Ding SFD+GDA,False,False
+Ding T3 ResNet50,Celeb-DF,r es-AUC,61.958161734502184,R-L_H/s17,71.03,71.03,Ding SFD+GDA,False,False
+Ding T3 ResNet50,Celeb-DF,i F_FPR,49.412078482502146,R-L_H/s17,5.56,5.56,Ding SFD+GDA,False,False
+Ding T3 ResNet50,Celeb-DF,i F_DP,34.4857787027402,R-L_H/s17,9.11,9.11,Ding SFD+GDA,False,False
+Ding T3 ResNet50,Celeb-DF,i es-AUC,57.85430714614386,R-L_H/s17,68.25,68.74,DAW-FDD,False,False
+Ding T3 ResNet50,Celeb-DF,AUC,73.81058160596577,R-L_H/s17,77.35,77.35,Ding SFD+GDA,False,False
+Ding T3 ResNet50,DFD,g F_FPR,2.294491432026158,R-L_H/s17,3.12,3.12,Ding SFD+GDA,True,True
+Ding T3 ResNet50,DFD,g F_DP,1.314174571332949,R-L_A/s17,1.76,1.76,Ding SFD+GDA,True,True
+Ding T3 ResNet50,DFD,g es-AUC,72.31677043912576,R-L_A/s17,77.68,77.68,Ding SFD+GDA,False,False
+Ding T3 ResNet50,DFD,r F_FPR,6.6280747676096485,R-L_H/s17,6.51,2.62,PG-FDD,False,False
+Ding T3 ResNet50,DFD,r F_DP,0.9466278626500291,R-L_H/s17,3.03,3.03,Ding SFD+GDA,True,True
+Ding T3 ResNet50,DFD,r es-AUC,71.27678751797562,R-L_A/s17,70.93,72.16,PG-FDD,True,False
+Ding T3 ResNet50,DFD,i F_FPR,31.75245754125262,R-L_A/s17,20.99,20.99,Ding SFD+GDA,False,False
+Ding T3 ResNet50,DFD,i F_DP,6.310174556694992,R-L_H/s17,4.85,4.85,Ding SFD+GDA,False,False
+Ding T3 ResNet50,DFD,i es-AUC,56.51118962756436,R-L_A/s17,66.19,66.19,Ding SFD+GDA,False,False
+Ding T3 ResNet50,DFD,AUC,73.65455035462101,R-L_A/s17,78.63,78.63,Ding SFD+GDA,False,False

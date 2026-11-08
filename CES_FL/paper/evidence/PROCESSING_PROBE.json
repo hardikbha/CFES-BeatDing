@@ -1,0 +1,302 @@
+{
+  "threshold_logit": -4.838404655456542,
+  "reals": {
+    "n": 242,
+    "stored_vs_file_max_abs_dlogit": 0.046965599060058594,
+    "A1_byte_identical_frac": 0.0,
+    "A0_A1_pearson_logit": 0.9487610367413679,
+    "A0_A1_flag_agreement": 0.9421487603305785,
+    "A0_stored": {
+      "flag_fake_rate": 0.6776859504132231,
+      "ci95": [
+        0.6198347107438017,
+        0.7355371900826446
+      ],
+      "median_logit": -3.3815860748291016,
+      "median_align_scale": null,
+      "median_log_laplacian": 6.066337363727557,
+      "median_hf_y": -3.9110335307331052,
+      "median_noise": 2.187959327661553
+    },
+    "A1_v1_recrop": {
+      "flag_fake_rate": 0.6859504132231405,
+      "ci95": [
+        0.6239669421487604,
+        0.743801652892562
+      ],
+      "median_logit": -3.227498173713684,
+      "median_align_scale": 0.6462898344686807,
+      "median_log_laplacian": 6.065402228891745,
+      "median_hf_y": -3.9117267711383548,
+      "median_noise": 2.1887385869891607
+    },
+    "A2_v2_profile_from_master": {
+      "flag_fake_rate": 0.5867768595041323,
+      "ci95": [
+        0.5247933884297521,
+        0.6487603305785123
+      ],
+      "median_logit": -4.106078863143921,
+      "median_align_scale": 0.32314491723434036,
+      "median_log_laplacian": 6.719107142857913,
+      "median_hf_y": -3.4256013953163693,
+      "median_noise": 3.70951080023697
+    },
+    "A3_fairface_geometry": {
+      "flag_fake_rate": 0.9834710743801653,
+      "ci95": [
+        0.9669421487603306,
+        0.9958677685950413
+      ],
+      "median_logit": 5.378758430480957,
+      "median_align_scale": 1.2113305382957984,
+      "median_log_laplacian": 4.847556360366063,
+      "median_hf_y": -5.133104322677054,
+      "median_noise": 0.8345945843213467
+    },
+    "A4_fairface_geometry_jpeg75_420": {
+      "flag_fake_rate": 0.02066115702479339,
+      "ci95": [
+        0.004132231404958678,
+        0.0371900826446281
+      ],
+      "median_logit": -9.007866859436035,
+      "median_align_scale": 1.2121384280519547,
+      "median_log_laplacian": 4.7535747400954484,
+      "median_hf_y": -5.2523389397610085,
+      "median_noise": 0.6739031369093003
+    },
+    "A5_v1_after_master_jpeg75_420": {
+      "flag_fake_rate": 0.40082644628099173,
+      "ci95": [
+        0.34297520661157027,
+        0.4669421487603306
+      ],
+      "median_logit": -5.492217302322388,
+      "median_align_scale": 0.6462898344686807,
+      "median_log_laplacian": 6.0663821691438855,
+      "median_hf_y": -3.9137544531338797,
+      "median_noise": 2.2091727582179708
+    },
+    "A6_fairface_geometry_2x_upsampled_jpeg75_420": {
+      "flag_fake_rate": 0.024793388429752067,
+      "ci95": [
+        0.008264462809917356,
+        0.045454545454545456
+      ],
+      "median_logit": -9.15166187286377,
+      "median_align_scale": 1.2114358535086227,
+      "median_log_laplacian": 3.5930795672404403,
+      "median_hf_y": -7.005094462095869,
+      "median_noise": 0.42693875544558224
+    },
+    "paired_A0_to_A4": {
+      "flag_to_pass": 162,
+      "pass_to_flag": 3,
+      "both_flag": 2
+    }
+  },
+  "fakes": {
+    "n": 360,
+    "stored_vs_file_max_abs_dlogit": 0.047345519065856934,
+    "A1_byte_identical_frac": 0.0,
+    "A0_A1_pearson_logit": 0.9788621388463041,
+    "A0_A1_flag_agreement": 1.0,
+    "A0_stored": {
+      "flag_fake_rate": 0.9972222222222222,
+      "ci95": [
+        0.9916666666666667,
+        1.0
+      ],
+      "median_logit": 5.600320100784302,
+      "median_align_scale": null,
+      "median_log_laplacian": 5.737621265682093,
+      "median_hf_y": -4.34606136224116,
+      "median_noise": 1.6393474736518643
+    },
+    "A1_v1_recrop": {
+      "flag_fake_rate": 0.9972222222222222,
+      "ci95": [
+        0.9916666666666667,
+        1.0
+      ],
+      "median_logit": 5.585786819458008,
+      "median_align_scale": 0.6544894540975168,
+      "median_log_laplacian": 5.737837035925422,
+      "median_hf_y": -4.339457236501867,
+      "median_noise": 1.6455857899185853
+    },
+    "A2_v2_profile_from_master": {
+      "flag_fake_rate": 0.9833333333333333,
+      "ci95": [
+        0.9694444444444444,
+        0.9944444444444445
+      ],
+      "median_logit": 4.819637775421143,
+      "median_align_scale": 0.3272447270487584,
+      "median_log_laplacian": 6.304104388610073,
+      "median_hf_y": -3.8866642744100464,
+      "median_noise": 2.543027269938367
+    },
+    "A3_fairface_geometry": {
+      "flag_fake_rate": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "median_logit": 6.946134328842163,
+      "median_align_scale": 1.2005649968866487,
+      "median_log_laplacian": 4.725695891530796,
+      "median_hf_y": -5.409985906629386,
+      "median_noise": 0.7265531627758801
+    },
+    "A4_fairface_geometry_jpeg75_420": {
+      "flag_fake_rate": 0.058333333333333334,
+      "ci95": [
+        0.03611111111111111,
+        0.0834027777777774
+      ],
+      "median_logit": -8.946475982666016,
+      "median_align_scale": 1.2001304352623832,
+      "median_log_laplacian": 4.6329832095654515,
+      "median_hf_y": -5.521750812032151,
+      "median_noise": 0.6224064667129477
+    },
+    "A5_v1_after_master_jpeg75_420": {
+      "flag_fake_rate": 0.9083333333333333,
+      "ci95": [
+        0.8777777777777778,
+        0.9361111111111111
+      ],
+      "median_logit": 2.5170763731002808,
+      "median_align_scale": 0.6544894540975168,
+      "median_log_laplacian": 5.743443734537687,
+      "median_hf_y": -4.332058312506078,
+      "median_noise": 1.646977803676229
+    },
+    "A6_fairface_geometry_2x_upsampled_jpeg75_420": {
+      "flag_fake_rate": 0.05,
+      "ci95": [
+        0.027777777777777776,
+        0.07222222222222222
+      ],
+      "median_logit": -9.063472747802734,
+      "median_align_scale": 1.2004029409464865,
+      "median_log_laplacian": 3.536197439395655,
+      "median_hf_y": -7.133095967500986,
+      "median_noise": 0.4167068651700985
+    },
+    "paired_A0_to_A4": {
+      "flag_to_pass": 338,
+      "pass_to_flag": 0,
+      "both_flag": 21
+    },
+    "per_method_flag_rate": {
+      "A0_stored": {
+        "arc2face": 1.0,
+        "blendface": 1.0,
+        "codeformer": 1.0,
+        "difface": 1.0,
+        "eg3d": 1.0,
+        "flux": 1.0,
+        "gfpgan": 1.0,
+        "hart": 1.0,
+        "iclight": 1.0,
+        "inpaint": 1.0,
+        "instantid": 1.0,
+        "ipadapter": 0.933,
+        "liveportrait": 1.0,
+        "magicbrush": 1.0,
+        "omnigen": 1.0,
+        "photomaker": 1.0,
+        "pixart": 1.0,
+        "pulid": 1.0,
+        "qwenedit": 1.0,
+        "realesrgan": 1.0,
+        "reface": 1.0,
+        "simswap": 1.0,
+        "styleswin": 1.0,
+        "tpsmm": 1.0
+      },
+      "A3_fairface_geometry": {
+        "arc2face": 1.0,
+        "blendface": 1.0,
+        "codeformer": 1.0,
+        "difface": 1.0,
+        "eg3d": 1.0,
+        "flux": 1.0,
+        "gfpgan": 1.0,
+        "hart": 1.0,
+        "iclight": 1.0,
+        "inpaint": 1.0,
+        "instantid": 1.0,
+        "ipadapter": 1.0,
+        "liveportrait": 1.0,
+        "magicbrush": 1.0,
+        "omnigen": 1.0,
+        "photomaker": 1.0,
+        "pixart": 1.0,
+        "pulid": 1.0,
+        "qwenedit": 1.0,
+        "realesrgan": 1.0,
+        "reface": 1.0,
+        "simswap": 1.0,
+        "styleswin": 1.0,
+        "tpsmm": 1.0
+      },
+      "A4_fairface_geometry_jpeg75_420": {
+        "arc2face": 0.133,
+        "blendface": 0.2,
+        "codeformer": 0.0,
+        "difface": 0.0,
+        "eg3d": 0.0,
+        "flux": 0.0,
+        "gfpgan": 0.067,
+        "hart": 0.133,
+        "iclight": 0.067,
+        "inpaint": 0.0,
+        "instantid": 0.0,
+        "ipadapter": 0.0,
+        "liveportrait": 0.0,
+        "magicbrush": 0.133,
+        "omnigen": 0.133,
+        "photomaker": 0.067,
+        "pixart": 0.133,
+        "pulid": 0.0,
+        "qwenedit": 0.0,
+        "realesrgan": 0.0,
+        "reface": 0.133,
+        "simswap": 0.133,
+        "styleswin": 0.0,
+        "tpsmm": 0.067
+      },
+      "A5_v1_after_master_jpeg75_420": {
+        "arc2face": 1.0,
+        "blendface": 1.0,
+        "codeformer": 0.933,
+        "difface": 1.0,
+        "eg3d": 0.8,
+        "flux": 1.0,
+        "gfpgan": 1.0,
+        "hart": 0.933,
+        "iclight": 0.933,
+        "inpaint": 0.867,
+        "instantid": 1.0,
+        "ipadapter": 0.667,
+        "liveportrait": 0.933,
+        "magicbrush": 1.0,
+        "omnigen": 1.0,
+        "photomaker": 0.733,
+        "pixart": 1.0,
+        "pulid": 1.0,
+        "qwenedit": 1.0,
+        "realesrgan": 0.867,
+        "reface": 1.0,
+        "simswap": 1.0,
+        "styleswin": 0.133,
+        "tpsmm": 1.0
+      }
+    },
+    "n_methods": 24
+  }
+}

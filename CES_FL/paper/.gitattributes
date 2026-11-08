@@ -1,0 +1,4 @@
+evidence/*.csv whitespace=cr-at-eol
+verification/*.log -whitespace
+cvpr.sty -whitespace
+ieeenat_fullname.bst -whitespace

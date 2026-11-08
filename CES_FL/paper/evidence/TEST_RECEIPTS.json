@@ -1,0 +1,92 @@
+{
+  "cesfl_p": {
+    "status": "TEST_EVALUATED",
+    "checkpoint": "/home/sachin.chaudhary/ces_fl_runs/ff2_originals_s17_20261102_r1/training/best.pt",
+    "checkpoint_sha256": "43152de1b98dce48801114efb2454cb0bc6aa7400445dd5f139759022229895a",
+    "manifest_sha256": "dd5eb9ef070f658fe6b7f744c47f73e25ce7c53f948bc272f4f16c69a37d4099",
+    "timestamp_utc": "2026-11-08T17:18:39.067187",
+    "frozen_threshold_logit": -4.2040414810180655,
+    "exporter_sha256": null
+  },
+  "daw": {
+    "status": "TEST_EVALUATED",
+    "checkpoint": "/home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/daw/training/best.pt",
+    "checkpoint_sha256": "63b53852dfd61d8c44a25bd8fcb1baf90a67719fcccb94225892db49c6ea4036",
+    "manifest_sha256": "dd5eb9ef070f658fe6b7f744c47f73e25ce7c53f948bc272f4f16c69a37d4099",
+    "timestamp_utc": "2026-11-08T17:17:47.224166",
+    "frozen_threshold_logit": -0.37631535530090326,
+    "exporter_sha256": "d1f2d75756e95da8476df77a349569f52f55b9d2c6d684e9e399c8004c93e020"
+  },
+  "ding_gda": {
+    "status": "TEST_EVALUATED",
+    "checkpoint": "/home/sachin.chaudhary/ces_fl_runs/ding_ff2_public_s17_20261102T130051Z/training/gda_corrected/best.pt",
+    "checkpoint_sha256": "4a2202ec0957a853f9513ae4e62d7e9b926bcf2188899c3867c8d6f4b3fb1b92",
+    "manifest_sha256": "dd5eb9ef070f658fe6b7f744c47f73e25ce7c53f948bc272f4f16c69a37d4099",
+    "timestamp_utc": "2026-11-08T17:16:57.099558",
+    "frozen_threshold_logit": -2.6608574390411373,
+    "exporter_sha256": "0d94aca3c7dc1fbdf98e3f31b2ccb7f1027a5212c2740cd867b098173471caf1"
+  },
+  "l_a": {
+    "status": "TEST_EVALUATED",
+    "checkpoint": "/home/sachin.chaudhary/ces_fl_runs/ff2_lh_ps_20261106_r1/L_A/best.pt",
+    "checkpoint_sha256": "cce4476491829702d60a74ed7b2044aa8436768d6e08e0129da5a1fd84b0cb6d",
+    "manifest_sha256": "dd5eb9ef070f658fe6b7f744c47f73e25ce7c53f948bc272f4f16c69a37d4099",
+    "timestamp_utc": "2026-11-08T17:20:20.196579",
+    "frozen_threshold_logit": -4.838404655456542,
+    "exporter_sha256": "1f0fb330ee0009a3740f66140c280bcf71ebfc2a7d6f9b2cca54444685351382"
+  },
+  "rf_s_s17": {
+    "status": "TEST_EVALUATED",
+    "checkpoint": "/home/sachin.chaudhary/ces_fl_runs/ff2_rfa_20261107/S/out/best.pt",
+    "checkpoint_sha256": "2c04343b1f2d8f0c4b35963bdd2ab0de87e08343439608346939a12b88cbf6a9",
+    "manifest_sha256": "dd5eb9ef070f658fe6b7f744c47f73e25ce7c53f948bc272f4f16c69a37d4099",
+    "timestamp_utc": "2026-11-08T17:21:54.362132",
+    "frozen_threshold_logit": -4.925549030303954,
+    "exporter_sha256": "1f0fb330ee0009a3740f66140c280bcf71ebfc2a7d6f9b2cca54444685351382"
+  },
+  "rf_s_s27": {
+    "status": "TEST_EVALUATED",
+    "checkpoint": "/home/sachin.chaudhary/ces_fl_runs/ff2_rfa_20261107/S_s27/out/best.pt",
+    "checkpoint_sha256": "2ec764469baa928da41604eb6a399caea0236ccce5bff786a1782b78a2b611ed",
+    "manifest_sha256": "dd5eb9ef070f658fe6b7f744c47f73e25ce7c53f948bc272f4f16c69a37d4099",
+    "timestamp_utc": "2026-11-08T17:24:54.110190",
+    "frozen_threshold_logit": -4.735418796539306,
+    "exporter_sha256": "1f0fb330ee0009a3740f66140c280bcf71ebfc2a7d6f9b2cca54444685351382"
+  },
+  "rf_s_s7": {
+    "status": "TEST_EVALUATED",
+    "checkpoint": "/home/sachin.chaudhary/ces_fl_runs/ff2_rfa_20261107/S_s7/out/best.pt",
+    "checkpoint_sha256": "dde7cd69733ded43200909ed67cef00dd7ec775b7836ed3f3df90425e8cb6609",
+    "manifest_sha256": "dd5eb9ef070f658fe6b7f744c47f73e25ce7c53f948bc272f4f16c69a37d4099",
+    "timestamp_utc": "2026-11-08T17:23:25.172820",
+    "frozen_threshold_logit": -2.876933097839355,
+    "exporter_sha256": "1f0fb330ee0009a3740f66140c280bcf71ebfc2a7d6f9b2cca54444685351382"
+  },
+  "rf_sjg_s17": {
+    "status": "TEST_EVALUATED",
+    "checkpoint": "/home/sachin.chaudhary/ces_fl_runs/ff2_rfa_20261107/SJ_gentle/out/best.pt",
+    "checkpoint_sha256": "26134321acd80befbc3e5aa8df8b070e0385f957fb1c22f580a9d3bf47f068ac",
+    "manifest_sha256": "dd5eb9ef070f658fe6b7f744c47f73e25ce7c53f948bc272f4f16c69a37d4099",
+    "timestamp_utc": "2026-11-08T17:26:24.416842",
+    "frozen_threshold_logit": -4.030773162841796,
+    "exporter_sha256": "1f0fb330ee0009a3740f66140c280bcf71ebfc2a7d6f9b2cca54444685351382"
+  },
+  "rf_sjg_s27": {
+    "status": "TEST_EVALUATED",
+    "checkpoint": "/home/sachin.chaudhary/ces_fl_runs/ff2_rfa_20261107/SJ_gentle_s27/out/best.pt",
+    "checkpoint_sha256": "09f37f9d732842a559d9c6e253f5fffb3b930e64f9a6e6b28ef8a01f260d3e9b",
+    "manifest_sha256": "dd5eb9ef070f658fe6b7f744c47f73e25ce7c53f948bc272f4f16c69a37d4099",
+    "timestamp_utc": "2026-11-08T18:03:29.332746",
+    "frozen_threshold_logit": -1.35088574886322,
+    "exporter_sha256": "1f0fb330ee0009a3740f66140c280bcf71ebfc2a7d6f9b2cca54444685351382"
+  },
+  "rf_sjg_s7": {
+    "status": "TEST_EVALUATED",
+    "checkpoint": "/home/sachin.chaudhary/ces_fl_runs/ff2_rfa_20261107/SJ_gentle_s7/out/best.pt",
+    "checkpoint_sha256": "d38610fcfbaa3100b729c683752011948756cc3f61748a3237f4743ddbeed449",
+    "manifest_sha256": "dd5eb9ef070f658fe6b7f744c47f73e25ce7c53f948bc272f4f16c69a37d4099",
+    "timestamp_utc": "2026-11-08T18:01:14.958995",
+    "frozen_threshold_logit": -2.2591056823730464,
+    "exporter_sha256": "1f0fb330ee0009a3740f66140c280bcf71ebfc2a7d6f9b2cca54444685351382"
+  }
+}

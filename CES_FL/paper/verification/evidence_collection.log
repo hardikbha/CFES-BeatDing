@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/ces_fl_sources/cesfl-paper-20261109/CES_FL/paper/tools/collect_paper_evidence.py", line 156, in <module>
+    collect(a.runs_root, a.out, a.repo)
+  File "/home/sachin.chaudhary/ces_fl_sources/cesfl-paper-20261109/CES_FL/paper/tools/collect_paper_evidence.py", line 54, in collect
+    assert metrics['frozen_threshold_logit'] == report['threshold_logit']
+KeyError: 'frozen_threshold_logit'
