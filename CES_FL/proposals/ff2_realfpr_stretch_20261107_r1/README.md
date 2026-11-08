@@ -92,3 +92,27 @@ very low seed variance. **It does not meet the stretch target** (Ding-style GDA 
 `EPOCH_HISTORY_VAL_round2.json`.
 
 SJ_gentle (shortcoming-fix attempt 1) and SJ_ramp (attempt 2) are still training; results follow separately.
+
+## Round 2 final: SJ_ramp (8 Nov 2026)
+
+**NO_FEASIBLE_CHECKPOINT.** All 10 epochs exceeded the FNR limit (range 0.68%–2.08%, never ≤ 0.5651%), despite the
+2-epoch ramp. Lowest F_FPR among any epoch: 22.37 (epoch 8, AUC 99.34, FNR 1.05%). Full history:
+`EPOCH_HISTORY_VAL_SJ_ramp.json`.
+
+## Round 2: final summary (both shortcoming-fix attempts)
+
+| Attempt | Design | Outcome |
+|---|---|---|
+| SJ_gentle | 15% of images, exact q75/4:2:0 only, no ramp | **Feasible (epoch 2): F_FPR 27.53**, AUC 99.76, FNR 0.45% |
+| SJ_ramp | 50/25/25 mix (round-1 strength), phased in over 2 epochs | Infeasible every epoch; best F_FPR 22.37 at FNR 1.05% |
+
+Milder, cleaner augmentation (fewer images, the one causally-verified edit only) solved the detection-loss problem that
+sank round 1's JPEG runs; simply ramping in the stronger round-1 mix did not. RF-SJg (27.53) is now the best FF2
+fairness result of this whole project, confirmed only on seed 17.
+
+## Experiment status: complete
+
+6 runs total across 2 rounds (10.49 GPU-hours; FF2 ledger 61.89/72, 10.11 left). Final standing vs the pre-declared
+target (g×r F_FPR < 12.44, AUC ≥ 99.5, FNR ≤ 0.5651%): **not met by any run.** Best result: RF-SJg at 27.53, roughly
+2.2× Ding-style GDA's 12.44. RF-S (loss only) is confirmed across 3 seeds at 34.24 ± 0.21. Next step, if pursued: 2
+more seeds of SJ_gentle's exact config to confirm 27.53 is not a lucky seed, within the ~10 GPU-hours remaining.
