@@ -1,0 +1,29 @@
+{
+  "request_id": "ff2_sjgentle_confirmation_20261108_r1",
+  "scope": "FairForge-2 public TRAIN/SELECT only; seeds 7 and 27; no TEST inference",
+  "hypothesis": "The previously observed RF-SJg validation F_FPR improvement over matched RF-S reproduces at seeds 7 and 27 under the same fixed recipe.",
+  "arms": [
+    "RF-SJg-seed7",
+    "RF-SJg-seed27"
+  ],
+  "baseline_runs": [
+    "/home/sachin.chaudhary/ces_fl_runs/ff2_rfa_20261107/S_s7/out",
+    "/home/sachin.chaudhary/ces_fl_runs/ff2_rfa_20261107/S_s27/out"
+  ],
+  "seed17_pilot": "/home/sachin.chaudhary/ces_fl_runs/ff2_rfa_20261107/SJ_gentle/out",
+  "source_commit": "9b4b0f42f1fe3823b6abdae826db0f9d63853cfa",
+  "source_sha256": {
+    "ces_fl_realfpr.py": "2d99295cc0b8190a571695b581ef5ba73e7b5fc18994461bdf1a21c1d83089d1",
+    "ces_fl_head_ablation.py": "8c25ba8cb844b059adbbce75b57785a156333182afa2d5d576985997f2d36733"
+  },
+  "changes": "No source/loss/architecture change. Configs are exact SJ_gentle seed17 copy except seed 7 or 27; outputs are new.",
+  "decision_rule": "Paired three-seed mean SJg-minus-S gender\u00d7race F_FPR < 0; both new arms feasible; mean AUC decrease <= 0.5 percentage points versus S; each run maintains AUC >= 0.995 and FNR <= 0.005651. No TEST-driven selection.",
+  "compute_cap_gpu_hours": 8,
+  "shared_ledger_cap_gpu_hours": 72,
+  "user_authorization": "User asked to begin full effort on 2026-11-08; this request operationalizes the next fixed-recipe confirmation only.",
+  "status": "PROPOSAL_PREPARED_NOT_LAUNCHED",
+  "config_sha256": {
+    "seed7": "74d487a07134052cae90de832d6755486e4d8d5c08a42024daa3b763a7d35f74",
+    "seed27": "9dee4b7c468f3fdf2e2b58bf50d09bd60f5df4e158171d09a371a53caf27467f"
+  }
+}
