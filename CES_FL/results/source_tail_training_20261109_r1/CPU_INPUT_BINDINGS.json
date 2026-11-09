@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "source_counts": {
+    "FFHQ": 3176,
+    "FairFace": 13601
+  },
+  "train_real_rows": 16777,
+  "mapping_complete_exact_unique": true,
+  "teacher_checkpoint_sha256": "cce4476491829702d60a74ed7b2044aa8436768d6e08e0129da5a1fd84b0cb6d",
+  "teacher_selected_epoch": 2,
+  "teacher_head_shape": [
+    1,
+    2048
+  ],
+  "teacher_head_parameters": 2049,
+  "trained_head_preserved_by_pinned_loader": true,
+  "teacher_fit_inventory_rows": 249373,
+  "source_provenance_sha256": "2cbd3cd0f03f7165a7492b24020989f5fb5008675f2185669020c60884250e0b",
+  "configuration_sha256": "c3aa990986440bfd22bfd9171c5837025a5a3b2d3b0bc7b817d27c32eac1d1b2",
+  "test_cal_accessed": false,
+  "gpu_work": false
+}

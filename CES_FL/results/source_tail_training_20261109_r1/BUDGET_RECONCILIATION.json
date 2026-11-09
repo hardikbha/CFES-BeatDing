@@ -1,0 +1,131 @@
+{
+  "status": "PASS_CONSERVATIVE_RECONCILIATION",
+  "ledger_path": "/home/sachin.chaudhary/ces_fl_runs/ff2_baseline_suite_s17_20261103T110324Z/additional72_gpu_hours.json",
+  "cap_gpu_hours": 72,
+  "previous_charged_gpu_hours": 64.60110213259857,
+  "historical_conservative_charge_gpu_hours": 3.2279558332761127,
+  "charged_gpu_hours_after": 67.82905796587468,
+  "available_lower_bound_gpu_hours": 4.170942034125318,
+  "new_cohort_cap_gpu_hours": 2,
+  "maximum_new_cohort_gpus": 1,
+  "ledger_format_only_status_migrations": [
+    "ff2_lh_ps_L_A_direct_stopped_20261106T1131",
+    "ff2_lh_ps_L_A_direct_w16_stopped_20261106T1448",
+    "ff2_lh_ps_L_A_direct_1793957770",
+    "ff2_lh_ps_L_H_PS_direct_busygpu_stopped_20261107T1038",
+    "ff2_lh_ps_L_H_PS_ssh_1794028378",
+    "ff2_realfpr_SJ_ssh_1794048375",
+    "ff2_realfpr_S_ssh_1794048397",
+    "ff2_realfpr_J_ssh_1794048418",
+    "ff2_realfpr_SJF_ssh_1794051773",
+    "ff2_realfpr_S_s7_ssh_1794127328",
+    "ff2_realfpr_S_s27_ssh_1794127337",
+    "ff2_realfpr_SJ_gentle_ssh_1794127483",
+    "ff2_realfpr_SJ_ramp_ssh_1794130069",
+    "ff2_realfpr_SJ_gentle_s7_ssh_1794152247",
+    "ff2_realfpr_SJ_gentle_s27_ssh_1794152256"
+  ],
+  "old_charges_unchanged": true,
+  "historical_actual_elapsed_not_claimed": true,
+  "accounting_window_start_utc": "2026-11-08T17:09:52.277000+00:00",
+  "accounting_window_end_utc": "2026-11-08T18:14:25.824000+00:00",
+  "maximum_historical_cards": 3,
+  "historical_gpu_command_events": [
+    {
+      "timestamp": "2026-11-08T17:09:52.277Z",
+      "end_timestamp": "2026-11-08T17:10:48.334Z",
+      "command_sha256": "22c715160aa44290961f77292c8bdce76d8c5e7155ff291f3258a36f0fef0349"
+    },
+    {
+      "timestamp": "2026-11-08T17:10:52.615Z",
+      "end_timestamp": "2026-11-08T17:11:24.038Z",
+      "command_sha256": "b40fb0a04c1af6c8a96fd6dbfada7d49c7167ee8630d6bd0647f1b146f080dc1"
+    },
+    {
+      "timestamp": "2026-11-08T17:14:11.063Z",
+      "end_timestamp": "2026-11-08T17:14:47.943Z",
+      "command_sha256": "3d1afbf503b764b7d2d406f9127d9069ffeb3bbce3e12dac819ae88926fb458c"
+    },
+    {
+      "timestamp": "2026-11-08T17:14:52.271Z",
+      "end_timestamp": "2026-11-08T17:15:24.533Z",
+      "command_sha256": "5b1e8f791c787b027c24f1284337449d996779a4b0b34669937e07258408f9ef"
+    },
+    {
+      "timestamp": "2026-11-08T17:15:31.156Z",
+      "end_timestamp": "2026-11-08T17:16:01.347Z",
+      "command_sha256": "235739ce37cface2bbcb436f65499a4b0a79ae86971f754674687a0611219e9e"
+    },
+    {
+      "timestamp": "2026-11-08T17:17:27.661Z",
+      "end_timestamp": "2026-11-08T17:17:36.799Z",
+      "command_sha256": "ca9f43376ddaaea9de56f15d34f250dfb8e35c27514ac2dcfc65c98c6e163638"
+    },
+    {
+      "timestamp": "2026-11-08T17:17:51.856Z",
+      "end_timestamp": "2026-11-08T17:18:21.284Z",
+      "command_sha256": "0f2101ac37edc2b4750d793dd5f180ec5d0abdb0fc1a168afa8318381b438306"
+    },
+    {
+      "timestamp": "2026-11-08T17:19:05.691Z",
+      "end_timestamp": "2026-11-08T17:19:36.611Z",
+      "command_sha256": "6da3db567668162f64804f779d92615a2ed9c29d6b0ac83bf35c2bda728cb09e"
+    },
+    {
+      "timestamp": "2026-11-08T17:20:37.966Z",
+      "end_timestamp": "2026-11-08T17:21:09.240Z",
+      "command_sha256": "6da78362a96539524fcbc1a2ed09efad62d887c38512c01f2a858311e0ec18ab"
+    },
+    {
+      "timestamp": "2026-11-08T17:23:53.609Z",
+      "end_timestamp": "2026-11-08T17:26:00.024Z",
+      "command_sha256": "ec9af862a60b9ca997feafa26bd90a9e8699eb200465b8fa9e0b128c62b75e7a"
+    },
+    {
+      "timestamp": "2026-11-08T17:26:04.892Z",
+      "end_timestamp": "2026-11-08T17:28:11.434Z",
+      "command_sha256": "f7076dac25c505bbd756608767ecb06b913281bd0eec01e836622e8d24018002"
+    },
+    {
+      "timestamp": "2026-11-08T17:28:19.224Z",
+      "end_timestamp": "2026-11-08T17:29:35.002Z",
+      "command_sha256": "b1b2f8599cdc03f9fa894c27465c0f9f38fce8023736d8050663f16b5b3a5756"
+    },
+    {
+      "timestamp": "2026-11-08T17:29:45.208Z",
+      "end_timestamp": "2026-11-08T17:31:16.172Z",
+      "command_sha256": "b3182bb03ffaae2c501427863916dade8263286f531ae5648f976ded9e2bc175"
+    },
+    {
+      "timestamp": "2026-11-08T17:31:21.516Z",
+      "end_timestamp": "2026-11-08T17:32:50.306Z",
+      "command_sha256": "0365f8bc6d04fecbd1db9fbbc530a0e61bdb0578ade44549892eaa174f9c8aec"
+    },
+    {
+      "timestamp": "2026-11-08T17:32:54.753Z",
+      "end_timestamp": "2026-11-08T17:34:21.024Z",
+      "command_sha256": "a3995ec0ae6f578d0a4eb1ac9d5d6c4f0db4728b10585d310e712b103498de7e"
+    },
+    {
+      "timestamp": "2026-11-08T17:34:25.725Z",
+      "end_timestamp": "2026-11-08T17:35:49.999Z",
+      "command_sha256": "033dc43bc238608b3294e33844d46d14ee5d3e4a801a9c55e6b029f445501590"
+    },
+    {
+      "timestamp": "2026-11-08T17:35:54.961Z",
+      "end_timestamp": "2026-11-08T17:37:20.377Z",
+      "command_sha256": "df65673b65d3fd0faca30003baee9ce30a82584ca3f8f9464eac7e338dfe3184"
+    },
+    {
+      "timestamp": "2026-11-08T18:01:37.321Z",
+      "end_timestamp": "2026-11-08T18:03:43.818Z",
+      "command_sha256": "bccec3534142a923af73bbc8713368940949e6b023a76fe8f29ae1aedc1f7d10"
+    },
+    {
+      "timestamp": "2026-11-08T18:12:36.878Z",
+      "end_timestamp": "2026-11-08T18:14:25.824Z",
+      "command_sha256": "f7e6fa65796e7c1fface9ce82f13c6119986bcdfacf2542f2dc64b8fa7e0462e"
+    }
+  ],
+  "raw_command_records_private": true
+}

@@ -1,0 +1,17 @@
+PASS fixture/production isolation
+{"arm": "control", "epoch": 1, "auc": 0.86328125, "fnr": 0.375, "joint_F_FPR": 0.125, "feasible": true}
+{"arm": "control", "epoch": 2, "auc": 0.86328125, "fnr": 0.375, "joint_F_FPR": 0.125, "feasible": true}
+{"arm": "control", "epoch": 3, "auc": 0.86328125, "fnr": 0.375, "joint_F_FPR": 0.125, "feasible": true}
+{"arm": "treatment", "epoch": 1, "auc": 0.86328125, "fnr": 0.375, "joint_F_FPR": 0.125, "feasible": true}
+{"arm": "treatment", "epoch": 2, "auc": 0.86328125, "fnr": 0.375, "joint_F_FPR": 0.125, "feasible": true}
+{"arm": "treatment", "epoch": 3, "auc": 0.86328125, "fnr": 0.375, "joint_F_FPR": 0.125, "feasible": true}
+{"arm": "treatment", "epoch": 1, "auc": 0.86328125, "fnr": 0.375, "joint_F_FPR": 0.125, "feasible": true}
+{"arm": "treatment", "epoch": 2, "auc": 0.86328125, "fnr": 0.375, "joint_F_FPR": 0.125, "feasible": true}
+{"arm": "treatment", "epoch": 3, "auc": 0.86328125, "fnr": 0.375, "joint_F_FPR": 0.125, "feasible": true}
+PASS full three-epoch lifecycle, exact interrupted/resumed head+history, native selected-score replay, original coverage
+PASS source-tail coefficient changes actual learned parameters versus matched control
+PASS encoder features and teacher head immutable; head-only optimization
+PASS altered cache rejected
+PASS one-sided source gradient, fake preservation gradient, detached teacher
+PASS full-width native Xception feature-cache/complete-forward identity; encoder frozen
+SOFTWARE_CHECKS_PASS; no benchmark result, private checkpoint or CUDA claim
