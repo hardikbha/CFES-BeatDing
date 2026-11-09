@@ -1,0 +1,69 @@
+{
+  "status": "PASS",
+  "full_csv_fields_aligned_rows_over_six_exports": 186642,
+  "matched_fields": [
+    "image",
+    "label",
+    "gender",
+    "race",
+    "age_bin",
+    "age_estimate",
+    "skin_tone",
+    "skin_bin",
+    "gender_race",
+    "ids8",
+    "identity_ids",
+    "source_ids",
+    "cluster",
+    "family",
+    "method",
+    "label_provenance"
+  ],
+  "select_source_master_counts": {
+    "TRAIN": {
+      "real_rows": 16777,
+      "unique_recorded_real_master_keys": 16777,
+      "repeated_real_master_keys": 0
+    },
+    "SELECT": {
+      "real_rows": 2438,
+      "unique_recorded_real_master_keys": 2438,
+      "repeated_real_master_keys": 0
+    }
+  },
+  "recorded_identifier_namespace_usage": {
+    "TRAIN": {
+      "identity_ids": {
+        "person": 293847,
+        "ffhq_face": 464
+      },
+      "source_ids": {
+        "ffhq": 47238,
+        "img": 171028
+      }
+    },
+    "SELECT": {
+      "identity_ids": {
+        "person": 42126,
+        "ffhq_face": 28
+      },
+      "source_ids": {
+        "ffhq": 3532,
+        "img": 27575
+      }
+    }
+  },
+  "metadata_only_no_pixels_or_new_predictions": true,
+  "select_bearing_components": 45,
+  "cross_acquisition_components": 0,
+  "source_nested_component_counts": {
+    "FFHQ": 30,
+    "FairFace": 15
+  },
+  "per_image_processing_columns_absent_from_split_manifests": [
+    "profile",
+    "config_hash",
+    "master_path",
+    "master_sha256"
+  ]
+}

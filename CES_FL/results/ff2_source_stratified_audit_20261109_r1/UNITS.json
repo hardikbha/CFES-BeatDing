@@ -1,0 +1,8 @@
+{
+  "raw_csv_estimate_and_interval": "fractions; summed disparity can exceed1",
+  "markdown_rates_and_auc": "raw fractions multiplied by100",
+  "counts": "integers",
+  "threshold_logit": "unchanged raw logit",
+  "unidentified_rates": "empty/null/BLOCKED, never imputed zero",
+  "percentage_explained": "not computed"
+}

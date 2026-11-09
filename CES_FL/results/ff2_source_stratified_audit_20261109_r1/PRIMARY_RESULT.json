@@ -1,0 +1,13 @@
+{
+  "model": "RF-S_s17",
+  "metric": "native_minus_standardized/gender_race",
+  "estimate": null,
+  "valid_replicates": 0,
+  "invalid_replicates": 2000,
+  "required_valid_replicates": 1900,
+  "ci95_low": null,
+  "ci95_high": null,
+  "interval_role": "prespecified primary 95% interval; no multiplicity adjustment",
+  "kind": "model",
+  "status": "BLOCKED_UNDEFINED_ESTIMAND"
+}

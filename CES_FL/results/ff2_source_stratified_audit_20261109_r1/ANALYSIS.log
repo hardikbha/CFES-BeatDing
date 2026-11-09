@@ -1,0 +1,27 @@
+{"stage": "ALIGNMENT", "name": "RF-S_s17", "status": "PASS", "rows": 31107}
+{"stage": "ALIGNMENT", "name": "RF-S_s7", "status": "PASS", "rows": 31107}
+{"stage": "ALIGNMENT", "name": "RF-S_s27", "status": "PASS", "rows": 31107}
+{"stage": "ALIGNMENT", "name": "RF-SJg_s17", "status": "PASS", "rows": 31107}
+{"stage": "ALIGNMENT", "name": "RF-SJg_s7", "status": "PASS", "rows": 31107}
+{"stage": "ALIGNMENT", "name": "RF-SJg_s27", "status": "PASS", "rows": 31107}
+{"stage": "BOOTSTRAP", "completed": 100, "total": 2000}
+{"stage": "BOOTSTRAP", "completed": 200, "total": 2000}
+{"stage": "BOOTSTRAP", "completed": 300, "total": 2000}
+{"stage": "BOOTSTRAP", "completed": 400, "total": 2000}
+{"stage": "BOOTSTRAP", "completed": 500, "total": 2000}
+{"stage": "BOOTSTRAP", "completed": 600, "total": 2000}
+{"stage": "BOOTSTRAP", "completed": 700, "total": 2000}
+{"stage": "BOOTSTRAP", "completed": 800, "total": 2000}
+{"stage": "BOOTSTRAP", "completed": 900, "total": 2000}
+{"stage": "BOOTSTRAP", "completed": 1000, "total": 2000}
+{"stage": "BOOTSTRAP", "completed": 1100, "total": 2000}
+{"stage": "BOOTSTRAP", "completed": 1200, "total": 2000}
+{"stage": "BOOTSTRAP", "completed": 1300, "total": 2000}
+{"stage": "BOOTSTRAP", "completed": 1400, "total": 2000}
+{"stage": "BOOTSTRAP", "completed": 1500, "total": 2000}
+{"stage": "BOOTSTRAP", "completed": 1600, "total": 2000}
+{"stage": "BOOTSTRAP", "completed": 1700, "total": 2000}
+{"stage": "BOOTSTRAP", "completed": 1800, "total": 2000}
+{"stage": "BOOTSTRAP", "completed": 1900, "total": 2000}
+{"stage": "BOOTSTRAP", "completed": 2000, "total": 2000}
+{"stage": "STOP", "status": "BLOCKED_PRIMARY_COMMON_SUPPORT", "primary": {"model": "RF-S_s17", "metric": "native_minus_standardized/gender_race", "estimate": null, "valid_replicates": 0, "invalid_replicates": 2000, "required_valid_replicates": 1900, "ci95_low": null, "ci95_high": null, "interval_role": "prespecified primary 95% interval; no multiplicity adjustment", "kind": "model", "status": "BLOCKED_UNDEFINED_ESTIMAND"}, "components": 45}

@@ -1,0 +1,10 @@
+test_component_union_uses_every_master_and_donor_link (test_audit.DiagnosticChecks.test_component_union_uses_every_master_and_donor_link) ... ok
+test_known_source_mixture_contrast_and_all_pairs (test_audit.DiagnosticChecks.test_known_source_mixture_contrast_and_all_pairs) ... ok
+test_missing_required_cell_blocks_without_renormalization (test_audit.DiagnosticChecks.test_missing_required_cell_blocks_without_renormalization) ... ok
+test_source_mapping_is_documented_not_a_first_token_guess (test_audit.DiagnosticChecks.test_source_mapping_is_documented_not_a_first_token_guess) ... ok
+test_weighted_auc_ties_matches_explicit_resampling (test_audit.DiagnosticChecks.test_weighted_auc_ties_matches_explicit_resampling) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.051s
+
+OK

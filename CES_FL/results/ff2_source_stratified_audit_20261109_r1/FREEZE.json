@@ -1,0 +1,273 @@
+{
+  "status": "FROZEN_BEFORE_PRIVATE_SCORE_OUTCOMES",
+  "frozen_utc": "2026-11-09T05:49:29.507523+00:00",
+  "documentation_commit": "76dcb54e240dcf56475dbf587836cdadcdad5aab",
+  "scientific_review_base": "e7fe0ee03e6cfacca81c558bbf632d2f72e80bc0",
+  "detached_source_checkout": "/home/sachin.chaudhary/ces_fl_sources/cesfl-source-audit-doc-76dcb54-20261109",
+  "helper_sha256": {
+    "audit.py": "64c22f68cebe54519bb0b80387da528c55ce1d8353e8aed6e234539f9367e3bd",
+    "audit_stats.py": "37f3d196e38a6153af92241cf194b6a1ca70e849dc7607bfe8de14507d303417"
+  },
+  "sources": [
+    "FFHQ",
+    "FairFace"
+  ],
+  "train_real_source_counts": {
+    "FFHQ": 3176,
+    "FairFace": 13601
+  },
+  "source_weights": {
+    "FFHQ": 0.18930678905644632,
+    "FairFace": 0.8106932109435536
+  },
+  "groups": {
+    "gender": [
+      "Female",
+      "Male"
+    ],
+    "race": [
+      "Asian",
+      "Black",
+      "Others",
+      "White"
+    ],
+    "gender_race": [
+      "Female-Asian",
+      "Female-Black",
+      "Female-Others",
+      "Female-White",
+      "Male-Asian",
+      "Male-Black",
+      "Male-Others",
+      "Male-White"
+    ]
+  },
+  "source_definition": "Documented canonical real acquisition dataset only: FFHQ or FairFace; per-image processing profiles are not inferred.",
+  "source_mapping_evidence": "build_manifest.real_key, release TIERNAME A=FFHQ/C=FairFace, materialize.TD; real source-key/own-image exact metadata match required.",
+  "train_real_rows": 16777,
+  "train_rows": 218266,
+  "train_source_group_support": [
+    {
+      "axis": "gender",
+      "group": "Female",
+      "source": "FFHQ",
+      "n_real": 1461,
+      "n_recorded_masters": 1461
+    },
+    {
+      "axis": "gender",
+      "group": "Female",
+      "source": "FairFace",
+      "n_real": 5322,
+      "n_recorded_masters": 5322
+    },
+    {
+      "axis": "gender",
+      "group": "Male",
+      "source": "FFHQ",
+      "n_real": 1715,
+      "n_recorded_masters": 1715
+    },
+    {
+      "axis": "gender",
+      "group": "Male",
+      "source": "FairFace",
+      "n_real": 8279,
+      "n_recorded_masters": 8279
+    },
+    {
+      "axis": "race",
+      "group": "Asian",
+      "source": "FFHQ",
+      "n_real": 838,
+      "n_recorded_masters": 838
+    },
+    {
+      "axis": "race",
+      "group": "Asian",
+      "source": "FairFace",
+      "n_real": 2714,
+      "n_recorded_masters": 2714
+    },
+    {
+      "axis": "race",
+      "group": "Black",
+      "source": "FFHQ",
+      "n_real": 1153,
+      "n_recorded_masters": 1153
+    },
+    {
+      "axis": "race",
+      "group": "Black",
+      "source": "FairFace",
+      "n_real": 2166,
+      "n_recorded_masters": 2166
+    },
+    {
+      "axis": "race",
+      "group": "Others",
+      "source": "FFHQ",
+      "n_real": 0,
+      "n_recorded_masters": 0
+    },
+    {
+      "axis": "race",
+      "group": "Others",
+      "source": "FairFace",
+      "n_real": 6323,
+      "n_recorded_masters": 6323
+    },
+    {
+      "axis": "race",
+      "group": "White",
+      "source": "FFHQ",
+      "n_real": 1185,
+      "n_recorded_masters": 1185
+    },
+    {
+      "axis": "race",
+      "group": "White",
+      "source": "FairFace",
+      "n_real": 2398,
+      "n_recorded_masters": 2398
+    },
+    {
+      "axis": "gender_race",
+      "group": "Female-Asian",
+      "source": "FFHQ",
+      "n_real": 342,
+      "n_recorded_masters": 342
+    },
+    {
+      "axis": "gender_race",
+      "group": "Female-Asian",
+      "source": "FairFace",
+      "n_real": 991,
+      "n_recorded_masters": 991
+    },
+    {
+      "axis": "gender_race",
+      "group": "Female-Black",
+      "source": "FFHQ",
+      "n_real": 550,
+      "n_recorded_masters": 550
+    },
+    {
+      "axis": "gender_race",
+      "group": "Female-Black",
+      "source": "FairFace",
+      "n_real": 974,
+      "n_recorded_masters": 974
+    },
+    {
+      "axis": "gender_race",
+      "group": "Female-Others",
+      "source": "FFHQ",
+      "n_real": 0,
+      "n_recorded_masters": 0
+    },
+    {
+      "axis": "gender_race",
+      "group": "Female-Others",
+      "source": "FairFace",
+      "n_real": 2152,
+      "n_recorded_masters": 2152
+    },
+    {
+      "axis": "gender_race",
+      "group": "Female-White",
+      "source": "FFHQ",
+      "n_real": 569,
+      "n_recorded_masters": 569
+    },
+    {
+      "axis": "gender_race",
+      "group": "Female-White",
+      "source": "FairFace",
+      "n_real": 1205,
+      "n_recorded_masters": 1205
+    },
+    {
+      "axis": "gender_race",
+      "group": "Male-Asian",
+      "source": "FFHQ",
+      "n_real": 496,
+      "n_recorded_masters": 496
+    },
+    {
+      "axis": "gender_race",
+      "group": "Male-Asian",
+      "source": "FairFace",
+      "n_real": 1723,
+      "n_recorded_masters": 1723
+    },
+    {
+      "axis": "gender_race",
+      "group": "Male-Black",
+      "source": "FFHQ",
+      "n_real": 603,
+      "n_recorded_masters": 603
+    },
+    {
+      "axis": "gender_race",
+      "group": "Male-Black",
+      "source": "FairFace",
+      "n_real": 1192,
+      "n_recorded_masters": 1192
+    },
+    {
+      "axis": "gender_race",
+      "group": "Male-Others",
+      "source": "FFHQ",
+      "n_real": 0,
+      "n_recorded_masters": 0
+    },
+    {
+      "axis": "gender_race",
+      "group": "Male-Others",
+      "source": "FairFace",
+      "n_real": 4171,
+      "n_recorded_masters": 4171
+    },
+    {
+      "axis": "gender_race",
+      "group": "Male-White",
+      "source": "FFHQ",
+      "n_real": 616,
+      "n_recorded_masters": 616
+    },
+    {
+      "axis": "gender_race",
+      "group": "Male-White",
+      "source": "FairFace",
+      "n_real": 1193,
+      "n_recorded_masters": 1193
+    }
+  ],
+  "inputs_sha256": {
+    "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ff2/train.csv": "4f83e7dc8042533329d7047fefd0f30cbd96f45d42bde2666dd0edc7d58f29cc",
+    "/home/sachin.chaudhary/ces_pilot_seed17/build_manifest.py": "efb159e37c01d4117d1f6d65f075dd3a3aa6924e35de6badf86e27d0ea025634",
+    "/home/sachin.chaudhary/ces_fl_pipeline/cesfl/prepare.py": "4b33a50aa41ccc0621530997c6bc0662996015ae3e0727d8c9295163ea527dec",
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/release_ff2_public/build_public.py": "e2a672d43a2ae8bd4c8a86b3bbe258ac4d090737c4de82ad92a6ffccbc96c9da",
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/T_scaleup/real_tiers/code/materialize.py": "6f9ec60c7c1467983a9960fc86963601f91f0f06b0a35012e1aa1b5c58e90f46",
+    "/home/sachin.chaudhary/ICLR_2027/research/cvpr_readiness/r20261009/agents/T_scaleup/real_tiers/code/freeze_manifest.py": "e22e99879996e2d9c7603b68b4af95fa7a330a316a233d521b5e5940ab750b7e"
+  },
+  "bootstrap": {
+    "replicates": 2000,
+    "seed": 17,
+    "required_valid_fraction": 0.95,
+    "unit": "Connected components of ALL recorded identity_ids/source_ids/image links; project TRAIN+SELECT graph onto SELECT.",
+    "resampling": "Globally resample whole SELECT-bearing components with replacement; acquisition is an analytic stratum, never a two-dataset bootstrap unit. Cross-source components remain intact.",
+    "pairing": "Same component multiplicities for every seed/model, native/standardized view and paired contrast.",
+    "priors": "TRAIN source weights fixed; SELECT real-group proportions computed identically in both views, re-estimated together within each resample.",
+    "intervals": "Percentile95%; only RF-S seed17 gender\u00d7race native-minus-standardized is primary. All other intervals unadjusted/exploratory; no multiplicity-adjusted claims.",
+    "auc_intervals": "Native overall, gender\u00d7race and all-source fake-family AUC; other source/proxy AUC point estimates only.",
+    "missing_support": "No imputation, cell dropping or weight renormalization. Undefined required cells block full estimand. Original group eligibility and thresholds fixed."
+  },
+  "primary": "RF-S seed17: D_native minus D_standardized on gender\u00d7race",
+  "secondary": "Repeat native-minus-standardized for both methods/all seeds; paired SJg-minus-S native and standardized, source residual gaps and native utility.",
+  "metadata_limits": "Acquisition inferred only from documented identifiers; independent biological identity and individual crop/encoding/master pixel histories are not certified by these manifests.",
+  "private_scores_read": false,
+  "test_or_cal_accessed": false,
+  "new_predictions_generated": false
+}

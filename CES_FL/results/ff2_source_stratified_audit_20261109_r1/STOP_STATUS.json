@@ -1,0 +1,33 @@
+{
+  "status": "BLOCKED_PRIMARY_COMMON_SUPPORT",
+  "audit_execution": "COMPLETED_CPU_ONLY",
+  "stopped_utc": "2026-11-09T05:52:26.247784+00:00",
+  "primary": {
+    "model": "RF-S_s17",
+    "metric": "native_minus_standardized/gender_race",
+    "estimate": null,
+    "valid_replicates": 0,
+    "invalid_replicates": 2000,
+    "required_valid_replicates": 1900,
+    "ci95_low": null,
+    "ci95_high": null,
+    "interval_role": "prespecified primary 95% interval; no multiplicity adjustment",
+    "kind": "model",
+    "status": "BLOCKED_UNDEFINED_ESTIMAND"
+  },
+  "replicates": 2000,
+  "bootstrap_seed": 17,
+  "minimum_valid_replicates": 1900,
+  "all_matched_downstream_seeds": [
+    17,
+    7,
+    27
+  ],
+  "best_cell_selection": false,
+  "new_predictions_generated": false,
+  "scientific_source_configuration_or_guards_changed": false,
+  "test_cal_accessed": false,
+  "gpu_cuda_accessed": false,
+  "input_artifacts_unchanged_after_analysis": true,
+  "next_action": "STOP. No training or data revision authorized; report coverage/uncertainty to supervisor."
+}

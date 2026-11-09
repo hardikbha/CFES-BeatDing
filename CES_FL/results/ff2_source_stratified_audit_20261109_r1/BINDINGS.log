@@ -1,0 +1,6 @@
+{"stage": "BINDINGS", "name": "RF-S_s17", "status": "PASS", "selected_epoch": 2, "historical_source": "0a135a03582f4738868b19ea0b3d81a0b6625658"}
+{"stage": "BINDINGS", "name": "RF-S_s7", "status": "PASS", "selected_epoch": 2, "historical_source": "ac6cba4671000f731903ac0b3946f1847678e3e5"}
+{"stage": "BINDINGS", "name": "RF-S_s27", "status": "PASS", "selected_epoch": 2, "historical_source": "ac6cba4671000f731903ac0b3946f1847678e3e5"}
+{"stage": "BINDINGS", "name": "RF-SJg_s17", "status": "PASS", "selected_epoch": 2, "historical_source": "ac6cba4671000f731903ac0b3946f1847678e3e5"}
+{"stage": "BINDINGS", "name": "RF-SJg_s7", "status": "PASS", "selected_epoch": 2, "historical_source": "ac6cba4671000f731903ac0b3946f1847678e3e5"}
+{"stage": "BINDINGS", "name": "RF-SJg_s27", "status": "PASS", "selected_epoch": 6, "historical_source": "ac6cba4671000f731903ac0b3946f1847678e3e5"}

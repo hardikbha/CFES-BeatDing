@@ -1,0 +1,84 @@
+{
+  "gender": {
+    "missing_real_cells": [],
+    "complete_real_group_coverage": true,
+    "source_standardization_identified": true
+  },
+  "race": {
+    "missing_real_cells": [
+      {
+        "source": "FFHQ",
+        "group": "Others",
+        "n_real": 0
+      }
+    ],
+    "complete_real_group_coverage": true,
+    "source_standardization_identified": false
+  },
+  "gender_race": {
+    "missing_real_cells": [
+      {
+        "source": "FFHQ",
+        "group": "Female-Others",
+        "n_real": 0
+      },
+      {
+        "source": "FFHQ",
+        "group": "Male-Others",
+        "n_real": 0
+      }
+    ],
+    "complete_real_group_coverage": true,
+    "source_standardization_identified": false
+  },
+  "metadata": {
+    "recorded_train_select_overlap_counts": {
+      "identity_ids": 0,
+      "source_ids": 0
+    },
+    "select_rows": 31107,
+    "real_source_counts": {
+      "FFHQ": 242,
+      "FairFace": 2196
+    },
+    "reference_source_counts_all_classes": {
+      "FFHQ": 3532,
+      "FairFace": 27575
+    },
+    "component_namespace": "All semicolon-separated recorded identities and masters, not first-identity convenience cluster.",
+    "private_source_history_limit": "Only permitted TRAIN/SELECT manifests, cached inventories and builder code used. Mixed-split master manifests and raw TEST/CAL data were not opened.",
+    "per_image_processing_history": "BLOCKED: acquisition labels are documented, but individual crop/config/master-byte histories are absent in the permitted split caches.",
+    "biological_identity_separation_verified": false,
+    "fake_source_label": "Recorded contributing-reference acquisition; not proof of fake pixel acquisition/evidence origin."
+  },
+  "components": {
+    "n": 45,
+    "largest_component_rows": 2787,
+    "row_size_histogram": {
+      "1": 21,
+      "2": 1,
+      "3": 2,
+      "6": 1,
+      "448": 1,
+      "508": 1,
+      "600": 1,
+      "640": 1,
+      "643": 1,
+      "659": 1,
+      "784": 1,
+      "1107": 1,
+      "1121": 1,
+      "1679": 1,
+      "1737": 1,
+      "1767": 1,
+      "1817": 1,
+      "1954": 1,
+      "2495": 1,
+      "2503": 1,
+      "2562": 1,
+      "2595": 1,
+      "2666": 1,
+      "2787": 1
+    }
+  }
+}

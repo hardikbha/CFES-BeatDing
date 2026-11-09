@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "private_outcomes_opened_after_freeze": true,
+  "runs": [
+    {
+      "name": "RF-S_s17",
+      "status": "PASS",
+      "rows": 31107,
+      "order_labels_demographics_contributors_and_inventory_hashes_match": true,
+      "frozen_threshold_exact_match": true,
+      "cache_sha256": "2965063f1ab0fc8202c321309987ba8ae0c2259d67d5decffc4349ae7db398db"
+    },
+    {
+      "name": "RF-S_s7",
+      "status": "PASS",
+      "rows": 31107,
+      "order_labels_demographics_contributors_and_inventory_hashes_match": true,
+      "frozen_threshold_exact_match": true,
+      "cache_sha256": "591015966212b12f8f9005140867b8642f62eb0a538a11c955b7be81a4e46970"
+    },
+    {
+      "name": "RF-S_s27",
+      "status": "PASS",
+      "rows": 31107,
+      "order_labels_demographics_contributors_and_inventory_hashes_match": true,
+      "frozen_threshold_exact_match": true,
+      "cache_sha256": "a7869ac1720fb71e635486ab3d5616e4c7abac5645a0096c6459d106df782fd7"
+    },
+    {
+      "name": "RF-SJg_s17",
+      "status": "PASS",
+      "rows": 31107,
+      "order_labels_demographics_contributors_and_inventory_hashes_match": true,
+      "frozen_threshold_exact_match": true,
+      "cache_sha256": "e0e6c927e20bb3c2acf2ae2238488fbc115a1510c25a00e32dbc06618926c714"
+    },
+    {
+      "name": "RF-SJg_s7",
+      "status": "PASS",
+      "rows": 31107,
+      "order_labels_demographics_contributors_and_inventory_hashes_match": true,
+      "frozen_threshold_exact_match": true,
+      "cache_sha256": "a6bf11774d600807d3b153ad781b1793f99a5508c8187add6b8286b8fd6d735c"
+    },
+    {
+      "name": "RF-SJg_s27",
+      "status": "PASS",
+      "rows": 31107,
+      "order_labels_demographics_contributors_and_inventory_hashes_match": true,
+      "frozen_threshold_exact_match": true,
+      "cache_sha256": "8fe6b06c474a0b51699bf4984c77a3a1fc47f0a885c5fb63b700c9760fda34f4"
+    }
+  ],
+  "image_bytes_rehashed": false,
+  "image_hash_scope": "Stored source-bound preflight inventory versus cached row hashes; no raw image reads/new predictions."
+}

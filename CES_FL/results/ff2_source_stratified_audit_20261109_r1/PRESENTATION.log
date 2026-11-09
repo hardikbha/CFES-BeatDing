@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "checks": 24,
+  "source_real_rows": 168,
+  "utility_rows": 1350,
+  "primary_stop": "BLOCKED_PRIMARY_COMMON_SUPPORT"
+}

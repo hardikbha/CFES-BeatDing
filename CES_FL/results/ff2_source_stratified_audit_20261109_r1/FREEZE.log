@@ -1,0 +1,1 @@
+{"stage": "FREEZE", "status": "PASS", "frozen_utc": "2026-11-09T05:49:29.507523+00:00", "train_real_source_counts": {"FFHQ": 3176, "FairFace": 13601}, "weights": {"FFHQ": 0.18930678905644632, "FairFace": 0.8106932109435536}}

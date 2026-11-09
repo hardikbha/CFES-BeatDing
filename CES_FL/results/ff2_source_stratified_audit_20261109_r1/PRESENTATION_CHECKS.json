@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "independent_native_and_gender_standardization_reconstructions": 24,
+  "all_models": [
+    "RF-S_s17",
+    "RF-S_s7",
+    "RF-S_s27",
+    "RF-SJg_s17",
+    "RF-SJg_s7",
+    "RF-SJg_s27"
+  ],
+  "full_joint_standardization_still_blocked": true,
+  "bootstrap_valid_threshold_retained": 1900,
+  "no_new_model_or_prediction_computation": true
+}

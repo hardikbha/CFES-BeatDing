@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "verified_utc": "2026-11-09T06:11:01.814992+00:00",
+  "frozen_analysis_helpers_unchanged": true,
+  "all_input_hashes_rechecked": true,
+  "detached_source_clean": true,
+  "initialization_bindings": [
+    {
+      "model": "RF-S_s17",
+      "init_checkpoint_path": "/home/sachin.chaudhary/ces_fl_runs/ff2_lh_priority_20261104_r1/encoder_transfer.pt",
+      "init_checkpoint_sha256": "741a8eb5b60ac8efe2ca34be985b423de12facac053acac7f05803df23248a23",
+      "status": "PASS"
+    },
+    {
+      "model": "RF-S_s7",
+      "init_checkpoint_path": "/home/sachin.chaudhary/ces_fl_runs/ff2_lh_priority_20261104_r1/encoder_transfer.pt",
+      "init_checkpoint_sha256": "741a8eb5b60ac8efe2ca34be985b423de12facac053acac7f05803df23248a23",
+      "status": "PASS"
+    },
+    {
+      "model": "RF-S_s27",
+      "init_checkpoint_path": "/home/sachin.chaudhary/ces_fl_runs/ff2_lh_priority_20261104_r1/encoder_transfer.pt",
+      "init_checkpoint_sha256": "741a8eb5b60ac8efe2ca34be985b423de12facac053acac7f05803df23248a23",
+      "status": "PASS"
+    },
+    {
+      "model": "RF-SJg_s17",
+      "init_checkpoint_path": "/home/sachin.chaudhary/ces_fl_runs/ff2_lh_priority_20261104_r1/encoder_transfer.pt",
+      "init_checkpoint_sha256": "741a8eb5b60ac8efe2ca34be985b423de12facac053acac7f05803df23248a23",
+      "status": "PASS"
+    },
+    {
+      "model": "RF-SJg_s7",
+      "init_checkpoint_path": "/home/sachin.chaudhary/ces_fl_runs/ff2_lh_priority_20261104_r1/encoder_transfer.pt",
+      "init_checkpoint_sha256": "741a8eb5b60ac8efe2ca34be985b423de12facac053acac7f05803df23248a23",
+      "status": "PASS"
+    },
+    {
+      "model": "RF-SJg_s27",
+      "init_checkpoint_path": "/home/sachin.chaudhary/ces_fl_runs/ff2_lh_priority_20261104_r1/encoder_transfer.pt",
+      "init_checkpoint_sha256": "741a8eb5b60ac8efe2ca34be985b423de12facac053acac7f05803df23248a23",
+      "status": "PASS"
+    }
+  ]
+}
