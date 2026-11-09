@@ -1,0 +1,66 @@
+Use case: infographic-diagram, precise edit of supplied academic pipeline image.
+Edit target: the attached L_H Two-Stage Learning diagram. Produce a new high-resolution professional CVPR-style figure that includes the newly proposed source-tail objective while preserving the original L_H method as an explicitly separate comparison branch. Retain the reference's clean navy typography, white background, pastel blue/green/purple panels, small backbone blocks, subtle depth, rounded corners and carefully routed arrows. Make all text large, crisp, correctly spelled, with ample whitespace. Landscape approximately 3:2. Do not merely append incompatible losses to the old diagram.
+
+TITLE: “L_H Framework and Proposed Source-Tail Adaptation”
+
+TOP FULL-WIDTH BLUE BAND: “Stage 1 · Train and select the detection baseline”
+Left-to-right: “TRAIN originals” (small real/fake portrait tiles) → “Pretrained backbone” (Xception / ResNet-50) → “Detection head” → “VAL-selected detector”.
+A real/fake-supervision arrow feeds the detection training. From the selected detector draw TWO distinct blue transfer paths to the two alternative adaptation panels below. Left transfer label “Encoder transfer”; right label “Complete compatible baseline f₀”. Small note by the right transfer: “Preserve trained encoder + head and forward computation”.
+
+CENTRAL REGION: TWO clearly separated alternative panels, not sequential stages. A narrow line above them reads “Stage 2 · Alternative adaptation protocols”.
+LEFT PANEL approx 40% width, mint/pale purple: “A · Original L_H”
+A compact shared detector row: “TRAIN originals” → “Backbone + pooling” → “Fresh linear head” → “Scores”.
+Under backbone show “Early blocks frozen; late blocks trainable”; under head “Trainable”.
+Scores connect to three clearly labeled objectives:
+1 “Weighted BCE”
+2 “Hierarchical error control”: show a simple small tree of “Gender × race risks” → “Parent-gender aggregation” with side input “TRAIN proportions” → “Detached pooled reference” → “Penalize excess risk”. Side input “Demographic labels”. Bottom sublabel “Fake-error and other-axis terms retained”.
+3 “Matched response learning”: small fork “TRAIN real” → “Shared processing” → two nodes “Sham” and “Local probe”; both feed “Same detector”; outputs feed three small lines “Sham stability”, “Probe sensitivity”, “Response alignment across groups”.
+Purple loss arrows from these three objectives meet “Update late blocks + head”. They update this LEFT panel only.
+A discreet note: “Procedural warp/resample probes; not validated forgery removal”.
+
+RIGHT PANEL approx 60% width, pale blue with green accents and violet objective box: “B · Proposed source-tail adaptation”
+Small amber status badge “PROPOSED · loss module implemented”.
+At top show paired model rows:
+“Frozen teacher f₀” (lock) and “Student fθ”.
+A blue initialization arrow from teacher to student explicitly labeled “Identical initialization”.
+Both rows contain “Encoder → Pool → Linear head”.
+Teacher ALL modules frozen. Student label beneath: “Encoder frozen · existing head trainable”. Do NOT write fresh head here. Purple gradient arrows terminate at student head ONLY.
+TRAIN originals feed student to produce “zθ(x)”; the same original inputs also feed teacher to produce “z₀(x)”. Show teacher output stop-gradient/lock. Reuse detector paths visually; no teacher update arrows.
+
+Below these rows draw THREE numbered objective subpanels:
+“1 · Preserve detection”
+“Original real/fake labels + zθ”
+“L_BCE” (weighted BCE).
+
+“2 · Control real-source tails”
+Input bins “FFHQ real” and “FairFace real”, marked “TRAIN source labels”.
+These feed student real scores and “Soft exceedance at three fixed thresholds”.
+A small frozen reference box is fed ONLY by teacher scores on “TRAIN reals”:
+“tₖ: 85th / 90th / 95th percentiles”
+“a: teacher-score IQR”
+“bₖ: pooled teacher soft risk”
+“Frozen references”.
+An arrow from this reference box feeds the source-tail calculation. Show the equation:
+“rₛ,ₖ = mean σ((zθ − tₖ)/(T a))”
+Then “L_src = mean [rₛ,ₖ − bₖ]₊²”
+Caption “Penalize excessive risk; no direct push upward for low-risk sources”.
+
+“3 · Guard fake sensitivity”
+Inputs “Same TRAIN fake” with teacher score z₀ and student score zθ joined into a comparison.
+Equation “L_fake = mean_fake [(z₀ − zθ)/a]₊²”
+Caption “Penalize fake-score decreases”.
+Teacher/reference inputs are marked detached.
+
+All THREE right-panel objectives connect to a violet box:
+“L_new = L_BCE + λ_s L_src + λ_f L_fake”
+One violet dashed gradient arrow back to STUDENT HEAD ONLY.
+Below: “Matched control: λ_s = 0”.
+Important short right-panel note: “This variant does not add the original L_H probe/alignment losses.”
+Another short note: “Source labels and teacher are used during training only.”
+
+BOTTOM FULL-WIDTH INFERENCE STRIP:
+“RGB image” → “Selected student / detector” → “Fake score” → “Global VAL-calibrated threshold” → “Real / Fake”.
+State “No source or demographic labels required at inference”.
+Footer: “Black: data flow · Blue: weight transfer · Purple dashed: optimization”.
+Final restrained scientific note: “Original L_H and the proposed variant are separate experiments. Full source-tail training and empirical fairness gains remain unverified.”
+Do NOT include any performance numbers, victory claims, fabricated novelty guarantees, or an arrow merging left-panel losses into the right-panel objective. Omit CLIP from the active backbone options to avoid implying its implementation in L_H. Ensure distinct arrows and stop-gradient meanings are correct and no wires cross text. The source image is a visual reference and edit target; reorganize enough to make the new content legible.

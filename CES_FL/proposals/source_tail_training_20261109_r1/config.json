@@ -1,0 +1,50 @@
+{
+  "format": "SOURCE_TAIL_TRAIN_v1",
+  "seed": 17,
+  "epochs": 3,
+  "batch_size": 32,
+  "workers": 4,
+  "head_lr": 0.0001,
+  "weight_decay": 0.0001,
+  "clip_norm": 5.0,
+  "source_codes": {
+    "FFHQ": 0,
+    "FairFace": 1
+  },
+  "auxiliary_per_source": 16,
+  "lambda_fake": 1.0,
+  "lambda_source_control": 0.0,
+  "lambda_source_treatment": 0.1,
+  "temperature": 1.0,
+  "quantiles": [
+    0.85,
+    0.9,
+    0.95
+  ],
+  "encoder_frozen": true,
+  "teacher_checkpoint_sha256": "cce4476491829702d60a74ed7b2044aa8436768d6e08e0129da5a1fd84b0cb6d",
+  "teacher_core_sha256": "8c25ba8cb844b059adbbce75b57785a156333182afa2d5d576985997f2d36733",
+  "train": {
+    "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ff2/train.csv",
+    "sha256": "4f83e7dc8042533329d7047fefd0f30cbd96f45d42bde2666dd0edc7d58f29cc",
+    "rows": 218266
+  },
+  "val": {
+    "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ff2/val.csv",
+    "sha256": "aeda051259d9e26b07c2810152b601ae115ce7c9e10523f99ea07bbc9f92afa8",
+    "rows": 31107
+  },
+  "target_fpr": 0.1,
+  "min_support": 20,
+  "min_auc": 0.995,
+  "max_fnr": 0.005651,
+  "selection": "minimum validation gender_race F_FPR among utility-feasible checkpoints; AUC then earliest epoch tie-break",
+  "test_access": false,
+  "cal_access": false,
+  "gpu_hours_cap": 2,
+  "budget_scope": "within existing verified remaining FF2 allowance; no new grant; reconcile missing historical charges first",
+  "expected_train_real_source_counts": {
+    "FFHQ": 3176,
+    "FairFace": 13601
+  }
+}

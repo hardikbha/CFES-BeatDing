@@ -1,0 +1,26 @@
+{
+  "id": "source_tail_training_20261109_r1",
+  "authorization": "User requested diagram publication, implementation, verification and GPU operator training handoff",
+  "variant": "source-tail alternative, not full original L_H",
+  "parent_objective_commit": "b3f19acc57432ff219cc5411ea21fdb4e0ba3c7c",
+  "config_sha256": "c3aa990986440bfd22bfd9171c5837025a5a3b2d3b0bc7b817d27c32eac1d1b2",
+  "source_hashes": {
+    "run.py": "18da2c89df60dd2f01acc7ae3d57a841a013827c549205a871b87d0ae52d69da",
+    "teacher_core.py": "8c25ba8cb844b059adbbce75b57785a156333182afa2d5d576985997f2d36733",
+    "source_tail_objective.py": "711e2a4988d9f956f8ab013d2130b47a93a237f95fd40a5896eb8eab733a3cb0",
+    "config.json": "c3aa990986440bfd22bfd9171c5837025a5a3b2d3b0bc7b817d27c32eac1d1b2"
+  },
+  "status": "CPU_CHECKED_REAL_INPUT_AND_CUDA_GATES_PENDING",
+  "arms": [
+    "control",
+    "treatment"
+  ],
+  "epochs_each": 3,
+  "seed": 17,
+  "gpu_hours_cap": 2,
+  "new_gpu_hours_granted": 0,
+  "test_access": false,
+  "cal_access": false,
+  "diagram_sha256": "12f041fa380ba1fd558a44daee497e853439df06041d93ac05e18d46056fb561",
+  "preserve_historical_results": true
+}

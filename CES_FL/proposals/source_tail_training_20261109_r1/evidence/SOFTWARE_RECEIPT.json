@@ -1,0 +1,17 @@
+{
+  "status": "PASS_CPU_SYNTHETIC",
+  "source_hashes": {
+    "run.py": "18da2c89df60dd2f01acc7ae3d57a841a013827c549205a871b87d0ae52d69da",
+    "teacher_core.py": "8c25ba8cb844b059adbbce75b57785a156333182afa2d5d576985997f2d36733",
+    "source_tail_objective.py": "711e2a4988d9f956f8ab013d2130b47a93a237f95fd40a5896eb8eab733a3cb0",
+    "config.json": "c3aa990986440bfd22bfd9171c5837025a5a3b2d3b0bc7b817d27c32eac1d1b2"
+  },
+  "torch": "2.8.0",
+  "checks_log_sha256": "201cf0d1cf88191b1d39ea61eb8dd3a2c5cdf2eb42c899919f1a61ade5de9fcf",
+  "real_teacher_checkpoint_loaded": false,
+  "actual_source_sidecar_verified": false,
+  "real_cache_extracted": false,
+  "cuda_verified": false,
+  "training_launched": false,
+  "benchmark_results": false
+}
