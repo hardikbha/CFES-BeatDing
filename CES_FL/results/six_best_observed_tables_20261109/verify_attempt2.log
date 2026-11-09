@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/ces_fl_sources/cesfl-six-tables-20261109/CES_FL/results/six_best_observed_tables_20261109/verify_six_tables.py", line 102, in <module>
+    else:assert normalize(row[1])==normalize(exp['method']),(row[1],exp['method'])
+AssertionError: ('RSEF-FDD arxiv’25 [19]', 'RSEF-FDD arxiv’25 [18]')

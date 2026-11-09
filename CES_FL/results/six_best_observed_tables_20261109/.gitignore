@@ -1,0 +1,10 @@
+*.aux
+*.out
+*.log
+__pycache__/
+!build_collection.log
+!build_render.log
+!verify_six_tables.log
+!verify_attempt1.log
+!verify_attempt2.log
+!latex_final.log

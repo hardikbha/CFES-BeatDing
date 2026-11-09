@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "best_observed_cells_independently_verified": 232,
+  "numbered_tables": 6,
+  "published_rows_preserved": 62,
+  "benchmark_candidate_reports": 68,
+  "ff2_validation_models": 11,
+  "ff2_test_models": 6,
+  "ff2_test_checkpoints": 10,
+  "official_paper_numeric_check": "PASS",
+  "official_numeric_values_checked": 494,
+  "bibliography_indices": "Version-specific reference indices omitted; method identities checked.",
+  "official_html_sha256": "1ed77b149533fd7d43bc8d955aae2ce2a5320cead7294e42273665486de73544",
+  "official_url": "https://arxiv.org/html/2511.10150v5"
+}

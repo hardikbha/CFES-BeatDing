@@ -1,0 +1,45 @@
+{
+  "status": "COLLECTED",
+  "published_rows": [
+    21,
+    21,
+    20
+  ],
+  "benchmark_candidate_dataset_reports": 68,
+  "ff2_validation_axis_reports": 108,
+  "ff2_test_axis_reports": 80,
+  "ff2_split_totals": {
+    "TRAIN": {
+      "real": 16777,
+      "fake": 201489
+    },
+    "SELECT": {
+      "real": 2438,
+      "fake": 28669
+    },
+    "CAL": {
+      "real": 2509,
+      "fake": 29746
+    },
+    "TEST": {
+      "real": 5441,
+      "fake": 82123
+    }
+  },
+  "input_files_hashed": 41
+}
+{
+  "status": "PASS",
+  "named_tables": 6,
+  "published_rows_preserved": [
+    21,
+    21,
+    20
+  ],
+  "selected_cells_with_provenance": 232,
+  "benchmark_candidate_reports": 68,
+  "threshold_search": false,
+  "new_training_or_inference": false,
+  "private_scores_read": false,
+  "snapshot_sha256": "20d0ae005242a0389ee2c53d1e2f18b460411be8e0617d974eab96ae58c222e9"
+}

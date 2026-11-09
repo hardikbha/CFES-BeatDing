@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/home/sachin.chaudhary/ces_fl_sources/cesfl-six-tables-20261109/CES_FL/results/six_best_observed_tables_20261109/verify_six_tables.py", line 35, in <module>
+    assert math.isclose(float(cell['value']),target,rel_tol=0,abs_tol=1e-12),cell
+AssertionError: {'table': '5', 'block': 'B', 'metric': 'RF-S (ours) age_bin worst_group_auc_pct', 'value': '99.73086987151531', 'source_tag': 'S-7', 'model': 'RF-S (ours)', 'seed': '7', 'source_run_AUC_pct': '99.7993133187654', 'source_run_FPR_pct': '9.96718621821165', 'source_run_FNR_pct': '0.2755589661306638', 'tied_tags': 'S-7'}

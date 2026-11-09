@@ -1,0 +1,335 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper,landscape,margin=10mm]{geometry}
+\usepackage[T1]{fontenc}\usepackage{lmodern}
+\usepackage{booktabs,multirow,array,longtable,graphicx,xcolor,colortbl,amsmath,hyperref}
+\hypersetup{colorlinks=true,urlcolor=blue,linkcolor=blue}
+\setlength{\parindent}{0pt}\setlength{\parskip}{4pt}
+\newcommand{\note}[1]{{\fontsize{8}{10}\selectfont #1\par}}
+\begin{document}
+\begin{center}{\LARGE\bfseries CES-FL: Six Tables of Best Observed Results}\par
+\large Ding Tables1--3 and FairForge-2 split, validation and TEST\par
+9 November2026\end{center}
+\colorbox{blue!8}{\parbox{0.97\linewidth}{\textbf{Approved retrospective best-observed summary.}
+Each cell may come from a different model or seed. Best-observed rows are not one trained model,
+not unbiased estimates of future performance, and not evidence of an overall win.
+No new training, model inference or threshold search was performed.}}
+\begin{enumerate}
+\item Table1: Ding's FF++ intra-domain table, original published rows and columns, plus our cellwise best.
+\item Table2: Ding's cross-domain Xception table, original published rows and columns, plus our cellwise best.
+\item Table3: Ding's ResNet-50 table, original published rows and columns, plus our cellwise best.
+\item Table4: Actual public FairForge-2 TRAIN, validation, TEST counts; reserved CAL disclosed separately.
+\item Table5: FairForge-2 validation comparison; best recorded seed per metric and best-own across variants.
+\item Table6: FairForge-2 TEST comparison with the same layout; unavailable evaluations remain blank.
+\end{enumerate}
+\textbf{Reading the values.} All AUC/rates are multiplied by100. $F_{\rm FPR}$ is a sum of group deviations,
+not the overall FPR; lower disparity/DP/FPR/FNR is better, higher AUC/es-AUC/worst-group AUC is better.
+Groups require20 real and20 fake images in the stored evaluations. Different numbers of eligible groups make
+disparity magnitudes across axes non-comparable. Age/skin labels are estimates.
+\par\textbf{Our cell labels.} Every selected cell names its source run/seed beneath the value.
+X/R denote Xception/ResNet-50. LA/LH are plain-head arms; A/B/C are archived encoder/invariance controls;
+R0/R1/R2/RN/RD are archived upgrade arms. Some low-disparity cells can come from a weak or almost constant
+classifier: the provenance index includes each contributing run's AUC/FPR/FNR.
+FairForge tags P/A/B/LA/LH/S/J denote CES-FL P/A/B, plain-head LA/LH, RF-S, RF-SJg; suffix is seed.
+\par\textbf{Protocol limits.} Tables1--3 use the existing fixed-probability0.5 reports, never a chosen TEST threshold.
+FairForge tables use the existing validation-real FPR10 calibration, frozen for TEST.
+Training budgets, selection rules and support differ from published protocols.
+ResNet LA/LH FF++ has231 recorded fit/test identity/source-ID overlaps; independence is unverified.
+Full counterfactual CES-FL has not been established by these experiments.
+\par\textbf{Published reference:} \url{https://arxiv.org/html/2511.10150v5}.
+The paper's ``Ours'' is labelled ``Ding et al. (published)'' to distinguish it from our rows.
+Published numeric values are unchanged. Full precision/source provenance accompanies the PDF in CSV/JSON.
+
+\clearpage\section*{Table 1. Ding's original FF++ intra-domain comparison}
+\note{Published rows retain their original order, method identities, backbones and numeric values; paper-internal bibliography indices are omitted. Blue rows are our post-hoc best observed per metric; source tags identify different runs/seeds. No published row is a new reproduction.}
+{\fontsize{9}{10.5}\selectfont\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lllrrrr}\toprule
+ & & & \multicolumn{3}{c}{Fairness Metrics(\%)} & Detection Metrics(\%)\\
+Attributes & Methods & Backbone & $F_{\rm FPR}\downarrow$ & $F_{\rm DP}\downarrow$ & $es$-AUC$\uparrow$ & AUC$\uparrow$\\\midrule
+Gender & Ori (published) & Xception & 4.10 & 5.72 & 91.93 & 92.69\\
+ & DAG-FDD WACV'24 & Xception & 1.82 & 4.65 & 94.87 & 96.72\\
+ & DAW-FDD WACV'24 & Xception & 0.78 & 9.52 & 95.76 & 97.46\\
+ & PG-FDD CVPR'24 & Xception & 0.62 & 4.74 & 96.32 & 97.66\\
+ & Fairadapter ICASSP'25 & ViT-L/14 & 4.16 & 12.21 & 67.85 & 71.50\\
+ & RSEF-FDD arxiv'25 & Xception & 0.57 & 8.55 & 94.91 & 97.09\\
+ & Ding et al. (published) & Xception & 0.53 & 3.61 & 96.45 & 97.71\\
+\rowcolor{blue!8} & CES-FL best observed, cellwise & Xception & \shortstack{\textbf{0.11}\\{\tiny\texttt{X-RN-17}}} & \shortstack{\textbf{1.76}\\{\tiny\texttt{X-LA-17}}} & \shortstack{\textbf{97.54}\\{\tiny\texttt{X-LA-7}}} & \shortstack{\textbf{98.54}\\{\tiny\texttt{X-LA-7}}}\\
+\midrule
+Race & Ori (published) & Xception & 19.76 & 4.74 & 82.85 & 92.69\\
+ & DAG-FDD WACV'24 & Xception & 5.48 & 9.20 & 93.43 & 96.72\\
+ & DAW-FDD WACV'24 & Xception & 5.43 & 14.69 & 94.15 & 97.46\\
+ & PG-FDD CVPR'24 & Xception & 11.13 & 4.78 & 94.52 & 97.66\\
+ & Fairadapter ICASSP'25 & ViT-L/14 & 43.22 & 20.39 & 56.03 & 71.50\\
+ & RSEF-FDD arxiv'25 & Xception & 8.39 & 5.28 & 93.60 & 97.09\\
+ & Ding et al. (published) & Xception & 9.29 & 4.35 & 94.86 & 97.71\\
+\rowcolor{blue!8} & CES-FL best observed, cellwise & Xception & \shortstack{\textbf{6.03}\\{\tiny\texttt{X-LA-7}}} & \shortstack{\textbf{2.66}\\{\tiny\texttt{X-R1-17}}} & \shortstack{\textbf{97.57}\\{\tiny\texttt{X-LH-17}}} & \shortstack{\textbf{98.54}\\{\tiny\texttt{X-LA-7}}}\\
+\midrule
+Intersection & Ori (published) & Xception & 36.03 & 14.64 & 74.43 & 92.69\\
+ & DAG-FDD WACV'24 & Xception & 24.08 & 26.25 & 85.80 & 96.72\\
+ & DAW-FDD WACV'24 & Xception & 14.36 & 26.13 & 86.74 & 97.46\\
+ & PG-FDD CVPR'24 & Xception & 9.19 & 13.39 & 86.83 & 97.66\\
+ & Fairadapter ICASSP'25 & ViT-L/14 & 86.91 & 42.44 & 45.98 & 71.50\\
+ & RSEF-FDD arxiv'25 & Xception & 23.64 & 21.74 & 85.77 & 97.09\\
+ & Ding et al. (published) & Xception & 20.18 & 9.47 & 86.91 & 97.71\\
+\rowcolor{blue!8} & CES-FL best observed, cellwise & Xception & \shortstack{\textbf{14.93}\\{\tiny\texttt{X-LA-7}}} & \shortstack{\textbf{12.17}\\{\tiny\texttt{X-LA-17}}} & \shortstack{\textbf{92.07}\\{\tiny\texttt{X-LH-17}}} & \shortstack{\textbf{98.54}\\{\tiny\texttt{X-LA-7}}}\\
+\bottomrule\end{tabular*}}\par
+\note{AUC is repeated across attribute blocks in Table1. Source pools include all eligible archived CES-FL reports listed in the provenance index, plus newer LA/LH runs; fixed0.5 is held constant. A cellwise row can combine low disparity from one weak detector with high AUC from another. It is not a joint utility/fairness result.}
+\clearpage\section*{Table 2. Ding's original cross-domain comparison}
+\note{Published rows retain their original order, method identities, backbones and numeric values; paper-internal bibliography indices are omitted. Blue rows are our post-hoc best observed per metric; source tags identify different runs/seeds. No published row is a new reproduction.}
+{\fontsize{8}{9.5}\selectfont\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lllrrrrrrrrrr}\toprule
+ & & & \multicolumn{9}{c}{Fairness Metrics(\%)} & Detection Metrics(\%)\\
+ & & & \multicolumn{3}{c}{Gender} & \multicolumn{3}{c}{Race} & \multicolumn{3}{c}{Intersection} & Overall\\
+Datasets & Methods & Backbone & $F_{\rm FPR}\downarrow$ & $F_{\rm DP}\downarrow$ & $es$-AUC$\uparrow$ & $F_{\rm FPR}\downarrow$ & $F_{\rm DP}\downarrow$ & $es$-AUC$\uparrow$ & $F_{\rm FPR}\downarrow$ & $F_{\rm DP}\downarrow$ & $es$-AUC$\uparrow$ & AUC$\uparrow$\\\midrule
+DFDC & Ori (published) & Xception & 8.67 & 6.70 & 54.56 & 19.41 & 7.99 & 47.02 & 53.42 & 17.34 & 36.96 & 56.13\\
+ & DAG-FDD WACV'24 & Xception & 5.29 & 6.68 & 57.41 & 9.26 & 12.51 & 45.91 & 45.30 & 12.92 & 36.42 & 59.13\\
+ & DAW-FDD WACV'24 & Xception & 3.60 & 3.67 & 55.88 & 22.36 & 9.72 & 47.77 & 46.80 & 12.69 & 36.63 & 56.90\\
+ & PG-FDD CVPR'24 & Xception & 2.35 & 2.57 & 57.71 & 10.10 & 11.49 & 50.53 & 32.16 & 17.71 & 37.42 & 59.64\\
+ & Fairadapter ICASSP'25 & ViT-L/14 & 2.39 & 4.57 & 55.88 & 32.49 & 26.77 & 52.27 & 74.10 & 31.53 & 31.39 & 59.25\\
+ & RSEF-FDD arxiv'25 & Xception & 2.09 & 3.83 & 57.90 & 12.24 & 7.74 & 50.27 & 38.89 & 12.18 & 37.72 & 59.08\\
+ & Ding et al. (published) & Xception & 1.76 & 3.67 & 57.94 & 17.93 & 7.58 & 52.33 & 37.37 & 11.92 & 39.03 & 61.86\\
+\rowcolor{blue!8} & CES-FL best observed, cellwise & Xception & \shortstack{\textbf{0.00}\\{\tiny\texttt{X-LA-17}}} & \shortstack{\textbf{1.42}\\{\tiny\texttt{X-LA-17}}} & \shortstack{\textbf{60.69}\\{\tiny\texttt{X-LA-17}}} & \shortstack{\textbf{6.41}\\{\tiny\texttt{X-LH-17}}} & \shortstack{\textbf{4.51}\\{\tiny\texttt{X-LH-17}}} & \shortstack{\textbf{53.49}\\{\tiny\texttt{X-LA-17}}} & \shortstack{\textbf{15.02}\\{\tiny\texttt{X-LH-17}}} & \shortstack{\textbf{6.63}\\{\tiny\texttt{X-LH-17}}} & \shortstack{\textbf{42.87}\\{\tiny\texttt{X-C-17}}} & \shortstack{\textbf{61.77}\\{\tiny\texttt{X-LA-17}}}\\
+\midrule
+Celeb-DF & Ori (published) & Xception & 6.93 & 20.23 & 60.94 & 23.44 & 17.89 & 61.21 & 27.38 & 18.72 & 61.22 & 69.18\\
+ & DAG-FDD WACV'24 & Xception & 8.70 & 14.25 & 66.23 & 19.44 & 13.26 & 62.61 & 23.60 & 13.80 & 63.08 & 72.29\\
+ & DAW-FDD WACV'24 & Xception & 8.71 & 12.73 & 68.31 & 14.76 & 7.80 & 66.47 & 24.75 & 13.78 & 59.24 & 74.09\\
+ & PG-FDD CVPR'24 & Xception & 7.95 & 16.29 & 69.47 & 23.99 & 12.47 & 67.78 & 23.71 & 13.30 & 62.63 & 74.24\\
+ & Fairadapter ICASSP'25 & ViT-L/14 & 8.59 & 26.84 & 56.84 & 46.14 & 36.35 & 58.34 & 47.03 & 35.69 & 54.77 & 64.94\\
+ & RSEF-FDD arxiv'25 & Xception & 1.94 & 35.63 & 68.92 & 17.40 & 27.48 & 67.80 & 24.17 & 27.73 & 62.56 & 74.36\\
+ & Ding et al. (published) & Xception & 6.41 & 10.81 & 69.68 & 16.60 & 7.29 & 69.96 & 23.32 & 12.01 & 63.27 & 76.75\\
+\rowcolor{blue!8} & CES-FL best observed, cellwise & Xception & \shortstack{\textbf{1.51}\\{\tiny\texttt{X-LA-7}}} & \shortstack{\textbf{11.79}\\{\tiny\texttt{X-A-17}}} & \shortstack{\textbf{64.48}\\{\tiny\texttt{X-R2-17}}} & \shortstack{\textbf{15.03}\\{\tiny\texttt{X-A-17}}} & \shortstack{\textbf{11.91}\\{\tiny\texttt{X-A-17}}} & \shortstack{\textbf{59.66}\\{\tiny\texttt{X-LA-27}}} & \shortstack{\textbf{20.62}\\{\tiny\texttt{X-A-17}}} & \shortstack{\textbf{12.28}\\{\tiny\texttt{X-A-17}}} & \shortstack{\textbf{58.18}\\{\tiny\texttt{X-A-17}}} & \shortstack{\textbf{74.67}\\{\tiny\texttt{X-R2-17}}}\\
+\midrule
+DFD & Ori (published) & Xception & 9.45 & 6.63 & 72.68 & 7.75 & 22.31 & 69.07 & 35.06 & 25.53 & 59.20 & 74.32\\
+ & DAG-FDD WACV'24 & Xception & 5.41 & 5.60 & 75.87 & 2.56 & 21.34 & 70.14 & 33.00 & 23.02 & 61.09 & 76.29\\
+ & DAW-FDD WACV'24 & Xception & 5.30 & 10.63 & 71.68 & 4.32 & 20.16 & 63.24 & 33.81 & 24.72 & 56.01 & 73.71\\
+ & PG-FDD CVPR'24 & Xception & 5.05 & 1.86 & 76.37 & 5.79 & 19.31 & 74.81 & 28.00 & 23.93 & 66.32 & 80.70\\
+ & Fairadapter ICASSP'25 & ViT-L/14 & 6.32 & 7.55 & 63.28 & 11.29 & 12.28 & 56.28 & 29.56 & 33.11 & 48.63 & 68.12\\
+ & RSEF-FDD arxiv'25 & Xception & 18.50 & 6.11 & 75.97 & 19.45 & 19.40 & 72.65 & 35.34 & 10.97 & 67.24 & 80.54\\
+ & Ding et al. (published) & Xception & 4.72 & 5.49 & 78.98 & 2.09 & 18.66 & 77.44 & 27.32 & 22.81 & 69.73 & 81.46\\
+\rowcolor{blue!8} & CES-FL best observed, cellwise & Xception & \shortstack{\textbf{0.85}\\{\tiny\texttt{X-LH-17}}} & \shortstack{\textbf{1.48}\\{\tiny\texttt{X-C-17}}} & \shortstack{\textbf{83.79}\\{\tiny\texttt{X-LA-7}}} & \shortstack{\textbf{1.96}\\{\tiny\texttt{X-LA-27}}} & \shortstack{\textbf{0.82}\\{\tiny\texttt{X-RD-17}}} & \shortstack{\textbf{82.25}\\{\tiny\texttt{X-LA-7}}} & \shortstack{\textbf{15.54}\\{\tiny\texttt{X-LA-27}}} & \shortstack{\textbf{4.93}\\{\tiny\texttt{X-RD-17}}} & \shortstack{\textbf{76.52}\\{\tiny\texttt{X-RD-17}}} & \shortstack{\textbf{84.23}\\{\tiny\texttt{X-LA-7}}}\\
+\bottomrule\end{tabular*}}\par
+\note{AUC is repeated across attribute blocks in Table1. Source pools include all eligible archived CES-FL reports listed in the provenance index, plus newer LA/LH runs; fixed0.5 is held constant. A cellwise row can combine low disparity from one weak detector with high AUC from another. It is not a joint utility/fairness result.}
+\clearpage\section*{Table 3. Ding's original ResNet-50 comparison}
+\note{Published rows retain their original order, method identities, backbones and numeric values; paper-internal bibliography indices are omitted. Blue rows are our post-hoc best observed per metric; source tags identify different runs/seeds. No published row is a new reproduction.}
+{\fontsize{8}{9.5}\selectfont\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lllrrrrrrrrrr}\toprule
+ & & & \multicolumn{9}{c}{Fairness Metrics(\%)} & Detection Metrics(\%)\\
+ & & & \multicolumn{3}{c}{Gender} & \multicolumn{3}{c}{Race} & \multicolumn{3}{c}{Intersection} & Overall\\
+Datasets & Methods & Backbone & $F_{\rm FPR}\downarrow$ & $F_{\rm DP}\downarrow$ & $es$-AUC$\uparrow$ & $F_{\rm FPR}\downarrow$ & $F_{\rm DP}\downarrow$ & $es$-AUC$\uparrow$ & $F_{\rm FPR}\downarrow$ & $F_{\rm DP}\downarrow$ & $es$-AUC$\uparrow$ & AUC$\uparrow$\\\midrule
+FF++ & Ori (published) & ResNet-50 & 8.90 & 9.27 & 90.40 & 17.49 & 7.04 & 89.17 & 38.26 & 15.43 & 76.14 & 94.29\\
+ & DAG-FDD WACV'24 & ResNet-50 & 1.92 & 6.02 & 91.09 & 6.38 & 3.98 & 91.39 & 32.58 & 11.06 & 80.64 & 94.74\\
+ & DAW-FDD WACV'24 & ResNet-50 & 3.25 & 5.29 & 90.13 & 12.46 & 3.29 & 90.92 & 31.07 & 11.03 & 80.98 & 93.96\\
+ & PG-FDD CVPR'24 & ResNet-50 & 3.05 & 3.06 & 93.57 & 10.89 & 2.83 & 91.53 & 22.10 & 9.69 & 81.58 & 94.46\\
+ & Ding et al. (published) & ResNet-50 & 3.94 & 5.14 & 94.46 & 18.67 & 2.43 & 92.69 & 34.30 & 8.61 & 82.87 & 95.53\\
+\rowcolor{blue!8} & CES-FL best observed, cellwise & ResNet-50 & \shortstack{\textbf{0.02}\\{\tiny\texttt{R-LH-17}}} & \shortstack{\textbf{3.10}\\{\tiny\texttt{R-A-17}}} & \shortstack{\textbf{93.72}\\{\tiny\texttt{R-LA-17}}} & \shortstack{\textbf{14.86}\\{\tiny\texttt{R-LA-17}}} & \shortstack{\textbf{2.67}\\{\tiny\texttt{R-LH-17}}} & \shortstack{\textbf{92.77}\\{\tiny\texttt{R-LH-17}}} & \shortstack{\textbf{30.43}\\{\tiny\texttt{R-LH-17}}} & \shortstack{\textbf{8.93}\\{\tiny\texttt{R-LH-17}}} & \shortstack{\textbf{82.79}\\{\tiny\texttt{R-C-17}}} & \shortstack{\textbf{96.21}\\{\tiny\texttt{R-LA-17}}}\\
+\midrule
+DFDC & Ori (published) & ResNet-50 & 12.55 & 11.06 & 54.96 & 17.34 & 8.38 & 48.30 & 48.10 & 16.30 & 35.76 & 57.83\\
+ & DAG-FDD WACV'24 & ResNet-50 & 6.57 & 4.87 & 57.63 & 15.96 & 2.95 & 50.31 & 44.10 & 11.25 & 33.41 & 60.29\\
+ & DAW-FDD WACV'24 & ResNet-50 & 9.12 & 7.14 & 57.22 & 14.60 & 2.81 & 48.94 & 43.31 & 9.55 & 34.71 & 59.78\\
+ & PG-FDD CVPR'24 & ResNet-50 & 5.78 & 4.65 & 58.34 & 12.68 & 5.23 & 49.33 & 31.97 & 8.54 & 34.85 & 61.83\\
+ & Ding et al. (published) & ResNet-50 & 3.97 & 3.61 & 56.96 & 11.94 & 5.15 & 50.99 & 32.14 & 10.27 & 37.55 & 62.54\\
+\rowcolor{blue!8} & CES-FL best observed, cellwise & ResNet-50 & \shortstack{\textbf{0.02}\\{\tiny\texttt{R-A-17}}} & \shortstack{\textbf{0.31}\\{\tiny\texttt{R-A-17}}} & \shortstack{\textbf{57.95}\\{\tiny\texttt{R-LH-17}}} & \shortstack{\textbf{8.76}\\{\tiny\texttt{R-A-17}}} & \shortstack{\textbf{1.60}\\{\tiny\texttt{R-LH-17}}} & \shortstack{\textbf{51.18}\\{\tiny\texttt{R-LH-17}}} & \shortstack{\textbf{30.42}\\{\tiny\texttt{R-A-17}}} & \shortstack{\textbf{12.36}\\{\tiny\texttt{R-LA-17}}} & \shortstack{\textbf{36.15}\\{\tiny\texttt{R-LA-17}}} & \shortstack{\textbf{60.07}\\{\tiny\texttt{R-LH-17}}}\\
+\midrule
+Celeb-DF & Ori (published) & ResNet-50 & 12.26 & 22.12 & 61.11 & 18.55 & 22.43 & 59.82 & 24.84 & 23.18 & 56.09 & 71.65\\
+ & DAG-FDD WACV'24 & ResNet-50 & 8.22 & 20.45 & 67.01 & 23.07 & 18.50 & 68.07 & 20.29 & 19.33 & 66.76 & 75.77\\
+ & DAW-FDD WACV'24 & ResNet-50 & 9.03 & 20.85 & 68.33 & 18.60 & 17.65 & 69.14 & 23.84 & 18.55 & 68.74 & 76.51\\
+ & PG-FDD CVPR'24 & ResNet-50 & 6.98 & 16.92 & 68.49 & 16.74 & 16.50 & 70.35 & 29.34 & 18.72 & 66.26 & 76.10\\
+ & Ding et al. (published) & ResNet-50 & 4.53 & 12.00 & 68.98 & 6.76 & 8.16 & 71.03 & 5.56 & 9.11 & 68.25 & 77.35\\
+\rowcolor{blue!8} & CES-FL best observed, cellwise & ResNet-50 & \shortstack{\textbf{4.26}\\{\tiny\texttt{R-A-17}}} & \shortstack{\textbf{10.60}\\{\tiny\texttt{R-A-17}}} & \shortstack{\textbf{63.16}\\{\tiny\texttt{R-B-17}}} & \shortstack{\textbf{4.53}\\{\tiny\texttt{R-A-17}}} & \shortstack{\textbf{6.48}\\{\tiny\texttt{R-A-17}}} & \shortstack{\textbf{61.96}\\{\tiny\texttt{R-LH-17}}} & \shortstack{\textbf{6.41}\\{\tiny\texttt{R-A-17}}} & \shortstack{\textbf{7.11}\\{\tiny\texttt{R-A-17}}} & \shortstack{\textbf{59.50}\\{\tiny\texttt{R-A-17}}} & \shortstack{\textbf{73.81}\\{\tiny\texttt{R-LH-17}}}\\
+\midrule
+DFD & Ori (published) & ResNet-50 & 10.95 & 9.08 & 70.33 & 4.66 & 12.57 & 66.68 & 33.46 & 16.84 & 56.00 & 71.31\\
+ & DAG-FDD WACV'24 & ResNet-50 & 3.62 & 4.19 & 73.74 & 3.86 & 13.54 & 70.33 & 25.22 & 14.84 & 57.19 & 73.97\\
+ & DAW-FDD WACV'24 & ResNet-50 & 4.81 & 3.90 & 72.12 & 7.36 & 3.21 & 70.57 & 33.45 & 14.30 & 54.52 & 73.58\\
+ & PG-FDD CVPR'24 & ResNet-50 & 3.57 & 1.82 & 76.14 & 2.62 & 7.81 & 72.16 & 23.15 & 11.01 & 62.65 & 77.47\\
+ & Ding et al. (published) & ResNet-50 & 3.12 & 1.76 & 77.68 & 6.51 & 3.03 & 70.93 & 20.99 & 4.85 & 66.19 & 78.63\\
+\rowcolor{blue!8} & CES-FL best observed, cellwise & ResNet-50 & \shortstack{\textbf{2.10}\\{\tiny\texttt{R-A-17}}} & \shortstack{\textbf{1.31}\\{\tiny\texttt{R-LA-17}}} & \shortstack{\textbf{72.32}\\{\tiny\texttt{R-LA-17}}} & \shortstack{\textbf{6.63}\\{\tiny\texttt{R-LH-17}}} & \shortstack{\textbf{0.95}\\{\tiny\texttt{R-LH-17}}} & \shortstack{\textbf{71.72}\\{\tiny\texttt{R-C-17}}} & \shortstack{\textbf{23.95}\\{\tiny\texttt{R-A-17}}} & \shortstack{\textbf{6.31}\\{\tiny\texttt{R-LH-17}}} & \shortstack{\textbf{56.51}\\{\tiny\texttt{R-LA-17}}} & \shortstack{\textbf{74.02}\\{\tiny\texttt{R-C-17}}}\\
+\bottomrule\end{tabular*}}\par
+\note{AUC is repeated across attribute blocks in Table1. Source pools include all eligible archived CES-FL reports listed in the provenance index, plus newer LA/LH runs; fixed0.5 is held constant. A cellwise row can combine low disparity from one weak detector with high AUC from another. It is not a joint utility/fairness result.}
+\clearpage\section*{Table 4. FairForge-2 public split used in these experiments}
+{\fontsize{12}{13.5}\selectfont\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lrrr}\toprule
+Split & Real images & Fake images & Total images\\\midrule
+TRAIN & 16,777 & 201,489 & 218,266\\
+Validation (SELECT) & 2,438 & 28,669 & 31,107\\
+TEST & 5,441 & 82,123 & 87,564\\
+Reserved calibration (CAL) & 2,509 & 29,746 & 32,255\\
+\midrule TRAIN + validation + TEST & 24,656 & 312,281 & 336,937\\
+\bottomrule\end{tabular*}}\par
+\subsection*{Recorded gender$\times$race composition (real / fake images)}
+{\fontsize{10}{11.5}\selectfont\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lrrrr}\toprule
+Group & TRAIN & Validation (SELECT) & TEST & Reserved CAL\\\midrule
+Male-Asian & 2,219 / 26,500 & 322 / 3,833 & 722 / 11,573 & 324 / 3,950\\
+Male-White & 1,809 / 23,236 & 256 / 3,178 & 612 / 10,654 & 243 / 2,916\\
+Male-Black & 1,795 / 23,407 & 238 / 3,072 & 585 / 10,261 & 248 / 3,148\\
+Male-Others & 4,171 / 46,860 & 621 / 6,973 & 1,340 / 15,223 & 705 / 7,934\\
+Female-Asian & 1,333 / 17,079 & 202 / 2,493 & 449 / 8,711 & 194 / 2,479\\
+Female-White & 1,774 / 21,658 & 257 / 2,966 & 567 / 9,348 & 232 / 2,817\\
+Female-Black & 1,524 / 18,463 & 194 / 2,272 & 475 / 8,392 & 205 / 2,469\\
+Female-Others & 2,152 / 24,286 & 348 / 3,882 & 691 / 7,961 & 358 / 4,033\\
+\bottomrule\end{tabular*}}\par
+\note{Counts describe the public cell-valid subset and manifests used by the reported models, not every historical/private FairForge-2 image. TRAIN/validation/TEST counts were independently checked against their actual manifests. Reserved CAL counts come from the saved public release composition; CAL was not substituted into the completed selection/calibration protocol. SELECT served both validation selection and threshold calibration. Counts are images, not independent people.}
+\clearpage\section*{Table 5. FairForge-2 validation: best recorded values}
+\note{Every method row uses its best available recorded seed independently per metric. Singleton rows are seed17. Tagged values in multiseed and best-own rows identify the contributing seed/run. No threshold, checkpoint or model was changed.}
+\textbf{(A) Detection and Ding-style demographic metrics}\par
+{\fontsize{7.6}{9.1}\selectfont\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}llrrrrrrrrrrrrr}\toprule
+ & & \multicolumn{4}{c}{Detection / gender$\times$race WG} & \multicolumn{3}{c}{Gender} & \multicolumn{3}{c}{Race} & \multicolumn{3}{c}{Gender$\times$race}\\
+Model & Seed pool & AUC$\uparrow$ & FPR$\downarrow$ & FNR$\downarrow$ & WG-AUC$\uparrow$ & $F_{\rm FPR}\downarrow$ & $F_{\rm DP}\downarrow$ & $es$-AUC$\uparrow$ & $F_{\rm FPR}\downarrow$ & $F_{\rm DP}\downarrow$ & $es$-AUC$\uparrow$ & $F_{\rm FPR}\downarrow$ & $F_{\rm DP}\downarrow$ & $es$-AUC$\uparrow$\\\midrule
+BCE & 17 & 99.80 & 9.97 & 0.30 & 99.60 & 3.43 & 0.11 & 99.74 & 19.54 & 1.52 & 99.22 & 40.52 & 1.62 & 98.61\\
+DAG-FDD & 17 & 99.81 & 9.97 & 0.22 & 99.37 & 4.28 & 0.18 & 99.66 & 18.32 & 1.51 & 99.26 & 37.89 & 1.68 & 98.50\\
+DAW-FDD & 17 & 99.84 & 9.97 & 0.24 & 99.49 & 3.43 & 0.09 & 99.80 & 12.87 & 1.29 & 99.38 & 30.70 & 1.56 & 98.85\\
+Ding corrected GDA & 17 & 99.06 & 9.97 & 1.07 & 98.06 & 0.72 & 0.24 & 98.98 & 4.09 & 1.38 & 97.21 & 12.44 & 1.72 & 95.31\\
+CES-FL P & 17 & 99.81 & 9.97 & 0.38 & 99.58 & 3.60 & 0.24 & 99.80 & 12.16 & 1.06 & 99.44 & 28.39 & 1.53 & 99.08\\
+CES-FL A & 17 & 99.81 & 9.97 & 0.33 & 99.60 & 3.26 & 0.14 & 99.79 & 12.80 & 1.12 & 99.43 & 29.10 & 1.43 & 99.05\\
+CES-FL B & 17 & 99.81 & 9.97 & 0.37 & 99.59 & 3.43 & 0.19 & 99.80 & 13.17 & 1.11 & 99.42 & 29.55 & 1.32 & 99.04\\
+L\_A (plain-head BCE) & 17 & 99.81 & 9.97 & 0.28 & 99.52 & 4.11 & 0.20 & 99.77 & 17.54 & 1.33 & 99.22 & 37.37 & 1.58 & 98.66\\
+L\_H-PS (ours) & 17 & 99.75 & 9.97 & 0.38 & 99.41 & 4.28 & 0.27 & 99.67 & 17.55 & 1.30 & 99.02 & 36.23 & 1.50 & 98.27\\
+RF-S (ours) & 7/17/27 & \shortstack{\textbf{99.81}\\{\tiny\texttt{S-27}}} & \shortstack{\textbf{9.97}\\{\tiny\texttt{S-17}}} & \shortstack{\textbf{0.28}\\{\tiny\texttt{S-7}}} & \shortstack{\textbf{99.52}\\{\tiny\texttt{S-27}}} & \shortstack{\textbf{4.11}\\{\tiny\texttt{S-17}}} & \shortstack{\textbf{0.20}\\{\tiny\texttt{S-7}}} & \shortstack{\textbf{99.78}\\{\tiny\texttt{S-27}}} & \shortstack{\textbf{16.02}\\{\tiny\texttt{S-17}}} & \shortstack{\textbf{1.24}\\{\tiny\texttt{S-27}}} & \shortstack{\textbf{99.24}\\{\tiny\texttt{S-27}}} & \shortstack{\textbf{34.12}\\{\tiny\texttt{S-17}}} & \shortstack{\textbf{1.47}\\{\tiny\texttt{S-7}}} & \shortstack{\textbf{98.68}\\{\tiny\texttt{S-27}}}\\
+RF-SJg (ours) & 7/17/27 & \shortstack{\textbf{99.76}\\{\tiny\texttt{J-7}}} & \shortstack{\textbf{9.97}\\{\tiny\texttt{J-17}}} & \shortstack{\textbf{0.45}\\{\tiny\texttt{J-7}}} & \shortstack{\textbf{99.51}\\{\tiny\texttt{J-7}}} & \shortstack{\textbf{3.26}\\{\tiny\texttt{J-17}}} & \shortstack{\textbf{0.21}\\{\tiny\texttt{J-27}}} & \shortstack{\textbf{99.75}\\{\tiny\texttt{J-7}}} & \shortstack{\textbf{13.05}\\{\tiny\texttt{J-17}}} & \shortstack{\textbf{0.83}\\{\tiny\texttt{J-17}}} & \shortstack{\textbf{99.17}\\{\tiny\texttt{J-7}}} & \shortstack{\textbf{27.53}\\{\tiny\texttt{J-17}}} & \shortstack{\textbf{1.16}\\{\tiny\texttt{J-27}}} & \shortstack{\textbf{98.59}\\{\tiny\texttt{J-7}}}\\
+\midrule\rowcolor{blue!8} Best own observed, cellwise & mixed & \shortstack{\textbf{99.81}\\{\tiny\texttt{P-17}}} & \shortstack{\textbf{9.97}\\{\tiny\texttt{A-17}}} & \shortstack{\textbf{0.28}\\{\tiny\texttt{S-7}}} & \shortstack{\textbf{99.60}\\{\tiny\texttt{A-17}}} & \shortstack{\textbf{3.26}\\{\tiny\texttt{A-17}}} & \shortstack{\textbf{0.14}\\{\tiny\texttt{A-17}}} & \shortstack{\textbf{99.80}\\{\tiny\texttt{P-17}}} & \shortstack{\textbf{12.16}\\{\tiny\texttt{P-17}}} & \shortstack{\textbf{0.83}\\{\tiny\texttt{J-17}}} & \shortstack{\textbf{99.44}\\{\tiny\texttt{P-17}}} & \shortstack{\textbf{27.53}\\{\tiny\texttt{J-17}}} & \shortstack{\textbf{1.16}\\{\tiny\texttt{J-27}}} & \shortstack{\textbf{99.08}\\{\tiny\texttt{P-17}}}\\
+\bottomrule\end{tabular*}}\par
+\vspace{2mm}
+\textbf{(B) Age, skin and additional intersections}\par
+{\fontsize{7.6}{9.1}\selectfont\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}llrrrrrrrrrrrr}\toprule
+ & & \multicolumn{3}{c}{Age (estimated)} & \multicolumn{3}{c}{Skin (estimated)} & \multicolumn{3}{c}{Age$\times$skin} & \multicolumn{3}{c}{Sex$\times$age$\times$race}\\
+Model & Seed pool & $F_{\rm FPR}\downarrow$ & $es$-AUC$\uparrow$ & WG-AUC$\uparrow$ & $F_{\rm FPR}\downarrow$ & $es$-AUC$\uparrow$ & WG-AUC$\uparrow$ & $F_{\rm FPR}\downarrow$ & $es$-AUC$\uparrow$ & WG-AUC$\uparrow$ & $F_{\rm FPR}\downarrow$ & $es$-AUC$\uparrow$ & WG-AUC$\uparrow$\\\midrule
+BCE & 17 & 8.74 & 99.61 & 99.69 & 14.57 & 99.50 & 99.66 & 78.64 & 97.92 & 99.39 & 27.64 & 98.96 & 99.54\\
+DAG-FDD & 17 & 10.45 & 99.58 & 99.72 & 12.78 & 99.40 & 99.69 & 74.22 & 97.87 & 99.58 & 33.73 & 99.04 & 99.58\\
+DAW-FDD & 17 & 10.45 & 99.59 & 99.72 & 6.80 & 99.62 & 99.73 & 49.75 & 98.43 & 99.31 & 34.15 & 99.30 & 99.66\\
+Ding corrected GDA & 17 & 1.58 & 98.41 & 98.69 & 7.72 & 97.46 & 98.29 & 47.54 & 91.82 & 97.41 & 14.42 & 95.98 & 98.24\\
+CES-FL P & 17 & 9.23 & 99.63 & 99.70 & 11.68 & 99.62 & 99.70 & 75.00 & 98.59 & 99.28 & 25.98 & 99.38 & 99.65\\
+CES-FL A & 17 & 9.02 & 99.57 & 99.67 & 10.62 & 99.61 & 99.71 & 69.21 & 98.42 & 99.30 & 29.57 & 99.22 & 99.60\\
+CES-FL B & 17 & 7.42 & 99.60 & 99.68 & 11.56 & 99.62 & 99.69 & 70.98 & 98.48 & 99.28 & 27.30 & 99.32 & 99.62\\
+L\_A (plain-head BCE) & 17 & 9.58 & 99.69 & 99.73 & 14.23 & 99.53 & 99.67 & 80.64 & 98.16 & 99.54 & 24.89 & 99.01 & 99.59\\
+L\_H-PS (ours) & 17 & 11.90 & 99.40 & 99.60 & 13.35 & 99.30 & 99.61 & 80.63 & 97.11 & 99.15 & 35.96 & 98.90 & 99.46\\
+RF-S (ours) & 7/17/27 & \shortstack{\textbf{9.17}\\{\tiny\texttt{S-7}}} & \shortstack{\textbf{99.70}\\{\tiny\texttt{S-27}}} & \shortstack{\textbf{99.74}\\{\tiny\texttt{S-27}}} & \shortstack{\textbf{13.04}\\{\tiny\texttt{S-27}}} & \shortstack{\textbf{99.54}\\{\tiny\texttt{S-27}}} & \shortstack{\textbf{99.68}\\{\tiny\texttt{S-27}}} & \shortstack{\textbf{73.60}\\{\tiny\texttt{S-17}}} & \shortstack{\textbf{98.14}\\{\tiny\texttt{S-17}}} & \shortstack{\textbf{99.56}\\{\tiny\texttt{S-17}}} & \shortstack{\textbf{23.28}\\{\tiny\texttt{S-17}}} & \shortstack{\textbf{98.97}\\{\tiny\texttt{S-17}}} & \shortstack{\textbf{99.59}\\{\tiny\texttt{S-17}}}\\
+RF-SJg (ours) & 7/17/27 & \shortstack{\textbf{7.13}\\{\tiny\texttt{J-27}}} & \shortstack{\textbf{99.63}\\{\tiny\texttt{J-17}}} & \shortstack{\textbf{99.70}\\{\tiny\texttt{J-7}}} & \shortstack{\textbf{8.15}\\{\tiny\texttt{J-27}}} & \shortstack{\textbf{99.44}\\{\tiny\texttt{J-7}}} & \shortstack{\textbf{99.60}\\{\tiny\texttt{J-7}}} & \shortstack{\textbf{64.23}\\{\tiny\texttt{J-17}}} & \shortstack{\textbf{97.87}\\{\tiny\texttt{J-17}}} & \shortstack{\textbf{99.43}\\{\tiny\texttt{J-17}}} & \shortstack{\textbf{28.97}\\{\tiny\texttt{J-17}}} & \shortstack{\textbf{98.87}\\{\tiny\texttt{J-17}}} & \shortstack{\textbf{99.50}\\{\tiny\texttt{J-17}}}\\
+\midrule\rowcolor{blue!8} Best own observed, cellwise & mixed & \shortstack{\textbf{7.13}\\{\tiny\texttt{J-27}}} & \shortstack{\textbf{99.70}\\{\tiny\texttt{S-27}}} & \shortstack{\textbf{99.74}\\{\tiny\texttt{S-27}}} & \shortstack{\textbf{8.15}\\{\tiny\texttt{J-27}}} & \shortstack{\textbf{99.62}\\{\tiny\texttt{P-17}}} & \shortstack{\textbf{99.71}\\{\tiny\texttt{A-17}}} & \shortstack{\textbf{64.23}\\{\tiny\texttt{J-17}}} & \shortstack{\textbf{98.59}\\{\tiny\texttt{P-17}}} & \shortstack{\textbf{99.56}\\{\tiny\texttt{S-17}}} & \shortstack{\textbf{23.28}\\{\tiny\texttt{S-17}}} & \shortstack{\textbf{99.38}\\{\tiny\texttt{P-17}}} & \shortstack{\textbf{99.65}\\{\tiny\texttt{P-17}}}\\
+\bottomrule\end{tabular*}}\par
+\vspace{2mm}
+\note{Stored threshold rule: validation-real empirical FPR10 for each selected checkpoint. Best-own pool: CES-FL P/A/B, LA/LH-PS, RF-S and RF-SJg where actually evaluated. GDA is the corrected local Ding-style adaptation, not a published-paper score. Budgets and selection policies differ across families. RF seeds share one pretrained encoder. In validation, RF age$\times$skin and coarse eight-group metrics are available only for seed17; no missing seed-axis results were fabricated. Eight-group axis uses Youth$<$30/Adult and White/NonWhite. Full counterfactual CES-FL, PG-FDD and verified F3Net/CORE TEST results are unavailable. No uncertainty is attached to these post-hoc cellwise extrema; they are not means or confidence bounds.}
+\clearpage\section*{Table 6. FairForge-2 TEST: best recorded values}
+\note{Every method row uses its best available recorded seed independently per metric. Singleton rows are seed17. Tagged values in multiseed and best-own rows identify the contributing seed/run. No threshold, checkpoint or model was changed.}
+\textbf{(A) Detection and Ding-style demographic metrics}\par
+{\fontsize{7.6}{9.1}\selectfont\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}llrrrrrrrrrrrrr}\toprule
+ & & \multicolumn{4}{c}{Detection / gender$\times$race WG} & \multicolumn{3}{c}{Gender} & \multicolumn{3}{c}{Race} & \multicolumn{3}{c}{Gender$\times$race}\\
+Model & Seed pool & AUC$\uparrow$ & FPR$\downarrow$ & FNR$\downarrow$ & WG-AUC$\uparrow$ & $F_{\rm FPR}\downarrow$ & $F_{\rm DP}\downarrow$ & $es$-AUC$\uparrow$ & $F_{\rm FPR}\downarrow$ & $F_{\rm DP}\downarrow$ & $es$-AUC$\uparrow$ & $F_{\rm FPR}\downarrow$ & $F_{\rm DP}\downarrow$ & $es$-AUC$\uparrow$\\\midrule
+BCE & -- & \multicolumn{13}{c}{Not evaluated on this split in the saved reports}\\
+DAG-FDD & -- & \multicolumn{13}{c}{Not evaluated on this split in the saved reports}\\
+DAW-FDD & 17 & 98.87 & 14.41 & 2.29 & 97.22 & 2.72 & 0.05 & 98.32 & 22.24 & 3.33 & 95.41 & 45.35 & 4.39 & 91.98\\
+Ding corrected GDA & 17 & 93.08 & 11.38 & 7.80 & 89.03 & 0.36 & 1.86 & 91.19 & 3.29 & 8.52 & 82.19 & 9.47 & 9.44 & 73.24\\
+CES-FL P & 17 & 98.78 & 12.39 & 2.92 & 96.85 & 2.50 & 0.25 & 98.16 & 20.42 & 2.75 & 95.27 & 42.23 & 4.02 & 91.79\\
+CES-FL A & -- & \multicolumn{13}{c}{Not evaluated on this split in the saved reports}\\
+CES-FL B & -- & \multicolumn{13}{c}{Not evaluated on this split in the saved reports}\\
+L\_A (plain-head BCE) & 17 & 99.00 & 15.14 & 1.44 & 97.33 & 4.02 & 0.41 & 98.46 & 31.15 & 2.81 & 95.46 & 63.67 & 2.96 & 91.86\\
+L\_H-PS (ours) & -- & \multicolumn{13}{c}{Not evaluated on this split in the saved reports}\\
+RF-S (ours) & 7/17/27 & \shortstack{\textbf{99.00}\\{\tiny\texttt{S-7}}} & \shortstack{\textbf{14.80}\\{\tiny\texttt{S-17}}} & \shortstack{\textbf{1.46}\\{\tiny\texttt{S-7}}} & \shortstack{\textbf{97.31}\\{\tiny\texttt{S-7}}} & \shortstack{\textbf{3.93}\\{\tiny\texttt{S-7}}} & \shortstack{\textbf{0.32}\\{\tiny\texttt{S-27}}} & \shortstack{\textbf{98.45}\\{\tiny\texttt{S-7}}} & \shortstack{\textbf{28.99}\\{\tiny\texttt{S-27}}} & \shortstack{\textbf{2.79}\\{\tiny\texttt{S-7}}} & \shortstack{\textbf{95.44}\\{\tiny\texttt{S-7}}} & \shortstack{\textbf{59.73}\\{\tiny\texttt{S-27}}} & \shortstack{\textbf{3.00}\\{\tiny\texttt{S-7}}} & \shortstack{\textbf{91.83}\\{\tiny\texttt{S-7}}}\\
+RF-SJg (ours) & 7/17/27 & \shortstack{\textbf{98.67}\\{\tiny\texttt{J-7}}} & \shortstack{\textbf{13.40}\\{\tiny\texttt{J-27}}} & \shortstack{\textbf{2.59}\\{\tiny\texttt{J-7}}} & \shortstack{\textbf{96.56}\\{\tiny\texttt{J-7}}} & \shortstack{\textbf{4.22}\\{\tiny\texttt{J-7}}} & \shortstack{\textbf{0.06}\\{\tiny\texttt{J-17}}} & \shortstack{\textbf{98.07}\\{\tiny\texttt{J-7}}} & \shortstack{\textbf{20.82}\\{\tiny\texttt{J-27}}} & \shortstack{\textbf{3.90}\\{\tiny\texttt{J-7}}} & \shortstack{\textbf{94.63}\\{\tiny\texttt{J-7}}} & \shortstack{\textbf{43.72}\\{\tiny\texttt{J-27}}} & \shortstack{\textbf{4.43}\\{\tiny\texttt{J-7}}} & \shortstack{\textbf{90.62}\\{\tiny\texttt{J-7}}}\\
+\midrule\rowcolor{blue!8} Best own observed, cellwise & mixed & \shortstack{\textbf{99.00}\\{\tiny\texttt{LA-17}}} & \shortstack{\textbf{12.39}\\{\tiny\texttt{P-17}}} & \shortstack{\textbf{1.44}\\{\tiny\texttt{LA-17}}} & \shortstack{\textbf{97.33}\\{\tiny\texttt{LA-17}}} & \shortstack{\textbf{2.50}\\{\tiny\texttt{P-17}}} & \shortstack{\textbf{0.06}\\{\tiny\texttt{J-17}}} & \shortstack{\textbf{98.46}\\{\tiny\texttt{LA-17}}} & \shortstack{\textbf{20.42}\\{\tiny\texttt{P-17}}} & \shortstack{\textbf{2.75}\\{\tiny\texttt{P-17}}} & \shortstack{\textbf{95.46}\\{\tiny\texttt{LA-17}}} & \shortstack{\textbf{42.23}\\{\tiny\texttt{P-17}}} & \shortstack{\textbf{2.96}\\{\tiny\texttt{LA-17}}} & \shortstack{\textbf{91.86}\\{\tiny\texttt{LA-17}}}\\
+\bottomrule\end{tabular*}}\par
+\vspace{2mm}
+\textbf{(B) Age, skin and additional intersections}\par
+{\fontsize{7.6}{9.1}\selectfont\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}llrrrrrrrrrrrr}\toprule
+ & & \multicolumn{3}{c}{Age (estimated)} & \multicolumn{3}{c}{Skin (estimated)} & \multicolumn{3}{c}{Age$\times$skin} & \multicolumn{3}{c}{Sex$\times$age$\times$race}\\
+Model & Seed pool & $F_{\rm FPR}\downarrow$ & $es$-AUC$\uparrow$ & WG-AUC$\uparrow$ & $F_{\rm FPR}\downarrow$ & $es$-AUC$\uparrow$ & WG-AUC$\uparrow$ & $F_{\rm FPR}\downarrow$ & $es$-AUC$\uparrow$ & WG-AUC$\uparrow$ & $F_{\rm FPR}\downarrow$ & $es$-AUC$\uparrow$ & WG-AUC$\uparrow$\\\midrule
+BCE & -- & \multicolumn{12}{c}{Not evaluated on this split in the saved reports}\\
+DAG-FDD & -- & \multicolumn{12}{c}{Not evaluated on this split in the saved reports}\\
+DAW-FDD & 17 & 12.53 & 98.43 & 98.69 & 16.86 & 96.09 & 97.57 & 91.00 & 88.55 & 97.34 & 62.90 & 96.28 & 97.76\\
+Ding corrected GDA & 17 & 4.37 & 90.87 & 92.39 & 3.44 & 81.59 & 88.31 & 31.97 & 60.08 & 87.60 & 12.86 & 83.92 & 90.75\\
+CES-FL P & 17 & 8.17 & 98.34 & 98.53 & 16.55 & 95.94 & 97.50 & 80.49 & 87.94 & 97.25 & 33.12 & 95.94 & 97.80\\
+CES-FL A & -- & \multicolumn{12}{c}{Not evaluated on this split in the saved reports}\\
+CES-FL B & -- & \multicolumn{12}{c}{Not evaluated on this split in the saved reports}\\
+L\_A (plain-head BCE) & 17 & 13.25 & 98.48 & 98.82 & 21.80 & 96.24 & 97.70 & 102.75 & 88.59 & 96.73 & 57.26 & 96.53 & 98.10\\
+L\_H-PS (ours) & -- & \multicolumn{12}{c}{Not evaluated on this split in the saved reports}\\
+RF-S (ours) & 7/17/27 & \shortstack{\textbf{12.21}\\{\tiny\texttt{S-27}}} & \shortstack{\textbf{98.48}\\{\tiny\texttt{S-7}}} & \shortstack{\textbf{98.83}\\{\tiny\texttt{S-7}}} & \shortstack{\textbf{20.01}\\{\tiny\texttt{S-27}}} & \shortstack{\textbf{96.23}\\{\tiny\texttt{S-7}}} & \shortstack{\textbf{97.71}\\{\tiny\texttt{S-7}}} & \shortstack{\textbf{96.17}\\{\tiny\texttt{S-27}}} & \shortstack{\textbf{88.59}\\{\tiny\texttt{S-7}}} & \shortstack{\textbf{96.76}\\{\tiny\texttt{S-7}}} & \shortstack{\textbf{52.14}\\{\tiny\texttt{S-27}}} & \shortstack{\textbf{96.58}\\{\tiny\texttt{S-27}}} & \shortstack{\textbf{98.09}\\{\tiny\texttt{S-7}}}\\
+RF-SJg (ours) & 7/17/27 & \shortstack{\textbf{12.52}\\{\tiny\texttt{J-17}}} & \shortstack{\textbf{98.26}\\{\tiny\texttt{J-7}}} & \shortstack{\textbf{98.53}\\{\tiny\texttt{J-7}}} & \shortstack{\textbf{14.56}\\{\tiny\texttt{J-27}}} & \shortstack{\textbf{95.65}\\{\tiny\texttt{J-7}}} & \shortstack{\textbf{97.39}\\{\tiny\texttt{J-7}}} & \shortstack{\textbf{84.29}\\{\tiny\texttt{J-7}}} & \shortstack{\textbf{87.50}\\{\tiny\texttt{J-7}}} & \shortstack{\textbf{96.53}\\{\tiny\texttt{J-7}}} & \shortstack{\textbf{50.53}\\{\tiny\texttt{J-17}}} & \shortstack{\textbf{96.74}\\{\tiny\texttt{J-27}}} & \shortstack{\textbf{97.83}\\{\tiny\texttt{J-7}}}\\
+\midrule\rowcolor{blue!8} Best own observed, cellwise & mixed & \shortstack{\textbf{8.17}\\{\tiny\texttt{P-17}}} & \shortstack{\textbf{98.48}\\{\tiny\texttt{S-7}}} & \shortstack{\textbf{98.83}\\{\tiny\texttt{S-7}}} & \shortstack{\textbf{14.56}\\{\tiny\texttt{J-27}}} & \shortstack{\textbf{96.24}\\{\tiny\texttt{LA-17}}} & \shortstack{\textbf{97.71}\\{\tiny\texttt{S-7}}} & \shortstack{\textbf{80.49}\\{\tiny\texttt{P-17}}} & \shortstack{\textbf{88.59}\\{\tiny\texttt{LA-17}}} & \shortstack{\textbf{97.25}\\{\tiny\texttt{P-17}}} & \shortstack{\textbf{33.12}\\{\tiny\texttt{P-17}}} & \shortstack{\textbf{96.74}\\{\tiny\texttt{J-27}}} & \shortstack{\textbf{98.10}\\{\tiny\texttt{LA-17}}}\\
+\bottomrule\end{tabular*}}\par
+\vspace{2mm}
+\note{Stored threshold rule: each checkpoint's frozen validation-real FPR10 threshold; achieved TEST FPR is shown, not guaranteed10\%. Best-own pool: CES-FL P/A/B, LA/LH-PS, RF-S and RF-SJg where actually evaluated. GDA is the corrected local Ding-style adaptation, not a published-paper score. Budgets and selection policies differ across families. RF seeds share one pretrained encoder. In validation, RF age$\times$skin and coarse eight-group metrics are available only for seed17; no missing seed-axis results were fabricated. Eight-group axis uses Youth$<$30/Adult and White/NonWhite. Full counterfactual CES-FL, PG-FDD and verified F3Net/CORE TEST results are unavailable. No uncertainty is attached to these post-hoc cellwise extrema; they are not means or confidence bounds.}
+\clearpage\section*{Provenance index and interpretation}
+\note{The following index is supporting metadata, not a seventh comparison table. It exposes the detection performance of every benchmark candidate so near-zero disparity from a low-utility detector is visible. The complete per-cell ledger, full-precision metrics and hashes are saved next to this PDF.}
+{\fontsize{8}{9}\selectfont\begin{longtable}{llrrrr}\toprule Source tag & Dataset & AUC(\%) & FPR(\%) & FNR(\%) & Images\\\midrule\endhead
+R-A-17 & Celeb-DF & 66.44 & 80.80 & 5.57 & 28,458\\
+R-A-17 & DFD & 50.20 & 56.82 & 42.01 & 9,385\\
+R-A-17 & DFDC & 56.41 & 66.17 & 26.78 & 22,857\\
+R-A-17 & FF++ & 71.13 & 45.92 & 25.04 & 25,401\\
+R-B-17 & Celeb-DF & 72.80 & 69.88 & 8.93 & 28,458\\
+R-B-17 & DFD & 73.91 & 51.29 & 18.88 & 9,385\\
+R-B-17 & DFDC & 58.07 & 55.29 & 35.11 & 22,857\\
+R-B-17 & FF++ & 95.98 & 18.84 & 5.46 & 25,401\\
+R-C-17 & Celeb-DF & 72.81 & 68.04 & 9.67 & 28,458\\
+R-C-17 & DFD & 74.02 & 48.90 & 19.74 & 9,385\\
+R-C-17 & DFDC & 58.37 & 51.75 & 37.95 & 22,857\\
+R-C-17 & FF++ & 95.89 & 17.58 & 6.02 & 25,401\\
+R-LA-17 & Celeb-DF & 73.50 & 62.30 & 13.58 & 28,458\\
+R-LA-17 & DFD & 73.65 & 52.46 & 18.05 & 9,385\\
+R-LA-17 & DFDC & 59.54 & 35.57 & 51.23 & 22,857\\
+R-LA-17 & FF++ & 96.21 & 15.38 & 6.58 & 25,401\\
+R-LH-17 & Celeb-DF & 73.81 & 65.83 & 11.42 & 28,458\\
+R-LH-17 & DFD & 73.47 & 52.55 & 17.62 & 9,385\\
+R-LH-17 & DFDC & 60.07 & 36.79 & 48.53 & 22,857\\
+R-LH-17 & FF++ & 96.05 & 16.15 & 6.51 & 25,401\\
+X-A-17 & Celeb-DF & 64.28 & 78.26 & 7.52 & 28,458\\
+X-A-17 & DFD & 59.31 & 64.10 & 23.18 & 9,385\\
+X-A-17 & DFDC & 50.63 & 72.10 & 25.07 & 22,857\\
+X-A-17 & FF++ & 67.48 & 55.31 & 21.01 & 25,401\\
+X-B-17 & Celeb-DF & 74.33 & 61.05 & 10.89 & 28,458\\
+X-B-17 & DFD & 82.36 & 32.73 & 18.40 & 9,385\\
+X-B-17 & DFDC & 59.47 & 21.29 & 65.63 & 22,857\\
+X-B-17 & FF++ & 98.35 & 8.57 & 5.39 & 25,401\\
+X-C-17 & Celeb-DF & 73.70 & 54.00 & 14.39 & 28,458\\
+X-C-17 & DFD & 81.24 & 25.97 & 22.25 & 9,385\\
+X-C-17 & DFDC & 59.67 & 15.86 & 73.13 & 22,857\\
+X-C-17 & FF++ & 98.22 & 7.07 & 6.35 & 25,401\\
+X-LA-17 & Celeb-DF & 70.75 & 61.09 & 15.70 & 28,458\\
+X-LA-17 & DFD & 81.16 & 46.38 & 14.43 & 9,385\\
+X-LA-17 & DFDC & 61.77 & 30.49 & 55.22 & 22,857\\
+X-LA-17 & FF++ & 98.47 & 9.37 & 3.88 & 25,401\\
+X-LA-27 & Celeb-DF & 70.45 & 52.13 & 21.46 & 28,458\\
+X-LA-27 & DFD & 81.20 & 54.85 & 10.34 & 9,385\\
+X-LA-27 & DFDC & 61.50 & 30.03 & 55.01 & 22,857\\
+X-LA-27 & FF++ & 98.36 & 6.65 & 5.62 & 25,401\\
+X-LA-7 & Celeb-DF & 71.27 & 58.80 & 15.52 & 28,458\\
+X-LA-7 & DFD & 84.23 & 46.47 & 10.95 & 9,385\\
+X-LA-7 & DFDC & 59.97 & 33.09 & 51.63 & 22,857\\
+X-LA-7 & FF++ & 98.54 & 8.40 & 4.20 & 25,401\\
+X-LH-17 & Celeb-DF & 71.40 & 41.73 & 27.40 & 28,458\\
+X-LH-17 & DFD & 80.88 & 31.86 & 22.47 & 9,385\\
+X-LH-17 & DFDC & 60.46 & 18.04 & 70.64 & 22,857\\
+X-LH-17 & FF++ & 98.49 & 4.32 & 7.07 & 25,401\\
+X-R0-17 & Celeb-DF & 74.33 & 61.05 & 10.89 & 28,458\\
+X-R0-17 & DFD & 82.36 & 32.73 & 18.40 & 9,385\\
+X-R0-17 & DFDC & 59.47 & 21.29 & 65.63 & 22,857\\
+X-R0-17 & FF++ & 98.35 & 8.57 & 5.39 & 25,401\\
+X-R1-17 & Celeb-DF & 74.21 & 59.86 & 11.55 & 28,458\\
+X-R1-17 & DFD & 81.81 & 35.22 & 18.16 & 9,385\\
+X-R1-17 & DFDC & 58.97 & 23.53 & 62.00 & 22,857\\
+X-R1-17 & FF++ & 98.40 & 8.35 & 5.31 & 25,401\\
+X-R2-17 & Celeb-DF & 74.67 & 67.13 & 8.49 & 28,458\\
+X-R2-17 & DFD & 82.12 & 42.17 & 15.40 & 9,385\\
+X-R2-17 & DFDC & 59.52 & 26.84 & 58.76 & 22,857\\
+X-R2-17 & FF++ & 98.40 & 9.32 & 4.86 & 25,401\\
+X-RD-17 & Celeb-DF & 72.80 & 57.01 & 14.11 & 28,458\\
+X-RD-17 & DFD & 82.28 & 37.06 & 17.27 & 9,385\\
+X-RD-17 & DFDC & 59.86 & 22.36 & 65.48 & 22,857\\
+X-RD-17 & FF++ & 98.20 & 8.84 & 5.20 & 25,401\\
+X-RN-17 & Celeb-DF & 71.01 & 59.18 & 11.91 & 28,458\\
+X-RN-17 & DFD & 81.53 & 32.44 & 21.15 & 9,385\\
+X-RN-17 & DFDC & 59.67 & 24.58 & 63.58 & 22,857\\
+X-RN-17 & FF++ & 97.85 & 9.06 & 5.25 & 25,401\\
+\bottomrule\end{longtable}}
+\note{A/B/C: original frozen ImageNet / detection-pretrained / invariance controls. R0/R1/R2/RN/RD: archived frozen BCE / partial BCE / group-DRO / no-change / age pilots, seed17. R0 repeats the archived B results and is not independent replication. LA/LH: newer plain-head matched arms; X-LA has seeds7/17/27, X-LH and R-LA/LH seed17. Cells using an almost constant classifier do not demonstrate useful fairness. DFDC retains1,476 excess duplicate rows in22,857 rows (21,381 unique images). Published and our scores are descriptive comparisons with unresolved protocol differences.}
+\end{document}
