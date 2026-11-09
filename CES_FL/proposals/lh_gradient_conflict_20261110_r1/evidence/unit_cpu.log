@@ -1,0 +1,18 @@
+test_actual_adamw_moments_follow_projected_gradient (test_lh_gradient_conflict.ProjectionTests) ... ok
+test_disabled_nonconflicting_and_zero_cases_preserve_native_gradient (test_lh_gradient_conflict.ProjectionTests) ... ok
+test_gate_rejects_duplicates_and_changed_main_plan (test_lh_gradient_conflict.ProjectionTests) ... ok
+test_hook_restores_native_after_failure_and_deadline (test_lh_gradient_conflict.ProjectionTests) ... ok
+test_independent_two_dimensional_reference_and_global_projection (test_lh_gradient_conflict.ProjectionTests) ... ok
+test_invalid_gradient_input_fails (test_lh_gradient_conflict.ProjectionTests) ... ok
+test_metadata_missing_cells_and_donor_graph_are_preserved (test_lh_gradient_conflict.ProjectionTests) ... ok
+test_native_D_fixture_lifecycle_with_projection_and_checkpoint_provenance (test_lh_gradient_conflict.ProjectionTests) ... {"status": "PREFLIGHT_PASS", "train": 16, "val": 16}
+{"arm": "D", "epoch": 1, "validation_auc": 0.546875, "paired_sources": 8, "seconds": 4.055483958000001}
+{"arm": "D", "epoch": 2, "validation_auc": 0.546875, "paired_sources": 8, "seconds": 4.248205250000001}
+ok
+test_native_mode_matches_original_adamw_step_and_bn (test_lh_gradient_conflict.ProjectionTests) ... ok
+test_trigger_requires_repeated_supported_conflict (test_lh_gradient_conflict.ProjectionTests) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 6.666s
+
+OK

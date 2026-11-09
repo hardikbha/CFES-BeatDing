@@ -1,0 +1,63 @@
+{
+  "status": "CPU_PREPARATION_PASS",
+  "new_tests": 12,
+  "reused_helper_tests": 9,
+  "full_width_cpu_receipt": "software_cpu_published.json",
+  "native_source_unchanged": true,
+  "native_H0_config_unchanged": true,
+  "frozen_files": {
+    "src/ces_fl_nuisance_resnet50.py": "1997eebf093aa3e37de1cbbe58302a1539ac2e517f966a4607aae89dc695a8e0",
+    "src/alignment_gradient_projection.py": "459eeea89526477dc077b549513c1d2b573de5944f02595b1d9c36917d5a8589",
+    "scripts/lh_alignment_followup.py": "86e740bf088ccdd7a88f56f167f07a7b0393b98789e7038299d8d94c1b0da4fb",
+    "scripts/lh_gradient_conflict.py": "8b57b8387d54228b8d47eaefc120c371555bd6cb9b754402d03efa8596202987",
+    "scripts/ff2_provenance_inventory.py": "ba83d8b3a4fb70629580267c0b28c13291a28a97bf4f824487287106b7da3464",
+    "tests/test_lh_gradient_conflict.py": "41c039a95471a0451bc46067db0fd3fd123e6ec86e53a6fbecd9676d08188331",
+    "tests/test_lh_alignment_followup.py": "71734881712c73e012a773cfeb85a364ac40cb59aee9ea6d840a042823bf75e7",
+    "proposals/lh_gradient_conflict_20261110_r1/protocol.json": "c36fa25f4389e7545fef571320121ec59e2e7ede895c1ae47cfc80ef993e33e4",
+    "proposals/lh_gradient_conflict_20261110_r1/native_config.json": "34800f42f2cc81df32508b7a732700e45b4df5f6ddfebca1a109aad1db1407ef",
+    "proposals/lh_gradient_conflict_20261110_r1/ff2_provenance_inputs.json": "f2c400a1f6698d30de8abf43c4cf0c34f747010acb50789dcfebf4489e839288"
+  },
+  "syntax_and_help": [
+    {
+      "command": [
+        "bash",
+        "-n",
+        "CES_FL/proposals/lh_gradient_conflict_20261110_r1/commands.sh"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "py_compile",
+        "CES_FL/src/alignment_gradient_projection.py",
+        "CES_FL/scripts/lh_gradient_conflict.py",
+        "CES_FL/scripts/ff2_provenance_inventory.py",
+        "CES_FL/tests/test_lh_gradient_conflict.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python",
+        "CES_FL/scripts/lh_gradient_conflict.py",
+        "--help"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python",
+        "CES_FL/scripts/ff2_provenance_inventory.py",
+        "--help"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "production_inputs_verified_here": false,
+  "cuda_verified_here": false,
+  "training_launched_here": false,
+  "private_data_published": false,
+  "prior_iteration_receipts": "Earlier CPU receipts/logs retained; only published-suffix receipt binds final files."
+}

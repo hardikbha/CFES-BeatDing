@@ -1,0 +1,31 @@
+{
+  "status": "PENDING_OPERATOR_SEMANTIC_REVIEW",
+  "source_taxonomy": {
+    "FFHQ": {
+      "status": "UNVERIFIED",
+      "evidence": []
+    },
+    "FairFace": {
+      "status": "UNVERIFIED",
+      "evidence": []
+    }
+  },
+  "why_FFHQ_Others_cells_are_zero": "UNRESOLVED; trace mapping/filtering from original code, not appearance",
+  "identity_namespace_semantics": {
+    "person": "UNVERIFIED",
+    "ffhq_face": "UNVERIFIED"
+  },
+  "dependency_edges": {
+    "status": "UNVERIFIED",
+    "evidence": []
+  },
+  "recommended_interpretation": "No automatic relabeling, component splitting or source-standardized estimate",
+  "source_evidence_format": {
+    "path": "private/source.py",
+    "sha256": "actual hash",
+    "lines": "actual relevant lines",
+    "finding": "sanitized factual interpretation; no raw row identifiers"
+  },
+  "test_cal_read": false,
+  "images_or_labels_generated": false
+}

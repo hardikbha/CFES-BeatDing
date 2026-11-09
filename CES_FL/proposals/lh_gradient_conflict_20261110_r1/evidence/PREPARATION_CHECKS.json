@@ -1,0 +1,39 @@
+{
+  "python_syntax": {
+    "command": [
+      "python",
+      "-m",
+      "py_compile",
+      "CES_FL/src/alignment_gradient_projection.py",
+      "CES_FL/scripts/lh_gradient_conflict.py",
+      "CES_FL/scripts/ff2_provenance_inventory.py",
+      "CES_FL/tests/test_lh_gradient_conflict.py"
+    ],
+    "exit_code": 0
+  },
+  "shell_syntax": {
+    "command": [
+      "bash",
+      "-n",
+      "CES_FL/proposals/lh_gradient_conflict_20261110_r1/commands.sh"
+    ],
+    "exit_code": 0
+  },
+  "cli_help": {
+    "command": [
+      "python",
+      "CES_FL/scripts/lh_gradient_conflict.py",
+      "--help"
+    ],
+    "exit_code": 0
+  },
+  "frozen_files_match": true,
+  "native_scientific_source_unchanged": true,
+  "native_H0_config_unchanged": true,
+  "new_unit_tests": 11,
+  "reused_helper_tests": 9,
+  "full_width_cpu_pass": true,
+  "cuda_checked_here": false,
+  "production_inputs_checked_here": false,
+  "training_launched_here": false
+}

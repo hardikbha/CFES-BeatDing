@@ -1,0 +1,78 @@
+{
+  "id": "lh_gradient_conflict_20261110_r1",
+  "scientific_source_sha256": "1997eebf093aa3e37de1cbbe58302a1539ac2e517f966a4607aae89dc695a8e0",
+  "native_config_sha256": "34800f42f2cc81df32508b7a732700e45b4df5f6ddfebca1a109aad1db1407ef",
+  "reference_results_commit": "e993315a853aa278ec649010fa11daef1e601e44",
+  "reference_checkpoint_sha256": "40802bb6bc8f7a9ec315a697d74d2be8b510fedcd42966abd2b64b1be0260e42",
+  "reference_cases": 88,
+  "diagnostic": {
+    "events": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "condition": "identity",
+    "checkpoint": "H0",
+    "minimum_valid_batches": 16,
+    "minimum_negative_fraction": 0.6,
+    "minimum_median_alignment_to_bce_ratio": 0.25,
+    "diagnostic_updates": 0,
+    "originals": "Native uniform TRAIN permutation; original inverse-cell BCE weights retained",
+    "purpose": "Engineering triage only, not evidence of harmful population-wide conflict"
+  },
+  "candidate": {
+    "name": "H_GP",
+    "native_arm": "D",
+    "mode": "projected",
+    "only_change": "One-sided raw alignment-gradient projection against original BCE before native clip5 and AdamW",
+    "epochs": 3,
+    "seed": 17,
+    "control": "Existing H0, reused only after strict source/config/checkpoint/cache/selection validation",
+    "initialization": "Original P50 encoder plus fresh seed17 head, never H0 best weights"
+  },
+  "budget": {
+    "maximum_concurrent_gpus": 1,
+    "maximum_aggregate_gpu_hours": 2.0,
+    "native_training_cap_hours": 1.5,
+    "scope": "Verified remaining original L_H study allowance only; never transfer the FF2 ledger or invent hours",
+    "extra_budget_granted": 0,
+    "external_allocation_deadline_required": true,
+    "native_config_execution_cap_override": "Native H0 configuration stays byte-identical (historical max_gpu_hours0.75); this new request permits an explicit runtime allowance up to1.5h within the fixed2h total, with the same3epochs/updates."
+  },
+  "guardrails": {
+    "primary": "gender_race/F_FPR at native stored VAL10 threshold",
+    "point_screen": "Primary lower than H0, AUC not lower and FNR not higher; all secondary regressions disclosed",
+    "bootstrap_replicates": 1000,
+    "minimum_valid_replicates": 900,
+    "selection": "earliest strict maximum validation AUC, unchanged",
+    "scope": "Exploratory FF++ source validation after prior TEST exposure; no superiority or noninferiority proof"
+  },
+  "test_cal_access": false,
+  "new_pretraining": false,
+  "new_seeds": false,
+  "new_persistent_image_generation": false,
+  "procedural_views": "Existing source-bound operator tensor recipe only; no new labels/approvals",
+  "ff2_provenance": "Separate CPU metadata task; does not authorize FF2 model training",
+  "completed_work_do_not_rerun": {
+    "source_tail": "aa074b2024a9730a9d66f6020440d2137e7cd6f1",
+    "source_audit": "70916d030c9da5fba6063f83e4bf3af1b59bc6f5",
+    "components": "fee7c863c3052261dffd3f1fb93f5884dfc9dada"
+  }
+}

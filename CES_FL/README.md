@@ -1,5 +1,13 @@
 # CES-FL — supervisor review and training handoff
 
+## Bounded provenance and gradient-conflict handoff — 10 November 2026
+
+[New proposal](proposals/lh_gradient_conflict_20261110_r1/README.md) · [GPU operator instructions](proposals/lh_gradient_conflict_20261110_r1/GPU_OPERATOR_PROMPT.md) · [CPU checks](proposals/lh_gradient_conflict_20261110_r1/CHECKS.md).
+
+Prepared a metadata-only FF2 provenance inventory,20-event zero-update FF++ gradient diagnostic and one conditional alignment-gradient candidate. Twelve new tests, nine reused-helper checks and a full-width CPU backward/parity check passed. Cluster binding/CUDA/profile/diagnostic gates remain pending; no GPU job launched here. Native model, H0 configuration and completed results are preserved. At most one GPU and2aggregate GPU-hours within a verified remaining original L_H allowance, not a new grant. No TEST/CAL, new Ding, CLIP or source-tail run.
+
+Newer externally completed work is linked rather than silently merged: [source-tail results aa074b2](https://github.com/hardikbha/CFES-BeatDing/blob/aa074b2024a9730a9d66f6020440d2137e7cd6f1/CES_FL/results/source_tail_training_20261109_r1/REPORT.md) found no meaningful fairness benefit; [source audit70916d0](https://github.com/hardikbha/CFES-BeatDing/blob/70916d030c9da5fba6063f83e4bf3af1b59bc6f5/CES_FL/results/ff2_source_stratified_audit_20261109_r1/REPORT.md) remains blocked/inconclusive for its specified estimands. Preserve those cohorts. Historical observations below are not live status.
+
 ## Repeated alignment diagnostic and C1 follow-up — 5 November 2026
 
 [Proposal](proposals/lh_alignment_ablation_20261105_r1/README.md) · [GPU operator prompt](proposals/lh_alignment_ablation_20261105_r1/GPU_OPERATOR_PROMPT.md) · [CPU checks](proposals/lh_alignment_ablation_20261105_r1/CHECKS.md). The new helper binds the completed H0/H1/A1 evidence and all352existing H1 review cases, profiles20fixed TRAIN events under identity/resize for H0/H1, and conditionally permits one three-epoch native-arm-C ablation. The scientific trainer and H1 config are unchanged; only response alignment is removed in the candidate. CPU tests pass; actual cluster diagnostics and candidate training remain pending. Maximum one GPU/one aggregate GPU-hour within the existing ledger; no new TEST evaluation or FairForge-2 review change.

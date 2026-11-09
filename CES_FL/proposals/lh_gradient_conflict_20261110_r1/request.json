@@ -1,0 +1,26 @@
+{
+  "request_id": "lh_gradient_conflict_20261110_r1",
+  "source_base_commit": "6ce942a83d22bd7e3ad1b4fcca32ae9ba5c4731f",
+  "user_instruction": "Push all these experiments to GitHub and ask the GitHub operator to follow them and do so.",
+  "authorized_scope": [
+    "P0 FF2 metadata-only provenance review",
+    "G0 repeated zero-update FF++ TRAIN gradient diagnostic",
+    "One conditional H_GP candidate if fixed gates pass",
+    "CPU validation report and aggregate publication"
+  ],
+  "scientific_config": "native_config.json",
+  "protocol": "protocol.json",
+  "operator_prompt": "GPU_OPERATOR_PROMPT.md",
+  "cohort_gpu_hours_cap": 2,
+  "new_total_budget_granted": 0,
+  "maximum_concurrent_gpus": 1,
+  "benchmark_test_or_cal_access": false,
+  "Ding_model_computation": false,
+  "CLIP_or_full_encoder_experiment": false,
+  "source_tail_rerun": false,
+  "new_generation_or_approvals": false,
+  "procedural_tensor_views": "Unchanged previously reviewed recipe only",
+  "local_training_started": false,
+  "local_gpu_used": false,
+  "cluster_readiness": "Private bindings, scheduler/lease, runtime, diagnostic, fresh CUDA and profile gates pending"
+}

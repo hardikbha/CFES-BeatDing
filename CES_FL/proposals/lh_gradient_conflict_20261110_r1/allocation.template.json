@@ -1,0 +1,14 @@
+{
+  "kind": "PBS",
+  "allocation_id": "REPLACE_FROM_VERIFIED_SCHEDULER_OR_AUTHORIZED_POOL",
+  "gpu_uuid": "REPLACE_WITH_ACTUAL_GPU_UUID",
+  "cohort_id": "lh_gradient_conflict_20261110_r1",
+  "cohort_started_epoch": 0,
+  "deadline_epoch": 0,
+  "ledger_scope": "ORIGINAL_LH_STUDY",
+  "ledger_path": "REPLACE_WITH_ORIGINAL_LH_LEDGER_PATH",
+  "ledger_sha256": "REPLACE_AFTER_VERIFYING_REMAINING_ORIGINAL_ALLOWANCE",
+  "verified_remaining_gpu_hours": 0,
+  "operator_verified": false,
+  "note": "Template only, not an allocation or approval. One fixed cohort window <=2hours; external ledger/deadline enforcement required."
+}

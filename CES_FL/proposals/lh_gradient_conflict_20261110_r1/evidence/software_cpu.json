@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "fingerprints": {
+    "src/ces_fl_nuisance_resnet50.py": "1997eebf093aa3e37de1cbbe58302a1539ac2e517f966a4607aae89dc695a8e0",
+    "src/alignment_gradient_projection.py": "459eeea89526477dc077b549513c1d2b573de5944f02595b1d9c36917d5a8589",
+    "scripts/lh_alignment_followup.py": "86e740bf088ccdd7a88f56f167f07a7b0393b98789e7038299d8d94c1b0da4fb",
+    "scripts/lh_gradient_conflict.py": "a786f72846f62430e15e7d519828d71d9388611305f1e4f6b77e3e7665a2009f",
+    "scripts/ff2_provenance_inventory.py": "3757c4c2ab04ca9fd593cd872112bc155dfed2d99b101666e583ad50b70a5ed2",
+    "tests/test_lh_gradient_conflict.py": "fb2fe5bc35647096e0abc4480d86ed8e695bfbe191e44f8086192f0d25c5692b",
+    "tests/test_lh_alignment_followup.py": "71734881712c73e012a773cfeb85a364ac40cb59aee9ea6d840a042823bf75e7",
+    "proposals/lh_gradient_conflict_20261110_r1/protocol.json": "e66664b0e05a1a58cf6b94bd7bda0b6bd9ba62c0a0129a34366332c5f704b752",
+    "proposals/lh_gradient_conflict_20261110_r1/native_config.json": "34800f42f2cc81df32508b7a732700e45b4df5f6ddfebca1a109aad1db1407ef",
+    "proposals/lh_gradient_conflict_20261110_r1/ff2_provenance_inputs.json": "f2c400a1f6698d30de8abf43c4cf0c34f747010acb50789dcfebf4489e839288"
+  },
+  "device": "cpu",
+  "torch": "2.8.0",
+  "parameters": {
+    "total": 23510081,
+    "trainable": 14966785,
+    "encoder": 23508032,
+    "head": 2049,
+    "encoder_trainable": 14964736,
+    "head_type": "linear",
+    "encoder_policy": "exit",
+    "backbone": "resnet50",
+    "trainable_encoder_scope": "layer4"
+  },
+  "projection": {
+    "bce_gradient_norm": 1907.1004481582804,
+    "alignment_gradient_norm": 20.133058384274364,
+    "alignment_to_bce_ratio": 0.010556894579788497,
+    "raw_alignment_bce_cosine": 0.10716640176467467,
+    "raw_alignment_bce_dot": 4114.735942413468,
+    "projected_alignment_bce_dot": 4114.735942413468,
+    "projection_coefficient": 0.0,
+    "projection_applied": false
+  },
+  "bn_buffers_unchanged": true,
+  "data": "Synthetic 224-pixel software fixture only",
+  "projection_disabled_update_matches_native_exactly": true,
+  "allocation": null,
+  "private_inputs_read": false
+}

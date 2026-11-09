@@ -4,6 +4,12 @@ New [baseline suite and operator prompt](proposals/ff2_baseline_suite_s17_202611
 
 # Current CES-FL status
 
+## Preparation snapshot — 10 November 2026
+
+`lh_gradient_conflict_20261110_r1` is prepared for operator execution: CPU tests12/12, reused-helper checks9/9, full-width ResNet backward and projection-disabled/native update parity PASS. Private binding, CUDA, repeated TRAIN diagnostics and real cost gates are pending. No local GPU allocation or training was launched. [Scope and current dependencies](proposals/lh_gradient_conflict_20261110_r1/README.md) · [Operator handoff](proposals/lh_gradient_conflict_20261110_r1/GPU_OPERATOR_PROMPT.md).
+
+The newer external source-tail cohort is completed at `aa074b2`, with no meaningful fairness benefit established and primary uncertainty inconclusive. It is not this L_H experiment and must not be rerun by this handoff. All previous results/protocols are preserved. Older RUNNING/pending entries below refer to their recorded dates; this branch provides no unattended monitor.
+
 ## Plain Xception head ablation — 3 November 2026
 
 [Project memory and research blueprint](PROJECT_MEMORY.md) · [Two-arm proposal](proposals/plain_head_s17_20261103T101418Z/README.md) · [GPU operator prompt](proposals/plain_head_s17_20261103T101418Z/GPU_OPERATOR_PROMPT.md). New standalone Xception+GAP+linear source:20,809,001 total /6,790,433 exit-policy trainable parameters. CPU synthetic smoke and targeted checks pass; CUDA/input checks and both real-data runs are pending. Existing H and completed results are preserved. This publication launches no jobs.

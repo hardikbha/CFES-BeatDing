@@ -1,0 +1,12 @@
+{
+  "train": {
+    "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ff2/train.csv",
+    "sha256": "4f83e7dc8042533329d7047fefd0f30cbd96f45d42bde2666dd0edc7d58f29cc",
+    "rows": 218266
+  },
+  "val": {
+    "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ff2/val.csv",
+    "sha256": "aeda051259d9e26b07c2810152b601ae115ce7c9e10523f99ea07bbc9f92afa8",
+    "rows": 31107
+  }
+}
