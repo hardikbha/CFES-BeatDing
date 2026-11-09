@@ -1,3 +1,13 @@
+# Source-tail cohort — real-data profile passed; production cache running
+
+The guarded1024-image/32-batch TRAIN profile used exact native preprocessing, image SHA checks, batch32/workers4 and covered all7 fake families (78real/946fake). Measured throughput200.42images/s; projected remaining cohort0.7985GPU-hours with40%runtime margin plus180seconds. The fixed1.7h projection gate passed within the outer2h cap. This is a runtime estimate, not a performance result.
+
+Production shared cache extraction is RUNNING on gpu01/GPU6. TRAIN feature/logit/metadata blobs have completed writing and SELECT features are being written. CACHE_VERIFIED and exact native teacher replay are still pending; real control/treatment training has not yet started. Partial cache files are not a qualified cache.
+
+This supersedes earlier preparation/profile snapshots below. Scientific source/config remains exactly9bb8e83; no coefficient, dataset coverage, head initialization, selection or guard changed.
+
+---
+
 # Source-tail cohort — CUDA qualification observation
 
 Observed on9November2026 after successful process checks: controller3056234, budget wrapper3056321, qualifier3056378 active on gpu01. One pool-v2 capacity lease binds physical GPU6 / UUID GPU-61f54ca7-3cee-1c93-def3-118523e95241. It is shared capacity, not an exclusive/PBS ownership claim. No other job was displaced.
