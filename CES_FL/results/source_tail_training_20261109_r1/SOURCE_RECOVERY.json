@@ -1,0 +1,10 @@
+{
+  "reason": "Initial linked-worktree Git administrative directory was login-node-local /tmp; source guard correctly refused before acquiring GPU.",
+  "first_attempt_log": "lease_controller.log",
+  "first_attempt_gpu_hours": 0,
+  "new_self_contained_detached_source": "/home/sachin.chaudhary/ces_fl_sources/cesfl-source-tail-shared-9bb8e83-20261109",
+  "exact_commit": "9bb8e8332b8a3aa78d83f74ef21bca0b7dcd6754",
+  "scientific_files_and_config_hashes_unchanged": true,
+  "gpu01_git_head_check_passed": true,
+  "source_binding_checks_bypassed": false
+}

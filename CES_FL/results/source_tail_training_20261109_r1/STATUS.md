@@ -1,3 +1,15 @@
+# Source-tail cohort — CUDA qualification observation
+
+Observed on9November2026 after successful process checks: controller3056234, budget wrapper3056321, qualifier3056378 active on gpu01. One pool-v2 capacity lease binds physical GPU6 / UUID GPU-61f54ca7-3cee-1c93-def3-118523e95241. It is shared capacity, not an exclusive/PBS ownership claim. No other job was displaced.
+
+CUDA qualification PASS for the pinned three-epoch synthetic lifecycle, finite head updates, frozen encoder and full224 feature/native-forward identity. These are software checks, not real benchmark results. Real-TRAIN throughput profiling is RUNNING; production cache/control/treatment/export remain PENDING until its budget gate passes.
+
+The initial source-linkage guard correctly failed before allocation because its Git metadata was login-node-local; a new self-contained shared clone is detached at exactly9bb8e83 with identical scientific hashes. A second idle-only attempt found no idle card and also consumed zeroGPU time. The successful attempt uses the existing explicitly authorized shared-pool candidate/memory guard without changing the model recipe. Failure logs remain private and are not overwritten.
+
+Scientific source: `/home/sachin.chaudhary/ces_fl_sources/cesfl-source-tail-shared-9bb8e83-20261109`. Private live logs: `/home/sachin.chaudhary/ces_fl_runs/source_tail_training_20261109_r1/logs/`; controller `lease_controller_attempt3.log`. All CUDA stages are inside the existing ledger wrapper with1.98h reservation and an outer2h cohort guard; actual lease startup/cleanup/idle is included. No automatic extension.
+
+---
+
 # Source-tail cohort — preparation observation, 9 November 2026
 
 Scientific source is pinned in a clean detached worktree at `9bb8e8332b8a3aa78d83f74ef21bca0b7dcd6754`. No scientific configuration, loss, encoder/head architecture or historical guard was changed.

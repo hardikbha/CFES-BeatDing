@@ -21,7 +21,10 @@ def interrupted(*_):raise KeyboardInterrupt('Own source-tail cohort interrupted'
 for sig in (signal.SIGINT,signal.SIGTERM):signal.signal(sig,interrupted)
 try:
     with pool.mutex():
-        available=[c for c in pool.candidates() if c['utilization']<10 and c['available_mib_after_other_leases']>=30720]
+        # The established user-authorized shared route reserves capacity, not
+        # exclusive ownership or a guarantee of idle utilization. candidates()
+        # already honors protected tasks and every live pool reservation.
+        available=[c for c in pool.candidates() if c['available_mib_after_other_leases']>=30720]
         if not available:raise RuntimeError('No authorized shared capacity; no job displaced')
         c=available[0];directory=pool.LOCKS/f"gpu{c['index']}"
         if not directory.exists():directory.mkdir();pool.write(directory/'pool_owner.json',{'shared':True,'v':2,'pid':0,'wid':'pool_v2_shared'})

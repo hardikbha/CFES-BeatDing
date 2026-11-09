@@ -1,0 +1,11 @@
+{
+  "source_commit": "9bb8e8332b8a3aa78d83f74ef21bca0b7dcd6754",
+  "runtime_helper_hashes": {
+    "lease_cohort.py": "bd355fcc7aefed7608c357b5c288da9f7414a9ff878d2fe278968a186771ff49",
+    "qualify_profile.py": "0e1b506705246a59ebe1698918f32c3512448eb24587426e302b33d23afcc7b3",
+    "cohort.py": "8b8a481faa0f024a9aa3372681fafc1510e93bcffdb17a6298c9173b5ca57895"
+  },
+  "scientific_recipe_unchanged": true,
+  "measured_device": "gpu01 GPU6 H100",
+  "at_most_one_gpu": true
+}

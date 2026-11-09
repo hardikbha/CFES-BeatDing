@@ -1,0 +1,8 @@
+{
+  "controller_pid": 3056234,
+  "wrapper_pid": 3056321,
+  "host": "gpu01",
+  "gpu_uuid": "GPU-61f54ca7-3cee-1c93-def3-118523e95241",
+  "gpu_index": 6,
+  "start_node_unix": 1794234585.7073555
+}

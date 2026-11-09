@@ -1,0 +1,6 @@
+{
+  "device_count": 1,
+  "device_name": "NVIDIA H100 80GB HBM3",
+  "torch": "2.7.0+cu126",
+  "visible": "GPU-61f54ca7-3cee-1c93-def3-118523e95241"
+}

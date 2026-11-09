@@ -1,0 +1,9 @@
+{
+  "allocation_id": "pool-v2:gpu01:GPU-61f54ca7-3cee-1c93-def3-118523e95241:source_tail_20261109_r1_cohort1",
+  "gpus": 1,
+  "cuda_visible_devices": "GPU-61f54ca7-3cee-1c93-def3-118523e95241",
+  "verified_by": "operator, existing pool-v2 candidate/lease guards and prior user SSH/shared authorization",
+  "evidence": "/home/sachin.chaudhary/ces_fl_runs/source_tail_training_20261109_r1/OWNERSHIP_PRIVATE.json",
+  "pbs_allocation_claimed": false,
+  "exclusive_physical_ownership_claimed": false
+}
