@@ -1,0 +1,27 @@
+{
+  "status": "REUSED_VERIFIED_COMPLETED_AUDIT",
+  "observed_utc": "2026-11-09T07:47:07.803214+00:00",
+  "requested_documentation_commit": "76dcb54e240dcf56475dbf587836cdadcdad5aab",
+  "scientific_review_base": "e7fe0ee03e6cfacca81c558bbf632d2f72e80bc0",
+  "original_results_commit": "c95b5b9990f32560e9e2684b73c7c413b52a10d5",
+  "checks": {
+    "detached_documentation_commit_exact": true,
+    "detached_source_clean": true,
+    "is_detached": true,
+    "original_aggregate_artifact_hashes_match": true,
+    "all_bound_private_input_and_checkpoint_hashes_match": true,
+    "frozen_analysis_code_hashes_match": true,
+    "selected_six_models_complete": true,
+    "primary_stop_unchanged": true
+  },
+  "original_artifacts_hashed": 38,
+  "bound_input_paths_hashed": 56,
+  "artifact_mismatch_paths": [],
+  "input_mismatch_paths": [],
+  "duplicate_analysis_launched": false,
+  "bootstrap_repeated": false,
+  "private_score_outcomes_reparsed": false,
+  "new_inference_training_or_gpu_work": false,
+  "test_cal_accessed": false,
+  "result": "Original BLOCKED/INCONCLUSIVE result retained; no thresholds, groups, weights or validity criteria changed."
+}
