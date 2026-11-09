@@ -1,0 +1,12 @@
+{
+  "cohort": "COMPLETED",
+  "execution_export": "PASS",
+  "scientific_conclusion": "NO_MEANINGFUL_FAIRNESS_BENEFIT_ESTABLISHED",
+  "primary_uncertainty": "INCONCLUSIVE_COMPONENT_SUPPORT",
+  "selected_epoch_control": 1,
+  "selected_epoch_treatment": 1,
+  "primary_difference_fraction": -0.00029543067226889264,
+  "cohort_gpu_hours": 0.4014797140492333,
+  "automatic_extension": false,
+  "next_action": "STOP; separate reviewed proposal required."
+}

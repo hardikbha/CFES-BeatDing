@@ -1,0 +1,10 @@
+{
+  "components": 45,
+  "bootstrap_replicates": 2000,
+  "analysis_seed": 17,
+  "minimum_valid": 1900,
+  "thresholds_refit": false,
+  "unit": "Whole recorded source-master/contributor connected components, TRAIN+SELECT graph projected onto SELECT",
+  "multiple_axes": "unadjusted exploratory; shared encoder/selected-checkpoint conditioning",
+  "biological_identity_separation_verified": false
+}

@@ -1,0 +1,3 @@
+{"arm": "treatment", "epoch": 1, "auc": 0.9980687179696431, "fnr": 0.0028951131884614044, "joint_F_FPR": 0.3482059815870663, "feasible": true}
+{"arm": "treatment", "epoch": 2, "auc": 0.9980732533427058, "fnr": 0.0028951131884614044, "joint_F_FPR": 0.34945437076232405, "feasible": true}
+{"arm": "treatment", "epoch": 3, "auc": 0.998065041026813, "fnr": 0.002929994070250096, "joint_F_FPR": 0.34945437076232405, "feasible": true}

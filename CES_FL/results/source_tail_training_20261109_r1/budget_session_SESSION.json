@@ -1,0 +1,31 @@
+{
+  "status": "COMPLETED",
+  "exit_code": 0,
+  "argv": [
+    "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+    "-u",
+    "/home/sachin.chaudhary/ces_fl_runs/source_tail_training_20261109_r1/runtime/cohort.py",
+    "--source",
+    "/home/sachin.chaudhary/ces_fl_sources/cesfl-source-tail-shared-9bb8e83-20261109",
+    "--root",
+    "/home/sachin.chaudhary/ces_fl_runs/source_tail_training_20261109_r1"
+  ],
+  "allocation": {
+    "allocation_id": "pool-v2:gpu01:GPU-61f54ca7-3cee-1c93-def3-118523e95241:source_tail_20261109_r1_cohort1",
+    "gpus": 1,
+    "cuda_visible_devices": "GPU-61f54ca7-3cee-1c93-def3-118523e95241",
+    "verified_by": "operator, existing pool-v2 candidate/lease guards and prior user SSH/shared authorization",
+    "evidence": "/home/sachin.chaudhary/ces_fl_runs/source_tail_training_20261109_r1/OWNERSHIP_PRIVATE.json",
+    "pbs_allocation_claimed": false,
+    "exclusive_physical_ownership_claimed": false
+  },
+  "start_unix": 1794234589.5917737,
+  "end_unix": 1794236031.0035028,
+  "accounting": {
+    "charged": 68.22944449212815,
+    "reserved": 0,
+    "active_gpus": 0,
+    "uncommitted": 3.7705555078718476
+  },
+  "scope": "wrapper-held time; operator must reconcile scheduler startup/cleanup bookends"
+}

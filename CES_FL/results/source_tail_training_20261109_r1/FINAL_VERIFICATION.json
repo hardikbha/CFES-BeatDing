@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "checks": [
+    "exact_clean_scientific_commit_and_all_nine_cache_blob_hashes",
+    "complete_existing_teacher_classifier_preserved_in_shared_cache",
+    "fixed_reference_reproduces_from_TRAIN_real_teacher_scores_only",
+    "both_three_epoch_histories_exposures_fixed_selection_and_head_checkpoint_binding",
+    "both_full_native_exports_PASS_and_all_encoder_parameters_BN_buffers_bitwise_unchanged",
+    "nonzero_source_coefficient_changed_actual_learned_parameters",
+    "matched_original_auxiliary_schedule_and_source_by_joint_exposure",
+    "independent_presentation_matches_native_teacher_and_both_students_with_float64_thresholds",
+    "actual_cohort_charge_includes_lease_bookends_and_is_within_both_caps"
+  ],
+  "source_commit": "9bb8e8332b8a3aa78d83f74ef21bca0b7dcd6754",
+  "scientific_hashes": {
+    "run.py": "18da2c89df60dd2f01acc7ae3d57a841a013827c549205a871b87d0ae52d69da",
+    "teacher_core.py": "8c25ba8cb844b059adbbce75b57785a156333182afa2d5d576985997f2d36733",
+    "source_tail_objective.py": "711e2a4988d9f956f8ab013d2130b47a93a237f95fd40a5896eb8eab733a3cb0",
+    "config.json": "c3aa990986440bfd22bfd9171c5837025a5a3b2d3b0bc7b817d27c32eac1d1b2"
+  },
+  "arm_checkpoints": [
+    {
+      "arm": "control",
+      "head_checkpoint_sha256": "11fd38fee56097c62a47e11e546ad982fdbd7ae46999c33e89a10f2ace6dd694",
+      "student_checkpoint_sha256": "892cc49d04199b265283bce145c2c9b419c8d8f9f61ca6c2ef32fd1ca683c7d9",
+      "selected_epoch": 1,
+      "epochs_completed": 3,
+      "optimizer_steps": 20463,
+      "config_sha256": "c3aa990986440bfd22bfd9171c5837025a5a3b2d3b0bc7b817d27c32eac1d1b2"
+    },
+    {
+      "arm": "treatment",
+      "head_checkpoint_sha256": "1ff295cfeada1ea6461f286d37431583f0aa5a795d19548430fcd0a15cd7a47e",
+      "student_checkpoint_sha256": "9d80eb010174d3f60ebb75eed3936875e2e737008e8f6171f5ebd3ac17645028",
+      "selected_epoch": 1,
+      "epochs_completed": 3,
+      "optimizer_steps": 20463,
+      "config_sha256": "c3aa990986440bfd22bfd9171c5837025a5a3b2d3b0bc7b817d27c32eac1d1b2"
+    }
+  ],
+  "cache_receipt_sha256": "25549e085223522a3152774c312336cd59660bf3f1a411e6ffc92c4f566d2204",
+  "cohort_gpu_hours": 0.4014797140492333,
+  "shared_charged_gpu_hours": 68.2305376799239,
+  "remaining_shared_gpu_hours": 3.7694623200761015,
+  "new_encoder_inference_or_training_executed_by_verifier": false,
+  "test_cal_read": false
+}

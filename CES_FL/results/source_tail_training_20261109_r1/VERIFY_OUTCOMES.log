@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "checks": [
+    "exact_clean_scientific_commit_and_all_nine_cache_blob_hashes",
+    "complete_existing_teacher_classifier_preserved_in_shared_cache",
+    "fixed_reference_reproduces_from_TRAIN_real_teacher_scores_only",
+    "both_three_epoch_histories_exposures_fixed_selection_and_head_checkpoint_binding",
+    "both_full_native_exports_PASS_and_all_encoder_parameters_BN_buffers_bitwise_unchanged",
+    "nonzero_source_coefficient_changed_actual_learned_parameters",
+    "matched_original_auxiliary_schedule_and_source_by_joint_exposure",
+    "independent_presentation_matches_native_teacher_and_both_students_with_float64_thresholds",
+    "actual_cohort_charge_includes_lease_bookends_and_is_within_both_caps"
+  ],
+  "optimizer_steps_per_arm": 20463,
+  "cohort_gpu_hours": 0.4014797140492333,
+  "remaining_shared_hours": 3.7694623200761015
+}

@@ -54,6 +54,7 @@ for arm in ['control','treatment']:
     f=root/arm/'validation_scores_PRIVATE.json'
     if not f.exists():continue
     r=read(f);v=read(root/arm/'RUN_VERIFIED.json');ck=torch.load(root/arm/'best.pt',map_location='cpu',weights_only=True)
+    assert v['status']=='COMPLETED_VERIFIED' and not v.get('fixture') and ck['config']==m.config()
     assert m.core.sha(root/arm/'best.pt')==v['checkpoint_sha256']==r['checkpoint_sha256']
     assert r['manifest_sha256']==meta['manifest_sha256']['val'] and r['split']=='validation' and len(r['rows'])==len(rows)
     assert [r0['image'] for r0 in r['rows']]==[r0['image'] for r0 in rows]
@@ -127,6 +128,10 @@ def calculate(w):
         qq=fpr[:,ii];v=np.abs(qq-fpr[:,0,None]).sum(1);v[~np.isfinite(qq).all(1)]=np.nan;vals.append(v)
     return np.stack(vals,1)
 point=calculate(np.ones(nc));draws=[];rng=np.random.default_rng(17)
+for i,name in enumerate(names):
+    ref=model_data[name]['report']
+    for j,k in enumerate(['auc','fpr','fnr']):assert math.isclose(point[i,j],ref['overall'][k],abs_tol=1e-12)
+    for j,axis in enumerate(axes,3):assert math.isclose(point[i,j],ref['axes'][axis]['F_FPR'],abs_tol=1e-12)
 for _ in range(2000):draws.append(calculate(rng.multinomial(nc,np.full(nc,1/nc))))
 draws=np.array(draws);intervals=[]
 if 'control' in names and 'treatment' in names:

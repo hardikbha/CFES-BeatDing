@@ -1,0 +1,22 @@
+{
+  "stage": "train_control",
+  "start_node_unix": 1794235768.2476692,
+  "pid": 3080014,
+  "status": "COMPLETED",
+  "exit_code": 0,
+  "end_node_unix": 1794235873.8369792,
+  "argv": [
+    "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+    "-u",
+    "/home/sachin.chaudhary/ces_fl_sources/cesfl-source-tail-shared-9bb8e83-20261109/CES_FL/proposals/source_tail_training_20261109_r1/run.py",
+    "train",
+    "--cache",
+    "/home/sachin.chaudhary/ces_fl_runs/source_tail_training_20261109_r1/cache",
+    "--arm",
+    "control",
+    "--out",
+    "/home/sachin.chaudhary/ces_fl_runs/source_tail_training_20261109_r1/control",
+    "--device",
+    "cuda"
+  ]
+}

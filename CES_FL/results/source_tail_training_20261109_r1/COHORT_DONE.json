@@ -1,0 +1,7 @@
+{
+  "status": "COHORT_FINISHED_INSPECT_RESULTS",
+  "control": "COMPLETED_VERIFIED",
+  "treatment": "COMPLETED_VERIFIED",
+  "test_cal_read": false,
+  "automatic_extension": false
+}

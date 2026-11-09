@@ -1,0 +1,24 @@
+{
+  "stage": "prepare",
+  "start_node_unix": 1794234773.9285564,
+  "pid": 3059850,
+  "status": "COMPLETED",
+  "exit_code": 0,
+  "end_node_unix": 1794235768.2445762,
+  "argv": [
+    "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+    "-u",
+    "/home/sachin.chaudhary/ces_fl_sources/cesfl-source-tail-shared-9bb8e83-20261109/CES_FL/proposals/source_tail_training_20261109_r1/run.py",
+    "prepare",
+    "--teacher-run",
+    "/home/sachin.chaudhary/ces_fl_runs/ff2_lh_ps_20261106_r1/L_A",
+    "--source-csv",
+    "/home/sachin.chaudhary/ces_fl_runs/source_tail_training_20261109_r1/train_real_sources_PRIVATE.csv",
+    "--source-provenance",
+    "/home/sachin.chaudhary/ces_fl_runs/source_tail_training_20261109_r1/source_provenance_PRIVATE.json",
+    "--out",
+    "/home/sachin.chaudhary/ces_fl_runs/source_tail_training_20261109_r1/cache",
+    "--device",
+    "cuda"
+  ]
+}

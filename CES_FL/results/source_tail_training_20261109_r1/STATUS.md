@@ -1,3 +1,20 @@
+# Source-tail cohort: COMPLETED, STOPPED
+
+Both exact three-epoch arms completed and both full students passed exact native SELECT export replay. Each selected epoch1. No source-tail process or budget reservation remains active. The earlier RUNNING entries below are historical snapshots, not live state.
+
+| Arm | AUC% | FNR% | Gender×race100F_FPR | Execution/export |
+|---|---:|---:|---:|---|
+| Control |99.8073|0.2895|34.8501|COMPLETED_VERIFIED /PASS|
+| Treatment |99.8069|0.2895|34.8206|COMPLETED_VERIFIED /PASS|
+
+Treatment's primary point gain is only0.02954points; joint interval INCONCLUSIVE (999/2000 valid,1900 required). The TRAIN source-tail surrogate decreases7.87% versus control but remains above teacher. Skin and coarse-intersection metrics regress; gender/age unchanged. No meaningful fairness improvement or win over Ding established.
+
+Actual one-GPU lease charge0.401480GPU-h includes all checks/cache/arms/export/idle/bookends, within2h. Reconciled shared ledger68.230538/72 charged,3.769462 remains; no extension authorized. [Full report](REPORT.md), [final verification](FINAL_VERIFICATION.json), [all metrics](EXTENDED_VALIDATION_METRICS.csv), [paired uncertainty](PAIRED_CONTRIBUTOR_INTERVALS.csv).
+
+**STOP.** No training retry, parameter sweep, new dataset, image generation, TEST/CAL access or Ding computation is attached. Scientific commit/config unchanged. Images, features, row scores and model binaries remain private.
+
+---
+
 # Source-tail cohort — real-data profile passed; production cache running
 
 The guarded1024-image/32-batch TRAIN profile used exact native preprocessing, image SHA checks, batch32/workers4 and covered all7 fake families (78real/946fake). Measured throughput200.42images/s; projected remaining cohort0.7985GPU-hours with40%runtime margin plus180seconds. The fixed1.7h projection gate passed within the outer2h cap. This is a runtime estimate, not a performance result.

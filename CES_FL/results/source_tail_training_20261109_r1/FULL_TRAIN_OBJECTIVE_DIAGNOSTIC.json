@@ -1,0 +1,17 @@
+{
+  "teacher": {
+    "source_tail": 0.050589863383614875,
+    "fake_guard": 0.0,
+    "role": "in-sample TRAIN descriptive, not checkpoint selection"
+  },
+  "control": {
+    "source_tail": 0.057426944208347236,
+    "fake_guard": 9.999795088286375e-05,
+    "role": "in-sample TRAIN descriptive, not checkpoint selection"
+  },
+  "treatment": {
+    "source_tail": 0.052906651301018404,
+    "fake_guard": 0.00010013294971722387,
+    "role": "in-sample TRAIN descriptive, not checkpoint selection"
+  }
+}

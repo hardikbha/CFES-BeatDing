@@ -1,0 +1,17 @@
+{
+  "teacher_head_preserved_in_cache": true,
+  "checks": [
+    {
+      "arm": "control",
+      "encoder_tensors_bitwise_equal": 274,
+      "selected_head_equals_exported_head": true,
+      "trainable_parameters": 2049
+    },
+    {
+      "arm": "treatment",
+      "encoder_tensors_bitwise_equal": 274,
+      "selected_head_equals_exported_head": true,
+      "trainable_parameters": 2049
+    }
+  ]
+}

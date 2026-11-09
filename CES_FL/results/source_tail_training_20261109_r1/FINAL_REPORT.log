@@ -1,0 +1,107 @@
+{
+  "status": "REPORTED",
+  "arms": {
+    "control": "COMPLETED_VERIFIED",
+    "control_export": "PASS",
+    "treatment": "COMPLETED_VERIFIED",
+    "treatment_export": "PASS"
+  },
+  "models_with_selected_scores": [
+    "teacher",
+    "control",
+    "treatment"
+  ],
+  "components": 45,
+  "paired_intervals": [
+    {
+      "contrast": "treatment-minus-control",
+      "metric": "AUC",
+      "estimate": -4.492451551096899e-06,
+      "ci95_low": -1.5832856142389273e-05,
+      "ci95_high": 8.044033014065195e-06,
+      "valid_replicates": 2000,
+      "required_replicates": 1900,
+      "status": "EXPLORATORY_INTERVAL"
+    },
+    {
+      "contrast": "treatment-minus-control",
+      "metric": "FPR",
+      "estimate": 0.0,
+      "ci95_low": -0.0011292317498891185,
+      "ci95_high": 0.0013597042441928211,
+      "valid_replicates": 2000,
+      "required_replicates": 1900,
+      "status": "EXPLORATORY_INTERVAL"
+    },
+    {
+      "contrast": "treatment-minus-control",
+      "metric": "FNR",
+      "estimate": 0.0,
+      "ci95_low": -0.00010213778193725477,
+      "ci95_high": 9.934757281168622e-05,
+      "valid_replicates": 2000,
+      "required_replicates": 1900,
+      "status": "EXPLORATORY_INTERVAL"
+    },
+    {
+      "contrast": "treatment-minus-control",
+      "metric": "F_FPR/gender",
+      "estimate": 0.0,
+      "ci95_low": -0.0018942780812415988,
+      "ci95_high": 0.0026935158547071927,
+      "valid_replicates": 2000,
+      "required_replicates": 1900,
+      "status": "EXPLORATORY_INTERVAL"
+    },
+    {
+      "contrast": "treatment-minus-control",
+      "metric": "F_FPR/race",
+      "estimate": -0.0003654970760234022,
+      "ci95_low": -0.004995630722191265,
+      "ci95_high": 0.021220673150360445,
+      "valid_replicates": 1938,
+      "required_replicates": 1900,
+      "status": "EXPLORATORY_INTERVAL"
+    },
+    {
+      "contrast": "treatment-minus-control",
+      "metric": "F_FPR/age_bin",
+      "estimate": 0.0,
+      "ci95_low": -0.005798187174065486,
+      "ci95_high": 0.008306768313062178,
+      "valid_replicates": 2000,
+      "required_replicates": 1900,
+      "status": "EXPLORATORY_INTERVAL"
+    },
+    {
+      "contrast": "treatment-minus-control",
+      "metric": "F_FPR/skin_bin",
+      "estimate": 0.00012686554014768037,
+      "ci95_low": -0.0054410687512869435,
+      "ci95_high": 0.006205241786637143,
+      "valid_replicates": 2000,
+      "required_replicates": 1900,
+      "status": "EXPLORATORY_INTERVAL"
+    },
+    {
+      "contrast": "treatment-minus-control",
+      "metric": "F_FPR/gender_race",
+      "estimate": -0.00029543067226889264,
+      "ci95_low": null,
+      "ci95_high": null,
+      "valid_replicates": 999,
+      "required_replicates": 1900,
+      "status": "INCONCLUSIVE_COMPONENT_SUPPORT"
+    },
+    {
+      "contrast": "treatment-minus-control",
+      "metric": "F_FPR/ids8",
+      "estimate": 0.0050825126727853664,
+      "ci95_low": -0.003143149485785729,
+      "ci95_high": 0.023837388970304744,
+      "valid_replicates": 1997,
+      "required_replicates": 1900,
+      "status": "EXPLORATORY_INTERVAL"
+    }
+  ]
+}

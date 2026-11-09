@@ -1,0 +1,15 @@
+{
+  "status": "COMPLETED",
+  "exit_code": 0,
+  "start_node_unix": 1794234585.7073555,
+  "end_node_unix": 1794236031.034326,
+  "held_gpu_hours": 0.4014797140492333,
+  "inner_charged_gpu_hours": 0.4003865262534883,
+  "bookend_gpu_hours": 0.001093187795745021,
+  "cap_gpu_hours": 2,
+  "cap_exceeded": false,
+  "gpu_uuid": "GPU-61f54ca7-3cee-1c93-def3-118523e95241",
+  "host": "gpu01",
+  "max_gpus": 1,
+  "no_automatic_extension": true
+}

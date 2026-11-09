@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "full_native_validation_replay": true,
+  "checkpoint_sha256": "892cc49d04199b265283bce145c2c9b419c8d8f9f61ca6c2ef32fd1ca683c7d9",
+  "source_labels_needed_at_inference": false
+}

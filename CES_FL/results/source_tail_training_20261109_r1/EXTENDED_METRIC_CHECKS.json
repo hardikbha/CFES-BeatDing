@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "summary_rows": 48,
+  "group_rows": 336,
+  "source_parent_joint_family_rows": 252,
+  "native_overlapping_axis_summaries_independently_match": true,
+  "new_model_inference": false,
+  "thresholds_refit": false,
+  "interval_role": "Point-only for supplementary intersections; paired native-axis intervals are separate.",
+  "units": "Rates/AUC/summed disparity fractions; times100 in narrative tables."
+}

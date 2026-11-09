@@ -1,0 +1,21 @@
+{
+  "status": "COHORT_REPORTED_NO_AUTOMATIC_EXTENSION",
+  "arms": {
+    "control": "COMPLETED_VERIFIED",
+    "control_export": "PASS",
+    "treatment": "COMPLETED_VERIFIED",
+    "treatment_export": "PASS"
+  },
+  "source_hashes": {
+    "run.py": "18da2c89df60dd2f01acc7ae3d57a841a013827c549205a871b87d0ae52d69da",
+    "teacher_core.py": "8c25ba8cb844b059adbbce75b57785a156333182afa2d5d576985997f2d36733",
+    "source_tail_objective.py": "711e2a4988d9f956f8ab013d2130b47a93a237f95fd40a5896eb8eab733a3cb0",
+    "config.json": "c3aa990986440bfd22bfd9171c5837025a5a3b2d3b0bc7b817d27c32eac1d1b2"
+  },
+  "teacher_head_preserved_at_initialization": true,
+  "encoder_frozen": true,
+  "encoder_cache_shared": true,
+  "scientific_config_changed": false,
+  "test_cal_read": false,
+  "no_source_standardized_race_joint_estimate_manufactured": true
+}
