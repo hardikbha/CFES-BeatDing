@@ -1,0 +1,62 @@
+{
+  "status": "PUBLIC_AGGREGATE_AND_DOCUMENT_REVIEW_COMPLETE",
+  "reviewed_commit": "e7fe0ee03e6cfacca81c558bbf632d2f72e80bc0",
+  "review_date": "2026-11-09",
+  "scope": "Read-only review of public code, configurations, aggregate results and primary papers; documentation added at user request",
+  "verified_sha256": {
+    "CES_FL/src/ces_fl_realfpr.py": "2d99295cc0b8190a571695b581ef5ba73e7b5fc18994461bdf1a21c1d83089d1",
+    "CES_FL/src/ces_fl_head_ablation.py": "8c25ba8cb844b059adbbce75b57785a156333182afa2d5d576985997f2d36733",
+    "CES_FL/results/six_best_observed_tables_20261109/SNAPSHOT.json": "20d0ae005242a0389ee2c53d1e2f18b460411be8e0617d974eab96ae58c222e9"
+  },
+  "matching_review_to_snapshot_rows": {
+    "ff2_validation": 68,
+    "ff2_test": 80
+  },
+  "recomputed_from_existing_group_aggregates": {
+    "ding_gda": {
+      "n_real": 5441,
+      "pooled_fpr_pct": 11.37658518654659,
+      "F_FPR_pct": 9.473436239854008
+    },
+    "cesfl_p": {
+      "n_real": 5441,
+      "pooled_fpr_pct": 12.387428781473995,
+      "F_FPR_pct": 42.231439492874216
+    }
+  },
+  "rf_full_epoch_history_counts": {
+    "rf_s_s17": 10,
+    "rf_s_s7": 10,
+    "rf_s_s27": 10,
+    "rf_sjg_s17": 10,
+    "rf_sjg_s7": 10,
+    "rf_sjg_s27": 10
+  },
+  "selected_epochs_independently_recomputed": {
+    "rf_s_s17": 2,
+    "rf_s_s7": 2,
+    "rf_s_s27": 2,
+    "rf_sjg_s17": 2,
+    "rf_sjg_s7": 2,
+    "rf_sjg_s27": 6
+  },
+  "new_document_sha256": {
+    "INDEPENDENT_REVIEW.md": "04bf34b3bccbbb69333369e2c5c3f9820dc5fc37aeaa27e3cd1b9a7754dea6ff",
+    "READ_ONLY_OPERATOR_PROMPT.md": "8940fff171d59b218f4c67908cd52797b1cadfe912b813d529edc3db87da548b"
+  },
+  "scientific_source_or_configuration_changed": false,
+  "training_or_inference_executed": false,
+  "private_rows_images_checkpoints_accessed": false,
+  "cluster_access_attempted": false,
+  "test_or_cal_raw_data_accessed": false,
+  "existing_public_test_aggregates_read": true,
+  "source_standardization_diagnostic_executed": false,
+  "remaining_unverified": [
+    "Private source/crop/encoding provenance and demographic label validity",
+    "Master/contributor independence and source-by-group common support",
+    "Cached private SELECT score bindings and checkpoint bytes",
+    "Strict chronology of prior TEST freeze and complete compute accounting",
+    "Feasibility of joint historical detection guards and Ding-level disparity"
+  ],
+  "review_outcome": "Source-stratified frozen-score diagnostic recommended; no training authorization or superiority claim"
+}
