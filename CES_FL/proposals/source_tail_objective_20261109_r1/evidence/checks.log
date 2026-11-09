@@ -1,0 +1,6 @@
+PASS: high-risk real-source gradient lowers logits; below-target source gets zero direct tail gradient
+PASS: fake-score drop penalized; higher fake score unpenalized; teacher detached
+PASS: absent/unknown source rejected
+PASS: TRAIN reference tensors frozen; ordered quantiles
+PASS: matched control changes only source-tail coefficient
+Synthetic objective checks only; no empirical fairness, GPU, or training result.

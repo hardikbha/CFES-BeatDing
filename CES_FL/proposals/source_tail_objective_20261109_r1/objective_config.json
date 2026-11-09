@@ -1,0 +1,41 @@
+{
+  "format": "SOURCE_TAIL_OBJECTIVE_PROPOSAL_v1",
+  "state": "OBJECTIVE_MODULE_CHECKED_TRAINER_AND_SOURCE_BINDINGS_PENDING",
+  "source_sha256": "711e2a4988d9f956f8ab013d2130b47a93a237f95fd40a5896eb8eab733a3cb0",
+  "dataset": "FairForge-2_public",
+  "model_initialization": "exact frozen complete L_A classifier, not fresh head",
+  "encoder_policy": "frozen",
+  "reference_split": "TRAIN real only",
+  "reference_quantiles": [
+    0.85,
+    0.9,
+    0.95
+  ],
+  "reference_scale": "frozen teacher TRAIN-real IQR; reject degenerate",
+  "reference_targets": "pooled teacher TRAIN-real soft exceedance at each fixed threshold",
+  "temperature": 1.0,
+  "min_auxiliary_reals_per_source": 16,
+  "source_mapping": "documented canonical TRAIN acquisition labels only; bind sidecar/hash; do not infer source from appearance",
+  "arms": {
+    "control": {
+      "lambda_real": 0.0,
+      "lambda_fake": 1.0
+    },
+    "treatment": {
+      "lambda_real": 0.1,
+      "lambda_fake": 1.0
+    }
+  },
+  "classification_weights": "same fixed original inverse-class\u00d7ids8 weights in both arms",
+  "loss_defaults": "unoptimized engineering values; TRAIN-only gradient-scale check required, no TEST tuning",
+  "source_audit_primary_missing_cells": "full source-standardized race/joint remains unidentified; this objective does not fill absent cells",
+  "validation_guards": {
+    "auc_min": 0.995,
+    "fnr_max": 0.005651,
+    "note": "historical guard levels preserved; no promise these can be met jointly with Ding disparity"
+  },
+  "new_training_authorized_here": false,
+  "test_or_cal_access": false,
+  "novelty_claim": false,
+  "matched_comparator": "same training data, initialization, head updates and fake guard; only source-tail coefficient differs"
+}
