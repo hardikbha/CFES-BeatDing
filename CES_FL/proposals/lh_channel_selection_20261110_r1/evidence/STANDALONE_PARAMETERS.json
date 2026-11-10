@@ -1,0 +1,13 @@
+{
+  "total": 20809001,
+  "trainable": 6790433,
+  "encoder": 20806952,
+  "head": 2049,
+  "encoder_trainable": 6788384,
+  "head_type": "linear",
+  "encoder_policy": "exit",
+  "mask_buffer_elements": 2048,
+  "masked_channels": 0,
+  "structural_parameter_reduction": 0,
+  "inference_group_labels_required": false
+}

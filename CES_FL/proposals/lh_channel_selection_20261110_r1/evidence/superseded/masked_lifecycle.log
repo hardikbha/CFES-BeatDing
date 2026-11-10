@@ -1,0 +1,17 @@
+{"arm": "D", "epoch": 1, "validation_auc": 0.8125, "paired_sources": 4, "seconds": 7.094070041}
+{"arm": "D", "epoch": 2, "validation_auc": 0.75, "paired_sources": 4, "seconds": 16.025070666}
+{
+  "status": "PASS",
+  "source_sha256": "65e2d6d5b4e08fd035afb5dcd159fc512e6fccce576ae8de1595f23fa5c37be2",
+  "device": "cpu",
+  "epochs": 2,
+  "arm": "D",
+  "removed_channels": 41,
+  "full_LH_losses_retained": true,
+  "early_layers_and_BN_unchanged": true,
+  "exit_and_head_updated": true,
+  "mask_unchanged": true,
+  "native_selected_checkpoint_replay": true,
+  "synthetic_only": true,
+  "real_TEST_access": false
+}

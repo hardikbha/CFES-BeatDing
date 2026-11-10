@@ -1,5 +1,9 @@
 ## FairForge-2 baseline preparation — 2026-11-03T11:33:27.003004+00:00
 
+## Full L_H channel-selection extension — 10 November2026
+
+[Proposal](proposals/lh_channel_selection_20261110_r1/README.md) · [standalone Python](src/ces_fl_lh_channel_selection.py) · [full diagram](proposals/lh_channel_selection_20261110_r1/figures/L_H_Channel_Selection_Full.png) · [operator instructions](proposals/lh_channel_selection_20261110_r1/GPU_OPERATOR_PROMPT.md). Fourteen CPU unit tests, original and masked full-L_H synthetic lifecycle checks and objective-preservation checks passed. The new fixed mask preserves hierarchical error control and all matched-response losses. Production inputs, human qualification, CUDA and budget checks remain pending. No production training launched, no new results or TEST access. Historical observations below are preserved.
+
 New [baseline suite and operator prompt](proposals/ff2_baseline_suite_s17_20261103T110324Z/GPU_OPERATOR_PROMPT.md): user approved72 additional GPU-hours, maximum3 allocated GPUs. Native BCE/DAG/DAW CPU checks pass; CUDA/input checks and training are pending. PG-FDD/FairAdapter adaptations remain conditional; RSEF source unavailable. No jobs launched here; existing jobs/results preserved. This is a preparation observation, not live cluster status. Published to the writable fork because upstream push permission remains unavailable.
 
 # Current CES-FL status

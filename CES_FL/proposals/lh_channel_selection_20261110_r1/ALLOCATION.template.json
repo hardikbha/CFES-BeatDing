@@ -1,0 +1,12 @@
+{
+  "status": "UNVERIFIED",
+  "reservation_kind": "",
+  "reservation_id": "",
+  "ngpus": 0,
+  "gpu_uuid": "",
+  "verified_by": "",
+  "remaining_study_gpu_hours": 0,
+  "budget_ledger_reference": "",
+  "cohort_start_utc": "",
+  "cohort_deadline_utc": ""
+}

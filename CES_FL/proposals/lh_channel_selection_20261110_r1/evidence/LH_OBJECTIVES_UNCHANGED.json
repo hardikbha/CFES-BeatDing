@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "source_sha256": "95574295b76f16f5e5d8f70f01502848b4616fc7437030a5dfdf2ff1219f62f0",
+  "parent_sha256": "8c25ba8cb844b059adbbce75b57785a156333182afa2d5d576985997f2d36733",
+  "unchanged_function_AST": {
+    "train_step": true,
+    "hierarchical_real_error": true,
+    "response": true,
+    "response_alignment": true,
+    "sensitivity": true,
+    "soft_error_disparity": true,
+    "intervention": true,
+    "calibrate": true,
+    "metric_report": true,
+    "original_weights": true,
+    "auxiliary": true,
+    "normalize": true,
+    "load_pixels": true
+  }
+}

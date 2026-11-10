@@ -1,0 +1,34 @@
+{
+  "request_id": "lh_channel_selection_20261110_r1",
+  "status": "SOFTWARE_TESTED_CLUSTER_GATES_PENDING",
+  "hypothesis": "A fixed channel mask selected from original-label utility and matched procedural response diagnostics improves full L_H validation fairness while retaining useful detection.",
+  "arms": [
+    "none",
+    "random",
+    "informed"
+  ],
+  "baseline": "Full L_H, all-one mask, same completed L_A warm start",
+  "changed_factor": "Fixed feature mask only; random and informed both prune41 from the same low-utility half",
+  "dependencies": [
+    "Exact completed FF2 L_A teacher and original TRAIN/VAL manifests",
+    "Named human review of every new contact-sheet case; retain all historical stratified sources",
+    "Verified PBS ngpus or authorized lease, CUDA UUID binding and reconciled existing allowance",
+    "Fresh CUDA smoke and each arm dry-run; conservative cohort cost fit"
+  ],
+  "required_checks": [
+    "14 CPU unit tests",
+    "full-width native and masked synthetic lifecycle",
+    "full L_H objective AST parity",
+    "source/config/input hashes",
+    "TRAIN-only frozen selector and shared mask receipt",
+    "preflight and review qualification"
+  ],
+  "maximum_devices": 1,
+  "maximum_aggregate_gpu_hours": 2,
+  "additional_budget_granted": false,
+  "training_launched": false,
+  "test_access": false,
+  "cal_access": false,
+  "ding_computation": false,
+  "preserve_completed_results": true
+}

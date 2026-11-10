@@ -1,5 +1,9 @@
 # CES-FL — supervisor review and training handoff
 
+## Full L_H channel-selection extension — 10 November2026
+
+[Proposal](proposals/lh_channel_selection_20261110_r1/README.md) · [standalone Python](src/ces_fl_lh_channel_selection.py) · [full diagram](proposals/lh_channel_selection_20261110_r1/figures/L_H_Channel_Selection_Full.png) · [operator instructions](proposals/lh_channel_selection_20261110_r1/GPU_OPERATOR_PROMPT.md). Fourteen CPU unit tests, original and masked full-L_H synthetic lifecycle checks and objective-preservation checks passed. The new fixed mask preserves hierarchical error control and all matched-response losses. Production inputs, human qualification, CUDA and budget checks remain pending. No production training launched, no new results or TEST access. Historical observations below are preserved.
+
 ## Bounded provenance and gradient-conflict handoff — 10 November 2026
 
 [New proposal](proposals/lh_gradient_conflict_20261110_r1/README.md) · [GPU operator instructions](proposals/lh_gradient_conflict_20261110_r1/GPU_OPERATOR_PROMPT.md) · [CPU checks](proposals/lh_gradient_conflict_20261110_r1/CHECKS.md).

@@ -1,0 +1,19 @@
+test_ai_approval_rejected_without_receipt (test_lh_channel_selection.ChannelSelectionTests) ... ok
+test_all_one_mask_matches_plain_LH (test_lh_channel_selection.ChannelSelectionTests) ... ok
+test_channel_utility_zero_weight (test_lh_channel_selection.ChannelSelectionTests) ... ok
+test_fixed_mask_is_buffer_not_parameter (test_lh_channel_selection.ChannelSelectionTests) ... ok
+test_mask_tampering_rejected (test_lh_channel_selection.ChannelSelectionTests) ... ok
+test_masks_ignore_global_response_magnitude (test_lh_channel_selection.ChannelSelectionTests) ... ok
+test_missing_response_cell_rejected (test_lh_channel_selection.ChannelSelectionTests) ... ok
+test_missing_utility_cell_rejected (test_lh_channel_selection.ChannelSelectionTests) ... ok
+test_no_CUDA_allocation_receipt_is_rejected (test_lh_channel_selection.ChannelSelectionTests) ... ok
+test_response_alignment_equal_quantiles_zero (test_lh_channel_selection.ChannelSelectionTests) ... ok
+test_response_is_difference_then_asinh (test_lh_channel_selection.ChannelSelectionTests) ... ok
+test_same_count_and_utility_matched_random (test_lh_channel_selection.ChannelSelectionTests) ... ok
+test_threshold_ties_budget (test_lh_channel_selection.ChannelSelectionTests) ... ok
+test_tied_ranks_and_nonfinite (test_lh_channel_selection.ChannelSelectionTests) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.943s
+
+OK

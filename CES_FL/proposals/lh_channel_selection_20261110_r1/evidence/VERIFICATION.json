@@ -1,0 +1,15 @@
+{
+  "status": "CPU_SOFTWARE_PASS",
+  "source_sha256": "95574295b76f16f5e5d8f70f01502848b4616fc7437030a5dfdf2ff1219f62f0",
+  "unit_tests": 14,
+  "full_width_backward": true,
+  "masked_full_LH_two_epoch_lifecycle": true,
+  "checkpoint_reload_and_native_validation_replay": true,
+  "bitwise_synthetic_resume": true,
+  "retained_LH_objective_AST": true,
+  "cuda_tested": false,
+  "production_inputs_verified_locally": false,
+  "production_review_qualified": false,
+  "training_launched": false,
+  "real_TEST_access": false
+}
