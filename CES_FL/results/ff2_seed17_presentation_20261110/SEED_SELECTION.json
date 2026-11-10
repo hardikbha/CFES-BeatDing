@@ -1,0 +1,25 @@
+{
+  "observed_management_utc": "2026-11-10T12:26:54.707445+00:00",
+  "selected_seed": 17,
+  "scope": "Single-seed presentation of existing completed matched FF2 results",
+  "user_instruction": "fix seed 17",
+  "selection_timing": "Retrospective selection after results for seeds7/17/27 were available",
+  "same_seed_for_every_method": true,
+  "methods": [
+    "bce",
+    "dag",
+    "daw",
+    "ding_sfd_gda",
+    "lh",
+    "lh_ramp",
+    "lh_low"
+  ],
+  "variants_kept_separate": true,
+  "per_cell_model_or_seed_selection": false,
+  "source_result_packet": "ff2_complete_metric_tables_20261110",
+  "three_seed_summary_preserved": true,
+  "source_or_training_configurations_changed": false,
+  "new_training": false,
+  "new_inference": false,
+  "Overleaf_updated": false
+}

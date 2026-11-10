@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "selected_seed": 17,
+  "methods": 7,
+  "axis_rows": 42,
+  "group_rows": 217,
+  "family_rows": 49,
+  "metrics_recomputed": false,
+  "all_values_copied_from_verified_source": true,
+  "three_seed_reports_unchanged": true,
+  "selection_retrospective": true,
+  "new_training": false,
+  "new_inference": false,
+  "exact_CSV_filters_checked": 6,
+  "workbook_XML_checks": "PASS",
+  "workbook_sheets": 7
+}

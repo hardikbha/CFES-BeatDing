@@ -1,5 +1,9 @@
 # Current CES-FL status
 
+## FF2 single-seed presentation fixed to seed17 — 10 November 2026
+
+Observed management UTC: 2026-11-10T12:26:54.707445+00:00. [Seed17 presentation packet](results/ff2_seed17_presentation_20261110/README.md): the author fixed seed17 consistently for all methods. This is a retrospective presentation choice; full L_H/ramp/low remain distinct, and all three-seed results are preserved. Exact CSV/Excel/LaTeX tables are prepared without changing checkpoints, thresholds, source, training or Overleaf.
+
 ## Complete FF2 demographic metric tables — 10 November 2026
 
 Observed management UTC: 2026-11-10T12:16:06.557614+00:00. [All metrics and downloadable workbook](results/ff2_complete_metric_tables_20261110/README.md): 126 method/seed/axis rows, 12 metrics per axis, 399 distinct three-seed mean/SD rows, 651 subgroup rates/support rows and 147 family rows. No method/seed leads all metrics. Full L_H seed17 leads age/skin FPR disparity; ramp/low have selected race/joint/IDS8 wins. Both detection and fairness regressions remain visible. Excel cell values and best-cell marking passed readback verification. Existing final-result files are unchanged; no inference or private prediction access.

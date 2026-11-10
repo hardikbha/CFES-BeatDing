@@ -1,0 +1,22 @@
+% Existing FF2 TEST results, retrospectively fixed seed17 for every method.
+% Requires booktabs and graphicx. No new experiment or per-cell model selection.
+\begin{table*}[t]
+\centering
+\small
+\caption{FF2 single-seed TEST comparison (seed 17 for every method). AUC, FPR and FNR are percentages. Demographic columns report $100F_{\mathrm{FPR}}$ (lower is better); bold marks the best column point estimate. Seed17 was selected retrospectively; the three-seed results are retained separately. Age and skin-tone bins are estimated attributes. Ramp/low selected epoch2, before response losses activate.}
+\label{tab:ff2_matched_seed17}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+Method & AUC $\uparrow$ & FPR $\downarrow$ & FNR $\downarrow$ & Gender & Race & Gender$\times$race & Age & Skin tone & IDS8 \\
+\midrule
+BCE & 99.0146 & 15.4200 & \textbf{1.2664} & 3.9433 & 33.3679 & 67.9232 & 14.1164 & 22.4947 & 45.2732 \\
+DAG-FDD & 99.0065 & 15.0891 & 1.3809 & 4.1130 & 32.1378 & 65.4379 & 14.2479 & 21.6486 & 45.3198 \\
+DAW-FDD & 99.0083 & 14.9237 & 1.4381 & 4.0066 & 31.6475 & 64.3660 & 13.7688 & 21.4946 & 45.2011 \\
+Ding SFD+GDA (adapt.) & \textbf{99.0169} & 15.2178 & 1.2786 & \textbf{3.8982} & 32.5993 & 66.3557 & 13.6488 & 22.3461 & 47.0588 \\
+Our full $L_H$ & 98.8270 & \textbf{13.7842} & 2.5547 & 6.2151 & 32.2852 & 67.4903 & \textbf{12.1312} & \textbf{21.1073} & 47.7026 \\
+Our ramp & 99.0114 & 14.8870 & 1.4734 & 3.9149 & \textbf{31.2738} & \textbf{63.7480} & 13.6684 & 21.3420 & \textbf{44.6184} \\
+Our low response & 99.0114 & 14.8870 & 1.4734 & 3.9149 & \textbf{31.2738} & \textbf{63.7480} & 13.6684 & 21.3420 & \textbf{44.6184} \\
+\bottomrule
+\end{tabular}}
+\end{table*}
