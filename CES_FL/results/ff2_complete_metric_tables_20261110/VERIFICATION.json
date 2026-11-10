@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "method_seed_axis_rows": 126,
+  "distinct_metric_cells_per_seed": 57,
+  "verified_metric_leader_rows": 171,
+  "mean_SD_rows": 399,
+  "native_aggregate_hashes_checked": 21,
+  "workbook_sheets": 11,
+  "numeric_workbook_cells_checked": 8973,
+  "best_cell_styles_checked": 1512,
+  "group_rows": 651,
+  "family_rows": 147,
+  "method_leading_every_metric": false,
+  "new_inference": false,
+  "private_predictions_read": false
+}

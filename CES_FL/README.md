@@ -1,5 +1,9 @@
 # CES-FL — supervisor review and training handoff
 
+## Complete FF2 demographic metric tables — 10 November 2026
+
+Observed management UTC: 2026-11-10T12:16:06.557614+00:00. [All metrics and downloadable workbook](results/ff2_complete_metric_tables_20261110/README.md): 126 method/seed/axis rows, 12 metrics per axis, 399 distinct three-seed mean/SD rows, 651 subgroup rates/support rows and 147 family rows. No method/seed leads all metrics. Full L_H seed17 leads age/skin FPR disparity; ramp/low have selected race/joint/IDS8 wins. Both detection and fairness regressions remain visible. Excel cell values and best-cell marking passed readback verification. Existing final-result files are unchanged; no inference or private prediction access.
+
 ## Final FF2 common-recipe comparison — 10 November 2026
 
 Observed management UTC: 2026-11-10T11:47:11.033219+00:00. [Final verified three-seed TEST results](results/ff2_fully_matched_final_20261110/README.md): all 21 runs complete, zero failed or pending. BCE has the highest mean AUC; DAW the lowest mean primary intersectional disparity. Full L_H is worse on primary disparity and AUC than the controlled Ding adaptation. Ramp/low selected epoch 2 before response activation for all three seeds, so their rows do not attribute benefit to response learning. Mean/SD tables, all six axes, family results and native receipts are published. Historical interim snapshots remain unchanged.
