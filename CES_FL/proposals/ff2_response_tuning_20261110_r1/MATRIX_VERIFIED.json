@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "runs": 4,
+  "seed": 17,
+  "epochs": 10,
+  "only_scientific_difference": "response ceiling",
+  "common_delay_epochs": 2,
+  "common_smooth_ramp_epochs": 6,
+  "ceilings": [
+    0.0,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "no_TEST_CAL_dependency": true
+}

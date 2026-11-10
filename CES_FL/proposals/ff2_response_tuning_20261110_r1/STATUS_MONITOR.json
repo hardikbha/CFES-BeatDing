@@ -1,0 +1,10 @@
+{
+  "pid": 2226376,
+  "host": "mgmt01",
+  "duration_limit_hours": 6,
+  "interval_seconds": 60,
+  "role": "Read-only existing queue/history observation; local reports only",
+  "GitHub_auto_publication": false,
+  "training_launches_allowed": false,
+  "source_sha256": "13af47c8421ed627bfdacb2fa94cabb529176a6ff1ac68d1858f56fb6f1ba35c"
+}

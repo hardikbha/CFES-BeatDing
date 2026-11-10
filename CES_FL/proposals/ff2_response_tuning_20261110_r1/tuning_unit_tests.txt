@@ -1,0 +1,20 @@
+test_component_logs_sum_to_total (test_tuning.TuningTests.test_component_logs_sum_to_total) ... ok
+test_control_response_gradient_is_exactly_zero (test_tuning.TuningTests.test_control_response_gradient_is_exactly_zero) ... ok
+test_delay_ramp_and_plateau_are_fixed (test_tuning.TuningTests.test_delay_ramp_and_plateau_are_fixed) ... ok
+test_full_loss_value_and_gradient_match_registered_formula (test_tuning.TuningTests.test_full_loss_value_and_gradient_match_registered_formula) ... ok
+test_lower_ceiling_scales_response_gradient (test_tuning.TuningTests.test_lower_ceiling_scales_response_gradient) ... ok
+test_native_training_records_delayed_response_and_exact_resume (test_tuning.TuningTests.test_native_training_records_delayed_response_and_exact_resume) ... {"arm": "D", "epoch": 1, "validation_auc": 0.5, "paired_sources": 4, "seconds": 1.2338968077674508}
+{"arm": "D", "epoch": 2, "validation_auc": 0.5, "paired_sources": 4, "seconds": 1.3341568196192384}
+{"arm": "D", "epoch": 3, "validation_auc": 0.5, "paired_sources": 4, "seconds": 1.4188785729929805}
+{"arm": "D", "epoch": 1, "validation_auc": 0.5, "paired_sources": 4, "seconds": 0.07324478682130575}
+{"arm": "D", "epoch": 2, "validation_auc": 0.5, "paired_sources": 4, "seconds": 0.15360808977857232}
+{"arm": "D", "epoch": 3, "validation_auc": 0.5, "paired_sources": 4, "seconds": 0.2298973398283124}
+ok
+test_no_TEST_or_CAL_CLI_stage (test_tuning.TuningTests.test_no_TEST_or_CAL_CLI_stage) ... ok
+test_no_response_phase_matches_fairness_only (test_tuning.TuningTests.test_no_response_phase_matches_fairness_only) ... ok
+test_original_recipe_and_parent_source_are_unmodified (test_tuning.TuningTests.test_original_recipe_and_parent_source_are_unmodified) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 4.208s
+
+OK

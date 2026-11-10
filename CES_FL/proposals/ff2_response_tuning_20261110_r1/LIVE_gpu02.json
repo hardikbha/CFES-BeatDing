@@ -1,0 +1,32 @@
+{
+  "host": "gpu02",
+  "observed_host_unix": 1794334888.0782337,
+  "active_records": [
+    {
+      "candidate": "smooth_005",
+      "GPU": 7,
+      "worker_alive": true,
+      "training_process_group_alive": true,
+      "stage": "TRAINING",
+      "latest_training_event": {
+        "arm": "D",
+        "epoch": 1,
+        "step": 700,
+        "loss": 0.007499741390347481
+      }
+    },
+    {
+      "candidate": "smooth_020",
+      "GPU": 4,
+      "worker_alive": true,
+      "training_process_group_alive": true,
+      "stage": "TRAINING",
+      "latest_training_event": {
+        "arm": "D",
+        "epoch": 1,
+        "step": 500,
+        "loss": 0.049911536276340485
+      }
+    }
+  ]
+}

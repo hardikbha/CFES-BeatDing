@@ -1,0 +1,8 @@
+test_concurrent_status_updates_are_not_lost (test_tuning_worker.QueueTests) ... ok
+test_failed_job_is_not_automatically_retried (test_tuning_worker.QueueTests) ... ok
+test_two_consumers_cannot_claim_the_same_job_or_card (test_tuning_worker.QueueTests) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.562s
+
+OK

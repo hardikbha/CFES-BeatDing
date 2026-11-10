@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "configs": 4,
+  "only_scientific_difference": "response ceiling",
+  "seed": 17,
+  "CPU_tests_passed": 21,
+  "actual_CUDA_checks_passed": 4,
+  "matched_initial_parameters_and_inputs": true,
+  "recorded_live_training_process_groups": 4,
+  "fresh_TRAIN_SELECT_images_checked": 249373,
+  "tracked_execution_source_files_verified": 43,
+  "TEST_CAL_access": false,
+  "new_Ding_models": 0,
+  "models_executed_by_this_verifier": false
+}

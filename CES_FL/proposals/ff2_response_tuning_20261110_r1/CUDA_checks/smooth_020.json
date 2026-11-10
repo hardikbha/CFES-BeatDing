@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "tuning_name": "smooth_020",
+  "seed": 17,
+  "tuning_source_sha256": "69a8d173bbcbc3a2d9903d10cd6cbf6444295364d514e4f704abcf9861b3a175",
+  "config_digest": "fd0b05890b0d4dd7e7b4e90bc4def4f9041d0e0095c3c93f7f8d96d389a172d7",
+  "device": "cuda",
+  "parameters": {
+    "total": 20809001,
+    "trainable": 6790433
+  },
+  "initial_parameter_fingerprint": "791cfa4aa904fa6382506e92b71bf60220fcadf37d29d6078e18ecd15c661716",
+  "initial_forward_input_fingerprint": "c1d4b228fec3b3c99134a484ba7e797efadbad0ebea512ddcc405e4fc61f9ab3",
+  "bn_frozen": true,
+  "active_epoch_one_based": 8,
+  "active_response_multiplier": 0.2,
+  "classification_gradient_norm": 1.7400000403693807,
+  "response_gradient_norm": 0.24130591045451177,
+  "response_to_classification_gradient_ratio": 0.13868155451495592,
+  "active_losses": {
+    "total": 0.744093656539917,
+    "classification": 0.6877130270004272,
+    "classification_objective": 0.6877130270004272,
+    "error_fairness": 0.002236098051071167,
+    "sensitivity": 2.500972270965576,
+    "sham": 0.4355735778808594,
+    "alignment": 0.05555001646280289,
+    "gda": 0.002684768056496978,
+    "raw_response": 0.277430921792984,
+    "weighted_response": 0.05548618361353874,
+    "weighted_fairness": 0.000894439232069999,
+    "response_multiplier": 0.20000000298023224
+  },
+  "optimizer_steps_in_discarded_models": 2,
+  "elapsed_seconds": 11.47931152023375,
+  "recipe_changed": false,
+  "TEST_CAL_access": false
+}

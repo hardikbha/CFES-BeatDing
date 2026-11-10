@@ -1,0 +1,44 @@
+{
+  "observed_management_utc": "2026-11-10T18:39:10.782233+00:00",
+  "status": "PASS",
+  "existing_cap_GPU_hours": 48,
+  "historical_sessions_unchanged": 62,
+  "cohort_reserved_max_GPU_hours": 17,
+  "actual_new_GPU_hours_so_far": 0.5881479094415489,
+  "new_sessions": [
+    {
+      "id": "ff2_response_tuning_20261110_r1_fair_only",
+      "state": "RUNNING",
+      "reserved_gpu_hours": 4.25,
+      "elapsed_seconds": 540.6603374108672,
+      "host": "gpu01",
+      "controller_pid": 124265
+    },
+    {
+      "id": "ff2_response_tuning_20261110_r1_smooth_005",
+      "state": "RUNNING",
+      "reserved_gpu_hours": 4.25,
+      "elapsed_seconds": 540.6378412079066,
+      "host": "gpu02",
+      "controller_pid": 3555302
+    },
+    {
+      "id": "ff2_response_tuning_20261110_r1_smooth_010",
+      "state": "RUNNING",
+      "reserved_gpu_hours": 4.25,
+      "elapsed_seconds": 540.7213682755828,
+      "host": "gpu01",
+      "controller_pid": 124264
+    },
+    {
+      "id": "ff2_response_tuning_20261110_r1_smooth_020",
+      "state": "RUNNING",
+      "reserved_gpu_hours": 4.25,
+      "elapsed_seconds": 495.3129270952195,
+      "host": "gpu02",
+      "controller_pid": 3555301
+    }
+  ],
+  "new_grant": false,
+  "budget_transfer": false
+}

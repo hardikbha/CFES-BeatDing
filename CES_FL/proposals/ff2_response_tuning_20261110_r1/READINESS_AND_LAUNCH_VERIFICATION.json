@@ -1,0 +1,60 @@
+{
+  "status": "ALL_FOUR_TRAINING",
+  "observed_management_utc": "2026-11-10T18:34:55.163464+00:00",
+  "source_commit": "d6c5c2fe49da87d14af2b4cdfc336ac784163fe9",
+  "GPU_training_jobs": 4,
+  "seed": 17,
+  "epochs_each": 10,
+  "total_CPU_tests_passed": 21,
+  "verified_full_data_audit": 249373,
+  "init_and_actual_forward_inputs_match": true,
+  "receipts": [
+    {
+      "candidate": "fair_only",
+      "config_sha256": "1223b267b9486834d22d7df9a095e5a9a425d42b7a7d3336d63aa544bc2d0ba7",
+      "qualification_sha256": "86615596db6e6242c951c7cf775cd7a0fc4ffb10cb6294ed508f29083110ce41",
+      "recipe_case_count": 88,
+      "recipe_source_sha256": "8c25ba8cb844b059adbbce75b57785a156333182afa2d5d576985997f2d36733",
+      "new_human_review_performed": false,
+      "all_CUDA_checks": "PASS",
+      "GPU": 6,
+      "host": "gpu01"
+    },
+    {
+      "candidate": "smooth_005",
+      "config_sha256": "1a11969c1b26276136c341f7a922e9fa1e241474cdfdd9aa1c14a85706cf843f",
+      "qualification_sha256": "b0f035645c3931150a17517467c17340f784d6851c8f8c1ca8b056244b84c662",
+      "recipe_case_count": 88,
+      "recipe_source_sha256": "8c25ba8cb844b059adbbce75b57785a156333182afa2d5d576985997f2d36733",
+      "new_human_review_performed": false,
+      "all_CUDA_checks": "PASS",
+      "GPU": 7,
+      "host": "gpu02"
+    },
+    {
+      "candidate": "smooth_010",
+      "config_sha256": "9304c02c62e31c1f8e208b320953b189b62bef76a659821ae502c18bea119f78",
+      "qualification_sha256": "24235eceb3f27219d96ed27cc05e981e3e8dd713b3235abc36b19d79d89c6759",
+      "recipe_case_count": 88,
+      "recipe_source_sha256": "8c25ba8cb844b059adbbce75b57785a156333182afa2d5d576985997f2d36733",
+      "new_human_review_performed": false,
+      "all_CUDA_checks": "PASS",
+      "GPU": 4,
+      "host": "gpu01"
+    },
+    {
+      "candidate": "smooth_020",
+      "config_sha256": "5bdc8f5cb5d4a757e5dcf0f4d6adad81523fe466d9e0d0e8215e1ca42ee435cc",
+      "qualification_sha256": "6f3e879cb3c6d11d5b46b6af6bb3f518cfd00532e1c570c14738217015d3aa5f",
+      "recipe_case_count": 88,
+      "recipe_source_sha256": "8c25ba8cb844b059adbbce75b57785a156333182afa2d5d576985997f2d36733",
+      "new_human_review_performed": false,
+      "all_CUDA_checks": "PASS",
+      "GPU": 4,
+      "host": "gpu02"
+    }
+  ],
+  "TEST_CAL_access": false,
+  "new_Ding_models_trained": 0,
+  "extra_trials_allowed": false
+}

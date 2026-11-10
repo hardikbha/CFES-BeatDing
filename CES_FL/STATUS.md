@@ -1,5 +1,9 @@
 # Current CES-FL status
 
+## Response ramp/strength tuning launched — 11 November 2026 IST
+
+Observed management UTC: 2026-11-10T18:39:10.793141+00:00. [Fixed four-candidate seed 17 screen](proposals/ff2_response_tuning_20261110_r1/README.md): fairness-only versus six-epoch smooth response ramps capped 0.05/0.10/0.20. All 21 CPU tests, full 249,373 image checks and all four active-response CUDA checks PASS. Four training runs are active on two nodes, preserving existing results/jobs. Ten epochs each; only TRAIN/SELECT; 17 aggregate GPU-hours maximum inside the original remaining allowance. No new Ding model or TEST/CAL evaluation. Source [d6c5c2f](https://github.com/hardikbha/CFES-BeatDing/commit/d6c5c2fe49da87d14af2b4cdfc336ac784163fe9). No tuning outcome is claimed yet.
+
 ## FF2 single-seed presentation fixed to seed17 — 10 November 2026
 
 Observed management UTC: 2026-11-10T12:26:54.707445+00:00. [Seed17 presentation packet](results/ff2_seed17_presentation_20261110/README.md): the author fixed seed17 consistently for all methods. This is a retrospective presentation choice; full L_H/ramp/low remain distinct, and all three-seed results are preserved. Exact CSV/Excel/LaTeX tables are prepared without changing checkpoints, thresholds, source, training or Overleaf.

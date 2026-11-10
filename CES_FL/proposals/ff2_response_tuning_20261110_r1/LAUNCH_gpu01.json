@@ -1,0 +1,16 @@
+{
+  "host": "gpu01",
+  "started_host_unix": 1794334749.236935,
+  "workers": [
+    {
+      "slot": 0,
+      "pid": 124264
+    },
+    {
+      "slot": 1,
+      "pid": 124265
+    }
+  ],
+  "source_commit": "d6c5c2fe49da87d14af2b4cdfc336ac784163fe9",
+  "stage": "Finite candidate queue; CUDA checks before training"
+}
