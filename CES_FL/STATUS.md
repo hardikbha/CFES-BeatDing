@@ -1,5 +1,9 @@
 # Current CES-FL status
 
+## FF2 matched comparison capacity — 10 November 2026
+
+Observed management UTC: 2026-11-10T05:14:29.761657+00:00. [Execution and capacity evidence](proposals/ff2_capacity_expansion_20261110/README.md): eight training runs active, thirteen queued, zero final TEST evaluations. Eight additional standby consumers are verified alive and will use newly eligible shared GPUs. No additional GPU was eligible at inspection; both PBS queues were at the user's running-job limit. Original source/configurations and the [frozen interim validation results](results/ff2_fully_matched_interim_20261110/README.md) remain unchanged. This is a dated observation.
+
 ## Superseding publication — 9 November 2026
 
 The [current handoff](https://github.com/hardikbha/CFES-BeatDing/blob/76c069bdec9576b64b6543a524ffd6748851fd32/CES_FL/handoffs/PAPER_START_20261109.md), [TEST tables](https://github.com/hardikbha/CFES-BeatDing/blob/76c069bdec9576b64b6543a524ffd6748851fd32/CES_FL/paper/RESULTS.md) and [paper PDF](https://github.com/hardikbha/CFES-BeatDing/blob/76c069bdec9576b64b6543a524ffd6748851fd32/CES_FL/paper/main.pdf) supersede older completion/TEST-sealed statements below. Current scientific source/configuration/evidence is preserved on `paper/ff2-processing-fairness-20261109` at `76c069b`; main's existing experiment sources are not replaced.

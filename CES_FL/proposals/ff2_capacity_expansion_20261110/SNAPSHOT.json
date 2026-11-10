@@ -1,0 +1,123 @@
+{
+  "observed_management_utc": "2026-11-10T05:14:29.761657+00:00",
+  "training_jobs": {
+    "RUNNING": 8,
+    "PREPARED": 13
+  },
+  "additional_standby_workers": [
+    {
+      "host": "gpu01",
+      "slot": 4,
+      "pid": 3713955,
+      "state": "STANDBY",
+      "last_resource_observation": {
+        "status": "WAITING_FOR_SHARED_GPU",
+        "host": "gpu01",
+        "pid": 3713955,
+        "observed_unix": 1794287004.452969
+      }
+    },
+    {
+      "host": "gpu01",
+      "slot": 5,
+      "pid": 3713956,
+      "state": "STANDBY",
+      "last_resource_observation": {
+        "status": "WAITING_FOR_SHARED_GPU",
+        "host": "gpu01",
+        "pid": 3713956,
+        "observed_unix": 1794287004.8549268
+      }
+    },
+    {
+      "host": "gpu01",
+      "slot": 6,
+      "pid": 3713957,
+      "state": "STANDBY",
+      "last_resource_observation": {
+        "status": "WAITING_FOR_SHARED_GPU",
+        "host": "gpu01",
+        "pid": 3713957,
+        "observed_unix": 1794287005.2198672
+      }
+    },
+    {
+      "host": "gpu01",
+      "slot": 7,
+      "pid": 3713958,
+      "state": "STANDBY",
+      "last_resource_observation": {
+        "status": "WAITING_FOR_SHARED_GPU",
+        "host": "gpu01",
+        "pid": 3713958,
+        "observed_unix": 1794287005.6593673
+      }
+    },
+    {
+      "host": "gpu02",
+      "slot": 4,
+      "pid": 1408378,
+      "state": "STANDBY",
+      "last_resource_observation": {
+        "status": "WAITING_FOR_SHARED_GPU",
+        "host": "gpu02",
+        "pid": 1408378,
+        "observed_unix": 1794287005.7850542
+      }
+    },
+    {
+      "host": "gpu02",
+      "slot": 5,
+      "pid": 1408380,
+      "state": "STANDBY",
+      "last_resource_observation": {
+        "status": "WAITING_FOR_SHARED_GPU",
+        "host": "gpu02",
+        "pid": 1408380,
+        "observed_unix": 1794287004.7978792
+      }
+    },
+    {
+      "host": "gpu02",
+      "slot": 6,
+      "pid": 1408381,
+      "state": "STANDBY",
+      "last_resource_observation": {
+        "status": "WAITING_FOR_SHARED_GPU",
+        "host": "gpu02",
+        "pid": 1408381,
+        "observed_unix": 1794287005.410436
+      }
+    },
+    {
+      "host": "gpu02",
+      "slot": 7,
+      "pid": 1408382,
+      "state": "STANDBY",
+      "last_resource_observation": {
+        "status": "WAITING_FOR_SHARED_GPU",
+        "host": "gpu02",
+        "pid": 1408382,
+        "observed_unix": 1794287006.3078842
+      }
+    }
+  ],
+  "initial_resource_check": {
+    "eligible_additional_GPU_count": 0,
+    "pbs_user_running_jobs": {
+      "gpu": 2,
+      "workq": 2
+    },
+    "pbs_max_user_run": {
+      "gpu": 2,
+      "workq": 2
+    }
+  },
+  "pbs_jobs_submitted": 0,
+  "training_source_unchanged": true,
+  "common_configurations_unchanged": true,
+  "training_liveness_note": "The original eight worker PIDs were verified on both nodes in the preceding status check. All eight additional standby PIDs were verified alive after launch.",
+  "study": "7 controlled adaptations x 3 downstream seeds; 10 epochs each",
+  "maximum_dispatch_capacity": 16,
+  "no_new_TEST_results": true
+}

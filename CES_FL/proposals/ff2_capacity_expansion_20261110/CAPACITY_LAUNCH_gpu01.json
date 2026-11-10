@@ -1,0 +1,28 @@
+{
+  "host": "gpu01",
+  "observed_host_unix": 1794286927.4402328,
+  "workers": [
+    {
+      "slot": 4,
+      "pid": 3713955,
+      "log": "/home/sachin.chaudhary/ces_fl_runs/ff2_fully_matched_20261110_r1/fleet_gpu01_4.log"
+    },
+    {
+      "slot": 5,
+      "pid": 3713956,
+      "log": "/home/sachin.chaudhary/ces_fl_runs/ff2_fully_matched_20261110_r1/fleet_gpu01_5.log"
+    },
+    {
+      "slot": 6,
+      "pid": 3713957,
+      "log": "/home/sachin.chaudhary/ces_fl_runs/ff2_fully_matched_20261110_r1/fleet_gpu01_6.log"
+    },
+    {
+      "slot": 7,
+      "pid": 3713958,
+      "log": "/home/sachin.chaudhary/ces_fl_runs/ff2_fully_matched_20261110_r1/fleet_gpu01_7.log"
+    }
+  ],
+  "route": "explicit_shared_pool_v2",
+  "pbs_submission": false
+}

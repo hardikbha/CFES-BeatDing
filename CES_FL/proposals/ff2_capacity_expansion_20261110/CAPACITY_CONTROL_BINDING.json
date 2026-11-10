@@ -1,0 +1,18 @@
+{
+  "control_commit": "5f8c1f5cbab7c7f716157df7f0e3dfecf0fcc368",
+  "controller_sha256": "b66c0633a0d26fb0c9cf866262a72464e238288cd948f97c38cbf39792bd4181",
+  "training_source_commit": "b7fa561b43a659b24efaf1e928d6bbf41a839b63",
+  "dispatch_route": "explicit_shared_pool_v2",
+  "slots_per_host": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "hosts": [
+    "gpu01",
+    "gpu02"
+  ],
+  "max_FF2_arms_per_physical_GPU": 1,
+  "configurations_changed": false
+}
