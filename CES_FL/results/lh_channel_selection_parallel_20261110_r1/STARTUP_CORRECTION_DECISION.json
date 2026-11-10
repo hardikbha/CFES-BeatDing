@@ -1,0 +1,13 @@
+{
+  "recorded_management_utc": "2026-11-10T10:33:35.296110+00:00",
+  "previous_control_commit": "a20e6a21e6dafcdcff2444fcb24df801d819ec79",
+  "new_control_commit": "777d5d3c89798f4f95dfdf7fa894f14ca8899fe2",
+  "failure": "Compute-node startup verification required unavailable Git executable",
+  "failure_stage": "BEFORE ledger reservation or GPU lease",
+  "new_decision": "Deliberate operator correction and fresh startup; not an automatic scientific retry",
+  "GPU_hours_in_failed_startup": 0,
+  "production_updates_in_failed_startup": 0,
+  "science_source_unchanged": true,
+  "budget_unchanged": true,
+  "tests_passed": 8
+}

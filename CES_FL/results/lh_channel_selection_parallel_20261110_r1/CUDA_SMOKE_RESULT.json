@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "source_sha256": "95574295b76f16f5e5d8f70f01502848b4616fc7437030a5dfdf2ff1219f62f0",
+  "device": "cuda",
+  "torch": "2.7.0+cu126",
+  "head_type": "linear",
+  "parameters": {
+    "total": 20809001,
+    "trainable": 6790433,
+    "encoder": 20806952,
+    "head": 2049,
+    "encoder_trainable": 6788384,
+    "head_type": "linear",
+    "encoder_policy": "exit",
+    "mask_buffer_elements": 2048,
+    "masked_channels": 0,
+    "structural_parameter_reduction": 0,
+    "inference_group_labels_required": false
+  },
+  "checks": [
+    "full_width_224px_parameters_cam_gradients_and_frozen_bn",
+    "A_and_H_native_train_reload_coverage_and_bitwise_resume",
+    "frozen_threshold_label_flip_paired_comparison_and_head_aware_map_export"
+  ],
+  "scientific_performance_tested": false,
+  "real_interventions_validated": false,
+  "fixture_only": true,
+  "cuda_tested": true
+}

@@ -1,0 +1,11 @@
+{
+  "host": "gpu02",
+  "pid": 1593806,
+  "started_host_unix": 1794306014.801161,
+  "source_commit": "1a6d63db6baf7f6ad2a8e842a31341d2c128de25",
+  "control_commit": "a20e6a21e6dafcdcff2444fcb24df801d819ec79",
+  "maximum_parallel_arms": 3,
+  "aggregate_GPU_hour_limit": 2,
+  "TEST_CAL_access": false,
+  "new_Ding_experiments": false
+}

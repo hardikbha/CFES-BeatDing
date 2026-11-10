@@ -1,0 +1,13 @@
+test_CPU_wait_before_lease_is_not_GPU_usage (test_controller.BudgetTests) ... ok
+test_detached_worktree_metadata_without_git_executable (test_controller.BudgetTests) ... ok
+test_each_arm_must_fit_even_if_parallel_wall_window_fits (test_controller.BudgetTests) ... ok
+test_late_acquisitions_charge_only_actual_hold (test_controller.BudgetTests) ... ok
+test_parallel_devices_charge_sum_not_wall_time (test_controller.BudgetTests) ... ok
+test_released_zero_time_lease_does_not_keep_accruing (test_controller.BudgetTests) ... ok
+test_setup_plus_all_arms_must_fit_aggregate (test_controller.BudgetTests) ... ok
+test_watchdog_stops_only_registered_process_groups (test_controller.BudgetTests) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 2.258s
+
+OK

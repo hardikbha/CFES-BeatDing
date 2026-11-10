@@ -1,0 +1,16 @@
+{
+  "status": "OPERATOR_REVIEW_RECORDED",
+  "source_sha256": "95574295b76f16f5e5d8f70f01502848b4616fc7437030a5dfdf2ff1219f62f0",
+  "config_digest": "b6a965229b07ce7f2afbd8543cd13001351536061dd03e9e0fdcd5878f7d3429",
+  "preview_sha256": "441dcf264c38a73c3e5929a0869e2f36a757ea7d8c0a227a685c9fbbb0ef4a65",
+  "review_sha256": "56fbf40f41d0a1a6446965db4fb991e3ceba535b0b018bb4660c298308795f02",
+  "preview_file": "/home/sachin.chaudhary/ces_fl_runs/lh_channel_selection_20261110_r1_operator_1a6d63d/preview/preview_PRIVATE.json",
+  "review_file": "/home/sachin.chaudhary/ces_fl_runs/lh_channel_selection_20261110_r1_operator_1a6d63d/preview/human_review_Aashish_Negi_PRIVATE.json",
+  "case_count": 344,
+  "reviewers": [
+    "Aashish Negi"
+  ],
+  "real_forgery_validity_proven": false,
+  "scope": "Stratified visual qualification of defined procedural probes; not per-image biological identity or causal validation",
+  "context_digest": "b6a965229b07ce7f2afbd8543cd13001351536061dd03e9e0fdcd5878f7d3429"
+}

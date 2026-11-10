@@ -1,0 +1,10 @@
+{
+  "host": "gpu02",
+  "pid": 1602227,
+  "started_host_unix": 1794306290.4848566,
+  "source_commit": "1a6d63db6baf7f6ad2a8e842a31341d2c128de25",
+  "control_commit": "777d5d3c89798f4f95dfdf7fa894f14ca8899fe2",
+  "maximum_parallel_arms": 3,
+  "aggregate_GPU_hour_limit": 2,
+  "deliberate_startup_correction": true
+}

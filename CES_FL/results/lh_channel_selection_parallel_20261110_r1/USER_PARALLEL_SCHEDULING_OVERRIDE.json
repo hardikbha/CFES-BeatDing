@@ -1,0 +1,17 @@
+{
+  "recorded_management_utc": "2026-11-10T10:17:55.122767+00:00",
+  "user_instruction": "i reviended it you can run it on all the free gpu's parallely",
+  "superseded_scheduling_constraint": "one allocated GPU and sequential training",
+  "maximum_parallel_configuration_count": 3,
+  "arms": [
+    "none",
+    "random",
+    "informed"
+  ],
+  "maximum_aggregate_GPU_hours": 2,
+  "maximum_training_minutes_per_arm": 30,
+  "epochs_per_arm": 3,
+  "extra_budget_granted": false,
+  "scientific_source_and_configurations_unchanged": true,
+  "all_pretraining_gates_still_required": true
+}

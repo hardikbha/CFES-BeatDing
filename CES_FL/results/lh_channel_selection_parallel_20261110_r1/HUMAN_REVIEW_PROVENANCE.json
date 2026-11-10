@@ -1,0 +1,13 @@
+{
+  "status": "QUALIFICATION_RECEIPT_PASSED",
+  "private_qualification_sha256": "517f943fa9e4d83c9f529e96057e66b1bf21e69c2f3a2252ef52f7543e5219fa",
+  "private_human_review_sha256": "56fbf40f41d0a1a6446965db4fb991e3ceba535b0b018bb4660c298308795f02",
+  "preview_sha256": "441dcf264c38a73c3e5929a0869e2f36a757ea7d8c0a227a685c9fbbb0ef4a65",
+  "cases": 344,
+  "reviewers": [
+    "Aashish Negi"
+  ],
+  "basis": "Human panel-level chat approval transcribed by the assistant after the reviewer name was supplied. No individually authored case observations were supplied. This is not an AI visual approval.",
+  "AI_visual_approval_used": false,
+  "dataset_annotation_human_validation_claimed": false
+}

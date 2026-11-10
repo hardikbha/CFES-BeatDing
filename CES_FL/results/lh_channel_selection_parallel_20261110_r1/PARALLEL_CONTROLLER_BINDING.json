@@ -1,0 +1,23 @@
+{
+  "control_commit": "777d5d3c89798f4f95dfdf7fa894f14ca8899fe2",
+  "control_files": {
+    "README.md": "9ce64a611e8be5830ed3aab25098db8275fb7af198f385b73acc03da713514f0",
+    "controller.py": "ef4f676e5194ba789711976578e04287bd558b2abc4ba06142c020b45655be90",
+    "runtime_profile.py": "32f70387f2d8262a370a07ab73db17b5952ecf251b89f123839855bfcff9ed8a",
+    "test_controller.py": "86b7e17156823b4320030a70cf6adc428fb8bbc360ec0fe676076adf7cca2026"
+  },
+  "budget_helper_sha256": "a4e39fb7d726ba33eeb1f0078a7fad120236064423d0d61668f6200aeed74371",
+  "pool_helper_sha256": "4ae024126a015032f1936120b6fce59b66495ca94303515d835ff20f436dd5d3",
+  "CPU_checks_file": "/home/sachin.chaudhary/cesel_ma_audit_logs/lh_channel_selection_20261110_1a6d63d/CPU_CHECKS.json",
+  "controller_CPU_tests_sha256": "6e1c69900a05a7eacdcfb9704e93e3cdbbef50588b5a484857c231941a4a0cca",
+  "controller_CPU_tests_passed": 8,
+  "science_files": {
+    "CES_FL/src/ces_fl_lh_channel_selection.py": "95574295b76f16f5e5d8f70f01502848b4616fc7437030a5dfdf2ff1219f62f0",
+    "CES_FL/tests/test_lh_channel_selection.py": "3114f7173630d1bc1af25d3ba9bdf7a69b13bb57350af067aa20828e7521f7d2",
+    "CES_FL/proposals/lh_channel_selection_20261110_r1/audit_config.json": "695eb683ae84ee466075fdabf71f8245cef758af043b5cee4f9c0a28ac1154e1",
+    "CES_FL/proposals/lh_channel_selection_20261110_r1/commands.sh": "aaf865f41bf76d732d7ec4c7fa51b94f584e8f597a7d499f3ccd5f50091c9ae6",
+    "CES_FL/proposals/lh_channel_selection_20261110_r1/GPU_OPERATOR_PROMPT.md": "2e94b73731610fc7be745adec49ec73cab4682f2847e80b79461a1e81fefa5a7",
+    "CES_FL/proposals/lh_channel_selection_20261110_r1/tests/masked_lifecycle.py": "ece4829da8f7cb6e8156bbd10324159ed7facebb98423e4555c192313fcfd831"
+  },
+  "controller_CPU_tests_file": "/home/sachin.chaudhary/ces_fl_runs/lh_channel_selection_20261110_r1_operator_1a6d63d/PARALLEL_CONTROLLER_CPU_TESTS_attempt2.txt"
+}

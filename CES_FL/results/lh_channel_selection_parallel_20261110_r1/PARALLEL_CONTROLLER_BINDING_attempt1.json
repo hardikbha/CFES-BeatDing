@@ -1,0 +1,14 @@
+{
+  "control_commit": "a20e6a21e6dafcdcff2444fcb24df801d819ec79",
+  "control_files": {
+    "README.md": "59d7d49618137b9718b8e7e1f9719fb9222af397dc53c052cb39cad911f82895",
+    "controller.py": "dc93f1026452387768cefe244800882ab7592ca952df44f196083e06fc479670",
+    "runtime_profile.py": "32f70387f2d8262a370a07ab73db17b5952ecf251b89f123839855bfcff9ed8a",
+    "test_controller.py": "61a23de3e17a773a17082c1edeb4573d920f4ec29bbf24390f82a22bbd60a014"
+  },
+  "budget_helper_sha256": "a4e39fb7d726ba33eeb1f0078a7fad120236064423d0d61668f6200aeed74371",
+  "pool_helper_sha256": "4ae024126a015032f1936120b6fce59b66495ca94303515d835ff20f436dd5d3",
+  "CPU_checks_file": "/home/sachin.chaudhary/cesel_ma_audit_logs/lh_channel_selection_20261110_1a6d63d/CPU_CHECKS.json",
+  "controller_CPU_tests_sha256": "8c7658715486091fbe335352b72e1ec8a72a7e6e2b982015079b5d1f77f6dfe8",
+  "controller_CPU_tests_passed": 7
+}

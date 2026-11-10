@@ -1,3 +1,7 @@
+## Channel-selector qualified; bounded parallel setup — 10 November 2026
+
+Observed management UTC: 2026-11-10T10:39:52.733591+00:00. [Continuation](results/lh_channel_selection_parallel_20261110_r1/REPORT.md): Aashish Negi's panel-level chat approval was transcribed and qualification passed for 344 cases. The user explicitly permits three parallel arms while retaining two aggregate GPU-hours. CUDA checks passed on gpu02 GPU 6; the TRAIN-only mask audit and cost gates precede any production training. Scientific source 1a6d63d and existing jobs remain unchanged. No TEST/CAL or new Ding work.
+
 ## Channel-selection operator verification — 10 November 2026
 
 Observed management UTC: 2026-11-10T09:49:29.647376+00:00. [Actual operator audit](results/lh_channel_selection_operator_20261110_r1/REPORT.md): pinned1a6d63d, fresh14CPUtests and native/masked lifecycle PASS; teacher, manifest and all249,373image hashes match. New86-source/344-case panel is prepared and pixel-replayed. **BLOCKED: zero named-human reviews and no qualification receipt.** No CUDA, masks, production training, TEST/CAL access or new Ding work. Active jobs and source/config files are preserved. Allocation/cost gates remain unreached; recorded ledger arithmetic is documented without a new reservation.
