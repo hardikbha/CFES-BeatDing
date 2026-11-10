@@ -1,5 +1,9 @@
 # CES-FL — supervisor review and training handoff
 
+## FF2 completed-seed TEST progress — 10 November 2026
+
+Observed management UTC: 2026-11-10T06:47:22.308162+00:00. [Verified execution snapshot and completed-seed TEST metrics](results/ff2_fully_matched_progress_20261110T0644Z/README.md): 8/21 complete, 10 active, 3 queued, 0 failed. All seven seed17 methods and Ding seed7 have TEST results. All ten active child process groups were verified alive. Additional standby dispatch raised usage to ten physical GPUs; no further GPU was eligible and both PBS queues were at their running limits. Final three-seed results remain pending. The earlier validation snapshot is preserved.
+
 ## FF2 matched comparison capacity — 10 November 2026
 
 Observed management UTC: 2026-11-10T05:14:29.761657+00:00. [Execution and capacity evidence](proposals/ff2_capacity_expansion_20261110/README.md): eight training runs active, thirteen queued, zero final TEST evaluations. Eight additional standby consumers are verified alive and will use newly eligible shared GPUs. No additional GPU was eligible at inspection; both PBS queues were at the user's running-job limit. Original source/configurations and the [frozen interim validation results](results/ff2_fully_matched_interim_20261110/README.md) remain unchanged. This is a dated observation.

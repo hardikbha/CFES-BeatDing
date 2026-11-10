@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "completed_runs_checked": 8,
+  "method_axis_rows": 48,
+  "training_source_files_checked": 31,
+  "checks": [
+    "ten complete epochs with full once-per-epoch original coverage",
+    "earliest maximum SELECT-AUC epoch matches selected receipt",
+    "selected checkpoint hash agrees between training and TEST receipts",
+    "TEST manifest hash matches fixed common recipe",
+    "TEST threshold equals frozen SELECT threshold",
+    "source hashes match original pinned checkout",
+    "all ten active leases/workers/child process groups verified alive"
+  ],
+  "runs": [
+    {
+      "run": "bce_s17",
+      "selected_epoch": 7,
+      "checkpoint_sha256": "782f0adf5c9d7b47f55f23f9773ae03a001519eda49d13c30053358f0f5d29c0",
+      "test_manifest_sha256": "dd5eb9ef070f658fe6b7f744c47f73e25ce7c53f948bc272f4f16c69a37d4099",
+      "frozen_threshold_logit": -0.6661468744277953,
+      "test_used_for_selection": false
+    },
+    {
+      "run": "dag_s17",
+      "selected_epoch": 7,
+      "checkpoint_sha256": "8fc52f365434b7792886dd26ba5d3a304a02407330ca6e9905cd0e168b293b2d",
+      "test_manifest_sha256": "dd5eb9ef070f658fe6b7f744c47f73e25ce7c53f948bc272f4f16c69a37d4099",
+      "frozen_threshold_logit": -1.04578161239624,
+      "test_used_for_selection": false
+    },
+    {
+      "run": "daw_s17",
+      "selected_epoch": 7,
+      "checkpoint_sha256": "ef9b6dd576ee5d97a9716326c895869f402c183356f49040864bf298e43e82c0",
+      "test_manifest_sha256": "dd5eb9ef070f658fe6b7f744c47f73e25ce7c53f948bc272f4f16c69a37d4099",
+      "frozen_threshold_logit": -1.0657653808593748,
+      "test_used_for_selection": false
+    },
+    {
+      "run": "ding_sfd_gda_s17",
+      "selected_epoch": 2,
+      "checkpoint_sha256": "02f95139c15feb77439741c5fe6fcd1e056fd050fb0f6b9c6c68481cebcd33e6",
+      "test_manifest_sha256": "dd5eb9ef070f658fe6b7f744c47f73e25ce7c53f948bc272f4f16c69a37d4099",
+      "frozen_threshold_logit": -1.0206156969070432,
+      "test_used_for_selection": false
+    },
+    {
+      "run": "lh_s17",
+      "selected_epoch": 10,
+      "checkpoint_sha256": "ad78e69729a69230cfba4492e82ef0ed21c268f4e2a68fd228d042a6d6ea511c",
+      "test_manifest_sha256": "dd5eb9ef070f658fe6b7f744c47f73e25ce7c53f948bc272f4f16c69a37d4099",
+      "frozen_threshold_logit": -1.305995464324951,
+      "test_used_for_selection": false
+    },
+    {
+      "run": "lh_ramp_s17",
+      "selected_epoch": 2,
+      "checkpoint_sha256": "a7f1955ab47db4c6c547445610ae9cbe40bb9100ef5f229ce3d4ff2da6329fe0",
+      "test_manifest_sha256": "dd5eb9ef070f658fe6b7f744c47f73e25ce7c53f948bc272f4f16c69a37d4099",
+      "frozen_threshold_logit": -2.1538081169128414,
+      "test_used_for_selection": false
+    },
+    {
+      "run": "lh_low_s17",
+      "selected_epoch": 2,
+      "checkpoint_sha256": "2d675b7c5e060ed408aea7ba16b6de0339556b99b7e927e1ce96049236587335",
+      "test_manifest_sha256": "dd5eb9ef070f658fe6b7f744c47f73e25ce7c53f948bc272f4f16c69a37d4099",
+      "frozen_threshold_logit": -2.1538081169128414,
+      "test_used_for_selection": false
+    },
+    {
+      "run": "ding_sfd_gda_s7",
+      "selected_epoch": 9,
+      "checkpoint_sha256": "4b5b01b5aeec359f0bd3d471d061af359fa3d0e1a36079f8dc07c0675b6a72d0",
+      "test_manifest_sha256": "dd5eb9ef070f658fe6b7f744c47f73e25ce7c53f948bc272f4f16c69a37d4099",
+      "frozen_threshold_logit": -0.6982007026672362,
+      "test_used_for_selection": false
+    }
+  ],
+  "checkpoint_binaries_rehashed_in_publication": false,
+  "new_inference_executed": false
+}

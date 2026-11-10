@@ -1,0 +1,140 @@
+{
+  "observed_management_utc": "2026-11-10T06:47:22.308162+00:00",
+  "training_counts": {
+    "COMPLETED_VERIFIED": 8,
+    "RUNNING": 10,
+    "PREPARED": 3,
+    "FAILED": 0
+  },
+  "completed_shared_SFD_preparation": 1,
+  "resources": {
+    "gpu01": {
+      "host": "gpu01",
+      "observed_host_unix": 1794292439.8294206,
+      "active": [
+        {
+          "run": "lh_s7",
+          "gpu": 4,
+          "stage": "TRAINING",
+          "worker": "worker_gpu01_1",
+          "lease_present": true,
+          "worker_alive": true,
+          "child_group_alive": true,
+          "epochs": 2
+        },
+        {
+          "run": "lh_ramp_s7",
+          "gpu": 6,
+          "stage": "TRAINING",
+          "worker": "worker_gpu01_2",
+          "lease_present": true,
+          "worker_alive": true,
+          "child_group_alive": true,
+          "epochs": 2
+        },
+        {
+          "run": "lh_low_s7",
+          "gpu": 5,
+          "stage": "TRAINING",
+          "worker": "worker_gpu01_4",
+          "lease_present": true,
+          "worker_alive": true,
+          "child_group_alive": true,
+          "epochs": 2
+        },
+        {
+          "run": "bce_s27",
+          "gpu": 3,
+          "stage": "TRAINING",
+          "worker": "worker_gpu01_7",
+          "lease_present": true,
+          "worker_alive": true,
+          "child_group_alive": true,
+          "epochs": 2
+        },
+        {
+          "run": "dag_s27",
+          "gpu": 1,
+          "stage": "TRAINING",
+          "worker": "worker_gpu01_5",
+          "lease_present": true,
+          "worker_alive": true,
+          "child_group_alive": true,
+          "epochs": 1
+        },
+        {
+          "run": "ding_sfd_gda_s27",
+          "gpu": 2,
+          "stage": "TRAINING",
+          "worker": "worker_gpu01_6",
+          "lease_present": true,
+          "worker_alive": true,
+          "child_group_alive": true,
+          "epochs": 5
+        }
+      ],
+      "eligible_free_gpus": []
+    },
+    "gpu02": {
+      "host": "gpu02",
+      "observed_host_unix": 1794292439.670668,
+      "active": [
+        {
+          "run": "bce_s7",
+          "gpu": 4,
+          "stage": "TRAINING",
+          "worker": "worker_gpu02_2",
+          "lease_present": true,
+          "worker_alive": true,
+          "child_group_alive": true,
+          "epochs": 3
+        },
+        {
+          "run": "dag_s7",
+          "gpu": 5,
+          "stage": "TRAINING",
+          "worker": "worker_gpu02_3",
+          "lease_present": true,
+          "worker_alive": true,
+          "child_group_alive": true,
+          "epochs": 3
+        },
+        {
+          "run": "daw_s7",
+          "gpu": 7,
+          "stage": "TRAINING",
+          "worker": "worker_gpu02_1",
+          "lease_present": true,
+          "worker_alive": true,
+          "child_group_alive": true,
+          "epochs": 3
+        },
+        {
+          "run": "daw_s27",
+          "gpu": 6,
+          "stage": "TRAINING",
+          "worker": "worker_gpu02_6",
+          "lease_present": true,
+          "worker_alive": true,
+          "child_group_alive": true,
+          "epochs": 0
+        }
+      ],
+      "eligible_free_gpus": []
+    }
+  },
+  "pbs_queue_limits": {
+    "gpu": 2,
+    "workq": 2
+  },
+  "pbs_running_user_jobs": {
+    "gpu": 2,
+    "workq": 2
+  },
+  "additional_pbs_jobs_submitted": 0,
+  "source_commit": "b7fa561b43a659b24efaf1e928d6bbf41a839b63",
+  "control_commit": "5f8c1f5cbab7c7f716157df7f0e3dfecf0fcc368",
+  "private_predictions_read": false,
+  "models_executed_by_publication": false,
+  "three_seed_results_ready": false
+}
