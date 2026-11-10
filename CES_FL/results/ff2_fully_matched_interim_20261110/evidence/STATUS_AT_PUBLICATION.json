@@ -1,0 +1,201 @@
+{
+  "observed_management_utc": "2026-11-10T04:38:16.738346+00:00",
+  "jobs": [
+    {
+      "name": "SFD",
+      "method": "sfd",
+      "seed": 17,
+      "state": "COMPLETED_VERIFIED",
+      "stage": null,
+      "host": "gpu02"
+    },
+    {
+      "name": "bce_s17",
+      "method": "bce",
+      "seed": 17,
+      "state": "RUNNING",
+      "stage": "TRAINING",
+      "host": "gpu01"
+    },
+    {
+      "name": "dag_s17",
+      "method": "dag",
+      "seed": 17,
+      "state": "RUNNING",
+      "stage": "TRAINING",
+      "host": "gpu02"
+    },
+    {
+      "name": "daw_s17",
+      "method": "daw",
+      "seed": 17,
+      "state": "RUNNING",
+      "stage": "TRAINING",
+      "host": "gpu01"
+    },
+    {
+      "name": "ding_sfd_gda_s17",
+      "method": "ding_sfd_gda",
+      "seed": 17,
+      "state": "RUNNING",
+      "stage": "TRAINING",
+      "host": "gpu02"
+    },
+    {
+      "name": "lh_s17",
+      "method": "lh",
+      "seed": 17,
+      "state": "RUNNING",
+      "stage": "TRAINING",
+      "host": "gpu01"
+    },
+    {
+      "name": "lh_ramp_s17",
+      "method": "lh_ramp",
+      "seed": 17,
+      "state": "RUNNING",
+      "stage": "TRAINING",
+      "host": "gpu02"
+    },
+    {
+      "name": "lh_low_s17",
+      "method": "lh_low",
+      "seed": 17,
+      "state": "RUNNING",
+      "stage": "TRAINING",
+      "host": "gpu01"
+    },
+    {
+      "name": "bce_s7",
+      "method": "bce",
+      "seed": 7,
+      "state": "PREPARED",
+      "stage": null,
+      "host": null
+    },
+    {
+      "name": "dag_s7",
+      "method": "dag",
+      "seed": 7,
+      "state": "PREPARED",
+      "stage": null,
+      "host": null
+    },
+    {
+      "name": "daw_s7",
+      "method": "daw",
+      "seed": 7,
+      "state": "PREPARED",
+      "stage": null,
+      "host": null
+    },
+    {
+      "name": "ding_sfd_gda_s7",
+      "method": "ding_sfd_gda",
+      "seed": 7,
+      "state": "RUNNING",
+      "stage": "TRAINING",
+      "host": "gpu02"
+    },
+    {
+      "name": "lh_s7",
+      "method": "lh",
+      "seed": 7,
+      "state": "PREPARED",
+      "stage": null,
+      "host": null
+    },
+    {
+      "name": "lh_ramp_s7",
+      "method": "lh_ramp",
+      "seed": 7,
+      "state": "PREPARED",
+      "stage": null,
+      "host": null
+    },
+    {
+      "name": "lh_low_s7",
+      "method": "lh_low",
+      "seed": 7,
+      "state": "PREPARED",
+      "stage": null,
+      "host": null
+    },
+    {
+      "name": "bce_s27",
+      "method": "bce",
+      "seed": 27,
+      "state": "PREPARED",
+      "stage": null,
+      "host": null
+    },
+    {
+      "name": "dag_s27",
+      "method": "dag",
+      "seed": 27,
+      "state": "PREPARED",
+      "stage": null,
+      "host": null
+    },
+    {
+      "name": "daw_s27",
+      "method": "daw",
+      "seed": 27,
+      "state": "PREPARED",
+      "stage": null,
+      "host": null
+    },
+    {
+      "name": "ding_sfd_gda_s27",
+      "method": "ding_sfd_gda",
+      "seed": 27,
+      "state": "PREPARED",
+      "stage": null,
+      "host": null
+    },
+    {
+      "name": "lh_s27",
+      "method": "lh",
+      "seed": 27,
+      "state": "PREPARED",
+      "stage": null,
+      "host": null
+    },
+    {
+      "name": "lh_ramp_s27",
+      "method": "lh_ramp",
+      "seed": 27,
+      "state": "PREPARED",
+      "stage": null,
+      "host": null
+    },
+    {
+      "name": "lh_low_s27",
+      "method": "lh_low",
+      "seed": 27,
+      "state": "PREPARED",
+      "stage": null,
+      "host": null
+    }
+  ],
+  "initialisation_and_exposure_by_seed": {
+    "17": {
+      "initial_parameter_fingerprint": "791cfa4aa904fa6382506e92b71bf60220fcadf37d29d6078e18ecd15c661716",
+      "data_forward_fingerprint": "c1d4b228fec3b3c99134a484ba7e797efadbad0ebea512ddcc405e4fc61f9ab3",
+      "parameters": {
+        "total": 20809001,
+        "trainable": 6790433
+      }
+    },
+    "7": {
+      "initial_parameter_fingerprint": "d8b8c033b929acd7581d0ea5677529e8070fe7627e0f09faa5472f12c0e748e2",
+      "data_forward_fingerprint": "3ff9d510efd185b827c61f5caa6022bfa56c9af2892adfbc3b80ffa42e4499ed",
+      "parameters": {
+        "total": 20809001,
+        "trainable": 6790433
+      }
+    }
+  },
+  "test_files_present_at_publication": 0,
+  "not_continuously_updated_on_github": true
+}

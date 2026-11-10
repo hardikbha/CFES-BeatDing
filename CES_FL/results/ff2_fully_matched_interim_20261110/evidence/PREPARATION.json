@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "configs": 21,
+  "image_audit": 249373,
+  "shared_encoder_pretraining_seed": 17,
+  "downstream_seeds": [
+    17,
+    7,
+    27
+  ],
+  "suite_hashes": {
+    "shared.py": "ff8b569ac606c9eefb736259c5a4524d10c504a908eb86f2b944c6493c78fd3a",
+    "core.py": "8c25ba8cb844b059adbbce75b57785a156333182afa2d5d576985997f2d36733",
+    "ported_losses.py": "daf5cb7538c76fe81abb1af5b35fe851b5a603ca8f812614e4f9673bfd36def3",
+    "data_cache.py": "f4579e575f887204c6b384d04ab21fa9a0e53f43bd4ba9c6f5c61edff178f9ec"
+  },
+  "operator_panel": "88 unchanged PS-v2 recipe cases; explicit reuse; no new human approval",
+  "test_access": "manifest hash frozen; no predictions read"
+}

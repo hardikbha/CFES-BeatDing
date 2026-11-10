@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "runs": 21,
+  "methods": [
+    "bce",
+    "dag",
+    "daw",
+    "ding_sfd_gda",
+    "lh",
+    "lh_ramp",
+    "lh_low"
+  ],
+  "seeds": [
+    17,
+    7,
+    27
+  ],
+  "only_different_fields": [
+    "seed",
+    "suite_method"
+  ],
+  "shared_recipe_digest": "7be32ff4c4315f39d29ed0c5668432927f92380b01778cbab78310d54ac5dd42",
+  "test_predictions_read": false
+}

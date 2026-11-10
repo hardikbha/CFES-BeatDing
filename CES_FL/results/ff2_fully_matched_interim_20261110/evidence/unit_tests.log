@@ -1,0 +1,20 @@
+test_cvar_values_and_gradients_match_the_pinned_port (__main__.Tests.test_cvar_values_and_gradients_match_the_pinned_port) ... ok
+test_every_method_has_identical_forward_exposure (__main__.Tests.test_every_method_has_identical_forward_exposure) ... ok
+test_fast_normalisation_matches_the_historical_reader (__main__.Tests.test_fast_normalisation_matches_the_historical_reader) ... ok
+test_native_lifecycle_resume_binds_method_and_schedule (__main__.Tests.test_native_lifecycle_resume_binds_method_and_schedule) ... {"arm": "D", "epoch": 1, "validation_auc": 0.5, "paired_sources": 4, "seconds": 10.368996338918805}
+{"arm": "D", "epoch": 2, "validation_auc": 0.5, "paired_sources": 4, "seconds": 10.5106266066432}
+{"arm": "D", "epoch": 3, "validation_auc": 0.5, "paired_sources": 4, "seconds": 10.626006783917546}
+{"arm": "D", "epoch": 1, "validation_auc": 0.5, "paired_sources": 4, "seconds": 0.09683948755264282}
+{"arm": "D", "epoch": 2, "validation_auc": 0.5, "paired_sources": 4, "seconds": 0.20133107528090477}
+{"arm": "D", "epoch": 3, "validation_auc": 0.5, "paired_sources": 4, "seconds": 0.3003257028758526}
+ok
+test_padding_recipe_is_unmodified (__main__.Tests.test_padding_recipe_is_unmodified) ... ok
+test_response_schedules (__main__.Tests.test_response_schedules) ... ok
+test_sfd_selection_and_mask_do_not_add_parameters (__main__.Tests.test_sfd_selection_and_mask_do_not_add_parameters) ... ok
+test_symmetric_binary_logits_preserve_bce (__main__.Tests.test_symmetric_binary_logits_preserve_bce) ... ok
+test_test_scoring_requires_a_completed_frozen_checkpoint (__main__.Tests.test_test_scoring_requires_a_completed_frozen_checkpoint) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 25.743s
+
+OK

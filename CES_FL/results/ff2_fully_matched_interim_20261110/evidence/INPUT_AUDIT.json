@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "decoded_images": 249373,
+  "train_rows": 218266,
+  "val_rows": 31107,
+  "inventory_sha256": "9f5d4b587d5dd87fe04a7db9b353c3aabc043b892c931dfd7f2b059112276621",
+  "row_cache_sha256": "e9cb2080ca9a643e778aa136acb07dd0b2c10064ec8d5cf60c80a519a214dcdc",
+  "row_cache_path": "/home/sachin.chaudhary/ces_fl_runs/ff2_fully_matched_20261110_r1/shared_input_audit/rows_PRIVATE.json",
+  "source_sha256": "8c25ba8cb844b059adbbce75b57785a156333182afa2d5d576985997f2d36733",
+  "cache_builder_sha256": "f4579e575f887204c6b384d04ab21fa9a0e53f43bd4ba9c6f5c61edff178f9ec",
+  "fresh_full_decode": true,
+  "fresh_all_image_hashes": true,
+  "prior_canonical_inventory_sha256": "9f5d4b587d5dd87fe04a7db9b353c3aabc043b892c931dfd7f2b059112276621",
+  "cross_split_content_overlap": 0,
+  "test_read": false,
+  "audit_threads": 32,
+  "elapsed_seconds": 112.83412804454565
+}

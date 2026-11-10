@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "selected_checkpoint_history_rows": 7,
+  "method_axis_rows_recomputed": 42,
+  "group_rate_rows_checked": 217,
+  "source_files_hash_verified": 31,
+  "common_recipe_configs_verified": 21,
+  "real_cuda_fingerprints_equal": 7,
+  "models_executed": false,
+  "private_predictions_read": false,
+  "test_results_claimed": false,
+  "scope": "Aggregate arithmetic, recorded selection and exact evidence/source copies; no inference or checkpoint replay."
+}

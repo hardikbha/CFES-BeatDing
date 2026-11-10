@@ -1,0 +1,35 @@
+{
+  "packaged_management_utc": "2026-11-10T04:38:16.747429+00:00",
+  "metric_snapshot_management_utc": "2026-11-10T04:31:31+00:00",
+  "split": "SELECT/validation",
+  "seed": 17,
+  "training_incomplete_at_metric_snapshot": true,
+  "epochs_recorded": 5,
+  "planned_epochs": 10,
+  "planned_downstream_seeds": [
+    17,
+    7,
+    27
+  ],
+  "shared_encoder_pretraining_seed": 17,
+  "source_commit": "b7fa561b43a659b24efaf1e928d6bbf41a839b63",
+  "source_hashes": {
+    "shared.py": "ff8b569ac606c9eefb736259c5a4524d10c504a908eb86f2b944c6493c78fd3a",
+    "core.py": "8c25ba8cb844b059adbbce75b57785a156333182afa2d5d576985997f2d36733",
+    "ported_losses.py": "daf5cb7538c76fe81abb1af5b35fe851b5a603ca8f812614e4f9673bfd36def3",
+    "data_cache.py": "f4579e575f887204c6b384d04ab21fa9a0e53f43bd4ba9c6f5c61edff178f9ec"
+  },
+  "methods": [
+    "bce",
+    "dag",
+    "daw",
+    "ding_sfd_gda",
+    "lh",
+    "lh_ramp",
+    "lh_low"
+  ],
+  "models_replayed_for_this_packaging": false,
+  "test_predictions_read_for_packaging": false,
+  "snapshot_checkpoint_hashes_available": false,
+  "verification_scope": "Numeric/selection/hash/exposure evidence; interim history aggregates, not final selected-checkpoint replay or TEST results."
+}
