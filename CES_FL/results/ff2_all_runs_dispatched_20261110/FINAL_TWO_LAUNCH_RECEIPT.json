@@ -1,0 +1,53 @@
+{
+  "observed_host_unix": 1794300596.528042,
+  "status": "BOTH_FINAL_QUEUED_RUNS_TRAINING",
+  "records": [
+    {
+      "run": "lh_ramp_s27",
+      "host": "gpu01",
+      "gpu": {
+        "index": 4,
+        "uuid": "GPU-9b669a06-9156-a98e-2194-36f2fc11d7ca",
+        "free_mib": 81059,
+        "util": 0,
+        "available_mib": 81059
+      },
+      "worker": "worker_gpu01_1",
+      "stage": "TRAINING",
+      "worker_alive": true,
+      "training_process_group_alive": true,
+      "CUDA_checks": "PASS",
+      "matched_initialisation_and_forward_inputs": "PASS",
+      "latest_training_event": {
+        "arm": "D",
+        "epoch": 1,
+        "step": 1000,
+        "loss": 0.000520834350027144
+      }
+    },
+    {
+      "run": "lh_low_s27",
+      "host": "gpu01",
+      "gpu": {
+        "index": 6,
+        "uuid": "GPU-61f54ca7-3cee-1c93-def3-118523e95241",
+        "free_mib": 79767,
+        "util": 0,
+        "available_mib": 79767
+      },
+      "worker": "worker_gpu01_2",
+      "stage": "TRAINING",
+      "worker_alive": true,
+      "training_process_group_alive": true,
+      "CUDA_checks": "PASS",
+      "matched_initialisation_and_forward_inputs": "PASS",
+      "latest_training_event": {
+        "arm": "D",
+        "epoch": 1,
+        "step": 1000,
+        "loss": 0.000520834350027144
+      }
+    }
+  ],
+  "model_configurations_changed": false
+}

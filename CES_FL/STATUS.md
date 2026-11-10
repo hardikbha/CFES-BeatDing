@@ -1,5 +1,9 @@
 # Current CES-FL status
 
+## All 21 FF2 runs dispatched — 10 November 2026
+
+Observed management UTC: 2026-11-10T09:02:02.202427+00:00. [Verified dispatch and results snapshot](results/ff2_all_runs_dispatched_20261110/README.md): 15 complete with TEST, 6 active, zero queued or failed. Ramp seed27 is training on gpu01 GPU4; low-response seed27 on gpu01 GPU6. Actual CUDA/common-initialization checks and live process groups passed. Final three-seed tables remain pending except for Ding.
+
 ## FF2 completed-seed TEST progress — 10 November 2026
 
 Observed management UTC: 2026-11-10T06:47:22.308162+00:00. [Verified execution snapshot and completed-seed TEST metrics](results/ff2_fully_matched_progress_20261110T0644Z/README.md): 8/21 complete, 10 active, 3 queued, 0 failed. All seven seed17 methods and Ding seed7 have TEST results. All ten active child process groups were verified alive. Additional standby dispatch raised usage to ten physical GPUs; no further GPU was eligible and both PBS queues were at their running limits. Final three-seed results remain pending. The earlier validation snapshot is preserved.
