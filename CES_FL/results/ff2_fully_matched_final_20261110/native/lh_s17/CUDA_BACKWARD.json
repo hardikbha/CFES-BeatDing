@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "method": "lh",
+  "seed": 17,
+  "device": "cuda",
+  "suite_hashes": {
+    "shared.py": "ff8b569ac606c9eefb736259c5a4524d10c504a908eb86f2b944c6493c78fd3a",
+    "core.py": "8c25ba8cb844b059adbbce75b57785a156333182afa2d5d576985997f2d36733",
+    "ported_losses.py": "daf5cb7538c76fe81abb1af5b35fe851b5a603ca8f812614e4f9673bfd36def3",
+    "data_cache.py": "f4579e575f887204c6b384d04ab21fa9a0e53f43bd4ba9c6f5c61edff178f9ec"
+  },
+  "parameters": {
+    "total": 20809001,
+    "trainable": 6790433
+  },
+  "initial_parameter_fingerprint": "791cfa4aa904fa6382506e92b71bf60220fcadf37d29d6078e18ecd15c661716",
+  "losses": {
+    "total": 0.9491435885429382,
+    "classification": 0.6877130270004272,
+    "classification_objective": 0.6877130270004272,
+    "error_fairness": 0.0016466304659843445,
+    "sensitivity": 2.4734854698181152,
+    "sham": 0.2079675793647766,
+    "alignment": 0.030249979346990585,
+    "gda": 0.0020944776479154825
+  },
+  "real_pairs": 1,
+  "optimizer_steps_in_discarded_model": 1,
+  "test_read": false,
+  "bn_frozen": true,
+  "data_forward_fingerprint": "c1d4b228fec3b3c99134a484ba7e797efadbad0ebea512ddcc405e4fc61f9ab3"
+}

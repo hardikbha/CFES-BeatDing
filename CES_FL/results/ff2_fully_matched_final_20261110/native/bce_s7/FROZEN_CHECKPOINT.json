@@ -1,0 +1,14 @@
+{
+  "status": "FROZEN",
+  "checkpoint_sha256": "7e5777634fe0d9a88e859c7fd0ae7fb3097a68e37bcb172ecff54abe64194ce8",
+  "suite_config_digest": "9af9bb4f1b6f8753dcc30f2692ef302f782e5fabd26910be6c4e552a4c1d2498",
+  "suite_hashes": {
+    "shared.py": "ff8b569ac606c9eefb736259c5a4524d10c504a908eb86f2b944c6493c78fd3a",
+    "core.py": "8c25ba8cb844b059adbbce75b57785a156333182afa2d5d576985997f2d36733",
+    "ported_losses.py": "daf5cb7538c76fe81abb1af5b35fe851b5a603ca8f812614e4f9673bfd36def3",
+    "data_cache.py": "f4579e575f887204c6b384d04ab21fa9a0e53f43bd4ba9c6f5c61edff178f9ec"
+  },
+  "selected_epoch": 10,
+  "threshold_logit": -0.3916682600975036,
+  "test_read": false
+}

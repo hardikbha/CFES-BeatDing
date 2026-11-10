@@ -1,0 +1,32 @@
+{
+  "observed_management_utc": "2026-11-10T11:47:11.033219+00:00",
+  "status": "ALL_21_COMPLETED_WITH_TEST",
+  "training_runs": 21,
+  "methods": 7,
+  "downstream_seeds": [
+    7,
+    17,
+    27
+  ],
+  "shared_pretrained_encoder_seed": 17,
+  "epochs_per_run": 10,
+  "TRAIN_images": 218266,
+  "SELECT_images": 31107,
+  "TEST_images": 87564,
+  "TEST_axis_rows": 126,
+  "primary_mean_SD_rows": 63,
+  "selected_ramp_and_low_epochs": {
+    "lh_ramp_s17": 2,
+    "lh_low_s17": 2,
+    "lh_ramp_s7": 2,
+    "lh_low_s7": 2,
+    "lh_ramp_s27": 2,
+    "lh_low_s27": 2
+  },
+  "source_files_unchanged": 31,
+  "models_executed_during_publication": false,
+  "private_predictions_read": false,
+  "checkpoint_binaries_rehashed_during_publication": false,
+  "conditional_downstream_replication": true,
+  "no_significance_claim": true
+}

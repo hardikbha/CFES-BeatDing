@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "completed_training_TEST_receipts": 21,
+  "selection_epochs_checked": 210,
+  "matched_configurations": 21,
+  "matched_initialisation_and_actual_input_seeds": 3,
+  "TEST_method_axis_rows_checked": 126,
+  "primary_means_and_sample_SDs_checked": 63,
+  "native_family_rows_checked": 147,
+  "all_ramp_low_selected_before_response": true,
+  "exact_source_copies_checked": 31,
+  "AUC_crosschecked_against_native_reports": true,
+  "AUC_recomputed_from_private_predictions": false,
+  "models_executed": false,
+  "checkpoint_binaries_read": false
+}

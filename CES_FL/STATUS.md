@@ -1,5 +1,9 @@
 # Current CES-FL status
 
+## Final FF2 common-recipe comparison — 10 November 2026
+
+Observed management UTC: 2026-11-10T11:47:11.033219+00:00. [Final verified three-seed TEST results](results/ff2_fully_matched_final_20261110/README.md): all 21 runs complete, zero failed or pending. BCE has the highest mean AUC; DAW the lowest mean primary intersectional disparity. Full L_H is worse on primary disparity and AUC than the controlled Ding adaptation. Ramp/low selected epoch 2 before response activation for all three seeds, so their rows do not attribute benefit to response learning. Mean/SD tables, all six axes, family results and native receipts are published. Historical interim snapshots remain unchanged.
+
 ## All 21 FF2 runs dispatched — 10 November 2026
 
 Observed management UTC: 2026-11-10T09:02:02.202427+00:00. [Verified dispatch and results snapshot](results/ff2_all_runs_dispatched_20261110/README.md): 15 complete with TEST, 6 active, zero queued or failed. Ramp seed27 is training on gpu01 GPU4; low-response seed27 on gpu01 GPU6. Actual CUDA/common-initialization checks and live process groups passed. Final three-seed tables remain pending except for Ding.
