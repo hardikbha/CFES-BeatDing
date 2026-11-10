@@ -1,0 +1,7 @@
+test_stdlib_cprofile_and_optimizer_import (test_environment.ProfileEnvironmentTests.test_stdlib_cprofile_and_optimizer_import) ... ok
+test_timing_module_import_is_inert (test_environment.ProfileEnvironmentTests.test_timing_module_import_is_inert) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 4.746s
+
+OK

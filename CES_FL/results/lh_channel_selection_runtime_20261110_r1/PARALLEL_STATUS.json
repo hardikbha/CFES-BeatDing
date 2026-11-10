@@ -1,0 +1,16 @@
+{
+  "status": "BLOCKED_RUNTIME_FIT",
+  "host": "gpu02",
+  "pid": 1602227,
+  "observed_host_utc": "2026-11-10T10:33:52.360442+00:00",
+  "aggregate_GPU_seconds": 541.5284921787679,
+  "aggregate_GPU_hours_limit": 2,
+  "maximum_parallel_arms": 3,
+  "active_lease_count": 1,
+  "source_commit": "1a6d63db6baf7f6ad2a8e842a31341d2c128de25",
+  "estimates_seconds": {
+    "none": 53641.305156750605,
+    "random": 30969.67094452586,
+    "informed": 27440.971481269225
+  }
+}

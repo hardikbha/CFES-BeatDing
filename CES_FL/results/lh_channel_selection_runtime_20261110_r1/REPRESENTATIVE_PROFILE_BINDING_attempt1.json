@@ -1,0 +1,10 @@
+{
+  "commit": "b4dced5dd64310723467081d9bc97f585394daee",
+  "files": {
+    "README.md": "aa293fdf7d66d19a37c93a02b54376ffba64cdcf41277f2f65e644c5e3bbd6c8",
+    "launcher.py": "7fb5ed84bb62a55aee0c85b1bdf82327e207bbdfa15cfffde1ddb91c48ecd205",
+    "profile.py": "c2b54a79861071b875cb618c63d7e3b7f7d177c6ef984e8f6a6a0db2f7401324"
+  },
+  "syntax_checked": true,
+  "production_training_authorized_by_profile": false
+}

@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "observed_host_unix": 1794308760.5158517,
+  "controllers": [
+    {
+      "record": "PARALLEL_CONTROLLER_LAUNCH_attempt2.json",
+      "pid": 1602227,
+      "alive": false
+    },
+    {
+      "record": "REPRESENTATIVE_PROFILE_LAUNCH.json",
+      "pid": 2094601,
+      "alive": false
+    },
+    {
+      "record": "REPRESENTATIVE_PROFILE_LAUNCH_attempt2.json",
+      "pid": 2128162,
+      "alive": false
+    }
+  ],
+  "lease_files_present": {
+    "/tmp/scf_gpu_locks/gpu6/task_lhchannel_primary.json": false,
+    "/tmp/scf_gpu_locks/gpu7/task_lhchannel_representative_profile.json": false
+  },
+  "diagnostic_GPU_leases_released": true,
+  "production_training_directories_present": []
+}

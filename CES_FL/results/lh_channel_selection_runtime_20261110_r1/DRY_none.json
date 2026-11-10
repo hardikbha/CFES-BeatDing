@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "source_sha256": "95574295b76f16f5e5d8f70f01502848b4616fc7437030a5dfdf2ff1219f62f0",
+  "config_digest": "3b35ca1befd0f646e4d27422a137c4e923df2bc56519c7f17e8256a65fba29c4",
+  "arm": "D",
+  "error_control": "hierarchical_real",
+  "alignment_multiplier": 1.0,
+  "parameters": {
+    "total": 20809001,
+    "trainable": 6790433,
+    "encoder": 20806952,
+    "head": 2049,
+    "encoder_trainable": 6788384,
+    "head_type": "linear",
+    "encoder_policy": "exit",
+    "mask_buffer_elements": 2048,
+    "masked_channels": 0,
+    "structural_parameter_reduction": 0,
+    "inference_group_labels_required": false
+  },
+  "head_type": "linear",
+  "train_calibration": {
+    "threshold_logit": -3.4656229019165035,
+    "n_real": 2048,
+    "allowed_fp": 204,
+    "achieved_fp": 204,
+    "achieved_fpr": 0.099609375,
+    "requested_fpr": 0.1,
+    "test_fpr_guaranteed": false
+  },
+  "seconds_one_optimizer_step": 2.079517772421241,
+  "peak_cuda_bytes": 1017978880,
+  "losses": {
+    "total": 0.8370048403739929,
+    "classification": 0.00907540787011385,
+    "error_fairness": 0.040799789130687714,
+    "original_sensitivity": 0.43754062056541443,
+    "aux_sensitivity": 0.8169311881065369,
+    "response_alignment": 0.4756341278553009,
+    "original_control_stability": 0.3740503787994385,
+    "aux_control_stability": 1.1606335639953613
+  },
+  "real_pair_count": 1,
+  "optimizer_steps_in_discarded_model": 1,
+  "scientific_intervention_validity": false,
+  "auxiliary_axis_checked": "gender_race",
+  "changed_error_gradient_norm": 6.892593399885152,
+  "device": "cuda",
+  "torch": "2.7.0+cu126"
+}

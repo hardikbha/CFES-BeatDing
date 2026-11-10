@@ -1,0 +1,9 @@
+{
+  "status": "COMPLETED_PROFILE_RUNTIME_BLOCK",
+  "current_GPU_seconds": 143.23434047587216,
+  "prior_GPU_seconds": 722.3442323803902,
+  "aggregate_cohort_GPU_seconds": 865.5785728562623,
+  "aggregate_cohort_GPU_hours": 0.24043849246007287,
+  "limit_GPU_hours": 2,
+  "lease_released": true
+}

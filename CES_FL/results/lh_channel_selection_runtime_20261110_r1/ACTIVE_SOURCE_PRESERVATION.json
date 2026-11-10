@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "pinned_source_commit": "b7fa561b43a659b24efaf1e928d6bbf41a839b63",
+  "tracked_source_and_config_hashes_verified": 31,
+  "source_files_changed": 0,
+  "jobs_terminated": 0,
+  "new_Ding_jobs": 0,
+  "TEST_CAL_data_accessed_by_this_task": false
+}

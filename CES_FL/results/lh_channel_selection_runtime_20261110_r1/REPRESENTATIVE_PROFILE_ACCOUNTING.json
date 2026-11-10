@@ -1,0 +1,9 @@
+{
+  "status": "FAILED",
+  "current_GPU_seconds": 180.80808032117784,
+  "prior_GPU_seconds": 541.5361520592123,
+  "aggregate_cohort_GPU_seconds": 722.3442323803902,
+  "aggregate_cohort_GPU_hours": 0.20065117566121948,
+  "limit_GPU_hours": 2,
+  "lease_released": true
+}

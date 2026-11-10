@@ -1,0 +1,37 @@
+{
+  "status": "BLOCKED_RUNTIME_FIT",
+  "observed_management_utc": "2026-11-10T11:18:08.742143+00:00",
+  "source_commit": "1a6d63db6baf7f6ad2a8e842a31341d2c128de25",
+  "software_CPU_CUDA_checks": "PASS",
+  "teacher_data_and_review_binding_checks": "PASS",
+  "human_review": "Qualification passed for panel-level chat attestation attributed to Aashish Negi; individual case observations not supplied",
+  "TRAIN_only_masks": "FROZEN",
+  "all_three_real_input_backwards": "PASS",
+  "representative_runtime_profile": "PASS",
+  "per_arm_30_minute_gate": "FAIL",
+  "two_aggregate_GPU_hour_gate": "FAIL",
+  "conservative_projected_minutes_per_arm": {
+    "none": 60.79242919240186,
+    "random": 56.0483108584049,
+    "informed": 55.72640946288191
+  },
+  "mean_rate_optimizer_only_projected_minutes": {
+    "none": 33.98614409109228,
+    "random": 33.6052153227909,
+    "informed": 33.464745207538364
+  },
+  "conservative_projected_total_GPU_hours_including_checks": 3.1165576524361263,
+  "actual_GPU_hours_used": 0.24043849387464838,
+  "production_training": {
+    "none": "NOT_STARTED",
+    "random": "NOT_STARTED",
+    "informed": "NOT_STARTED"
+  },
+  "benefit_evidence": "UNASSESSED_NO_PRODUCTION_RESULT",
+  "GPU_leases_released": true,
+  "TEST_CAL_access": false,
+  "new_Ding_experiments": false,
+  "existing_jobs_terminated": false,
+  "new_budget_granted": false,
+  "no_automatic_next_run": true
+}

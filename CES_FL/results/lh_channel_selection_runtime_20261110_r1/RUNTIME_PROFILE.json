@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "source_sha256": "95574295b76f16f5e5d8f70f01502848b4616fc7437030a5dfdf2ff1219f62f0",
+  "MASKS_sha256": "55de95a12c6bcd024a213cf6beca9b3267af94d3ce30f44f0ea457950a2b8fdb",
+  "setup_seconds": 30.734139135107398,
+  "TRAIN_real_calibration_forward_seconds": 4.183206953108311,
+  "VAL_forward_seconds": 64.14704708755016,
+  "VAL_rows": 31107,
+  "TRAIN_real_calibration_rows": 2048,
+  "validation_metrics_computed": false,
+  "validation_logits_retained": false,
+  "masks_selected_before_VAL": true,
+  "TEST_CAL_access": false
+}

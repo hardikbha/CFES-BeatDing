@@ -1,0 +1,28 @@
+{
+  "status": "BLOCKED_RUNTIME_FIT",
+  "steps_per_arm": 20463,
+  "estimates_seconds": {
+    "none": 53641.305156750605,
+    "random": 30969.67094452586,
+    "informed": 27440.971481269225
+  },
+  "actual_setup_GPU_seconds": 541.5235544685274,
+  "dry_runs": {
+    "none": {
+      "wall_seconds": 52.58527550660074,
+      "step_seconds": 2.079517772421241
+    },
+    "random": {
+      "wall_seconds": 47.59081373922527,
+      "step_seconds": 1.1931713242083788
+    },
+    "informed": {
+      "wall_seconds": 50.08216931670904,
+      "step_seconds": 1.0552169885486364
+    }
+  },
+  "concurrency_safety_factor": 1.25,
+  "per_arm_cap_seconds": 1800,
+  "aggregate_GPU_seconds_limit": 7200,
+  "masks_frozen_before_VAL_profile": true
+}

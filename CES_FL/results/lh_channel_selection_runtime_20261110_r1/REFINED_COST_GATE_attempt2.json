@@ -1,0 +1,15 @@
+{
+  "status": "BLOCKED_RUNTIME_FIT",
+  "estimates_seconds": {
+    "none": 3647.5457515441117,
+    "random": 3362.8986515042943,
+    "informed": 3343.584567772915
+  },
+  "prior_and_current_setup_GPU_seconds": 865.5740689132363,
+  "steps_per_arm": 20463,
+  "original_aggregate_limit_GPU_seconds": 7200,
+  "representative_profile_sha256": "972abbf464caaaa02760f06a1eb0b5b18651cda98ea2cadabf82d20ee9762e60",
+  "cost_safety": "Worst20step block x1.10 plus measured overhead and another1.10 margin",
+  "single_step_diagnostic_was_not_steady_state": true,
+  "production_training_started": false
+}

@@ -1,0 +1,30 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/sachin.chaudhary/ces_fl_sources/lh-channel-selection-profile-20261110/profile.py", line 69, in <module>
+    p=argparse.ArgumentParser();p.add_argument('--out',required=True);a=p.parse_args();run(a.out)
+                                                                                       ^^^^^^^^^^
+  File "/home/sachin.chaudhary/ces_fl_sources/lh-channel-selection-profile-20261110/profile.py", line 30, in run
+    m.seed_all(c['seed']);start=time.perf_counter();model=m.load_initial(c).to(device);opt=m.build_optimizer(model,c)
+                                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/ces_fl_sources/lh-channel-selection-1a6d63db6baf-20261110/CES_FL/src/ces_fl_lh_channel_selection.py", line 1079, in build_optimizer
+    return torch.optim.AdamW(groups, weight_decay=c['weight_decay'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin.chaudhary/.conda/envs/aiface/lib/python3.12/site-packages/torch/optim/adamw.py", line 37, in __init__
+    super().__init__(
+  File "/home/sachin.chaudhary/.conda/envs/aiface/lib/python3.12/site-packages/torch/optim/adam.py", line 100, in __init__
+    super().__init__(params, defaults)
+  File "/home/sachin.chaudhary/.conda/envs/aiface/lib/python3.12/site-packages/torch/optim/optimizer.py", line 369, in __init__
+    self.add_param_group(cast(dict, param_group))
+  File "/home/sachin.chaudhary/.conda/envs/aiface/lib/python3.12/site-packages/torch/_compile.py", line 46, in inner
+    import torch._dynamo
+  File "/home/sachin.chaudhary/.conda/envs/aiface/lib/python3.12/site-packages/torch/_dynamo/__init__.py", line 13, in <module>
+    from . import config, convert_frame, eval_frame, resume_execution
+  File "/home/sachin.chaudhary/.conda/envs/aiface/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 26, in <module>
+    import cProfile
+  File "/home/sachin.chaudhary/.conda/envs/aiface/lib/python3.12/cProfile.py", line 25, in <module>
+    runctx.__doc__ = _pyprofile.runctx.__doc__
+                     ^^^^^^^^^^^^^^^^^
+AttributeError: module 'profile' has no attribute 'runctx'

@@ -1,0 +1,9 @@
+{
+  "pid": 2128162,
+  "host": "gpu02",
+  "started_host_unix": 1794308564.5480456,
+  "profile_commit": "3be06cfc21f30c648e5f84f47088660c555e696a",
+  "diagnostic_only": true,
+  "deliberate_helper_correction": true,
+  "production_training_launch": false
+}

@@ -1,0 +1,20 @@
+{
+  "status": "VERIFIED",
+  "reservation_kind": "authorized_pool_lease",
+  "reservation_id": "/tmp/scf_gpu_locks/gpu7/task_lhchannel_representative_profile.json",
+  "ngpus": 1,
+  "gpu_uuid": "GPU-65f63cc5-9366-5c2d-196a-6e7a0a62c1e8",
+  "verified_by": "Codex operator; explicit user pool and parallel authorization",
+  "remaining_study_gpu_hours": 23.353208537384763,
+  "budget_ledger_reference": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_c332fd34_20261103/budget_ledger.json",
+  "cohort_start_utc": "2026-11-10T10:24:50.832000+00:00",
+  "cohort_deadline_utc": "2026-11-10T12:24:50.832000+00:00",
+  "cohort_aggregate_GPU_hour_limit": 2,
+  "maximum_concurrent_configuration_count": 3,
+  "pbs_allocation_claimed": false,
+  "exclusive_device_ownership_claimed": false,
+  "control_commit": "777d5d3c89798f4f95dfdf7fa894f14ca8899fe2",
+  "user_override_file": "/home/sachin.chaudhary/ces_fl_runs/lh_channel_selection_20261110_r1_operator_1a6d63d/USER_PARALLEL_SCHEDULING_OVERRIDE.json",
+  "diagnostic_only": true,
+  "original_cohort_window_preserved": true
+}

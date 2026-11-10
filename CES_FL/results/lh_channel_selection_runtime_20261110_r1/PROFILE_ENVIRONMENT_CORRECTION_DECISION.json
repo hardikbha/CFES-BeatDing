@@ -1,0 +1,18 @@
+{
+  "observed_management_utc": "2026-11-10T11:13:24.956006+00:00",
+  "decision": "Deliberate diagnostic helper correction; production cohort remains unstarted",
+  "failure": "Helper named profile.py shadowed Python stdlib profile when AdamW imported cProfile",
+  "old_profile_commit": "b4dced5dd64310723467081d9bc97f585394daee",
+  "new_profile_commit": "3be06cfc21f30c648e5f84f47088660c555e696a",
+  "prior_total_charged_GPU_seconds": 722.3442323803902,
+  "failed_attempt_GPU_seconds": 180.80808032117784,
+  "failed_attempt_optimizer_updates": 0,
+  "CUDA_lease_released": true,
+  "CPU_optimizer_import_regression_tests_passed": 2,
+  "original_fixed_cohort_window_preserved": true,
+  "aggregate_cohort_GPU_hour_limit": 2,
+  "per_arm_training_minutes_limit": 30,
+  "scientific_source_unchanged": true,
+  "settings_unchanged": true,
+  "no_automatic_retry": true
+}

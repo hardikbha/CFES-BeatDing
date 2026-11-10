@@ -1,0 +1,19 @@
+{
+  "observed_management_utc": "2026-11-10T11:07:46.128015+00:00",
+  "user_direction": "continue",
+  "prior_status": "BLOCKED_RUNTIME_FIT",
+  "diagnostic_issue": "Cold single joint-event dry-run includes an additional fairness-gradient derivative and is not the ordinary mixed-schedule step time",
+  "decision": "One separately identified bounded actual-schedule diagnostic; not a production retry or source/config change",
+  "profile_commit": "b4dced5dd64310723467081d9bc97f585394daee",
+  "profile_maximum_GPU_seconds": 720,
+  "warmup_steps_per_arm": 40,
+  "measured_steps_per_arm": 80,
+  "model_updates_discarded": true,
+  "source_commit_unchanged": "1a6d63db6baf7f6ad2a8e842a31341d2c128de25",
+  "prior_setup_GPU_seconds": 541.5361520592123,
+  "total_cohort_GPU_hours_limit": 2,
+  "per_arm_training_minutes_limit": 30,
+  "original_cohort_window_preserved": true,
+  "new_budget_granted": false,
+  "training_auto_launch": false
+}

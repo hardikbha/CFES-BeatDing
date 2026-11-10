@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "observed_management_utc": "2026-11-10T11:08:23.806711+00:00",
+  "masks_sha256": "55de95a12c6bcd024a213cf6beca9b3267af94d3ce30f44f0ea457950a2b8fdb",
+  "all_three_configs_matched_except_mask": true,
+  "all_full_LH_losses_retained": true,
+  "utility_rows": 1024,
+  "review_cases": 344,
+  "removed_channels": {
+    "none": 0,
+    "random": 41,
+    "informed": 41
+  },
+  "random_and_informed_eligible_pool_identical": true,
+  "three_real_input_backwards": "PASS",
+  "production_checkpoints_present": {
+    "none": false,
+    "random": false,
+    "informed": false
+  },
+  "human_review_basis": "Transcribed panel-level chat approval; individual case observations not supplied",
+  "TEST_CAL_access": false
+}

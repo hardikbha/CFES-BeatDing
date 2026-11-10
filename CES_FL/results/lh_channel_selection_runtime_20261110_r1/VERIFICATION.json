@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "matched_configurations": 3,
+  "real_input_backward_receipts": 3,
+  "fixed_mask_counts": [
+    0,
+    41,
+    41
+  ],
+  "representative_discarded_updates": 360,
+  "verified_runtime_gate": "BLOCKED_RUNTIME_FIT",
+  "production_runs_started": 0,
+  "cohort_GPU_hours": 0.24043849387464838,
+  "models_executed": false,
+  "private_predictions_read": false
+}

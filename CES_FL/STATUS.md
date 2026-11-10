@@ -1,3 +1,7 @@
+## Channel-selection runtime gate blocked — 10 November 2026
+
+Observed management UTC: 2026-11-10T11:18:08.742143+00:00. [Completed runtime audit](results/lh_channel_selection_runtime_20261110_r1/REPORT.md): CPU/CUDA, teacher/data, review binding, frozen TRAIN masks and all three backward checks passed. Representative optimizer-only projections are 33–34 minutes per arm, exceeding the fixed 30-minute cap; complete conservative cohort estimate is 3.12 GPU-hours, exceeding 2 hours. No production training or validation comparison. Actual charged time 0.2404 GPU-hours; leases released. TEST/CAL and other jobs preserved. Earlier running snapshots below are historical.
+
 ## Channel-selector qualified; bounded parallel setup — 10 November 2026
 
 Observed management UTC: 2026-11-10T10:39:52.733591+00:00. [Continuation](results/lh_channel_selection_parallel_20261110_r1/REPORT.md): Aashish Negi's panel-level chat approval was transcribed and qualification passed for 344 cases. The user explicitly permits three parallel arms while retaining two aggregate GPU-hours. CUDA checks passed on gpu02 GPU 6; the TRAIN-only mask audit and cost gates precede any production training. Scientific source 1a6d63d and existing jobs remain unchanged. No TEST/CAL or new Ding work.

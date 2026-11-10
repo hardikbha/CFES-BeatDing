@@ -1,0 +1,22 @@
+{
+  "aggregate_GPU_seconds": 541.5361520592123,
+  "aggregate_GPU_hours": 0.15042670890533677,
+  "limit_GPU_hours": 2,
+  "ledger": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_c332fd34_20261103/budget_ledger.json",
+  "state": "BLOCKED_RUNTIME_FIT",
+  "leases": [
+    {
+      "card": {
+        "index": 6,
+        "uuid": "GPU-3a2f4cf3-9b32-14c9-3deb-29e55d1123bb",
+        "free_mib": 75295,
+        "util": 0,
+        "available_mib": 75295
+      },
+      "entry": "/tmp/scf_gpu_locks/gpu6/task_lhchannel_primary.json",
+      "started": 11929264.489907373,
+      "ended": 11929806.026059432,
+      "label": "primary"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "status": "PASS_CLOSED_COHORT_ACCOUNTING",
+  "observed_management_utc": "2026-11-10T11:16:56.600424+00:00",
+  "ledger_sha256": "5a9e5cfacd75d3dd54eb0bd27b255b6acae12abcfefb645589254a64e1ffb440",
+  "cohort_GPU_hours": 0.24043849387464838,
+  "cohort_cap_GPU_hours": 2,
+  "cohort_reserved_GPU_hours": 0,
+  "global_recorded_charged_GPU_hours": 24.887229956489882,
+  "global_recorded_cap_GPU_hours": 48,
+  "global_recorded_reserved_GPU_hours": 0,
+  "sessions": [
+    {
+      "id": "lh_channel_selection_1a6d63d_parallel_20261110_r1",
+      "state": "BLOCKED_RUNTIME_FIT",
+      "ngpus": 1,
+      "elapsed_seconds": 541.5361520592123,
+      "reserved_gpu_hours": 2.0,
+      "accounting": "elapsed_seconds is summed physical-device-held seconds; ngpus1 is accounting multiplier"
+    },
+    {
+      "id": "lh_channel_selection_1a6d63d_representative_profile_20261110",
+      "state": "FAILED",
+      "ngpus": 1,
+      "elapsed_seconds": 180.8080831002444,
+      "reserved_gpu_hours": 1.8495732910946632,
+      "accounting": null
+    },
+    {
+      "id": "lh_channel_selection_1a6d63d_representative_profile_attempt2_20261110",
+      "state": "COMPLETED_PROFILE_RUNTIME_BLOCK",
+      "ngpus": 1,
+      "elapsed_seconds": 143.23434278927743,
+      "reserved_gpu_hours": 1.7993488243387805,
+      "accounting": null
+    }
+  ],
+  "no_budget_extension": true,
+  "no_budget_transfer": true
+}

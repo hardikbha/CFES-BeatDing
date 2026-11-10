@@ -1,0 +1,112 @@
+{
+  "status": "PASS",
+  "MASKS_sha256": "55de95a12c6bcd024a213cf6beca9b3267af94d3ce30f44f0ea457950a2b8fdb",
+  "masks_frozen": true,
+  "arms": {
+    "none": {
+      "status": "PASS",
+      "config_digest": "3b35ca1befd0f646e4d27422a137c4e923df2bc56519c7f17e8256a65fba29c4",
+      "source_sha256": "95574295b76f16f5e5d8f70f01502848b4616fc7437030a5dfdf2ff1219f62f0",
+      "mask_sha256": "55de95a12c6bcd024a213cf6beca9b3267af94d3ce30f44f0ea457950a2b8fdb",
+      "warmup_steps": 40,
+      "measured_steps": 80,
+      "optimizer_steps_in_discarded_model": 120,
+      "original_samples_measured": 2560,
+      "real_pairs_measured": 194,
+      "auxiliary_events_by_axis": {
+        "gender": 4,
+        "race": 4,
+        "age_bin": 4,
+        "skin_bin": 4,
+        "gender_race": 4
+      },
+      "mean_seconds_per_step": 0.09965150004718452,
+      "block_mean_step_seconds": [
+        0.08907284233719111,
+        0.09726729542016983,
+        0.12948371237143874,
+        0.08278215005993843
+      ],
+      "conservative_step_seconds": 0.14243208360858262,
+      "input_setup_seconds": 57.136113027110696,
+      "model_setup_seconds": 10.713956227526069,
+      "train_real_calibration_seconds": 5.641566244885325,
+      "total_profile_training_seconds": 13.37550021149218,
+      "training_checkpoint_saved": false,
+      "production_updates": 0,
+      "TEST_CAL_access": false,
+      "VAL_metrics_computed": false
+    },
+    "random": {
+      "status": "PASS",
+      "config_digest": "2fb6111be59446742d471ac993a601ec3b9b1feb82d53f087df02936284ee8e4",
+      "source_sha256": "95574295b76f16f5e5d8f70f01502848b4616fc7437030a5dfdf2ff1219f62f0",
+      "mask_sha256": "55de95a12c6bcd024a213cf6beca9b3267af94d3ce30f44f0ea457950a2b8fdb",
+      "warmup_steps": 40,
+      "measured_steps": 80,
+      "optimizer_steps_in_discarded_model": 120,
+      "original_samples_measured": 2560,
+      "real_pairs_measured": 194,
+      "auxiliary_events_by_axis": {
+        "gender": 4,
+        "race": 4,
+        "age_bin": 4,
+        "skin_bin": 4,
+        "gender_race": 4
+      },
+      "mean_seconds_per_step": 0.09853457065764815,
+      "block_mean_step_seconds": [
+        0.10594172570854425,
+        0.0915893773548305,
+        0.11854475429281593,
+        0.07806242527440191
+      ],
+      "conservative_step_seconds": 0.13039922972209753,
+      "input_setup_seconds": 57.136113027110696,
+      "model_setup_seconds": 4.310743123292923,
+      "train_real_calibration_seconds": 3.59536999091506,
+      "total_profile_training_seconds": 12.32716941460967,
+      "training_checkpoint_saved": false,
+      "production_updates": 0,
+      "TEST_CAL_access": false,
+      "VAL_metrics_computed": false
+    },
+    "informed": {
+      "status": "PASS",
+      "config_digest": "059126aa1f935188bc91e12cd6ee130f386a1c8a1849da6cb3b78a42b9b2f0b0",
+      "source_sha256": "95574295b76f16f5e5d8f70f01502848b4616fc7437030a5dfdf2ff1219f62f0",
+      "mask_sha256": "55de95a12c6bcd024a213cf6beca9b3267af94d3ce30f44f0ea457950a2b8fdb",
+      "warmup_steps": 40,
+      "measured_steps": 80,
+      "optimizer_steps_in_discarded_model": 120,
+      "original_samples_measured": 2560,
+      "real_pairs_measured": 194,
+      "auxiliary_events_by_axis": {
+        "gender": 4,
+        "race": 4,
+        "age_bin": 4,
+        "skin_bin": 4,
+        "gender_race": 4
+      },
+      "mean_seconds_per_step": 0.09812269522808492,
+      "block_mean_step_seconds": [
+        0.10620638951659203,
+        0.09122488889843225,
+        0.1177703837864101,
+        0.07728911871090531
+      ],
+      "conservative_step_seconds": 0.1295474221650511,
+      "input_setup_seconds": 57.136113027110696,
+      "model_setup_seconds": 4.169248064979911,
+      "train_real_calibration_seconds": 3.5999617110937834,
+      "total_profile_training_seconds": 12.336334578692913,
+      "training_checkpoint_saved": false,
+      "production_updates": 0,
+      "TEST_CAL_access": false,
+      "VAL_metrics_computed": false
+    }
+  },
+  "scientific_configurations_changed": false,
+  "VAL_scores_used": false,
+  "TEST_CAL_access": false
+}
