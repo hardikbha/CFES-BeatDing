@@ -1,0 +1,9 @@
+{
+  "python": "3.12.11 | packaged by Anaconda, Inc. | (main, Jun  5 2025, 13:09:17) [GCC 11.2.0]",
+  "torch": "2.7.0+cu126",
+  "numpy": "2.2.6",
+  "pillow": "11.3.0",
+  "sklearn": "1.7.2",
+  "cuda_visible_devices": "",
+  "CUDA_available": false
+}

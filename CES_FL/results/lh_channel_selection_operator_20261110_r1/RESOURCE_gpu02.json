@@ -1,0 +1,37 @@
+{
+  "observed_host_unix": 1794303144.9814715,
+  "host": "gpu02",
+  "existing_jobs": [
+    {
+      "run": "daw_s27",
+      "worker_alive": true,
+      "training_or_evaluation_process_alive": true,
+      "gpu": 6
+    }
+  ],
+  "eligible_pool_capacity_observation": [
+    {
+      "index": 7,
+      "uuid": "GPU-65f63cc5-9366-5c2d-196a-6e7a0a62c1e8",
+      "free_mib": 30591,
+      "util": 0,
+      "available_mib": 30591
+    },
+    {
+      "index": 5,
+      "uuid": "GPU-bff97893-385b-6f3f-831b-113284c2e1f1",
+      "free_mib": 26369,
+      "util": 0,
+      "available_mib": 26369
+    },
+    {
+      "index": 4,
+      "uuid": "GPU-ee335748-8273-2d67-42a5-d45463027c1b",
+      "free_mib": 26351,
+      "util": 0,
+      "available_mib": 26351
+    }
+  ],
+  "new_proposal_lease_created": false,
+  "new_proposal_CUDA_execution": false
+}

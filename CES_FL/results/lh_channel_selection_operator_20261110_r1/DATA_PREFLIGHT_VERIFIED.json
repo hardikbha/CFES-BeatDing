@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "fresh_preflight_sha256": "5a770f91ed445346626dcbfc963925a917cb5c7af92333c72af22e6e313cd031",
+  "fresh_inventory_sha256": "9f5d4b587d5dd87fe04a7db9b353c3aabc043b892c931dfd7f2b059112276621",
+  "teacher_inventory_sha256": "9f5d4b587d5dd87fe04a7db9b353c3aabc043b892c931dfd7f2b059112276621",
+  "inventory_hash_records_match": true,
+  "fresh_decoded_images": 249373,
+  "train_rows": 218266,
+  "val_rows": 31107,
+  "cross_split_content_overlap": 0,
+  "source_sha256": "95574295b76f16f5e5d8f70f01502848b4616fc7437030a5dfdf2ff1219f62f0",
+  "bound_config_digest": "b6a965229b07ce7f2afbd8543cd13001351536061dd03e9e0fdcd5878f7d3429",
+  "context_digest": "b6a965229b07ce7f2afbd8543cd13001351536061dd03e9e0fdcd5878f7d3429",
+  "real_TEST_CAL_access": false
+}

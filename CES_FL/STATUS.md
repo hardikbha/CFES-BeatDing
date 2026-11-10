@@ -1,3 +1,7 @@
+## Channel-selection operator verification — 10 November 2026
+
+Observed management UTC: 2026-11-10T09:49:29.647376+00:00. [Actual operator audit](results/lh_channel_selection_operator_20261110_r1/REPORT.md): pinned1a6d63d, fresh14CPUtests and native/masked lifecycle PASS; teacher, manifest and all249,373image hashes match. New86-source/344-case panel is prepared and pixel-replayed. **BLOCKED: zero named-human reviews and no qualification receipt.** No CUDA, masks, production training, TEST/CAL access or new Ding work. Active jobs and source/config files are preserved. Allocation/cost gates remain unreached; recorded ledger arithmetic is documented without a new reservation.
+
 ## FairForge-2 baseline preparation — 2026-11-03T11:33:27.003004+00:00
 
 ## Full L_H channel-selection extension — 10 November2026

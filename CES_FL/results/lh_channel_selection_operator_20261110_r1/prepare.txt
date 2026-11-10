@@ -1,0 +1,3 @@
+{"status": "BOUND", "config_sha256": "b6a965229b07ce7f2afbd8543cd13001351536061dd03e9e0fdcd5878f7d3429", "parameters": {"total": 20809001, "trainable": 6790433}}
+{"status": "PREFLIGHT_PASS", "train": 218266, "val": 31107}
+{"status": "REVIEW_PENDING", "sources": 86, "cases": 344}

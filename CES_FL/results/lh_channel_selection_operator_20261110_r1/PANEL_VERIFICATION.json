@@ -1,0 +1,30 @@
+{
+  "status": "SOFTWARE_REPLAY_PASS_HUMAN_VALIDITY_UNREVIEWED",
+  "source_sha256": "95574295b76f16f5e5d8f70f01502848b4616fc7437030a5dfdf2ff1219f62f0",
+  "preview_sha256": "441dcf264c38a73c3e5929a0869e2f36a757ea7d8c0a227a685c9fbbb0ef4a65",
+  "pending_review_sha256": "2794e72c738eae68b6e010e80611ce5e689d18c934503f1238783c4652c11c75",
+  "cases": 344,
+  "unique_sources": 86,
+  "all_review_sheets_match_source_runtime": true,
+  "zero_mask_cases": 0,
+  "identical_control_probe_tensors": 0,
+  "source_counts_by_joint_group": {
+    "Female-Asian": 9,
+    "Female-Black": 11,
+    "Female-Others": 11,
+    "Female-White": 11,
+    "Male-Asian": 10,
+    "Male-Black": 9,
+    "Male-Others": 15,
+    "Male-White": 10
+  },
+  "human_reviewed_cases": 0,
+  "qualification_exists": false,
+  "all_cases_retained": true,
+  "no_approvals_written": true,
+  "GPU_hours": 0,
+  "real_TEST_CAL_access": false,
+  "prior_preview_sources": 22,
+  "prior_preview_sources_retained": 22,
+  "all_prior_stratified_sources_retained": true
+}

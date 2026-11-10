@@ -1,0 +1,79 @@
+{
+  "status": "PASS",
+  "source_commit": "1a6d63db6baf7f6ad2a8e842a31341d2c128de25",
+  "synthetic_only": true,
+  "real_TEST_CAL_access": false,
+  "GPU_hours": 0,
+  "checks": [
+    {
+      "check": "environment",
+      "command": [
+        "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+        "-c",
+        "import json,sys,torch,numpy,PIL,sklearn;assert not torch.cuda.is_available();print(json.dumps(dict(python=sys.version,torch=torch.__version__,numpy=numpy.__version__,pillow=PIL.__version__,sklearn=sklearn.__version__,cuda_visible_devices=__import__(\"os\").environ[\"CUDA_VISIBLE_DEVICES\"],CUDA_available=False)))"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 12.750466331839561,
+      "log_sha256": "2bbafe2e3c1f12f496f3e3fd8cd937d41f85f57875f2f0e19da68ffedcb381cb"
+    },
+    {
+      "check": "unit_tests",
+      "command": [
+        "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "CES_FL/tests",
+        "-p",
+        "test_lh_channel_selection.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 3.221585638821125,
+      "log_sha256": "4f0d76a480840fd62d1df849deae17243173447ff0ec717d8fc5f7fd1d5cde6b"
+    },
+    {
+      "check": "selector_smoke",
+      "command": [
+        "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+        "CES_FL/src/ces_fl_lh_channel_selection.py",
+        "selector-smoke",
+        "--out",
+        "/home/sachin.chaudhary/cesel_ma_audit_logs/lh_channel_selection_20261110_1a6d63d/selector_smoke"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 8.833060512784868,
+      "log_sha256": "762e3313bb9ecf482f6b8f0f4108cf865045ab70e37456343a5f58194d31a000"
+    },
+    {
+      "check": "full_cpu_smoke",
+      "command": [
+        "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+        "CES_FL/src/ces_fl_lh_channel_selection.py",
+        "smoke",
+        "--device",
+        "cpu",
+        "--out",
+        "/home/sachin.chaudhary/cesel_ma_audit_logs/lh_channel_selection_20261110_1a6d63d/full_cpu_smoke"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 24.86709919013083,
+      "log_sha256": "0d7b45e1ade26eb3c1d26316d8fd2f56042440c9860ef4090c2cfa57941d4c7d"
+    },
+    {
+      "check": "masked_lifecycle",
+      "command": [
+        "/home/sachin.chaudhary/.conda/envs/aiface/bin/python",
+        "CES_FL/proposals/lh_channel_selection_20261110_r1/tests/masked_lifecycle.py",
+        "--smoke-root",
+        "/home/sachin.chaudhary/cesel_ma_audit_logs/lh_channel_selection_20261110_1a6d63d/full_cpu_smoke",
+        "--out",
+        "/home/sachin.chaudhary/cesel_ma_audit_logs/lh_channel_selection_20261110_1a6d63d/masked_lifecycle"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 21.11676671123132,
+      "log_sha256": "64e75ca314d0ca23f20a516bfbaa4c8c9cf0d8e16670586bc633ae1fdbd1f6c7"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "source_commit": "b7fa561b43a659b24efaf1e928d6bbf41a839b63",
+  "source_root": "/home/sachin.chaudhary/ces_fl_sources/ff2-fully-matched-20261110",
+  "tracked_files_unchanged": 31,
+  "source_and_config_hashes_match": true,
+  "matched_suite_jobs_cancelled_or_restarted": 0,
+  "new_Ding_experiments": 0,
+  "real_TEST_CAL_access_by_this_task": false
+}

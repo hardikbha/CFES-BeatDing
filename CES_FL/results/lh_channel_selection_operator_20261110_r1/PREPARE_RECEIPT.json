@@ -1,0 +1,14 @@
+{
+  "exit_code": 0,
+  "elapsed_seconds": 876.5492014884949,
+  "command": [
+    "bash",
+    "CES_FL/proposals/lh_channel_selection_20261110_r1/commands.sh",
+    "prepare",
+    "/home/sachin.chaudhary/ces_fl_runs/lh_channel_selection_20261110_r1_operator_1a6d63d"
+  ],
+  "source_commit": "1a6d63db6baf7f6ad2a8e842a31341d2c128de25",
+  "GPU_hours": 0,
+  "real_TEST_CAL_access": false,
+  "log_sha256": "2c7d46728d040c23d64818909f827f97ef76f5a917e2707273281277efa79411"
+}

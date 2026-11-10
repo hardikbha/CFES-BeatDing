@@ -1,0 +1,43 @@
+[
+  {
+    "path": "/home/sachin.chaudhary/ces_fl_runs/ff2_lh_ps_20261106_r1/L_A/best.pt",
+    "exists": true,
+    "bytes": 215364942,
+    "sha256": "cce4476491829702d60a74ed7b2044aa8436768d6e08e0129da5a1fd84b0cb6d"
+  },
+  {
+    "path": "/home/sachin.chaudhary/ces_fl_runs/ff2_lh_ps_20261106_r1/L_A/DONE",
+    "exists": true,
+    "bytes": 77,
+    "sha256": "6853d593b5b2671b91450960af53d3824a8ee29a8bf116c3b81b5e4e4b4f7280"
+  },
+  {
+    "path": "/home/sachin.chaudhary/ces_fl_runs/ff2_lh_ps_20261106_r1/L_A/RUN_VERIFIED.json",
+    "exists": true,
+    "bytes": 14319,
+    "sha256": "e5d1f66c82e5fa27ece654a0c349ab2146216c8c1456e023dc0d312df53189fc",
+    "receipt": {
+      "status": "COMPLETED_VERIFIED",
+      "arm": "A",
+      "epochs_completed": 10,
+      "selected_epoch": 2,
+      "selected_checkpoint_sha256": "cce4476491829702d60a74ed7b2044aa8436768d6e08e0129da5a1fd84b0cb6d",
+      "source_sha256": "8c25ba8cb844b059adbbce75b57785a156333182afa2d5d576985997f2d36733",
+      "config_digest": "143cb13b24b606960aeea72c5af77ac47791bded42de0b521ec03fdc0d95c62d",
+      "synthetic_fixture": false,
+      "test_evaluated": false
+    }
+  },
+  {
+    "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ff2/train.csv",
+    "exists": true,
+    "bytes": 76390323,
+    "sha256": "4f83e7dc8042533329d7047fefd0f30cbd96f45d42bde2666dd0edc7d58f29cc"
+  },
+  {
+    "path": "/home/sachin.chaudhary/ces_fl_pipeline/manifests/ff2/val.csv",
+    "exists": true,
+    "bytes": 11078098,
+    "sha256": "aeda051259d9e26b07c2810152b601ae115ce7c9e10523f99ea07bbc9f92afa8"
+  }
+]

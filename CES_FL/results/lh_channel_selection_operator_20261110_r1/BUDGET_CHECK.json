@@ -1,0 +1,31 @@
+{
+  "status": "RECORDED_LEDGER_ARITHMETIC_VERIFIED_ALLOCATION_NOT_RESERVED",
+  "observed_management_utc": "2026-11-10T09:39:16.362947+00:00",
+  "ledger_path": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_c332fd34_20261103/budget_ledger.json",
+  "ledger_sha256": "d8a82b9d3dd2617810e7d11c4e14dc92d1553dbcf51847bdbb48a4fa35935f86",
+  "recorded_cap_gpu_hours": 48,
+  "recorded_charged_gpu_hours": 24.646791462615237,
+  "session_sum_gpu_hours": 24.646791462615237,
+  "session_count": 59,
+  "recorded_reserved_gpu_hours": 0,
+  "nominal_recorded_remaining_gpu_hours": 23.353208537384763,
+  "requested_cohort_max_gpu_hours": 2,
+  "requested_cohort_max_gpus": 1,
+  "arithmetic_covers_requested_two_hours": true,
+  "existing_scope": "All new forensic-response checks and training across both datasets/GPUs, including parent attempts; existing Ding study separate and preserved",
+  "extension_scope_preserved": [
+    {
+      "request": "2026-11-04 user approved increase to continue CES-FL experiment over direct SSH GPU01/GPU02",
+      "additional_gpu_hours": 24,
+      "previous_total_gpu_hours": 24,
+      "new_total_gpu_hours": 48,
+      "scope": "this L_H finalization: ResNet-50 P50/L_A/L_H/Table3 and authorized Ding-10 control; no FairForge-2 budget transfer"
+    }
+  ],
+  "new_cohort_reservation_created": false,
+  "new_GPU_hours_used": 0,
+  "ledger_modified": false,
+  "budget_transfer_performed": false,
+  "new_budget_granted": false,
+  "note": "Historical recorded balance only. No cohort allocation or hold was created while required human review is missing. Reconcile scope, latest holds/charges and the physical allocation immediately before a future reservation; this is not a VERIFIED CUDA allocation receipt."
+}

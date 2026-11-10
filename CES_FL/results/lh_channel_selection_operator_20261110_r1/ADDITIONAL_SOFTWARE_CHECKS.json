@@ -1,0 +1,9 @@
+{
+  "source_commit": "1a6d63db6baf7f6ad2a8e842a31341d2c128de25",
+  "source_sha256": "95574295b76f16f5e5d8f70f01502848b4616fc7437030a5dfdf2ff1219f62f0",
+  "syntax_compile": "PASS",
+  "commands_sh_bash_n": "PASS",
+  "pinned_template_sha256": "695eb683ae84ee466075fdabf71f8245cef758af043b5cee4f9c0a28ac1154e1",
+  "production_GPU_used": false,
+  "real_TEST_CAL_data_accessed": false
+}

@@ -1,5 +1,9 @@
 # CES-FL — supervisor review and training handoff
 
+## Channel-selection operator verification — 10 November 2026
+
+Observed management UTC: 2026-11-10T09:49:29.647376+00:00. [Actual operator audit](results/lh_channel_selection_operator_20261110_r1/REPORT.md): pinned1a6d63d, fresh14CPUtests and native/masked lifecycle PASS; teacher, manifest and all249,373image hashes match. New86-source/344-case panel is prepared and pixel-replayed. **BLOCKED: zero named-human reviews and no qualification receipt.** No CUDA, masks, production training, TEST/CAL access or new Ding work. Active jobs and source/config files are preserved. Allocation/cost gates remain unreached; recorded ledger arithmetic is documented without a new reservation.
+
 ## Full L_H channel-selection extension — 10 November2026
 
 [Proposal](proposals/lh_channel_selection_20261110_r1/README.md) · [standalone Python](src/ces_fl_lh_channel_selection.py) · [full diagram](proposals/lh_channel_selection_20261110_r1/figures/L_H_Channel_Selection_Full.png) · [operator instructions](proposals/lh_channel_selection_20261110_r1/GPU_OPERATOR_PROMPT.md). Fourteen CPU unit tests, original and masked full-L_H synthetic lifecycle checks and objective-preservation checks passed. The new fixed mask preserves hierarchical error control and all matched-response losses. Production inputs, human qualification, CUDA and budget checks remain pending. No production training launched, no new results or TEST access. Historical observations below are preserved.
