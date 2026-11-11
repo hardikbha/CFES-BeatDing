@@ -1,0 +1,41 @@
+{
+  "status": "PASS_CLOSED_COHORT",
+  "actual_GPU_hours": 11.278049706649035,
+  "cohort_cap_GPU_hours": 17,
+  "remaining_cohort_reservations": 0,
+  "global_recorded_cap_GPU_hours": 48,
+  "global_recorded_consumed_GPU_hours": 36.16527966313892,
+  "global_reserved_GPU_hours": 0,
+  "sessions": [
+    {
+      "id": "ff2_response_tuning_20261110_r1_fair_only",
+      "state": "COMPLETED_VERIFIED",
+      "ngpus": 1,
+      "elapsed_seconds": 10171.318599198014,
+      "reserved_gpu_hours": 4.25
+    },
+    {
+      "id": "ff2_response_tuning_20261110_r1_smooth_005",
+      "state": "COMPLETED_VERIFIED",
+      "ngpus": 1,
+      "elapsed_seconds": 10152.45162656717,
+      "reserved_gpu_hours": 4.25
+    },
+    {
+      "id": "ff2_response_tuning_20261110_r1_smooth_010",
+      "state": "COMPLETED_VERIFIED",
+      "ngpus": 1,
+      "elapsed_seconds": 10171.012664299458,
+      "reserved_gpu_hours": 4.25
+    },
+    {
+      "id": "ff2_response_tuning_20261110_r1_smooth_020",
+      "state": "COMPLETED_VERIFIED",
+      "ngpus": 1,
+      "elapsed_seconds": 10106.196053871885,
+      "reserved_gpu_hours": 4.25
+    }
+  ],
+  "new_budget_granted": false,
+  "budget_transfer": false
+}

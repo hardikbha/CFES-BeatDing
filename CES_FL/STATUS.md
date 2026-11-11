@@ -1,5 +1,9 @@
 # Current CES-FL status
 
+## Response-strength screen completed — 11 November 2026
+
+Observed management UTC: 2026-11-11T05:20:38.738978+00:00. [Completed seed 17 SELECT-only results](results/ff2_response_tuning_20261111_r1/README.md): all four ten-epoch runs and paired comparisons complete, zero failures. Smooth 0.10 selects epoch 4 with response active and lowers primary joint 100F_FPR by 0.779 points versus fairness-only, with near-identical AUC and some other-axis regressions. Primary uncertainty is INCONCLUSIVE (964/2000 valid draws; 1900 required). No new TEST/CAL or Ding evaluation. Actual 11.278 GPU-hours, reservations closed and leases released. Earlier launch/progress entries below are historical snapshots.
+
 ## Response ramp/strength tuning launched — 11 November 2026 IST
 
 Observed management UTC: 2026-11-10T18:39:10.793141+00:00. [Fixed four-candidate seed 17 screen](proposals/ff2_response_tuning_20261110_r1/README.md): fairness-only versus six-epoch smooth response ramps capped 0.05/0.10/0.20. All 21 CPU tests, full 249,373 image checks and all four active-response CUDA checks PASS. Four training runs are active on two nodes, preserving existing results/jobs. Ten epochs each; only TRAIN/SELECT; 17 aggregate GPU-hours maximum inside the original remaining allowance. No new Ding model or TEST/CAL evaluation. Source [d6c5c2f](https://github.com/hardikbha/CFES-BeatDing/commit/d6c5c2fe49da87d14af2b4cdfc336ac784163fe9). No tuning outcome is claimed yet.

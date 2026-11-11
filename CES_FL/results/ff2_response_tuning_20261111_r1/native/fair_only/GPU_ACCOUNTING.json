@@ -1,0 +1,6 @@
+{
+  "state": "COMPLETED_VERIFIED",
+  "actual_held_GPU_hours": 2.825367026609472,
+  "cap_GPU_hours": 4.25,
+  "TEST_CAL_access": false
+}

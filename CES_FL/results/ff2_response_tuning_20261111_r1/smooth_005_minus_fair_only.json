@@ -1,0 +1,1332 @@
+{
+  "method": "percentile connected-recorded-contributor bootstrap",
+  "replicates": 2000,
+  "seed": 17,
+  "components": 45,
+  "largest_component_rows": 2787,
+  "paired_difference": "first minus second",
+  "training_seed_variability_measured": false,
+  "true_person_independence_verified": false,
+  "eligible_groups_fixed_before_resampling": {
+    "gender": [
+      "Female",
+      "Male"
+    ],
+    "race": [
+      "Asian",
+      "Black",
+      "Others",
+      "White"
+    ],
+    "age_bin": [
+      "30-44",
+      "45-59",
+      "60+",
+      "<30"
+    ],
+    "skin_bin": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ],
+    "gender_race": [
+      "Female-Asian",
+      "Female-Black",
+      "Female-Others",
+      "Female-White",
+      "Male-Asian",
+      "Male-Black",
+      "Male-Others",
+      "Male-White"
+    ],
+    "ids8": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
+  },
+  "intervals": {
+    "overall/auc": {
+      "estimate": -3.204806202083965e-06,
+      "ci95": [
+        -0.00014104291430090953,
+        0.0001348295613703726
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "overall/fpr": {
+      "estimate": 0.0,
+      "ci95": [
+        -0.004602092530352711,
+        0.006307384669927362
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "overall/fnr": {
+      "estimate": 0.00017440440894345806,
+      "ci95": [
+        -0.0001784761724386838,
+        0.0004284569411311664
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "gender/F_FPR": {
+      "estimate": 0.0016948952230789321,
+      "ci95": [
+        -0.006468533424356513,
+        0.01780401073846232
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "gender/F_DP": {
+      "estimate": 0.00013702106490853794,
+      "ci95": [
+        -0.0007052343444560822,
+        0.0017451095742347814
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "gender/es_AUC": {
+      "estimate": -4.350852092549484e-05,
+      "ci95": [
+        -0.0003991200845200993,
+        0.0003222905822999444
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "gender/worst_group_auc": {
+      "estimate": -3.647433252207399e-05,
+      "ci95": [
+        -0.00032297630071284334,
+        0.000202494850107826
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "gender/fpr_gap": {
+      "estimate": 0.0016948952230789321,
+      "ci95": [
+        -0.006468533424356513,
+        0.01780401073846232
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "gender/fnr_gap": {
+      "estimate": -3.670394939745726e-06,
+      "ci95": [
+        -0.0005932672291352469,
+        0.0004192149901793726
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "gender/group=Female/auc": {
+      "estimate": -3.647433252207399e-05,
+      "ci95": [
+        -0.0003108101961487475,
+        8.864931275973651e-05
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "gender/group=Female/fpr": {
+      "estimate": 0.000999000999000993,
+      "ci95": [
+        -0.006809294910630519,
+        0.016086629295131306
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "gender/group=Female/fnr": {
+      "estimate": 0.000172220787048997,
+      "ci95": [
+        -0.00020391892439175626,
+        0.00046053272892029347
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "gender/group=Male/auc": {
+      "estimate": 3.916853043572921e-06,
+      "ci95": [
+        -0.00019071566094724934,
+        0.000240157738859839
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "gender/group=Male/fpr": {
+      "estimate": -0.0006958942240779392,
+      "ci95": [
+        -0.006104250390148051,
+        0.006988975480144498
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "gender/group=Male/fnr": {
+      "estimate": 0.00017589118198874272,
+      "ci95": [
+        -0.0004653040330339425,
+        0.0005671916749098851
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "race/F_FPR": {
+      "estimate": 0.009227583940142725,
+      "ci95": [
+        -0.007353307960725133,
+        0.08109398920874535
+      ],
+      "valid_replicates": 1943,
+      "invalid_or_unavailable_replicates": 57,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "race/F_DP": {
+      "estimate": 0.001022850374279849,
+      "ci95": [
+        -0.0020144874358027642,
+        0.008458532165240779
+      ],
+      "valid_replicates": 1943,
+      "invalid_or_unavailable_replicates": 57,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "race/es_AUC": {
+      "estimate": 0.0001217157960843318,
+      "ci95": [
+        -0.0039019174071226624,
+        0.0007639156057648092
+      ],
+      "valid_replicates": 1943,
+      "invalid_or_unavailable_replicates": 57,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "race/worst_group_auc": {
+      "estimate": 0.00014294328010655555,
+      "ci95": [
+        -0.00425115848677402,
+        0.0006432682883904927
+      ],
+      "valid_replicates": 1945,
+      "invalid_or_unavailable_replicates": 55,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "race/fpr_gap": {
+      "estimate": 0.005410790047012948,
+      "ci95": [
+        -0.013098151311065611,
+        0.07444334682795564
+      ],
+      "valid_replicates": 1943,
+      "invalid_or_unavailable_replicates": 57,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "race/fnr_gap": {
+      "estimate": -0.00031955320128972814,
+      "ci95": [
+        -0.004800999577673553,
+        0.0009923240045443882
+      ],
+      "valid_replicates": 1943,
+      "invalid_or_unavailable_replicates": 57,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "race/group=Asian/auc": {
+      "estimate": -8.145228826628159e-05,
+      "ci95": [
+        -0.0008941560495591694,
+        2.3374078339516423e-05
+      ],
+      "valid_replicates": 1999,
+      "invalid_or_unavailable_replicates": 1,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "race/group=Asian/fpr": {
+      "estimate": 0.0038167938931297635,
+      "ci95": [
+        -0.010431991146417635,
+        0.040639785805626605
+      ],
+      "valid_replicates": 1999,
+      "invalid_or_unavailable_replicates": 1,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "race/group=Asian/fnr": {
+      "estimate": 0.00015807777426493815,
+      "ci95": [
+        0.0,
+        0.0004436779108755902
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "race/group=Black/auc": {
+      "estimate": 0.00014294328010655555,
+      "ci95": [
+        -0.004260651629072715,
+        0.0006281900466883483
+      ],
+      "valid_replicates": 1971,
+      "invalid_or_unavailable_replicates": 29,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "race/group=Black/fpr": {
+      "estimate": 0.0023148148148147973,
+      "ci95": [
+        -0.006578947368421052,
+        0.0714285714285714
+      ],
+      "valid_replicates": 1971,
+      "invalid_or_unavailable_replicates": 29,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "race/group=Black/fnr": {
+      "estimate": -0.00018712574850299419,
+      "ci95": [
+        -0.002096546165636066,
+        0.0
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "race/group=Others/auc": {
+      "estimate": -8.394737079786552e-05,
+      "ci95": [
+        -0.00024171924585170146,
+        0.00012330843511966505
+      ],
+      "valid_replicates": 1996,
+      "invalid_or_unavailable_replicates": 4,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "race/group=Others/fpr": {
+      "estimate": -0.0030959752321981435,
+      "ci95": [
+        -0.00912802487811503,
+        0.0011661379560488946
+      ],
+      "valid_replicates": 1998,
+      "invalid_or_unavailable_replicates": 2,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "race/group=Others/fnr": {
+      "estimate": 0.00046061722708429275,
+      "ci95": [
+        0.0,
+        0.0007925968600250657
+      ],
+      "valid_replicates": 1996,
+      "invalid_or_unavailable_replicates": 4,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "race/group=White/auc": {
+      "estimate": -2.538174139055105e-05,
+      "ci95": [
+        -0.0002050230974059708,
+        0.0007501499708439247
+      ],
+      "valid_replicates": 1976,
+      "invalid_or_unavailable_replicates": 24,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "race/group=White/fpr": {
+      "estimate": 0.0,
+      "ci95": [
+        -0.021739130434782594,
+        0.04761904761904756
+      ],
+      "valid_replicates": 1976,
+      "invalid_or_unavailable_replicates": 24,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "race/group=White/fnr": {
+      "estimate": 0.0,
+      "ci95": [
+        -0.004934210526315789,
+        0.0016103059581320449
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "age_bin/F_FPR": {
+      "estimate": 0.005991645139850704,
+      "ci95": [
+        -0.01796785045955875,
+        0.032771878892092536
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "age_bin/F_DP": {
+      "estimate": 0.0004733071721680915,
+      "ci95": [
+        -0.0013465142179501927,
+        0.0025177842356941785
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "age_bin/es_AUC": {
+      "estimate": 2.7163839647292853e-05,
+      "ci95": [
+        -0.000406943920613223,
+        0.0009326191383762113
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "age_bin/worst_group_auc": {
+      "estimate": 9.980207319937318e-05,
+      "ci95": [
+        -0.00018541324493868416,
+        0.00040672112075960037
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "age_bin/fpr_gap": {
+      "estimate": 0.0068673018824076115,
+      "ci95": [
+        -0.01673220973782769,
+        0.027704872383450832
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "age_bin/fnr_gap": {
+      "estimate": 0.00014699364724860215,
+      "ci95": [
+        -0.000869372554515192,
+        0.0009857205008372528
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "age_bin/group=30-44/auc": {
+      "estimate": -9.415261089307236e-05,
+      "ci95": [
+        -0.0002618192301736516,
+        2.7228058374947838e-05
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "age_bin/group=30-44/fpr": {
+      "estimate": 0.0008756567425569073,
+      "ci95": [
+        -0.006568569296859431,
+        0.010178589680382835
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "age_bin/group=30-44/fnr": {
+      "estimate": 0.0002139037433155082,
+      "ci95": [
+        -0.00026960008095987384,
+        0.0006496956261321695
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "age_bin/group=45-59/auc": {
+      "estimate": 0.00011906558593366423,
+      "ci95": [
+        -0.0001641126992784403,
+        0.0004869285158185881
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "age_bin/group=45-59/fpr": {
+      "estimate": -0.003021148036253779,
+      "ci95": [
+        -0.009820254601960319,
+        0.005102258109376621
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "age_bin/group=45-59/fnr": {
+      "estimate": 0.00014956625785222857,
+      "ci95": [
+        -0.00041478073196017087,
+        0.0006357658880578046
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "age_bin/group=60+/auc": {
+      "estimate": -4.4404691672994545e-05,
+      "ci95": [
+        -0.0002497659762736804,
+        0.00024017835974676215
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "age_bin/group=60+/fpr": {
+      "estimate": 0.0,
+      "ci95": [
+        -0.008163543346493898,
+        0.007519743944243474
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "age_bin/group=60+/fnr": {
+      "estimate": 0.0002965599051008307,
+      "ci95": [
+        0.0,
+        0.0009857988357939065
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "age_bin/group=<30/auc": {
+      "estimate": 9.980207319937318e-05,
+      "ci95": [
+        -6.839532349274813e-05,
+        0.00031054749017838377
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "age_bin/group=<30/fpr": {
+      "estimate": 0.0038461538461538325,
+      "ci95": [
+        -0.014767649935535494,
+        0.02521274332517815
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "age_bin/group=<30/fnr": {
+      "estimate": 0.0,
+      "ci95": [
+        -0.0009663032940213249,
+        0.0008705130043064548
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "skin_bin/F_FPR": {
+      "estimate": 0.0028965598197047693,
+      "ci95": [
+        -0.021212120075937438,
+        0.031795631965675225
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "skin_bin/F_DP": {
+      "estimate": 0.0013418469915857933,
+      "ci95": [
+        -0.0011512051133668294,
+        0.0027750840730612664
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "skin_bin/es_AUC": {
+      "estimate": -0.00023002644793967963,
+      "ci95": [
+        -0.0005790293660338869,
+        0.00031312609281264336
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "skin_bin/worst_group_auc": {
+      "estimate": -2.568270371294812e-05,
+      "ci95": [
+        -0.0003275190307733239,
+        0.00017001069170582693
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "skin_bin/fpr_gap": {
+      "estimate": 0.010434131305274708,
+      "ci95": [
+        -0.015346396320508632,
+        0.02502787516048875
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "skin_bin/fnr_gap": {
+      "estimate": 0.0001994696493663262,
+      "ci95": [
+        -0.0006216842605639402,
+        0.00114614151432221
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "skin_bin/group=0/auc": {
+      "estimate": 3.642582405716244e-05,
+      "ci95": [
+        -0.0001785324003275135,
+        0.00023335729969721763
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "skin_bin/group=0/fpr": {
+      "estimate": -0.003174603174603177,
+      "ci95": [
+        -0.009177873383098752,
+        0.00317097796636163
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "skin_bin/group=0/fnr": {
+      "estimate": 0.00025930247633864896,
+      "ci95": [
+        0.0,
+        0.000625516188584349
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "skin_bin/group=1/auc": {
+      "estimate": 1.0645868267600278e-05,
+      "ci95": [
+        -0.00018315220257434373,
+        0.0001824165364720992
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "skin_bin/group=1/fpr": {
+      "estimate": 0.0017123287671232945,
+      "ci95": [
+        -0.009295530327433554,
+        0.016791941733639498
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "skin_bin/group=1/fnr": {
+      "estimate": -0.0002763194252555952,
+      "ci95": [
+        -0.0013122017128907692,
+        0.00037989012215197866
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "skin_bin/group=2/auc": {
+      "estimate": -0.00015575370888509799,
+      "ci95": [
+        -0.00034834583179693126,
+        4.4027292768219895e-05
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "skin_bin/group=2/fpr": {
+      "estimate": 0.0072595281306715165,
+      "ci95": [
+        -0.0018285751870315717,
+        0.01957180786736734
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "skin_bin/group=2/fnr": {
+      "estimate": 0.00032263268269075657,
+      "ci95": [
+        0.0,
+        0.0008260469161524986
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "skin_bin/group=3/auc": {
+      "estimate": -2.568270371294812e-05,
+      "ci95": [
+        -0.00032211784723445156,
+        0.00017244934520821702
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "skin_bin/group=3/fpr": {
+      "estimate": -0.005825242718446616,
+      "ci95": [
+        -0.017858030389094,
+        0.009572079024540804
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "skin_bin/group=3/fnr": {
+      "estimate": 0.0005221023320570832,
+      "ci95": [
+        -0.00023861609428799487,
+        0.0011325469881092822
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "skin_bin/group=unknown/auc": {
+      "estimate": -2.855776164256696e-05,
+      "ci95": [
+        -0.0004723030693218222,
+        0.0005924408156645242
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "skin_bin/group=unknown/fpr": {
+      "estimate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "skin_bin/group=unknown/fnr": {
+      "estimate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "gender_race/F_FPR": {
+      "estimate": 0.022133161744596175,
+      "ci95": null,
+      "valid_replicates": 964,
+      "invalid_or_unavailable_replicates": 1036,
+      "uncertainty_status": "INCONCLUSIVE"
+    },
+    "gender_race/F_DP": {
+      "estimate": 0.0016582401811385816,
+      "ci95": null,
+      "valid_replicates": 964,
+      "invalid_or_unavailable_replicates": 1036,
+      "uncertainty_status": "INCONCLUSIVE"
+    },
+    "gender_race/es_AUC": {
+      "estimate": -2.5087059661199618e-05,
+      "ci95": null,
+      "valid_replicates": 964,
+      "invalid_or_unavailable_replicates": 1036,
+      "uncertainty_status": "INCONCLUSIVE"
+    },
+    "gender_race/worst_group_auc": {
+      "estimate": 0.0004951199229691339,
+      "ci95": null,
+      "valid_replicates": 1060,
+      "invalid_or_unavailable_replicates": 940,
+      "uncertainty_status": "INCONCLUSIVE"
+    },
+    "gender_race/fpr_gap": {
+      "estimate": 0.01352989026677956,
+      "ci95": null,
+      "valid_replicates": 964,
+      "invalid_or_unavailable_replicates": 1036,
+      "uncertainty_status": "INCONCLUSIVE"
+    },
+    "gender_race/fnr_gap": {
+      "estimate": 0.0005185604898928105,
+      "ci95": null,
+      "valid_replicates": 964,
+      "invalid_or_unavailable_replicates": 1036,
+      "uncertainty_status": "INCONCLUSIVE"
+    },
+    "gender_race/group=Female-Asian/auc": {
+      "estimate": -6.751577684849241e-05,
+      "ci95": [
+        -0.001866654041665561,
+        8.87626486773735e-05
+      ],
+      "valid_replicates": 1974,
+      "invalid_or_unavailable_replicates": 26,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "gender_race/group=Female-Asian/fpr": {
+      "estimate": 0.00990099009900991,
+      "ci95": [
+        -0.012499999999999997,
+        1.0
+      ],
+      "valid_replicates": 1974,
+      "invalid_or_unavailable_replicates": 26,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "gender_race/group=Female-Asian/fnr": {
+      "estimate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "gender_race/group=Female-Black/auc": {
+      "estimate": -0.0004061093364308155,
+      "ci95": null,
+      "valid_replicates": 1755,
+      "invalid_or_unavailable_replicates": 245,
+      "uncertainty_status": "INCONCLUSIVE"
+    },
+    "gender_race/group=Female-Black/fpr": {
+      "estimate": 0.010309278350515455,
+      "ci95": null,
+      "valid_replicates": 1755,
+      "invalid_or_unavailable_replicates": 245,
+      "uncertainty_status": "INCONCLUSIVE"
+    },
+    "gender_race/group=Female-Black/fnr": {
+      "estimate": -0.0004401408450704226,
+      "ci95": [
+        -0.0021413276231263384,
+        0.0
+      ],
+      "valid_replicates": 1999,
+      "invalid_or_unavailable_replicates": 1,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "gender_race/group=Female-Others/auc": {
+      "estimate": 0.00012361799522708772,
+      "ci95": [
+        1.639236771366903e-05,
+        0.0002603500998797914
+      ],
+      "valid_replicates": 1921,
+      "invalid_or_unavailable_replicates": 79,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "gender_race/group=Female-Others/fpr": {
+      "estimate": -0.002873563218390801,
+      "ci95": [
+        -0.00662251655629139,
+        0.0
+      ],
+      "valid_replicates": 1921,
+      "invalid_or_unavailable_replicates": 79,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "gender_race/group=Female-Others/fnr": {
+      "estimate": 0.000257599175682638,
+      "ci95": [
+        0.0,
+        0.0006188118811881189
+      ],
+      "valid_replicates": 1921,
+      "invalid_or_unavailable_replicates": 79,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "gender_race/group=Female-White/auc": {
+      "estimate": -6.559424449859019e-05,
+      "ci95": null,
+      "valid_replicates": 1741,
+      "invalid_or_unavailable_replicates": 259,
+      "uncertainty_status": "INCONCLUSIVE"
+    },
+    "gender_race/group=Female-White/fpr": {
+      "estimate": -0.007782101167315175,
+      "ci95": null,
+      "valid_replicates": 1741,
+      "invalid_or_unavailable_replicates": 259,
+      "uncertainty_status": "INCONCLUSIVE"
+    },
+    "gender_race/group=Female-White/fnr": {
+      "estimate": 0.000674308833445718,
+      "ci95": [
+        0.0,
+        0.0016313213703099505
+      ],
+      "valid_replicates": 1965,
+      "invalid_or_unavailable_replicates": 35,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "gender_race/group=Male-Asian/auc": {
+      "estimate": -8.993490657316361e-05,
+      "ci95": null,
+      "valid_replicates": 1898,
+      "invalid_or_unavailable_replicates": 102,
+      "uncertainty_status": "INCONCLUSIVE"
+    },
+    "gender_race/group=Male-Asian/fpr": {
+      "estimate": 0.0,
+      "ci95": null,
+      "valid_replicates": 1898,
+      "invalid_or_unavailable_replicates": 102,
+      "uncertainty_status": "INCONCLUSIVE"
+    },
+    "gender_race/group=Male-Asian/fnr": {
+      "estimate": 0.00026089225150013017,
+      "ci95": [
+        0.0,
+        0.0005973715651135005
+      ],
+      "valid_replicates": 1970,
+      "invalid_or_unavailable_replicates": 30,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "gender_race/group=Male-Black/auc": {
+      "estimate": 0.0004951199229691339,
+      "ci95": null,
+      "valid_replicates": 1719,
+      "invalid_or_unavailable_replicates": 281,
+      "uncertainty_status": "INCONCLUSIVE"
+    },
+    "gender_race/group=Male-Black/fpr": {
+      "estimate": -0.00420168067226892,
+      "ci95": null,
+      "valid_replicates": 1719,
+      "invalid_or_unavailable_replicates": 281,
+      "uncertainty_status": "INCONCLUSIVE"
+    },
+    "gender_race/group=Male-Black/fnr": {
+      "estimate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "valid_replicates": 1999,
+      "invalid_or_unavailable_replicates": 1,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "gender_race/group=Male-Others/auc": {
+      "estimate": -0.00019537054934470888,
+      "ci95": [
+        -0.00036061646435592287,
+        -5.790052689480518e-05
+      ],
+      "valid_replicates": 1914,
+      "invalid_or_unavailable_replicates": 86,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "gender_race/group=Male-Others/fpr": {
+      "estimate": -0.003220611916264087,
+      "ci95": [
+        -1.0,
+        0.004975124378109451
+      ],
+      "valid_replicates": 1972,
+      "invalid_or_unavailable_replicates": 28,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "gender_race/group=Male-Others/fnr": {
+      "estimate": 0.0005736411874372577,
+      "ci95": [
+        0.0,
+        0.0008729812309035355
+      ],
+      "valid_replicates": 1914,
+      "invalid_or_unavailable_replicates": 86,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "gender_race/group=Male-White/auc": {
+      "estimate": 2.704137822540087e-05,
+      "ci95": null,
+      "valid_replicates": 1732,
+      "invalid_or_unavailable_replicates": 268,
+      "uncertainty_status": "INCONCLUSIVE"
+    },
+    "gender_race/group=Male-White/fpr": {
+      "estimate": 0.0078125,
+      "ci95": null,
+      "valid_replicates": 1732,
+      "invalid_or_unavailable_replicates": 268,
+      "uncertainty_status": "INCONCLUSIVE"
+    },
+    "gender_race/group=Male-White/fnr": {
+      "estimate": -0.0006293266205160478,
+      "ci95": [
+        -0.004983388704318937,
+        0.0003885003885003885
+      ],
+      "valid_replicates": 1997,
+      "invalid_or_unavailable_replicates": 3,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "ids8/F_FPR": {
+      "estimate": -0.0037607240028679767,
+      "ci95": [
+        -0.04443826666570198,
+        0.11326027306797831
+      ],
+      "valid_replicates": 1997,
+      "invalid_or_unavailable_replicates": 3,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "ids8/F_DP": {
+      "estimate": -0.00021213484174786856,
+      "ci95": [
+        -0.005466192536297943,
+        0.006549096715295818
+      ],
+      "valid_replicates": 1997,
+      "invalid_or_unavailable_replicates": 3,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "ids8/es_AUC": {
+      "estimate": 0.0003711928263978592,
+      "ci95": [
+        -0.003697692526394991,
+        0.0028310039048992956
+      ],
+      "valid_replicates": 1997,
+      "invalid_or_unavailable_replicates": 3,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "ids8/worst_group_auc": {
+      "estimate": -4.069010416674068e-05,
+      "ci95": [
+        -0.0034864036846852017,
+        0.0034001632686803227
+      ],
+      "valid_replicates": 1997,
+      "invalid_or_unavailable_replicates": 3,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "ids8/fpr_gap": {
+      "estimate": -0.01449505649717514,
+      "ci95": [
+        -0.032214282764032764,
+        0.0508948307439686
+      ],
+      "valid_replicates": 1997,
+      "invalid_or_unavailable_replicates": 3,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "ids8/fnr_gap": {
+      "estimate": 0.001261901420562849,
+      "ci95": [
+        -0.0034395983079387434,
+        0.002763667579036906
+      ],
+      "valid_replicates": 1997,
+      "invalid_or_unavailable_replicates": 3,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "ids8/group=0/auc": {
+      "estimate": 0.0002567394094994402,
+      "ci95": [
+        -0.0006353938105076617,
+        0.003404570348470857
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "ids8/group=0/fpr": {
+      "estimate": 0.015384615384615385,
+      "ci95": [
+        0.0,
+        0.09090909090909088
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "ids8/group=0/fnr": {
+      "estimate": -0.0012836970474967907,
+      "ci95": [
+        -0.005803554628995477,
+        0.0
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "ids8/group=1/auc": {
+      "estimate": -4.069010416674068e-05,
+      "ci95": [
+        -0.0037084270342153383,
+        0.00111143471354411
+      ],
+      "valid_replicates": 1998,
+      "invalid_or_unavailable_replicates": 2,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "ids8/group=1/fpr": {
+      "estimate": -0.015625,
+      "ci95": [
+        -0.03125,
+        0.0
+      ],
+      "valid_replicates": 1998,
+      "invalid_or_unavailable_replicates": 2,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "ids8/group=1/fnr": {
+      "estimate": 0.0013020833333333335,
+      "ci95": [
+        0.0,
+        0.0041032346868547795
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "ids8/group=2/auc": {
+      "estimate": -9.14998864725014e-05,
+      "ci95": [
+        -0.0008502347041506403,
+        0.00021731913468713004
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "ids8/group=2/fpr": {
+      "estimate": 0.003952569169960479,
+      "ci95": [
+        0.0,
+        0.021739130434782598
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "ids8/group=2/fnr": {
+      "estimate": 0.0,
+      "ci95": [
+        -0.0025095681131286347,
+        0.0011903743494406003
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "ids8/group=3/auc": {
+      "estimate": -0.00012616249729657802,
+      "ci95": [
+        -0.000564554482947821,
+        0.00021423048144281177
+      ],
+      "valid_replicates": 1997,
+      "invalid_or_unavailable_replicates": 3,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "ids8/group=3/fpr": {
+      "estimate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "valid_replicates": 1997,
+      "invalid_or_unavailable_replicates": 3,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "ids8/group=3/fnr": {
+      "estimate": 0.0009372071227741331,
+      "ci95": [
+        0.0,
+        0.0035978834828147115
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "ids8/group=4/auc": {
+      "estimate": 2.185535930365745e-05,
+      "ci95": [
+        -0.0002763183973805705,
+        0.0003605282174355183
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "ids8/group=4/fpr": {
+      "estimate": -0.0011299435028248594,
+      "ci95": [
+        -0.010976043695042832,
+        0.00808286951144094
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "ids8/group=4/fnr": {
+      "estimate": 0.0003792547643879777,
+      "ci95": [
+        0.0,
+        0.000723357827146995
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "ids8/group=5/auc": {
+      "estimate": -4.3192675790226787e-05,
+      "ci95": [
+        -0.0004938477421035786,
+        7.610634424920768e-05
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "ids8/group=5/fpr": {
+      "estimate": 0.004219409282700412,
+      "ci95": [
+        -0.006668067226890758,
+        0.022222222222222227
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "ids8/group=5/fnr": {
+      "estimate": -0.00018782870022539472,
+      "ci95": [
+        -0.000815735807403915,
+        0.0
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "ids8/group=6/auc": {
+      "estimate": 9.313692618251324e-06,
+      "ci95": [
+        -0.00029866722410814563,
+        0.00017686984927668678
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "ids8/group=6/fpr": {
+      "estimate": -0.008658008658008656,
+      "ci95": [
+        -0.03211379106244451,
+        0.016530640238674933
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "ids8/group=6/fnr": {
+      "estimate": -0.00043029259896729816,
+      "ci95": [
+        -0.0013352776868860328,
+        0.0
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "ids8/group=7/auc": {
+      "estimate": 0.00012069598130648451,
+      "ci95": [
+        -4.230355387435103e-05,
+        0.00041204863826214955
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "ids8/group=7/fpr": {
+      "estimate": 0.004065040650406498,
+      "ci95": [
+        -0.017703065739570163,
+        0.03463428932178936
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    },
+    "ids8/group=7/fnr": {
+      "estimate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "valid_replicates": 2000,
+      "invalid_or_unavailable_replicates": 0,
+      "uncertainty_status": "VALID_CONDITIONAL_INTERVAL"
+    }
+  },
+  "minimum_valid_fraction": 0.95,
+  "selection_uncertainty_included": false,
+  "source_tuning_sha256": "69a8d173bbcbc3a2d9903d10cd6cbf6444295364d514e4f704abcf9861b3a175",
+  "scope": "Selected-checkpoint conditional SELECT analysis after historical TEST exposure; no confirmatory superiority claim"
+}

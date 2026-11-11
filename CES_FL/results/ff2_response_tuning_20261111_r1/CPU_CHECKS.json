@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "tuning_unit_tests",
+      "exit_code": 0,
+      "elapsed_seconds": 8.685347582679242,
+      "log_sha256": "c822bf11cf1fc9fd9e90130c5ac2280138c40dfce1864a31ec3a7505b0bc5c03"
+    },
+    {
+      "name": "inherited_unit_tests",
+      "exit_code": 0,
+      "elapsed_seconds": 15.595194424968213,
+      "log_sha256": "93ba4028729faa7c3be67f12d3874fdcb152d6617807bbdf794fce8ac51a1359"
+    },
+    {
+      "name": "worker_unit_tests",
+      "exit_code": 0,
+      "elapsed_seconds": 2.7729746871627867,
+      "log_sha256": "61fabfaa1577b50aa45fa43eb5ef5ea8576bb5210c2023f33b118e7c892260af"
+    }
+  ],
+  "log_hashes": {
+    "tuning_unit_tests.txt": "c822bf11cf1fc9fd9e90130c5ac2280138c40dfce1864a31ec3a7505b0bc5c03",
+    "inherited_unit_tests.txt": "93ba4028729faa7c3be67f12d3874fdcb152d6617807bbdf794fce8ac51a1359",
+    "worker_unit_tests.txt": "61fabfaa1577b50aa45fa43eb5ef5ea8576bb5210c2023f33b118e7c892260af"
+  },
+  "GPU_used": false,
+  "tuning_tests_passed": 9,
+  "inherited_tests_passed": 9,
+  "total_tests_passed": 21,
+  "worker_tests_passed": 3
+}

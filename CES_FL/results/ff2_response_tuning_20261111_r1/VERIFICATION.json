@@ -1,0 +1,46 @@
+{
+  "status": "ALL_FOUR_COMPLETED_VALIDATION_ONLY",
+  "observed_management_utc": "2026-11-11T05:18:00.942940+00:00",
+  "source_commit": "d6c5c2fe49da87d14af2b4cdfc336ac784163fe9",
+  "completed_runs": 4,
+  "epochs_each": 10,
+  "seed": 17,
+  "checkpoint_binary_checks": [
+    {
+      "candidate": "fair_only",
+      "selected_epoch": 9,
+      "checkpoint_binary_sha256": "64b864d065b4a2ac202c8fd40a115528098703acc8cb70436f8d1316af85f8c4",
+      "actual_binary_bytes_rehashed": true
+    },
+    {
+      "candidate": "smooth_005",
+      "selected_epoch": 5,
+      "checkpoint_binary_sha256": "f1e7ec16571fb063bbaeb3e1e9811d148fce41d9e750ecdb1c238cb90fc8ecb8",
+      "actual_binary_bytes_rehashed": true
+    },
+    {
+      "candidate": "smooth_010",
+      "selected_epoch": 4,
+      "checkpoint_binary_sha256": "626b28c4dbea0f8afb7bdfe26487e9e284fd754a2aa75e6ea235db64854f33e5",
+      "actual_binary_bytes_rehashed": true
+    },
+    {
+      "candidate": "smooth_020",
+      "selected_epoch": 2,
+      "checkpoint_binary_sha256": "50b52482cd4c4a1a58814a8de5f934830a4f70b31a19b23cc760dcd3cb6f0144",
+      "actual_binary_bytes_rehashed": true
+    }
+  ],
+  "first_two_epoch_validation_reports_match": true,
+  "selected_method_axis_rows": 24,
+  "history_rows": 40,
+  "comparisons": 3,
+  "primary_bootstrap_valid_replicates": 964,
+  "primary_bootstrap_requested_replicates": 2000,
+  "primary_bootstrap_minimum_valid": 1900,
+  "primary_uncertainty_status": "INCONCLUSIVE",
+  "models_executed_during_publication": false,
+  "TEST_CAL_access": false,
+  "new_Ding_models": 0,
+  "no_automatic_extension": true
+}

@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "host": "gpu02",
+  "observed_host_unix": 1794373649.4423718,
+  "records": [
+    {
+      "candidate": "smooth_005",
+      "GPU": 7,
+      "state": "COMPLETED_VERIFIED",
+      "lease_released": true
+    },
+    {
+      "candidate": "smooth_020",
+      "GPU": 4,
+      "state": "COMPLETED_VERIFIED",
+      "lease_released": true
+    }
+  ]
+}

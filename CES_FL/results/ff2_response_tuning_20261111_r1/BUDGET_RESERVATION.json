@@ -1,0 +1,15 @@
+{
+  "status": "FOUR_BOUNDED_SESSIONS_RESERVED",
+  "observed_management_utc": "2026-11-10T18:29:39.946041+00:00",
+  "ledger_path": "/home/sachin.chaudhary/ces_fl_runs/forensic_response_c332fd34_20261103/budget_ledger.json",
+  "ledger_sha256_after_reservation": "ba516d31f19c6842740995888f631426522d9c86b38903b31c07a1898b0f254f",
+  "existing_cap_GPU_hours": 48,
+  "recorded_uncommitted_before": 23.112770043510118,
+  "cohort_max_GPU_hours": 17,
+  "per_job_max_held_GPU_hours": 4.25,
+  "per_job_native_training_hours": 4,
+  "maximum_parallel_GPUs": 4,
+  "additional_budget_granted": false,
+  "budget_transfer": false,
+  "source_commit": "d6c5c2fe49da87d14af2b4cdfc336ac784163fe9"
+}

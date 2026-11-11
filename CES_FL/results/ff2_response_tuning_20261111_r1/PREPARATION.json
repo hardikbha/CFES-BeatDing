@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "fresh_images_hashed_decoded": 249373,
+  "inventory_matches_prior": true,
+  "recipe_panel": "88 unchanged PS-v2 cases with original review decisions; no new human or per-image approval",
+  "qualification_reuse_explicit": true,
+  "TEST_CAL_access": false
+}

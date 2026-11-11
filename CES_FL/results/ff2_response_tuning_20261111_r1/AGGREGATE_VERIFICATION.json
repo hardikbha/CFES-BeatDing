@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "completed_runs": 4,
+  "history_epochs_checked": 40,
+  "selected_axis_rows_checked": 24,
+  "selected_active_response_point_candidate": "smooth_010",
+  "primary_uncertainty": "INCONCLUSIVE",
+  "primary_valid_bootstrap_replicates": 964,
+  "required_valid_bootstrap_replicates": 1900,
+  "actual_GPU_hours": 11.278049706649035,
+  "new_inference": false,
+  "private_predictions_read": false
+}

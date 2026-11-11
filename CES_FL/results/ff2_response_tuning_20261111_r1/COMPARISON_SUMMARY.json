@@ -1,0 +1,43 @@
+{
+  "status": "COMPLETED",
+  "scope": "Exploratory seed17 SELECT only",
+  "results": [
+    {
+      "name": "smooth_005",
+      "selected_epoch": 5,
+      "selected_after_response": true,
+      "absolute_utility_guards_pass": true,
+      "primary_disparity_below_control": false,
+      "primary_conditional_uncertainty": "INCONCLUSIVE",
+      "primary_difference": 0.022133161744596175,
+      "primary_ci95": null,
+      "screen_point_criteria_pass": false,
+      "TEST_CAL_access": false
+    },
+    {
+      "name": "smooth_010",
+      "selected_epoch": 4,
+      "selected_after_response": true,
+      "absolute_utility_guards_pass": true,
+      "primary_disparity_below_control": true,
+      "primary_conditional_uncertainty": "INCONCLUSIVE",
+      "primary_difference": -0.007789136970563326,
+      "primary_ci95": null,
+      "screen_point_criteria_pass": true,
+      "TEST_CAL_access": false
+    },
+    {
+      "name": "smooth_020",
+      "selected_epoch": 2,
+      "selected_after_response": false,
+      "absolute_utility_guards_pass": true,
+      "primary_disparity_below_control": true,
+      "primary_conditional_uncertainty": "INCONCLUSIVE",
+      "primary_difference": -0.024904292617025703,
+      "primary_ci95": null,
+      "screen_point_criteria_pass": false,
+      "TEST_CAL_access": false
+    }
+  ],
+  "no_automatic_extension": true
+}
