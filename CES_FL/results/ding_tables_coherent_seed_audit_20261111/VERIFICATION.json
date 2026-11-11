@@ -1,0 +1,31 @@
+{
+  "observed_management_utc": "2026-11-11T05:53:59.660916+00:00",
+  "status": "PASS_AGGREGATE_AUDIT",
+  "source_snapshot_sha256": "20d0ae005242a0389ee2c53d1e2f18b460411be8e0617d974eab96ae58c222e9",
+  "source_snapshot_path": "/home/sachin.chaudhary/ces_fl_sources/cesfl-six-tables-20261109/CES_FL/results/six_best_observed_tables_20261109/SNAPSHOT.json",
+  "source_record_count": 68,
+  "full_LH_comparisons": 8,
+  "verified_native_aggregate_files": {
+    "/home/sachin.chaudhary/ces_fl_runs/lh_tables_s17_20261103T133000Z/analysis/L_H_ffpp.json": "0a34c5026d0b8598f54406c8d39b638b377ec177a9a7665b807dc789d8cbadb9",
+    "/home/sachin.chaudhary/ces_fl_runs/lh_tables_s17_20261103T133000Z/analysis/L_H_dfdc.json": "15741b45edc88dca740ca9e2703a21a4e3df34bce7d2f38e80bd752ac8371dcb",
+    "/home/sachin.chaudhary/ces_fl_runs/lh_tables_s17_20261103T133000Z/analysis/L_H_celebdf.json": "4d2940d2f453749055aeb7f74854a44cd78c5882f96509d743e64ff4541943dd",
+    "/home/sachin.chaudhary/ces_fl_runs/lh_tables_s17_20261103T133000Z/analysis/L_H_dfd.json": "38b12ac10c138da447d92c845b2e85abcca21943c5c917ee05c8932a54848d02",
+    "/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104_cudaenv3/table3_eval/analysis/L_H_ffpp.json": "d3ca367f5f8bada30c40f21d550913b8031f317520b71aec4e40b44f427e246a",
+    "/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104_cudaenv3/table3_eval/analysis/L_H_dfdc.json": "82de74c8890322a7b8137eb705ca2f997d255dee6e9545566c0bc8c66e531c70",
+    "/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104_cudaenv3/table3_eval/analysis/L_H_celebdf.json": "f009984b17ff0e4c4cf03a4283b7a0f309e1f32f38277b347498a506f6f1d9c7",
+    "/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104_cudaenv3/table3_eval/analysis/L_H_dfd.json": "071da56ed71f9171e4e65782d8625d9df4006c596368c306b0aca56e7f8b13de"
+  },
+  "full_LH_verified_seeds": [
+    17
+  ],
+  "full_LH_seed_optimality_established": false,
+  "threshold": "Existing fixed probability0.5 reports for every ours row; same fixed operating point across Tables1-3",
+  "main_model_variants_not_combined": true,
+  "per_cell_selection": false,
+  "ResNet_LH_training_confirmed": true,
+  "models_executed": false,
+  "new_training": false,
+  "new_TEST_CAL_inference": false,
+  "private_predictions_read": false,
+  "recipe_equivalence_with_published_Ding_claimed": false
+}

@@ -1,5 +1,9 @@
 # CES-FL — supervisor review and training handoff
 
+## Coherent full-L_H benchmark seed audit — 11 November 2026
+
+Observed management UTC: 2026-11-11T05:56:44.555673+00:00. [Ding Tables 1–3 coherent-row audit](results/ding_tables_coherent_seed_audit_20261111/README.md): full Xception/ResNet L_H seed 17 saved TEST reports verified at one fixed 0.5 operating point, with one checkpoint per backbone across all datasets. ResNet L_H is completed despite the stale Overleaf statement; current Table 3 separately contains SWA/SBI three-seed means. Highest archived FF++ Xception AUC 98.5412 belongs to BCE control L_A seed 7. No full-L_H seed optimality or overall superiority claim, no per-cell mixing, new inference, training or Overleaf edit.
+
 ## Response-strength screen completed — 11 November 2026
 
 Observed management UTC: 2026-11-11T05:20:38.738978+00:00. [Completed seed 17 SELECT-only results](results/ff2_response_tuning_20261111_r1/README.md): all four ten-epoch runs and paired comparisons complete, zero failures. Smooth 0.10 selects epoch 4 with response active and lowers primary joint 100F_FPR by 0.779 points versus fairness-only, with near-identical AUC and some other-axis regressions. Primary uncertainty is INCONCLUSIVE (964/2000 valid draws; 1900 required). No new TEST/CAL or Ding evaluation. Actual 11.278 GPU-hours, reservations closed and leases released. Earlier launch/progress entries below are historical snapshots.

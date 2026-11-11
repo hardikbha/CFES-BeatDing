@@ -1,0 +1,22 @@
+[
+  {
+    "arm": "L_A",
+    "seed": 17,
+    "status": "COMPLETED_VERIFIED",
+    "epochs_completed": 10,
+    "selected_epoch": 5,
+    "checkpoint_sha256": "0571a220faa63ad61c3b2d5815d73f25a077ecf59a1a8e30c379a620e31c0555",
+    "source_sha256": "72d368a439658c601a5fe4d717237b1561190e85c13c70f6db3a441bc5cdbe78",
+    "receipt_sha256": "e1b3d1783988ee7d85a9c2bbc235bd540aa03eeb642e2bc30666ee9b6ed1db82"
+  },
+  {
+    "arm": "L_H",
+    "seed": 17,
+    "status": "COMPLETED_VERIFIED",
+    "epochs_completed": 10,
+    "selected_epoch": 1,
+    "checkpoint_sha256": "b08c2b5180d999f81e044872a8228f7e876d0250a6cb29034d59b11b1a897f10",
+    "source_sha256": "72d368a439658c601a5fe4d717237b1561190e85c13c70f6db3a441bc5cdbe78",
+    "receipt_sha256": "b392f4a0b7696656774e1431ba87186254f318f2423b37f176fa762070447a99"
+  }
+]

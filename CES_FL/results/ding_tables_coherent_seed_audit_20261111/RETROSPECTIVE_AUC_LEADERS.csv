@@ -1,0 +1,9 @@
+backbone,dataset,source_tag,variant,seed,AUC_pct,checkpoint_sha256,pool
+Xception,FF++,X-LA-7,L_A,7,98.5412277544366,ed3c606d1b4307b981385a3e5f929c6959efc6427f6b640e5119d45f74ec1b80,68-record archived candidate pool; excludes separate SWA/SBI family
+Xception,DFDC,X-LA-17,L_A,17,61.76896565969927,aee9670ca011937d457846fbf13717445c5607715064dd6a54da5a82bda580ae,68-record archived candidate pool; excludes separate SWA/SBI family
+Xception,Celeb-DF,X-R2-17,R2_partial_dro,17,74.67064602615386,297ba46139706034bff039ec877dcfb43abb47f8f63adbecc37f7828551bb937,68-record archived candidate pool; excludes separate SWA/SBI family
+Xception,DFD,X-LA-7,L_A,7,84.23389897685041,ed3c606d1b4307b981385a3e5f929c6959efc6427f6b640e5119d45f74ec1b80,68-record archived candidate pool; excludes separate SWA/SBI family
+ResNet-50,FF++,R-LA-17,L_A,17,96.21028628349141,0571a220faa63ad61c3b2d5815d73f25a077ecf59a1a8e30c379a620e31c0555,68-record archived candidate pool; excludes separate SWA/SBI family
+ResNet-50,DFDC,R-LH-17,L_H,17,60.06800832213355,b08c2b5180d999f81e044872a8228f7e876d0250a6cb29034d59b11b1a897f10,68-record archived candidate pool; excludes separate SWA/SBI family
+ResNet-50,Celeb-DF,R-LH-17,L_H,17,73.81058160596577,b08c2b5180d999f81e044872a8228f7e876d0250a6cb29034d59b11b1a897f10,68-record archived candidate pool; excludes separate SWA/SBI family
+ResNet-50,DFD,R-C-17,C_resnet50,17,74.01591667696236,6be2e37e22b53863fbb00430847e4be72f87724404cfb549ef62b6c9ece92c29,68-record archived candidate pool; excludes separate SWA/SBI family

@@ -1,0 +1,20 @@
+{
+  "main_tex_sha256": "156f8ab5f830faaa80ae3c4e2236546d3aa4349989acede75e3de88b7daf9c7d",
+  "table3_rows_sha256": "38c0e1cc31be1072b8d1e8dfe7da83bbf5948bddafb75c3a5d14d5809452367e",
+  "current_table3_declared_seeds": [
+    37,
+    47,
+    57
+  ],
+  "current_table3_rows_are_declared_three_seed_means": true,
+  "current_table3_variants": [
+    "R0-SWA",
+    "R0-SBI-SWA",
+    "R3-SBI-SWA"
+  ],
+  "these_are_full_LH": false,
+  "current_per_seed_SWA_native_results_verified_in_this_audit": false,
+  "coherent_full_LH_seed17_receipts_verified": true,
+  "manuscript_has_stale_no_ResNet_LH_statement": true,
+  "Overleaf_edited": false
+}

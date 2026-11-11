@@ -1,0 +1,1208 @@
+[
+  {
+    "overall_auc_pct": 98.47094300078962,
+    "overall_fpr_pct": 9.365359189070075,
+    "overall_fnr_pct": 3.877678186262762,
+    "n": 25401,
+    "n_real": 4538,
+    "n_fake": 20863,
+    "axes": {
+      "gender": {
+        "F_FPR_pct": 0.4722059455447472,
+        "F_DP_pct": 1.7633902333221707,
+        "es_AUC_pct": 97.47272668334786,
+        "worst_group_auc_pct": 97.94714653964428,
+        "FPR_gap_pp": 0.4722059455447472,
+        "TPR_gap_pp": 3.1489125963078983
+      },
+      "race": {
+        "F_FPR_pct": 9.03998161818108,
+        "F_DP_pct": 3.0594456056534214,
+        "es_AUC_pct": 97.06078736496798,
+        "worst_group_auc_pct": 97.76472836212015,
+        "FPR_gap_pp": 5.520188158628586,
+        "TPR_gap_pp": 1.9743772260550785
+      },
+      "age_bin": {
+        "F_FPR_pct": 13.057319370344233,
+        "F_DP_pct": 37.49780932351911,
+        "es_AUC_pct": 96.8718829751383,
+        "worst_group_auc_pct": 98.3168438060917,
+        "FPR_gap_pp": 10.33805031446541,
+        "TPR_gap_pp": 3.3051787390154423
+      },
+      "skin_bin": {
+        "F_FPR_pct": 5.802182195907377,
+        "F_DP_pct": 3.655885428580763,
+        "es_AUC_pct": 97.57716057787265,
+        "worst_group_auc_pct": 98.1459684251958,
+        "FPR_gap_pp": 4.246365853326249,
+        "TPR_gap_pp": 2.974342835038555
+      },
+      "gender_race": {
+        "F_FPR_pct": 22.793373417268096,
+        "F_DP_pct": 12.166101569461407,
+        "es_AUC_pct": 91.88351911610523,
+        "worst_group_auc_pct": 94.92768043708332,
+        "FPR_gap_pp": 10.671993063297409,
+        "TPR_gap_pp": 8.890501634122225
+      },
+      "ids8": {
+        "F_FPR_pct": 30.41536363587169,
+        "F_DP_pct": 30.076633113789818,
+        "es_AUC_pct": 88.56056644374958,
+        "worst_group_auc_pct": 91.59629629629629,
+        "FPR_gap_pp": 13.31543624161074,
+        "TPR_gap_pp": 13.838678328474247
+      }
+    },
+    "tag": "X-LA-17",
+    "model": "L_A",
+    "backbone": "Xception",
+    "seed": 17,
+    "dataset": "ffpp",
+    "checkpoint_sha256": "aee9670ca011937d457846fbf13717445c5607715064dd6a54da5a82bda580ae",
+    "manifest_sha256": "7c7a09d5ccab349b1670f357bf7b1498d58af4a6621e8b0469d8d0ea368ccbc0",
+    "source": "/home/sachin.chaudhary/ces_fl_runs/lh_tables_s17_20261103T133000Z/analysis/L_A_ffpp.json"
+  },
+  {
+    "overall_auc_pct": 98.48888783078053,
+    "overall_fpr_pct": 4.3190832966064345,
+    "overall_fnr_pct": 7.069932416239275,
+    "n": 25401,
+    "n_real": 4538,
+    "n_fake": 20863,
+    "axes": {
+      "gender": {
+        "F_FPR_pct": 0.2393843509512092,
+        "F_DP_pct": 2.413436879259967,
+        "es_AUC_pct": 97.44006242648007,
+        "worst_group_auc_pct": 97.92427916230267,
+        "FPR_gap_pp": 0.2393843509512092,
+        "TPR_gap_pp": 3.8049648699383503
+      },
+      "race": {
+        "F_FPR_pct": 8.842672647996883,
+        "F_DP_pct": 3.2709238744897062,
+        "es_AUC_pct": 97.56568039811604,
+        "worst_group_auc_pct": 97.96973915575362,
+        "FPR_gap_pp": 4.012680893533331,
+        "TPR_gap_pp": 2.3449518415961372
+      },
+      "age_bin": {
+        "F_FPR_pct": 6.07665000201911,
+        "F_DP_pct": 37.53065729234793,
+        "es_AUC_pct": 96.7599307609215,
+        "worst_group_auc_pct": 98.29215073160911,
+        "FPR_gap_pp": 4.716981132075472,
+        "TPR_gap_pp": 7.011347154679634
+      },
+      "skin_bin": {
+        "F_FPR_pct": 3.0687099146563863,
+        "F_DP_pct": 3.780595405378917,
+        "es_AUC_pct": 97.73028438536878,
+        "worst_group_auc_pct": 98.23025490666987,
+        "FPR_gap_pp": 2.373324017699704,
+        "TPR_gap_pp": 4.114129636343787
+      },
+      "gender_race": {
+        "F_FPR_pct": 20.216575520774388,
+        "F_DP_pct": 15.15855460376294,
+        "es_AUC_pct": 92.06555657935382,
+        "worst_group_auc_pct": 95.15472496856655,
+        "FPR_gap_pp": 8.74695597449859,
+        "TPR_gap_pp": 12.637841010379477
+      },
+      "ids8": {
+        "F_FPR_pct": 20.039738137335732,
+        "F_DP_pct": 40.65359477124183,
+        "es_AUC_pct": 87.84858259946046,
+        "worst_group_auc_pct": 90.56666666666668,
+        "FPR_gap_pp": 7.302280987312983,
+        "TPR_gap_pp": 28.658892128279884
+      }
+    },
+    "tag": "X-LH-17",
+    "model": "L_H",
+    "backbone": "Xception",
+    "seed": 17,
+    "dataset": "ffpp",
+    "checkpoint_sha256": "6ef2caad3979d101fd94d7350aa3c1a50f95ee8307673cfaae63ac9d89af36f0",
+    "manifest_sha256": "7c7a09d5ccab349b1670f357bf7b1498d58af4a6621e8b0469d8d0ea368ccbc0",
+    "source": "/home/sachin.chaudhary/ces_fl_runs/lh_tables_s17_20261103T133000Z/analysis/L_H_ffpp.json"
+  },
+  {
+    "overall_auc_pct": 61.76896565969927,
+    "overall_fpr_pct": 30.491870195251376,
+    "overall_fnr_pct": 55.22186810492767,
+    "n": 22857,
+    "n_real": 14699,
+    "n_fake": 8158,
+    "axes": {
+      "gender": {
+        "F_FPR_pct": 0.0038929775599938488,
+        "F_DP_pct": 1.4156649620551076,
+        "es_AUC_pct": 60.692049480100295,
+        "worst_group_auc_pct": 60.97759203566119,
+        "FPR_gap_pp": 0.0038929775599938488,
+        "TPR_gap_pp": 1.0874000656975413
+      },
+      "race": {
+        "F_FPR_pct": 13.35134326258432,
+        "F_DP_pct": 5.391320234983277,
+        "es_AUC_pct": 53.48771489815892,
+        "worst_group_auc_pct": 58.41640929284323,
+        "FPR_gap_pp": 8.915465100071291,
+        "TPR_gap_pp": 12.227407651201395
+      },
+      "age_bin": {},
+      "skin_bin": {},
+      "gender_race": {
+        "F_FPR_pct": 27.839846639460063,
+        "F_DP_pct": 6.773211811351299,
+        "es_AUC_pct": 40.282684079827625,
+        "worst_group_auc_pct": 53.029695812411106,
+        "FPR_gap_pp": 13.436325619507786,
+        "TPR_gap_pp": 24.780487804878053
+      },
+      "ids8": {}
+    },
+    "tag": "X-LA-17",
+    "model": "L_A",
+    "backbone": "Xception",
+    "seed": 17,
+    "dataset": "dfdc",
+    "checkpoint_sha256": "aee9670ca011937d457846fbf13717445c5607715064dd6a54da5a82bda580ae",
+    "manifest_sha256": "30a5c96a5a8ed06495276050543e3391bd5791281e54c08559f0118bef568c1f",
+    "source": "/home/sachin.chaudhary/ces_fl_runs/lh_tables_s17_20261103T133000Z/analysis/L_A_dfdc.json"
+  },
+  {
+    "overall_auc_pct": 60.45563052363618,
+    "overall_fpr_pct": 18.035240492550514,
+    "overall_fnr_pct": 70.6423142927188,
+    "n": 22857,
+    "n_real": 14699,
+    "n_fake": 8158,
+    "axes": {
+      "gender": {
+        "F_FPR_pct": 0.3069401494262908,
+        "F_DP_pct": 1.7535839517964114,
+        "es_AUC_pct": 59.73200567896255,
+        "worst_group_auc_pct": 59.692124827394146,
+        "FPR_gap_pp": 0.3069401494262908,
+        "TPR_gap_pp": 1.5458190319815435
+      },
+      "race": {
+        "F_FPR_pct": 6.406377241245406,
+        "F_DP_pct": 4.5140961857379756,
+        "es_AUC_pct": 52.37630304891741,
+        "worst_group_auc_pct": 57.247767313777985,
+        "FPR_gap_pp": 4.564142426583878,
+        "TPR_gap_pp": 11.958934517203112
+      },
+      "age_bin": {},
+      "skin_bin": {},
+      "gender_race": {
+        "F_FPR_pct": 15.02228031428316,
+        "F_DP_pct": 6.629136843597197,
+        "es_AUC_pct": 40.01414865774443,
+        "worst_group_auc_pct": 50.46372694625836,
+        "FPR_gap_pp": 6.487335359675786,
+        "TPR_gap_pp": 24.191419141914196
+      },
+      "ids8": {}
+    },
+    "tag": "X-LH-17",
+    "model": "L_H",
+    "backbone": "Xception",
+    "seed": 17,
+    "dataset": "dfdc",
+    "checkpoint_sha256": "6ef2caad3979d101fd94d7350aa3c1a50f95ee8307673cfaae63ac9d89af36f0",
+    "manifest_sha256": "30a5c96a5a8ed06495276050543e3391bd5791281e54c08559f0118bef568c1f",
+    "source": "/home/sachin.chaudhary/ces_fl_runs/lh_tables_s17_20261103T133000Z/analysis/L_H_dfdc.json"
+  },
+  {
+    "overall_auc_pct": 70.7474516455145,
+    "overall_fpr_pct": 61.088744967617714,
+    "overall_fnr_pct": 15.700153879973621,
+    "n": 28458,
+    "n_real": 5713,
+    "n_fake": 22745,
+    "axes": {
+      "gender": {
+        "F_FPR_pct": 6.112553329183424,
+        "F_DP_pct": 23.00825037137337,
+        "es_AUC_pct": 61.234628514626344,
+        "worst_group_auc_pct": 55.215505316765444,
+        "FPR_gap_pp": 6.112553329183424,
+        "TPR_gap_pp": 23.506203311549285
+      },
+      "race": {
+        "F_FPR_pct": 37.82128503173412,
+        "F_DP_pct": 29.174471037114124,
+        "es_AUC_pct": 50.956792774508706,
+        "worst_group_auc_pct": 43.333333333333336,
+        "FPR_gap_pp": 36.94835680751174,
+        "TPR_gap_pp": 24.62046204620462
+      },
+      "age_bin": {},
+      "skin_bin": {},
+      "gender_race": {
+        "F_FPR_pct": 40.38776432426946,
+        "F_DP_pct": 30.841137703780785,
+        "es_AUC_pct": 48.72197193384416,
+        "worst_group_auc_pct": 36.81481481481481,
+        "FPR_gap_pp": 39.17057902973396,
+        "TPR_gap_pp": 24.62046204620462
+      },
+      "ids8": {}
+    },
+    "tag": "X-LA-17",
+    "model": "L_A",
+    "backbone": "Xception",
+    "seed": 17,
+    "dataset": "celebdf",
+    "checkpoint_sha256": "aee9670ca011937d457846fbf13717445c5607715064dd6a54da5a82bda580ae",
+    "manifest_sha256": "5b4c9b3af2589b90e6e3fe9825857eacac9d4c2517f3226feb80fa7d4e0f4873",
+    "source": "/home/sachin.chaudhary/ces_fl_runs/lh_tables_s17_20261103T133000Z/analysis/L_A_celebdf.json"
+  },
+  {
+    "overall_auc_pct": 71.4039109008364,
+    "overall_fpr_pct": 41.72938911255032,
+    "overall_fnr_pct": 27.395031875137395,
+    "n": 28458,
+    "n_real": 5713,
+    "n_fake": 22745,
+    "axes": {
+      "gender": {
+        "F_FPR_pct": 4.690427082926346,
+        "F_DP_pct": 28.850283739168546,
+        "es_AUC_pct": 61.5695767671081,
+        "worst_group_auc_pct": 55.45221729965204,
+        "FPR_gap_pp": 4.690427082926346,
+        "TPR_gap_pp": 30.84948744723541
+      },
+      "race": {
+        "F_FPR_pct": 41.32656872389758,
+        "F_DP_pct": 32.26211122673142,
+        "es_AUC_pct": 51.01083167061784,
+        "worst_group_auc_pct": 44.13333333333333,
+        "FPR_gap_pp": 40.4225352112676,
+        "TPR_gap_pp": 30.850764702568945
+      },
+      "age_bin": {},
+      "skin_bin": {},
+      "gender_race": {
+        "F_FPR_pct": 47.711556211553464,
+        "F_DP_pct": 37.53988900450919,
+        "es_AUC_pct": 48.491707065760004,
+        "worst_group_auc_pct": 36.592592592592595,
+        "FPR_gap_pp": 47.08920187793428,
+        "TPR_gap_pp": 30.850764702568945
+      },
+      "ids8": {}
+    },
+    "tag": "X-LH-17",
+    "model": "L_H",
+    "backbone": "Xception",
+    "seed": 17,
+    "dataset": "celebdf",
+    "checkpoint_sha256": "6ef2caad3979d101fd94d7350aa3c1a50f95ee8307673cfaae63ac9d89af36f0",
+    "manifest_sha256": "5b4c9b3af2589b90e6e3fe9825857eacac9d4c2517f3226feb80fa7d4e0f4873",
+    "source": "/home/sachin.chaudhary/ces_fl_runs/lh_tables_s17_20261103T133000Z/analysis/L_H_celebdf.json"
+  },
+  {
+    "overall_auc_pct": 81.15611937862332,
+    "overall_fpr_pct": 46.377749029754206,
+    "overall_fnr_pct": 14.428730335293183,
+    "n": 9385,
+    "n_real": 3092,
+    "n_fake": 6293,
+    "axes": {
+      "gender": {
+        "F_FPR_pct": 2.699683227427591,
+        "F_DP_pct": 2.38817410352683,
+        "es_AUC_pct": 80.59584576379194,
+        "worst_group_auc_pct": 80.81348138549374,
+        "FPR_gap_pp": 2.699683227427591,
+        "TPR_gap_pp": 0.5928959922314125
+      },
+      "race": {
+        "F_FPR_pct": 10.876203899459707,
+        "F_DP_pct": 1.7361936065675154,
+        "es_AUC_pct": 79.79663369014328,
+        "worst_group_auc_pct": 79.62969924812029,
+        "FPR_gap_pp": 10.876203899459707,
+        "TPR_gap_pp": 6.664159874365468
+      },
+      "age_bin": {},
+      "skin_bin": {},
+      "gender_race": {
+        "F_FPR_pct": 34.40569387107313,
+        "F_DP_pct": 5.507996434978524,
+        "es_AUC_pct": 68.57033489831346,
+        "worst_group_auc_pct": 78.27062580882614,
+        "FPR_gap_pp": 22.48011138383797,
+        "TPR_gap_pp": 8.030989016292715
+      },
+      "ids8": {}
+    },
+    "tag": "X-LA-17",
+    "model": "L_A",
+    "backbone": "Xception",
+    "seed": 17,
+    "dataset": "dfd",
+    "checkpoint_sha256": "aee9670ca011937d457846fbf13717445c5607715064dd6a54da5a82bda580ae",
+    "manifest_sha256": "a9d89cb3838b72b36c8eaf55c0ae12c165a38ead50d2e18fc1969245a9533e79",
+    "source": "/home/sachin.chaudhary/ces_fl_runs/lh_tables_s17_20261103T133000Z/analysis/L_A_dfd.json"
+  },
+  {
+    "overall_auc_pct": 80.87877267273089,
+    "overall_fpr_pct": 31.856403622250973,
+    "overall_fnr_pct": 22.469410456062292,
+    "n": 9385,
+    "n_real": 3092,
+    "n_fake": 6293,
+    "axes": {
+      "gender": {
+        "F_FPR_pct": 0.8451886885531557,
+        "F_DP_pct": 1.8577858382112011,
+        "es_AUC_pct": 80.18612485139897,
+        "worst_group_auc_pct": 80.45360433569621,
+        "FPR_gap_pp": 0.8451886885531557,
+        "TPR_gap_pp": 0.4480961756199109
+      },
+      "race": {
+        "F_FPR_pct": 13.265210241954422,
+        "F_DP_pct": 2.5381186697717273,
+        "es_AUC_pct": 79.47187441368413,
+        "worst_group_auc_pct": 79.32262474367738,
+        "FPR_gap_pp": 13.265210241954422,
+        "TPR_gap_pp": 8.227181738755377
+      },
+      "age_bin": {},
+      "skin_bin": {},
+      "gender_race": {
+        "F_FPR_pct": 40.20551794743268,
+        "F_DP_pct": 6.4617189542752085,
+        "es_AUC_pct": 67.7925862169867,
+        "worst_group_auc_pct": 78.00497465183373,
+        "FPR_gap_pp": 26.68621700879765,
+        "TPR_gap_pp": 9.67659599745316
+      },
+      "ids8": {}
+    },
+    "tag": "X-LH-17",
+    "model": "L_H",
+    "backbone": "Xception",
+    "seed": 17,
+    "dataset": "dfd",
+    "checkpoint_sha256": "6ef2caad3979d101fd94d7350aa3c1a50f95ee8307673cfaae63ac9d89af36f0",
+    "manifest_sha256": "a9d89cb3838b72b36c8eaf55c0ae12c165a38ead50d2e18fc1969245a9533e79",
+    "source": "/home/sachin.chaudhary/ces_fl_runs/lh_tables_s17_20261103T133000Z/analysis/L_H_dfd.json"
+  },
+  {
+    "overall_auc_pct": 96.21028628349141,
+    "overall_fpr_pct": 15.381225209343324,
+    "overall_fnr_pct": 6.581028615251881,
+    "n": 25401,
+    "n_real": 4538,
+    "n_fake": 20863,
+    "axes": {
+      "gender": {
+        "F_FPR_pct": 0.4426735419352318,
+        "F_DP_pct": 4.382169183787077,
+        "es_AUC_pct": 93.72434361625814,
+        "worst_group_auc_pct": 94.86846296216589,
+        "FPR_gap_pp": 0.4426735419352318,
+        "TPR_gap_pp": 6.238800986917504
+      },
+      "race": {
+        "F_FPR_pct": 14.86401590157265,
+        "F_DP_pct": 3.1008492569002066,
+        "es_AUC_pct": 92.31226952246881,
+        "worst_group_auc_pct": 95.11084799970882,
+        "FPR_gap_pp": 11.513292433537833,
+        "TPR_gap_pp": 5.16053391053391
+      },
+      "age_bin": {
+        "F_FPR_pct": 25.36876020401475,
+        "F_DP_pct": 37.21740273396424,
+        "es_AUC_pct": 92.7139506100953,
+        "worst_group_auc_pct": 95.9595079853342,
+        "FPR_gap_pp": 18.199685534591197,
+        "TPR_gap_pp": 2.8686611956041252
+      },
+      "skin_bin": {
+        "F_FPR_pct": 8.412453322034757,
+        "F_DP_pct": 3.797223400982974,
+        "es_AUC_pct": 94.50834444705293,
+        "worst_group_auc_pct": 95.36983065150967,
+        "FPR_gap_pp": 6.535338253002748,
+        "TPR_gap_pp": 3.9774940459904276
+      },
+      "gender_race": {
+        "F_FPR_pct": 31.368677670929706,
+        "F_DP_pct": 9.663873919269383,
+        "es_AUC_pct": 80.39401017868046,
+        "worst_group_auc_pct": 90.93495309856989,
+        "FPR_gap_pp": 14.828461475476951,
+        "TPR_gap_pp": 11.783047870004392
+      },
+      "ids8": {
+        "F_FPR_pct": 48.59599926500205,
+        "F_DP_pct": 19.07290878211718,
+        "es_AUC_pct": 82.1376420241679,
+        "worst_group_auc_pct": 89.26666666666667,
+        "FPR_gap_pp": 24.19560878243513,
+        "TPR_gap_pp": 9.609892023685127
+      }
+    },
+    "tag": "R-LA-17",
+    "model": "L_A",
+    "backbone": "ResNet-50",
+    "seed": 17,
+    "dataset": "ffpp",
+    "checkpoint_sha256": "0571a220faa63ad61c3b2d5815d73f25a077ecf59a1a8e30c379a620e31c0555",
+    "manifest_sha256": "7c7a09d5ccab349b1670f357bf7b1498d58af4a6621e8b0469d8d0ea368ccbc0",
+    "source": "/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104_cudaenv3/table3_eval/analysis/L_A_ffpp.json"
+  },
+  {
+    "overall_auc_pct": 96.05372386037838,
+    "overall_fpr_pct": 16.152490083737327,
+    "overall_fnr_pct": 6.513924171979102,
+    "n": 25401,
+    "n_real": 4538,
+    "n_fake": 20863,
+    "axes": {
+      "gender": {
+        "F_FPR_pct": 0.017930387905779055,
+        "F_DP_pct": 4.25994921902737,
+        "es_AUC_pct": 93.71012107814809,
+        "worst_group_auc_pct": 94.83434243437256,
+        "FPR_gap_pp": 0.017930387905779055,
+        "TPR_gap_pp": 5.98292168519757
+      },
+      "race": {
+        "F_FPR_pct": 15.903902798607819,
+        "F_DP_pct": 2.669990804649558,
+        "es_AUC_pct": 92.76707683740126,
+        "worst_group_auc_pct": 95.25159743500502,
+        "FPR_gap_pp": 13.401986561495763,
+        "TPR_gap_pp": 4.572510822510823
+      },
+      "age_bin": {
+        "F_FPR_pct": 26.524509345238386,
+        "F_DP_pct": 37.30853487556958,
+        "es_AUC_pct": 92.40429877023178,
+        "worst_group_auc_pct": 96.02378836494299,
+        "FPR_gap_pp": 18.75,
+        "TPR_gap_pp": 3.5662887785045734
+      },
+      "skin_bin": {
+        "F_FPR_pct": 7.627712621965554,
+        "F_DP_pct": 3.1431879977457555,
+        "es_AUC_pct": 94.16796940628109,
+        "worst_group_auc_pct": 95.05803529733552,
+        "FPR_gap_pp": 5.588752196836558,
+        "TPR_gap_pp": 3.253544438409191
+      },
+      "gender_race": {
+        "F_FPR_pct": 30.433722910690864,
+        "F_DP_pct": 8.933193796617145,
+        "es_AUC_pct": 81.37746276234296,
+        "worst_group_auc_pct": 91.66357608705485,
+        "FPR_gap_pp": 17.853926144272496,
+        "TPR_gap_pp": 11.985068072024594
+      },
+      "ids8": {
+        "F_FPR_pct": 49.406377821691535,
+        "F_DP_pct": 18.20109884730241,
+        "es_AUC_pct": 81.69329476028228,
+        "worst_group_auc_pct": 89.13333333333333,
+        "FPR_gap_pp": 25.2375249500998,
+        "TPR_gap_pp": 9.71438523162661
+      }
+    },
+    "tag": "R-LH-17",
+    "model": "L_H",
+    "backbone": "ResNet-50",
+    "seed": 17,
+    "dataset": "ffpp",
+    "checkpoint_sha256": "b08c2b5180d999f81e044872a8228f7e876d0250a6cb29034d59b11b1a897f10",
+    "manifest_sha256": "7c7a09d5ccab349b1670f357bf7b1498d58af4a6621e8b0469d8d0ea368ccbc0",
+    "source": "/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104_cudaenv3/table3_eval/analysis/L_H_ffpp.json"
+  },
+  {
+    "overall_auc_pct": 59.53545570432625,
+    "overall_fpr_pct": 35.57384856112661,
+    "overall_fnr_pct": 51.225790634959544,
+    "n": 22857,
+    "n_real": 14699,
+    "n_fake": 8158,
+    "axes": {
+      "gender": {
+        "F_FPR_pct": 8.629517371318563,
+        "F_DP_pct": 8.706620264234278,
+        "es_AUC_pct": 57.35561501869122,
+        "worst_group_auc_pct": 57.51421905621541,
+        "FPR_gap_pp": 8.629517371318563,
+        "TPR_gap_pp": 4.460607966893749
+      },
+      "race": {
+        "F_FPR_pct": 18.79313285873941,
+        "F_DP_pct": 4.753235526348637,
+        "es_AUC_pct": 49.518255049913705,
+        "worst_group_auc_pct": 56.181862046181664,
+        "FPR_gap_pp": 11.743645032056483,
+        "TPR_gap_pp": 14.680059523809524
+      },
+      "age_bin": {},
+      "skin_bin": {},
+      "gender_race": {
+        "F_FPR_pct": 46.56278271724389,
+        "F_DP_pct": 12.361343233147942,
+        "es_AUC_pct": 36.146138755629366,
+        "worst_group_auc_pct": 54.03356986256159,
+        "FPR_gap_pp": 15.826621913301448,
+        "TPR_gap_pp": 51.913214990138066
+      },
+      "ids8": {}
+    },
+    "tag": "R-LA-17",
+    "model": "L_A",
+    "backbone": "ResNet-50",
+    "seed": 17,
+    "dataset": "dfdc",
+    "checkpoint_sha256": "0571a220faa63ad61c3b2d5815d73f25a077ecf59a1a8e30c379a620e31c0555",
+    "manifest_sha256": "30a5c96a5a8ed06495276050543e3391bd5791281e54c08559f0118bef568c1f",
+    "source": "/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104_cudaenv3/table3_eval/analysis/L_A_dfdc.json"
+  },
+  {
+    "overall_auc_pct": 60.06800832213355,
+    "overall_fpr_pct": 36.79161847744744,
+    "overall_fnr_pct": 48.529051238048545,
+    "n": 22857,
+    "n_real": 14699,
+    "n_fake": 8158,
+    "axes": {
+      "gender": {
+        "F_FPR_pct": 10.085507734756227,
+        "F_DP_pct": 9.266995528705785,
+        "es_AUC_pct": 57.95161870598635,
+        "worst_group_auc_pct": 57.9533642102967,
+        "FPR_gap_pp": 10.085507734756227,
+        "TPR_gap_pp": 2.8382502333226145
+      },
+      "race": {
+        "F_FPR_pct": 16.35638167390963,
+        "F_DP_pct": 1.5962293794186955,
+        "es_AUC_pct": 51.18255702265252,
+        "worst_group_auc_pct": 55.14163076836138,
+        "FPR_gap_pp": 10.281751892409291,
+        "TPR_gap_pp": 16.498409505311564
+      },
+      "age_bin": {},
+      "skin_bin": {},
+      "gender_race": {
+        "F_FPR_pct": 48.64362865120511,
+        "F_DP_pct": 14.664191713014969,
+        "es_AUC_pct": 33.685154067884596,
+        "worst_group_auc_pct": 50.43182920912177,
+        "FPR_gap_pp": 18.283452239650472,
+        "TPR_gap_pp": 48.88888888888889
+      },
+      "ids8": {}
+    },
+    "tag": "R-LH-17",
+    "model": "L_H",
+    "backbone": "ResNet-50",
+    "seed": 17,
+    "dataset": "dfdc",
+    "checkpoint_sha256": "b08c2b5180d999f81e044872a8228f7e876d0250a6cb29034d59b11b1a897f10",
+    "manifest_sha256": "30a5c96a5a8ed06495276050543e3391bd5791281e54c08559f0118bef568c1f",
+    "source": "/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104_cudaenv3/table3_eval/analysis/L_H_dfdc.json"
+  },
+  {
+    "overall_auc_pct": 73.4968870963652,
+    "overall_fpr_pct": 62.296516716261166,
+    "overall_fnr_pct": 13.581006814684546,
+    "n": 28458,
+    "n_real": 5713,
+    "n_fake": 22745,
+    "axes": {
+      "gender": {
+        "F_FPR_pct": 12.19291012319581,
+        "F_DP_pct": 27.694097264270024,
+        "es_AUC_pct": 62.40996708433146,
+        "worst_group_auc_pct": 56.24539726699943,
+        "FPR_gap_pp": 12.19291012319581,
+        "TPR_gap_pp": 26.96476005284084
+      },
+      "race": {
+        "F_FPR_pct": 44.33061194622824,
+        "F_DP_pct": 30.750375765984504,
+        "es_AUC_pct": 60.01328019266958,
+        "worst_group_auc_pct": 61.88888888888889,
+        "FPR_gap_pp": 41.924882629107984,
+        "TPR_gap_pp": 29.108910891089113
+      },
+      "age_bin": {},
+      "skin_bin": {},
+      "gender_race": {
+        "F_FPR_pct": 50.56951576720613,
+        "F_DP_pct": 35.472597988206736,
+        "es_AUC_pct": 55.89839064748748,
+        "worst_group_auc_pct": 52.44444444444445,
+        "FPR_gap_pp": 47.480438184663534,
+        "TPR_gap_pp": 29.108910891089113
+      },
+      "ids8": {}
+    },
+    "tag": "R-LA-17",
+    "model": "L_A",
+    "backbone": "ResNet-50",
+    "seed": 17,
+    "dataset": "celebdf",
+    "checkpoint_sha256": "0571a220faa63ad61c3b2d5815d73f25a077ecf59a1a8e30c379a620e31c0555",
+    "manifest_sha256": "5b4c9b3af2589b90e6e3fe9825857eacac9d4c2517f3226feb80fa7d4e0f4873",
+    "source": "/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104_cudaenv3/table3_eval/analysis/L_A_celebdf.json"
+  },
+  {
+    "overall_auc_pct": 73.81058160596577,
+    "overall_fpr_pct": 65.8323122702608,
+    "overall_fnr_pct": 11.422290613321609,
+    "n": 28458,
+    "n_real": 5713,
+    "n_fake": 22745,
+    "axes": {
+      "gender": {
+        "F_FPR_pct": 14.28205692382669,
+        "F_DP_pct": 27.915078965593175,
+        "es_AUC_pct": 62.54064223341299,
+        "worst_group_auc_pct": 56.53709851504631,
+        "FPR_gap_pp": 14.28205692382669,
+        "TPR_gap_pp": 26.630412542020466
+      },
+      "race": {
+        "F_FPR_pct": 44.79702595429223,
+        "F_DP_pct": 31.430223147184645,
+        "es_AUC_pct": 61.958161734502184,
+        "worst_group_auc_pct": 63.25082508250826,
+        "FPR_gap_pp": 42.30046948356808,
+        "TPR_gap_pp": 29.966996699669966
+      },
+      "age_bin": {},
+      "skin_bin": {},
+      "gender_race": {
+        "F_FPR_pct": 49.412078482502146,
+        "F_DP_pct": 34.4857787027402,
+        "es_AUC_pct": 57.85430714614386,
+        "worst_group_auc_pct": 57.074074074074076,
+        "FPR_gap_pp": 45.63380281690141,
+        "TPR_gap_pp": 29.966996699669966
+      },
+      "ids8": {}
+    },
+    "tag": "R-LH-17",
+    "model": "L_H",
+    "backbone": "ResNet-50",
+    "seed": 17,
+    "dataset": "celebdf",
+    "checkpoint_sha256": "b08c2b5180d999f81e044872a8228f7e876d0250a6cb29034d59b11b1a897f10",
+    "manifest_sha256": "5b4c9b3af2589b90e6e3fe9825857eacac9d4c2517f3226feb80fa7d4e0f4873",
+    "source": "/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104_cudaenv3/table3_eval/analysis/L_H_celebdf.json"
+  },
+  {
+    "overall_auc_pct": 73.65455035462101,
+    "overall_fpr_pct": 52.45795601552393,
+    "overall_fnr_pct": 18.05180359129191,
+    "n": 9385,
+    "n_real": 3092,
+    "n_fake": 6293,
+    "axes": {
+      "gender": {
+        "F_FPR_pct": 2.76030875354506,
+        "F_DP_pct": 1.314174571332949,
+        "es_AUC_pct": 72.31677043912576,
+        "worst_group_auc_pct": 72.80863178692371,
+        "FPR_gap_pp": 2.76030875354506,
+        "TPR_gap_pp": 4.577535975434471
+      },
+      "race": {
+        "F_FPR_pct": 8.83251115809256,
+        "F_DP_pct": 3.6752683467587532,
+        "es_AUC_pct": 71.27678751797562,
+        "worst_group_auc_pct": 70.77802460697198,
+        "FPR_gap_pp": 8.83251115809256,
+        "TPR_gap_pp": 8.776971057608298
+      },
+      "age_bin": {},
+      "skin_bin": {},
+      "gender_race": {
+        "F_FPR_pct": 31.75245754125262,
+        "F_DP_pct": 7.9891413716205335,
+        "es_AUC_pct": 56.51118962756436,
+        "worst_group_auc_pct": 67.434136322082,
+        "FPR_gap_pp": 19.3757042106581,
+        "TPR_gap_pp": 12.054192591941153
+      },
+      "ids8": {}
+    },
+    "tag": "R-LA-17",
+    "model": "L_A",
+    "backbone": "ResNet-50",
+    "seed": 17,
+    "dataset": "dfd",
+    "checkpoint_sha256": "0571a220faa63ad61c3b2d5815d73f25a077ecf59a1a8e30c379a620e31c0555",
+    "manifest_sha256": "a9d89cb3838b72b36c8eaf55c0ae12c165a38ead50d2e18fc1969245a9533e79",
+    "source": "/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104_cudaenv3/table3_eval/analysis/L_A_dfd.json"
+  },
+  {
+    "overall_auc_pct": 73.4717999156746,
+    "overall_fpr_pct": 52.55498059508409,
+    "overall_fnr_pct": 17.62275544255522,
+    "n": 9385,
+    "n_real": 3092,
+    "n_fake": 6293,
+    "axes": {
+      "gender": {
+        "F_FPR_pct": 2.294491432026158,
+        "F_DP_pct": 1.7668857317022724,
+        "es_AUC_pct": 71.70387473442578,
+        "worst_group_auc_pct": 72.35694194866412,
+        "FPR_gap_pp": 2.294491432026158,
+        "TPR_gap_pp": 5.038252412612635
+      },
+      "race": {
+        "F_FPR_pct": 6.6280747676096485,
+        "F_DP_pct": 0.9466278626500291,
+        "es_AUC_pct": 70.60927417967669,
+        "worst_group_auc_pct": 70.01264524948735,
+        "FPR_gap_pp": 6.6280747676096485,
+        "TPR_gap_pp": 5.615564968314884
+      },
+      "age_bin": {},
+      "skin_bin": {},
+      "gender_race": {
+        "F_FPR_pct": 33.572247738230026,
+        "F_DP_pct": 6.310174556694992,
+        "es_AUC_pct": 54.646791640651045,
+        "worst_group_auc_pct": 65.70606812542297,
+        "FPR_gap_pp": 22.617302052785927,
+        "TPR_gap_pp": 10.259162257855655
+      },
+      "ids8": {}
+    },
+    "tag": "R-LH-17",
+    "model": "L_H",
+    "backbone": "ResNet-50",
+    "seed": 17,
+    "dataset": "dfd",
+    "checkpoint_sha256": "b08c2b5180d999f81e044872a8228f7e876d0250a6cb29034d59b11b1a897f10",
+    "manifest_sha256": "a9d89cb3838b72b36c8eaf55c0ae12c165a38ead50d2e18fc1969245a9533e79",
+    "source": "/home/sachin.chaudhary/ces_fl_runs/lh_resnet50_table3_s17_20261104_cudaenv3/table3_eval/analysis/L_H_dfd.json"
+  },
+  {
+    "overall_auc_pct": 98.5412277544366,
+    "overall_fpr_pct": 8.395769061260468,
+    "overall_fnr_pct": 4.203614053587692,
+    "n": 25401,
+    "n_real": 4538,
+    "n_fake": 20863,
+    "axes": {
+      "gender": {
+        "F_FPR_pct": 0.5593968514395087,
+        "F_DP_pct": 2.4712800051076345,
+        "es_AUC_pct": 97.54003905592106,
+        "worst_group_auc_pct": 98.01412263207986,
+        "FPR_gap_pp": 0.5593968514395087,
+        "TPR_gap_pp": 3.7934243231591793
+      },
+      "race": {
+        "F_FPR_pct": 6.028783981772882,
+        "F_DP_pct": 3.9566039613815107,
+        "es_AUC_pct": 96.1962614552776,
+        "worst_group_auc_pct": 97.29169652260748,
+        "FPR_gap_pp": 5.280455740578441,
+        "TPR_gap_pp": 3.951978067662161
+      },
+      "age_bin": {
+        "F_FPR_pct": 10.898277792023038,
+        "F_DP_pct": 35.45924623937214,
+        "es_AUC_pct": 96.70385150340292,
+        "worst_group_auc_pct": 98.47541389453644,
+        "FPR_gap_pp": 9.166092350103378,
+        "TPR_gap_pp": 1.0997776905976198
+      },
+      "skin_bin": {
+        "F_FPR_pct": 5.114901864480271,
+        "F_DP_pct": 3.214600830038228,
+        "es_AUC_pct": 97.79187953315373,
+        "worst_group_auc_pct": 98.27443217159396,
+        "FPR_gap_pp": 4.658149515919752,
+        "TPR_gap_pp": 3.2619851820302803
+      },
+      "gender_race": {
+        "F_FPR_pct": 14.930172660246665,
+        "F_DP_pct": 13.584538257223144,
+        "es_AUC_pct": 90.0168832303813,
+        "worst_group_auc_pct": 93.93085544228454,
+        "FPR_gap_pp": 9.166461966756733,
+        "TPR_gap_pp": 12.01447715324254
+      },
+      "ids8": {
+        "F_FPR_pct": 12.23160869029693,
+        "F_DP_pct": 39.18761367872838,
+        "es_AUC_pct": 86.26028444760433,
+        "worst_group_auc_pct": 87.9,
+        "FPR_gap_pp": 4.721794851870846,
+        "TPR_gap_pp": 24.505537586984218
+      }
+    },
+    "tag": "X-LA-7",
+    "model": "L_A",
+    "backbone": "Xception",
+    "seed": 7,
+    "dataset": "ffpp",
+    "checkpoint_sha256": "ed3c606d1b4307b981385a3e5f929c6959efc6427f6b640e5119d45f74ec1b80",
+    "manifest_sha256": "7c7a09d5ccab349b1670f357bf7b1498d58af4a6621e8b0469d8d0ea368ccbc0",
+    "source": "/home/sachin.chaudhary/ces_fl_runs/xception_seeds_7_27_20261107/analysis/L_A_s7_ffpp.json"
+  },
+  {
+    "overall_auc_pct": 59.97213579995644,
+    "overall_fpr_pct": 33.090686441254505,
+    "overall_fnr_pct": 51.630301544496206,
+    "n": 22857,
+    "n_real": 14699,
+    "n_fake": 8158,
+    "axes": {
+      "gender": {
+        "F_FPR_pct": 1.8380346327922403,
+        "F_DP_pct": 3.952642714267446,
+        "es_AUC_pct": 59.08019273790918,
+        "worst_group_auc_pct": 59.31702001338501,
+        "FPR_gap_pp": 1.8380346327922403,
+        "TPR_gap_pp": 2.5094935202341517
+      },
+      "race": {
+        "F_FPR_pct": 19.5655567656488,
+        "F_DP_pct": 6.436995811900942,
+        "es_AUC_pct": 46.69750215974665,
+        "worst_group_auc_pct": 51.95760776011963,
+        "FPR_gap_pp": 15.920605428694618,
+        "TPR_gap_pp": 15.348211808308232
+      },
+      "age_bin": {},
+      "skin_bin": {},
+      "gender_race": {
+        "F_FPR_pct": 41.38606027269106,
+        "F_DP_pct": 10.486492807858733,
+        "es_AUC_pct": 36.69886156538605,
+        "worst_group_auc_pct": 49.8609113840496,
+        "FPR_gap_pp": 22.42893673532819,
+        "TPR_gap_pp": 33.66863905325444
+      },
+      "ids8": {}
+    },
+    "tag": "X-LA-7",
+    "model": "L_A",
+    "backbone": "Xception",
+    "seed": 7,
+    "dataset": "dfdc",
+    "checkpoint_sha256": "ed3c606d1b4307b981385a3e5f929c6959efc6427f6b640e5119d45f74ec1b80",
+    "manifest_sha256": "30a5c96a5a8ed06495276050543e3391bd5791281e54c08559f0118bef568c1f",
+    "source": "/home/sachin.chaudhary/ces_fl_runs/xception_seeds_7_27_20261107/analysis/L_A_s7_dfdc.json"
+  },
+  {
+    "overall_auc_pct": 71.27472998857145,
+    "overall_fpr_pct": 58.79572903903379,
+    "overall_fnr_pct": 15.515497911628929,
+    "n": 28458,
+    "n_real": 5713,
+    "n_fake": 22745,
+    "axes": {
+      "gender": {
+        "F_FPR_pct": 1.5104170185714638,
+        "F_DP_pct": 19.938855372750265,
+        "es_AUC_pct": 61.376214735798904,
+        "worst_group_auc_pct": 55.48436337140208,
+        "FPR_gap_pp": 1.5104170185714638,
+        "TPR_gap_pp": 18.90787706458381
+      },
+      "race": {
+        "F_FPR_pct": 27.480242466186432,
+        "F_DP_pct": 22.496242340154925,
+        "es_AUC_pct": 54.448826034576506,
+        "worst_group_auc_pct": 56.262492446427736,
+        "FPR_gap_pp": 26.957746478873233,
+        "TPR_gap_pp": 26.749174917491754
+      },
+      "age_bin": {},
+      "skin_bin": {},
+      "gender_race": {
+        "F_FPR_pct": 27.531592652603443,
+        "F_DP_pct": 23.607353451266043,
+        "es_AUC_pct": 51.57210993857787,
+        "worst_group_auc_pct": 49.0,
+        "FPR_gap_pp": 27.402190923317683,
+        "TPR_gap_pp": 26.749174917491754
+      },
+      "ids8": {}
+    },
+    "tag": "X-LA-7",
+    "model": "L_A",
+    "backbone": "Xception",
+    "seed": 7,
+    "dataset": "celebdf",
+    "checkpoint_sha256": "ed3c606d1b4307b981385a3e5f929c6959efc6427f6b640e5119d45f74ec1b80",
+    "manifest_sha256": "5b4c9b3af2589b90e6e3fe9825857eacac9d4c2517f3226feb80fa7d4e0f4873",
+    "source": "/home/sachin.chaudhary/ces_fl_runs/xception_seeds_7_27_20261107/analysis/L_A_s7_celebdf.json"
+  },
+  {
+    "overall_auc_pct": 84.23389897685041,
+    "overall_fpr_pct": 46.474773609314354,
+    "overall_fnr_pct": 10.94867312887335,
+    "n": 9385,
+    "n_real": 3092,
+    "n_fake": 6293,
+    "axes": {
+      "gender": {
+        "F_FPR_pct": 8.335212136860864,
+        "F_DP_pct": 6.168787164457157,
+        "es_AUC_pct": 83.787115196354,
+        "worst_group_auc_pct": 83.97904923564641,
+        "FPR_gap_pp": 8.335212136860864,
+        "TPR_gap_pp": 3.31475116863007
+      },
+      "race": {
+        "F_FPR_pct": 9.140687047663793,
+        "F_DP_pct": 12.581260909014546,
+        "es_AUC_pct": 82.24674592158846,
+        "worst_group_auc_pct": 82.06203007518798,
+        "FPR_gap_pp": 9.140687047663793,
+        "TPR_gap_pp": 1.9370500215657867
+      },
+      "age_bin": {},
+      "skin_bin": {},
+      "gender_race": {
+        "F_FPR_pct": 32.181413985751846,
+        "F_DP_pct": 16.805027095584002,
+        "es_AUC_pct": 72.33585048586612,
+        "worst_group_auc_pct": 79.47748346729671,
+        "FPR_gap_pp": 23.237132460825165,
+        "TPR_gap_pp": 7.518796992481203
+      },
+      "ids8": {}
+    },
+    "tag": "X-LA-7",
+    "model": "L_A",
+    "backbone": "Xception",
+    "seed": 7,
+    "dataset": "dfd",
+    "checkpoint_sha256": "ed3c606d1b4307b981385a3e5f929c6959efc6427f6b640e5119d45f74ec1b80",
+    "manifest_sha256": "a9d89cb3838b72b36c8eaf55c0ae12c165a38ead50d2e18fc1969245a9533e79",
+    "source": "/home/sachin.chaudhary/ces_fl_runs/xception_seeds_7_27_20261107/analysis/L_A_s7_dfd.json"
+  },
+  {
+    "overall_auc_pct": 98.3611156135875,
+    "overall_fpr_pct": 6.654914059056853,
+    "overall_fnr_pct": 5.622393711355031,
+    "n": 25401,
+    "n_real": 4538,
+    "n_fake": 20863,
+    "axes": {
+      "gender": {
+        "F_FPR_pct": 0.24403297003789265,
+        "F_DP_pct": 2.4870698116798984,
+        "es_AUC_pct": 97.49853231089494,
+        "worst_group_auc_pct": 97.93705792048667,
+        "FPR_gap_pp": 0.24403297003789265,
+        "TPR_gap_pp": 3.8843397413941374
+      },
+      "race": {
+        "F_FPR_pct": 13.76054608631996,
+        "F_DP_pct": 6.807902856574099,
+        "es_AUC_pct": 96.32086081525227,
+        "worst_group_auc_pct": 96.90772068942769,
+        "FPR_gap_pp": 9.592656339644293,
+        "TPR_gap_pp": 5.455556679138436
+      },
+      "age_bin": {
+        "F_FPR_pct": 8.461449585553774,
+        "F_DP_pct": 42.19260954872466,
+        "es_AUC_pct": 96.9822970080974,
+        "worst_group_auc_pct": 98.28436949912279,
+        "FPR_gap_pp": 7.374224672639559,
+        "TPR_gap_pp": 14.48852486989165
+      },
+      "skin_bin": {
+        "F_FPR_pct": 5.934271741199213,
+        "F_DP_pct": 3.5706349465703835,
+        "es_AUC_pct": 97.30723131608252,
+        "worst_group_auc_pct": 98.04128251913285,
+        "FPR_gap_pp": 4.402187981090176,
+        "TPR_gap_pp": 3.6011312281231422
+      },
+      "gender_race": {
+        "F_FPR_pct": 29.06808400346717,
+        "F_DP_pct": 18.956662595689323,
+        "es_AUC_pct": 92.06079320648672,
+        "worst_group_auc_pct": 94.97426527123228,
+        "FPR_gap_pp": 12.43694451116983,
+        "TPR_gap_pp": 15.918472410726823
+      },
+      "ids8": {
+        "F_FPR_pct": 24.72430978886731,
+        "F_DP_pct": 29.914140786515585,
+        "es_AUC_pct": 89.92823676333883,
+        "worst_group_auc_pct": 92.95925925925927,
+        "FPR_gap_pp": 13.108433734939759,
+        "TPR_gap_pp": 16.875
+      }
+    },
+    "tag": "X-LA-27",
+    "model": "L_A",
+    "backbone": "Xception",
+    "seed": 27,
+    "dataset": "ffpp",
+    "checkpoint_sha256": "f341c1a60ac595b6f85498a85180f148ce17d55e537faa59a2f1ffd8470e5b84",
+    "manifest_sha256": "7c7a09d5ccab349b1670f357bf7b1498d58af4a6621e8b0469d8d0ea368ccbc0",
+    "source": "/home/sachin.chaudhary/ces_fl_runs/xception_seeds_7_27_20261107/analysis/L_A_s27_ffpp.json"
+  },
+  {
+    "overall_auc_pct": 61.50420397236223,
+    "overall_fpr_pct": 30.02925369072726,
+    "overall_fnr_pct": 55.01348369698456,
+    "n": 22857,
+    "n_real": 14699,
+    "n_fake": 8158,
+    "axes": {
+      "gender": {
+        "F_FPR_pct": 3.0188020948724748,
+        "F_DP_pct": 3.623104021097634,
+        "es_AUC_pct": 59.34101788519215,
+        "worst_group_auc_pct": 59.84616052752495,
+        "FPR_gap_pp": 3.0188020948724748,
+        "TPR_gap_pp": 0.5354018238043379
+      },
+      "race": {
+        "F_FPR_pct": 20.650974941026455,
+        "F_DP_pct": 5.254498731539664,
+        "es_AUC_pct": 52.4197078758908,
+        "worst_group_auc_pct": 56.18668440934066,
+        "FPR_gap_pp": 13.89647301215064,
+        "TPR_gap_pp": 16.101553829078796
+      },
+      "age_bin": {},
+      "skin_bin": {},
+      "gender_race": {
+        "F_FPR_pct": 43.48063358756252,
+        "F_DP_pct": 9.546528876277938,
+        "es_AUC_pct": 40.0747166160366,
+        "worst_group_auc_pct": 55.26493630998688,
+        "FPR_gap_pp": 17.314571501229125,
+        "TPR_gap_pp": 28.31133113311331
+      },
+      "ids8": {}
+    },
+    "tag": "X-LA-27",
+    "model": "L_A",
+    "backbone": "Xception",
+    "seed": 27,
+    "dataset": "dfdc",
+    "checkpoint_sha256": "f341c1a60ac595b6f85498a85180f148ce17d55e537faa59a2f1ffd8470e5b84",
+    "manifest_sha256": "30a5c96a5a8ed06495276050543e3391bd5791281e54c08559f0118bef568c1f",
+    "source": "/home/sachin.chaudhary/ces_fl_runs/xception_seeds_7_27_20261107/analysis/L_A_s27_dfdc.json"
+  },
+  {
+    "overall_auc_pct": 70.4486976265637,
+    "overall_fpr_pct": 52.12672851391563,
+    "overall_fnr_pct": 21.45526489338316,
+    "n": 28458,
+    "n_real": 5713,
+    "n_fake": 22745,
+    "axes": {
+      "gender": {
+        "F_FPR_pct": 7.974047712562493,
+        "F_DP_pct": 23.54663671689994,
+        "es_AUC_pct": 63.864597955779445,
+        "worst_group_auc_pct": 60.492721350057074,
+        "FPR_gap_pp": 7.974047712562493,
+        "TPR_gap_pp": 19.693121264943102
+      },
+      "race": {
+        "F_FPR_pct": 24.440006742046265,
+        "F_DP_pct": 20.548220009731477,
+        "es_AUC_pct": 59.66279175610214,
+        "worst_group_auc_pct": 61.37777777777777,
+        "FPR_gap_pp": 23.774647887323948,
+        "TPR_gap_pp": 20.0990099009901
+      },
+      "age_bin": {},
+      "skin_bin": {},
+      "gender_race": {
+        "F_FPR_pct": 28.86949116153648,
+        "F_DP_pct": 21.546351266555142,
+        "es_AUC_pct": 56.70366526413824,
+        "worst_group_auc_pct": 54.703703703703695,
+        "FPR_gap_pp": 26.885758998435055,
+        "TPR_gap_pp": 20.0990099009901
+      },
+      "ids8": {}
+    },
+    "tag": "X-LA-27",
+    "model": "L_A",
+    "backbone": "Xception",
+    "seed": 27,
+    "dataset": "celebdf",
+    "checkpoint_sha256": "f341c1a60ac595b6f85498a85180f148ce17d55e537faa59a2f1ffd8470e5b84",
+    "manifest_sha256": "5b4c9b3af2589b90e6e3fe9825857eacac9d4c2517f3226feb80fa7d4e0f4873",
+    "source": "/home/sachin.chaudhary/ces_fl_runs/xception_seeds_7_27_20261107/analysis/L_A_s27_celebdf.json"
+  },
+  {
+    "overall_auc_pct": 81.20278666474526,
+    "overall_fpr_pct": 54.85122897800776,
+    "overall_fnr_pct": 10.344827586206897,
+    "n": 9385,
+    "n_real": 3092,
+    "n_fake": 6293,
+    "axes": {
+      "gender": {
+        "F_FPR_pct": 6.8913253856795365,
+        "F_DP_pct": 4.683897311326069,
+        "es_AUC_pct": 79.26993848127736,
+        "worst_group_auc_pct": 80.0150528659213,
+        "FPR_gap_pp": 6.8913253856795365,
+        "TPR_gap_pp": 2.1334803339212534
+      },
+      "race": {
+        "F_FPR_pct": 1.9636005682517332,
+        "F_DP_pct": 8.541341876862784,
+        "es_AUC_pct": 76.71984463369934,
+        "worst_group_auc_pct": 75.67071086807928,
+        "FPR_gap_pp": 1.9636005682517332,
+        "TPR_gap_pp": 3.1567887990621655
+      },
+      "age_bin": {},
+      "skin_bin": {},
+      "gender_race": {
+        "F_FPR_pct": 15.543658887797113,
+        "F_DP_pct": 12.54179637956877,
+        "es_AUC_pct": 68.74003518251787,
+        "worst_group_auc_pct": 73.78601873508495,
+        "FPR_gap_pp": 9.653517647324112,
+        "TPR_gap_pp": 5.213218042420606
+      },
+      "ids8": {}
+    },
+    "tag": "X-LA-27",
+    "model": "L_A",
+    "backbone": "Xception",
+    "seed": 27,
+    "dataset": "dfd",
+    "checkpoint_sha256": "f341c1a60ac595b6f85498a85180f148ce17d55e537faa59a2f1ffd8470e5b84",
+    "manifest_sha256": "a9d89cb3838b72b36c8eaf55c0ae12c165a38ead50d2e18fc1969245a9533e79",
+    "source": "/home/sachin.chaudhary/ces_fl_runs/xception_seeds_7_27_20261107/analysis/L_A_s27_dfd.json"
+  }
+]
